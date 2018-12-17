@@ -1,0 +1,38 @@
+// The following mixins provide pre-configured Orion approved
+// breakpoints when development mobile-first UIs.
+
+@mixin phone-large {
+  @media screen and (min-width: $breakpoint-width-narrow) and (max-width: $breakpoint-width-medium - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $breakpoint-width-wide) {
+    @content;
+  }
+}
+
+@mixin tablet-and-above {
+  @media screen and (min-width: $breakpoint-width-medium) {
+    @content;
+  }
+}
+
+@mixin phone-large-and-above {
+  @media screen and (min-width: $breakpoint-width-narrow) {
+    @content;
+  }
+}
+
+@mixin breakpoint($customWidth) {
+  @media screen and (min-width: $customWidth) {
+    @content;
+  }
+}

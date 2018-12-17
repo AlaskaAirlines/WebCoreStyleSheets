@@ -1,0 +1,11 @@
+{
+  "name": "@alaskaair/orion-web-core-style-sheets",
+  "description": "Orion core foundation Sass UI Kit",
+  "version": "0.0.0",
+  "author": "Product design and research",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "ISC"
+}

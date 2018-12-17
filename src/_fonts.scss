@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "AS Circular";
+  src: url("/assets/fonts/ASCircularWeb-Light.eot");
+  src: url("/assets/fonts/ASCircularWeb-Light.eot#iefix") format("embedded-opentype"),
+       url("/assets/fonts/ASCircularWeb-Light.woff2") format("woff2"),
+       url("/assets/fonts/ASCircularWeb-Light.woff") format("woff"),
+       url("/assets/fonts/ASCircularWeb-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AS Circular";
+  src: url("/assets/fonts/ASCircularWeb-Medium.eot");
+  src: url("/assets/fonts/ASCircularWeb-Medium.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/ASCircularWeb-Medium.woff2") format("woff2"),
+    url("/assets/fonts/ASCircularWeb-Medium.woff") format("woff"),
+    url("/assets/fonts/ASCircularWeb-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

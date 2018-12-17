@@ -1,0 +1,89 @@
+* {
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+
+  &:focus {
+    outline: 3px solid $color-accessibility-border-active;
+    box-shadow: 0 0 0 3px $color-accessibility-border-active;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $size-root;
+}
+
+body,
+.baseType {
+ font-family: $font-family-base;
+ font-weight: $weight-book;
+ font-size: $size-breakpoint-all-med;
+ line-height: $vertical-alignment-body;
+ color: $color-type-theme-light-primary;
+}
+
+p,
+.baseParagraph {
+  margin-bottom: $size-margin-baseline;
+}
+
+a,
+.hyperlink {
+  color: $color-type-theme-light-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-type-theme-light-link-hover;
+  }
+}
+
+.heading {
+ margin: $size-margin-header-y-axis $size-margin-header-x-axis;
+ font-weight: inherit;
+ line-height: $vertical-alignment-heading;
+}
+
+.heading--max {
+  font-size: $size-breakpoint-mobile-max;
+  margin-top: 0;
+
+  @media screen and ($breakpoint-width-medium) {
+    font-size: $size-breakpoint-desktop-max;
+  }
+}
+
+.heading--xxl {
+  font-size: $size-breakpoint-mobile-xxl;
+
+  @media screen and ($breakpoint-width-medium) {
+    font-size: $size-breakpoint-desktop-xxl;
+  }
+}
+
+.heading--xl {
+  font-size: $size-breakpoint-mobile-xl;
+
+  @media screen and ($breakpoint-width-medium) {
+    font-size: $size-breakpoint-desktop-xl;
+  }
+}
+
+.heading--lg {
+  font-size: $size-breakpoint-mobile-lg;
+
+  @media screen and ($breakpoint-width-medium) {
+    font-size: $size-breakpoint-desktop-lg;
+  }
+}
+
+small,
+.type--small {
+  font-size: $size-breakpoint-all-small;
+}
+
+img {
+  display: block;
+  width: 100%;
+}

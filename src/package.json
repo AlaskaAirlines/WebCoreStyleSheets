@@ -1,9 +1,8 @@
 {
   "name": "@alaskaair/orion-web-core-style-sheets",
-  "description": "Orion core foundation Sass UI Kit",
+  "description": "AlaskaAir Orion Icon Library",
   "version": "0.1.0",
   "author": "Product design and research",
-  "main": "src/",
   "license": "ISC",
   "repository": {
     "type": "git",

@@ -5,14 +5,14 @@ All Orion's web fonts are to be used directly from this npm package, not copied 
 When using these web fonts, be sure to add this Sass reference of the `@font-face` rules to your `global.scss` file.
 
 ```sass
-@import "@alaskaair/orion-web-core-style-sheets/src/fonts";
+@import "@alaskaair/orion-web-core-style-sheets/fonts";
 ```
 
 ## Include in Webpack pipeline
 
 When using Webpack there are a few different ways that these files can be referenced. The end goal is that the resource files need to be referenced for local development and packaged for production builds. See the following scenarios for instructions.
 
-**NOTE:** Again, please DO NOT manually copy these files to your local project and add to version control. It is important that these font files are referenced from the npm package for proper version control and distribution.
+**NOTE:** Again, please **DO NOT** manually copy these files to your local project and add to version control. It is important that these font files are referenced from the npm package for proper version control and distribution.
 
 ### Using the public directory
 
@@ -36,17 +36,13 @@ plugins: [
   // the accessible asset directories in the app
   new copyWebpackPlugin([
     {
-      from: "./node_modules/@alaskaair/orion-web-core-style-sheets/src/fonts",
+      from: "./node_modules/@alaskaair/orion-web-core-style-sheets/fonts",
       to: "./assets/fonts",
       toType: "dir"
     }
   ]),
 ],
 ```
-
-### Using the Webpack pipeline
-
-more to come ...
 
 ## Include in Gulp pipeline
 

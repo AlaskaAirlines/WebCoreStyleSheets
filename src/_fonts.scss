@@ -1,21 +1,23 @@
+// sass-lint:disable no-duplicate-properties
+
 @font-face {
-  font-family: "#{$asset-font-circular-family-name}";
+  font-family: $asset-font-circular-family-name;
   src: url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.eot");
   src: url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.eot#iefix") format("embedded-opentype"),
-       url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.woff2") format("woff2"),
-       url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.woff") format("woff"),
-       url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.ttf") format("truetype");
+  url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.woff2") format("woff2"),
+  url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.woff") format("woff"),
+  url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.ttf") format("truetype");
   font-weight: $weight-light;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "#{$asset-font-circular-family-name}";
+  font-family: $asset-font-circular-family-name;
   src: url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.eot");
   src: url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.eot?#iefix") format("embedded-opentype"),
-    url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.woff2") format("woff2"),
-    url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.woff") format("woff"),
-    url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.ttf") format("truetype");
+  url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.woff2") format("woff2"),
+  url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.woff") format("woff"),
+  url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.ttf") format("truetype");
   font-weight: $weight-book;
   font-style: normal;
 }

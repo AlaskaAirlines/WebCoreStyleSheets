@@ -17,11 +17,11 @@ html {
 
 body,
 .baseType {
- font-family: $font-family-base;
- font-weight: $weight-book;
- font-size: $size-breakpoint-all-med;
- line-height: $vertical-alignment-body;
- color: $color-type-theme-light-primary;
+  font-family: $font-family-base;
+  font-weight: $weight-book;
+  font-size: $size-breakpoint-all-med;
+  line-height: $vertical-alignment-body;
+  color: $color-type-theme-light-primary;
 }
 
 p,
@@ -40,9 +40,9 @@ a,
 }
 
 .heading {
- margin: $size-margin-header-y-axis $size-margin-header-x-axis;
- font-weight: inherit;
- line-height: $vertical-alignment-heading;
+  margin: $size-margin-header-y-axis $size-margin-header-x-axis;
+  font-weight: inherit;
+  line-height: $vertical-alignment-heading;
 }
 
 .heading--max {

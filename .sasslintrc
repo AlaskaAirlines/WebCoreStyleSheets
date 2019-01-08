@@ -1,0 +1,71 @@
+{
+  "options": {
+    "merge-default-rules": false,
+    "formatter": "html",
+    "output-file": "sass-lint.html",
+    "max-warnings": 50
+  },
+  "files": {
+    "include": "src/**/*.s+(a|c)ss",
+    "ignore": [
+      "sass/vendor/**/*.*"
+    ]
+  },
+  "rules": {
+    "extends-before-mixins": 2,
+    "extends-before-declarations": 2,
+    "placeholder-in-extend": 2,
+    "mixins-before-declarations": [
+      2,
+      {
+        "exclude": [
+          "breakpoint",
+          "mq"
+        ]
+      }
+    ],
+    "no-warn": 1,
+    "no-debug": 1,
+    "no-ids": 2,
+    "no-important": 2,
+    "no-vendor-prefixes": 2,
+    "no-color-literals": 2,
+    "no-color-keywords": 2,
+    "no-qualifying-elements":  [
+      2,
+      { "allow-element-with-attribute": "true" }
+    ],
+    "no-duplicate-properties": 2,
+    "no-empty-rulesets": 2,
+    "no-mergeable-selectors": 2,
+    "no-misspelled-properties": 2,
+    "indentation": [
+      2,
+      {
+        "size": 2
+      }
+    ],
+    "property-sort-order": [
+      1,
+      {
+        "order": [
+          "display",
+          "margin"
+        ],
+        "ignore-custom-properties": true
+      }
+    ],
+    "variable-for-property": [
+      2,
+      {
+        "properties": [
+          "color",
+          "font-size",
+          "font-family",
+          "font-weight",
+          "line-height"
+        ]
+      }
+    ]
+  }
+}

@@ -38,3 +38,21 @@ The Orion Web Core Style Sheets consists of resources to be ingested a la carte.
 The implementation of Orion Web Code Style Sheets uses a naming convention model that will be strictly adhered to throughout this library and compliance is expected for any contributed updates.
 
 To learn more, please reference [this document](https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS?path=%2Fdocs%2FcssConventions.md&version=GBmaster).
+
+## Tests
+
+Prior to adding new Sass to this repo, please run the Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. To run the tests, run the following command:
+
+```
+$ npm run test
+```
+
+If there is an error, this will generate a `.html` file at the root of the project. To view this generated file, run the following command:
+
+```
+$ open sass-lint.html
+```
+
+This should open the file in your default browser.
+
+This file is ignored and will not be added to the version control.

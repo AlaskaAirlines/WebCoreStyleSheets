@@ -3,7 +3,7 @@
   "description": "Orion core foundation Sass UI Kit",
   "version": "0.1.0",
   "author": "Product design and research",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS"

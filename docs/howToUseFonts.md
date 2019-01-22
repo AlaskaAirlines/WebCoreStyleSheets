@@ -14,7 +14,7 @@ When using Webpack there are a few different ways that these files can be refere
 
 **NOTE:** Again, please **DO NOT** manually copy these files to your local project and add to version control. It is important that these font files are referenced from the npm package for proper version control and distribution.
 
-### Using the public directory
+### With full access to Webpack
 
 When using the `public` directory as a dev/build resource of assets, it is suggested that you use the `copy-webpack-plugin` plugin. To install in your project, run the following code:
 
@@ -42,6 +42,16 @@ plugins: [
     }
   ]),
 ],
+```
+
+### Without Webpack (no-ejection Create-React-App)
+
+No need to eject webpack! Simply add configuration to package.json
+
+```
+"scripts": {
+  "sass": "node-sass --include-path scss src -o src/css"
+}
 ```
 
 ## Include in Gulp pipeline

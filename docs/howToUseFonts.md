@@ -37,20 +37,26 @@ plugins: [
   new copyWebpackPlugin([
     {
       from: "./node_modules/@alaskaair/orion-web-core-style-sheets/fonts",
-      to: "./assets/fonts",
+      to: "./src/fonts",
       toType: "dir"
     }
   ]),
 ],
 ```
 
-### Without Webpack (no-ejection Create-React-App)
+### Without direct to Webpack
 
-No need to eject webpack! Simply add configuration to package.json
+If you are not using a `build.js` process and have not ejected your Webpack configurations, please do the following:
+
+Install this npm dependency
+
+```js
+$ npm i copyfiles -D
+```
 
 ```
 "scripts": {
-  "sass": "node-sass --include-path scss src -o src/css"
+  "copyfiles": "copyfiles -f ./node_modules/@alaskaair/orion-web-core-style-sheets/fonts/*.* ./src/fonts"
 }
 ```
 

@@ -1,3 +1,5 @@
+@import "./breakpoints";
+
 * {
   &:before,
   &:after {
@@ -49,9 +51,13 @@ a,
   font-size: $size-breakpoint-mobile-max;
   margin-top: 0;
 
-  @media screen and ($breakpoint-width-medium) {
+  @include tablet-and-above {
     font-size: $size-breakpoint-desktop-max;
   }
+
+  // @media screen and ($breakpoint-width-medium) {
+  //   font-size: $size-breakpoint-desktop-max;
+  // }
 }
 
 .heading--xxl {

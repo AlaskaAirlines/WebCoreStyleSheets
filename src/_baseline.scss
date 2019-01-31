@@ -54,16 +54,12 @@ a,
   @include tablet-and-above {
     font-size: $size-breakpoint-desktop-max;
   }
-
-  // @media screen and ($breakpoint-width-medium) {
-  //   font-size: $size-breakpoint-desktop-max;
-  // }
 }
 
 .heading--xxl {
   font-size: $size-breakpoint-mobile-xxl;
 
-  @media screen and ($breakpoint-width-medium) {
+  @include tablet-and-above {
     font-size: $size-breakpoint-desktop-xxl;
   }
 }
@@ -71,7 +67,7 @@ a,
 .heading--xl {
   font-size: $size-breakpoint-mobile-xl;
 
-  @media screen and ($breakpoint-width-medium) {
+  @include tablet-and-above {
     font-size: $size-breakpoint-desktop-xl;
   }
 }
@@ -79,7 +75,7 @@ a,
 .heading--lg {
   font-size: $size-breakpoint-mobile-lg;
 
-  @media screen and ($breakpoint-width-medium) {
+  @include tablet-and-above {
     font-size: $size-breakpoint-desktop-lg;
   }
 }

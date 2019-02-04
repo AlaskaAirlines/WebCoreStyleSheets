@@ -1,4 +1,9 @@
-@import "./breakpoints";
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations
 
 * {
   &:before,
@@ -36,6 +41,10 @@ a,
   color: $color-type-theme-light-link;
   text-decoration: none;
 
+  &:visited {
+    color: $color-type-theme-light-link;
+  }
+
   &:hover {
     color: $color-type-theme-light-link-hover;
   }
@@ -51,7 +60,7 @@ a,
   font-size: $size-breakpoint-mobile-max;
   margin-top: 0;
 
-  @include tablet-and-above {
+  @include breakpoint-medium {
     font-size: $size-breakpoint-desktop-max;
   }
 }
@@ -59,7 +68,7 @@ a,
 .heading--xxl {
   font-size: $size-breakpoint-mobile-xxl;
 
-  @include tablet-and-above {
+  @include breakpoint-medium {
     font-size: $size-breakpoint-desktop-xxl;
   }
 }
@@ -67,7 +76,7 @@ a,
 .heading--xl {
   font-size: $size-breakpoint-mobile-xl;
 
-  @include tablet-and-above {
+  @include breakpoint-medium {
     font-size: $size-breakpoint-desktop-xl;
   }
 }
@@ -75,7 +84,7 @@ a,
 .heading--lg {
   font-size: $size-breakpoint-mobile-lg;
 
-  @include tablet-and-above {
+  @include breakpoint-medium {
     font-size: $size-breakpoint-desktop-lg;
   }
 }

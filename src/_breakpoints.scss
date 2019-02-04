@@ -1,3 +1,8 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
 // The following mixins provide pre-configured Orion approved
 // breakpoints when development mobile-first UIs.
 
@@ -9,23 +14,24 @@
 
 @mixin tablet {
   @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
+
     @content;
   }
 }
 
-@mixin desktop {
+@mixin breakpoint-wide {
   @media screen and (min-width: $breakpoint-width-wide) {
     @content;
   }
 }
 
-@mixin tablet-and-above {
+@mixin breakpoint-medium {
   @media screen and (min-width: $breakpoint-width-medium) {
     @content;
   }
 }
 
-@mixin phone-large-and-above {
+@mixin breakpoint-narrow {
   @media screen and (min-width: $breakpoint-width-narrow) {
     @content;
   }

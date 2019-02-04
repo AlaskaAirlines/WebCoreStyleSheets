@@ -1,0 +1,170 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations
+
+// Functional selectors for the use of defining different UI states per breakpoint
+//
+// Compatibility: https://caniuse.com/#feat=css-mediaqueries
+//
+// Variables are defined by baseline Design Tokens
+
+// Set element display: none on devices larger than mobile
+.util_is-mobileOnly {
+  @include breakpoint-narrow {
+    display: none;
+  }
+}
+
+// Set element display: none on mobile devices and tablets
+.util_is-narrowOnly {
+  display: none;
+
+  @include breakpoint-narrow {
+    display: block;
+  }
+
+  @include breakpoint-medium {
+    display: none;
+  }
+}
+
+.util_is-narrowOnly--inline {
+  display: none;
+
+  @include breakpoint-narrow {
+    display: inline-block;
+  }
+
+  @include breakpoint-medium {
+    display: none;
+  }
+}
+
+// Set display: none on devices smaller than large-phone
+.util_is-narrowAppears {
+  display: none;
+
+  @include breakpoint-narrow {
+    display: block;
+  }
+}
+
+.util_is-narrowAppears--inline {
+  display: none;
+
+  @include breakpoint-narrow {
+    display: inline-block;
+  }
+}
+
+// Set display: none on mobile and desktop
+.util_is-tabletOnly {
+  display: none;
+
+  @include breakpoint-medium {
+    display: block;
+  }
+
+  @include breakpoint-wide {
+    display: none;
+  }
+}
+
+.util_is-tabletOnly--inline {
+  display: none;
+
+  @include breakpoint-medium {
+    display: inline-block;
+  }
+
+  @include breakpoint-wide {
+    display: none;
+  }
+}
+
+// Set display: none on all devices smaller than tablet
+.util_is-tabletAppears {
+  display: none;
+
+  @include breakpoint-medium {
+    display: block;
+  }
+}
+
+.util_is-tabletAppears--inline {
+  display: none;
+
+  @include breakpoint-medium {
+    display: inline-block;
+  }
+}
+
+// Set display: none on all devices smaller than desktop
+.util_is-desktopOnly {
+  display: none;
+
+  @include breakpoint-wide {
+    display: block;
+  }
+}
+
+.util_is-desktopOnly--inline {
+  display: none;
+
+  @include breakpoint-wide {
+    display: inline-block;
+  }
+}
+
+
+// Functional selectors for the use of defining different display properties
+//
+// Variables are defined by baseline Design Tokens
+.util_displayInlineBlock {
+  display: inline-block;
+}
+
+.util_displayBlock {
+  display: block;
+}
+
+.util_displayFlex {
+  display: flex;
+}
+
+// Functional selectors for the use of defining different font style properties
+//
+// Variables are defined by baseline Design Tokens
+.util_fontWeightBook {
+  font-weight: $weight-book;
+}
+
+.util_fontWeightLight {
+  font-weight: $weight-light;
+}
+
+// Functional selectors for the use of defining different layout properties
+//
+// Variables are defined by baseline Design Tokens
+.util_floatLeft {
+  float: left;
+}
+
+.util_marginAuto {
+  margin: 0 auto;
+}
+
+.util_marginRight--sml {
+  margin-right: 0.5333rem
+}
+
+.util_marginRight--med {
+  margin-right: 1.0666rem
+}
+
+.util_marginRight--lg {
+  margin-right: 1.6rem
+}

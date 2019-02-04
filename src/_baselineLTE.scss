@@ -1,0 +1,18 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations
+
+* {
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+
+  &:focus {
+    outline: 3px solid $color-accessibility-border-active;
+    box-shadow: 0 0 0 3px $color-accessibility-border-active;
+  }
+}

@@ -1,5 +1,7 @@
 # Orion Web Core Style Sheets
 
+[![Build status](https://itsals.visualstudio.com/Orion%20Design%20System/_apis/build/status/Orion%20Web%20Core%20Stylesheets)](https://itsals.visualstudio.com/Orion%20Design%20System/_build/latest?definitionId=3118)
+
 The core front-end framework for building experiences with the Orion Design System.
 
 Orion Web Core Style sheets is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Orion Design Language.

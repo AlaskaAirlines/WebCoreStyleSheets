@@ -14,6 +14,7 @@
   url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.ttf") format("truetype");
   font-weight: $weight-light;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -25,4 +26,5 @@
   url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.ttf") format("truetype");
   font-weight: $weight-book;
   font-style: normal;
+  font-display: fallback;
 }

@@ -12,9 +12,15 @@
   }
 }
 
+
 @mixin tablet {
   @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
+    @content;
+  }
+}
 
+@mixin breakpoint-max {
+  @media screen and (min-width: $breakpoint-width-max) {
     @content;
   }
 }
@@ -37,8 +43,28 @@
   }
 }
 
-@mixin breakpoint($customWidth) {
-  @media screen and (min-width: $customWidth) {
+// Open format mixin to define any breakpoint
+//
+// $breakpointValue  - sets value of media breakpoint 
+// $mediaFeature  - sets feature value, defaults to min-width
+// See also: https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features
+//
+// Compatibility: https://caniuse.com/#feat=css-mediaqueries
+//
+// Defaults are set by baseline Design Tokens
+// To override values, define in element/component shape JSON and address mixin arguments
+//
+// Example:
+// .foo {
+//   color: orange;
+  
+//   @include breakpoint(400px) {
+//     color: green;
+//   }
+// }
+
+@mixin breakpoint($breakpointValue, $mediaFeature: min-width) {
+  @media screen and (#{$mediaFeature}: $breakpointValue) {
     @content;
   }
 }

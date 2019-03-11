@@ -1,5 +1,5 @@
 {
-  "name": "@alaskaair/orion-web-core-style-sheets",
+  "name": "@alaskaairux/orion-web-core-style-sheets",
   "description": "Orion core foundation Sass UI Kit",
   "version": "0.3.0",
   "author": "Product design and research",
@@ -10,11 +10,30 @@
     "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS"
   },
   "devDependencies": {
+    "@alaskaairux/orion-design-tokens": "^1.0.503756086",
+    "auto-changelog": "^1.11.0",
+    "concat": "^1.0.3",
+    "copyfiles": "^2.1.0",
+    "node-sass": "^4.11.0",
     "sass-lint": "^1.12.1",
+    "style-dictionary": "^2.7.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-standard": "^18.2.0",
     "versiony-cli": "^1.3.0"
   },
   "scripts": {
-    "set-patch": "versiony ./src/package.json --patch",
-    "test": "sass-lint --verbose"
+    "set-patch-root": "versiony ./package.json --patch",
+    "set-patch-src": "versiony ./src/package.json --patch",
+    "copyReadme": "copyfiles -f -V './README.md' ./dist",
+    "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
+    "copyPackage": "copyfiles -f -V './src/package.json' ./dist",
+    "copySass": "copyfiles -u 1 -V './src/**/*.scss' ./dist",
+    "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
+    "copyFonts": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
+    "buildTokens": "node scripts/styleDictionary.js",
+    "sassLint": "sass-lint --verbose",
+    "buildCss": "node-sass --include-path scss scripts/testBuild.scss test/css/testBuild.css",
+    "cssLint": "stylelint './test/css/*.css'"
   }
 }

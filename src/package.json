@@ -1,11 +1,42 @@
 {
-  "name": "@alaskaair/orion-web-core-style-sheets",
+  "name": "@alaskaairux/orion-web-core-style-sheets",
   "description": "Orion core foundation Sass UI Kit",
   "version": "0.3.0",
-  "author": "Product design and research",
+  "author": "Alaska Airlines Product design and research",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS"
-  }
+    "url": "https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets"
+  },
+  "dependencies": {
+    "@alaskaairux/orion-design-tokens": "^1.0.503756086",
+    "node-sass": "^4.11.0",
+    "style-dictionary": "^2.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "alaska airlines",
+    "style dictionary",
+    "orion design system",
+    "css",
+    "properties",
+    "tokens",
+    "sass"
+  ],
+  "contributors": [
+    {
+      "name": "Dale Sande",
+      "email": "dale.sande@alaskaair.com"
+    },
+    {
+      "name": "Camron Lockeby",
+      "email": "camron.lockeby@AlaskaAir.com"
+    },
+    {
+      "name": "Kevin Sonnichsen",
+      "email": "Kevin.Sonnichsen@alaskaair.com"
+    }
+  ]
 }

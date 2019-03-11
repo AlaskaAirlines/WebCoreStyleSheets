@@ -2,6 +2,8 @@
 .npmrc
 node_modules
 build
+test
+dist
 css
 example/temp
 example/prodBuild/

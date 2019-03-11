@@ -16,7 +16,7 @@
     box-shadow: 0 0 0 3px $color-accessibility-border-active;
   }
 }
-
+  
 html {
   box-sizing: border-box;
   font-size: $size-root;
@@ -30,7 +30,7 @@ body,
   line-height: $vertical-alignment-body;
   color: $color-type-theme-light-primary;
 }
-
+  
 p,
 .baseParagraph {
   margin-bottom: $size-margin-baseline;
@@ -49,7 +49,7 @@ a,
     color: $color-type-theme-light-link-hover;
   }
 }
-
+  
 .heading {
   margin: $size-margin-header-y-axis $size-margin-header-x-axis;
   font-weight: inherit;
@@ -80,7 +80,7 @@ a,
     font-size: $size-breakpoint-desktop-xl;
   }
 }
-
+  
 .heading--lg {
   font-size: $size-breakpoint-mobile-lg;
 

@@ -1,0 +1,13 @@
+// Import build resources to ensure that src resources are working as expected
+@import './test/sass/_TokenVariables';
+
+
+// Import src resources for testing
+@import 
+    './src/breakpoints',
+    './src/fonts',
+    './src/animation',
+    './src/baseline',
+    './src/baselineLTE',
+    './src/normalize',
+    './src/utilityClasses'

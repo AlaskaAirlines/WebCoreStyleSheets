@@ -17,8 +17,6 @@
 // Example:
 // @include transition($property, $duration, $timing);
 
-@mixin transition($property: $animation-default-property,
-    $duration: $animation-default-duration,
-    $timing: $animation-default-timing) {
+@mixin transition($property: $animation-default-property, $duration: $animation-default-duration, $timing: $animation-default-timing) {
   transition: $property $duration $timing;
 }

@@ -2,7 +2,7 @@ language: node_js
 node_js:
  - "node"
 script:
-  - npm run copyFonts
+  - npm run copyFontsTest
   - npm run buildTokens
   - npm run sassLint
   - npm run buildCss
@@ -14,6 +14,7 @@ branches:
     - master
 before_deploy:
   - npm run copyPackage
+  - npm run copyFontsDist
   - npm run copyReadme
   - npm run copySass
   - npm run changelog

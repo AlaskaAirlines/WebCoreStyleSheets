@@ -39,7 +39,7 @@ p,
 a,
 .hyperlink {
   color: $color-type-theme-light-link;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:visited {
     color: $color-type-theme-light-link;
@@ -47,6 +47,7 @@ a,
 
   &:hover {
     color: $color-type-theme-light-link-hover;
+    text-decoration: none;
   }
 }
   
@@ -54,6 +55,10 @@ a,
   margin: $size-margin-header-y-axis $size-margin-header-x-axis;
   font-weight: inherit;
   line-height: $vertical-alignment-heading;
+}
+
+.heading--flushLeft {
+  margin-left: 0;
 }
 
 .heading--max {

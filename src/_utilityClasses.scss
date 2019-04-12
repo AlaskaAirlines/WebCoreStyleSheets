@@ -146,6 +146,18 @@
   font-weight: $weight-light;
 }
 
+.util_type--lg {
+  font-size: $size-breakpoint-desktop-lg 
+}
+
+.util_type--xl {
+  font-size: $size-breakpoint-desktop-xl 
+}
+
+.util_type--secondary {
+  color: $color-type-theme-light-secondary;
+}
+
 // Functional selectors for the use of defining different layout properties
 //
 // Variables are defined by baseline Design Tokens
@@ -155,6 +167,14 @@
 
 .util_marginAuto {
   margin: 0 auto;
+}
+
+.util_marginBotton--none {
+  margin-bottom: 0;
+}
+
+.util_marginTop--none {
+  margin-top: 0;
 }
 
 .util_marginRight--sml {

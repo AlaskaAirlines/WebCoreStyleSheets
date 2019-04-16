@@ -10,7 +10,7 @@
     "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS"
   },
   "devDependencies": {
-    "@alaskaairux/orion-design-tokens": "^1.0.503756086",
+    "@alaskaairux/orion-design-tokens": "^1.1.0",
     "auto-changelog": "^1.11.0",
     "concat": "^1.0.3",
     "copyfiles": "^2.1.0",

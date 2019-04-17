@@ -7,8 +7,7 @@ script:
   - npm run sassLint
   - npm run buildCss
   - npm run cssLint
-  - npm run set-patch-root $TRAVIS_BUILD_ID
-  - npm run set-patch-src $TRAVIS_BUILD_ID
+  - npm run setPatch $TRAVIS_BUILD_ID
 branches:
   only:
     - master

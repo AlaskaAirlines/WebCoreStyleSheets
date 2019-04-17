@@ -9,6 +9,11 @@
     "type": "git",
     "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS"
   },
+  "peerDependencies": {
+    "@alaskaairux/orion-design-tokens": "^1.1.0",
+    "node-sass": "^4.11.0",
+    "style-dictionary": "^2.7.0"
+  },
   "devDependencies": {
     "@alaskaairux/orion-design-tokens": "^1.1.0",
     "auto-changelog": "^1.11.0",
@@ -23,11 +28,10 @@
     "versiony-cli": "^1.3.0"
   },
   "scripts": {
-    "set-patch-root": "versiony ./package.json --patch",
-    "set-patch-src": "versiony ./src/package.json --patch",
+    "setPatch": "versiony ./src/package.json --patch",
     "copyReadme": "copyfiles -f -V './README.md' ./dist",
-    "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
-    "copyPackage": "copyfiles -f -V './src/package.json' ./dist",
+    "changelog": "auto-changelog --template ./scripts/templates/template.hbs --output ./dist/CHANGELOG.md -p -b 5",
+    "copyPackage": "copyfiles -f -V './package.json' ./dist",
     "copySass": "copyfiles -u 1 -V './src/**/*.scss' ./dist",
     "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
@@ -36,5 +40,31 @@
     "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss scripts/testBuild.scss test/css/testBuild.css",
     "cssLint": "stylelint './test/css/*.css'"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "alaska airlines",
+    "style dictionary",
+    "orion design system",
+    "css",
+    "properties",
+    "tokens",
+    "sass"
+  ],
+  "contributors": [
+    {
+      "name": "Dale Sande",
+      "email": "dale.sande@alaskaair.com"
+    },
+    {
+      "name": "Camron Lockeby",
+      "email": "camron.lockeby@AlaskaAir.com"
+    },
+    {
+      "name": "Kevin Sonnichsen",
+      "email": "Kevin.Sonnichsen@alaskaair.com"
+    }
+  ]
 }

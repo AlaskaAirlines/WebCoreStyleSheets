@@ -147,11 +147,11 @@
 }
 
 .util_type--lg {
-  font-size: $size-breakpoint-desktop-lg 
+  font-size: $size-breakpoint-desktop-lg
 }
 
 .util_type--xl {
-  font-size: $size-breakpoint-desktop-xl 
+  font-size: $size-breakpoint-desktop-xl
 }
 
 .util_type--secondary {
@@ -178,13 +178,17 @@
 }
 
 .util_marginRight--sml {
-  margin-right: 0.5333rem
+  margin-right: $size-scale-sml;
 }
 
 .util_marginRight--med {
-  margin-right: 1.0666rem
+  margin-right: $size-scale-med;
 }
 
 .util_marginRight--lg {
-  margin-right: 1.6rem
+  margin-right: $size-scale-lg;
+}
+
+.util_marginRight--xl {
+  margin-right: $size-scale-xl;
 }

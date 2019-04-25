@@ -1,7 +1,7 @@
 {
   "name": "@alaskaairux/orion-web-core-style-sheets",
   "description": "Orion core foundation Sass UI Kit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Product design and research",
   "main": "src/",
   "license": "Apache-2.0",
@@ -15,7 +15,7 @@
     "style-dictionary": "^2.7.0"
   },
   "devDependencies": {
-    "@alaskaairux/orion-design-tokens": "^1.1.0",
+    "@alaskaairux/orion-design-tokens": "^2.0.0",
     "auto-changelog": "^1.11.0",
     "concat": "^1.0.3",
     "copyfiles": "^2.1.0",

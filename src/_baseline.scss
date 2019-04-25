@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-// sass-lint:disable mixins-before-declarations
+// sass-lint:disable mixins-before-declarations variable-for-property
 
 * {
   &:before,
@@ -16,21 +16,21 @@
     box-shadow: 0 0 0 3px $color-accessibility-border-active;
   }
 }
-  
+
 html {
   box-sizing: border-box;
-  font-size: $size-root;
+  font-size: 1rem;
 }
 
 body,
 .baseType {
   font-family: $font-family-base;
   font-weight: $weight-book;
-  font-size: $size-breakpoint-all-med;
+  font-size: $size-font-breakpoint-all-med;
   line-height: $vertical-alignment-body;
   color: $color-type-theme-light-primary;
 }
-  
+
 p,
 .baseParagraph {
   margin-bottom: $size-margin-baseline;
@@ -50,7 +50,7 @@ a,
     text-decoration: none;
   }
 }
-  
+
 .heading {
   margin: $size-margin-header-y-axis $size-margin-header-x-axis;
   font-weight: inherit;
@@ -62,41 +62,41 @@ a,
 }
 
 .heading--max {
-  font-size: $size-breakpoint-mobile-max;
+  font-size: $size-font-breakpoint-mobile-max;
   margin-top: 0;
 
   @include breakpoint-medium {
-    font-size: $size-breakpoint-desktop-max;
+    font-size: $size-font-breakpoint-desktop-max;
   }
 }
 
 .heading--xxl {
-  font-size: $size-breakpoint-mobile-xxl;
+  font-size: $size-font-breakpoint-mobile-xxl;
 
   @include breakpoint-medium {
-    font-size: $size-breakpoint-desktop-xxl;
+    font-size: $size-font-breakpoint-desktop-xxl;
   }
 }
 
 .heading--xl {
-  font-size: $size-breakpoint-mobile-xl;
+  font-size: $size-font-breakpoint-mobile-xl;
 
   @include breakpoint-medium {
-    font-size: $size-breakpoint-desktop-xl;
+    font-size: $size-font-breakpoint-desktop-xl;
   }
 }
-  
+
 .heading--lg {
-  font-size: $size-breakpoint-mobile-lg;
+  font-size: $size-font-breakpoint-mobile-lg;
 
   @include breakpoint-medium {
-    font-size: $size-breakpoint-desktop-lg;
+    font-size: $size-font-breakpoint-desktop-lg;
   }
 }
 
 small,
 .type--small {
-  font-size: $size-breakpoint-all-small;
+  font-size: $size-font-breakpoint-all-small;
 }
 
 img {

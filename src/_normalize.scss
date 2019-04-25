@@ -60,7 +60,7 @@ hr {
 
 pre {
   font-family: monospace, monospace; /* 1 */
-  font-size: $size-breakpoint-all-med; /* 2 */
+  font-size: $size-font-breakpoint-all-med; /* 2 */
 }
 
 /* Text-level semantics
@@ -103,7 +103,7 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace; /* 1 */
-  font-size: $size-breakpoint-all-med; /* 2 */
+  font-size: $size-font-breakpoint-all-med; /* 2 */
 }
 
 /**

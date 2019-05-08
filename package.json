@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/OWCSS"
+    "url": "https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets"
   },
   "peerDependencies": {
     "@alaskaairux/orion-design-tokens": "^2.0.0",

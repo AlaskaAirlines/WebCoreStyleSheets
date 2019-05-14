@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
 
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
@@ -22,10 +22,29 @@ The current version of Orion Web Core Style Sheets supports:
 1. Orion defined breakpoint mixins
 1. CSS Normalize
 1. Orion baseline styles
+1. Orion baselineLTE styles
+
+## Peer Dependencies
+
+Orion Web Core Style Sheets has a project peer dependency on [Orion Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens), as well as Sass and Style Dictionary. Orion Web Core Style Sheets is not a stand alone project, but is part of a specific dependency chain when building Orion based applications.
 
 ## Dependencies
 
-Orion Web Core Style Sheets has a direct project dependency on [Orion Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens), as well as Sass and Style Dictionary. Orion Web Core Style Sheets is not a stand alone project, but is part of a specific dependency chain when building Orion based applications.
+When using OWCSS, there is a direct dependency on the `focus-visable` library. When using Orion Web Components, the inclusion of the `focus-visable` library is accounted for within the scope fo the component(s). With components, `focus-visable` is defined as a peer dependency.
+
+If the use of OWCSS is not specifically with a component, including the `focus-visible.min.js` file will be required within the scope of the project. For example, the JS may be added to the head of a project:
+
+```html
+<script src="/node_modules/focus-visible/dist/focus-visible.min.js"></script>
+```
+
+or to the scope of any Node.js component architecture:
+
+```javascript
+import 'focus-visible/dist/focus-visible.min.js';
+```
+
+The `focus-visable` library is required for use with experimental a11y UI features
 
 ## Getting started
 

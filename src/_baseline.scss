@@ -11,10 +11,31 @@
     box-sizing: inherit;
   }
 
+  // default experience is to remove all a11y enhancements
   &:focus {
-    outline: 3px solid $color-accessibility-border-active;
-    box-shadow: 0 0 0 3px $color-accessibility-border-active;
+    outline: none;
   }
+}
+
+.focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+%focus-placeholder {
+  outline: 3px solid var(--color-accessibility-border-active);
+  box-shadow: 0 0 0 3px var(--color-accessibility-border-active);
+}
+
+// a11y hack using focus-visible npm
+// Set as peerDependency per component and direct dependency for OWCSS
+:host(.focus-visible) {
+  *:focus {
+    @extend %focus-placeholder;
+  }
+}
+
+.focus-visible:focus {
+  @extend %focus-placeholder;
 }
 
 html {

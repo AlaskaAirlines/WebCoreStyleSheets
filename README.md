@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
 
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
@@ -22,10 +22,57 @@ The current version of Orion Web Core Style Sheets supports:
 1. Orion defined breakpoint mixins
 1. CSS Normalize
 1. Orion baseline styles
+1. Orion baselineLTE styles
+1. Utility (functional) CSS classes
+1. Experimental \<input /> styling
+
+## Peer Dependencies
+
+Orion Web Core Style Sheets has a project peer dependency on [Orion Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens), as well as Sass and Style Dictionary. Orion Web Core Style Sheets is not a stand alone project, but is part of a specific dependency chain when building Orion based applications.
 
 ## Dependencies
 
-Orion Web Core Style Sheets has a direct project dependency on [Orion Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens), as well as Sass and Style Dictionary. Orion Web Core Style Sheets is not a stand alone project, but is part of a specific dependency chain when building Orion based applications.
+When using OWCSS, there is a direct dependency on the `focus-visible` library. When using Orion Web Components, the inclusion of the `focus-visible` library is accounted for within the scope fo the component(s). With components, `focus-visible` is defined as a peer dependency.
+
+If the use of OWCSS is not specifically with a component, including the `focus-visible.min.js` file will be required within the scope of the project. For example, the JS may be added to the head of a project:
+
+```html
+<script src="/node_modules/focus-visible/dist/focus-visible.min.js"></script>
+```
+
+or to the scope of any Node.js component architecture:
+
+```javascript
+import 'focus-visible/dist/focus-visible.min.js';
+```
+
+The `focus-visable` library is required for use with experimental a11y UI features
+
+## Accessibility
+
+Use of the the `focus-visible` library brings in the capability to be selective with the UI between clicking/tapping into a control versus tabbing to a control. In most cases, the a11y halo will only appear when a control is tabbed to. But in cases where there is a \<input /> element that supports text and/or triggers a virtual keyboard if a physical keyboard is not present, the focus-visible state will be triggered.
+
+[Selectors Level 4 draft: 9.4. The Focus-Indicated Pseudo-class: :focus-visible](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
+
+CSS to support this capability is within the `_baseline.scss` and `_baselineLTE.scss` files.
+
+### Experimental styles
+
+To help address the UI of \<input /> elements, there is an experimental style sheet located in the npm. Please refer to the documentation in this code for any information related to it's use.
+
+```scss
+@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText
+```
+
+DO NOT include Sass file without a parent wrapper as illustrated below:
+
+```scss
+.[parent-selector] {
+  @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText";
+}
+```
+
+The use of the parent selector is to define a custom selector that will wrap these experimental input style as not to pollute the rest of the app's CSS.
 
 ## Getting started
 

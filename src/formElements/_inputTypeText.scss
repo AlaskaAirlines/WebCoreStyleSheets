@@ -1,0 +1,39 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// This is an expermintal feature and approved for use with caution
+
+// The following selectors will set a common baseline for <input /> elements
+// within the context of a view. The selector's :focus state will remove the standard
+// halo that appears on other components and simply updates the color of the
+// <input /> element's border.
+
+// This is not official and consultation with your team's designer should be
+// addressed prior to inclusion of your project.
+
+// -------------- Use with Sass ----------------------------------------
+
+// DO NOT include Sass file without a parent wrapper as illustrated below:
+
+// .[parent-selector] {
+//   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText";
+// }
+
+// -------------- Use with Sass ----------------------------------------
+
+input[type=text],
+input[type=password],
+input[type=email] {
+  border-width: 0 0 1px 0;
+  border-color: $color-base-shark;
+  border-style: solid;
+  color: $color-type-theme-light-primary;
+
+  &:focus {
+    border-color: $color-accessibility-border-active;
+    outline: 0;
+    box-shadow: unset;
+  }
+}

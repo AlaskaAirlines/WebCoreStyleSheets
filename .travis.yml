@@ -2,11 +2,7 @@ language: node_js
 node_js:
  - "11"
 script:
-  - npm run copyFontsTest
-  - npm run buildTokens
-  - npm run sassLint
-  - npm run buildCss
-  - npm run cssLint
+  - npm test
   - npm run setPatch $TRAVIS_BUILD_ID
 branches:
   only:

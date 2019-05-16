@@ -22,6 +22,7 @@
     "auto-changelog": "^1.13.0",
     "concat": "^1.0.3",
     "copyfiles": "^2.1.0",
+    "husky": "^2.3.0",
     "node-sass": "^4.12.0",
     "sass-lint": "^1.13.1",
     "style-dictionary": "^2.7.0",
@@ -42,7 +43,13 @@
     "buildTokens": "node scripts/styleDictionary.js",
     "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss scripts/testBuild.scss test/css/testBuild.css",
-    "cssLint": "stylelint './test/css/*.css'"
+    "cssLint": "stylelint './test/css/*.css'",
+    "test": "npm run copyFontsTest || npm run buildTokens || npm run sassLint || npm run buildCss || npm run cssLint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "publishConfig": {
     "access": "public"

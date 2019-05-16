@@ -1,0 +1,12 @@
+# standard ignore
+.gitignore
+.sasslintrc
+.stylelintrc
+.travis.yml
+scripts/
+test/
+
+# ignore src
+src/**/*
+
+# overrides

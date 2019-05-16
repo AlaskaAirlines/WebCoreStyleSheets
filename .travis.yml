@@ -1,20 +1,15 @@
 language: node_js
 node_js:
  - "11"
-script:
-  - npm test
-  - npm run setPatch $TRAVIS_BUILD_ID
 branches:
   only:
     - master
 before_deploy:
-  - npm run copyPackage
   - npm run copyFontsDist
-  - npm run copyReadme
   - npm run copySass
   - npm run changelog
   - npm run concat
-  - cd dist
+  - npx semantic-release
 deploy:
   on:
     branch: master

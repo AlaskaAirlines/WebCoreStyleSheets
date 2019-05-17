@@ -26,6 +26,37 @@ The current version of Orion Web Core Style Sheets supports:
 1. Utility (functional) CSS classes
 1. Experimental \<input /> styling
 
+### Importing utility classes and using the !important flag
+
+When using the Utility Classes, there are two ways to include them. Either subscribe to each family of functional selectors individually, or include all families in a single request.
+
+```scss
+// import all functional selectors
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses";
+
+or ...
+
+// impoorting individual selector families
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/displayProperties";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/responsive";
+```
+
+In the event that the `!important` flag is needed for the functional selectors, simply define this variable prior to importing the Utility Class files.
+
+```scss
+// import all functional selectors
+$important: !important;
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses";
+
+or ...
+
+// impoorting individual selector families
+$important: !important;
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/displayProperties";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/responsive";
+```
+
+
 ## Peer Dependencies
 
 Orion Web Core Style Sheets has a project peer dependency on [Orion Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens), as well as Sass and Style Dictionary. Orion Web Core Style Sheets is not a stand alone project, but is part of a specific dependency chain when building Orion based applications.

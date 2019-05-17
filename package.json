@@ -26,6 +26,7 @@
     "copyfiles": "^2.1.0",
     "husky": "^2.3.0",
     "node-sass": "^4.12.0",
+    "npm-run-series": "^1.0.1",
     "sass-lint": "^1.13.1",
     "semantic-release": "^15.13.14",
     "style-dictionary": "^2.7.0",
@@ -43,7 +44,7 @@
     "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss scripts/testBuild.scss test/css/testBuild.css",
     "cssLint": "stylelint './test/css/*.css'",
-    "test": "npm run copyFontsTest || npm run buildTokens || npm run sassLint || npm run buildCss || npm run cssLint"
+    "test": "npm-run-series copyFontsTest buildTokens sassLint buildCss cssLint"
   },
   "husky": {
     "hooks": {

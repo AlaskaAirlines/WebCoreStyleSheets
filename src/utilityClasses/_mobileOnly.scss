@@ -1,0 +1,22 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations
+
+// Functional selectors for the use of defining different UI states per breakpoint
+//
+// Compatibility: https://caniuse.com/#feat=css-mediaqueries
+//
+// Variables are defined by baseline Design Tokens
+
+// Set element display: none on devices larger than mobile
+
+$important: null !default;
+
+.util_is-mobileOnly {
+  @include breakpoint-narrow {
+    display: none $important;
+  }
+}

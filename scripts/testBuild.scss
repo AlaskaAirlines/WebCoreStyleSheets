@@ -3,7 +3,9 @@
 
 
 // Import src resources for testing
-@import 
+
+// $important: !important;
+@import
     './src/breakpoints',
     './src/fonts',
     './src/animation',

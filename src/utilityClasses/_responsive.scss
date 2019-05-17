@@ -1,0 +1,108 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations variable-for-property
+
+$important: null !default;
+
+.util_is-narrowOnly {
+  display: none $important;
+
+  @include breakpoint-narrow {
+    display: block $important;
+  }
+
+  @include breakpoint-medium {
+    display: none $important;
+  }
+}
+
+.util_is-narrowOnly--inline {
+  display: none $important;
+
+  @include breakpoint-narrow {
+    display: inline-block $important;
+  }
+
+  @include breakpoint-medium {
+    display: none $important;
+  }
+}
+
+// Set display: none on devices smaller than large-phone
+.util_is-narrowAppears {
+  display: none $important;
+
+  @include breakpoint-narrow {
+    display: block $important;
+  }
+}
+
+.util_is-narrowAppears--inline {
+  display: none $important;
+
+  @include breakpoint-narrow {
+    display: inline-block $important;
+  }
+}
+
+// Set display: none on mobile and desktop
+.util_is-tabletOnly {
+  display: none $important;
+
+  @include breakpoint-medium {
+    display: block $important;
+  }
+
+  @include breakpoint-wide {
+    display: none $important;
+  }
+}
+
+.util_is-tabletOnly--inline {
+  display: none $important;
+
+  @include breakpoint-medium {
+    display: inline-block $important;
+  }
+
+  @include breakpoint-wide {
+    display: none $important;
+  }
+}
+
+// Set display: none on all devices smaller than tablet
+.util_is-tabletAppears {
+  display: none $important;
+
+  @include breakpoint-medium {
+    display: block $important;
+  }
+}
+
+.util_is-tabletAppears--inline {
+  display: none $important;
+
+  @include breakpoint-medium {
+    display: inline-block $important;
+  }
+}
+
+// Set display: none on all devices smaller than desktop
+.util_is-desktopOnly {
+  display: none $important;
+
+  @include breakpoint-max {
+    display: block $important;
+  }
+}
+
+.util_is-desktopOnly--inline {
+  display: none $important;
+
+  @include breakpoint-max {
+    display: inline-block $important;
+  }
+}

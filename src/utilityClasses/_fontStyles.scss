@@ -1,0 +1,27 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+$important: null !default;
+
+.util_fontWeightBook {
+  font-weight: $weight-book $important;
+}
+
+.util_fontWeightLight {
+  font-weight: $weight-light $important;
+}
+
+.util_type--lg {
+  font-size: $size-font-breakpoint-desktop-lg $important;
+}
+
+.util_type--xl {
+  font-size: $size-font-breakpoint-desktop-xl $important;
+}
+
+.util_type--secondary {
+  color: $color-type-theme-light-secondary $important;
+}

@@ -21,6 +21,9 @@
     "@alaskaairux/orion-design-tokens": "^2.0.526637919",
     "@commitlint/cli": "^7.6.1",
     "@commitlint/config-conventional": "^7.6.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.7",
     "auto-changelog": "^1.13.0",
     "concat": "^1.0.3",
     "copyfiles": "^2.1.0",
@@ -35,9 +38,7 @@
     "stylelint-config-standard": "^18.3.0"
   },
   "scripts": {
-    "changelog": "auto-changelog --template ./scripts/templates/template.hbs --output ./CHANGELOG.md -p -b 5",
     "copySass": "copyfiles -u 1 -V './src/**/*.scss' ./dist",
-    "concat": "concat -o ./README.md ./README.md ./CHANGELOG.md",
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
     "buildTokens": "node scripts/styleDictionary.js",
@@ -58,7 +59,29 @@
     ]
   },
   "release": {
-    "branch": "master"
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "./CHANGELOG.md",
+          "changelogTitle": "# Semantic Release Automated Changelog"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "./CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ],
+      "@semantic-release/github"
+    ]
   },
   "publishConfig": {
     "access": "public"

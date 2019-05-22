@@ -41,6 +41,29 @@ This project utilizes [Conventional Commits](https://www.conventionalcommits.org
 
 All commit messages must be prefixed with a specific type so that the semver release configuration can analyze the commit and apply the correct version release. Please see the following types with their respective meanings.
 
+#### MAJOR
+
+For a MAJOR release, you MUST follow this template. The use of `perf:` and `BREAKING CHANGE:` are needed in order to push a major release.
+
+```
+perf(pencil): remove graphiteWidth option
+
+BREAKING CHANGE: The graphiteWidth option has been removed.
+The default graphite width of 10mm is always used for performance reasons.
+```
+
+#### MINOR
+```
+feat(pencil): add 'graphiteWidth' option
+```
+
+#### PATCH
+```
+fix(pencil): stop graphite breaking when too much pressure applied
+```
+
+#### Other commit types
+
 | type | description |
 |---|---|
 | build | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm) |
@@ -78,9 +101,9 @@ Example messages when using Conventional Commits:
 ```
 $ build: update to Gulp 4.x
 
-$ docs: address issue #14, typo in install instructions 
+$ docs: address issue #14, typo in install instructions
 
-$ perf: restructure API to comply with new feature spec 
+$ perf: restructure API to comply with new feature spec
 
 $ feat: add ability to consume large data as an array versus string
 

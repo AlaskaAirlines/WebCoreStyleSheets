@@ -32,13 +32,13 @@ When using the Utility Classes, there are two ways to include them. Either subsc
 
 ```scss
 // import all functional selectors
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
 
 or ...
 
 // impoorting individual selector families
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/displayProperties";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/responsive";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 ```
 
 In the event that the `!important` flag is needed for the functional selectors, simply define this variable prior to importing the Utility Class files.
@@ -46,14 +46,14 @@ In the event that the `!important` flag is needed for the functional selectors, 
 ```scss
 // import all functional selectors
 $important: !important;
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
 
 or ...
 
 // impoorting individual selector families
 $important: !important;
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/displayProperties";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses/responsive";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 ```
 
 
@@ -92,14 +92,14 @@ CSS to support this capability is within the `_baseline.scss` and `_baselineLTE.
 To help address the UI of \<input /> elements, there is an experimental style sheet located in the npm. Please refer to the documentation in this code for any information related to it's use.
 
 ```scss
-@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText
+@alaskaairux/orion-web-core-style-sheets/dist/formElements/inputTypeText
 ```
 
 DO NOT include Sass file without a parent wrapper as illustrated below:
 
 ```scss
 .[parent-selector] {
-  @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText";
+  @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/formElements/inputTypeText";
 }
 ```
 
@@ -114,7 +114,7 @@ All resources within this repository are distributed via npm and used as individ
 Orion Web Core Style Sheets consists of resources to be ingested a la carte. For example, you wish to use `breakpoints.scss` on an individual component or bring into a global Sass catch-all file, you would use the following example.
 
 ```
-@import "@alaskaairux/orion-web-core-style-sheets/breakpoints";
+@import "@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ```
 
 ## CSS writing conventions

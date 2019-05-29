@@ -21,23 +21,6 @@
   outline: none;
 }
 
-%focus-placeholder {
-  outline: 3px solid var(--color-accessibility-border-active);
-  box-shadow: 0 0 0 3px var(--color-accessibility-border-active);
-}
-
-// a11y hack using focus-visible npm
-// Set as peerDependency per component and direct dependency for OWCSS
-:host(.focus-visible) {
-  *:focus {
-    @extend %focus-placeholder;
-  }
-}
-
-.focus-visible:focus {
-  @extend %focus-placeholder;
-}
-
 html {
   box-sizing: border-box;
   font-size: 1rem;
@@ -52,23 +35,37 @@ body,
   color: $color-type-theme-light-primary;
 }
 
-p,
 .baseParagraph {
   margin-bottom: $size-margin-baseline;
+
+  .hyperlink {
+    text-decoration: underline;
+  }
 }
 
-a,
 .hyperlink {
   color: $color-type-theme-light-link;
-  text-decoration: underline;
+  padding: 0 $size-scale-sml;
+  text-decoration: none;
+
+  &--inline {
+    padding: 0;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none !important;  // sass-lint:disable-line no-important
+    }
+  }
 
   &:visited {
     color: $color-type-theme-light-link;
   }
 
-  &:hover {
-    color: $color-type-theme-light-link-hover;
-    text-decoration: none;
+  &:not(.is-touching) {
+    &:hover {
+      color: $color-type-theme-light-link-hover;
+      text-decoration: underline;
+    }
   }
 }
 

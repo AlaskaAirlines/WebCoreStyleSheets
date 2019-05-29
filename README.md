@@ -87,7 +87,7 @@ Use of the the `focus-visible` library brings in the capability to be selective 
 
 CSS to support this capability is within the `_baseline.scss` and `_baselineLTE.scss` files.
 
-### Experimental styles
+## Experimental styles
 
 To help address the UI of \<input /> elements, there is an experimental style sheet located in the npm. Please refer to the documentation in this code for any information related to it's use.
 

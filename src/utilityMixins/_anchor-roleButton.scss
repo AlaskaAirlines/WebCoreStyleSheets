@@ -1,0 +1,46 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Creates Sass variable or custom property output for multi-use button shape
+//
+// $style  - sets user's requst for style of variable return
+//
+// Example:
+// .ods-roleButton {
+//   @include anchorButton(sass);
+// }
+//
+// .button {
+//   @include anchorButton(css);
+// }
+
+
+@mixin anchorButton($style) {
+  $color: null;
+  $line-height: null;
+  $padding: null;
+  $hover-text-decoration: underline;
+  $hover-cursor: pointer;
+
+  @if $style == css {
+    color: var(--color-type-theme-light-link);
+    line-height: var(--unitless-scale-xxl);
+    padding: 0 var(--size-scale-med);
+
+  } @else if $style == sass {
+    color: $color-type-theme-light-link;
+    line-height: $unitless-scale-xxl;
+    padding: 0 $size-scale-med;
+  }
+
+  color: $color;
+  line-height: $line-height;
+  padding: $padding;
+
+  &:hover {
+    text-decoration: $hover-text-decoration;
+    cursor: $hover-cursor;
+  }
+}

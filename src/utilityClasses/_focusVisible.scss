@@ -1,0 +1,17 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// need to document why this is here, what it's used for and how ...
+
+// focus-visible
+// ==================================================
+@import "../utilityMixins/focusVisible";
+
+.focus-visible {
+  &.hyperlink,
+  &.ods-roleButton {
+    @include focus(sass)
+  }
+}

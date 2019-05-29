@@ -1,0 +1,18 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Wrapper class around anchor-roleButton utility mixin
+
+// This selector is NOT auto included with any other web code style sheet.
+// If the ods-roleButton selector is reuqired, it is to be individually included.
+
+// Example:
+// @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleButton";
+
+@import "../utilityMixins/anchor-roleButton";
+
+.ods-roleButton {
+  @include anchorButton(sass);
+}

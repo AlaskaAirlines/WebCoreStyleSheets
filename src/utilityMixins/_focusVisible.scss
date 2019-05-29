@@ -1,0 +1,54 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Creates Sass variable or custom property output for multi-use focus-visible shape
+//
+// $style  - sets user's requst for style of variable return
+//
+// Example - global styles:
+// .focus-visible {
+//   &.hyperlink,
+//   &.ods-button {
+//     @include focus(sass)
+//   }
+// }
+//
+// Example - custom element styles:
+// :host(.focus-visible) {
+//   .hyperlink,
+//   .button {
+//     @include focus(css);
+//   }
+// }
+
+// sass-lint:disable no-important
+
+@mixin focus($style) {
+  $color: null;
+  $background-color: null;
+  $outline: null;
+  $hover-color: null;
+
+  @if $style == css {
+    $color: var(--color-base-white);
+    $background-color: var(--color-type-theme-light-link);
+    $outline: var(--color-type-theme-light-link) solid var(--size-scale-micro);
+    $hover-color: var(--ods-hyperlink-focus-visible-hover-color) !important;
+
+  } @else if $style == sass {
+    $color: $color-base-white;
+    $background-color: $color-type-theme-light-link;
+    $outline: $color-type-theme-light-link solid $size-scale-micro;
+    $hover-color: $color-base-white !important;
+  }
+
+  color: $color;
+  background-color: $background-color;
+  outline: $outline;
+
+  &:hover {
+    color: $hover-color;
+  }
+}

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.0.0...v2.1.0) (2019-06-07)
+
+
+### Features
+
+* refactor support focus-visible state ([15066f6](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/15066f6))
+
 # [2.0.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v1.1.1...v2.0.0) (2019-05-23)
 
 

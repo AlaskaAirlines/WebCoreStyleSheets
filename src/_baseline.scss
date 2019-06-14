@@ -48,17 +48,33 @@ body,
   padding: 0 $size-scale-sml;
   text-decoration: none;
 
+  &:visited {
+    color: $color-type-theme-light-link;
+  }
+
   &--inline {
     padding: 0;
     text-decoration: underline;
 
-    &:hover {
-      text-decoration: none !important;  // sass-lint:disable-line no-important
+    &:not(.is-touching) {
+      &:hover {
+        text-decoration: none !important;  // sass-lint:disable-line no-important
+      }
     }
   }
 
-  &:visited {
-    color: $color-type-theme-light-link;
+  &--darktheme {
+    color: $color-type-theme-dark-link;
+
+    &:not(.is-touching) {
+      &:hover {
+        color: $color-type-theme-dark-link-hover;
+      }
+    }
+
+    &:visited {
+      color: $color-type-theme-dark-link;
+    }
   }
 
   &:not(.is-touching) {

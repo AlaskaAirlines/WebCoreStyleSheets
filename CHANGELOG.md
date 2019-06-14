@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.2.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.1.1...v2.2.0) (2019-06-14)
+
+
+### Features
+
+* update support for hyperlink component; update semantic release ([4daab88](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/4daab88))
+
 ## [2.1.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.1.0...v2.1.1) (2019-06-14)
 
 

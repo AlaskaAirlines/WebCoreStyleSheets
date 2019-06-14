@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.2.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.2.0...v2.2.1) (2019-06-14)
+
+
+### Bug Fixes
+
+* address missed work with hyperlink darktheme ([9a050fc](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/9a050fc))
+
 # [2.2.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.1.1...v2.2.0) (2019-06-14)
 
 

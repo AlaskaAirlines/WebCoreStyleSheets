@@ -35,7 +35,7 @@
     $color: var(--color-base-white);
     $background-color: var(--color-type-theme-light-link);
     $outline: var(--color-type-theme-light-link) solid var(--size-scale-micro);
-    $hover-color: var(--ods-hyperlink-focus-visible-hover-color) !important;
+    $hover-color: var(--color-base-white) !important;
 
   } @else if $style == sass {
     $color: $color-base-white;

@@ -14,5 +14,5 @@
 @import "../utilityMixins/anchor-roleButton";
 
 .ods-roleButton {
-  @include anchorButton(sass);
+  @include anchorButton(sass, noncomponent);
 }

@@ -5,6 +5,13 @@
 
 // sass-lint:disable no-duplicate-properties
 
+// @font-face is not supported in SassDocs
+// See https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/howToUseFonts.md for full details
+
+/// Baseline font-face setting for using web based custom fonts - font weight light
+/// @group Baseline
+/// @example scss - import src file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @font-face {
   font-family: $asset-font-circular-family-name;
   src: url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-light}.eot");
@@ -17,6 +24,10 @@
   font-display: fallback;
 }
 
+/// Baseline font-face setting for using web based custom fonts - font weight book
+/// @group Baseline
+/// @example scss - import src file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @font-face {
   font-family: $asset-font-circular-family-name;
   src: url("#{$asset-font-circular-dir}#{$asset-font-circular-filename}#{$asset-font-circular-weight-book}.eot");

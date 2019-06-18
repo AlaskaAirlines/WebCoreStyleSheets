@@ -14,17 +14,47 @@ Orion Web Core Style sheets is a responsive, mobile-first collection of styles a
 
 This repository is a library of core level styles, functions, and mixins that can be used for consistent front-end UI development.
 
-## Current support
+## OWCSS Supports ...
+
+See [https://alaskaairlines.github.io/](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for automated documentation build.
 
 The current version of Orion Web Core Style Sheets supports:
 
-1. `AS Circular` web font, font file resources and `@font-face` Sass -- [Install Instructions](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/docs/howToUseFonts.md)
+1. `AS Circular` web font, font file resources and `@font-face` Sass -- [Install Instructions](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/howToUseFonts.md)
 1. Orion defined breakpoint mixins
 1. CSS Normalize
 1. Orion baseline styles
 1. Orion baselineLTE styles
 1. Utility (functional) CSS classes
 1. Experimental \<input /> styling
+
+### Orion Web Core Normalize
+
+While there are many versions of a normalize style sheet, the normalized used in Orion Web Core Style Sheets has been specifically engineered to meet the design direction of the Alaska Air UX and Design standards. 
+
+To review, please see [./src/normalize.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/src/_normalize.scss) for any specific use notation. 
+
+### baseline.scss versus baselineLTE.scss?
+
+In the repository are two versions of the baseline styles. The reason for this is simply to support HTML Web Components. Due to the encapsulation model, not all selectors that would be needed for larger scale app development is needed are required for Web Components. 
+
+For global scope projects, the use of `baseline.scss` would be preferred over `baselineLTE.scss`. 
+
+`baselineLTE.scss` is a dependency of `baseline.scss`.
+
+### Utility Classes / Functional CSS
+
+Orion Web Core Style Sheets supports an ever evolving array of functional single-responsibility selectors. 
+
+These selectors are NOT imported by default, to install whole set:
+
+```scss
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClass";
+```
+
+To see individual families of utility classes, see [.src/utilityClasses/](src/utilityClasses).
+
+Definitions of all utility classes can also be found in the [CSS docs](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) site.
 
 ### Importing utility classes and using the !important flag
 
@@ -121,7 +151,7 @@ Orion Web Core Style Sheets consists of resources to be ingested a la carte. For
 
 The implementation of Orion Web Code Style Sheets uses a naming convention model that will be strictly adhered to throughout this library and compliance is expected for any contributed updates.
 
-To learn more, please reference [this document](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/docs/cssConventions.md).
+To learn more, please reference [this document](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/cssConventions.md).
 
 ## Tests
 

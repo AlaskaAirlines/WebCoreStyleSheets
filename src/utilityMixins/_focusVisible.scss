@@ -3,28 +3,27 @@
 
 // ---------------------------------------------------------------------
 
-// Creates Sass variable or custom property output for multi-use focus-visible shape
-//
-// $style  - sets user's requst for style of variable return
-//
-// Example - global styles:
-// .focus-visible {
-//   &.hyperlink,
-//   &.ods-button {
-//     @include focus(sass)
-//   }
-// }
-//
-// Example - custom element styles:
-// :host(.focus-visible) {
-//   .hyperlink,
-//   .button {
-//     @include focus(css);
-//   }
-// }
-
 // sass-lint:disable no-important
 
+/// Creates Sass variable or custom property output for multi-use focus-visible shape
+/// @group utility-mixins
+/// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+/// @example scss - Set properties for Sass output
+///  .focus-visible {
+///    &.hyperlink,
+///    &.ods-button {
+///      @include focus(sass)
+///    }
+///  }
+/// @example scss - Set properties for CSS output
+///  :host(.focus-visible) {
+///    .hyperlink,
+///    .button {
+///      @include focus(css);
+///    }
+///  }
 @mixin focus($style) {
   $color: null;
   $background-color: null;

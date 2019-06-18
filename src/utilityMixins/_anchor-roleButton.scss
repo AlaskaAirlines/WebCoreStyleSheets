@@ -3,21 +3,20 @@
 
 // ---------------------------------------------------------------------
 
-// Creates Sass variable or custom property output for multi-use button shape
-//
-// $style   - sets user's requst for style of variable return (css, sass)
-// $env     - sets variable for environemnt that the CSS will appear in (component, noncomponent)
-//
-// Example:
-// .ods-roleButton {
-//   @include anchorButton(sass, noncomponent);
-// }
-//
-// .button {
-//   @include anchorButton(css, component);
-// }
-
-
+/// Creates Sass variable or custom property output for multi-use button shape
+/// @group utility-mixins
+/// @param {string} $style [] - Specifies the style type (sass, css)
+/// @param {string} $env [] - Specifies the style environment (component, noncomponent)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
+/// @example scss - Set properties for Sass output that is NOT within a component
+///   .ods-roleButton {
+///       @include anchorButton(sass, noncomponent);
+///   }
+/// @example scss - Set properties for CSS output that IS within a component
+///   .button {
+///       @include anchorButton(css, component)
+///   }
 @mixin anchorButton($style, $env) {
   $color: null;
   $hover-color: null;

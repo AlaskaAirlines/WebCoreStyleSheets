@@ -7,8 +7,12 @@
 
 // This selector is NOT auto included with any other web code style sheet.
 
-// Example:
-// @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
+/// `.ods-tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
+///
+/// Plase selector on outer `div` or `section` container with the `role="tablist"` also applied.
+/// @group ODS-Utility
+/// @example scss - import selector file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
 
 .ods-tablist {
   border-width: 0 0 1px 0;

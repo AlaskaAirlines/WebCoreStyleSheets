@@ -3,10 +3,43 @@
 
 // ---------------------------------------------------------------------
 
-// sass-lint:disable mixins-before-declarations variable-for-property
+// sass-lint:disable mixins-before-declarations variable-for-property no-important
 
+/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
+/// By default the `!important` flag is NOT set on any CSS selector.
+/// @group responsive-Utility
+/// @prop {Boolean} $important [null] - manage use of `!important` flag
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
+/// @example scss - update value prior to import
+///   $important: true;
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 $important: null !default;
 
+@if $important {
+  $important: !important;
+}
+
+/// Utility class to restrain visibility of UI element to __mobile__ users only.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
+.util_is-mobileOnly {
+  @include breakpoint-narrow {
+    display: none $important;
+  }
+}
+
+/// Utility class to restrain `block` visibility of UI element between __narrow__ and __medium__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowOnly {
   display: none $important;
 
@@ -19,6 +52,13 @@ $important: null !default;
   }
 }
 
+/// Utility class to restrain `inline-block` visibility of UI element between __narrow__ and __medium__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowOnly--inline {
   display: none $important;
 
@@ -31,7 +71,13 @@ $important: null !default;
   }
 }
 
-// Set display: none on devices smaller than large-phone
+/// Utility class to restrain `block` visibility of UI element for __narrow__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowAppears {
   display: none $important;
 
@@ -40,6 +86,13 @@ $important: null !default;
   }
 }
 
+/// Utility class to restrain `inline-block` visibility of UI element for __narrow__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowAppears--inline {
   display: none $important;
 
@@ -48,7 +101,13 @@ $important: null !default;
   }
 }
 
-// Set display: none on mobile and desktop
+/// Utility class to restrain `block` visibility of UI element between __medium__ and __wide__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletOnly {
   display: none $important;
 
@@ -61,6 +120,13 @@ $important: null !default;
   }
 }
 
+/// Utility class to restrain `inline-block` visibility of UI element between __medium__ and __wide__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletOnly--inline {
   display: none $important;
 
@@ -73,7 +139,13 @@ $important: null !default;
   }
 }
 
-// Set display: none on all devices smaller than tablet
+/// Utility class to restrain `block` visibility of UI element for __medium__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletAppears {
   display: none $important;
 
@@ -82,6 +154,13 @@ $important: null !default;
   }
 }
 
+/// Utility class to restrain `inline-block` visibility of UI element for __medium__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletAppears--inline {
   display: none $important;
 
@@ -90,7 +169,13 @@ $important: null !default;
   }
 }
 
-// Set display: none on all devices smaller than desktop
+/// Utility class to restrain `block` visibility of UI element for __max__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-desktopOnly {
   display: none $important;
 
@@ -99,6 +184,13 @@ $important: null !default;
   }
 }
 
+/// Utility class to restrain `inline-block` visibility of UI element for __max__ screens.
+///
+/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-desktopOnly--inline {
   display: none $important;
 

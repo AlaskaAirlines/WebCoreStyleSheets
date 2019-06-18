@@ -3,25 +3,23 @@
 
 // ---------------------------------------------------------------------
 
-// This is an expermintal feature and approved for use with caution
-
-// The following selectors will set a common baseline for <input /> elements
-// within the context of a view. The selector's :focus state will remove the standard
-// halo that appears on other components and simply updates the color of the
-// <input /> element's border.
-
-// This is not official and consultation with your team's designer should be
-// addressed prior to inclusion of your project.
-
-// -------------- Use with Sass ----------------------------------------
-
-// DO NOT include Sass file without a parent wrapper as illustrated below:
-
-// .[parent-selector] {
-//   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText";
-// }
-
-// -------------- Use with Sass ----------------------------------------
+/// This is an expermintal feature and approved for use with caution
+///
+/// The following selectors will set a common baseline for `<input />` elements
+/// within the context of a view. The selector's :focus state will remove the standard
+/// halo that appears on other components and simply updates the color of the
+/// `<input />` element's border.
+///
+/// This is not official and consultation with your team's designer should be
+/// addressed prior to inclusion of your project.
+///
+/// DO NOT include Sass file without a parent wrapper as illustrated in the example below:
+/// @group Experimental
+///
+/// @example scss - import selector file with parent wrapper
+///   .[parent-selector] {
+///     @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/formElements/inputTypeText";
+///   }
 
 input[type=text],
 input[type=password],

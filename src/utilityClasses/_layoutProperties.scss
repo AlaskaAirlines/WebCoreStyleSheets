@@ -4,88 +4,229 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
+// sass-lint:disable no-important
+
+/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
+/// By default the `!important` flag is NOT set on any CSS selector.
+/// @group Layout-Utility
+/// @prop {Boolean} $important [null] - manage use of `!important` flag
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+/// @example scss - update value prior to import
+///   $important: true;
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 $important: null !default;
 
+@if $important {
+  $important: !important;
+}
+
+/// Utility class to float `left`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_floatLeft {
   float: left $important;
 }
 
+/// Utility class to float `right`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_floatRight {
   float: right $important;
 }
 
+/// Utility class to center content
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginAuto {
   margin: 0 auto $important;
 }
 
-.util_marginBotton--none {
+/// Utility class to remove any bottom margin from an element
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginBottom--none {
   margin-bottom: 0 $important;
 }
 
-.util_marginBotton--sml{
+/// Utility class to margin-bottom to `sml`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginBottom--sml{
   margin-bottom: $size-scale-sml $important;
 }
 
-.util_marginBotton--med {
+/// Utility class to margin-bottom to `med`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginBottom--med {
   margin-bottom: $size-scale-med $important;
 }
 
-.util_marginBotton--lg {
+/// Utility class to margin-bottom to `lg`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginBottom--lg {
   margin-bottom: $size-scale-lg $important;
 }
 
-.util_marginBotton--xl {
+/// Utility class to margin-bottom to `xl`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginBottom--xl {
   margin-bottom: $size-scale-xl $important;
 }
 
+/// Utility class to remove any margin from the top of an element
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginTop--none {
   margin-top: 0 $important;
 }
 
+/// Utility class to margin-top to `sml`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginTop--sml{
   margin-top: $size-scale-sml $important;
 }
 
+/// Utility class to margin-top to `med`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginTop--med {
   margin-top: $size-scale-med $important;
 }
 
+/// Utility class to margin-top to `lg`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginTop--lg {
   margin-top: $size-scale-lg $important;
 }
 
+/// Utility class to margin-top to `xl`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginTop--xl {
   margin-top: $size-scale-xl $important;
 }
 
+/// Utility class to margin-right to `sml`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginRight--sml {
   margin-right: $size-scale-sml $important;
 }
 
+/// Utility class to margin-right to `med`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginRight--med {
   margin-right: $size-scale-med $important;
 }
 
+/// Utility class to margin-right to `lg`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginRight--lg {
   margin-right: $size-scale-lg $important;
 }
 
+/// Utility class to margin-right to `xl`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginRight--xl {
   margin-right: $size-scale-xl $important;
 }
 
+/// Utility class to margin-left to `sml`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginLeft--sml {
   margin-left: $size-scale-sml $important;
 }
 
+/// Utility class to margin-left to `med`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginLeft--med {
   margin-left: $size-scale-med $important;
 }
 
+/// Utility class to margin-left to `lg`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginLeft--lg {
   margin-left: $size-scale-lg $important;
 }
 
+/// Utility class to margin-left to `xl`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginLeft--xl {
   margin-left: $size-scale-xl $important;
 }

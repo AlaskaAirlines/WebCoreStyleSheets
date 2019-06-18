@@ -3,17 +3,21 @@
 
 // ---------------------------------------------------------------------
 
-// `.focus-visible` is a class assigned to a DOM node as a user tabs through the UI
-// See npm focus-visible polyfill https://www.npmjs.com/package/focus-visible
-// See CSSWG spec https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo
-
-// The role of this selector is to apply the designed `:focus-visible`
-// style to DOM nodes that __ARE NOT__ Orion Web Components
-
 // focus-visible
 // ====================================================================
 @import "../utilityMixins/focusVisible";
 
+/// `.focus-visible` is a class assigned to a DOM node as a user tabs through the UI
+///
+/// See npm focus-visible polyfill https://www.npmjs.com/package/focus-visible
+///
+/// See CSSWG spec https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo
+///
+/// The role of this selector is to apply the designed `:focus-visible`
+/// style to DOM nodes that __ARE NOT__ Orion Web Components
+/// @group Accessibility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/focusVisible";
 .focus-visible {
   &.hyperlink,
   &.ods-roleButton,

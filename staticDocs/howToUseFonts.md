@@ -10,25 +10,27 @@ When using these web fonts, be sure to add this Sass reference of the `@font-fac
 
 ## Include in Webpack pipeline
 
-When using Webpack there are a few different ways that these files can be referenced. The end goal is that the resource files need to be referenced for local development and packaged for production builds. See the following scenarios for instructions.
+Webpack offers a few different solutions to make using web fonts easy.
 
-**NOTE:** Again, please **DO NOT** manually copy these files to your local project and add to version control. It is important that these font files are referenced from the npm package for proper version control and distribution.
+**NOTE:** Again, please **DO NOT** manually copy these files to your local project and add to version control. It is important that these font files are referenced from the npm package for proper versioning and distribution.
 
 ### With full access to Webpack
 
-When using the `public` directory as a dev/build resource of assets, it is suggested that you use the `copy-webpack-plugin` plugin. To install in your project, run the following code:
+If using the `public` directory as a dev/build resource of assets, it is suggested that you use the `copy-webpack-plugin` plugin. 
+
+To install:
 
 ```
 $ npm i -D copy-webpack-plugin
 ```
 
-In your `webpack.config.js` file at the following dependency:
+In `webpack.config.js` file add the following dependency:
 
 ```
 const copyWebpackPlugin = require("copy-webpack-plugin");
 ```
 
-Within the plugins section of the webpack.config.js file, at the following reference:
+Within the plugins section of the webpack.config.js file, add the following reference:
 
 ```
 plugins: [
@@ -46,9 +48,7 @@ plugins: [
 
 ### Without direct to Webpack
 
-If you are not using a `build.js` process and have not ejected your Webpack configurations, please do the following:
-
-Install this npm dependency
+If the project is using a `build.js` process and have not ejected your Webpack configurations, please add the following to the project's `package.json` file:
 
 ```js
 $ npm i copyfiles -D
@@ -60,9 +60,16 @@ $ npm i copyfiles -D
 }
 ```
 
-## Include in Gulp pipeline
+## CSS/Sass support 
 
-more to come ...
+Using Orion Design System fonts has a dependency on [Orion Design Tokens](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens) and [Sass](https://sass-lang.com). Please see the [instal](https://github.com/AlaskaAirlines/OrionDesignTokens#install) instructions for any questions regarding Orion Design Tokens.
+
+To install supporting Sass into your project add the following lines to the project's main Sass stylesheet:
+
+```scss
+@import "~@alaskaairux/orion-icons/dist/fonts";
+@import "~@alaskaairux/orion-icons/dist/baseline";
+```
 
 ## Need more help?
 

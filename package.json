@@ -30,7 +30,9 @@
     "husky": "^2.4.1",
     "node-sass": "^4.12.0",
     "npm-run-series": "^1.0.1",
+    "replace-in-file": "^4.1.0",
     "sass-lint": "^1.13.1",
+    "sassdoc": "^2.7.0",
     "semantic-release": "^15.13.16",
     "style-dictionary": "^2.8.0",
     "stylelint": "^10.1.0",
@@ -45,11 +47,12 @@
     "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss scripts/testBuild.scss test/css/testBuild.css",
     "cssLint": "stylelint './test/css/*.css'",
-    "test": "npm-run-series copyFontsTest buildTokens sassLint buildCss cssLint"
+    "test": "npm-run-series copyFontsTest buildTokens sassLint buildCss cssLint",
+    "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "rm -rf ./docs && npm run sassdoc && npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

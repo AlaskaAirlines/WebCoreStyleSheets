@@ -5,6 +5,8 @@
 
 // sass-lint:disable mixins-before-declarations
 
+/// Global selector to address box-model and default `:focus` pseudo elements.
+/// @group Baseline
 * {
   &:before,
   &:after {
@@ -17,6 +19,8 @@
   }
 }
 
+/// Selector set to enable use of [focus visible](https://www.npmjs.com/package/focus-visible) polyfill.
+/// @group Accessibility
 .focus-visible :focus:not(.focus-visible) {
   outline: none;
 }

@@ -3,20 +3,37 @@
 
 // ---------------------------------------------------------------------
 
-// Creates baseline animation transition as CSS properties are overwritten in context.
-//
-// $property  - sets the CSS properties to which a transition effect should be applied
-// $duration  - sets the length of time a transition animation should take to complete
-// $timing    - sets transition-timing-function and transition-delay
-//
-// Compatibility: https://caniuse.com/#search=transition
-//
-// Defaults are set by baseline Design Tokens
-// To override values, define in element/component shape JSON and address mixin arguments
-//
-// Example:
-// @include transition($property, $duration, $timing);
+/// Provides a way to control animation speed when changing CSS properties.
+///
+/// Defaults are set by baseline Design Tokens
+///
+/// To override values, define in element/component shape JSON and address mixin arguments
+///
+/// Compatibility: https://caniuse.com/#feat=css-transitions
+///
+///
+/// @group Animation
+///
+/// @param {string} $property [$animation-default-property] - Specifies the name of the CSS property the transition effect is for
+/// @param {string} $duration [$animation-default-duration] - Specifies how many seconds or milliseconds a transition effect takes to complete
+/// @param {string} $timing [$animation-default-timing] - Specifies the speed curve of the transition effect (ease, linear, ease-in, ease-out, ease-in-out)
+/// @param {string} $delay [null] - Specifies a delay (in seconds) for the transition effect
+///
+/// @output Simple method of animating certain properties of an element, with ability to define property, duration, delay and timing function.
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+///
+/// @example scss - Set animation using default properties
+///   .button {
+///       @include transition;
+///   }
+///
+/// @example scss - Set animation using custom properties
+///   .button {
+///       @include transition(color, 0.3s, ease);
+///   }
 
-@mixin transition($property: $animation-default-property, $duration: $animation-default-duration, $timing: $animation-default-timing) {
-  transition: $property $duration $timing;
+@mixin transition($property: $animation-default-property, $duration: $animation-default-duration, $timing: $animation-default-timing, $delay: null) {
+  transition: $property $duration $timing $delay;
 }

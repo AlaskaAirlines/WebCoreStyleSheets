@@ -3,21 +3,20 @@
 
 // ---------------------------------------------------------------------
 
-// Creates Sass variable or custom property output for multi-use tab shape
-//
-// $style   - sets user's requst for style of variable return (css, sass)
-// $env     - sets variable for environemnt that the CSS will appear in (component, noncomponent)
-//
-// Example:
-// .ods-roleTab {
-//   @include anchorTab(sass);
-// }
-//
-// .hyperlink--tab {
-//   @include anchorTab(css);
-// }
-
-
+/// Creates Sass variable or custom property output for multi-use tab shape
+/// @group utility-mixins
+/// @param {string} $style [] - Specifies the style type (sass, css)
+/// @param {string} $env [] - Specifies the style environment (component, noncomponent)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleTab";
+/// @example scss - Set properties for Sass output that is NOT within a component
+///   .ods-roleTab {
+///      @include anchorTab(sass, noncomponent);
+///   }
+/// @example scss - Set properties for CSS output that IS within a component
+///   .hyperlink--tab {
+///       @include anchorTab(css, component)
+///   }
 @mixin anchorTab($style, $env) {
   $color: null;
   $border-color: null;

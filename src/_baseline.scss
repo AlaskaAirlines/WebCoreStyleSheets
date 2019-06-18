@@ -5,27 +5,17 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property
 
-* {
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
+@import "baselineLTE";
 
-  // default experience is to remove all a11y enhancements
-  &:focus {
-    outline: none;
-  }
-}
-
-.focus-visible :focus:not(.focus-visible) {
-  outline: none;
-}
-
+/// Baseline HTML setting to establish box-model and default font size.
+/// @group Baseline
 html {
   box-sizing: border-box;
   font-size: 1rem;
 }
 
+/// Set baseline type settings for `body` elment or with the use of the `baseType` selector.
+/// @group Baseline
 body,
 .baseType {
   font-family: $font-family-base;
@@ -35,6 +25,10 @@ body,
   color: $color-type-theme-light-primary;
 }
 
+/// Sets standard `margin-bottom` for all paragraph style content
+///
+/// Use of nested `.hyperlink` defines underline text-decoration for anchor tags
+/// @group Baseline
 .baseParagraph {
   margin-bottom: $size-margin-baseline;
 
@@ -43,6 +37,10 @@ body,
   }
 }
 
+/// Baseline hyperlink styles as mirrored in ods-hyperlink
+///
+/// Support for: `.hyperlink--inline`, and `.hyperlink--darktheme`
+/// @group Baseline
 .hyperlink {
   color: $color-type-theme-light-link;
   padding: 0 $size-scale-sml;
@@ -85,16 +83,26 @@ body,
   }
 }
 
+/// Baseline block Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
+///
+/// Example HTML - `<element class="heading"> ... </element>`
+/// @group Heading
 .heading {
   margin: $size-margin-header-y-axis $size-margin-header-x-axis;
   font-weight: inherit;
   line-height: $vertical-alignment-heading;
 }
 
+/// Heading utility
+/// @group Heading
 .heading--flushLeft {
   margin-left: 0;
 }
 
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// Example HTML - `<element class="heading heading--max"> ... </element>`
+/// @group Heading
 .heading--max {
   font-size: $size-font-breakpoint-mobile-max;
   margin-top: 0;
@@ -104,6 +112,10 @@ body,
   }
 }
 
+/// Section title for content relating to the main title. Secondary Headings or titles. Used in conjunction with `.heading` selector
+///
+/// Example HTML - `<element class="heading heading--xxl"> ... </element>`
+/// @group Heading
 .heading--xxl {
   font-size: $size-font-breakpoint-mobile-xxl;
 
@@ -112,6 +124,10 @@ body,
   }
 }
 
+/// Subtitle for main title or specific sub-section content relating to a section. Used in conjunction with `.heading` selector
+///
+/// Example HTML - `<element class="heading heading--xl"> ... </element>`
+/// @group Heading
 .heading--xl {
   font-size: $size-font-breakpoint-mobile-xl;
 
@@ -120,6 +136,10 @@ body,
   }
 }
 
+/// Label for content relating to a specific sub-section. Can follow any title. Used in conjunction with `.heading` selector
+///
+/// Example HTML - `<element class="heading heading--lg"> ... </element>`
+/// @group Heading
 .heading--lg {
   font-size: $size-font-breakpoint-mobile-lg;
 
@@ -128,11 +148,19 @@ body,
   }
 }
 
+/// Legal copy, disclaimers, and footnotes below applicable content section. Above input as floating label, below input as help or error text.
+///
+/// Example HTML - `<small> ... </small>` or `<element class="type--small"> ... </element>`
+/// @group Baseline
 small,
 .type--small {
   font-size: $size-font-breakpoint-all-small;
 }
 
+/// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen.
+///
+/// Example HTML - `<img src=" ... " alt="" />`
+/// @group Responsive
 img {
   display: block;
   width: 100%;

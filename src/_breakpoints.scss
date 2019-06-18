@@ -6,63 +6,109 @@
 // The following mixins provide pre-configured Orion approved
 // breakpoints when development mobile-first UIs.
 
+/// Standard breakpoint to support handheld resolutions that specifically fall between 480px - 840px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include phone-large;
+///   }
 @mixin phone-large {
   @media screen and (min-width: $breakpoint-width-narrow) and (max-width: $breakpoint-width-medium - 1px) {
     @content;
   }
 }
 
-
+/// Standard breakpoint to support tablet sized devices that specifically fall between 840px - 1024px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include tablet;
+///   }
 @mixin tablet {
   @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
     @content;
   }
 }
 
+/// Standard breakpoint to support resolutions greater than 1440px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include breakpoint-max ;
+///   }
 @mixin breakpoint-max {
   @media screen and (min-width: $breakpoint-width-max) {
     @content;
   }
 }
 
+/// Standard breakpoint to support resolutions greater than 1024px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include breakpoint-wide ;
+///   }
 @mixin breakpoint-wide {
   @media screen and (min-width: $breakpoint-width-wide) {
     @content;
   }
 }
 
+/// Standard breakpoint to support resolutions greater than 840px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include breakpoint-medium ;
+///   }
 @mixin breakpoint-medium {
   @media screen and (min-width: $breakpoint-width-medium) {
     @content;
   }
 }
 
+/// Standard breakpoint to support resolutions greater than 480px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include breakpoint-narrow ;
+///   }
 @mixin breakpoint-narrow {
   @media screen and (min-width: $breakpoint-width-narrow) {
     @content;
   }
 }
 
-// Open format mixin to define any breakpoint
-//
-// $breakpointValue  - sets value of media breakpoint 
-// $mediaFeature  - sets feature value, defaults to min-width
-// See also: https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features
-//
-// Compatibility: https://caniuse.com/#feat=css-mediaqueries
-//
-// Defaults are set by baseline Design Tokens
-// To override values, define in element/component shape JSON and address mixin arguments
-//
-// Example:
-// .foo {
-//   color: orange;
-  
-//   @include breakpoint(400px) {
-//     color: green;
-//   }
-// }
 
+/// Open format mixin to define any breakpoint.
+///
+/// See also: https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features
+///
+/// Compatibility: https://caniuse.com/#feat=css-mediaqueries
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group Responsive
+/// @param {string} $breakpointValue [] - sets value of media breakpoint
+/// @param {string} $mediaFeature  [min-width] - sets feature value, defaults to
+/// @example scss - Set breakpoint using manually entered properties
+///   .foo {
+///     color: orange;
+///
+///     @include breakpoint(400px) {
+///       color: green;
+///     }
+///   }
 @mixin breakpoint($breakpointValue, $mediaFeature: min-width) {
   @media screen and (#{$mediaFeature}: $breakpointValue) {
     @content;

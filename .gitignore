@@ -4,8 +4,8 @@ node_modules
 build
 test
 dist
-css
 example/temp
 example/prodBuild/
 example/tokensBuild/
-*.html
+sass-lint.html
+sassdoc

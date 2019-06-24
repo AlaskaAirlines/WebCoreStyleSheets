@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.4.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.3.0...v2.4.0) (2019-06-24)
+
+
+### Features
+
+* address support for button a11y ([adeea98](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/adeea98))
+
 # [2.3.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.2.1...v2.3.0) (2019-06-14)
 
 

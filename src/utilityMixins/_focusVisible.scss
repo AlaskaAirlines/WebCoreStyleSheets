@@ -14,17 +14,16 @@
 ///  .focus-visible {
 ///    &.hyperlink,
 ///    &.ods-button {
-///      @include focus(sass)
+///      @include focus-hyperlink(sass)
 ///    }
 ///  }
-/// @example scss - Set properties for CSS output
+/// @example css - Set properties for CSS output
 ///  :host(.focus-visible) {
-///    .hyperlink,
-///    .button {
-///      @include focus(css);
+///    .hyperlink
+///      @include focus-hyperlink(css);
 ///    }
 ///  }
-@mixin focus($style) {
+@mixin focus-hyperlink($style) {
   $color: null;
   $background-color: null;
   $outline: null;
@@ -50,4 +49,42 @@
   &:hover {
     color: $hover-color;
   }
+}
+
+/// Creates Sass variable or custom property output for multi-use focus-visible shape
+/// @group utility-mixins
+/// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+/// @example css - Set properties for CSS output
+///  :host(.focus-visible) {
+///    .button {
+///      @include focus-button(css);
+///    }
+///  }
+@mixin focus-button($style) {
+  $color: null;
+  $background-color: null;
+  $border-color: null;
+  $box-shadow: null;
+
+  @if $style == css {
+    $color: var(--color-type-theme-light-link);
+    $background-color: var(--color-base-white);
+    $border-color: var(--color-brand-blue-atlas-darken);
+    $box-shadow: 0 0 8px var(--color-base-shark);
+
+  } @else if $style == sass {
+    $color: $color-type-theme-light-link;
+    $background-color: $color-base-white;
+    $border-color: $color-brand-blue-atlas-darken;
+    $box-shadow: 0 0 8px $color-base-shark;
+  }
+
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: $box-shadow;
 }

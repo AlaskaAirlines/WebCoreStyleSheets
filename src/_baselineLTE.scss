@@ -10,7 +10,7 @@
 * {
   &:before,
   &:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 
   // default experience is to remove all a11y enhancements

@@ -8,6 +8,7 @@
 /// Global selector to address box-model and default `:focus` pseudo elements.
 /// @group Baseline
 * {
+  &,
   &:before,
   &:after {
     box-sizing: border-box;

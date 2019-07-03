@@ -12,7 +12,9 @@
 /// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
-///       @include phone-large;
+///       @include phone-large {
+///         ...
+///       }
 ///   }
 @mixin phone-large {
   @media screen and (min-width: $breakpoint-width-narrow) and (max-width: $breakpoint-width-medium - 1px) {
@@ -26,7 +28,9 @@
 /// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
-///       @include tablet;
+///       @include tablet {
+///         ...
+///       }
 ///   }
 @mixin tablet {
   @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
@@ -40,7 +44,9 @@
 /// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
-///       @include breakpoint-max ;
+///       @include breakpoint-max {
+///         ...
+///       }
 ///   }
 @mixin breakpoint-max {
   @media screen and (min-width: $breakpoint-width-max) {
@@ -54,7 +60,9 @@
 /// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
-///       @include breakpoint-wide ;
+///       @include breakpoint-wide {
+///         ...
+///       }
 ///   }
 @mixin breakpoint-wide {
   @media screen and (min-width: $breakpoint-width-wide) {
@@ -68,7 +76,9 @@
 /// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
-///       @include breakpoint-medium ;
+///       @include breakpoint-medium {
+///         ...
+///       }
 ///   }
 @mixin breakpoint-medium {
   @media screen and (min-width: $breakpoint-width-medium) {
@@ -82,7 +92,9 @@
 /// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
-///       @include breakpoint-narrow ;
+///       @include breakpoint-narrow {
+///         ...
+///       }
 ///   }
 @mixin breakpoint-narrow {
   @media screen and (min-width: $breakpoint-width-narrow) {

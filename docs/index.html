@@ -244,37 +244,49 @@ input[type=email] { ... }</code></pre></div><h3 class="item__sub-heading">Descri
     @content;
   }
  }" data-collapsed="@mixin phone-large() { ... }"><code>@mixin phone-large() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support handheld resolutions that specifically fall between 480px - 840px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
-    @include phone-large;
+    @include phone-large {
+      ...
+    }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-tablet"><h3 class="item__heading"><a class="item__name" href="#mixin-tablet">tablet</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin tablet() { 
   @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
     @content;
   }
  }" data-collapsed="@mixin tablet() { ... }"><code>@mixin tablet() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support tablet sized devices that specifically fall between 840px - 1024px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
-    @include tablet;
+    @include tablet {
+      ...
+    }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-breakpoint-max"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-max">breakpoint-max</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-max() { 
   @media screen and (min-width: $breakpoint-width-max) {
     @content;
   }
  }" data-collapsed="@mixin breakpoint-max() { ... }"><code>@mixin breakpoint-max() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 1440px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
-    @include breakpoint-max ;
+    @include breakpoint-max {
+      ...
+    }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-breakpoint-wide"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-wide">breakpoint-wide</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-wide() { 
   @media screen and (min-width: $breakpoint-width-wide) {
     @content;
   }
  }" data-collapsed="@mixin breakpoint-wide() { ... }"><code>@mixin breakpoint-wide() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 1024px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
-    @include breakpoint-wide ;
+    @include breakpoint-wide {
+      ...
+    }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-breakpoint-medium"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-medium">breakpoint-medium</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-medium() { 
   @media screen and (min-width: $breakpoint-width-medium) {
     @content;
   }
  }" data-collapsed="@mixin breakpoint-medium() { ... }"><code>@mixin breakpoint-medium() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 840px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
-    @include breakpoint-medium ;
+    @include breakpoint-medium {
+      ...
+    }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-breakpoint-narrow"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-narrow">breakpoint-narrow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-narrow() { 
   @media screen and (min-width: $breakpoint-width-narrow) {
     @content;
   }
  }" data-collapsed="@mixin breakpoint-narrow() { ... }"><code>@mixin breakpoint-narrow() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 480px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
-    @include breakpoint-narrow ;
+    @include breakpoint-narrow {
+      ...
+    }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint">breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint($breakpointValue, $mediaFeature: min-width) { 
   @media screen and (#{$mediaFeature}: $breakpointValue) {
     @content;

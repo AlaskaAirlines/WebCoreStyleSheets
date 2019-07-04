@@ -1,0 +1,62 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Wrapper class around the use of ods-hyperlink role=button and ods-button.
+
+// This selector is NOT auto included with any other web core style sheet.
+
+/// `.ods-containedButtons` is a helper class to support the use of multiple buttons and/or the use of ods-hyperlink `role="button"` in a parent container.
+///
+/// `.ods-containedButtons` has a dependency on OWCSS breakpoints. See example below to import dependency.
+///
+/// Place selector on outer parent element.
+/// @group ODS-Utility
+/// @example scss - import selector file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/containedButtons";
+/// @example scss - import dependency file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+
+.ods-containedButtons {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ods-button {
+    order: -1;
+  }
+
+  ods-hyperlink {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  @include breakpoint-medium {
+    flex-direction: row;
+    justify-content: flex-end;
+
+    > * {
+      margin-left: 1rem;
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    ods-hyperlink {
+      margin: unset;
+      width: unset;
+      text-align: unset;
+    }
+  }
+}

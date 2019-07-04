@@ -5,11 +5,11 @@
 
 // Wrapper class around the use of hyperlink role=tab
 
-// This selector is NOT auto included with any other web code style sheet.
+// This selector is NOT auto included with any other web core style sheet.
 
 /// `.ods-tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
 ///
-/// Plase selector on outer `div` or `section` container with the `role="tablist"` also applied.
+/// Place selector on outer `div` or `section` container with the `role="tablist"` also applied.
 /// @group ODS-Utility
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";

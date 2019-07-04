@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.5.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.4.2...v2.5.0) (2019-07-04)
+
+
+### Features
+
+* add support for contained button ui ([d5a4efc](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/d5a4efc))
+
 ## [2.4.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.4.1...v2.4.2) (2019-06-25)
 
 

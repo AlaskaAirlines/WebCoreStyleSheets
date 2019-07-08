@@ -54,13 +54,13 @@
     }
 
     ods-button {
-      order: unset;
+      order: inherit;
     }
 
     ods-hyperlink {
-      margin: unset;
-      width: unset;
-      text-align: unset;
+      margin: inherit;
+      width: inherit;
+      text-align: inherit;
     }
   }
 }

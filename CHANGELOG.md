@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [2.5.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.1...v2.5.2) (2019-07-08)
+
+
+### Bug Fixes
+
+* update baseline to remove obsolete utility header selector ([ea7aaef](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/ea7aaef))
+* update unset to inherit for legacy browser support ([89fbb8d](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/89fbb8d))
+
 ## [2.5.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.0...v2.5.1) (2019-07-08)
 
 

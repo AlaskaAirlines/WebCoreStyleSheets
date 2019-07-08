@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.5.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.0...v2.5.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* update responsive order in ods-containedButtons ([d675da7](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/d675da7))
+
 # [2.5.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.4.2...v2.5.0) (2019-07-04)
 
 

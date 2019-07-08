@@ -93,12 +93,6 @@ body,
   line-height: $vertical-alignment-heading;
 }
 
-/// Heading utility
-/// @group Heading
-.heading--flushLeft {
-  margin-left: 0;
-}
-
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
 ///
 /// Example HTML - `<element class="heading heading--max"> ... </element>`

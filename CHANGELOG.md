@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.6.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.2...v2.6.0) (2019-07-09)
+
+
+### Features
+
+* add font-weight book lib ([a4426fc](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/a4426fc))
+
 ## [2.5.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.1...v2.5.2) (2019-07-08)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.5.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.2...v2.5.3) (2019-07-09)
+
+
+### Bug Fixes
+
+* add new book font lib ([3f9255c](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/3f9255c))
+
 ## [2.5.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.1...v2.5.2) (2019-07-08)
 
 

@@ -15,9 +15,17 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
 
 .ods-tablist {
+  @include breakpoint-narrow {
+    overflow-y: unset;
+    white-space: unset;
+  }
+
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: $color-background-light-rule;
   line-height: $size-scale-xxl;
+  height: calc(#{$size-scale-xxl} + 1px);
   margin-bottom: $size-scale-med;
+  overflow-y: scroll;
+  white-space: nowrap;
 }

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.0...v2.6.1) (2019-07-11)
+
+
+### Bug Fixes
+
+* update role=tab shape ([e50ed65](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/e50ed65))
+
 # [2.6.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.5.2...v2.6.0) (2019-07-09)
 
 

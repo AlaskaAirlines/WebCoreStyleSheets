@@ -21,7 +21,7 @@ $important: null !default;
   $important: !important;
 }
 
-/// Utility class to float `left`
+/// Utility class to set elements to float `left`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -31,7 +31,7 @@ $important: null !default;
   float: left $important;
 }
 
-/// Utility class to float `right`
+/// Utility class to set elements to float `right`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -41,7 +41,7 @@ $important: null !default;
   float: right $important;
 }
 
-/// Utility class to center content
+/// Utility class to center content within a block element
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -61,7 +61,7 @@ $important: null !default;
   margin-bottom: 0 $important;
 }
 
-/// Utility class to margin-bottom to `sml`
+/// Utility class to set margin-bottom to `sml`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -71,7 +71,7 @@ $important: null !default;
   margin-bottom: $size-scale-sml $important;
 }
 
-/// Utility class to margin-bottom to `med`
+/// Utility class to set margin-bottom to `med`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -81,7 +81,7 @@ $important: null !default;
   margin-bottom: $size-scale-med $important;
 }
 
-/// Utility class to margin-bottom to `lg`
+/// Utility class to set margin-bottom to `lg`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -91,7 +91,7 @@ $important: null !default;
   margin-bottom: $size-scale-lg $important;
 }
 
-/// Utility class to margin-bottom to `xl`
+/// Utility class to set margin-bottom to `xl`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -101,7 +101,7 @@ $important: null !default;
   margin-bottom: $size-scale-xl $important;
 }
 
-/// Utility class to remove any margin from the top of an element
+/// Utility class to remove margin from the top of an element
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -111,7 +111,7 @@ $important: null !default;
   margin-top: 0 $important;
 }
 
-/// Utility class to margin-top to `sml`
+/// Utility class to set margin-top to `sml`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -121,7 +121,7 @@ $important: null !default;
   margin-top: $size-scale-sml $important;
 }
 
-/// Utility class to margin-top to `med`
+/// Utility class to set margin-top to `med`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -131,7 +131,7 @@ $important: null !default;
   margin-top: $size-scale-med $important;
 }
 
-/// Utility class to margin-top to `lg`
+/// Utility class to set margin-top to `lg`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -141,7 +141,7 @@ $important: null !default;
   margin-top: $size-scale-lg $important;
 }
 
-/// Utility class to margin-top to `xl`
+/// Utility class to set margin-top to `xl`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -151,7 +151,7 @@ $important: null !default;
   margin-top: $size-scale-xl $important;
 }
 
-/// Utility class to margin-right to `sml`
+/// Utility class to set margin-right to `sml`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -161,7 +161,7 @@ $important: null !default;
   margin-right: $size-scale-sml $important;
 }
 
-/// Utility class to margin-right to `med`
+/// Utility class to set margin-right to `med`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -171,7 +171,7 @@ $important: null !default;
   margin-right: $size-scale-med $important;
 }
 
-/// Utility class to margin-right to `lg`
+/// Utility class to set margin-right to `lg`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -181,7 +181,7 @@ $important: null !default;
   margin-right: $size-scale-lg $important;
 }
 
-/// Utility class to margin-right to `xl`
+/// Utility class to set margin-right to `xl`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -191,7 +191,7 @@ $important: null !default;
   margin-right: $size-scale-xl $important;
 }
 
-/// Utility class to margin-left to `sml`
+/// Utility class to set margin-left to `sml`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -201,7 +201,7 @@ $important: null !default;
   margin-left: $size-scale-sml $important;
 }
 
-/// Utility class to margin-left to `med`
+/// Utility class to set margin-left to `med`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -211,7 +211,7 @@ $important: null !default;
   margin-left: $size-scale-med $important;
 }
 
-/// Utility class to margin-left to `lg`
+/// Utility class to set margin-left to `lg`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility
@@ -221,7 +221,7 @@ $important: null !default;
   margin-left: $size-scale-lg $important;
 }
 
-/// Utility class to margin-left to `xl`
+/// Utility class to set margin-left to `xl`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
 /// @group Layout-Utility

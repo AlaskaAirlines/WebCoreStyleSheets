@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.2...v2.6.3) (2019-08-01)
+
+
+### Bug Fixes
+
+* remove unnecessary IE 10 support from normalize ([88b9b56](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/88b9b56))
+
 ## [2.6.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.1...v2.6.2) (2019-07-11)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.4](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.3...v2.6.4) (2019-08-23)
+
+
+### Bug Fixes
+
+* update baseline.scss to remove default body margin ([6f1c082](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/6f1c082))
+
 ## [2.6.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.2...v2.6.3) (2019-08-01)
 
 

@@ -18,6 +18,7 @@ html {
 /// @group Baseline
 body,
 .baseType {
+  margin: 0;
   font-family: $font-family-base;
   font-weight: $weight-book;
   font-size: $size-font-breakpoint-all-med;

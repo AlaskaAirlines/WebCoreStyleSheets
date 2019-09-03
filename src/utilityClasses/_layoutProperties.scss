@@ -250,3 +250,43 @@ $important: null !default;
 .util_marginLeft--xl {
   margin-left: $size-scale-xl $important;
 }
+
+/// Utility class to set padding-top to `none`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_paddingTop--none {
+  margin-left: 0 $important;
+}
+
+/// Utility class to set padding-right to `none`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_paddingRight--none {
+  margin-left: 0 $important;
+}
+
+/// Utility class to set padding-bottom to `none`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_paddingBottom--none {
+  margin-left: 0 $important;
+}
+
+/// Utility class to set padding-left to `none`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_paddingLeft--none {
+  margin-left: 0 $important;
+}

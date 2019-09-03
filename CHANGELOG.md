@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.6](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.5...v2.6.6) (2019-09-03)
+
+
+### Bug Fixes
+
+* add utility classes padding top, left, right and left to none ([e2334b5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/e2334b5))
+
 ## [2.6.5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.4...v2.6.5) (2019-09-03)
 
 

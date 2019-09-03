@@ -258,7 +258,7 @@ $important: null !default;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_paddingTop--none {
-  margin-left: 0 $important;
+  padding-left: 0 $important;
 }
 
 /// Utility class to set padding-right to `none`
@@ -268,7 +268,7 @@ $important: null !default;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_paddingRight--none {
-  margin-left: 0 $important;
+  padding-left: 0 $important;
 }
 
 /// Utility class to set padding-bottom to `none`
@@ -278,7 +278,7 @@ $important: null !default;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_paddingBottom--none {
-  margin-left: 0 $important;
+  padding-left: 0 $important;
 }
 
 /// Utility class to set padding-left to `none`
@@ -288,5 +288,5 @@ $important: null !default;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_paddingLeft--none {
-  margin-left: 0 $important;
+  padding-left: 0 $important;
 }

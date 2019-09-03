@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.4...v2.6.5) (2019-09-03)
+
+
+### Bug Fixes
+
+* update layout utility classes to have margin left and right 0 options ([b2bb3cb](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/b2bb3cb))
+
 ## [2.6.4](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.3...v2.6.4) (2019-08-23)
 
 

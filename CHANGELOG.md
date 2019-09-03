@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.7](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.6...v2.6.7) (2019-09-03)
+
+
+### Bug Fixes
+
+* update incorrect property ([3ec2378](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/3ec2378))
+
 ## [2.6.6](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.5...v2.6.6) (2019-09-03)
 
 

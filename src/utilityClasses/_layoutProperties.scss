@@ -151,6 +151,16 @@ $important: null !default;
   margin-top: $size-scale-xl $important;
 }
 
+/// Utility class to set margin-right to `none`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginRight--none {
+  margin-right: 0 $important;
+}
+
 /// Utility class to set margin-right to `sml`
 ///
 /// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
@@ -189,6 +199,16 @@ $important: null !default;
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 .util_marginRight--xl {
   margin-right: $size-scale-xl $important;
+}
+
+/// Utility class to set margin-left to `none`
+///
+/// See [variable use](http://localhost:8000/#layout-utility-variable-important) for managing the `!important` flag.
+/// @group Layout-Utility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+.util_marginLeft--none {
+  margin-left: 0 $important;
 }
 
 /// Utility class to set margin-left to `sml`

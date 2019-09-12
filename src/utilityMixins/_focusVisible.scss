@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 
 // sass-lint:disable no-important
+// sass-lint:disable indentation
 
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
 /// @group utility-mixins
@@ -63,28 +64,35 @@
 ///    }
 ///  }
 @mixin focus-button($style) {
-  $color: null;
-  $background-color: null;
-  $border-color: null;
-  $box-shadow: null;
+  $shadow-color: null;
+  $white-band: null;
+  $complete-shadow-color: null;
 
   @if $style == css {
-    $color: var(--color-type-theme-light-link);
-    $background-color: var(--color-base-white);
-    $border-color: var(--color-brand-blue-atlas-darken);
-    $box-shadow: 0 0 8px var(--color-base-shark);
+    $shadow-color: var(--color-brand-blue-atlas-base);
+    $complete-shadow-color: var(--color-brand-green-tropical-base);
+    $white-band: var(--color-base-white);
 
   } @else if $style == sass {
-    $color: $color-type-theme-light-link;
-    $background-color: $color-base-white;
-    $border-color: $color-brand-blue-atlas-darken;
-    $box-shadow: 0 0 8px $color-base-shark;
+    $shadow-color: $color-brand-blue-atlas-base;
+    $complete-shadow-color: $color-brand-green-tropical-base;
+    $white-band: $color-base-white;
   }
 
-  color: $color;
-  background-color: $background-color;
-  border-color: $border-color;
-  border-width: 1px;
-  border-style: solid;
-  box-shadow: $box-shadow;
+  box-shadow:
+    inset 0 0 0 2px $shadow-color,
+    inset 0 0 0 7px $white-band;
+
+  &--secondary {
+    box-shadow:
+      inset 0 0 0 2px $shadow-color,
+      inset 0 0 0 5px $white-band,
+      inset 0 0 0 8px $shadow-color,
+  }
+
+  &--complete {
+    box-shadow:
+      inset 0 0 0 2px var(--ods-button-complete-background-color),
+      inset 0 0 0 7px $white-band,
+  }
 }

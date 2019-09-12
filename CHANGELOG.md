@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.8](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.7...v2.6.8) (2019-09-12)
+
+
+### Bug Fixes
+
+* update button a11y state ([9b913ff](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/9b913ff))
+
 ## [2.6.7](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.6...v2.6.7) (2019-09-03)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.9](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.8...v2.6.9) (2019-09-12)
+
+
+### Bug Fixes
+
+* address line-height issue with role=button use ([90a02ec](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/90a02ec))
+
 ## [2.6.8](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.7...v2.6.8) (2019-09-12)
 
 

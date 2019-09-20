@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.10](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.9...v2.6.10) (2019-09-20)
+
+
+### Bug Fixes
+
+* address incorrect selector property ([e671222](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/e671222))
+
 ## [2.6.9](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.8...v2.6.9) (2019-09-12)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.11](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.10...v2.6.11) (2019-09-23)
+
+
+### Bug Fixes
+
+* address bug between heading--xl and util_type--xl ([8193f2e](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/8193f2e))
+
 ## [2.6.10](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.9...v2.6.10) (2019-09-20)
 
 

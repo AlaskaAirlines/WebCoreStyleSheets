@@ -21,6 +21,8 @@ $important: null !default;
   $important: !important;
 }
 
+@import "../breakpoints";
+
 /// Utility class for font-weight `book`
 ///
 /// See [variable use](http://localhost:8000/#font-utility-variable-important) for managing the `!important` flag.
@@ -58,7 +60,11 @@ $important: null !default;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--xl {
-  font-size: $size-font-breakpoint-desktop-xl $important;
+  @include breakpoint-medium {
+    font-size: $size-font-breakpoint-desktop-xl $important;
+  }
+
+  font-size: $size-font-breakpoint-mobile-xl $important;
 }
 
 /// Utility class for color `secondary`

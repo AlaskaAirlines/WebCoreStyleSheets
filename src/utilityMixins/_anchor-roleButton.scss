@@ -40,10 +40,10 @@
     @error "Invalid $style option. Please use `css` or `sass`";
   }
 
+  display: inline-block;
   color: $color;
   line-height: $line-height;
   padding: $padding;
-  display: inline-block;
   border: 1px solid transparent;
 
   @if $env == component {

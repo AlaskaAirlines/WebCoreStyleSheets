@@ -34,15 +34,20 @@
     order: -1;
   }
 
-  ods-hyperlink {
+  [role=button] {
     margin-bottom: 0;
     width: 100%;
     text-align: center;
   }
 
+  &--reverse {
+    @include breakpoint-medium {
+      justify-content: flex-end;
+    }
+  }
+
   @include breakpoint-medium {
     flex-direction: row;
-    justify-content: flex-end;
 
     > * {
       margin-left: 1rem;
@@ -57,7 +62,7 @@
       order: inherit;
     }
 
-    ods-hyperlink {
+    [role=button] {
       margin: inherit;
       width: inherit;
       text-align: inherit;

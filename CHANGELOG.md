@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.12](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.11...v2.6.12) (2019-10-11)
+
+
+### Bug Fixes
+
+* update to support button 3.0 updates ([e10ac23](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/e10ac23))
+
 ## [2.6.11](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.10...v2.6.11) (2019-09-23)
 
 

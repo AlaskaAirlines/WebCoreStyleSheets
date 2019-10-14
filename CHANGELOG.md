@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.13](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.12...v2.6.13) (2019-10-14)
+
+
+### Bug Fixes
+
+* update html selector to remove size-adjust feature ([4c3fb30](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/4c3fb30))
+
 ## [2.6.12](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.11...v2.6.12) (2019-10-11)
 
 

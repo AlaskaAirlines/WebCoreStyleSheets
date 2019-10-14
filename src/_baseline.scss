@@ -3,13 +3,15 @@
 
 // ---------------------------------------------------------------------
 
-// sass-lint:disable mixins-before-declarations variable-for-property
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
 @import "baselineLTE";
 
 /// Baseline HTML setting to establish box-model and default font size.
 /// @group Baseline
 html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   box-sizing: border-box;
   font-size: 1rem;
 }

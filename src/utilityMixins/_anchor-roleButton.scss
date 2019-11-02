@@ -4,9 +4,10 @@
 // ---------------------------------------------------------------------
 
 /// Creates Sass variable or custom property output for multi-use button shape
-/// @group utility-mixins
-/// @param {string} $style [] - Specifies the style type (sass, css)
-/// @param {string} $env [] - Specifies the style environment (component, noncomponent)
+/// @group utility
+/// @param {string} $style [null] - Specifies the style type (sass, css)
+/// @param {string} $env [null] - Specifies the style environment (component, noncomponent)
+/// @deprecated See `ods-anchor-button`; this version will be removed with the next MAJOR release
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
 /// @example scss - Set properties for Sass output that is NOT within a component
@@ -18,6 +19,71 @@
 ///       @include anchorButton(css, component)
 ///   }
 @mixin anchorButton($style, $env) {
+  $color: null;
+  $hover-color: null;
+  $line-height: null;
+  $padding: null;
+  $hover-color: null;
+
+  @if $style == css {
+    $color: var(--color-type-theme-light-link);
+    $hover-color: var(--color-type-theme-light-link-hover);
+    $line-height: var(--unitless-scale-xxl);
+    $padding: 0 var(--size-scale-med);
+
+  } @else if $style == sass {
+    $color: $color-type-theme-light-link;
+    $hover-color: $color-type-theme-light-link-hover;
+    $line-height: $unitless-scale-xxl;
+    $padding: 0 $size-scale-med;
+
+  } @else {
+    @error "Invalid $style option. Please use `css` or `sass`";
+  }
+
+  display: inline-block;
+  color: $color;
+  line-height: $line-height;
+  padding: $padding;
+  border: 1px solid transparent;
+
+  @if $env == component {
+    :host(:not(.is-touching)) & {
+      &:hover {
+        color: $hover-color;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  } @else if $env == noncomponent {
+    &:not(.is-touching) {
+      &:hover {
+        color: $hover-color;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  } @else {
+    @error "Invalid $env option. Please use `component` or `noncomponent`";
+  }
+}
+
+
+/// Creates Sass variable or custom property output for multi-use button shape
+/// @group utility
+/// @param {string} $style [null] - Specifies the style type (sass, css)
+/// @param {string} $env [null] - Specifies the style environment (component, noncomponent)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
+/// @example scss - Set properties for Sass output that is NOT within a component
+///   .ods-roleButton {
+///       @include ods-anchor-button(sass, noncomponent);
+///   }
+/// @example scss - Set properties for CSS output that IS within a component
+///   .button {
+///       @include ods-anchor-button(css, component)
+///   }
+@mixin ods-anchor-button($style, $env) {
   $color: null;
   $hover-color: null;
   $line-height: null;

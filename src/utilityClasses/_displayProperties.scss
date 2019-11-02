@@ -7,26 +7,11 @@
 
 // Variables are defined by baseline Design Tokens
 
-/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
-/// By default the `!important` flag is NOT set on any CSS selector.
-/// @group Display-Utility
-/// @prop {Boolean} $important [null] - manage use of `!important` flag
-/// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-/// @example scss - update value prior to import
-///   $important: true;
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-$important: null !default;
-
-@if $important {
-  $important: !important;
-}
-
 /// Utility class to display elements `inline`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import mixin file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-display
+/// @example scss - import selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
 .util_displayInline {
   display: inline $important;
@@ -34,9 +19,9 @@ $important: null !default;
 
 /// Utility class to display elements `inline-block`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import mixin file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-display
+/// @example scss - import selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
 .util_displayInlineBlock {
   display: inline-block $important;
@@ -44,9 +29,9 @@ $important: null !default;
 
 /// Utility class to display elements `inline-block`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import mixin file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-display
+/// @example scss - import selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
 .util_displayBlock {
   display: block $important;
@@ -54,9 +39,9 @@ $important: null !default;
 
 /// Utility class to display elements `flex`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import mixin file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-display
+/// @example scss - import selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
 .util_displayFlex {
   display: flex $important;
@@ -64,9 +49,9 @@ $important: null !default;
 
 /// Utility class to display elements `none`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import mixin file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-display
+/// @example scss - import selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
 .util_displayHidden {
   display: none $important;
@@ -74,9 +59,9 @@ $important: null !default;
 
 /// Utility class to visually hide elements within the UI, but still be picked up by screen readers.
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import mixin file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-display
+/// @example scss - import selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
 .util_displayHiddenVisually {
   border: 0 $important;

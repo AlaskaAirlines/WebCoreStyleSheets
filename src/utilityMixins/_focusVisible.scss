@@ -7,8 +7,8 @@
 // sass-lint:disable indentation
 
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
-/// @group utility-mixins
-/// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
+/// @group utility
+/// @param {string} $style [null] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 /// @example scss - Set properties for Sass output
@@ -24,6 +24,7 @@
 ///      @include focus-hyperlink(css);
 ///    }
 ///  }
+
 @mixin focus-hyperlink($style) {
   $color: null;
   $background-color: null;
@@ -53,7 +54,7 @@
 }
 
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
-/// @group utility-mixins
+/// @group utility
 /// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
@@ -63,6 +64,7 @@
 ///      @include focus-button(css);
 ///    }
 ///  }
+
 @mixin focus-button($style) {
   $shadow-color: null;
   $white-band: null;

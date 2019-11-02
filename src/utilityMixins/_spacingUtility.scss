@@ -1,0 +1,62 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// This mixin is designed to return a series of pre-defined selectors based on the stack or inline spacing design specs
+///
+/// **Dependency:** $npm i alaskaairux/orion-design-tokens
+/// @group utility
+/// @parameter {String} $type [null] - options: stack, inline
+/// @parameter {String} $value [null] - options: eighth, quarter, half, threeQuarter, base, baseHalf, baseDos, baseQuad
+/// @example scss - pass map and strings/variables into function
+///   @include ods-spacing(stack, xxxs)
+/// @example css - Example output css
+///  .util_stackPaddingXxxs--top {
+///    padding-top: 0.125rem;
+///  }
+///  .util_stackPaddingXxxs--bottom {
+///    padding-bottom: 0.125rem;
+///  }
+///  .util_stackMarginXxxs--top {
+///    margin-top: 0.125rem;
+///  }
+///  .util_stackMarginXxxs--bottom {
+///    margin-bottom: 0.125rem;
+///  }
+/// @example scss - import dependencies
+///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityVariables/spacing-options";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/spacingUtility";
+
+@mixin ods-spacing($type, $value) {
+  $map: map-keys($tokens);
+  $var: ods-map-deep-get($tokens, #{$map}, $value);
+  $directions: null;
+  $properties: null;
+
+  @if $type == stack {
+    $directions: top, bottom, top, bottom;
+  }
+
+  @if $type == inline {
+    $directions: left, right, left, right;
+  }
+
+  @if $type == stack or $type == inline {
+    $properties: padding, padding, margin, margin;
+  }
+
+  @if ods-contains($spacing-options, $value) {
+    @for $i from 1 through length($properties) {
+      $direction: nth($directions, $i);
+      $property: nth($properties, $i);
+      .util_#{$type}#{ods-capitalize($property)}#{ods-capitalize($value)}--#{$direction} {
+        #{$property}-#{$direction}: $var $important;
+      }
+    }
+  } @else {
+    /* #{$value} is not supported for spacing selectors */
+  }
+}

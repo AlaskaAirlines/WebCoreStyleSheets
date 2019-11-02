@@ -6,27 +6,12 @@
 
 // sass-lint:disable no-important
 
-/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
-/// By default the `!important` flag is NOT set on any CSS selector.
-/// @group Font-Utility
-/// @prop {Boolean} $important [null] - manage use of `!important` flag
-/// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
-/// @example scss - update value prior to import
-///   $important: true;
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
-$important: null !default;
-
-@if $important {
-  $important: !important;
-}
-
 @import "../breakpoints";
 
 /// Utility class for font-weight `book`
 ///
-/// See [variable use](http://localhost:8000/#font-utility-variable-important) for managing the `!important` flag.
-/// @group Font-Utility
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-font
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_fontWeightBook {
@@ -35,8 +20,8 @@ $important: null !default;
 
 /// Utility class for font-weight `light`
 ///
-/// See [variable use](http://localhost:8000/#font-utility-variable-important) for managing the `!important` flag.
-/// @group Font-Utility
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-font
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_fontWeightLight {
@@ -45,8 +30,8 @@ $important: null !default;
 
 /// Utility class for font-size `lg`
 ///
-/// See [variable use](http://localhost:8000/#font-utility-variable-important) for managing the `!important` flag.
-/// @group Font-Utility
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-font
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--lg {
@@ -55,8 +40,8 @@ $important: null !default;
 
 /// Utility class for font-size `xl`
 ///
-/// See [variable use](http://localhost:8000/#font-utility-variable-important) for managing the `!important` flag.
-/// @group Font-Utility
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-font
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--xl {
@@ -69,8 +54,8 @@ $important: null !default;
 
 /// Utility class for color `secondary`
 ///
-/// See [variable use](http://localhost:8000/#font-utility-variable-important) for managing the `!important` flag.
-/// @group Font-Utility
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-font
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--secondary {

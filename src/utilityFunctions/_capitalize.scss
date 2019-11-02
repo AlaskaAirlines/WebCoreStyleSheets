@@ -1,0 +1,17 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// The purpose of this function is to take a string and capitalize the first letter on output
+/// @group utility
+/// @parameter {String} $string [null] - pass in string to be capitolized
+/// @example scss - pass string into function
+///   capitalize('foo') => Foo
+/// @example scss - import dependency
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityFunctions/capitalize";
+
+@function ods-capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}

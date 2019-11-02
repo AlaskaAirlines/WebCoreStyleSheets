@@ -1,0 +1,19 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
+///
+/// By default the `!important` flag is NOT set on any CSS selector.
+/// @group utility
+/// @prop {Variable} $important [null] - manage use of `!important` flag
+/// @example scss - update value prior to import
+///   $important: true;
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityVariables/important";
+$important: null !default;
+
+@if $important {
+  $important: !important;
+}

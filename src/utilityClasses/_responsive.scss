@@ -5,26 +5,11 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-important
 
-/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
-/// By default the `!important` flag is NOT set on any CSS selector.
-/// @group responsive-Utility
-/// @prop {Boolean} $important [null] - manage use of `!important` flag
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-/// @example scss - update value prior to import
-///   $important: true;
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-$important: null !default;
-
-@if $important {
-  $important: !important;
-}
-
 /// Utility class to restrain visibility of UI element to __mobile__ users only.
 ///
-/// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
-/// @group responsive-Utility
-/// @example scss - import mixin file and selector partial file
+/// See [variable use](/#utility-variable-important) for managing the `!important` flag.
+/// @group util-responsive
+/// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-mobileOnly {

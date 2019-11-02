@@ -1,0 +1,61 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// This mixin is designed to return a series of pre-defined selectors based on the inset spacing design spec
+///
+/// **Dependency:** $npm i alaskaairux/orion-design-tokens
+/// @group utility
+/// @parameter {String} $value [null] - options: xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl;
+/// @example scss - pass map and strings/variables into function
+///   @include ods-inset(xxxs)
+/// @example css - Example output css
+///  .util_insetXxxs {
+///    padding: 0.125rem;
+///  }
+///  .util_insetXxxs--stretch {
+///    padding: calc(0.125rem * 2) 0.125rem;
+///  }
+///  .util_insetXxxs--squish {
+///    padding: 0 0.125rem;
+///  }
+/// @example scss - import dependencies
+///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityVariables/spacing-options";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+
+@mixin ods-inset($value) {
+  $map: map-keys($tokens);
+  $mapValue: ods-map-deep-get($tokens, #{$map}, $value);
+  $directions: "", --stretch, --squish;
+  $squish-string: null;
+  $stretch-string: null;
+
+  @if $value == nth($spacing-options, 1) {
+    $squish-string: 0 $mapValue $important;
+    $stretch-string: calc(#{$mapValue} * 2) $mapValue $important;
+  } @else {
+    $squish-string: calc(#{$mapValue} / 2) $mapValue $important;
+    $stretch-string: calc(#{$mapValue} * 1.5) $mapValue $important;
+  }
+
+  @if ods-contains($spacing-options, $value) {
+    @for $i from 1 through length($directions) {
+      $direction: nth($directions, $i);
+
+      .util_inset#{ods-capitalize($value)}#{$direction} {
+        @if $direction == '' {
+          padding: $mapValue $important;
+        } @else if  $direction == '--squish' {
+          padding: $squish-string;
+        } @else if  $direction == '--stretch' {
+          padding: $stretch-string;
+        }
+      }
+    }
+  } @else {
+    /* #{$value} is not supported for inset selectors */
+  }
+}

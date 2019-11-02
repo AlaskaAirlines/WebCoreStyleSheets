@@ -1,0 +1,24 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// The purpose of this function is to take a string and capitalize the first letter on output
+/// @group utility
+/// @parameter {Variable} $list [null] - variable list to be evaluated
+/// @parameter {Item} $var [] - item in list
+/// @example scss - pass string into function
+///   ods-contains($options, $value)
+/// @example scss - import dependency
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityFunctions/contains";
+
+@function ods-contains($list, $var) {
+  $eval: false;
+  @each $item in $list {
+    @if $item == $var {
+      $eval: true;
+    }
+  }
+  @return $eval;
+}

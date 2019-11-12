@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.6.14](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.13...v2.6.14) (2019-11-12)
+
+
+### Bug Fixes
+
+* update default img value; create new responsive img selector ([4e7c69b](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/4e7c69b))
+
 ## [2.6.13](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.12...v2.6.13) (2019-10-14)
 
 

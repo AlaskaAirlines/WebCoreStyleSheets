@@ -9,7 +9,7 @@
 /// By default the `!important` flag is NOT set on any CSS selector.
 /// @group responsive-Utility
 /// @prop {Boolean} $important [null] - manage use of `!important` flag
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 /// @example scss - update value prior to import
 ///   $important: true;
@@ -24,7 +24,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-mobileOnly {
@@ -37,7 +37,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowOnly {
@@ -56,7 +56,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowOnly--inline {
@@ -75,7 +75,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowAppears {
@@ -90,7 +90,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowAppears--inline {
@@ -105,7 +105,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletOnly {
@@ -124,7 +124,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletOnly--inline {
@@ -143,7 +143,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletAppears {
@@ -158,7 +158,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-tabletAppears--inline {
@@ -173,7 +173,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-desktopOnly {
@@ -188,7 +188,7 @@ $important: null !default;
 ///
 /// See [variable use](http://localhost:8000/#responsive-utility-variable-important) for managing the `!important` flag.
 /// @group responsive-Utility
-/// @example scss - import mixin file
+/// @example scss - import mixin file and selector partial file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-desktopOnly--inline {
@@ -197,4 +197,16 @@ $important: null !default;
   @include breakpoint-max {
     display: inline-block $important;
   }
+}
+
+/// Utility class that will allow img src to fill 100% of space for responsive characteristics
+///
+/// Example HTML - `<img class="util_img-is-responsive" src=" ... " alt="" />`
+///
+/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
+/// @group responsive-Utility
+/// @example scss - import selector partial file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
+.util_img-is-responsive {
+  width: 100% $important
 }

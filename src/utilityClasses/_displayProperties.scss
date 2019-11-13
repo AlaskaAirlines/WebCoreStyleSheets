@@ -87,13 +87,3 @@ $important: null !default;
   position: absolute $important;
   width: 1px $important;
 }
-
-/// Utility class that will allow img src to fill 100% of space for responsive characteristics
-///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
-/// @example scss - import selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_img--responsive {
-  width: 100% $important
-}

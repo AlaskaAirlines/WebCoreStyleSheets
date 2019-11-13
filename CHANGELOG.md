@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.7.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.14...v2.7.0) (2019-11-13)
+
+
+### Features
+
+* update to default image property ([e13a261](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/e13a261))
+
 ## [2.6.14](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.13...v2.6.14) (2019-11-12)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@alaskaairux/orion-web-core-style-sheets",
   "description": "Orion core foundation Sass UI Kit",
-  "version": "2.6.14",
+  "version": "2.7.0",
   "author": "Product design and research",
   "main": "src/",
   "license": "Apache-2.0",

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.7.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.7.0...v2.7.1) (2019-11-13)
+
+
+### Bug Fixes
+
+* update baseline img to max-width ([9a75f02](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/9a75f02))
+
 # [2.7.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.6.14...v2.7.0) (2019-11-13)
 
 

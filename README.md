@@ -1,10 +1,8 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
+# Orion Web Core Style Sheets
 
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue)
-
-# Orion Web Core Style Sheets
 
 The core front-end framework for building experiences with the Orion Design System.
 
@@ -153,7 +151,7 @@ The implementation of Orion Web Code Style Sheets uses a naming convention model
 
 To learn more, please reference [this document](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/cssConventions.md).
 
-## Tests
+## Linters
 
 Prior to adding new Sass to this repo, please run the Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. To run the tests, run the following command:
 
@@ -170,3 +168,11 @@ $ open sass-lint.html
 This should open the file in your default browser.
 
 This file is ignored and will not be added to the version control.
+
+
+##
+
+<footer>
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>

@@ -24,7 +24,7 @@ The current version of Orion Web Core Style Sheets supports:
 1. Orion baseline styles
 1. Orion baselineLTE styles
 1. Utility (functional) CSS classes
-1. Experimental \<input /> styling
+1. Experimental `<input />` styling
 
 ### Orion Web Core Normalize
 

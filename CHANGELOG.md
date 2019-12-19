@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.7.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.7.1...v2.7.2) (2019-12-19)
+
+
+### Bug Fixes
+
+* resolve issue [#20](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/20) ([0c56610](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/0c56610))
+
 ## [2.7.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.7.0...v2.7.1) (2019-11-13)
 
 

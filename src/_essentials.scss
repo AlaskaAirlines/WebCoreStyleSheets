@@ -1,0 +1,201 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
+
+@import "libSupport/manageScope";
+@import "core";
+
+/// Baseline HTML setting to establish box-model and default font size.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   html {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   html.auro {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_html {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$sym}#{$prefix}html#{$scope} {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  box-sizing: border-box;
+  font-size: $auro-text-body-size-default;
+}
+
+/// Set baseline type settings for `body` elment or with the use of the `.baseType` selector.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   body,
+///   .baseType {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro body,
+///   .auro .baseType {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .body,
+///   .auro_baseType {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$scope}#{$sym}#{$prefix}body,
+#{$scope}.#{$prefix}baseType {
+  margin: 0;
+  font-family: $auro-font-family-default;
+  font-weight: $auro-text-body-default-weight; // need better token
+  font-size: $auro-text-body-size-default;
+  line-height: $auro-text-body-height-default;
+  color: $auro-color-text-primary-on-light;
+}
+
+/// Sets standard `margin-bottom` for all paragraph style content
+///
+/// Use of nested `.auro_hyperlink` defines underline text-decoration for anchor tags
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   .baseParagraph {}
+///   .baseParagraph .hyperlink {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .baseParagraph {}
+///   .auro .baseParagraph .hyperlink {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_baseParagraph {}
+///   .auro_baseParagraph .auro_hyperlink {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$scope}.#{$prefix}baseParagraph {
+  margin-bottom: $auro-text-body-height-default;
+
+  .#{$prefix}hyperlink {
+    text-decoration: underline;
+  }
+}
+
+/// Baseline hyperlink styles as mirrored in auro-hyperlink web component
+///
+/// Support for: `.hyperlink--inline`, and `.hyperlink--darktheme`
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   .hyperlink {}
+///   .hyperlink--inline {}
+///   .hyperlink--darktheme {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .hyperlink {}
+///   .auro .hyperlink--inline {}
+///   .auro .hyperlink--darktheme {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_hyperlink {}
+///   .auro_hyperlink--inline {}
+///   .auro_hyperlink--darktheme {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$scope}.#{$prefix}hyperlink {
+  color: $auro-color-text-link-on-light;
+  padding: 0 $auro-size-xs;
+  text-decoration: none;
+
+  &:visited {
+    color: $auro-color-text-link-on-light;
+  }
+
+  &--inline {
+    padding: 0;
+    text-decoration: underline;
+
+    &:not(.is-touching) {
+      &:hover {
+        text-decoration: none !important;  // sass-lint:disable-line no-important
+      }
+    }
+  }
+
+  &--darktheme {
+    color: $auro-color-ui-default-on-dark;
+
+    &:not(.is-touching) {
+      &:hover {
+        color: $auro-color-ui-hover-on-dark;
+      }
+    }
+
+    &:visited {
+      color: $auro-color-ui-default-on-dark;
+    }
+  }
+
+  &:not(.is-touching) {
+    &:hover {
+      color: $auro-color-ui-hover-on-dark;
+      text-decoration: underline;
+    }
+  }
+}
+
+/// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen.
+/// If additional properties are needed to shape the img selector, please see the list of Utility classes including the [.util_img-is-responsive](/#utility-responsive-css-#{$scope}.#{$prefix}util_img-is-responsive) selector to scale images with responsive aspects.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   img {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro img {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_img {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$scope}#{$sym}#{$prefix}img {
+  max-width: 100%;
+}
+
+/// Legal copy, disclaimers, and footnotes below applicable content section. Above input as floating label, below input as help or error text.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   small,
+///   .type--small {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro small,
+///   .auro .type--small {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_small,
+///   .auro_type--small {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$scope}#{$sym}#{$prefix}small,
+#{$scope}.#{$prefix}type--small {
+  font-size: $auro-text-body-size-xs;
+}

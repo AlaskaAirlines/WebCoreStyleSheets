@@ -5,17 +5,25 @@
 
 // focus-visible
 // ====================================================================
+
+@import "../libSupport/manageScope";
 @import "../utilityMixins/focusVisible";
 
-/// `.focus-visible` is a class assigned to a DOM node as a user tabs through the UI
+/// `.focus-visible` is a selector assigned to a DOM node as a user tabs through the UI.
 ///
-/// See npm focus-visible polyfill https://www.npmjs.com/package/focus-visible
+/// See [npm focus-visible polyfill](https://www.npmjs.com/package/focus-visible)
 ///
-/// See CSSWG spec https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo
+/// See [CSSWG spec](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
 ///
 /// The role of this selector is to apply the designed `:focus-visible`
-/// style to DOM nodes that __ARE NOT__ Orion Web Components
-/// @group Accessibility
+/// style to DOM nodes that __ARE NOT__ Auro Web Components
+///
+/// Supports the following selectors with `$scope` and/or `$prefix` defined:
+/// * .hyperlink
+/// * .ods-roleButton / .wcs_roleButton
+/// * .ods-roleTab / .wcs_roleButton
+/// @group †deprecated
+/// @deprecated
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/focusVisible";
 .focus-visible {
@@ -23,5 +31,29 @@
   &.ods-roleButton,
   &.ods-roleTab {
     @include focus-hyperlink(sass)
+  }
+}
+
+/// `.focus-visible` is a selector assigned to a DOM node as a user tabs through the UI.
+///
+/// See [npm focus-visible polyfill](https://www.npmjs.com/package/focus-visible)
+///
+/// See [CSSWG spec](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
+///
+/// The role of this selector is to apply the designed `:focus-visible`
+/// style to DOM nodes that __ARE NOT__ Auro Web Components
+///
+/// Supports the following selectors with `$scope` and/or `$prefix` defined:
+/// * .hyperlink
+/// * .ods-roleButton / .wcs_roleButton
+/// * .ods-roleTab / .wcs_roleButton
+/// @group Accessibility
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/focusVisible";
+#{$scope}.focus-visible {
+  &.#{$prefix}hyperlink,
+  &.#{$prefix}auro_roleButton,
+  &.#{$prefix}auro_roleTab {
+    @include auro_focus-hyperlink(sass)
   }
 }

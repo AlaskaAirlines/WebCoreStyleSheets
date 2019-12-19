@@ -1,0 +1,77 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+@import "../utilityVariables/important";
+@import "../libSupport/manageScope";
+
+
+
+// Utility layout selector mixin
+// ---------------------------------------------------------------------
+
+$layout-properties: margin padding !default;
+$layout-extensions: Top Left Bottom Right !default;
+$layout-modifiers: (
+  "none": 0,
+  "xs": $auro-size-xs,
+  "md": $auro-size-md,
+  "lg": $auro-size-lg,
+  "xl": $auro-size-xl
+) !default;
+
+/// Mixin auto-generates all available utility selectors. This mixin is NOT for general use and will produce selectors with the import of this Sass file. Output can be configured by redefining default values prior to import. See default value examples below.
+///
+/// DO NOT execute mixin, this is already included with the import of the file dependency
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-layout
+/// @example scss - Default values
+///   $layout-properties: margin padding !default;
+///   $layout-extensions: Top Left Bottom Right !default;
+///   $layout-modifiers: (
+///     "none": 0,
+///     "xs": $auro-size-xs,
+///     "md": $auro-size-md,
+///     "lg": $auro-size-lg,
+///     "xl": $auro-size-xl
+///   ) !default;
+/// @example scss - example default output selector
+///   .util_paddingLeft--none {}
+///
+/// @example scss - example output selector when $scope: true;
+///   .auro .util_paddingLeft--none {}
+///
+/// @example scss - example output selector when $prefix: true;
+///   .auro_util_paddingLeft--none {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
+/// @example scss - import mixin file with altered output values prior to import
+///   $layout-properties: margin;
+///   $layout-extensions: Right;
+///   $layout-modifiers: (
+///     "xxxs": $auro-size-xxxs,
+///     "xxs": $auro-size-xxs,
+///     "xxl": $auro-size-xxl,
+///     "xxxl": $auro-size-xxxl,
+///   );
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+@mixin auro_layoutPropertiesGenerator() {
+  @each $property in $layout-properties {
+    @each $extension in $layout-extensions {
+      @each $type, $value in $layout-modifiers {
+        #{$scope}.#{$prefix}util_#{$property}#{$extension}--#{$type} {
+          /* Please reference .util_[inline/stack]#{to-upper-case(str-slice($property, 1, 1)) + str-slice($property, 2))}#{to-upper-case(str-slice($type, 1, 1)) + str-slice($type, 2))}--#{to-lower-case($extension)} */
+          #{$property}-#{to-lower-case($extension)}: $value $important;
+        }
+      }
+    }
+  }
+}
+
+@include auro_layoutPropertiesGenerator();

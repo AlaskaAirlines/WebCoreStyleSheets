@@ -1,0 +1,13 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// When using spacing mixins, it's required to import this variable list for use of options.
+/// @group utility
+/// @prop {Variable} $options [list] - list of available token options
+/// @example scss - import dependency variable list
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityVariables/spacing-options";
+
+$auro-spacing-options: none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl !default;

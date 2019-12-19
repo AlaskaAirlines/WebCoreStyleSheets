@@ -3,16 +3,10 @@
 
 // ---------------------------------------------------------------------
 
-/// Provides a way to control animation speed when changing CSS properties.
+/// Will be removed with upcoming MAJOR release
 ///
-/// Defaults are set by baseline Design Tokens
-///
-/// To override values, define in element/component shape JSON and address mixin arguments
-///
-/// Compatibility: https://caniuse.com/#feat=css-transitions
-///
-///
-/// @group Animation
+/// @group †deprecated
+/// @deprecated See `auro_transition`
 ///
 /// @param {string} $property [$animation-default-property] - Specifies the name of the CSS property the transition effect is for
 /// @param {string} $duration [$animation-default-duration] - Specifies how many seconds or milliseconds a transition effect takes to complete
@@ -20,20 +14,31 @@
 /// @param {string} $delay [null] - Specifies a delay (in seconds) for the transition effect
 ///
 /// @output Simple method of animating certain properties of an element, with ability to define property, duration, delay and timing function.
-///
-/// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
-///
-/// @example scss - Set animation using default properties
-///   .button {
-///       @include transition;
-///   }
-///
-/// @example scss - Set animation using custom properties
-///   .button {
-///       @include transition(color, 0.3s, ease);
-///   }
 
 @mixin transition($property: $animation-default-property, $duration: $animation-default-duration, $timing: $animation-default-timing, $delay: null) {
+  transition: $property $duration $timing $delay;
+}
+
+/// Provides a way to control animation speed when changing CSS properties.
+///
+/// Defaults are set by baseline Design Tokens
+///
+/// Compatibility: [css-transitions](https://caniuse.com/#feat=css-transitions)
+///
+/// @group Animation
+/// @param {string} $property [$auro-animation-default-property] - Specifies the name of the CSS property the transition effect is for
+/// @param {string} $duration [$auro-animation-default-duration] - Specifies how many seconds or milliseconds a transition effect takes to complete
+/// @param {string} $timing [$auro-animation-default-timing] - Specifies the speed curve of the transition effect (ease, linear, ease-in, ease-out, ease-in-out)
+/// @param {string} $delay [null] - Specifies a delay (in seconds) for the transition effect
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+///
+/// @example scss - Using mixin with default values;
+///   .foo {
+///     @include auro_transition;
+///   }
+
+@mixin auro_transition($property: $auro-animation-default-property, $duration: $auro-animation-default-duration, $timing: $auro-animation-default-timing, $delay: null) {
   transition: $property $duration $timing $delay;
 }

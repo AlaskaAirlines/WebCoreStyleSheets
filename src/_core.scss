@@ -2,18 +2,24 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
+@import "libSupport/manageScope";
 
 // sass-lint:disable mixins-before-declarations
 
 /// Global selector to address box-model and default `:focus` pseudo elements.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
-/// @group †deprecated
-/// @deprecated see `core.scss`
-/// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+/// @group core
+/// @example scss - Default selector(s)
+///   *, *:before, *:after {}
 ///
-* {
+/// @example scss - Selector(s) when $scope: true;
+///   .auro *, .auro *:before, .auro *:after {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
+///
+#{$scope} * {
   &,
   &:before,
   &:after {
@@ -31,10 +37,9 @@
 /// Based on the proposed CSS `:focus-visible` pseudo-selector, this prototype adds a `focus-visible` class to the focused element, in situations in which the `:focus-visible` pseudo-selector should match.
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 ///
-/// @group †deprecated
-/// @deprecated see `core.scss`
+/// @group Accessibility
 .focus-visible :focus:not(.focus-visible) {
   outline: none;
 }

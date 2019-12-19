@@ -1,0 +1,41 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/// Variables to determine if `$scope` is to be displayed.
+///
+/// Set `true` value prior to importing file if scope selector output file is wanted
+///
+/// @group scope-prefix
+/// @type boolean
+/// @example scss - import file
+///   $scope: true;
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/ ...
+/// @example scss - return example
+///   .auro [selector] { ... }
+$scope: null !default;
+
+/// Variables to determine if $prefix is to be displayed
+///
+/// Set `true` value prior to importing file if prefix selector output file is wanted
+///
+/// @group scope-prefix
+/// @type boolean
+/// @example scss - import file
+///   $prefix: true;
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/ ...
+/// @example scss - return example
+///   .auro_[selector] { ... }
+$prefix: null !default;
+
+$sym: null !default;
+
+@if $scope {
+  $scope: '.auro ';
+}
+
+@if $prefix {
+  $prefix: 'auro_';
+  $sym: '.';
+}

@@ -8,13 +8,36 @@
 // This selector is NOT auto included with any other web code style sheet.
 // If the ods-roleButton selector is reuqired, it is to be individually included.
 
+@import "../libSupport/manageScope";
 @import "../utilityMixins/anchor-roleButton";
 
 /// `.ods-roleButton` is a helper class to support the UI of a hyperlink using `role="button"`
-/// @group ODS-Utility
+/// @group †deprecated
+/// @deprecated See `.auro_roleButton`
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleButton";
 
 .ods-roleButton {
+  /* deprecated See `.auro_roleButton` */
   @include anchorButton(sass, noncomponent);
+}
+
+
+/// `.auro_roleButton` is a utility class to support the UI of a standard html hyperlink using the attribute `role="button"`. This utility will present the UI to mimic the UI of the auro-hyperlink component supporting the same attribute.
+///
+/// [See](/#utility-mixins-mixin-auro_anchorButton) for more information
+///
+/// [Manage](/#scope-prefix-variable) `$scope` options.
+/// @group Utility-auro
+/// @example scss - Default selector(s)
+///   .auro_roleButton {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .auro_roleButton {}
+///
+/// @example scss - import selector file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleButton";
+
+#{$scope}.auro_roleButton {
+  @include auro_anchorButton(sass, noncomponent);
 }

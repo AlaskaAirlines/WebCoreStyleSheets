@@ -7,18 +7,26 @@
 
 // This selector is NOT auto included with any other web core style sheet.
 
+@import "../libSupport/manageScope";
+
+// sass-lint:disable no-mergeable-selectors
+/* stylelint-disable selector-type-no-unknown */
+
 /// `.ods-containedButtons` is a helper class to support the use of multiple buttons and/or the use of ods-hyperlink `role="button"` in a parent container.
 ///
 /// `.ods-containedButtons` has a dependency on OWCSS breakpoints. See example below to import dependency.
 ///
 /// Place selector on outer parent element.
-/// @group ODS-Utility
+/// @group †deprecated
+/// @deprecated see `.auro_containedButtons`
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/containedButtons";
 /// @example scss - import dependency file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 
+
 .ods-containedButtons {
+  /* deprecated see `.auro_containedButtons` */
   display: flex;
   flex-direction: column;
 
@@ -59,6 +67,77 @@
     }
 
     ods-button {
+      order: inherit;
+    }
+
+    [role=button] {
+      margin: inherit;
+      width: inherit;
+      text-align: inherit;
+    }
+  }
+}
+
+/// `.auro_containedButtons` is a helper class to support the use of multiple buttons and/or the use of ods-hyperlink `role="button"` in a parent container.
+///
+/// `.auro_containedButtons` has a dependency on OWCSS breakpoints. See example below to import dependency.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` options.
+///
+/// Place selector on outer parent element.
+/// @group utility-auro
+/// @example scss - Default selector(s)
+///   .auro_containedButtons {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .auro_containedButtons {}
+///
+/// @example scss - import selector file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/containedButtons";
+/// @example scss - import dependency file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+
+#{$scope}.auro_containedButtons {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  auro-button {
+    order: -1;
+  }
+
+  [role=button] {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &--reverse {
+    @include breakpoint-medium {
+      justify-content: flex-end;
+    }
+  }
+
+  @include breakpoint-medium {
+    flex-direction: row;
+
+    > * {
+      margin-left: 1rem;
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    auro-button {
       order: inherit;
     }
 

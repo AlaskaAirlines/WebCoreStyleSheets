@@ -7,14 +7,14 @@
 // sass-lint:disable indentation
 
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
-/// @group utility-mixins
+/// @group †deprecated
+/// @deprecated see `auro_focus-hyperlink`
 /// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 /// @example scss - Set properties for Sass output
 ///  .focus-visible {
-///    &.hyperlink,
-///    &.ods-button {
+///    &.hyperlink {
 ///      @include focus-hyperlink(sass)
 ///    }
 ///  }
@@ -54,6 +54,52 @@
 
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
 /// @group utility-mixins
+/// @param {string} $syntax [] - sets user's requst for style of variable return (css, sass)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+/// @example scss - Set properties for Sass output
+///  .focus-visible {
+///    &.hyperlink {
+///      @include auro_focus-hyperlink(sass)
+///    }
+///  }
+/// @example css - Set properties for CSS output
+///  :host(.focus-visible) {
+///    .hyperlink
+///      @include auro_focus-hyperlink(css);
+///    }
+///  }
+@mixin auro_focus-hyperlink($syntax) {
+  $color: null;
+  $background-color: null;
+  $outline: null;
+  $hover-color: null;
+
+  @if $syntax == css {
+    $color: var(--auro-color-text-primary-on-dark);
+    $background-color: var(--auro-color-ui-default-on-light);
+    $outline: var(--auro-color-ui-default-on-light) solid var(--auro-size-xxs);
+    $hover-color: var(--auro-color-text-primary-on-dark) !important;
+
+  } @else if $syntax == sass {
+    $color: $auro-color-text-primary-on-dark;
+    $background-color: $auro-color-ui-default-on-light;
+    $outline: $auro-color-ui-default-on-light solid $auro-size-xxs;
+    $hover-color: $auro-color-text-primary-on-dark !important;
+  }
+
+  color: $color;
+  background-color: $background-color;
+  outline: $outline;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+/// Creates Sass variable or custom property output for multi-use focus-visible shape
+/// @group †deprecated
+/// @deprecated see `auro_focus-button`
 /// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
@@ -77,6 +123,52 @@
     $shadow-color: $color-brand-blue-atlas-base;
     $complete-shadow-color: $color-brand-green-tropical-base;
     $white-band: $color-base-white;
+  }
+
+  box-shadow:
+    inset 0 0 0 2px $shadow-color,
+    inset 0 0 0 7px $white-band;
+
+  &--secondary {
+    box-shadow:
+      inset 0 0 0 2px $shadow-color,
+      inset 0 0 0 5px $white-band,
+      inset 0 0 0 8px $shadow-color,
+  }
+
+  &--complete {
+    box-shadow:
+      inset 0 0 0 2px var(--ods-button-complete-background-color),
+      inset 0 0 0 7px $white-band,
+  }
+}
+
+
+/// Creates Sass variable or custom property output for multi-use focus-visible shape
+/// @group utility-mixins
+/// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+/// @example css - Set properties for CSS output
+///  :host(.focus-visible) {
+///    .button {
+///      @include auro_focus-button(css);
+///    }
+///  }
+@mixin auro_focus-button($style) {
+  $shadow-color: null;
+  $white-band: null;
+  $complete-shadow-color: null;
+
+  @if $style == css {
+    $shadow-color: var(--auro-color-base-ui);
+    $complete-shadow-color: var(--auro-color-brand-tropical-300);
+    $white-band: var(--auro-color-background-lightest);
+
+  } @else if $style == sass {
+    $shadow-color: $auro-color-base-ui;
+    $complete-shadow-color: $auro-color-brand-tropical-300;
+    $white-band: $auro-color-background-lightest;
   }
 
   box-shadow:

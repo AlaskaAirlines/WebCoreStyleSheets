@@ -12,6 +12,22 @@ WC Style sheets is a responsive, mobile-first collection of styles and tools des
 
 This repository is a library of core level styles, functions, and mixins that can be used for consistent front-end UI development.
 
+## Install
+
+OWCSS is made up of a series of Sass files that allows for vast flexibility of use cases. There is no core file to import, rather OWCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below: 
+
+```scss
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+```
+
+In some cases supporting legacy UIs will be an issue and simply importing a Sass file with its selectors will clash with existing selectors. In those situations it may be useful to wrap all the selectors inside a parent selector at the time of import as the following illustrates. 
+
+```scss
+.[parent-selector] {
+  @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+}
+```
+
 ## WCSS Supports ...
 
 See [https://alaskaairlines.github.io/](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for automated documentation build.

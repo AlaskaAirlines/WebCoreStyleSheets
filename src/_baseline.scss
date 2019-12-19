@@ -154,11 +154,11 @@ small,
   font-size: $size-font-breakpoint-all-small;
 }
 
-/// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen.
+/// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen, but not exceed 100% its initial size.
+/// If additional properties are needed to shape the img selector, please see the list of Utility classes including the `util_img-is-responsive` selector to scale images with responsive aspects.
 ///
 /// Example HTML - `<img src=" ... " alt="" />`
-/// @group Responsive
+/// @group Baseline
 img {
-  display: block;
   max-width: 100%;
 }

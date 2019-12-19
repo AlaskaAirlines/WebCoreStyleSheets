@@ -3,17 +3,29 @@
 
 // ---------------------------------------------------------------------
 
+@import "libSupport/manageScope";
+
 // sass-lint:disable variable-for-property, no-vendor-prefixes, no-duplicate-properties
 
 /* Document
    ========================================================================== */
 
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
-html {
+///
+/// 1. Correct the line height in all browsers.
+/// 2. Prevent adjustments of font size after orientation changes in iOS.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   html {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   html.auro {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+html#{$scope} {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -21,212 +33,457 @@ html {
 /* Sections
    ========================================================================== */
 
-/**
- * Remove the margin in all browsers.
- */
-
-body {
+///
+////// Remove the margin in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   body {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro body {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/**
- * Render the `main` element consistently in IE.
- */
-
-main {
+///
+/// Render the `main` element consistently in IE.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   main {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro main {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}main {
   display: block;
 }
 
 /* Grouping content
    ========================================================================== */
 
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
+///
+/// 1. Add the correct box sizing in Firefox.
+/// 2. Show the overflow in Edge and IE.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   hr {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro hr {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
+///
+/// 1. Correct the inheritance and scaling of font size in all browsers.
+/// 2. Correct the odd `em` font sizing in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   pre {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro pre {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}pre {
   font-family: monospace, monospace; /* 1 */
-  font-size: $size-font-breakpoint-all-med; /* 2 */
+  font-size: $auro-text-body-size-default; /* 2 */
 }
 
 /* Text-level semantics
    ========================================================================== */
 
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
+///
+/// Remove the gray background on active links in IE 10.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   a {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro a {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}a {
   background-color: transparent;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
+///
+/// 1. Remove the bottom border in Chrome 57-
+/// 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   abbr[title] {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro abbr[title] {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
 
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
+///
+/// Add the correct font weight in Chrome, Edge, and Safari.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   b,
+///   strong {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro b,
+///   .auro strong {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}b,
+#{$scope}strong {
   font-weight: bolder;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
+///
+/// 1. Correct the inheritance and scaling of font size in all browsers.
+/// 2. Correct the odd `em` font sizing in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   code,
+///   kbd,
+///   samp {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro code,
+///   .auro kbd,
+///   .auro samp {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}code,
+#{$scope}kbd,
+#{$scope}samp {
   font-family: monospace, monospace; /* 1 */
-  font-size: $size-font-breakpoint-all-med; /* 2 */
+  font-size: $auro-text-body-size-default; /* 2 */
 }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
+///
+/// Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   sub,
+///   sup {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro sub,
+///   .auro sup {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}sub,
+#{$scope}sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-sub {
+///
+/// Prevent `sub` element from affecting the line height in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   sub {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro sub {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}sub {
   bottom: -0.25em;
 }
 
-sup {
+///
+/// Prevent `sup` element from affecting the line height in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   sup {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro sup {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}sup {
   top: -0.5em;
 }
 
 /* Embedded content
    ========================================================================== */
 
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
+///
+/// Remove the border on images inside links in IE 10.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   img {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro img {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}img {
   border-style: none;
 }
 
 /* Forms
    ========================================================================== */
 
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
+///
+/// 1. Change the font styles in all browsers.
+/// 2. Remove the margin in Firefox and Safari.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   button,
+///   input,
+///   optgroup,
+///   select,
+///   textarea {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro button,
+///   .auro input,
+///   .auro optgroup,
+///   .auro select,
+///   .auro textarea {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}button,
+#{$scope}input,
+#{$scope}optgroup,
+#{$scope}select,
+#{$scope}textarea {
   margin: 0; /* 2 */
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: $vertical-alignment-body; /* 1 */
+  line-height: $auro-text-body-height-default; /* 1 */
 }
 
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
+///
+/// Show the overflow in IE.
+/// 1. Show the overflow in Edge.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   button,
+///   input {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro button,
+///   .auro input {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}button,
+#{$scope}input { /* 1 */
   overflow: visible;
 }
 
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
+///
+/// Remove the inheritance of text transform in Edge, Firefox, and IE.
+/// 1. Remove the inheritance of text transform in Firefox.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   button,
+///   select {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro button,
+///   .auro select {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}button,
+#{$scope}select { /* 1 */
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+///
+/// Correct the inability to style clickable types in iOS and Safari.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   button,
+///   [type="button"],
+///   [type="reset"],
+///   [type="submit"] {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro button,
+///   .auro [type="button"],
+///   .auro [type="reset"],
+///   .auro [type="submit"] {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}button,
+#{$scope}[type="button"],
+#{$scope}[type="reset"],
+#{$scope}[type="submit"] {
   -webkit-appearance: none;
 }
 
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+///
+/// Remove the inner border and padding in Firefox.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   button::-moz-focus-inner,
+///   [type="button"]::-moz-focus-inner,
+///   [type="reset"]::-moz-focus-inner,
+///   [type="submit"]::-moz-focus-inner {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro button::-moz-focus-inner,
+///   .auro [type="button"]::-moz-focus-inner,
+///   .auro [type="reset"]::-moz-focus-inner,
+///   .auro [type="submit"]::-moz-focus-inner {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}button::-moz-focus-inner,
+#{$scope}[type="button"]::-moz-focus-inner,
+#{$scope}[type="reset"]::-moz-focus-inner,
+#{$scope}[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+///
+/// Restore the focus styles unset by the previous rule.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   button:-moz-focusring,
+///   [type="button"]:-moz-focusring,
+///   [type="reset"]:-moz-focusring,
+///   [type="submit"]:-moz-focusring {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro button:-moz-focusring,
+///   .auro [type="button"]:-moz-focusring,
+///   .auro [type="reset"]:-moz-focusring,
+///   .auro [type="submit"]:-moz-focusring {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}button:-moz-focusring,
+#{$scope}[type="button"]:-moz-focusring,
+#{$scope}[type="reset"]:-moz-focusring,
+#{$scope}[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
+///
+/// Correct the padding in Firefox.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   fieldset {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro fieldset {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
-legend {
+///
+/// 1. Correct the text wrapping in Edge and IE.
+/// 2. Correct the color inheritance from `fieldset` elements in IE.
+/// 3. Remove the padding so developers are not caught out when they zero out
+///    `fieldset` elements in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   legend {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro legend {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}legend {
   display: table; /* 1 */
   box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
@@ -235,55 +492,117 @@ legend {
   white-space: normal; /* 1 */
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
+///
+/// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   progress {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro progress {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}progress {
   vertical-align: baseline;
 }
 
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
+///
+/// Remove the default vertical scrollbar in IE 10+.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   textarea {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro textarea {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}textarea {
   overflow: auto;
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+///
+/// Correct the cursor style of increment and decrement buttons in Chrome.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   [type="number"]::-webkit-inner-spin-button,
+///   [type="number"]::-webkit-outer-spin-button {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro [type="number"]::-webkit-inner-spin-button,
+///   .auro [type="number"]::-webkit-outer-spin-button {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}[type="number"]::-webkit-inner-spin-button,
+#{$scope}[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
+///
+/// 1. Correct the odd appearance in Chrome and Safari.
+/// 2. Correct the outline style in Safari.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   [type="search"] {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro [type="search"] {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
+///
+/// Remove the inner padding in Chrome and Safari on macOS.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   [type="search"]::-webkit-search-decoration {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro [type="search"]::-webkit-search-decoration {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
+///
+/// 1. Correct the inability to style clickable types in iOS and Safari.
+/// 2. Change font properties to `inherit` in Safari.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   ::-webkit-file-upload-button {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro ::-webkit-file-upload-button {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
@@ -291,37 +610,77 @@ textarea {
 /* Interactive
    ========================================================================== */
 
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
+///
+/// Add the correct display in Edge, IE 10+, and Firefox.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   details {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro details {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}details {
   display: block;
 }
 
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
+///
+/// Add the correct display in all browsers.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   summary {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro summary {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}summary {
   display: list-item;
 }
 
 /* Misc
    ========================================================================== */
 
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
+///
+/// Add the correct display in IE 10+.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   template {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro template {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}template {
   display: none;
 }
 
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
+///
+/// Add the correct display in IE 10.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group Normalize
+/// @example scss - Default selector(s)
+///   [hidden] {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro [hidden] {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+///
+#{$scope}[hidden] {
   display: none;
 }

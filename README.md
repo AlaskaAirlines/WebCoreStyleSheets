@@ -6,104 +6,185 @@
 
 The core front-end framework for building experiences with the  Design System.
 
-WC Style sheets is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Orion Design Language.
+WC Style sheets is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Orion Design Language and assist with transition to the Auro Design Language.
 
 ## What's included
 
-This repository is a library of core level styles, functions, and mixins that can be used for consistent front-end UI development.
+This repository is a library of core level styles, functions, and mixins that can be used for consistent front-end UI development. This will include full descriptions of CSS selectors, mixins and any other supporting functions or tools. 
+
+## All styles documented 
+
+Please see the [documentation site](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for all information related to WC Style Sheets. 
+
+## †Deprecated
+
+With each release of WC Style Sheets please be sure to pay attention to the †DEPRECATED section of the doc site. All styles that are designated as deprecated will be listed in this section and will be deleted with the next major release. Each deprecated item may list an alternative option. If there is not an alternative option, please consult with your team designer for an alternate solution. 
+
+#### Deprecated files
+
+| deprecated file | new file | description |
+|---|---|---|
+| baselineLTE.scss | core.scss | File deprecation to support new features |
+| baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing. 
+| inputTypeText.scss | n/a | n/a |
+| _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
+
+
+## Support 
+
+If at any time there is an issue discovered by either the document site or the core library itself, please submit an [issue](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/new/choose) as to alert the core team of the situation. We appreciate all your support! 
 
 ## Install
 
-OWCSS is made up of a series of Sass files that allows for vast flexibility of use cases. There is no core file to import, rather OWCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below: 
+OWCSS is made up of a series of Sass files that allows for an array of use cases. There is no core file to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below: 
 
 ```scss
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
 ```
 
-In some cases supporting legacy UIs will be an issue and simply importing a Sass file with its selectors will clash with existing selectors. In those situations it may be useful to wrap all the selectors inside a parent selector at the time of import as the following illustrates. 
+### Scoping
+
+Be sure to see the [prefixing and scoping API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#scope-prefix) in the documentation site. 
+
+When supporting legacy UIs there may be issues with importing a Sass file and its selectors. To enable scoping simply set the `$scope` variable to be `true` prior to importing any selectors that support this setting. 
 
 ```scss
-.[parent-selector] {
-  @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
-}
+$scope: true;
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
 ```
 
-## WCSS Supports ...
+This setting will result in the following CSS selectors
 
-See [https://alaskaairlines.github.io/](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for automated documentation build.
+```css
+html.auro { ... }
 
-The current version of WC Style Sheets supports:
+.auro body,
+.auro .baseType { ... }
+```
 
-1. `AS Circular` web font, font file resources and `@font-face` Sass -- [Install Instructions](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/howToUseFonts.md)
-1. Defined breakpoint mixins
-1. CSS Normalize
-1. Baseline styles
-1. BaselineLTE styles
-1. Utility (functional) CSS classes
-1. Experimental `<input />` styling
+### Prefixing
 
-### WC Style Sheets Normalize
-
-While there are many versions of a normalize style sheet, the normalized used in WC Style Sheets has been specifically engineered to meet the design direction of the Alaska Air UX and Design standards.
-
-To review, please see [./src/normalize.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/src/_normalize.scss) for any specific use notation.
-
-### baseline.scss versus baselineLTE.scss?
-
-In the repository are two versions of the baseline styles. The reason for this is simply to support HTML Web Components. Due to the encapsulation model, not all selectors that would be needed for larger scale app development is needed are required for Web Components.
-
-For global scope projects, the use of `baseline.scss` would be preferred over `baselineLTE.scss`.
-
-`baselineLTE.scss` is a dependency of `baseline.scss`.
-
-### Utility Classes / Functional CSS
-
-WC Style Sheets supports an ever evolving array of functional single-responsibility selectors.
-
-These selectors are NOT imported by default, to install whole set:
+To enable prefixing simply set the `$prefix` variable to be `true` prior to importing any selectors that support this setting. 
 
 ```scss
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClass";
+$prefix: true;
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
 ```
 
-To see individual families of utility classes, see [.src/utilityClasses/](src/utilityClasses).
+This setting will result in the following CSS selectors
 
-Definitions of all utility classes can also be found in the [CSS docs](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) site.
+```css
+html { ... }
+
+body,
+.auro_baseType { ... }
+```
+
+### Scoping and prefixing
+
+If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set both the `scope` and `prefix` variables as `true` prior to importing any selectors that support these settings. 
+
+```scss
+$scope: true;
+$prefix: true;
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+``` 
+
+This setting will result in the following CSS selectors
+
+```css
+html.auro { ... }
+
+.auro body,
+.auro .auro_baseType { ... }
+```
 
 ### Importing utility classes and using the !important flag
 
 When using the Utility Classes, there are two ways to include them. Either subscribe to each family of functional selectors individually, or include all families in a single request.
 
-```scss
-// import all functional selectors
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
+See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-variable-important)
 
-or ...
 
-// impoorting individual selector families
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
+### layoutPropertiesGenerator
+
+Importing this file will auto-generates all available utility selectors. Output can be configured by redefining default values prior to import. See default value examples below.
+
+```sass
+none, xs, md, lg, xl
 ```
 
-In the event that the `!important` flag is needed for the functional selectors, simply define this variable prior to importing the Utility Class files.
+See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator)
 
-```scss
-// import all functional selectors
-$important: !important;
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
+### insetUtility selector generator
 
-or ...
+Importing this file will return a series of pre-defined inset (_the padding around an element where all sides are equal_) selectors based on the inset spacing design spec.
 
-// impoorting individual selector families
-$important: !important;
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
+```sass
+none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
 ```
 
+See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_inset)
 
-## Peer Dependencies
+### spacingUtility selector generator
 
-WC Style Sheets has a project peer dependency on [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens), as well as Sass and Style Dictionary. WCSS is not a stand alone project, but is part of a specific dependency chain when building a Design System based applications.
+Importing this file will return a series of pre-defined selectors based on the stack or inline spacing design specs
+
+```sass
+[inline, stack] inline - L/R, stack - top/bottom
+
+none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
+```2
+
+See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_spacing)
+
+## CSS writing conventions
+
+The implementation of WCSS uses a naming convention model that will be strictly adhered to throughout this library and compliance is expected for any contributed updates.
+
+### Utility
+
+Universally applicable selectors in cases where applying this style is not an appropriate responsibility of another selector. These selectors are typically considered UI trump cards as they may use the `!important` flag. 
+
+To learn more about how the `!important` flag can be used with WCSS, please [see the api spec](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#variable-important).
+
+(may define shape or layout without direct context to any element, component or object)
+
+```css
+.util_hidden {
+  display: none;
+}
+
+.util_hiddenVisually {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+```
+
+### Auro supporting styles
+
+Auro web component styles are a special class of utility selectors where common UIs that are mainly addressed in Auro web components are needed in situations where web components cannot be used.
+
+These selectors will be visible by the `.auro_` prefix in the selector name, for example; 
+
+
+```css
+.auro_roleButton { ... }
+
+.auro_hyperlink { ... }
+```
+
+**NOTE:** The `auro_` prefix will be appended to an Auro supporting selector regardless of the `$prefix` flag setting. Also, the `auro_` prefix will not be duplicated if the `$prefix` flag is set `true`.
+
+### Additional documentation 
+
+To learn more about Auro standards in CSS selector conventions, please see [this document](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/cssConventions.md).
+
 
 ## Dependencies
 
@@ -129,51 +210,13 @@ Use of the the `focus-visible` library brings in the capability to be selective 
 
 [Selectors Level 4 draft: 9.4. The Focus-Indicated Pseudo-class: :focus-visible](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
 
-CSS to support this capability is within the `_baseline.scss` and `_baselineLTE.scss` files.
-
-## Experimental styles
-
-To help address the UI of `<input />` elements, there is an experimental style sheet located in the npm. Please refer to the documentation in this code for any information related to it's use.
-
-```scss
-@alaskaairux/orion-web-core-style-sheets/dist/formElements/inputTypeText
-```
-
-DO NOT include Sass file without a parent wrapper as illustrated below:
-
-```scss
-.[parent-selector] {
-  @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/formElements/inputTypeText";
-}
-```
-
-The use of the parent selector is to define a custom selector that will wrap these experimental input style as not to pollute the rest of the app's CSS.
-
 ## Getting started
 
 All resources within this repository are distributed via npm and used as individual dependencies. Each resource can be called into your Sass pipeline within a `global.scss` file or individually referenced within UI components.
 
-## Sass support
-
-WCSS consists of resources to be ingested a la carte. For example, you wish to use `breakpoints.scss` on an individual component or bring into a global Sass catch-all file, you would use the following example.
-
-```
-@import "@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-```
-
-## CSS writing conventions
-
-The implementation of WCSS uses a naming convention model that will be strictly adhered to throughout this library and compliance is expected for any contributed updates.
-
-To learn more, please reference [this document](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/cssConventions.md).
-
 ## Linters
 
-Prior to adding new Sass to this repo, please run the Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. To run the tests, run the following command:
-
-```
-$ npm run sassLint
-```
+Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. Sass-Lint is run as a pre-commit hook in this project. No commits will be allowed unless all linter tests are passed. 
 
 If there is an error, this will generate a `.html` file at the root of the project. To view this generated file, run the following command:
 
@@ -184,6 +227,16 @@ $ open sass-lint.html
 This should open the file in your default browser.
 
 This file is ignored and will not be added to the version control.
+
+## Development 
+
+To develop against WCSS run both `npm run watch` and `npm run serve` in separate terminals. 
+
+The `watch` command will run a Sass linter, process a test file from Sass to CSS and run a post CSS linter. This will ensure the quality of all new Sass added to the repo. 
+
+If additional selectors or scenarios are needed, please update the `./scripts/testBuild.scss` file to test your code. 
+
+Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation. 
 
 
 ##

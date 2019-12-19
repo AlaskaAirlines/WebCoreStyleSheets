@@ -1,0 +1,98 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+@import "../utilityVariables/spacing-options";
+@import "../utilityFunctions/capitalize";
+@import "../utilityFunctions/map-deep-get";
+@import "../utilityVariables/important";
+@import "../libSupport/manageScope";
+
+$auro-spacing-types: inline, stack !default;
+$auro-spacing-options: $auro-spacing-options !default;
+$auro-spacing-properties: padding, padding, margin, margin !default;
+
+/// This mixin is designed to return a series of pre-defined selectors based on the stack or inline spacing design specs
+///
+/// DO NOT execute mixin, this is already included with the import of the file dependency
+///
+/// **Dependency:** `$npm i alaskaairux/orion-design-tokens`
+/// @group utility-layout
+/// @param {string} $auro-spacing-types [inline, stack] inline - L/R, stack - top/bottom
+/// @param {string} $auro-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
+/// @example css - Example output css
+///  .util_stackPaddingXxxs--top {
+///    padding-top: 0.125rem;
+///  }
+///  .util_stackPaddingXxxs--bottom {
+///    padding-bottom: 0.125rem;
+///  }
+///  .util_stackMarginXxxs--top {
+///    margin-top: 0.125rem;
+///  }
+///  .util_stackMarginXxxs--bottom {
+///    margin-bottom: 0.125rem;
+///  }
+/// @example scss - import dependencies
+///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/spacingUtility";
+/// @example scss - import with custom over-rides
+///   $auro-spacing-types: inline;
+///   $auro-spacing-options: xxxs;
+///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+
+@mixin auro_spacing($types: $auro-spacing-types, $options: $auro-spacing-options) {
+  @each $type in $types {
+    @each $value in $options {
+      $map: map-keys($tokens);
+      $var: auro_map-deep-get($tokens, #{$map}, $value);
+      $directions: null;
+      $properties: null;
+
+      @if $type == stack {
+        $directions: top, bottom, top, bottom;
+      } @else if $type == inline {
+        $directions: left, right, left, right;
+      }
+
+      @if $type == stack or $type == inline {
+        $properties: $auro-spacing-properties;
+      }
+
+      @if not index($types, $type) {
+        @error "INVALID, '#{$type}' is not known, please choose from options, [#{$types}]";
+      }
+
+      @if auro_contains($options, $value) {
+        @if not index($options, $value) {
+          @error "INVALID, '#{$value}' is not known, please choose from options, [#{$auro-inset-options}]";
+        }
+
+        @if $value == 'none' {
+          @for $i from 1 through length($properties) {
+            $direction: nth($directions, $i);
+            $property: nth($properties, $i);
+            #{$scope}.#{$prefix}util_#{$type}#{auro_capitalize($property)}#{auro_capitalize($value)}--#{$direction} {
+              #{$property}-#{$direction}: 0 $important;
+            }
+          }
+        }
+
+        @else {
+          @for $i from 1 through length($properties) {
+            $direction: nth($directions, $i);
+            $property: nth($properties, $i);
+            #{$scope}.#{$prefix}util_#{$type}#{auro_capitalize($property)}#{auro_capitalize($value)}--#{$direction} {
+              #{$property}-#{$direction}: $var $important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include auro_spacing()

@@ -3,82 +3,132 @@
 
 // ---------------------------------------------------------------------
 
-// sass-lint:disable no-important
-
-// Variables are defined by baseline Design Tokens
-
-/// The use of the `$important` variable allows the user to determine if they require the use of the `!important` flag with utility classes or not.
-/// By default the `!important` flag is NOT set on any CSS selector.
-/// @group Display-Utility
-/// @prop {Boolean} $important [null] - manage use of `!important` flag
-/// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-/// @example scss - update value prior to import
-///   $important: true;
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-$important: null !default;
-
-@if $important {
-  $important: !important;
-}
+@import "../libSupport/manageScope";
+@import "../utilityVariables/important";
 
 /// Utility class to display elements `inline`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-display
+/// @example scss - Default selector(s)
+///   .util_displayInline {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_displayInline {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_displayInline {}
+///
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_displayInline {
+#{$scope}.#{$prefix}util_displayInline {
   display: inline $important;
 }
 
 /// Utility class to display elements `inline-block`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-display
+/// @example scss - Default selector(s)
+///   .util_displayInline {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_displayInline {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_displayInline {}
+///
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_displayInlineBlock {
+#{$scope}.#{$prefix}util_displayInlineBlock {
   display: inline-block $important;
 }
 
-/// Utility class to display elements `inline-block`
+/// Utility class to display elements `block`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-display
+/// @example scss - Default selector(s)
+///   .util_displayBlock {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_displayBlock {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_displayBlock {}
+///
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_displayBlock {
+#{$scope}.#{$prefix}util_displayBlock {
   display: block $important;
 }
 
 /// Utility class to display elements `flex`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-display
+/// @example scss - Default selector(s)
+///   .util_displayFlex {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_displayFlex {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_displayFlex {}
+///
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_displayFlex {
+#{$scope}.#{$prefix}util_displayFlex {
   display: flex $important;
 }
 
 /// Utility class to display elements `none`
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-display
+/// @example scss - Default selector(s)
+///   .util_displayHidden {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_displayHidden {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_displayHidden {}
+///
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_displayHidden {
+#{$scope}.#{$prefix}util_displayHidden {
   display: none $important;
 }
 
 /// Utility class to visually hide elements within the UI, but still be picked up by screen readers.
 ///
-/// See [variable use](http://localhost:8000/#display-utility-variable) for managing the `!important` flag.
-/// @group Display-Utility
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-display
+/// @example scss - Default selector(s)
+///   .util_displayHiddenVisually {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_displayHiddenVisually {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_displayHiddenVisually {}
+///
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties";
-.util_displayHiddenVisually {
+#{$scope}.#{$prefix}util_displayHiddenVisually {
   border: 0 $important;
   clip: rect(1px, 1px, 1px, 1px) $important;
   height: 1px $important;

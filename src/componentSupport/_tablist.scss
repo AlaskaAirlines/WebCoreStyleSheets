@@ -7,14 +7,18 @@
 
 // This selector is NOT auto included with any other web core style sheet.
 
+@import "../libSupport/manageScope";
+
 /// `.ods-tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
 ///
 /// Place selector on outer `div` or `section` container with the `role="tablist"` also applied.
-/// @group ODS-Utility
+/// @group †deprecated
+/// @deprecated see `.auro_tablist`
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
 
 .ods-tablist {
+  /* deprecated see `.auro_tablist` */
   @include breakpoint-narrow {
     overflow-y: unset;
     white-space: unset;
@@ -26,6 +30,31 @@
   line-height: $size-scale-xxl;
   height: calc(#{$size-scale-xxl} + 1px);
   margin-bottom: $size-scale-med;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
+/// `.auro_tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
+///
+/// Place selector on outer `div` or `section` container with the `role="tablist"` also applied.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` options.
+/// @group utility-auro
+/// @example scss - import selector file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
+
+#{$scope}.auro_tablist {
+  @include breakpoint-narrow {
+    overflow-y: unset;
+    white-space: unset;
+  }
+
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: $auro-color-border-primary-on-light;
+  line-height: $auro-size-xxl;
+  height: calc(#{$auro-size-xxl} + 1px);
+  margin-bottom: $auro-size-md;
   overflow-y: scroll;
   white-space: nowrap;
 }

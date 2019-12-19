@@ -1,0 +1,94 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+@import "../utilityVariables/spacing-options";
+@import "../utilityFunctions/capitalize";
+@import "../utilityFunctions/map-deep-get";
+@import "../utilityVariables/important";
+@import "../libSupport/manageScope";
+
+$auro-inset-directions: "", --stretch, --squish !default;
+$auro-inset-spacing-options: $auro-spacing-options !default;
+
+/// This mixin is designed to return a series of pre-defined selectors based on the inset spacing design spec
+///
+/// DO NOT execute mixin, this is already included with the import of the file dependency
+///
+/// **Dependency:** `$npm i alaskaairux/orion-design-tokens`
+/// @group utility-layout
+/// @param {String} $auro-inset-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
+/// @example css - Example output css
+///  .util_insetXxxs {
+///    padding: 0.125rem;
+///  }
+///  .util_insetXxxs--stretch {
+///    padding: calc(0.125rem * 2) 0.125rem;
+///  }
+///  .util_insetXxxs--squish {
+///    padding: 0 0.125rem;
+///  }
+/// @example scss - import dependencies
+///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+/// @example scss - import with custom over-rides
+///   $auro-inset-spacing-options: xxxs;
+///   $auro-inset-directions:'';
+///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+
+@mixin auro_inset($values: $auro-inset-spacing-options) {
+  @each $value in $values {
+    $map: map-keys($tokens);
+    $mapValue: auro_map-deep-get($tokens, #{$map}, $value);
+    $squish-string: null;
+    $stretch-string: null;
+
+
+    @if $value == 'none' {
+      $squish-string: 0 $important;
+      $stretch-string: 0 $important;
+      $mapValue: 0;
+    }
+    @else if $value == 'xxxs' {
+      $squish-string: 0 $mapValue $important;
+      $stretch-string: calc(#{$mapValue} * 2) $mapValue $important;
+    }
+    @else {
+      $squish-string: calc(#{$mapValue} / 2) $mapValue $important;
+      $stretch-string: calc(#{$mapValue} * 1.5) $mapValue $important;
+    }
+
+    @if auro_contains($values, $value) {
+      @if not index($values, $value) {
+        @error "INVALID, '#{$value}' is not known, please choose from options, [#{$values}]";
+      }
+
+      @if $value == 'none' {
+        #{$scope}.#{$prefix}util_inset#{auro_capitalize($value)} {
+          padding: $mapValue $important;
+        }
+      }
+
+      @else {
+        @for $i from 1 through length($auro-inset-directions) {
+          $direction: nth($auro-inset-directions, $i);
+
+          #{$scope}.#{$prefix}util_inset#{auro_capitalize($value)}#{$direction} {
+            @if $direction == '' {
+              padding: $mapValue $important;
+            } @else if  $direction == '--squish' {
+              padding: $squish-string;
+            } @else if  $direction == '--stretch' {
+              padding: $stretch-string;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include auro_inset();

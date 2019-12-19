@@ -10,6 +10,88 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleTab";
 /// @example scss - Set properties for Sass output that is NOT within a component
+///   .auro_roleTab {
+///      @include auro_anchorTab(sass, noncomponent);
+///   }
+/// @example scss - Set properties for CSS output that IS within a component
+///   .hyperlink--tab {
+///       @include auro_anchorTab(css, component)
+///   }
+@mixin auro_anchorTab($style, $env) {
+  $color: null;
+  $border-color: null;
+  $padding: null;
+  $hover-color: null;
+  $isactive-color: null;
+
+  @if $style == css {
+    $color: var(--auro-color-text-link-on-light);
+    $border-color: var(--auro-color-border-primary-on-light);
+    $padding: var(--auro-size-md);
+    $hover-color: var(--auro-color-text-link-on-light-hover);
+    $isactive-color: var(--auro-color-text-primary-on-light);
+
+  } @else if $style == sass {
+    $color: $auro-color-text-link-on-light;
+    $border-color: $auro-color-border-primary-on-light;
+    $padding: $auro-size-md;
+    $hover-color: $auro-color-ui-hover-on-light;
+    $isactive-color: $auro-color-text-primary-on-light;
+
+  } @else {
+    @error "Invalid $style option. Please use `css` or `sass`";
+  }
+
+  color: $color;
+  border-color: $border-color;
+  padding: $size-scale-med;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+
+  @if $env == component {
+    :host(:not(.is-touching)) & {
+      &:hover {
+        border-width: 0 0 2px 0;
+        text-decoration: none;
+        cursor: pointer;
+
+        color: $hover-color;
+        border-color: currentColor;
+      }
+    }
+  } @else if $env == noncomponent {
+    &:not(.is-touching) {
+      &:hover {
+        border-width: 0 0 2px 0;
+        text-decoration: none;
+        cursor: pointer;
+
+        color: $hover-color;
+        border-color: currentColor;
+      }
+    }
+  } @else {
+    @error "Invalid $env option. Please use `component` or `noncomponent`";
+  }
+
+  &.is-active {
+    border-width: 0 0 2px 0;
+    text-decoration: none;
+    cursor: pointer;
+
+    color: $isactive-color;
+    border-color: currentColor;
+  }
+}
+
+/// Creates Sass variable or custom property output for multi-use tab shape
+/// @group †deprecated
+/// @deprecated see `auro_anchorTab`
+/// @param {string} $style [] - Specifies the style type (sass, css)
+/// @param {string} $env [] - Specifies the style environment (component, noncomponent)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleTab";
+/// @example scss - Set properties for Sass output that is NOT within a component
 ///   .ods-roleTab {
 ///      @include anchorTab(sass, noncomponent);
 ///   }

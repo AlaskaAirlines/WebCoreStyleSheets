@@ -1,45 +1,125 @@
 // Import build resources to ensure that src resources are working as expected
-// @import './test/sass/_TokenVariables';
 
 @import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables';
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
 
 $scope: true;
 $prefix: true;
 
 @import './src/breakpoints';
 
-// @import './src/fonts';
+.auro_breakpoint--lg {
+  @include auro_breakpoint--lg {
+    color: orange;
+  }
+}
 
-// @import './src/animation';
+.auro_breakpoint--md  {
+  @include auro_breakpoint--md {
+    color: orange;
+  }
+}
 
-// @import './src/baseline';
+.auro_breakpoint--sm {
+  @include auro_breakpoint--sm {
+    color: orange;
+  }
+}
 
-// @import './src/normalize';
+.auro_breakpoint {
+  color: orange;
 
-// @import './src/utilityClasses';
+  @include auro_breakpoint($min: $auro-breakpoint-sm) {
+    color: blue;
+  }
+}
 
-// @import './src/utilityClasses/displayProperties';
+.auro_breakpoint {
+  color: orange;
 
-// @import './src/utilityClasses/focusVisible';
+  @include auro_breakpoint($max: $auro-breakpoint-lg) {
+    color: blue;
+  }
+}
 
-// @import './src/utilityClasses/fontStyles';
+.auro_breakpoint {
+  color: orange;
 
-// @import './src/utilityClasses/layoutProperties';
+  @include auro_breakpoint($polar: $auro-breakpoint-sm $auro-breakpoint-lg) {
+    color: blue;
+  }
+}
+
+.auro_breakpoint {
+  color: orange;
+
+  @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$auro-breakpoint-sm})') {
+    color: blue;
+  }
+}
+
+@import './src/animation';
+
+.foo {
+  @include auro_transition;
+}
+
+@import './src/fonts';
+
+@import './src/normalize';
+
+@import './src/baseline'; // deprecated
+
+@import './src/essentials';
+
+@import './src/headings';
+
+@import './src/utilityClasses';
+
+@import './src/utilityClasses/displayProperties';
+
+@import './src/utilityClasses/focusVisible';
+
+@import './src/utilityClasses/fontStyles';
+
+$layout-properties: margin;
+$layout-extensions: Left;
+@import './src/utilityClasses/layoutProperties';
+@import './src/utilityMixins/layoutPropertiesGenerator';
+
+/*------------- general spacing -----------------*/
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+$auro-spacing-types: inline, stack;
+$auro-spacing-options: none;
+@import "./src/utilityMixins/spacingUtility";
+
+/*---------- inset generator ----------------*/
+$auro-inset-spacing-options: none;
+$auro-inset-directions:'';
+@import "./src/utilityMixins/insetUtility";
 
 @import './src/utilityClasses/responsive';
 
-// @import './src/utilityMixins/anchor-roleButton';
+@import './src/utilityMixins/anchor-roleButton';
 
-// @import './src/utilityMixins/anchor-roleTab';
+.auro_roleButton {
+    @include auro_anchorButton(sass, noncomponent);
+}
 
-// @import './src/utilityMixins/focusVisible';
+@import './src/utilityMixins/anchor-roleTab';
 
-// @import './src/componentSupport/anchor-roleButton';
+.auro_roleTab {
+   @include auro_anchorTab(sass, noncomponent);
+}
 
-// @import './src/componentSupport/anchor-roleTab';
+@import './src/utilityMixins/focusVisible';
 
-// @import './src/componentSupport/containedButtons';
+@import './src/componentSupport/anchor-roleButton';
 
-// @import './src/componentSupport/tablist';
+@import './src/componentSupport/anchor-roleTab';
 
-// @import './src/formElements/inputTypeText';
+@import './src/componentSupport/containedButtons';
+
+@import './src/componentSupport/tablist';
+
+@import './src/formElements/inputTypeText';

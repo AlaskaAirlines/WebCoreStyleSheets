@@ -7,9 +7,23 @@
 // breakpoints when development mobile-first UIs.
 
 /// Standard breakpoint to support handheld resolutions that specifically fall between 480px - 840px.
+///
+/// This Orion breakpoint mixin preset does not have a direct Auro replacement.
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($cust: '(min-width: #{$breakpoint-width-narrow}) and (max-width: #{$breakpoint-width-medium - 1px})') { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
 ///       @include phone-large {
@@ -23,9 +37,23 @@
 }
 
 /// Standard breakpoint to support tablet sized devices that specifically fall between 840px - 1024px.
+///
+/// This Orion breakpoint mixin does not have a direct Auro replacement.
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($cust: '(min-width: #{$breakpoint-width-medium}) and (max-width: #{$breakpoint-width-wide - 1px})') { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
 ///       @include tablet {
@@ -39,9 +67,23 @@
 }
 
 /// Standard breakpoint to support resolutions greater than 1440px.
+///
+/// This Orion breakpoint mixin does not have a direct Auro replacement.
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($min: $breakpoint-width-max) { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
 ///       @include breakpoint-max {
@@ -54,10 +96,26 @@
   }
 }
 
+
+
 /// Standard breakpoint to support resolutions greater than 1024px.
+///
+/// This Orion breakpoint mixin does not have a direct Auro replacement.
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($min: $breakpoint-width-wide) { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
 ///       @include breakpoint-wide {
@@ -71,9 +129,23 @@
 }
 
 /// Standard breakpoint to support resolutions greater than 840px.
+///
+/// This Orion breakpoint mixin does not have a direct Auro replacement.
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($min: $breakpoint-width-medium) { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
 ///       @include breakpoint-medium {
@@ -87,9 +159,23 @@
 }
 
 /// Standard breakpoint to support resolutions greater than 480px.
+///
+/// This Orion breakpoint mixin does not have a direct Auro replacement.
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($min: $breakpoint-width-narrow) { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @example scss - Set breakpoint
 ///   .foo {
 ///       @include breakpoint-narrow {
@@ -102,17 +188,29 @@
   }
 }
 
-
 /// Open format mixin to define any breakpoint.
 ///
 /// See also: https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features
 ///
-/// Compatibility: https://caniuse.com/#feat=css-mediaqueries
+/// Compatibility: https://caniuse.com/#feat=css-mediaqueries\
+/// @deprecated see responsive > mixins > `auro_breakpoint`
+/// @group †deprecated
+/// @example scss - Deprecated tokens w/optional replacements
+///   $breakpoint-width-narrow: 480px; // deprecated
+///   $breakpoint-width-medium: 840px; // deprecated
+///   $breakpoint-width-wide:  1024px; // deprecated
+///   $breakpoint-width-max:   1440px; // deprecated
+///
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @example scss - Deprecated mixin replacement option
+///   @include auro_breakpoint($min: $breakpoint-width-narrow) { ... }
+///   @include auro_breakpoint($max: $breakpoint-width-wide) { ... }
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-/// @group Responsive
 /// @param {string} $breakpointValue [] - sets value of media breakpoint
-/// @param {string} $mediaFeature  [min-width] - sets feature value, defaults to
+/// @param {string} $mediaFeature  [min-width] - sets feature value
 /// @example scss - Set breakpoint using manually entered properties
 ///   .foo {
 ///     color: orange;
@@ -123,6 +221,121 @@
 ///   }
 @mixin breakpoint($breakpointValue, $mediaFeature: min-width) {
   @media screen and (#{$mediaFeature}: $breakpointValue) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 1232px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include auro_breakpoint--lg {
+///         ...
+///       }
+///   }
+@mixin auro_breakpoint--lg {
+  @media screen and (min-width: $auro-breakpoint-lg) {
+    @content;
+  }
+}
+
+
+/// Standard breakpoint to support resolutions greater than 1024px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include auro_breakpoint--md {
+///         ...
+///       }
+///   }
+@mixin auro_breakpoint--md {
+  @media screen and (min-width: $auro-breakpoint-md) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 660px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group responsive
+/// @example scss - Set breakpoint
+///   .foo {
+///       @include auro_breakpoint--sm {
+///         ...
+///       }
+///   }
+@mixin auro_breakpoint--sm {
+  @media screen and (min-width: $auro-breakpoint-sm) {
+    @content;
+  }
+}
+
+/// Open format mixin to define any breakpoint.
+///
+/// See also: [Media_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features)
+///
+/// Compatibility: [css-mediaqueries](https://caniuse.com/#feat=css-mediaqueries\)
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+/// @group responsive
+/// @example scss - Auro breakpoint tokens
+///   $auro-breakpoint-sm: 660px;
+///   $auro-breakpoint-md: 1024px;
+///   $auro-breakpoint-lg: 1232px;
+/// @param {string} $min [null] - sets `min-width` value
+/// @param {string} $max [null] - sets `max-width` value
+/// @param {list} $polar [null] - sets `min-width` and `max-width` values
+/// @param {string} $cust [null] - allows for 100% custom breakpoint options
+/// @example scss - Set breakpoint using `$min` argument
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($min: $auro-breakpoint-sm) {
+///       color: blue;
+///     }
+///   }
+/// @example scss - Set breakpoint using `$max` argument
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($max: $auro-breakpoint-lg) {
+///       color: blue;
+///     }
+///   }
+/// @example scss - Set breakpoint using `$polar` argument
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($polar: $auro-breakpoint-sm $auro-breakpoint-lg) {
+///       color: blue;
+///     }
+///   }
+/// @example scss - Set breakpoint using `$cust` argument. Interpolation `#{}` is required if you intend to use a variable within a string.
+///   .foo {
+///     color: orange;
+///
+///     @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$auro-breakpoint-sm})') {
+///       color: blue;
+///     }
+///   }
+@mixin auro_breakpoint($min: null, $max: null, $polar: null, $cust: null) {
+  $breakpoints: null;
+
+  @if $min {
+    $breakpoints: (min-width: #{$min})
+  } @else if $max {
+    $breakpoints: (max-width: #{$max})
+  } @else if $polar {
+    $breakpoints: '(min-width: #{nth($polar, 1)}) and (max-width: #{nth($polar, 2)})'
+  } @else if $cust {
+    $breakpoints: #{$cust}
+  }
+
+  @media screen and #{$breakpoints} {
     @content;
   }
 }

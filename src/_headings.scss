@@ -1,0 +1,239 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
+
+@import "libSupport/manageScope";
+
+/// Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///
+#{$scope}.#{$prefix}heading {
+  margin: $auro-text-heading-default-margin;
+  font-weight: $auro-text-heading-default-weight;
+  letter-spacing: $auro-text-heading-default-spacing;
+}
+
+/// Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--display {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--display {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--display {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--display"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--display {
+  font-weight: $auro-text-heading-display-weight;
+  font-size: $auro-text-heading-display-size-breakpoint-sm;
+  line-height: $auro-text-heading-display-height-breakpoint-sm;
+
+  @include auro_breakpoint--md {
+    font-size: $auro-text-heading-display-size-breakpoint-md;
+    line-height: $auro-text-heading-display-height-breakpoint-md;
+  }
+
+  @include auro_breakpoint--lg {
+    font-size: $auro-text-heading-display-size-breakpoint-lg;
+    line-height: $auro-text-heading-display-size-breakpoint-lg;
+  }
+}
+
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--800 {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--800 {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--800 {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--800"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--800 {
+  font-weight: $auro-text-heading-800-weight;
+  font-size: $auro-text-heading-800-size-breakpoint-sm;
+  line-height: $auro-text-heading-800-height-breakpoint-sm;
+
+  @include auro_breakpoint--md {
+    font-size: $auro-text-heading-800-size-breakpoint-md;
+    line-height: $auro-text-heading-800-height-breakpoint-md;
+  }
+
+  @include auro_breakpoint--lg {
+    font-size: $auro-text-heading-800-size-breakpoint-lg;
+    line-height: $auro-text-heading-800-height-breakpoint-lg;
+  }
+}
+
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--700 {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--700 {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--700 {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--700"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--700 {
+  font-weight: $auro-text-heading-700-weight;
+  font-size: $auro-text-heading-700-size-breakpoint-sm;
+  line-height: $auro-text-heading-700-height-breakpoint-sm;
+
+  @include auro_breakpoint--md {
+    font-size: $auro-text-heading-700-size-breakpoint-md;
+    line-height: $auro-text-heading-700-height-breakpoint-md;
+  }
+
+  @include auro_breakpoint--lg {
+    font-size: $auro-text-heading-700-size-breakpoint-lg;
+    line-height: $auro-text-heading-700-height-breakpoint-lg;
+  }
+}
+
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--600 {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--600 {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--600 {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--600"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--600 {
+  font-size: $auro-text-heading-600-size-breakpoint-sm;
+  line-height: $auro-text-heading-600-height-breakpoint-sm;
+
+  @include auro_breakpoint--md {
+    font-size: $auro-text-heading-600-size-breakpoint-md;
+    line-height: $auro-text-heading-600-height-breakpoint-md;
+  }
+
+  @include auro_breakpoint--lg {
+    font-size: $auro-text-heading-600-size-breakpoint-lg;
+    line-height: $auro-text-heading-600-height-breakpoint-lg;
+  }
+}
+
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--500 {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--500 {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--500 {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--500"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--500 {
+  font-size: $auro-text-heading-500-size-breakpoint-sm;
+  line-height: $auro-text-heading-500-height-breakpoint-sm;
+
+  @include auro_breakpoint--md {
+    font-size: $auro-text-heading-500-size-breakpoint-md;
+    line-height: $auro-text-heading-500-height-breakpoint-md;
+  }
+
+  @include auro_breakpoint--lg {
+    font-size: $auro-text-heading-500-size-breakpoint-lg;
+    line-height: $auro-text-heading-500-height-breakpoint-lg;
+  }
+}
+
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--400 {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--400 {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--400 {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--400"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--400 {
+  font-size: $auro-text-heading-400-size;
+  line-height: $auro-text-heading-400-height;
+}
+
+/// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group headings
+/// @example scss - Default selector(s)
+///   .heading--300 {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .heading--300 {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_heading--300 {}
+///
+/// @example html - Example HTML selector use
+///   <element class="heading heading--300"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+#{$scope}.#{$prefix}heading--300 {
+  font-size: $auro-text-heading-300-size;
+  line-height: $auro-text-heading-300-height;
+}

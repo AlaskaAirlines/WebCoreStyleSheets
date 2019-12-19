@@ -8,14 +8,36 @@
 // This selector is NOT auto included with any other web code style sheet.
 // If the ods-roleTab selector is reuqired, it is to be individually included.
 
+@import "../libSupport/manageScope";
 @import "../utilityMixins/anchor-roleTab";
 
 /// `.ods-roleTab` is a helper class to support the UI of a hyperlink using `role="tab"`
-/// @group ODS-Utility
+/// @group †deprecated
+/// @deprecated see `.auro_roleTab`
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleTab";
 
 .ods-roleTab {
+  /* deprecated see `.auro_roleTab` */
   @include anchorTab(sass, noncomponent);
   margin-right: calc(#{$size-scale-micro} * -1);
+}
+
+
+/// `auro_roleTab` is a helper class to support the UI of a hyperlink using `role="tab"`
+///
+/// [Manage](/#scope-prefix-variable) `$scope` options.
+/// @group Utility-auro
+/// @example scss - Default selector(s)
+///   .auro_roleTab {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .auro_roleTab {}
+///
+/// @example scss - import selector file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleTab";
+
+#{$scope}.auro_roleTab {
+  @include auro_anchorTab(sass, noncomponent);
+  margin-right: calc(#{$auro-size-xxs} * -1);
 }

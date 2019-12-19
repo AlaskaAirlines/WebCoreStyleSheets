@@ -8,7 +8,12 @@
 @import "baselineLTE";
 
 /// Baseline HTML setting to establish box-model and default font size.
-/// @group Baseline
+///
+/// @group †deprecated
+/// @deprecated see `essentials.scss`
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -16,12 +21,17 @@ html {
   font-size: 1rem;
 }
 
-/// Set baseline type settings for `body` elment or with the use of the `baseType` selector.
-/// @group Baseline
+/// Set baseline type settings for `body` elment or with the use of the `.baseType` selector.
+///
+/// @group †deprecated
+/// @deprecated see `essentials.scss`
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 body,
 .baseType {
   margin: 0;
-  font-family: $font-family-base;
+  font-family: $auro-font-family-default;
   font-weight: $weight-book;
   font-size: $size-font-breakpoint-all-med;
   line-height: $vertical-alignment-body;
@@ -31,7 +41,12 @@ body,
 /// Sets standard `margin-bottom` for all paragraph style content
 ///
 /// Use of nested `.hyperlink` defines underline text-decoration for anchor tags
-/// @group Baseline
+///
+/// @group †deprecated
+/// @deprecated see `essentials.scss`
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .baseParagraph {
   margin-bottom: $size-margin-baseline;
 
@@ -43,7 +58,12 @@ body,
 /// Baseline hyperlink styles as mirrored in ods-hyperlink
 ///
 /// Support for: `.hyperlink--inline`, and `.hyperlink--darktheme`
-/// @group Baseline
+/// @group †deprecated
+/// @deprecated see `essentials.scss`
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .hyperlink {
   color: $color-type-theme-light-link;
   padding: 0 $size-scale-sml;
@@ -86,10 +106,44 @@ body,
   }
 }
 
+/// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen.
+/// If additional properties are needed to shape the img selector, please see the list of Utility classes including the [.util_img-is-responsive](/#utility-responsive-css-.util_img-is-responsive) selector to scale images with responsive aspects.
+///
+/// @group †deprecated
+/// @deprecated see `essentials.scss`
+/// @example html - Example HTML selector use
+///   <img src=" ... " alt="" />
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
+img {
+  max-width: 100%;
+}
+
+/// Legal copy, disclaimers, and footnotes below applicable content section. Above input as floating label, below input as help or error text.
+///
+/// @group †deprecated
+/// @deprecated see `essentials.scss`
+/// @example html - Example HTML selector use
+///   <small> ... </small>` or `<element class="type--small"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
+small,
+.type--small {
+  font-size: $size-font-breakpoint-all-small;
+}
+
 /// Baseline block Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
 ///
-/// Example HTML - `<element class="heading"> ... </element>`
-/// @group Heading
+/// @group †deprecated
+/// @deprecated see `.heading` in new `_headings.scss` file
+/// @example html - Example HTML selector use
+///   <element class="heading"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .heading {
   margin: $size-margin-header-y-axis $size-margin-header-x-axis;
   font-weight: inherit;
@@ -98,8 +152,14 @@ body,
 
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
 ///
-/// Example HTML - `<element class="heading heading--max"> ... </element>`
-/// @group Heading
+/// @group †deprecated
+///
+/// @deprecated see `.heading--display`
+/// @example html - Example HTML selector use
+///   <element class="heading heading--max"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .heading--max {
   font-size: $size-font-breakpoint-mobile-max;
   margin-top: 0;
@@ -111,8 +171,13 @@ body,
 
 /// Section title for content relating to the main title. Secondary Headings or titles. Used in conjunction with `.heading` selector
 ///
-/// Example HTML - `<element class="heading heading--xxl"> ... </element>`
-/// @group Heading
+/// @group †deprecated
+/// @deprecated see `.heading--800`
+/// @example html - Example HTML selector use
+///   <element class="heading heading--xxl"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .heading--xxl {
   font-size: $size-font-breakpoint-mobile-xxl;
 
@@ -123,8 +188,13 @@ body,
 
 /// Subtitle for main title or specific sub-section content relating to a section. Used in conjunction with `.heading` selector
 ///
-/// Example HTML - `<element class="heading heading--xl"> ... </element>`
-/// @group Heading
+/// @group †deprecated
+/// @deprecated see `.heading--700`
+/// @example html - Example HTML selector use
+///   <element class="heading heading--xl"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .heading--xl {
   font-size: $size-font-breakpoint-mobile-xl;
 
@@ -135,8 +205,13 @@ body,
 
 /// Label for content relating to a specific sub-section. Can follow any title. Used in conjunction with `.heading` selector
 ///
-/// Example HTML - `<element class="heading heading--lg"> ... </element>`
-/// @group Heading
+/// @group †deprecated
+/// @deprecated see `.heading--600`
+/// @example html - Example HTML selector use
+///   <element class="heading heading--lg"> ... </element>
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+///
 .heading--lg {
   font-size: $size-font-breakpoint-mobile-lg;
 
@@ -145,20 +220,3 @@ body,
   }
 }
 
-/// Legal copy, disclaimers, and footnotes below applicable content section. Above input as floating label, below input as help or error text.
-///
-/// Example HTML - `<small> ... </small>` or `<element class="type--small"> ... </element>`
-/// @group Baseline
-small,
-.type--small {
-  font-size: $size-font-breakpoint-all-small;
-}
-
-/// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen, but not exceed 100% its initial size.
-/// If additional properties are needed to shape the img selector, please see the list of Utility classes including the `util_img-is-responsive` selector to scale images with responsive aspects.
-///
-/// Example HTML - `<img src=" ... " alt="" />`
-/// @group Baseline
-img {
-  max-width: 100%;
-}

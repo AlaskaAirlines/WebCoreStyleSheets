@@ -1,15 +1,45 @@
 // Import build resources to ensure that src resources are working as expected
-@import './test/sass/_TokenVariables';
+// @import './test/sass/_TokenVariables';
 
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables';
 
-// Import src resources for testing
+$scope: true;
+$prefix: true;
 
-// $important: !important;
-@import
-    './src/breakpoints',
-    './src/fonts',
-    './src/animation',
-    './src/baseline',
-    './src/baselineLTE',
-    './src/normalize',
-    './src/utilityClasses'
+@import './src/breakpoints';
+
+// @import './src/fonts';
+
+// @import './src/animation';
+
+// @import './src/baseline';
+
+// @import './src/normalize';
+
+// @import './src/utilityClasses';
+
+// @import './src/utilityClasses/displayProperties';
+
+// @import './src/utilityClasses/focusVisible';
+
+// @import './src/utilityClasses/fontStyles';
+
+// @import './src/utilityClasses/layoutProperties';
+
+@import './src/utilityClasses/responsive';
+
+// @import './src/utilityMixins/anchor-roleButton';
+
+// @import './src/utilityMixins/anchor-roleTab';
+
+// @import './src/utilityMixins/focusVisible';
+
+// @import './src/componentSupport/anchor-roleButton';
+
+// @import './src/componentSupport/anchor-roleTab';
+
+// @import './src/componentSupport/containedButtons';
+
+// @import './src/componentSupport/tablist';
+
+// @import './src/formElements/inputTypeText';

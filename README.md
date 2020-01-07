@@ -29,6 +29,30 @@ With each release of WC Style Sheets please be sure to pay attention to the †D
 | inputTypeText.scss | n/a | n/a |
 | _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
 
+#### Missing tokens?
+
+When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply import the new Auro Sass variables generated from the tokens.
+
+```scss
+@import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+```
+
+#### Missing layout selectors?
+
+If you have been using selectors from the now deprecated `_layoutProperties.scss` file, you may be missing the following selectors from your CSS output
+
+```css
+.util_[margin/padding][Top/Right/Bottom/Left]--[none/xs/md/lg/xl]
+```
+
+The easy fix is to import the new layout properties generator file that will fill this gap.
+
+```scss
+https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator
+```
+
+For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).
+
 
 ## Support 
 
@@ -134,7 +158,7 @@ Importing this file will return a series of pre-defined selectors based on the s
 [inline, stack] inline - L/R, stack - top/bottom
 
 none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
-```2
+```
 
 See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_spacing)
 

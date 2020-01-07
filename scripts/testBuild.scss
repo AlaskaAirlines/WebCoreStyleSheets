@@ -82,20 +82,20 @@ $prefix: true;
 
 @import './src/utilityClasses/fontStyles';
 
-$layout-properties: margin;
-$layout-extensions: Left;
+// $layout-properties: margin;
+// $layout-extensions: Left;
 @import './src/utilityClasses/layoutProperties';
 @import './src/utilityMixins/layoutPropertiesGenerator';
 
 /*------------- general spacing -----------------*/
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-$auro-spacing-types: inline, stack;
-$auro-spacing-options: none;
+// $auro-spacing-types: inline, stack;
+// $auro-spacing-options: none;
 @import "./src/utilityMixins/spacingUtility";
 
 /*---------- inset generator ----------------*/
-$auro-inset-spacing-options: none;
-$auro-inset-directions:'';
+// $auro-inset-spacing-options: none;
+// $auro-inset-directions:'';
 @import "./src/utilityMixins/insetUtility";
 
 @import './src/utilityClasses/responsive';

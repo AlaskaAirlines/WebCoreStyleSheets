@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.8.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.7.2...v2.8.0) (2020-01-07)
+
+
+### Features
+
+* add scope and prefix options to selector ([fa7b1b2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/fa7b1b2)), closes [#22](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/22) [#21](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/21)
+
 ## [2.7.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.7.1...v2.7.2) (2019-12-19)
 
 

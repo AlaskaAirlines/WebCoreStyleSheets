@@ -52,7 +52,6 @@
 ///
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
-  margin: 0;
   font-family: $auro-font-family-default;
   font-weight: $auro-text-body-default-weight; // need better token
   font-size: $auro-text-body-size-default;
@@ -60,7 +59,7 @@
   color: $auro-color-text-primary-on-light;
 }
 
-/// Sets standard `margin-bottom` for all paragraph style content
+/// Sets standard `margin` for all paragraph style content
 ///
 /// Use of nested `.auro_hyperlink` defines underline text-decoration for anchor tags
 ///
@@ -82,7 +81,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}baseParagraph {
-  margin-bottom: $auro-text-body-height-default;
+  line-height: $auro-text-body-height-default;
+  margin: 0 0 1rem 0;
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -197,5 +197,36 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size: $auro-text-body-size-xs;
+  font-size:  $auro-text-body-size-xs;
+  line-height: $auro-text-body-height-xs;
+}
+
+$paragraph: null !default;
+/// Set `<p>` element margin standard. This selector is not set by default, set the `$paragraph` flag to `true' prior to import.
+///
+/// Other options are to use the `<small>` element or the `.baseParagraph` selector.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   p {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro p {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_p {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+/// @example scss - import file with `$paragraph` flag set to true
+///   $paragraph: true;
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///
+#{$scope}#{$sym}#{$prefix}p {
+  @if $paragraph {
+    line-height: $auro-text-body-height-default;
+    margin: 0 0 1rem 0;
+  }
 }

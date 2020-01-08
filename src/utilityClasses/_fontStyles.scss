@@ -12,7 +12,7 @@
 /// [Manage](/#utility-variable-important) `!important` flag.
 /// @group †deprecated
 /// @deprecated see `.util_fontWeightDefault`
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_fontWeightBook {
   font-weight: $weight-book $important;
@@ -33,7 +33,7 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_fontWeightDefault {}
 ///
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightDefault {
   font-weight: $auro-text-body-default-weight $important;
@@ -54,7 +54,7 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_fontWeightMedium {}
 ///
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightMedium {
   font-weight: $auro-text-heading-medium-weight $important;
@@ -62,10 +62,12 @@
 
 /// Utility class for font-weight `light`
 ///
-/// See [variable use](#utility-variable-important) for managing the `!important` flag.
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group †deprecated
 /// @deprecated see `.util_fontWeightDisplay`
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_fontWeightLight {
   font-weight: $weight-light $important;
@@ -86,7 +88,7 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_fontWeightDisplay {}
 ///
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightDisplay {
   font-weight: $auro-text-heading-display-weight $important;
@@ -94,10 +96,78 @@
 
 /// Utility class for font-size `lg`
 ///
-/// See [variable use](#utility-variable-important) for managing the `!important` flag.
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-font
+/// @example scss - Default selector(s)
+///   .util_body--lg {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_body--lg {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_body--lg {}
+///
+/// @example scss - import Sass file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
+#{$scope}.#{$prefix}util_body--lg {
+  font-size:  $auro-text-body-size-lg $important;
+  line-height: $auro-text-body-height-lg $important;
+}
+
+/// Utility class for font-size `sm`
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-font
+/// @example scss - Default selector(s)
+///   .util_body--sm {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_body--sm {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_body--sm {}
+///
+/// @example scss - import Sass file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
+#{$scope}.#{$prefix}util_body--sm {
+  font-size:  $auro-text-body-size-sm $important;
+  line-height: $auro-text-body-height-sm $important;
+}
+
+/// Utility class for font-size `xs`
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-font
+/// @example scss - Default selector(s)
+///   .util_body--xs {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_body--xs {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_body--xs {}
+///
+/// @example scss - import Sass file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
+#{$scope}.#{$prefix}util_body--xs {
+  font-size:  $auro-text-body-size-xs $important;
+  line-height: $auro-text-body-height-xs $important;
+}
+
+/// Utility class for font-size `lg`
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group †deprecated
 /// @deprecated discontinue use, see heading styles
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--lg {
   font-size: $size-font-breakpoint-desktop-lg $important;
@@ -105,10 +175,12 @@
 
 /// Utility class for font-size `xl`
 ///
-/// See [variable use](#utility-variable-important) for managing the `!important` flag.
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group †deprecated
 /// @deprecated discontinue use, see heading styles
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--xl {
   @include breakpoint-medium {
@@ -120,10 +192,12 @@
 
 /// Utility class for color `secondary`
 ///
-/// See [variable use](#utility-variable-important) for managing the `!important` flag.
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group †deprecated
 /// @deprecated discontinue use, see body styles
-/// @example scss - import mixin file
+/// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--secondary {
   color: $color-type-theme-light-secondary $important;

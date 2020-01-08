@@ -48,7 +48,7 @@ If you have been using selectors from the now deprecated `_layoutProperties.scss
 The easy fix is to import the new layout properties generator file that will fill this gap.
 
 ```scss
-https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
 ```
 
 For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).

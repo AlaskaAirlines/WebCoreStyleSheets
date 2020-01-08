@@ -19,6 +19,7 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
 ///
 /// **Dependency:** `$npm i alaskaairux/orion-design-tokens`
 /// @group utility-layout
+/// @param {String} $auro-inset-directions ["", --stretch, --squish] defines value
 /// @param {String} $auro-inset-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
 /// @example css - Example output css
 ///  .util_insetXxxs {
@@ -39,7 +40,7 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
 ///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
 
-@mixin auro_inset($values: $auro-inset-spacing-options) {
+@mixin auro_inset($directions: $auro-inset-directions, $values: $auro-inset-spacing-options) {
   @each $value in $values {
     $map: map-keys($tokens);
     $mapValue: auro_map-deep-get($tokens, #{$map}, $value);
@@ -73,8 +74,8 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
       }
 
       @else {
-        @for $i from 1 through length($auro-inset-directions) {
-          $direction: nth($auro-inset-directions, $i);
+        @for $i from 1 through length($directions) {
+          $direction: nth($directions, $i);
 
           #{$scope}.#{$prefix}util_inset#{auro_capitalize($value)}#{$direction} {
             @if $direction == '' {

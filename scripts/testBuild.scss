@@ -89,13 +89,13 @@ $prefix: true;
 
 /*------------- general spacing -----------------*/
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-// $auro-spacing-types: inline, stack;
-// $auro-spacing-options: none;
+$auro-spacing-types: inline;
+$auro-spacing-options: sm, md, lg;
 @import "./src/utilityMixins/spacingUtility";
 
 /*---------- inset generator ----------------*/
-// $auro-inset-spacing-options: none;
-// $auro-inset-directions:'';
+$auro-inset-spacing-options: sm, md, lg;
+$auro-inset-directions: --stretch;
 @import "./src/utilityMixins/insetUtility";
 
 @import './src/utilityClasses/responsive';

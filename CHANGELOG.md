@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.0...v2.8.1) (2020-01-08)
+
+
+### Bug Fixes
+
+* address missing typography styles ([0727723](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/0727723))
+
 # [2.8.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.7.2...v2.8.0) (2020-01-07)
 
 

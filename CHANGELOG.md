@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.2...v2.8.3) (2020-01-09)
+
+
+### Bug Fixes
+
+* update hyperlink to support focus-visible ([2f008a5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/2f008a5))
+
 ## [2.8.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.1...v2.8.2) (2020-01-08)
 
 

@@ -5,6 +5,7 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
+@import "utilityMixins/focusVisible";
 @import "libSupport/manageScope";
 @import "core";
 
@@ -81,8 +82,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}baseParagraph {
-  line-height: $auro-text-body-height-default;
   margin: 0 0 1rem 0;
+  line-height: $auro-text-body-height-default;
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -118,8 +119,16 @@
   padding: 0 $auro-size-xs;
   text-decoration: none;
 
+  &.focus-visible {
+    @include focus-hyperlink(sass);
+  }
+
   &:visited {
     color: $auro-color-text-link-on-light;
+
+    &.focus-visible {
+      @include focus-hyperlink(sass);
+    }
   }
 
   &--inline {
@@ -226,7 +235,7 @@ $paragraph: null !default;
 ///
 #{$scope}#{$sym}#{$prefix}p {
   @if $paragraph {
-    line-height: $auro-text-body-height-default;
     margin: 0 0 1rem 0;
+    line-height: $auro-text-body-height-default;
   }
 }

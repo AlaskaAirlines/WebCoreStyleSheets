@@ -26,7 +26,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
 ///
 #{$scope}.#{$prefix}heading {
-  margin: $auro-text-heading-default-margin;
+  // margin: $auro-text-heading-default-margin;
+  margin: 2.75rem 0 1.05rem;
   font-weight: $auro-text-heading-default-weight;
   letter-spacing: $auro-text-heading-default-spacing;
 }
@@ -49,18 +50,16 @@
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
 #{$scope}.#{$prefix}heading--display {
+  margin-top: 0;
   font-weight: $auro-text-heading-display-weight;
   font-size: $auro-text-heading-display-size-breakpoint-sm;
-  line-height: $auro-text-heading-display-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
     font-size: $auro-text-heading-display-size-breakpoint-md;
-    line-height: $auro-text-heading-display-height-breakpoint-md;
   }
 
   @include auro_breakpoint--lg {
     font-size: $auro-text-heading-display-size-breakpoint-lg;
-    line-height: $auro-text-heading-display-height-breakpoint-lg;
   }
 }
 
@@ -84,16 +83,13 @@
 #{$scope}.#{$prefix}heading--800 {
   font-weight: $auro-text-heading-800-weight;
   font-size: $auro-text-heading-800-size-breakpoint-sm;
-  line-height: $auro-text-heading-800-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
     font-size: $auro-text-heading-800-size-breakpoint-md;
-    line-height: $auro-text-heading-800-height-breakpoint-md;
   }
 
   @include auro_breakpoint--lg {
     font-size: $auro-text-heading-800-size-breakpoint-lg;
-    line-height: $auro-text-heading-800-height-breakpoint-lg;
   }
 }
 
@@ -117,16 +113,13 @@
 #{$scope}.#{$prefix}heading--700 {
   font-weight: $auro-text-heading-700-weight;
   font-size: $auro-text-heading-700-size-breakpoint-sm;
-  line-height: $auro-text-heading-700-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
     font-size: $auro-text-heading-700-size-breakpoint-md;
-    line-height: $auro-text-heading-700-height-breakpoint-md;
   }
 
   @include auro_breakpoint--lg {
     font-size: $auro-text-heading-700-size-breakpoint-lg;
-    line-height: $auro-text-heading-700-height-breakpoint-lg;
   }
 }
 
@@ -149,16 +142,13 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
 #{$scope}.#{$prefix}heading--600 {
   font-size: $auro-text-heading-600-size-breakpoint-sm;
-  line-height: $auro-text-heading-600-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
     font-size: $auro-text-heading-600-size-breakpoint-md;
-    line-height: $auro-text-heading-600-height-breakpoint-md;
   }
 
   @include auro_breakpoint--lg {
     font-size: $auro-text-heading-600-size-breakpoint-lg;
-    line-height: $auro-text-heading-600-height-breakpoint-lg;
   }
 }
 
@@ -181,16 +171,13 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
 #{$scope}.#{$prefix}heading--500 {
   font-size: $auro-text-heading-500-size-breakpoint-sm;
-  line-height: $auro-text-heading-500-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
     font-size: $auro-text-heading-500-size-breakpoint-md;
-    line-height: $auro-text-heading-500-height-breakpoint-md;
   }
 
   @include auro_breakpoint--lg {
     font-size: $auro-text-heading-500-size-breakpoint-lg;
-    line-height: $auro-text-heading-500-height-breakpoint-lg;
   }
 }
 
@@ -213,7 +200,6 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
 #{$scope}.#{$prefix}heading--400 {
   font-size: $auro-text-heading-400-size;
-  line-height: $auro-text-heading-400-height;
 }
 
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
@@ -235,5 +221,4 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
 #{$scope}.#{$prefix}heading--300 {
   font-size: $auro-text-heading-300-size;
-  line-height: $auro-text-heading-300-height;
 }

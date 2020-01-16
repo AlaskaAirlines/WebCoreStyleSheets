@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.4](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.3...v2.8.4) (2020-01-16)
+
+
+### Bug Fixes
+
+* update default type line-heights ([fb91fe3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/fb91fe3))
+
 ## [2.8.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.2...v2.8.3) (2020-01-09)
 
 

@@ -50,7 +50,7 @@
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
     "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc",
-    "ciBuild": "npm-run-all copyFontsDist copySass",
+    "ciBuild": "npm-run-all test sassdoc copyFontsDist copySass",
     "watch": "nodemon -e scss --watch scripts --watch src --exec npm run devBuild"
   },
   "husky": {

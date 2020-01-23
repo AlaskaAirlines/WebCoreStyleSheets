@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.7](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.6...v2.8.7) (2020-01-23)
+
+
+### Bug Fixes
+
+* address issue with auro hyperlink ([384942f](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/384942f))
+
 ## [2.8.6](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.5...v2.8.6) (2020-01-23)
 
 

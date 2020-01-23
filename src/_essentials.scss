@@ -92,7 +92,7 @@
 
 /// Baseline hyperlink styles as mirrored in auro-hyperlink web component
 ///
-/// Support for: `.hyperlink--inline`, and `.hyperlink--darktheme`
+/// Support for: `.hyperlink--nav`, and `.hyperlink--ondark`
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group essentials
@@ -115,34 +115,34 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}hyperlink {
-  color: $auro-color-text-link-on-light;
+  color: $auro-color-ui-default-on-light;
   padding: 0 $auro-size-xs;
-  text-decoration: none;
+  text-decoration: underline;
 
   &.focus-visible {
     @include focus-hyperlink(sass);
   }
 
   &:visited {
-    color: $auro-color-text-link-on-light;
+    color: $auro-color-ui-default-on-light;
 
     &.focus-visible {
-      @include focus-hyperlink(sass);
+      @include auro_focus-hyperlink(sass);
     }
   }
 
-  &--inline {
-    padding: 0;
-    text-decoration: underline;
+  &--nav {
+    text-decoration: none;
+    display: block;
 
     &:not(.is-touching) {
       &:hover {
-        text-decoration: none !important;  // sass-lint:disable-line no-important
+        text-decoration: underline !important;  // sass-lint:disable-line no-important
       }
     }
   }
 
-  &--darktheme {
+  &--ondark {
     color: $auro-color-ui-default-on-dark;
 
     &:not(.is-touching) {
@@ -158,8 +158,8 @@
 
   &:not(.is-touching) {
     &:hover {
-      color: $auro-color-ui-hover-on-dark;
-      text-decoration: underline;
+      color: $auro-color-ui-hover-on-light;
+      text-decoration: none;
     }
   }
 }

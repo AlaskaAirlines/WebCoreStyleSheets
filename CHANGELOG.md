@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.6](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.5...v2.8.6) (2020-01-23)
+
+
+### Bug Fixes
+
+* style update to auro button mixin ([3e50985](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/3e50985))
+
 ## [2.8.5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.4...v2.8.5) (2020-01-17)
 
 

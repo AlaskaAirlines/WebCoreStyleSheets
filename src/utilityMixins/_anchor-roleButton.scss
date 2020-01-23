@@ -110,6 +110,7 @@
   line-height: $line-height;
   padding: $padding;
   border: 1px solid transparent;
+  text-decoration: none;
 
   @if $env == component {
     :host(:not(.is-touching)) & {

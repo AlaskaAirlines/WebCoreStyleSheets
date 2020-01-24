@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.8](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.7...v2.8.8) (2020-01-24)
+
+
+### Bug Fixes
+
+* address support for postinstall commo ([9521137](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/9521137))
+
 ## [2.8.7](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.6...v2.8.7) (2020-01-23)
 
 

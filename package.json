@@ -14,6 +14,7 @@
     "node-sass": "^4.11.0"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
     "focus-visible": "^4.1.5"
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
   },
   "scripts": {
     "copySass": "copyfiles -u 1 -V './src/**/*.scss' ./dist",
+    "postinstall": "node packageScripts/postinstall.js",
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
     "sassLint": "sass-lint --verbose",
@@ -50,7 +52,7 @@
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
     "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc",
-    "ciBuild": "npm-run-all test sassdoc copyFontsDist copySass",
+    "ciBuild": "npm-run-all test sassdoc copyFontsDist copySass postinstall",
     "watch": "nodemon -e scss --watch scripts --watch src --exec npm run devBuild"
   },
   "husky": {

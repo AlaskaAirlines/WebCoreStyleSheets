@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.9](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.8...v2.8.9) (2020-01-31)
+
+
+### Bug Fixes
+
+* update tokens package ([8e5ed42](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/8e5ed42))
+
 ## [2.8.8](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.7...v2.8.8) (2020-01-24)
 
 

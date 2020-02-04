@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "./libSupport/deprecated";
+
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
 @import "baselineLTE";
@@ -15,6 +17,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 html {
+  @include deprecated('selctor html');
+
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -30,6 +34,8 @@ html {
 ///
 body,
 .baseType {
+  @include deprecated('selctors body, .baseType');
+
   margin: 0;
   font-family: $auro-font-family-default;
   font-weight: $weight-book;
@@ -48,6 +54,8 @@ body,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .baseParagraph {
+  @include deprecated('selctor .baseParagraph');
+
   margin-bottom: $size-margin-baseline;
 
   .hyperlink {
@@ -65,6 +73,8 @@ body,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .hyperlink {
+  @include deprecated('selctor .hyperlink');
+
   color: $color-type-theme-light-link;
   padding: 0 $size-scale-sml;
   text-decoration: none;
@@ -118,6 +128,8 @@ body,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 img {
+  @include deprecated('selctor img');
+
   max-width: 100%;
 }
 
@@ -132,6 +144,8 @@ img {
 ///
 small,
 .type--small {
+  @include deprecated('selctors small, .type--small');
+
   font-size: $size-font-breakpoint-all-small;
 }
 
@@ -145,6 +159,8 @@ small,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .heading {
+  @include deprecated('selctor .heading');
+
   margin: $size-margin-header-y-axis $size-margin-header-x-axis;
   font-weight: inherit;
   line-height: $vertical-alignment-heading;
@@ -161,6 +177,8 @@ small,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .heading--max {
+  @include deprecated('selctor .heading--max');
+
   font-size: $size-font-breakpoint-mobile-max;
   margin-top: 0;
 
@@ -179,6 +197,8 @@ small,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .heading--xxl {
+  @include deprecated('selctor .heading--xxl');
+
   font-size: $size-font-breakpoint-mobile-xxl;
 
   @include breakpoint-medium {
@@ -196,6 +216,8 @@ small,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .heading--xl {
+  @include deprecated('selctor .heading--xl');
+
   font-size: $size-font-breakpoint-mobile-xl;
 
   @include breakpoint-medium {
@@ -213,6 +235,8 @@ small,
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 ///
 .heading--lg {
+  @include deprecated('selctor .heading--lg');
+
   font-size: $size-font-breakpoint-mobile-lg;
 
   @include breakpoint-medium {

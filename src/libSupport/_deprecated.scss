@@ -1,0 +1,3 @@
+@mixin deprecated($string) {
+  @warn "Deprecated: #{$string}. Please see [ https://git.io/JvGYJ ] for more information."
+}

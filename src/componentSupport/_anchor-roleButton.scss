@@ -3,12 +3,14 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+@import "../libSupport/manageScope";
+
 // Wrapper class around anchor-roleButton utility mixin
 
 // This selector is NOT auto included with any other web code style sheet.
 // If the ods-roleButton selector is reuqired, it is to be individually included.
 
-@import "../libSupport/manageScope";
 @import "../utilityMixins/anchor-roleButton";
 
 /// `.ods-roleButton` is a helper class to support the UI of a hyperlink using `role="button"`
@@ -18,7 +20,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleButton";
 
 .ods-roleButton {
-  /* deprecated See `.auro_roleButton` */
+  @include deprecated('selctor .ods-roleButton');
+
   @include anchorButton(sass, noncomponent);
 }
 

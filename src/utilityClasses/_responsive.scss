@@ -3,6 +3,7 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
 @import "../libSupport/manageScope";
 
 // sass-lint:disable mixins-before-declarations variable-for-property
@@ -19,7 +20,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-mobileOnly {
   @include breakpoint-narrow {
-    /* deprecated see `.util_is-smOnly` */
+    @include deprecated('selector .util_is-mobileOnly');
+
     display: none $important;
   }
 }
@@ -58,7 +60,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowOnly {
-  /* deprecated see `.util_is-mdOnly` */
+  @include deprecated('selector .util_is-narrowOnly');
+
   display: none $important;
 
   @include breakpoint-narrow {
@@ -110,7 +113,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowOnly--inline {
-  /* deprecated see `.util_is-mdOnly--inline` */
+  @include deprecated('selector .util_is-narrowOnly--inline');
+
   display: none $important;
 
   @include breakpoint-narrow {
@@ -162,7 +166,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowAppears {
-  /* deprecated see `.util_is-mdAppears` */
+  @include deprecated('selector .util_is-narrowAppears');
+
   display: none $important;
 
   @include breakpoint-narrow {
@@ -206,7 +211,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-narrowAppears--inline {
-  /* deprecated see `.util_is-mdAppears` */
+  @include deprecated('selector .util_is-narrowAppears--inline');
+
   display: none $important;
 
   @include breakpoint-narrow {
@@ -261,8 +267,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-tabletOnly {}
 ///
-#{$scope}.#{$prefix}util_is-tabletOnly {
-  /* deprecated no new selector */
+.util_is-tabletOnly {
+  @include deprecated('selector .util_is-tabletOnly');
+
   display: none $important;
 
   @include breakpoint-medium {
@@ -294,8 +301,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-tabletOnly--inline {}
 ///
-#{$scope}.#{$prefix}util_is-tabletOnly--inline {
-  /* deprecated no new selector */
+.util_is-tabletOnly--inline {
+  @include deprecated('selector .util_is-tabletOnly--inline');
+
   display: none $important;
 
   @include breakpoint-medium {
@@ -327,8 +335,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-tabletAppears {}
 ///
-#{$scope}.#{$prefix}util_is-tabletAppears {
-  /* deprecated no new selector */
+.util_is-tabletAppears {
+  @include deprecated('selector .util_is-tabletAppears');
+
   display: none $important;
 
   @include breakpoint-medium {
@@ -356,8 +365,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-tabletAppears--inline {}
 ///
-#{$scope}.#{$prefix}util_is-tabletAppears--inline {
-  /* deprecated no new selector */
+.util_is-tabletAppears--inline {
+  @include deprecated('selector .util_is-tabletAppears--inline');
+
   display: none $important;
 
   @include breakpoint-medium {
@@ -374,7 +384,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-desktopOnly {
-  /* deprecated see `.util_is-lgOnly` */
+  @include deprecated('selector .util_is-desktopOnly');
+
   display: none $important;
 
   @include breakpoint-max {
@@ -418,7 +429,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-desktopOnly--inline {
-  /* deprecated see `.util_is-lgOnly--inline` */
+  @include deprecated('selector .util_is-desktopOnly--inline');
+
   display: none $important;
 
   @include breakpoint-max {

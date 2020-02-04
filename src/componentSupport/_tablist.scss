@@ -3,11 +3,12 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+@import "../libSupport/manageScope";
+
 // Wrapper class around the use of hyperlink role=tab
 
 // This selector is NOT auto included with any other web core style sheet.
-
-@import "../libSupport/manageScope";
 
 /// `.ods-tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
 ///
@@ -18,7 +19,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
 
 .ods-tablist {
-  /* deprecated see `.auro_tablist` */
+  @include deprecated('selctor .ods-tablist');
+
   @include breakpoint-narrow {
     overflow-y: unset;
     white-space: unset;

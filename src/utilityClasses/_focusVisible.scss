@@ -3,11 +3,12 @@
 
 // ---------------------------------------------------------------------
 
-// focus-visible
-// ====================================================================
-
+@import "../libSupport/deprecated";
 @import "../libSupport/manageScope";
 @import "../utilityMixins/focusVisible";
+
+// focus-visible
+// ====================================================================
 
 /// `.focus-visible` is a selector assigned to a DOM node as a user tabs through the UI.
 ///
@@ -30,6 +31,8 @@
   &.hyperlink,
   &.ods-roleButton,
   &.ods-roleTab {
+    @include deprecated('selector .focus-visible');
+
     @include focus-hyperlink(sass)
   }
 }

@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "./libSupport/deprecated";
+
 // sass-lint:disable no-duplicate-properties
 
 // @font-face is not supported in SassDocs
@@ -13,6 +15,8 @@
 /// @example scss - import src file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @font-face {
+  @include deprecated('legacy @font-face setup');
+
   font-family: $asset-font-circular-family-name;
   src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
@@ -52,6 +56,8 @@
 /// @example scss - import src file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @font-face {
+  @include deprecated('legacy @font-face setup');
+
   font-family: $asset-font-circular-family-name;
   src: url("https://resource.alaskaair.net/-/media/1DD02F55437F4346B7EF7D5A08326D71.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/2339807B68A344348447336D15035425.woff") format("woff");

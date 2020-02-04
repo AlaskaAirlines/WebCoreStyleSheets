@@ -3,11 +3,12 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+@import "../libSupport/manageScope";
+
 // Wrapper class around the use of ods-hyperlink role=button and ods-button.
 
 // This selector is NOT auto included with any other web core style sheet.
-
-@import "../libSupport/manageScope";
 
 // sass-lint:disable no-mergeable-selectors
 /* stylelint-disable selector-type-no-unknown */
@@ -26,7 +27,8 @@
 
 
 .ods-containedButtons {
-  /* deprecated see `.auro_containedButtons` */
+  @include deprecated('selctor .ods-containedButtons');
+
   display: flex;
   flex-direction: column;
 

@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "./libSupport/deprecated";
+
 /// Will be removed with upcoming MAJOR release
 ///
 /// @group †deprecated
@@ -16,6 +18,8 @@
 /// @output Simple method of animating certain properties of an element, with ability to define property, duration, delay and timing function.
 
 @mixin transition($property: $animation-default-property, $duration: $animation-default-duration, $timing: $animation-default-timing, $delay: null) {
+  @include deprecated('mixin transition()');
+
   transition: $property $duration $timing $delay;
 }
 

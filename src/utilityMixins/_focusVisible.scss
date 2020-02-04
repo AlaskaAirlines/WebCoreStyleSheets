@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+
 // sass-lint:disable no-important
 // sass-lint:disable indentation
 
@@ -25,6 +27,8 @@
 ///    }
 ///  }
 @mixin focus-hyperlink($style) {
+  @include deprecated('mixin focus-hyperlink');
+
   $color: null;
   $background-color: null;
   $outline: null;
@@ -110,6 +114,8 @@
 ///    }
 ///  }
 @mixin focus-button($style) {
+  @include deprecated('mixin focus-button()');
+
   $shadow-color: null;
   $white-band: null;
   $complete-shadow-color: null;
@@ -145,7 +151,8 @@
 
 
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
-/// @group utility-mixins
+/// @group †deprecated
+/// @deprecated please consult with Auro team designer to discontinue use
 /// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
@@ -156,6 +163,8 @@
 ///    }
 ///  }
 @mixin auro_focus-button($style) {
+  @include deprecated('mixin auro_focus-button()');
+
   $shadow-color: null;
   $white-band: null;
   $complete-shadow-color: null;

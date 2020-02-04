@@ -123,3 +123,8 @@ $auro-inset-directions: --stretch;
 @import './src/componentSupport/tablist';
 
 @import './src/formElements/inputTypeText';
+
+.deprecated-mixins {
+  @include auro_focus-button(css);
+  @include transition;
+}

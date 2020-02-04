@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
+@import "../libSupport/deprecated";
 @import "../utilityVariables/important";
 @import "../libSupport/manageScope";
 
@@ -61,7 +62,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginAuto {
-  /* deprecated, see util_margin--auto */
+  @include deprecated('selctor .util_marginAuto');
+
   margin: 0 auto $important;
 }
 
@@ -95,7 +97,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginBottom--sml {
-  /* deprecated, see .util_stackMarginXs--bottom */
+  @include deprecated('selctor .util_marginBottom--sml');
+
   margin-bottom: $size-scale-sml $important;
 }
 
@@ -108,7 +111,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginBottom--med {
-  /* deprecated, see .util_stackMarginMd--bottom */
+  @include deprecated('selctor .util_marginBottom--med');
+
   margin-bottom: $size-scale-med $important;
 }
 
@@ -121,7 +125,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginTop--sml {
-  /* deprecated, see .util_stackMarginXs--top */
+  @include deprecated('selctor .util_marginTop--sml');
+
   margin-top: $size-scale-sml $important;
 }
 
@@ -134,7 +139,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginTop--med {
-  /* deprecated, see .util_stackMarginMd--top */
+  @include deprecated('selctor .util_marginTop--med');
+
   margin-top: $size-scale-med $important;
 }
 
@@ -147,7 +153,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginRight--sml {
-  /* deprecated, see .util_inlineMarginXs--right */
+  @include deprecated('selctor .util_marginRight--sml');
+
   margin-right: $size-scale-sml $important;
 }
 
@@ -160,7 +167,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginRight--med {
-  /* deprecated, see .util_inlineMarginMd--right */
+  @include deprecated('selctor .util_marginRight--med');
+
   margin-right: $size-scale-med $important;
 }
 
@@ -173,7 +181,8 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginLeft--sml {
-  /* deprecated, see .util_inlineMarginXs--left */
+  @include deprecated('selctor .util_marginLeft--sml');
+
   margin-left: $size-scale-sml $important;
 }
 
@@ -186,6 +195,7 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
 
 .util_marginLeft--med {
-  /* deprecated, see .util_inlineMarginMd--left */
+  @include deprecated('selctor .util_marginLeft--med');
+
   margin-left: $size-scale-med $important;
 }

@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+
 /// @group †deprecated
 /// @deprecated Will be removed with upcoming MAJOR release, please reference the [inputtext](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-inputtext) element for more information
 /// @example scss - import selector file with parent wrapper
@@ -12,6 +14,8 @@
 input[type=text],
 input[type=password],
 input[type=email] {
+  @include deprecated('selectors for inputTypeText');
+
   border-width: 0 0 1px 0;
   border-color: $color-base-shark;
   border-style: solid;

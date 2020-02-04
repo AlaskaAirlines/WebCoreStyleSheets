@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
+@import "../libSupport/deprecated";
 @import "../utilityVariables/important";
 @import "../libSupport/manageScope";
 
@@ -15,6 +16,8 @@
 /// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_fontWeightBook {
+  @include deprecated('selector .util_fontWeightBook');
+
   font-weight: $weight-book $important;
 }
 
@@ -70,6 +73,8 @@
 /// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_fontWeightLight {
+  @include deprecated('selector .util_fontWeightLight');
+
   font-weight: $weight-light $important;
 }
 
@@ -170,6 +175,8 @@
 /// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--lg {
+  @include deprecated('selector .util_type--lg');
+
   font-size: $size-font-breakpoint-desktop-lg $important;
 }
 
@@ -183,6 +190,8 @@
 /// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--xl {
+  @include deprecated('selector .util_type--xl');
+
   @include breakpoint-medium {
     font-size: $size-font-breakpoint-desktop-xl $important;
   }
@@ -200,5 +209,7 @@
 /// @example scss - import Sass file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/fontStyles";
 .util_type--secondary {
+  @include deprecated('selector .util_type--secondary');
+
   color: $color-type-theme-light-secondary $important;
 }

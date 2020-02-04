@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "./libSupport/deprecated";
+
 // sass-lint:disable mixins-before-declarations
 
 /// Global selector to address box-model and default `:focus` pseudo elements.
@@ -17,6 +19,8 @@
   &,
   &:before,
   &:after {
+    @include deprecated('file baselineLTE');
+
     box-sizing: border-box;
   }
 
@@ -36,5 +40,7 @@
 /// @group †deprecated
 /// @deprecated see `core.scss`
 .focus-visible :focus:not(.focus-visible) {
+  @include deprecated('file baselineLTE');
+
   outline: none;
 }

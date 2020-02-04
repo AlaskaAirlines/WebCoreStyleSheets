@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+
 /// Creates Sass variable or custom property output for multi-use tab shape
 /// @group utility-mixins
 /// @param {string} $style [] - Specifies the style type (sass, css)
@@ -100,6 +102,8 @@
 ///       @include anchorTab(css, component)
 ///   }
 @mixin anchorTab($style, $env) {
+  @include deprecated('mixin anchorTab');
+
   $color: null;
   $border-color: null;
   $padding: null;

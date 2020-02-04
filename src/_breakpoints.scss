@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "./libSupport/deprecated";
+
 // The following mixins provide pre-configured Orion approved
 // breakpoints when development mobile-first UIs.
 
@@ -31,6 +33,8 @@
 ///       }
 ///   }
 @mixin phone-large {
+  @include deprecated('mixin phone-large()');
+
   @media screen and (min-width: $breakpoint-width-narrow) and (max-width: $breakpoint-width-medium - 1px) {
     @content;
   }
@@ -61,6 +65,8 @@
 ///       }
 ///   }
 @mixin tablet {
+  @include deprecated('mixin tablet()');
+
   @media screen and (min-width: $breakpoint-width-medium) and (max-width: $breakpoint-width-wide - 1px) {
     @content;
   }
@@ -91,6 +97,8 @@
 ///       }
 ///   }
 @mixin breakpoint-max {
+  @include deprecated('mixin breakpoint-max()');
+
   @media screen and (min-width: $breakpoint-width-max) {
     @content;
   }
@@ -123,6 +131,8 @@
 ///       }
 ///   }
 @mixin breakpoint-wide {
+  @include deprecated('mixin breakpoint-wide()');
+
   @media screen and (min-width: $breakpoint-width-wide) {
     @content;
   }
@@ -153,6 +163,8 @@
 ///       }
 ///   }
 @mixin breakpoint-medium {
+  @include deprecated('mixin breakpoint-medium()');
+
   @media screen and (min-width: $breakpoint-width-medium) {
     @content;
   }
@@ -183,6 +195,8 @@
 ///       }
 ///   }
 @mixin breakpoint-narrow {
+  @include deprecated('mixin breakpoint-narrow()');
+
   @media screen and (min-width: $breakpoint-width-narrow) {
     @content;
   }
@@ -220,6 +234,8 @@
 ///     }
 ///   }
 @mixin breakpoint($breakpointValue, $mediaFeature: min-width) {
+  @include deprecated('mixin breakpoint()');
+
   @media screen and (#{$mediaFeature}: $breakpointValue) {
     @content;
   }

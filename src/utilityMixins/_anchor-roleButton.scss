@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+@import "../libSupport/deprecated";
+
 /// Creates Sass variable or custom property output for multi-use button shape
 /// @group †deprecated
 /// @deprecated See `auro_anchorButton`
@@ -19,6 +21,8 @@
 ///       @include anchorButton(css, component)
 ///   }
 @mixin anchorButton($style, $env) {
+  @include deprecated('mixin for anchorButton()');
+
   $color: null;
   $hover-color: null;
   $line-height: null;

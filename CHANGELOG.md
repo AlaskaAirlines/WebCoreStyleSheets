@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.10](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.9...v2.8.10) (2020-02-04)
+
+
+### Bug Fixes
+
+* move deprecation notices from output CSS to CLI ([8ee6330](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/8ee6330))
+
 ## [2.8.9](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.8...v2.8.9) (2020-01-31)
 
 

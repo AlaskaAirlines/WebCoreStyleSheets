@@ -33,7 +33,7 @@
     $hover-color: var(--auro-color-text-link-on-light-hover);
     $isactive-color: var(--auro-color-text-primary-on-light);
 
-  } @else if $style == sass {
+  } @else if $style == sass or $style == scss {
     $color: $auro-color-text-link-on-light;
     $border-color: $auro-color-border-primary-on-light;
     $padding: $auro-size-md;
@@ -46,7 +46,7 @@
 
   color: $color;
   border-color: $border-color;
-  padding: $size-scale-med;
+  padding: $auro-size-md;
   border-width: 0 0 1px 0;
   border-style: solid;
 
@@ -113,14 +113,14 @@
   @if $style == css {
     $color: var(--color-type-theme-light-link);
     $border-color: var(--color-background-light-rule);
-    $padding: var(--size-scale-med);
+    $padding: var(--auro-size-md);
     $hover-color: var(--color-type-theme-light-link-hover);
     $isactive-color: var(--color-base-orca);
 
   } @else if $style == sass {
     $color: $color-type-theme-light-link;
     $border-color: $color-background-light-rule;
-    $padding: $size-scale-med;
+    $padding: $auro-size-md;
     $hover-color: $color-type-theme-light-link-hover;
     $isactive-color: $color-base-orca;
 
@@ -130,7 +130,7 @@
 
   color: $color;
   border-color: $border-color;
-  padding: $size-scale-med;
+  padding: $auro-size-md;
   border-width: 0 0 1px 0;
   border-style: solid;
 

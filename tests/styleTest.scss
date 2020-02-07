@@ -1,0 +1,77 @@
+// Import build resources to ensure that src resources are working as expected
+
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables';
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
+
+@import './src/breakpoints';
+
+@import './src/fonts';
+
+@import './src/normalize';
+
+@import './src/baseline'; // deprecated
+
+@import './src/essentials';
+
+@import './src/headings';
+
+@import './src/utilityClasses';
+
+@import './src/utilityClasses/displayProperties';
+
+@import './src/utilityClasses/focusVisible';
+
+@import './src/utilityClasses/fontStyles';
+
+@import './src/utilityClasses/responsive';
+
+@import './src/utilityMixins/focusVisible';
+
+@import './src/componentSupport/anchor-roleButton';
+
+@import './src/componentSupport/anchor-roleTab';
+
+@import './src/componentSupport/containedButtons';
+
+@import './src/componentSupport/tablist';
+
+@import './src/formElements/inputTypeText'; // deprecated
+
+@import '../src/utilityClasses/layoutProperties'; // deprecated
+
+
+// There is a bug with Sass True (https://github.com/oddbird/true/issues/65) that appears
+// to break assertions when parent selectrors `&` are used.
+// This causes any test runnng the `component` argument to fail.
+@import './src/utilityMixins/anchor-roleButton';
+
+/* ----------------(css, component)------------------- */
+.auro_roleButton {
+    @include auro_anchorButton(css, component);
+}
+
+/* ----------------(sass, component)------------------- */
+.auro_roleButton {
+  @include auro_anchorButton(sass, component);
+}
+
+/* ----------------(scss, component)------------------- */
+.auro_roleButton {
+  @include auro_anchorButton(scss, component);
+}
+
+@import './src/utilityMixins/anchor-roleTab';
+/* ----------------(sass, component)------------------- */
+.hyperlink--tab {
+  @include auro_anchorTab(sass, component);
+}
+
+/* ----------------(scss, component)------------------- */
+.hyperlink--tab {
+  @include auro_anchorTab(sass, component);
+}
+
+/* ----------------(css, noncomponent)------------------- */
+.hyperlink--tab {
+  @include auro_anchorTab(css, component);
+}

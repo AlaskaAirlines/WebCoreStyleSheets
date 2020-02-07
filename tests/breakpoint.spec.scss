@@ -1,0 +1,158 @@
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables.scss';
+
+@import 'true';
+@import '../src/breakpoints';
+
+@include describe('auro_breakpoint--lg()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint--lg {
+          @include auro_breakpoint--lg {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 1232px) {
+          .auro_breakpoint--lg {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_breakpoint--md()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint--md {
+          @include auro_breakpoint--md {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 1024px) {
+          .auro_breakpoint--md {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_breakpoint--sm()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint--sm {
+          @include auro_breakpoint--sm {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 660px) {
+          .auro_breakpoint--sm {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_breakpoint()') {
+  @include it('should return content within custom-defined sm media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint {
+          @include auro_breakpoint($min: $auro-breakpoint-sm) {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 660px) {
+          .auro_breakpoint {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_breakpoint()') {
+  @include it('should return content within custom-defined md media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint {
+          @include auro_breakpoint($min: $auro-breakpoint-lg) {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 1232px) {
+          .auro_breakpoint {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_breakpoint()') {
+  @include it('should return content within custom-defined polar media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint {
+          @include auro_breakpoint($polar: $auro-breakpoint-sm $auro-breakpoint-lg) {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 660px) and (max-width: 1232px) {
+          .auro_breakpoint {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_breakpoint()') {
+  @include it('should return content within freeform custom media query') {
+    @include assert {
+      @include output {
+        .auro_breakpoint {
+          @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$auro-breakpoint-sm})') {
+            color: orange;
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 400px) and (max-width: 660px) {
+          .auro_breakpoint {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}

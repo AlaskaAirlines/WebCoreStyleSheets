@@ -85,7 +85,7 @@
     $outline: var(--auro-color-ui-default-on-light) solid var(--auro-size-xxs);
     $hover-color: var(--auro-color-text-primary-on-dark) !important;
 
-  } @else if $syntax == sass {
+  } @else if $syntax == sass or $syntax == scss {
     $color: $auro-color-text-primary-on-dark;
     $background-color: $auro-color-ui-default-on-light;
     $outline: $auro-color-ui-default-on-light solid $auro-size-xxs;

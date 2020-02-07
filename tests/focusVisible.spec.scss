@@ -1,0 +1,72 @@
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables.scss';
+
+@import 'true';
+@import '../src/utilityMixins/focusVisible';
+
+@include describe('auro_focus-hyperlink()') {
+  @include it('should return CSS with completed Sass values') {
+    @include assert {
+      @include output {
+        .focus-visible {
+          @include auro_focus-hyperlink(sass)
+        }
+      }
+
+      @include expect {
+        .focus-visible {
+          color: #ffffff;
+          background-color: #0074c8;
+          outline: #0074c8 solid 0.25rem;
+        }
+
+        .focus-visible:hover {
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+
+  @include it('should return CSS with completed SCSS values') {
+    @include assert {
+      @include output {
+        .focus-visible {
+          @include auro_focus-hyperlink(scss)
+        }
+      }
+
+      @include expect {
+        .focus-visible {
+          color: #ffffff;
+          background-color: #0074c8;
+          outline: #0074c8 solid 0.25rem;
+        }
+
+        .focus-visible:hover {
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+
+  @include it('should return CSS with CSS custom properties') {
+    @include assert {
+      @include output {
+        .focus-visible {
+          @include auro_focus-hyperlink(css)
+        }
+      }
+
+      @include expect {
+        .focus-visible {
+          color: var(--auro-color-text-primary-on-dark);
+          background-color: var(--auro-color-ui-default-on-light);
+          outline: var(--auro-color-ui-default-on-light) solid var(--auro-size-xxs);
+        }
+
+        .focus-visible:hover {
+          color: var(--auro-color-text-primary-on-dark) !important;
+        }
+      }
+    }
+  }
+}

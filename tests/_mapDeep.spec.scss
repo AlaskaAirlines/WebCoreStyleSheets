@@ -1,0 +1,8 @@
+@import 'true';
+@import './src/utilityFunctions/map-deep-get';
+
+@include describe('auro_map-deep-get()') {
+  @include it('should return the value from a deep-map request') {
+    @include assert-equal(auro_map-deep-get(('size': ('sml': 10px)), 'size', 'sml'), 10px);
+  }
+}

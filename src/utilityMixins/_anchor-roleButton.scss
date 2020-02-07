@@ -33,13 +33,13 @@
     $color: var(--color-type-theme-light-link);
     $hover-color: var(--color-type-theme-light-link-hover);
     $line-height: var(--unitless-scale-xxl);
-    $padding: 0 var(--size-scale-med);
+    $padding: 0 var(--auro-size-md);
 
   } @else if $style == sass {
     $color: $color-type-theme-light-link;
     $hover-color: $color-type-theme-light-link-hover;
     $line-height: $unitless-scale-xxl;
-    $padding: 0 $size-scale-med;
+    $padding: 0 $auro-size-md;
 
   } @else {
     @error "Invalid $style option. Please use `css` or `sass`";
@@ -99,7 +99,7 @@
     $line-height: var(--auro-unitless-scale-300);
     $padding: 0 var(--auro-size-md);
 
-  } @else if $style == sass {
+  } @else if $style == sass or $style == scss {
     $color: $auro-color-text-link-on-light;
     $hover-color: $auro-color-ui-hover-on-light;
     $line-height: $auro-unitless-scale-300;

@@ -10,22 +10,22 @@ WC Style sheets is a responsive, mobile-first collection of styles and tools des
 
 ## What's included
 
-This repository is a library of core level styles, functions, and mixins that can be used for consistent front-end UI development. This will include full descriptions of CSS selectors, mixins and any other supporting functions or tools. 
+This repository is a library of core level styles, functions, and mixins that can be used for consistent front-end UI development. This will include full descriptions of CSS selectors, mixins and any other supporting functions or tools.
 
-## All styles documented 
+## All styles documented
 
-Please see the [documentation site](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for all information related to WC Style Sheets. 
+Please see the [documentation site](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for all information related to WC Style Sheets.
 
 ## †Deprecated
 
-With each release of WC Style Sheets please be sure to pay attention to the †DEPRECATED section of the doc site. All styles that are designated as deprecated will be listed in this section and will be deleted with the next major release. Each deprecated item may list an alternative option. If there is not an alternative option, please consult with your team designer for an alternate solution. 
+With each release of WC Style Sheets please be sure to pay attention to the †DEPRECATED section of the doc site. All styles that are designated as deprecated will be listed in this section and will be deleted with the next major release. Each deprecated item may list an alternative option. If there is not an alternative option, please consult with your team designer for an alternate solution.
 
 #### Deprecated files
 
 | deprecated file | new file | description |
 |---|---|---|
 | baselineLTE.scss | core.scss | File deprecation to support new features |
-| baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing. 
+| baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing.
 | inputTypeText.scss | n/a | n/a |
 | _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
 
@@ -54,13 +54,13 @@ The easy fix is to import the new layout properties generator file that will fil
 For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).
 
 
-## Support 
+## Support
 
-If at any time there is an issue discovered by either the document site or the core library itself, please submit an [issue](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/new/choose) as to alert the core team of the situation. We appreciate all your support! 
+If at any time there is an issue discovered by either the document site or the core library itself, please submit an [issue](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/new/choose) as to alert the core team of the situation. We appreciate all your support!
 
 ## Install
 
-OWCSS is made up of a series of Sass files that allows for an array of use cases. There is no core file to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below: 
+OWCSS is made up of a series of Sass files that allows for an array of use cases. There is no core file to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
@@ -68,9 +68,9 @@ OWCSS is made up of a series of Sass files that allows for an array of use cases
 
 ### Scoping
 
-Be sure to see the [prefixing and scoping API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#scope-prefix) in the documentation site. 
+Be sure to see the [prefixing and scoping API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#scope-prefix) in the documentation site.
 
-When supporting legacy UIs there may be issues with importing a Sass file and its selectors. To enable scoping simply set the `$scope` variable to be `true` prior to importing any selectors that support this setting. 
+When supporting legacy UIs there may be issues with importing a Sass file and its selectors. To enable scoping simply set the `$scope` variable to be `true` prior to importing any selectors that support this setting.
 
 ```scss
 $scope: true;
@@ -88,7 +88,7 @@ html.auro { ... }
 
 ### Prefixing
 
-To enable prefixing simply set the `$prefix` variable to be `true` prior to importing any selectors that support this setting. 
+To enable prefixing simply set the `$prefix` variable to be `true` prior to importing any selectors that support this setting.
 
 ```scss
 $prefix: true;
@@ -106,13 +106,13 @@ body,
 
 ### Scoping and prefixing
 
-If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set both the `scope` and `prefix` variables as `true` prior to importing any selectors that support these settings. 
+If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set both the `scope` and `prefix` variables as `true` prior to importing any selectors that support these settings.
 
 ```scss
 $scope: true;
 $prefix: true;
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
-``` 
+```
 
 This setting will result in the following CSS selectors
 
@@ -168,7 +168,7 @@ The implementation of WCSS uses a naming convention model that will be strictly 
 
 ### Utility
 
-Universally applicable selectors in cases where applying this style is not an appropriate responsibility of another selector. These selectors are typically considered UI trump cards as they may use the `!important` flag. 
+Universally applicable selectors in cases where applying this style is not an appropriate responsibility of another selector. These selectors are typically considered UI trump cards as they may use the `!important` flag.
 
 To learn more about how the `!important` flag can be used with WCSS, please [see the api spec](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#variable-important).
 
@@ -194,7 +194,7 @@ To learn more about how the `!important` flag can be used with WCSS, please [see
 
 Auro web component styles are a special class of utility selectors where common UIs that are mainly addressed in Auro web components are needed in situations where web components cannot be used.
 
-These selectors will be visible by the `.auro_` prefix in the selector name, for example; 
+These selectors will be visible by the `.auro_` prefix in the selector name, for example;
 
 
 ```css
@@ -205,7 +205,7 @@ These selectors will be visible by the `.auro_` prefix in the selector name, for
 
 **NOTE:** The `auro_` prefix will be appended to an Auro supporting selector regardless of the `$prefix` flag setting. Also, the `auro_` prefix will not be duplicated if the `$prefix` flag is set `true`.
 
-### Additional documentation 
+### Additional documentation
 
 To learn more about Auro standards in CSS selector conventions, please see [this document](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/cssConventions.md).
 
@@ -240,7 +240,7 @@ All resources within this repository are distributed via npm and used as individ
 
 ## Linters
 
-Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. Sass-Lint is run as a pre-commit hook in this project. No commits will be allowed unless all linter tests are passed. 
+Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. Sass-Lint is run as a pre-commit hook in this project. No commits will be allowed unless all linter tests are passed.
 
 If there is an error, this will generate a `.html` file at the root of the project. To view this generated file, run the following command:
 
@@ -252,15 +252,67 @@ This should open the file in your default browser.
 
 This file is ignored and will not be added to the version control.
 
-## Development 
+## Tests
 
-To develop against WCSS run both `npm run watch` and `npm run serve` in separate terminals. 
+Unit testing is done with [Sass True](https://github.com/oddbird/true) and supported by Jest. Unit tests for mixins or functions are required before any pull request will be approved.
 
-The `watch` command will run a Sass linter, process a test file from Sass to CSS and run a post CSS linter. This will ensure the quality of all new Sass added to the repo. 
+Tests are maintained in the `./tests` directory. All test names must follow this convention, `*.spec.scss`.
 
-If additional selectors or scenarios are needed, please update the `./scripts/testBuild.scss` file to test your code. 
+#### Functions
 
-Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation. 
+Functions are to include an `_` in the name. For example, `_myFunction.spec.scss`.
+
+The basic construct of a function unit test is to include the test-module and the test. This is done using the `@include describe()` and the `@include it()` methods.
+
+The assertion has [multiple methods](https://www.oddbird.net/true/docs/api-assert-values.html) to choose from. This example is using the `@include assert-equal()` method.
+
+```scss
+@import 'true';
+@import '[path to function]';
+
+@include describe('[name of function]') {
+  @include it('should return [description of function]') {
+    @include assert-equal([function]([argument(s)]), '[expected return]');
+  }
+}
+```
+
+#### Mixins
+
+The basic construct of a mixin unit test is to include the test-module and the test. This is done using the `@include describe()` and the `@include it()` methods.
+
+The [assertion model](https://www.oddbird.net/true/docs/api-assert-output.html) for comparing outputs uses the `@include assert()` method that requires the `@include output` and `@include expect` methods.
+
+```scss
+@import 'true';
+@import '[path to mixin]';
+
+@include describe('[name of mixin]') {
+  @include it('should return [description of mixin]') {
+    @include assert {
+      @include output {
+        @include [mixin]([argument(s)];
+      }
+
+      @include expect {
+        [expected CSS output];
+      }
+    }
+  }
+}
+```
+
+
+
+## Development
+
+To develop against WCSS run both `npm run watch` and `npm run serve` in separate terminals.
+
+The `watch` command will run a Sass linter, process a test file from Sass to CSS and run a post CSS linter. This will ensure the quality of all new Sass added to the repo.
+
+If additional selectors or scenarios are needed, please update the `./scripts/testBuild.scss` file to test your code.
+
+Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation.
 
 
 ##

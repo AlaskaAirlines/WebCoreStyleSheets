@@ -60,7 +60,7 @@ $layout-modifiers: (
 ///     "xxl": $auro-size-xxl,
 ///     "xxxl": $auro-size-xxxl,
 ///   );
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
 @mixin auro_layoutPropertiesGenerator() {
   @each $property in $layout-properties {
     @each $extension in $layout-extensions {

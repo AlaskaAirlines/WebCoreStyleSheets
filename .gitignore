@@ -3,6 +3,8 @@
 node_modules
 build
 test
+results
+coverage/
 dist
 example/temp
 example/prodBuild/

@@ -1,0 +1,12 @@
+@import 'true';
+@import './src/utilityFunctions/capitalize';
+
+@include describe('auro_capitalize()') {
+  @include it('should return a string with a capitol letter') {
+    @include assert-equal(auro_capitalize(string), 'String');
+  }
+
+  @include it('should accept a string with a capitol letter and return a string with a capitol letter') {
+    @include assert-equal(auro_capitalize(String), 'String');
+  }
+}

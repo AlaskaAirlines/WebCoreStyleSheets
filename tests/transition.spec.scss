@@ -1,0 +1,42 @@
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables.scss';
+
+@import 'true';
+@import '../src/animation';
+
+@include describe('auro_transition()') {
+  @include it('should return standard default properties') {
+    @include assert {
+      @include output {
+        @include auro_transition;
+      }
+
+      @include expect {
+        transition: all 0.3s ease-out;
+      }
+    }
+  }
+
+  @include it('should return custom properties') {
+    @include assert {
+      @include output {
+        @include auro_transition(background, 100ms, ease-in-out);
+      }
+
+      @include expect {
+        transition: background 100ms ease-in-out;
+      }
+    }
+  }
+
+  @include it('should return custom duration and maintain default properties') {
+    @include assert {
+      @include output {
+        @include auro_transition($duration: 100ms);
+      }
+
+      @include expect {
+        transition: all 100ms ease-out;
+      }
+    }
+  }
+}

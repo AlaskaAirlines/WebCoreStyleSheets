@@ -1,0 +1,12 @@
+@import 'true';
+@import './src/utilityFunctions/contains';
+
+@include describe('auro_contains()') {
+  @include it('returns true if the asked var is in the list') {
+    @include assert-equal(auro_contains(('red', 'blue', 'green'), 'red'), true);
+  }
+
+  @include it('returns false if the asked var is not in the list') {
+    @include assert-equal(auro_contains(('red', 'blue', 'green'), 'orange'), false);
+  }
+}

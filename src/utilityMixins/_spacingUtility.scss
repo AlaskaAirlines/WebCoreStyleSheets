@@ -42,7 +42,7 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
 ///   $auro-spacing-types: inline;
 ///   $auro-spacing-options: xxxs;
 ///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/spacingUtility";
 
 @mixin auro_spacing($types: $auro-spacing-types, $options: $auro-spacing-options) {
   @each $type in $types {

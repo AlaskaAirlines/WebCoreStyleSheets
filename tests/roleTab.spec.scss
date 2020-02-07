@@ -1,0 +1,121 @@
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
+
+@import 'true';
+
+@import '../src/utilityMixins/anchor-roleTab';
+
+// There is a bug with Sass True (https://github.com/oddbird/true/issues/65) that appears
+// to break assertions when parent selectrors `&` are used.
+// This causes any test runnng the `component` argument to fail.
+// These tests are manually ran in the /styleTest.scss file
+
+
+@include describe('auro_anchorTab()') {
+  @include it('should return a populated selector based on (sass, noncomponent)') {
+    @include assert {
+      @include output {
+        .auro_roleTab {
+          @include auro_anchorTab(sass, noncomponent);
+        }
+      }
+
+      @include expect {
+        .auro_roleTab {
+          color: #0074c8;
+          border-color: rgba(0, 0, 0, 0.15);
+          padding: 1rem;
+          border-width: 0 0 1px 0;
+          border-style: solid;
+        }
+
+        .auro_roleTab:not(.is-touching):hover {
+          border-width: 0 0 2px 0;
+          text-decoration: none;
+          cursor: pointer;
+          color: #054687;
+          border-color: currentColor;
+        }
+
+        .auro_roleTab.is-active {
+          border-width: 0 0 2px 0;
+          text-decoration: none;
+          cursor: pointer;
+          color: #222222;
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+
+  @include it('should return a populated selector based on (scss, noncomponent)') {
+    @include assert {
+      @include output {
+        .auro_roleTab {
+          @include auro_anchorTab(scss, noncomponent);
+        }
+      }
+
+      @include expect {
+        .auro_roleTab {
+          color: #0074c8;
+          border-color: rgba(0, 0, 0, 0.15);
+          padding: 1rem;
+          border-width: 0 0 1px 0;
+          border-style: solid;
+        }
+
+        .auro_roleTab:not(.is-touching):hover {
+          border-width: 0 0 2px 0;
+          text-decoration: none;
+          cursor: pointer;
+          color: #054687;
+          border-color: currentColor;
+        }
+
+        .auro_roleTab.is-active {
+          border-width: 0 0 2px 0;
+          text-decoration: none;
+          cursor: pointer;
+          color: #222222;
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+
+  @include it('should return a populated selector based on (css, noncomponent)') {
+    @include assert {
+      @include output {
+        .auro_roleTab {
+          @include auro_anchorTab(css, noncomponent);
+        }
+      }
+
+      @include expect {
+        .auro_roleTab {
+          color: var(--auro-color-text-link-on-light);
+          border-color: var(--auro-color-border-primary-on-light);
+          padding: 1rem;
+          border-width: 0 0 1px 0;
+          border-style: solid;
+        }
+
+        .auro_roleTab:not(.is-touching):hover {
+          border-width: 0 0 2px 0;
+          text-decoration: none;
+          cursor: pointer;
+          color: var(--auro-color-text-link-on-light-hover);
+          border-color: currentColor;
+        }
+
+        .auro_roleTab.is-active {
+          border-width: 0 0 2px 0;
+          text-decoration: none;
+          cursor: pointer;
+          color: var(--auro-color-text-primary-on-light);
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+}

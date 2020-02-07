@@ -1,0 +1,45 @@
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
+
+@import 'true';
+
+$layout-properties: margin;
+$layout-extensions: Right;
+$layout-modifiers: (
+  "xxxs": $auro-size-xxxs,
+  "xxs": $auro-size-xxs,
+  "xxl": $auro-size-xxl,
+  "xxxl": $auro-size-xxxl,
+);
+@import '../src/utilityMixins/layoutPropertiesGenerator';
+
+@include describe('auro_layoutPropertiesGenerator()') {
+  @include it('should return a series of selectors matching the config spec ') {
+    @include assert {
+      @include output {
+        @include auro_layoutPropertiesGenerator();
+      }
+
+      @include expect {
+        .util_marginRight--xxxs {
+          /* Please reference .util_marginRight--xxxs at https://git.io/JvGOR */
+          margin-right: 0.125rem;
+        }
+
+        .util_marginRight--xxs {
+          /* Please reference .util_marginRight--xxs at https://git.io/JvGOR */
+          margin-right: 0.25rem;
+        }
+
+        .util_marginRight--xxl {
+          /* Please reference .util_marginRight--xxl at https://git.io/JvGOR */
+          margin-right: 3rem;
+        }
+
+        .util_marginRight--xxxl {
+          /* Please reference .util_marginRight--xxxl at https://git.io/JvGOR */
+          margin-right: 4rem;
+        }
+      }
+    }
+  }
+}

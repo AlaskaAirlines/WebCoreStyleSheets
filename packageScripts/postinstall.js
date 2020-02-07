@@ -17,16 +17,16 @@ console.log(chalk.hex('#f26135')(`
 +
 chalk.hex('#f26135')(`
 ╭ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ──────────────────────────────╮
-│                                                       │
-│       Thanks for installing the latest version        │
-│               of `) + chalk.hex('#ffd200').bold(`WC Stylesheets v${pjson.version}.`) + chalk.hex('#f26135')(`               │
-│                                                       │
-│       This version begins the transition from         │
-│           Orion to Auro component support             │
-│                                                       │
-│   Be sure to see `) +  chalk.hex('#00cff0').bold.underline(`https://git.io/JvqIV`) + chalk.hex('#f26135')(` for more info   │
-│          on updates and deprecation strategy.         │
-│                                                       │
+
+       Thanks for installing the latest version
+               of `) + chalk.hex('#ffd200').bold(`WC Stylesheets v${pjson.version}.`) + chalk.hex('#f26135')(`
+
+       This version begins the transition from
+           Orion to Auro component support
+
+   Be sure to see `) +  chalk.hex('#00cff0').bold.underline(`https://git.io/JvqIV`) + chalk.hex('#f26135')(` for more info
+          on updates and deprecation strategy.
+
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
 `)
 );

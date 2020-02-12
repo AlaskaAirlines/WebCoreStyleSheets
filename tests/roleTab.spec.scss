@@ -1,7 +1,6 @@
 @import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
 
 @import 'true';
-
 @import '../src/utilityMixins/anchor-roleTab';
 
 @include describe('auro_anchorTab()') {

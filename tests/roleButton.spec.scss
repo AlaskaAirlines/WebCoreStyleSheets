@@ -1,14 +1,7 @@
 @import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
 
 @import 'true';
-
 @import '../src/utilityMixins/anchor-roleButton';
-
-
-// There is a bug with Sass True (https://github.com/oddbird/true/issues/65) that appears
-// to break assertions when parent selectrors `&` are used.
-// This causes any test runnng the `component` argument to fail.
-// These tests are manually ran in the /styleTest.scss file
 
 @include describe('auro_anchorButton()') {
   @include it('should return a populated selector based on (sass, noncomponent)') {

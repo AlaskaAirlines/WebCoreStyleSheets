@@ -38,6 +38,33 @@
     }
   }
 
+  @include it('should return a populated selector based on (sass, component)') {
+    @include assert {
+      @include output($selector: false) {
+        .auro_roleButton {
+          @include auro_anchorButton(sass, component);
+        }
+      }
+
+      @include expect($selector: false) {
+        .auro_roleButton {
+          display: inline-block;
+          color: #0074c8;
+          line-height: 3;
+          padding: 0 1rem;
+          border: 1px solid transparent;
+          text-decoration: none;
+        }
+
+        :host(:not(.is-touching)) .auro_roleButton:hover {
+          color: #054687;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
   @include it('should return a populated selector based on (scss, noncomponent)') {
     @include assert {
       @include output {
@@ -65,6 +92,33 @@
     }
   }
 
+  @include it('should return a populated selector based on (scss, component)') {
+    @include assert {
+      @include output($selector: false) {
+        .auro_roleButton {
+          @include auro_anchorButton(scss, component);
+        }
+      }
+
+      @include expect($selector: false) {
+        .auro_roleButton {
+          display: inline-block;
+          color: #0074c8;
+          line-height: 3;
+          padding: 0 1rem;
+          border: 1px solid transparent;
+          text-decoration: none;
+        }
+
+        :host(:not(.is-touching)) .auro_roleButton:hover {
+          color: #054687;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
   @include it('should return a populated selector based on (css, noncomponent)') {
     @include assert {
       @include output {
@@ -84,6 +138,33 @@
         }
 
         .auro_roleButton:not(.is-touching):hover {
+          color: var(--auro-color-ui-hover-on-light);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include it('should return a populated selector based on (css, component)') {
+    @include assert {
+      @include output($selector: false) {
+        .auro_roleButton {
+          @include auro_anchorButton(css, component);
+        }
+      }
+
+      @include expect($selector: false) {
+        .auro_roleButton {
+          display: inline-block;
+          color: var(--auro-color-text-link-on-light);
+          line-height: var(--auro-unitless-scale-300);
+          padding: 0 var(--auro-size-md);
+          border: 1px solid transparent;
+          text-decoration: none;
+        }
+
+        :host(:not(.is-touching)) .auro_roleButton:hover {
           color: var(--auro-color-ui-hover-on-light);
           text-decoration: underline;
           cursor: pointer;

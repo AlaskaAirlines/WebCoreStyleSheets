@@ -17,10 +17,18 @@
 @font-face {
   @include deprecated('legacy @font-face setup');
 
-  font-family: $asset-font-circular-family-name;
+  @if variable-exists(asset-font-circular-family-name){
+    font-family: $asset-font-circular-family-name;
+  } @else {
+    font-family: $auro-font-family-default;
+  }
   src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
-  font-weight: $weight-light;
+  @if variable-exists(weight-light){
+    font-weight: $weight-light;
+  } @else {
+    font-family: $auro-text-heading-display-weight;
+  }
   font-style: normal;
   font-display: fallback;
 }
@@ -58,10 +66,18 @@
 @font-face {
   @include deprecated('legacy @font-face setup');
 
-  font-family: $asset-font-circular-family-name;
+  @if variable-exists(asset-font-circular-family-name){
+    font-family: $asset-font-circular-family-name;
+  } @else {
+    font-family: $auro-font-family-default;
+  }
   src: url("https://resource.alaskaair.net/-/media/1DD02F55437F4346B7EF7D5A08326D71.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/2339807B68A344348447336D15035425.woff") format("woff");
-  font-weight: $weight-book;
+  @if variable-exists(weight-book){
+    font-weight: $weight-book;
+  } @else {
+    font-family: $auro-text-body-default-weight;
+  }
   font-style: normal;
   font-display: fallback;
 }

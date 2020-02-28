@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.11](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.10...v2.8.11) (2020-02-28)
+
+
+### Bug Fixes
+
+* [#33](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/33) incorrect reference to deprecated mixin ([00d2c23](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/00d2c23))
+
 ## [2.8.10](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.9...v2.8.10) (2020-02-04)
 
 

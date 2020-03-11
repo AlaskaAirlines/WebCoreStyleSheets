@@ -18,7 +18,9 @@
 .util_fontWeightBook {
   @include deprecated('selector .util_fontWeightBook');
 
-  font-weight: $weight-book $important;
+  @if variable-exists(weight-book) {
+    font-weight: $weight-book $important;
+  }
 }
 
 /// Utility class for default font-weight
@@ -75,7 +77,9 @@
 .util_fontWeightLight {
   @include deprecated('selector .util_fontWeightLight');
 
-  font-weight: $weight-light $important;
+  @if variable-exists(weight-light) {
+    font-weight: $weight-light $important;
+  }
 }
 
 /// Utility class for display font-weight
@@ -177,7 +181,9 @@
 .util_type--lg {
   @include deprecated('selector .util_type--lg');
 
-  font-size: $size-font-breakpoint-desktop-lg $important;
+  @if variable-exists(size-font-breakpoint-desktop-lg) {
+    font-size: $size-font-breakpoint-desktop-lg $important;
+  }
 }
 
 /// Utility class for font-size `xl`
@@ -192,11 +198,13 @@
 .util_type--xl {
   @include deprecated('selector .util_type--xl');
 
-  @include breakpoint-medium {
-    font-size: $size-font-breakpoint-desktop-xl $important;
-  }
+  @if variable-exists(breakpoint-medium) {
+    @include breakpoint-medium {
+      font-size: $size-font-breakpoint-desktop-xl $important;
+    }
 
-  font-size: $size-font-breakpoint-mobile-xl $important;
+    font-size: $size-font-breakpoint-mobile-xl $important;
+  }
 }
 
 /// Utility class for color `secondary`
@@ -211,5 +219,7 @@
 .util_type--secondary {
   @include deprecated('selector .util_type--secondary');
 
-  color: $color-type-theme-light-secondary $important;
+  @if variable-exists(color-type-theme-light-secondary) {
+    color: $color-type-theme-light-secondary $important;
+  }
 }

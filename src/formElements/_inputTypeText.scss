@@ -16,14 +16,16 @@ input[type=password],
 input[type=email] {
   @include deprecated('selectors for inputTypeText');
 
-  border-width: 0 0 1px 0;
-  border-color: $color-base-shark;
-  border-style: solid;
-  color: $color-type-theme-light-primary;
+  @if variable-exists(color-base-shark) {
+    border-width: 0 0 1px 0;
+    border-color: $color-base-shark;
+    border-style: solid;
+    color: $color-type-theme-light-primary;
 
-  &:focus {
-    border-color: $color-accessibility-border-active;
-    outline: 0;
-    box-shadow: unset;
+    &:focus {
+      border-color: $color-accessibility-border-active;
+      outline: 0;
+      box-shadow: unset;
+    }
   }
 }

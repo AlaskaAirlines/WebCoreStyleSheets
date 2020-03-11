@@ -36,12 +36,14 @@ body,
 .baseType {
   @include deprecated('selctors body, .baseType');
 
-  margin: 0;
-  font-family: $auro-font-family-default;
-  font-weight: $weight-book;
-  font-size: $size-font-breakpoint-all-med;
-  line-height: $vertical-alignment-body;
-  color: $color-type-theme-light-primary;
+  @if variable-exists(font-family-base) {
+    margin: 0;
+    font-family: $font-family-base;
+    font-weight: $weight-book;
+    font-size: $size-font-breakpoint-all-med;
+    line-height: $vertical-alignment-body;
+    color: $color-type-theme-light-primary;
+  }
 }
 
 /// Sets standard `margin-bottom` for all paragraph style content
@@ -56,10 +58,12 @@ body,
 .baseParagraph {
   @include deprecated('selctor .baseParagraph');
 
-  margin-bottom: $size-margin-baseline;
+  @if variable-exists(size-margin-baseline) {
+    margin-bottom: $size-margin-baseline;
 
-  .hyperlink {
-    text-decoration: underline;
+    .hyperlink {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -75,43 +79,45 @@ body,
 .hyperlink {
   @include deprecated('selctor .hyperlink');
 
-  color: $color-type-theme-light-link;
-  padding: 0 $size-scale-sml;
-  text-decoration: none;
-
-  &:visited {
+  @if variable-exists(color-type-theme-light-link) {
     color: $color-type-theme-light-link;
-  }
-
-  &--inline {
-    padding: 0;
-    text-decoration: underline;
-
-    &:not(.is-touching) {
-      &:hover {
-        text-decoration: none !important;  // sass-lint:disable-line no-important
-      }
-    }
-  }
-
-  &--darktheme {
-    color: $color-type-theme-dark-link;
-
-    &:not(.is-touching) {
-      &:hover {
-        color: $color-type-theme-dark-link-hover;
-      }
-    }
+    padding: 0 $size-scale-sml;
+    text-decoration: none;
 
     &:visited {
-      color: $color-type-theme-dark-link;
+      color: $color-type-theme-light-link;
     }
-  }
 
-  &:not(.is-touching) {
-    &:hover {
-      color: $color-type-theme-light-link-hover;
+    &--inline {
+      padding: 0;
       text-decoration: underline;
+
+      &:not(.is-touching) {
+        &:hover {
+          text-decoration: none !important;  // sass-lint:disable-line no-important
+        }
+      }
+    }
+
+    &--darktheme {
+      color: $color-type-theme-dark-link;
+
+      &:not(.is-touching) {
+        &:hover {
+          color: $color-type-theme-dark-link-hover;
+        }
+      }
+
+      &:visited {
+        color: $color-type-theme-dark-link;
+      }
+    }
+
+    &:not(.is-touching) {
+      &:hover {
+        color: $color-type-theme-light-link-hover;
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -146,7 +152,9 @@ small,
 .type--small {
   @include deprecated('selctors small, .type--small');
 
-  font-size: $size-font-breakpoint-all-small;
+  @if variable-exists(color-type-theme-light-link) {
+    font-size: $size-font-breakpoint-all-small;
+  }
 }
 
 /// Baseline block Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
@@ -161,9 +169,11 @@ small,
 .heading {
   @include deprecated('selctor .heading');
 
-  margin: $size-margin-header-y-axis $size-margin-header-x-axis;
-  font-weight: inherit;
-  line-height: $vertical-alignment-heading;
+  @if variable-exists(color-type-theme-light-link) {
+    margin: $size-margin-header-y-axis $size-margin-header-x-axis;
+    font-weight: inherit;
+    line-height: $vertical-alignment-heading;
+  }
 }
 
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
@@ -179,11 +189,13 @@ small,
 .heading--max {
   @include deprecated('selctor .heading--max');
 
-  font-size: $size-font-breakpoint-mobile-max;
-  margin-top: 0;
+  @if variable-exists(color-type-theme-light-link) {
+    font-size: $size-font-breakpoint-mobile-max;
+    margin-top: 0;
 
-  @include breakpoint-medium {
-    font-size: $size-font-breakpoint-desktop-max;
+    @include breakpoint-medium {
+      font-size: $size-font-breakpoint-desktop-max;
+    }
   }
 }
 
@@ -199,10 +211,12 @@ small,
 .heading--xxl {
   @include deprecated('selctor .heading--xxl');
 
-  font-size: $size-font-breakpoint-mobile-xxl;
+  @if variable-exists(color-type-theme-light-link) {
+    font-size: $size-font-breakpoint-mobile-xxl;
 
-  @include breakpoint-medium {
-    font-size: $size-font-breakpoint-desktop-xxl;
+    @include breakpoint-medium {
+      font-size: $size-font-breakpoint-desktop-xxl;
+    }
   }
 }
 
@@ -218,10 +232,12 @@ small,
 .heading--xl {
   @include deprecated('selctor .heading--xl');
 
-  font-size: $size-font-breakpoint-mobile-xl;
+  @if variable-exists(color-type-theme-light-link) {
+    font-size: $size-font-breakpoint-mobile-xl;
 
-  @include breakpoint-medium {
-    font-size: $size-font-breakpoint-desktop-xl;
+    @include breakpoint-medium {
+      font-size: $size-font-breakpoint-desktop-xl;
+    }
   }
 }
 
@@ -237,10 +253,11 @@ small,
 .heading--lg {
   @include deprecated('selctor .heading--lg');
 
-  font-size: $size-font-breakpoint-mobile-lg;
+  @if variable-exists(color-type-theme-light-link) {
+    font-size: $size-font-breakpoint-mobile-lg;
 
-  @include breakpoint-medium {
-    font-size: $size-font-breakpoint-desktop-lg;
+    @include breakpoint-medium {
+      font-size: $size-font-breakpoint-desktop-lg;
+    }
   }
 }
-

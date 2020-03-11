@@ -29,53 +29,55 @@
 .ods-containedButtons {
   @include deprecated('selctor .ods-containedButtons');
 
-  display: flex;
-  flex-direction: column;
-
-  > * {
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  ods-button {
-    order: -1;
-  }
-
-  [role=button] {
-    margin-bottom: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  &--reverse {
-    @include breakpoint-medium {
-      justify-content: flex-end;
-    }
-  }
-
-  @include breakpoint-medium {
-    flex-direction: row;
+  @if variable-exists(breakpoint-width-medium) {
+    display: flex;
+    flex-direction: column;
 
     > * {
-      margin-left: 1rem;
-      margin-bottom: 0;
+      margin-bottom: 1rem;
 
-      &:first-child {
-        margin-left: 0;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
     ods-button {
-      order: inherit;
+      order: -1;
     }
 
     [role=button] {
-      margin: inherit;
-      width: inherit;
-      text-align: inherit;
+      margin-bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    &--reverse {
+      @include breakpoint-medium {
+        justify-content: flex-end;
+      }
+    }
+
+    @include breakpoint-medium {
+      flex-direction: row;
+
+      > * {
+        margin-left: 1rem;
+        margin-bottom: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      ods-button {
+        order: inherit;
+      }
+
+      [role=button] {
+        margin: inherit;
+        width: inherit;
+        text-align: inherit;
+      }
     }
   }
 }
@@ -122,12 +124,12 @@
   }
 
   &--reverse {
-    @include breakpoint-medium {
+    @include auro_breakpoint--md {
       justify-content: flex-end;
     }
   }
 
-  @include breakpoint-medium {
+  @include auro_breakpoint--md {
     flex-direction: row;
 
     > * {

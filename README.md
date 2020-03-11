@@ -16,54 +16,20 @@ This repository is a library of core level styles, functions, and mixins that ca
 
 Please see the [documentation site](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for all information related to WC Style Sheets.
 
-## †Deprecated
-
-With each release of WC Style Sheets please be sure to pay attention to the †DEPRECATED section of the doc site. All styles that are designated as deprecated will be listed in this section and will be deleted with the next major release. Each deprecated item may list an alternative option. If there is not an alternative option, please consult with your team designer for an alternate solution.
-
-#### Deprecated files
-
-| deprecated file | new file | description |
-|---|---|---|
-| baselineLTE.scss | core.scss | File deprecation to support new features |
-| baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing.
-| inputTypeText.scss | n/a | n/a |
-| _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
-
-#### Missing tokens?
-
-When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply import the new Auro Sass variables generated from the tokens.
-
-```scss
-@import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
-```
-
-#### Missing layout selectors?
-
-If you have been using selectors from the now deprecated `_layoutProperties.scss` file, you may be missing the following selectors from your CSS output
-
-```css
-.util_[margin/padding][Top/Right/Bottom/Left]--[none/xs/md/lg/xl]
-```
-
-The easy fix is to import the new layout properties generator file that will fill this gap.
-
-```scss
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
-```
-
-For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).
-
-
-## Support
-
-If at any time there is an issue discovered by either the document site or the core library itself, please submit an [issue](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/new/choose) as to alert the core team of the situation. We appreciate all your support!
-
 ## Install
 
 OWCSS is made up of a series of Sass files that allows for an array of use cases. There is no core file to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+```
+
+### Tokens Dependency
+
+Sass code in WCSS has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported prior to any reference of a WCSS partial. 
+
+```scss
+@import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 ```
 
 ### Scoping
@@ -125,9 +91,29 @@ html.auro { ... }
 
 ### Importing utility classes and using the !important flag
 
-When using the Utility Classes, there are two ways to include them. Either subscribe to each family of functional selectors individually, or include all families in a single request.
+When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the global `$important` variable is `null` by default. To change, simply change the value of the variable prior to importing any utility partials. 
 
-See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-variable-important)
+```scss
+$important: true; 
+```
+
+Output of default selector
+
+```css
+.util_is-lgOnly {
+  display: none;
+}
+```
+
+Output with `$important: true`
+
+```css
+.util_is-lgOnly {
+  display: none !important;
+}
+```
+
+See !important [spec](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-variable-important)
 
 
 ### layoutPropertiesGenerator
@@ -161,6 +147,54 @@ none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
 ```
 
 See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_spacing)
+
+
+## †Deprecated
+
+With each release of WC Style Sheets please be sure to pay attention to the †DEPRECATED section of the doc site. All styles that are designated as deprecated will be listed in this section and will be deleted with the next major release. Each deprecated item may list an alternative option. If there is not an alternative option, please consult with your team designer for an alternate solution.
+
+#### Deprecated files
+
+| deprecated file | new file | description |
+|---|---|---|
+| baselineLTE.scss | core.scss | File deprecation to support new features |
+| baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing.
+| inputTypeText.scss | n/a | n/a |
+| _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
+
+## Troubleshooting
+
+The following are frequently asked questions.
+
+#### I updated my version and am now getting a missing variable error?
+
+When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply import the new Auro Sass variables generated from the tokens.
+
+```scss
+@import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+```
+
+#### I updated my version, now some utility selectors are no longer there?
+
+If you have been using selectors from the now deprecated `_layoutProperties.scss` file, you may be missing the following selectors from your CSS output
+
+```css
+.util_[margin/padding][Top/Right/Bottom/Left]--[none/xs/md/lg/xl]
+```
+
+The easy fix is to import the new layout properties generator file that will fill this gap.
+
+```scss
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
+```
+
+For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).
+
+
+## Support
+
+If at any time there is an issue discovered by either the document site or the core library itself, please submit an [issue](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/new/choose) as to alert the core team of the situation. We appreciate all your support!
+
 
 ## CSS writing conventions
 

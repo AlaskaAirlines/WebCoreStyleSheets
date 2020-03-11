@@ -21,19 +21,21 @@
 .ods-tablist {
   @include deprecated('selctor .ods-tablist');
 
-  @include breakpoint-narrow {
-    overflow-y: unset;
-    white-space: unset;
-  }
+  @if variable-exists(breakpoint-width-narrow) {
+    @include breakpoint-narrow {
+      overflow-y: unset;
+      white-space: unset;
+    }
 
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: $color-background-light-rule;
-  line-height: $size-scale-xxl;
-  height: calc(#{$size-scale-xxl} + 1px);
-  margin-bottom: $size-scale-med;
-  overflow-y: scroll;
-  white-space: nowrap;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: $color-background-light-rule;
+    line-height: $size-scale-xxl;
+    height: calc(#{$size-scale-xxl} + 1px);
+    margin-bottom: $size-scale-med;
+    overflow-y: scroll;
+    white-space: nowrap;
+  }
 }
 
 /// `.auro_tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
@@ -46,7 +48,7 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/tablist";
 
 #{$scope}.auro_tablist {
-  @include breakpoint-narrow {
+  @include auro_breakpoint--sm {
     overflow-y: unset;
     white-space: unset;
   }

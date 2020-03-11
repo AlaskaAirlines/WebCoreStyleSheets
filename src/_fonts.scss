@@ -3,73 +3,63 @@
 
 // ---------------------------------------------------------------------
 
-@import "./libSupport/deprecated";
-
 // sass-lint:disable no-duplicate-properties
 
 // @font-face is not supported in SassDocs
-// See https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/howToUseFonts.md for full details
 
 /// Baseline font-face setting for using web based custom fonts - font weight light
-/// @group †deprecated
+/// @example scss - import src file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
+
+// Auro rule
+@if variable-exists(auro-asset-font-circular-family-name) {
+  @font-face {
+    font-family: $auro-asset-font-circular-family-name;
+    src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
+    url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
+    font-weight: $auro-text-heading-display-weight;
+    font-style: normal;
+    font-display: fallback;
+  }
+}
+
+// deprecated rule
+@if variable-exists(asset-font-circular-family-name) {
+  @font-face {
+    font-family: $asset-font-circular-family-name;
+    src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
+    url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
+    font-weight: $weight-light;
+    font-style: normal;
+    font-display: fallback;
+  }
+}
+
+
+/// Baseline font-face setting for using web based custom fonts - font weight medium
 /// @example scss - import src file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @font-face {
-  @include deprecated('legacy @font-face setup');
-
   @if variable-exists(asset-font-circular-family-name){
     font-family: $asset-font-circular-family-name;
   } @else {
-    font-family: $auro-font-family-default;
+    font-family: $auro-asset-font-circular-family-name;
   }
   src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
-  @if variable-exists(weight-light){
-    font-weight: $weight-light;
-  } @else {
-    font-family: $auro-text-heading-display-weight;
-  }
-  font-style: normal;
-  font-display: fallback;
-}
-
-/// Baseline font-face setting for using web based custom fonts - font weight light
-/// @group Baseline
-/// @example scss - import src file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
-@font-face {
-  font-family: $auro-asset-font-circular-family-name;
-  src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
-  url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
-  font-weight: $auro-text-heading-display-weight;
-  font-style: normal;
-  font-display: fallback;
-}
-
-/// Baseline font-face setting for using web based custom fonts - font weight medium
-/// @group Baseline
-/// @example scss - import src file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
-@font-face {
-  font-family: $auro-asset-font-circular-family-name;
-  src: url("https://resource.alaskaair.net/-/media/A5558137DB0F4B818D85EBE44FDC542E.woff2") format("woff2"),
-  url("https://resource.alaskaair.net/-/media/F4E82B6C6CBA46B4A322B4B99B2CBC63.woff") format("woff");
   font-weight: $auro-text-heading-medium-weight;
   font-style: normal;
   font-display: fallback;
 }
 
 /// Baseline font-face setting for using web based custom fonts - font weight book
-/// @group †deprecated
 /// @example scss - import src file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @font-face {
-  @include deprecated('legacy @font-face setup');
-
   @if variable-exists(asset-font-circular-family-name){
     font-family: $asset-font-circular-family-name;
   } @else {
-    font-family: $auro-font-family-default;
+    font-family: $auro-asset-font-circular-family-name;
   }
   src: url("https://resource.alaskaair.net/-/media/1DD02F55437F4346B7EF7D5A08326D71.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/2339807B68A344348447336D15035425.woff") format("woff");
@@ -78,19 +68,6 @@
   } @else {
     font-family: $auro-text-body-default-weight;
   }
-  font-style: normal;
-  font-display: fallback;
-}
-
-/// Baseline font-face setting for using web based custom fonts - font weight book
-/// @group Baseline
-/// @example scss - import src file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
-@font-face {
-  font-family: $auro-asset-font-circular-family-name;
-  src: url("https://resource.alaskaair.net/-/media/1DD02F55437F4346B7EF7D5A08326D71.woff2") format("woff2"),
-  url("https://resource.alaskaair.net/-/media/2339807B68A344348447336D15035425.woff") format("woff");
-  font-weight: $auro-text-body-default-weight;
   font-style: normal;
   font-display: fallback;
 }

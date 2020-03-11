@@ -21,8 +21,10 @@
 .ods-roleTab {
   @include deprecated('selctor .ods-roleTab');
 
-  @include anchorTab(sass, noncomponent);
-  margin-right: calc(#{$size-scale-micro} * -1);
+  @if variable-exists(color-type-theme-light-link) {
+    @include anchorTab(sass, noncomponent);
+    margin-right: calc(#{$size-scale-micro} * -1);
+  }
 }
 
 

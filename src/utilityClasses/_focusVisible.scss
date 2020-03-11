@@ -33,7 +33,9 @@
   &.ods-roleTab {
     @include deprecated('selector .focus-visible');
 
-    @include focus-hyperlink(sass)
+    @if variable-exists(color-base-white) {
+      @include focus-hyperlink(sass)
+    }
   }
 }
 

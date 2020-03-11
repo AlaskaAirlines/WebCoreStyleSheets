@@ -19,10 +19,12 @@
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
 .util_is-mobileOnly {
-  @include breakpoint-narrow {
-    @include deprecated('selector .util_is-mobileOnly');
+  @if variable-exists(breakpoint-width-narrow) {
+    @include breakpoint-narrow {
+      @include deprecated('selector .util_is-mobileOnly');
 
-    display: none $important;
+      display: none $important;
+    }
   }
 }
 
@@ -62,14 +64,16 @@
 .util_is-narrowOnly {
   @include deprecated('selector .util_is-narrowOnly');
 
-  display: none $important;
-
-  @include breakpoint-narrow {
-    display: block $important;
-  }
-
-  @include breakpoint-medium {
+  @if variable-exists(breakpoint-width-narrow) {
     display: none $important;
+
+    @include breakpoint-narrow {
+      display: block $important;
+    }
+
+    @include breakpoint-medium {
+      display: none $important;
+    }
   }
 }
 
@@ -115,14 +119,16 @@
 .util_is-narrowOnly--inline {
   @include deprecated('selector .util_is-narrowOnly--inline');
 
-  display: none $important;
-
-  @include breakpoint-narrow {
-    display: inline-block $important;
-  }
-
-  @include breakpoint-medium {
+  @if variable-exists(breakpoint-width-narrow) {
     display: none $important;
+
+    @include breakpoint-narrow {
+      display: inline-block $important;
+    }
+
+    @include breakpoint-medium {
+      display: none $important;
+    }
   }
 }
 
@@ -168,10 +174,12 @@
 .util_is-narrowAppears {
   @include deprecated('selector .util_is-narrowAppears');
 
-  display: none $important;
+  @if variable-exists(breakpoint-width-narrow) {
+    display: none $important;
 
-  @include breakpoint-narrow {
-    display: block $important;
+    @include breakpoint-narrow {
+      display: block $important;
+    }
   }
 }
 
@@ -213,10 +221,12 @@
 .util_is-narrowAppears--inline {
   @include deprecated('selector .util_is-narrowAppears--inline');
 
-  display: none $important;
+  @if variable-exists(breakpoint-width-narrow)  {
+    display: none $important;
 
-  @include breakpoint-narrow {
-    display: inline-block $important;
+    @include breakpoint-narrow {
+      display: inline-block $important;
+    }
   }
 }
 
@@ -270,14 +280,16 @@
 .util_is-tabletOnly {
   @include deprecated('selector .util_is-tabletOnly');
 
-  display: none $important;
-
-  @include breakpoint-medium {
-    display: block $important;
-  }
-
-  @include breakpoint-wide {
+  @if variable-exists(breakpoint-width-medium) {
     display: none $important;
+
+    @include breakpoint-medium {
+      display: block $important;
+    }
+
+    @include breakpoint-wide {
+      display: none $important;
+    }
   }
 }
 
@@ -304,14 +316,16 @@
 .util_is-tabletOnly--inline {
   @include deprecated('selector .util_is-tabletOnly--inline');
 
-  display: none $important;
-
-  @include breakpoint-medium {
-    display: inline-block $important;
-  }
-
-  @include breakpoint-wide {
+  @if variable-exists(breakpoint-width-medium) {
     display: none $important;
+
+    @include breakpoint-medium {
+      display: inline-block $important;
+    }
+
+    @include breakpoint-wide {
+      display: none $important;
+    }
   }
 }
 
@@ -338,10 +352,12 @@
 .util_is-tabletAppears {
   @include deprecated('selector .util_is-tabletAppears');
 
-  display: none $important;
+  @if variable-exists(breakpoint-width-medium) {
+    display: none $important;
 
-  @include breakpoint-medium {
-    display: block $important;
+    @include breakpoint-medium {
+      display: block $important;
+    }
   }
 }
 
@@ -368,10 +384,12 @@
 .util_is-tabletAppears--inline {
   @include deprecated('selector .util_is-tabletAppears--inline');
 
-  display: none $important;
+  @if variable-exists(breakpoint-width-medium) {
+    display: none $important;
 
-  @include breakpoint-medium {
-    display: inline-block $important;
+    @include breakpoint-medium {
+      display: inline-block $important;
+    }
   }
 }
 
@@ -386,10 +404,12 @@
 .util_is-desktopOnly {
   @include deprecated('selector .util_is-desktopOnly');
 
-  display: none $important;
+  @if variable-exists(breakpoint-width-max) {
+    display: none $important;
 
-  @include breakpoint-max {
-    display: block $important;
+    @include breakpoint-max {
+      display: block $important;
+    }
   }
 }
 
@@ -431,10 +451,12 @@
 .util_is-desktopOnly--inline {
   @include deprecated('selector .util_is-desktopOnly--inline');
 
-  display: none $important;
+  @if variable-exists(breakpoint-width-max) {
+    display: none $important;
 
-  @include breakpoint-max {
-    display: inline-block $important;
+    @include breakpoint-max {
+      display: inline-block $important;
+    }
   }
 }
 

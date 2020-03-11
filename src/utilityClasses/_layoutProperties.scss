@@ -99,7 +99,9 @@
 .util_marginBottom--sml {
   @include deprecated('selctor .util_marginBottom--sml');
 
-  margin-bottom: $size-scale-sml $important;
+  @if variable-exists(size-scale-sml) {
+    margin-bottom: $size-scale-sml $important;
+  }
 }
 
 /// Utility class to set margin-bottom to `med`
@@ -113,7 +115,9 @@
 .util_marginBottom--med {
   @include deprecated('selctor .util_marginBottom--med');
 
-  margin-bottom: $size-scale-med $important;
+  @if variable-exists(size-scale-med) {
+    margin-bottom: $size-scale-med $important;
+  }
 }
 
 /// Utility class to set margin-top to `sml`
@@ -127,7 +131,9 @@
 .util_marginTop--sml {
   @include deprecated('selctor .util_marginTop--sml');
 
-  margin-top: $size-scale-sml $important;
+  @if variable-exists(size-scale-sml) {
+    margin-top: $size-scale-sml $important;
+  }
 }
 
 /// Utility class to set margin-top to `med`
@@ -141,7 +147,9 @@
 .util_marginTop--med {
   @include deprecated('selctor .util_marginTop--med');
 
-  margin-top: $size-scale-med $important;
+  @if variable-exists(size-scale-sml) {
+    margin-top: $size-scale-sml $important;
+  }
 }
 
 /// Utility class to set margin-right to `sml`
@@ -155,7 +163,9 @@
 .util_marginRight--sml {
   @include deprecated('selctor .util_marginRight--sml');
 
-  margin-right: $size-scale-sml $important;
+  @if variable-exists(size-scale-sml) {
+    margin-right: $size-scale-sml $important;
+  }
 }
 
 /// Utility class to set margin-right to `med`
@@ -169,7 +179,9 @@
 .util_marginRight--med {
   @include deprecated('selctor .util_marginRight--med');
 
-  margin-right: $size-scale-med $important;
+  @if variable-exists(size-scale-med) {
+    margin-right: $size-scale-med $important;
+  }
 }
 
 /// Utility class to set margin-left to `sml`
@@ -183,7 +195,9 @@
 .util_marginLeft--sml {
   @include deprecated('selctor .util_marginLeft--sml');
 
-  margin-left: $size-scale-sml $important;
+  @if variable-exists(size-scale-sml) {
+    margin-left: $size-scale-sml $important;
+  }
 }
 
 /// Utility class to set margin-left to `med`
@@ -197,5 +211,7 @@
 .util_marginLeft--med {
   @include deprecated('selctor .util_marginLeft--med');
 
-  margin-left: $size-scale-med $important;
+  @if variable-exists(size-scale-med) {
+    margin-left: $size-scale-med $important;
+  }
 }

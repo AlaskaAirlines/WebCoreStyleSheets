@@ -22,7 +22,9 @@
 .ods-roleButton {
   @include deprecated('selctor .ods-roleButton');
 
-  @include anchorButton(sass, noncomponent);
+  @if variable-exists(color-type-theme-light-link) {
+    @include anchorButton(sass, noncomponent);
+  }
 }
 
 

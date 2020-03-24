@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.13](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.12...v2.8.13) (2020-03-24)
+
+
+### Bug Fixes
+
+* [#37](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/37) address deprecation issues ([4885844](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/4885844))
+
 ## [2.8.12](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.11...v2.8.12) (2020-02-28)
 
 

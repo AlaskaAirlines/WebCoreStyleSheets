@@ -1,7 +1,7 @@
 // Import build resources to ensure that src resources are working as expected
 
 /* --------start variables import ------------- */
-@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables';
+@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables'; // deperecated Orion tokens
 @import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
 /* --------end variables import ------------- */
 
@@ -15,7 +15,7 @@
 @import './src/normalize';
 
 /* --------start baseline import ------------- */
-@import './src/baseline'; // deprecated
+@import './src/baseline'; // deprecated, discontinue use
 
 /* --------start essentials import ------------- */
 @import './src/essentials';

@@ -4,9 +4,9 @@
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue)
 
-The core front-end framework for building experiences with the  Design System.
+**We are in transition between Orion and Auro. With the next MAJOR release of WCSS, the repo and npm will be renamed.**
 
-WC Style sheets is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Orion Design Language and assist with transition to the Auro Design Language.
+WC Style Sheets(WCSS) is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Auro Design Language.
 
 ## What's included
 
@@ -18,7 +18,7 @@ Please see the [documentation site](https://alaskaairlines.github.io/OrionWebCor
 
 ## Install
 
-OWCSS is made up of a series of Sass files that allows for an array of use cases. There is no core file to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
+There are no core files to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
@@ -26,17 +26,42 @@ OWCSS is made up of a series of Sass files that allows for an array of use cases
 
 ### Tokens Dependency
 
-Sass code in WCSS has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported prior to any reference of a WCSS partial. 
+WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial. 
 
 ```scss
 @import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... ";
 ```
+
+### Install the essentials 
+
+While WCSS is an à la carte solution, there are things that should be considered when adding WCSS to your project. For example, if the project has little or no legacy CSS, it is suggested to set the following foundation:
+
+```scss
+// baseline design tokens as Sass variables
+@import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+
+// globally add the mixins so that any future reference will be addressed 
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/breakpoints';
+
+// it's typically best practice to load the @font-face rules prior to any reference of the custom web fonts
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/fonts';
+
+// set a baseline browser normalize
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/normalize';
+
+// essentials setup baseline primitive selectors for any UI development 
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/essentials';
+```
+
+For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
+
 
 ### Scoping
 
 Be sure to see the [prefixing and scoping API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#scope-prefix) in the documentation site.
 
-When supporting legacy UIs there may be issues with importing a Sass file and its selectors. To enable scoping simply set the `$scope` variable to be `true` prior to importing any selectors that support this setting.
+When supporting legacy UIs there may be issues with importing a Sass file and its selectors. To enable scoping simply set the `$scope` variable to be `true` before importing any selectors that support this setting.
 
 ```scss
 $scope: true;
@@ -54,7 +79,7 @@ html.auro { ... }
 
 ### Prefixing
 
-To enable prefixing simply set the `$prefix` variable to be `true` prior to importing any selectors that support this setting.
+To enable prefixing simply set the `$prefix` variable to be `true` before importing any selectors that support this setting.
 
 ```scss
 $prefix: true;
@@ -72,7 +97,7 @@ body,
 
 ### Scoping and prefixing
 
-If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set both the `scope` and `prefix` variables as `true` prior to importing any selectors that support these settings.
+If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set both the `scope` and `prefix` variables as `true` before importing any selectors that support these settings.
 
 ```scss
 $scope: true;
@@ -91,13 +116,13 @@ html.auro { ... }
 
 ### Importing utility classes and using the !important flag
 
-When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the global `$important` variable is `null` by default. To change, simply change the value of the variable prior to importing any utility partials. 
+When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the global `$important` variable is `null` by default. To change, simply change the value of the variable before importing any utility partials. 
 
 ```scss
 $important: true; 
 ```
 
-Output of default selector
+The output of default selector
 
 ```css
 .util_is-lgOnly {
@@ -105,7 +130,7 @@ Output of default selector
 }
 ```
 
-Output with `$important: true`
+The output with `$important: true`
 
 ```css
 .util_is-lgOnly {
@@ -118,7 +143,7 @@ See !important [spec](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#u
 
 ### layoutPropertiesGenerator
 
-Importing this file will auto-generates all available utility selectors. Output can be configured by redefining default values prior to import. See default value examples below.
+Importing this file will auto-generates all available utility selectors. Output can be configured by redefining default values before import. See the default value examples below.
 
 ```sass
 none, xs, md, lg, xl
@@ -204,7 +229,7 @@ The implementation of WCSS uses a naming convention model that will be strictly 
 
 Universally applicable selectors in cases where applying this style is not an appropriate responsibility of another selector. These selectors are typically considered UI trump cards as they may use the `!important` flag.
 
-To learn more about how the `!important` flag can be used with WCSS, please [see the api spec](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#variable-important).
+To learn more about how the `!important` flag can be used with WCSS, please [see the API spec](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#variable-important).
 
 (may define shape or layout without direct context to any element, component or object)
 
@@ -260,11 +285,11 @@ or to the scope of any Node.js component architecture:
 import 'focus-visible/dist/focus-visible.min.js';
 ```
 
-The `focus-visable` library is required for use with experimental a11y UI features
+The `focus-visible` library is required for use with experimental a11y UI features
 
 ## Accessibility
 
-Use of the the `focus-visible` library brings in the capability to be selective with the UI between clicking/tapping into a control versus tabbing to a control. In most cases, the a11y halo will only appear when a control is tabbed to. But in cases where there is a `<input />` element that supports text and/or triggers a virtual keyboard if a physical keyboard is not present, the `focus-visible` state will be triggered.
+The use of the `focus-visible` library brings in the capability to be selective with the UI between clicking/tapping into a control versus tabbing to a control. In most cases, the a11y halo will only appear when a control is tabbed to. But in cases where there is a `<input />` element that supports text and/or triggers a virtual keyboard if a physical keyboard is not present, the `focus-visible` state will be triggered.
 
 [Selectors Level 4 draft: 9.4. The Focus-Indicated Pseudo-class: :focus-visible](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
 
@@ -284,7 +309,7 @@ $ open sass-lint.html
 
 This should open the file in your default browser.
 
-This file is ignored and will not be added to the version control.
+This file is ignored and will not be added to version control.
 
 ## Tests
 

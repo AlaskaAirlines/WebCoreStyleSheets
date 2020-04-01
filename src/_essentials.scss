@@ -132,8 +132,8 @@
   }
 
   &--nav {
-    text-decoration: none;
     display: block;
+    text-decoration: none;
 
     &:not(.is-touching) {
       &:hover {

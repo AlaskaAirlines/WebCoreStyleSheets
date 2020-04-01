@@ -70,13 +70,18 @@ input[type=email]">input[type=text], input[type=password], input[type=email]</a>
   &amp;:before,
   &amp;:after {
     box-sizing: border-box;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 
   // default experience is to remove all a11y enhancements
   &amp;:focus {
     outline: none;
   }
-}</code>" data-collapsed="#{$scope} * { ... }"><code>#{$scope} * { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Global selector to address box-model and default <code>:focus</code> pseudo elements.</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> option.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>*, *:before, *:after {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro *, .auro *:before, .auro *:after {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="essentials"><div class="container">essentials</div></h1><section class="main__sub-section" id="essentials-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="essentials-css-#{$sym}#{$prefix}html#{$scope}"><h3 class="item__heading"><a class="item__name" href="#css-#{$sym}#{$prefix}html#{$scope}">#{$sym}#{$prefix}html#{$scope}</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$sym}#{$prefix}html#{$scope} {
+}</code>" data-collapsed="#{$scope} * { ... }"><code>#{$scope} * { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Global selector to address box-model and default <code>:focus</code> pseudo elements.</p><p>Global media setting for <a href="https://twitter.com/nathansmith/status/1242606456677040128">a11y support of reduced-motion</a></p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> option.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>*, *:before, *:after {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro *, .auro *:before, .auro *:after {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="essentials"><div class="container">essentials</div></h1><section class="main__sub-section" id="essentials-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="essentials-css-#{$sym}#{$prefix}html#{$scope}"><h3 class="item__heading"><a class="item__name" href="#css-#{$sym}#{$prefix}html#{$scope}">#{$sym}#{$prefix}html#{$scope}</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$sym}#{$prefix}html#{$scope} {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -123,8 +128,8 @@ input[type=email]">input[type=text], input[type=password], input[type=email]</a>
   }
 
   &amp;--nav {
-    text-decoration: none;
     display: block;
+    text-decoration: none;
 
     &amp;:not(.is-touching) {
       &amp;:hover {

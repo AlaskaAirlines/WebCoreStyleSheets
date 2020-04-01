@@ -113,22 +113,6 @@
     }
   }
 
-  auro-button {
-    order: -1;
-  }
-
-  [role=button] {
-    margin-bottom: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  &--reverse {
-    @include auro_breakpoint--md {
-      justify-content: flex-end;
-    }
-  }
-
   @include auro_breakpoint--md {
     flex-direction: row;
 
@@ -139,16 +123,6 @@
       &:first-child {
         margin-left: 0;
       }
-    }
-
-    auro-button {
-      order: inherit;
-    }
-
-    [role=button] {
-      margin: inherit;
-      width: inherit;
-      text-align: inherit;
     }
   }
 }

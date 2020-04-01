@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.14](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.13...v2.8.14) (2020-04-01)
+
+
+### Bug Fixes
+
+* [#41](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/41) address a11y for reduced-motion ([20456dd](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/20456dd))
+
 ## [2.8.13](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.12...v2.8.13) (2020-03-24)
 
 

@@ -4,9 +4,11 @@
 // ---------------------------------------------------------------------
 @import "libSupport/manageScope";
 
-// sass-lint:disable mixins-before-declarations
+// sass-lint:disable no-important
 
 /// Global selector to address box-model and default `:focus` pseudo elements.
+///
+/// Global media setting for [a11y support of reduced-motion](https://twitter.com/nathansmith/status/1242606456677040128)
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group core
@@ -24,6 +26,11 @@
   &:before,
   &:after {
     box-sizing: border-box;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 
   // default experience is to remove all a11y enhancements

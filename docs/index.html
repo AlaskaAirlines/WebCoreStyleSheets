@@ -609,22 +609,6 @@ $var: auro_map-deep-get($tokens, &#39;size&#39;, &#39;eighth&#39;); =&gt; $size-
     }
   }
 
-  auro-button {
-    order: -1;
-  }
-
-  [role=button] {
-    margin-bottom: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  &amp;--reverse {
-    @include auro_breakpoint--md {
-      justify-content: flex-end;
-    }
-  }
-
   @include auro_breakpoint--md {
     flex-direction: row;
 
@@ -635,16 +619,6 @@ $var: auro_map-deep-get($tokens, &#39;size&#39;, &#39;eighth&#39;); =&gt; $size-
       &amp;:first-child {
         margin-left: 0;
       }
-    }
-
-    auro-button {
-      order: inherit;
-    }
-
-    [role=button] {
-      margin: inherit;
-      width: inherit;
-      text-align: inherit;
     }
   }
 }</code>" data-collapsed="#{$scope}.auro_containedButtons { ... }"><code>#{$scope}.auro_containedButtons { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p><code>.auro_containedButtons</code> is a helper class to support the use of multiple buttons and/or the use of ods-hyperlink <code>role=&quot;button&quot;</code> in a parent container.</p><p><code>.auro_containedButtons</code> has a dependency on OWCSS breakpoints. See example below to import dependency.</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> options.</p><p>Place selector on outer parent element.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.auro_containedButtons {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .auro_containedButtons {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import selector file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/containedButtons&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import dependency file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints&quot;;</code></pre></div></section><section class="main__item container item" id="utility-auro-css-#{$scope}.auro_tablist"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.auro_tablist">#{$scope}.auro_tablist</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.auro_tablist {

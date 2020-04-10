@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.9.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.14...v2.9.0) (2020-04-10)
+
+
+### Features
+
+* add support for CDN pre-processed resources ([cd00dcd](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/cd00dcd74434ab038193a2638dbf4e413db686ba))
+
 ## [2.8.14](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.13...v2.8.14) (2020-04-01)
 
 

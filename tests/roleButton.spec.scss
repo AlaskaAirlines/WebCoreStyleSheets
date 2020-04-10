@@ -15,7 +15,7 @@
       @include expect {
         .auro_roleButton {
           display: inline-block;
-          color: #0074c8;
+          color: #0074cb;
           line-height: 3;
           padding: 0 1rem;
           border: 1px solid transparent;
@@ -42,7 +42,7 @@
       @include expect($selector: false) {
         .auro_roleButton {
           display: inline-block;
-          color: #0074c8;
+          color: #0074cb;
           line-height: 3;
           padding: 0 1rem;
           border: 1px solid transparent;
@@ -69,7 +69,7 @@
       @include expect {
         .auro_roleButton {
           display: inline-block;
-          color: #0074c8;
+          color: #0074cb;
           line-height: 3;
           padding: 0 1rem;
           border: 1px solid transparent;
@@ -96,7 +96,7 @@
       @include expect($selector: false) {
         .auro_roleButton {
           display: inline-block;
-          color: #0074c8;
+          color: #0074cb;
           line-height: 3;
           padding: 0 1rem;
           border: 1px solid transparent;

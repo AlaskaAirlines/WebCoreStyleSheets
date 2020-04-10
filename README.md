@@ -1,6 +1,6 @@
 # WC Style Sheets
 
-[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
+[![Build Status](https://travis-ci.org/AlaskaAirlines/WebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue)
 
@@ -173,6 +173,20 @@ none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
 
 See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_spacing)
 
+
+## Pre-processed CDN resources
+
+At a limited scale, some files have been pre-processed to CSS so that it can be delivered via CDN and used in environments where this rendered resource is required. 
+
+**API Note**: First supporting version `v2.9.0`
+
+```
+unpkg.com/:package@:version/:file
+```
+
+| resource | CDN URL |
+|---|---|
+| essentials.scss<br>fonts.scss|https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/cdn/essentials.css|
 
 ## †Deprecated
 

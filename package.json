@@ -44,19 +44,20 @@
     "stylelint-config-standard": "^18.3.0"
   },
   "scripts": {
-    "copySass": "copyfiles -u 1 -V './src/**/*.scss' ./dist",
+    "copySass": "copyfiles -u 1 -V './src/**/_*.scss' ./dist",
     "postinstall": "node packageScripts/postinstall.js",
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
     "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss tests/styleTest.scss --output-style expanded results/css/testBuild.css",
+    "buildCdnCss": "node-sass --include-path scss src/cdnUse/essentials.scss --output-style compressed -o dist/cdn/",
     "cssLint": "stylelint './results/css/*.css'",
     "jest": "jest",
     "test": "npm-run-all sassLint buildCss cssLint jest",
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
     "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc jest",
-    "ciBuild": "npm-run-all test sassdoc copyFontsDist copySass postinstall",
+    "ciBuild": "npm-run-all test sassdoc copyFontsDist copySass buildCdnCss postinstall",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run devBuild"
   },
   "husky": {

@@ -1,0 +1,18 @@
+/*
+  Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+  See LICENSE in the project root for license information.
+*/
+
+/* --------------------------------------------------------------------- */
+
+/*
+  This file is reserved for CDN consumption of web components
+  and not intended to be used with standard dynamic projects.
+*/
+
+// Import Sass variables
+@import '../../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
+
+// Import minimun essential files
+@import '../essentials';
+@import '../fonts';

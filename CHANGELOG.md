@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.9.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.0...v2.9.1) (2020-04-14)
+
+
+### Bug Fixes
+
+* add support for legacy baseline CSS ([c017a59](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/c017a59f7a80f974a4a6ce816077e466ad778de5))
+
 # [2.9.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.8.14...v2.9.0) (2020-04-10)
 
 

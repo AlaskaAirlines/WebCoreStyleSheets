@@ -174,7 +174,7 @@ none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
 See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_spacing)
 
 
-## Pre-processed CDN resources
+## Pre-processed bundled resources
 
 At a limited scale, some files have been pre-processed to CSS so that it can be delivered via CDN and used in environments where this rendered resource is required. 
 
@@ -184,9 +184,10 @@ At a limited scale, some files have been pre-processed to CSS so that it can be 
 unpkg.com/:package@:version/:file
 ```
 
-| resource | CDN URL |
-|---|---|
-| essentials.scss<br>fonts.scss|https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/cdn/essentials.css|
+| resource | supports | CDN URL |
+|---|---|---|
+| essentials.scss<br>fonts.scss|Auro WCs|https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/essentials.css|
+| baseline.scss<br>fonts.scss|ODS WCs|https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css|
 
 ## †Deprecated
 

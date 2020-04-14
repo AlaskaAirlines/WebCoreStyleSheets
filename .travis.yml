@@ -13,7 +13,8 @@ notifactions:
 before_script:
   - npm run copyFontsDist
   - npm run copySass
-  - npm run buildCdnCss
+  - npm run buildEssentials
+  - npm run buildBaseline
 
 after_success:
   - npx semantic-release

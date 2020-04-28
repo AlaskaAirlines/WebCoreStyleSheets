@@ -1,9 +1,5 @@
 # WC Style Sheets
 
-[![Build Status](https://travis-ci.org/AlaskaAirlines/WebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
-![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
-![NPM](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue)
-
 **We are in transition between Orion and Auro. With the next MAJOR release of WCSS, the repo and npm will be renamed.**
 
 WC Style Sheets(WCSS) is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Auro Design Language.
@@ -14,7 +10,7 @@ This repository is a library of core level styles, functions, and mixins that ca
 
 ## All styles documented
 
-Please see the [documentation site](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) for all information related to WC Style Sheets.
+Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyleSheets/) for all information related to WC Style Sheets.
 
 ## Install
 
@@ -376,8 +372,6 @@ The [assertion model](https://www.oddbird.net/true/docs/api-assert-output.html) 
 }
 ```
 
-
-
 ## Development
 
 To develop against WCSS run both `npm run watch` and `npm run serve` in separate terminals.
@@ -389,9 +383,6 @@ If additional selectors or scenarios are needed, please update the `./scripts/te
 Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation.
 
 
-##
-
-<footer>
-Alaska Airlines Orion Design System<br>
-Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
-</footer>
+[![Build Status](https://travis-ci.org/AlaskaAirlines/WebCoreStyleSheets.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionWebCoreStyleSheets)
+![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?color=orange)
+![NPM](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue)

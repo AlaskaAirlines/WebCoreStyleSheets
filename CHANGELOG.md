@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.9.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.1...v2.9.2) (2020-04-30)
+
+
+### Bug Fixes
+
+* padding issue with auro-hyperlink default style ([246d44f](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/246d44f4e014c45dacd88f645332856738f0f436))
+
 ## [2.9.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.0...v2.9.1) (2020-04-14)
 
 

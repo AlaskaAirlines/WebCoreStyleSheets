@@ -116,7 +116,6 @@
 ///
 #{$scope}.#{$prefix}hyperlink {
   color: $auro-color-ui-default-on-light;
-  padding: 0 $auro-size-xs;
   text-decoration: underline;
 
   &.focus-visible {

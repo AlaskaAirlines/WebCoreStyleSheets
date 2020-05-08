@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.9.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.2...v2.9.3) (2020-05-08)
+
+
+### Bug Fixes
+
+* update short URL in deprecated feedback ([4261ec9](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/4261ec923ad302b98b7d51e9c77e315221f097b6))
+
 ## [2.9.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.1...v2.9.2) (2020-04-30)
 
 

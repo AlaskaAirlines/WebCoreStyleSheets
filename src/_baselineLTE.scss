@@ -23,11 +23,6 @@
 
     box-sizing: border-box;
   }
-
-  // default experience is to remove all a11y enhancements
-  // &:focus {
-  //   outline: none;
-  // }
 }
 
 /// Selector set to enable use of [focus visible](https://www.npmjs.com/package/focus-visible) polyfill.
@@ -39,8 +34,8 @@
 ///
 /// @group †deprecated
 /// @deprecated see `core.scss`
-// .focus-visible :focus:not(.focus-visible) {
-//   @include deprecated('file baselineLTE');
+.js-focus-visible :focus:not(.focus-visible) {
+  @include deprecated('file baselineLTE');
 
-//   outline: none;
-// }
+  outline: none;
+}

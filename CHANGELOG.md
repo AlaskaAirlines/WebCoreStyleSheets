@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [2.9.4](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.3...v2.9.4) (2020-05-19)
+
+
+### Bug Fixes
+
+* [#47](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/47) Unsafe removal of focus outline ([607cc1b](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/607cc1b383b0473c7f99084a56617d737f50f097))
+* typography layout [#46](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/46) ([37b4989](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/37b49893485c02cde711efa871dfac3a108f5810))
+
 ## [2.9.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.2...v2.9.3) (2020-05-08)
 
 

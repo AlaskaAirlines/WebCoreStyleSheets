@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.9.5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.4...v2.9.5) (2020-06-03)
+
+
+### Bug Fixes
+
+* add support for auro_table component support ([1e29a8d](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/1e29a8d6b96c003c37ef52b84c227b64860cd5de))
+
 ## [2.9.4](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.3...v2.9.4) (2020-05-19)
 
 

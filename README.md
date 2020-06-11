@@ -106,7 +106,7 @@ The `focus-visible` library is required for use with experimental a11y UI featur
 
 The use of the `focus-visible` library brings in the capability to be selective with the UI between clicking/tapping into a control versus tabbing to a control. In most cases, the a11y halo will only appear when a control is tabbed to. But in cases where there is a `<input />` element that supports text and/or triggers a virtual keyboard if a physical keyboard is not present, the `focus-visible` state will be triggered.
 
-[Selectors Level 4 draft: 9.4. The Focus-Indicated Pseudo-class: :focus-visible](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
+For more information, please be sure to review the Selectors Level 4 draft 9.4, the Focus-Indicated Pseudo-class: [:focus-visible](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
 
 ## Development
 

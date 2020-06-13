@@ -9,7 +9,7 @@
 /// @group †deprecated
 /// @deprecated See `auro_anchorButton`
 /// @param {string} $style [] - Specifies the style type (sass, css)
-/// @param {string} $env [] - Specifies the style environment (component, noncomponent)
+/// @param {string} $env [] - Specifies the style environment
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
 /// @example scss - Set properties for Sass output that is NOT within a component
@@ -76,6 +76,7 @@
 /// @group utility-mixins
 /// @param {string} $style [] - Specifies the style type (sass, css)
 /// @param {string} $env [] - Specifies the style environment (component, noncomponent)
+/// @param {string} $display [inline-block] - Specifies display type
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
 /// @example scss - Set properties for Sass output that is NOT within a component
@@ -86,7 +87,7 @@
 ///   .button {
 ///       @include auro_anchorButton(css, component)
 ///   }
-@mixin auro_anchorButton($style, $env) {
+@mixin auro_anchorButton($style, $env, $display: inline-block) {
   $color: null;
   $hover-color: null;
   $line-height: null;
@@ -109,7 +110,7 @@
     @error "Invalid $style option. Please use `css` or `sass`";
   }
 
-  display: inline-block;
+  display: $display;
   color: $color;
   line-height: $line-height;
   padding: $padding;
@@ -125,7 +126,7 @@
       }
     }
   } @else if $env == noncomponent {
-    &:not(.is-touching) {
+    @media (hover: hover) {
       &:hover {
         color: $hover-color;
         text-decoration: underline;

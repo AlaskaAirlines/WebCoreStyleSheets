@@ -22,10 +22,12 @@
           text-decoration: none;
         }
 
-        .auro_roleButton:not(.is-touching):hover {
-          color: #054687;
-          text-decoration: underline;
-          cursor: pointer;
+        @media (hover: hover) {
+          .auro_roleButton:hover {
+            color: #054687;
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -76,10 +78,12 @@
           text-decoration: none;
         }
 
-        .auro_roleButton:not(.is-touching):hover {
-          color: #054687;
-          text-decoration: underline;
-          cursor: pointer;
+        @media (hover: hover) {
+          .auro_roleButton:hover {
+            color: #054687;
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -130,10 +134,12 @@
           text-decoration: none;
         }
 
-        .auro_roleButton:not(.is-touching):hover {
-          color: var(--auro-color-ui-hover-on-light);
-          text-decoration: underline;
-          cursor: pointer;
+        @media (hover: hover) {
+          .auro_roleButton:hover {
+            color: var(--auro-color-ui-hover-on-light);
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
       }
     }

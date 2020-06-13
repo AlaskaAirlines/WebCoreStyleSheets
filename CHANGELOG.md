@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.10.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.5...v2.10.0) (2020-06-13)
+
+
+### Features
+
+* update roleButton mixin to mod display type ([c09fb05](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/c09fb0530324ddd045bcb0ea57050bbf9671a006))
+
 ## [2.9.5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.4...v2.9.5) (2020-06-03)
 
 

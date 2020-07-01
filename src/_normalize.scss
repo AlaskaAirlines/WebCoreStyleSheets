@@ -112,7 +112,11 @@ html#{$scope} {
 ///
 #{$scope}pre {
   font-family: monospace, monospace; /* 1 */
-  font-size: $auro-text-body-size-default; /* 2 */
+  @if variable-exists(auro-text-body-size-default) {
+    font-size: $auro-text-body-size-default; /* 2 */
+  } @else {
+    font-size: $size-font-root;
+  }
 }
 
 /* Text-level semantics
@@ -201,7 +205,11 @@ html#{$scope} {
 #{$scope}kbd,
 #{$scope}samp {
   font-family: monospace, monospace; /* 1 */
-  font-size: $auro-text-body-size-default; /* 2 */
+  @if variable-exists(auro-text-body-size-default) {
+    font-size: $auro-text-body-size-default; /* 2 */
+  } @else {
+    font-size: $size-font-root;
+  }
 }
 
 ///
@@ -319,7 +327,11 @@ html#{$scope} {
   margin: 0; /* 2 */
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: $auro-text-body-height-default; /* 1 */
+  @if variable-exists(auro-text-body-height-default) {
+    line-height: $auro-text-body-height-default; /* 1 */
+  } @else {
+    line-height: $size-margin-baseline; /* 1 */
+  }
 }
 
 ///

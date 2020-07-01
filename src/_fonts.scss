@@ -44,10 +44,10 @@
     font-family: $asset-font-circular-family-name;
   } @else {
     font-family: $auro-asset-font-circular-family-name;
+    font-weight: $auro-text-heading-medium-weight;
   }
   src: url("https://resource.alaskaair.net/-/media/4E8D77C0D7A8411AB9C351C1EFF86681.woff2") format("woff2"),
   url("https://resource.alaskaair.net/-/media/CAAEEC88586944808EDE9B36A3460098.woff") format("woff");
-  font-weight: $auro-text-heading-medium-weight;
   font-style: normal;
   font-display: fallback;
 }

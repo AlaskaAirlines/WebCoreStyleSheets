@@ -47,9 +47,11 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-smOnly {}
 ///
-#{$scope}.#{$prefix}util_is-smOnly {
-  @include auro_breakpoint($min: $auro-breakpoint-sm) {
-    display: none $important;
+@if variable-exists(auro-breakpoint-sm) {
+  #{$scope}.#{$prefix}util_is-smOnly {
+    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+      display: none $important;
+    }
   }
 }
 
@@ -96,15 +98,17 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdOnly {}
 ///
-#{$scope}.#{$prefix}util_is-mdOnly {
-  display: none $important;
-
-  @include auro_breakpoint($min: $auro-breakpoint-sm) {
-    display: block $important;
-  }
-
-  @include auro_breakpoint($min: $auro-breakpoint-md) {
+@if variable-exists(auro-breakpoint-sm) {
+  #{$scope}.#{$prefix}util_is-mdOnly {
     display: none $important;
+
+    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+      display: block $important;
+    }
+
+    @include auro_breakpoint($min: $auro-breakpoint-md) {
+      display: none $important;
+    }
   }
 }
 
@@ -151,15 +155,17 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdOnly--inline {}
 ///
-#{$scope}.#{$prefix}util_is-mdOnly--inline {
-  display: none $important;
-
-  @include auro_breakpoint($min: $auro-breakpoint-sm) {
-    display: inline-block $important;
-  }
-
-  @include auro_breakpoint($min: $auro-breakpoint-md) {
+@if variable-exists(auro-breakpoint-sm) {
+  #{$scope}.#{$prefix}util_is-mdOnly--inline {
     display: none $important;
+
+    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+      display: inline-block $important;
+    }
+
+    @include auro_breakpoint($min: $auro-breakpoint-md) {
+      display: none $important;
+    }
   }
 }
 
@@ -202,11 +208,13 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdAppears {}
 ///
-#{$scope}.#{$prefix}util_is-mdAppears {
-  display: none $important;
+@if variable-exists(auro-breakpoint-sm) {
+  #{$scope}.#{$prefix}util_is-mdAppears {
+    display: none $important;
 
-  @include auro_breakpoint($min: $auro-breakpoint-sm) {
-    display: block $important;
+    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+      display: block $important;
+    }
   }
 }
 
@@ -249,11 +257,13 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdAppears--inline {}
 ///
-#{$scope}.#{$prefix}util_is-mdAppears--inline {
-  display: none $important;
+@if variable-exists(auro-breakpoint-sm) {
+  #{$scope}.#{$prefix}util_is-mdAppears--inline {
+    display: none $important;
 
-  @include auro_breakpoint($min: $auro-breakpoint-sm) {
-    display: inline-block $important;
+    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+      display: inline-block $important;
+    }
   }
 }
 
@@ -432,11 +442,13 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-lgOnly {}
 ///
-#{$scope}.#{$prefix}util_is-lgOnly {
-  display: none $important;
+@if variable-exists(auro-breakpoint-lg) {
+  #{$scope}.#{$prefix}util_is-lgOnly {
+    display: none $important;
 
-  @include auro_breakpoint($min: $auro-breakpoint-lg) {
-    display: block $important;
+    @include auro_breakpoint($min: $auro-breakpoint-lg) {
+      display: block $important;
+    }
   }
 }
 
@@ -479,11 +491,13 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-lgOnly--inline {}
 ///
-#{$scope}.#{$prefix}util_is-lgOnly--inline {
-  display: none $important;
+@if variable-exists(auro-breakpoint-lg) {
+  #{$scope}.#{$prefix}util_is-lgOnly--inline {
+    display: none $important;
 
-  @include auro_breakpoint($min: $auro-breakpoint-lg) {
-    display: inline-block $important;
+    @include auro_breakpoint($min: $auro-breakpoint-lg) {
+      display: inline-block $important;
+    }
   }
 }
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.10.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.0...v2.10.1) (2020-07-01)
+
+
+### Bug Fixes
+
+* add additional checks for versions of tokens ([8d9bfaa](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/8d9bfaa71bf55fdd44b4e61d1f4db6aa25758df8))
+
 # [2.10.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.9.5...v2.10.0) (2020-06-13)
 
 

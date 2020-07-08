@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.10.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.1...v2.10.2) (2020-07-08)
+
+
+### Bug Fixes
+
+* update utility-font [@if](https://github.com/if) wrapper ([8fb809d](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/8fb809d3db9dbcaac596dc0dbfc249fdccf01c27))
+
 ## [2.10.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.0...v2.10.1) (2020-07-01)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.10.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.2...v2.10.3) (2020-07-23)
+
+
+### Bug Fixes
+
+* [#53](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/issues/53) address misssing utility classes from api doc ([58fb3bf](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/58fb3bf440abcb727a89038dba00e304daf93f85))
+
 ## [2.10.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.1...v2.10.2) (2020-07-08)
 
 

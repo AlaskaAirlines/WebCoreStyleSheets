@@ -47,8 +47,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-smOnly {}
 ///
-@if variable-exists(auro-breakpoint-sm) {
-  #{$scope}.#{$prefix}util_is-smOnly {
+
+#{$scope}.#{$prefix}util_is-smOnly {
+  @if variable-exists(auro-breakpoint-sm) {
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
       display: none $important;
     }
@@ -98,8 +99,10 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdOnly {}
 ///
-@if variable-exists(auro-breakpoint-sm) {
-  #{$scope}.#{$prefix}util_is-mdOnly {
+
+#{$scope}.#{$prefix}util_is-mdOnly {
+  @if variable-exists(auro-breakpoint-sm) {
+
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
@@ -155,8 +158,8 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdOnly--inline {}
 ///
-@if variable-exists(auro-breakpoint-sm) {
-  #{$scope}.#{$prefix}util_is-mdOnly--inline {
+#{$scope}.#{$prefix}util_is-mdOnly--inline {
+  @if variable-exists(auro-breakpoint-sm) {
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
@@ -208,8 +211,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdAppears {}
 ///
-@if variable-exists(auro-breakpoint-sm) {
-  #{$scope}.#{$prefix}util_is-mdAppears {
+
+#{$scope}.#{$prefix}util_is-mdAppears {
+  @if variable-exists(auro-breakpoint-sm) {
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
@@ -257,8 +261,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdAppears--inline {}
 ///
-@if variable-exists(auro-breakpoint-sm) {
-  #{$scope}.#{$prefix}util_is-mdAppears--inline {
+
+#{$scope}.#{$prefix}util_is-mdAppears--inline {
+  @if variable-exists(auro-breakpoint-sm) {
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
@@ -442,8 +447,8 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-lgOnly {}
 ///
-@if variable-exists(auro-breakpoint-lg) {
-  #{$scope}.#{$prefix}util_is-lgOnly {
+#{$scope}.#{$prefix}util_is-lgOnly {
+  @if variable-exists(auro-breakpoint-lg) {
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-lg) {
@@ -491,8 +496,9 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-lgOnly--inline {}
 ///
-@if variable-exists(auro-breakpoint-lg) {
-  #{$scope}.#{$prefix}util_is-lgOnly--inline {
+
+#{$scope}.#{$prefix}util_is-lgOnly--inline {
+  @if variable-exists(auro-breakpoint-lg) {
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-lg) {
@@ -500,6 +506,7 @@
     }
   }
 }
+
 
 /// Utility class that will allow img src to fill 100% of space for responsive characteristics
 ///

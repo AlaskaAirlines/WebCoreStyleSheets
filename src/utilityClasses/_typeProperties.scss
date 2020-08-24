@@ -1,0 +1,49 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import "../libSupport/manageScope";
+@import "../utilityVariables/important";
+
+/// Utility class force no wrap on content
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-type
+/// @example scss - Default selector(s)
+///   .util_nowrap {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_nowrap {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_nowrap {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/typeProperties";
+#{$scope}.#{$prefix}util_nowrap {
+  white-space: nowrap $important;
+}
+
+/// Utility class to capitalize a string
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-type
+/// @example scss - Default selector(s)
+///   .util_capitalize {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_capitalize {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_capitalize {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/typeProperties";
+#{$scope}.#{$prefix}util_capitalize {
+  text-transform: capitalize $important;
+}

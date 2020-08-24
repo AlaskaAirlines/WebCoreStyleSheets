@@ -17,6 +17,12 @@ Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyl
 [![License](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 [![issues](https://img.shields.io/github/issues-raw/AlaskaAirlines/WebCoreStyleSheets?style=for-the-badge)](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues)
 
+```bash
+$ npm i @alaskaairux/orion-web-core-style-sheets
+```
+
+### Using the files in Sass
+
 There are no core files to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss

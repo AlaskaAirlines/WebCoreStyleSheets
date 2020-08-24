@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.11.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.3...v2.11.0) (2020-08-24)
+
+
+### Features
+
+* add new type properties feature ([21addd5](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/21addd5580159be354160e377d608dc5d208111d))
+
 ## [2.10.3](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.2...v2.10.3) (2020-07-23)
 
 

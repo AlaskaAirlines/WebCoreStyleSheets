@@ -12,7 +12,7 @@ notifactions:
 
 before_script:
   - npm run copyFontsDist
-  - npm run copySass
+  - npm run copyFiles
   - npm run buildEssentials
   - npm run buildBaseline
 

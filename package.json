@@ -30,6 +30,7 @@
     "glob": "^7.1.6",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "lit-element": "^2.4.0",
     "live-server": "^1.2.1",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
@@ -44,7 +45,7 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "copySass": "copyfiles -u 1 -V './src/**/_*.scss' ./dist",
+    "copyFiles": "copyfiles -u 1 -V './src/**/_*.scss' './src/**/*.js' ./dist",
     "postinstall": "node packageScripts/postinstall.js",
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
@@ -58,7 +59,7 @@
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
     "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc jest",
-    "ciBuild": "npm-run-all test sassdoc copyFontsDist copySass buildBaseline buildEssentials postinstall",
+    "ciBuild": "npm-run-all test sassdoc copyFontsDist copyFiles buildBaseline buildEssentials postinstall",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run devBuild"
   },
   "husky": {

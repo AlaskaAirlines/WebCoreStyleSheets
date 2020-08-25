@@ -1,0 +1,45 @@
+// Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import "../utilityClasses/displayProperties";
+
+/// Component a11y support for `:host` </br>
+/// For use with auroElement.js base class and web component development
+///
+/// @group Component-support
+/// @example scss - Default selector
+///   :host {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+:host {
+  @extend .util_displayBlock;
+}
+
+/// Component a11y support for `:host` selector with `hidden` attribute </br>
+/// For use with auroElement.js base class and web component development
+///
+/// @group Component-support
+/// @example scss - Default selector
+///   :host([hidden]:not(:focus):not(:active)) {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+:host([hidden]:not(:focus):not(:active)) {
+  @extend .util_displayHidden;
+}
+
+/// Component a11y support for `:host` selector with `hiddenVisually` attribute </br>
+/// For use with auroElement.js base class and web component development
+///
+/// @group Component-support
+/// @example scss - Default selector
+///   :host([hiddenVisually]:not(:focus):not(:active)) {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+:host([hiddenVisually]:not(:focus):not(:active)) {
+  @extend .util_displayHiddenVisually;
+}

@@ -89,6 +89,9 @@ With each release of WC Style Sheets please be sure to pay attention to the †D
 | baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing.
 | inputTypeText.scss | n/a | n/a |
 | _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
+| ./fonts | none | Remove all settings that expect the fonts to be loaded locally, all font references should be pointing to the [cloud](https://github.com/AlaskaAirlines/WebCoreStyleSheets/blob/master/src/_fonts.scss) | 
+
+Please note that with the next major release, all legacy resources will be removed. 
 
 ## Dependencies
 

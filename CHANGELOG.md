@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [2.12.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.11.0...v2.12.0) (2020-08-25)
+
+
+### Bug Fixes
+
+* travis script ([99c9234](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/99c9234874a8be39f7d6f4220e257130117e1e44))
+
+
+### Features
+
+* add support for remove auroElement dependency ([96e70bc](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/96e70bca824bfed94d0526d6bf39b9afb60168ad))
+
 # [2.11.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.10.3...v2.11.0) (2020-08-24)
 
 

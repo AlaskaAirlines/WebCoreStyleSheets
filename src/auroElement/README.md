@@ -73,4 +73,12 @@ static get properties() {
 }
 ```
 
-This completes the install of auroElement and all it's supported features.
+### Update HTML template
+
+Within the auroElement will be the `hideAudible()` method. In order to make full use of auroElement's accessibility features, be sure to add the following to the HTML element(s) you wish to hide from screen readers. 
+
+```html
+aria-hidden="${this.hideAudible(this.hiddenAudible)}"
+```
+
+This completes the install of auroElement and all its supported features.

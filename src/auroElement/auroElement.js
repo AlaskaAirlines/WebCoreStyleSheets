@@ -26,7 +26,7 @@ export default class AuroElement extends LitElement {
   }
 
   /**
-   * Function that determines state of aria-hidden
+   * @private Function that determines state of aria-hidden
    */
   hideAudible(value) {
     if (value) {

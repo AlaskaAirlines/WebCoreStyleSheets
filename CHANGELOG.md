@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.12.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.12.0...v2.12.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* update JSDoc syntax to remove internal method from rendered docs ([8ecce4d](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/8ecce4d46b81ff6907852812360a1e698f4d2982))
+
 # [2.12.0](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.11.0...v2.12.0) (2020-08-25)
 
 

@@ -42,7 +42,8 @@
     "semantic-release": "^17.1.2",
     "stylelint": "^13.7.1",
     "stylelint-config-recommended": "^3.0.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "wc-sass-render": "^1.2.3"
   },
   "scripts": {
     "copyFiles": "copyfiles -u 1 -V './src/**/_*.scss' './src/**/*.js' ./dist",
@@ -50,16 +51,19 @@
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
     "sassLint": "sass-lint --verbose",
+    "sassRender": "sass-render dist/auroElement/*.css -t ./scripts/staticStyles-template.js",
     "buildCss": "node-sass --include-path scss tests/styleTest.scss --output-style expanded results/css/testBuild.css",
     "buildBaseline": "node-sass --include-path scss src/bundled/baseline.scss --output-style compressed -o dist/bundled/",
     "buildEssentials": "node-sass --include-path scss src/bundled/essentials.scss --output-style compressed -o dist/bundled/",
+    "buildAuroElement": "node-sass --include-path scss src/auroElement/auroElement.scss --output-style compressed -o dist/auroElement/",
     "cssLint": "stylelint './results/css/*.css'",
     "jest": "jest",
     "test": "npm-run-all sassLint buildCss cssLint jest",
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
     "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc jest",
-    "ciBuild": "npm-run-all test sassdoc copyFontsDist copyFiles buildBaseline buildEssentials postinstall",
+    "ciBuild": "npm-run-all sweep sassdoc copyFontsDist copyFiles buildBaseline buildEssentials buildAuroElement sassRender test postinstall",
+    "sweep": "rm -rf ./dist",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run devBuild"
   },
   "husky": {
@@ -75,7 +79,8 @@
   },
   "release": {
     "branches": [
-      "master", {
+      "master",
+      {
         "name": "beta",
         "prerelease": true
       }

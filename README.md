@@ -12,7 +12,7 @@ Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyl
 
 ## Install
 
-[![Build Status](https://img.shields.io/travis/AlaskaAirlines/WebCoreStyleSheets?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/WebCoreStyleSheets)
+[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/WebCoreStyleSheets/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/WebCoreStyleSheets/actions?query=workflow%3A%22test+and+publish%22)
 [![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/orion-web-core-style-sheets.svg?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/WebCoreStyleSheets)
 [![License](https://img.shields.io/npm/l/@alaskaairux/orion-web-core-style-sheets.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 [![issues](https://img.shields.io/github/issues-raw/AlaskaAirlines/WebCoreStyleSheets?style=for-the-badge)](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues)
@@ -31,14 +31,14 @@ There are no core files to import, rather WCSS is an à la carte solution allowi
 
 ### Tokens Dependency
 
-WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial. 
+WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial.
 
 ```scss
 @import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... ";
 ```
 
-### Install the essentials 
+### Install the essentials
 
 While WCSS is an à la carte solution, there are things that should be considered when adding WCSS to your project. For example, if the project has little or no legacy CSS, it is suggested to set the following foundation:
 
@@ -46,7 +46,7 @@ While WCSS is an à la carte solution, there are things that should be considere
 // baseline design tokens as Sass variables
 @import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 
-// globally add the mixins so that any future reference will be addressed 
+// globally add the mixins so that any future reference will be addressed
 @import '~@alaskaairux/orion-design-tokens/dist/tokens/breakpoints';
 
 // it's typically best practice to load the @font-face rules prior to any reference of the custom web fonts
@@ -55,7 +55,7 @@ While WCSS is an à la carte solution, there are things that should be considere
 // set a baseline browser normalize
 @import '~@alaskaairux/orion-design-tokens/dist/tokens/normalize';
 
-// essentials setup baseline primitive selectors for any UI development 
+// essentials setup baseline primitive selectors for any UI development
 @import '~@alaskaairux/orion-design-tokens/dist/tokens/essentials';
 ```
 
@@ -64,7 +64,7 @@ For an example of setting up a master file that imports all of WCSS's resources,
 
 ## Pre-processed bundled resources
 
-At a limited scale, some files have been pre-processed to CSS so that it can be delivered via CDN and used in environments where this rendered resource is required. 
+At a limited scale, some files have been pre-processed to CSS so that it can be delivered via CDN and used in environments where this rendered resource is required.
 
 **API Note**: First supporting version `v2.9.0`
 
@@ -89,9 +89,9 @@ With each release of WC Style Sheets please be sure to pay attention to the †D
 | baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing.
 | inputTypeText.scss | n/a | n/a |
 | _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
-| ./fonts | none | Remove all settings that expect the fonts to be loaded locally, all font references should be pointing to the [cloud](https://github.com/AlaskaAirlines/WebCoreStyleSheets/blob/master/src/_fonts.scss) | 
+| ./fonts | none | Remove all settings that expect the fonts to be loaded locally, all font references should be pointing to the [cloud](https://github.com/AlaskaAirlines/WebCoreStyleSheets/blob/master/src/_fonts.scss) |
 
-Please note that with the next major release, all legacy resources will be removed. 
+Please note that with the next major release, all legacy resources will be removed.
 
 ## Dependencies
 

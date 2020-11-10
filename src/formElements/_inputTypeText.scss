@@ -24,7 +24,7 @@ input[type=email] {
 
     &:focus {
       border-color: $color-accessibility-border-active;
-      outline: 0;
+      outline: 3px solid transparent;
       box-shadow: unset;
     }
   }

@@ -41,7 +41,7 @@ $focus: null !default;
 
   // if $focus is true, outline will appear on tabbed focus
 
-  // default is null, tabbed outline is set to none
+  // default is null, tabbed outline is set to transparent
   // dependency on .focus-visible selector
   @if $focus {
     &:focus {
@@ -49,7 +49,8 @@ $focus: null !default;
     }
   } @else {
     &:focus {
-      outline: none;
+      // Only visible when Windows High-Contrast Mode is turned on
+      outline: 3px solid transparent;
     }
   }
 }
@@ -63,5 +64,6 @@ $focus: null !default;
 ///
 /// @group Accessibility
 .js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
+  // Only visible when Windows High-Contrast Mode is turned on
+  outline: 3px solid transparent;
 }

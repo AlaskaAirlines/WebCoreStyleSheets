@@ -37,5 +37,5 @@
 .js-focus-visible :focus:not(.focus-visible) {
   @include deprecated('file baselineLTE');
 
-  outline: none;
+  outline: 3px solid transparent;
 }

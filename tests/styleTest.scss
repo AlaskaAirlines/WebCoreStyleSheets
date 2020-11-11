@@ -1,7 +1,6 @@
 // Import build resources to ensure that src resources are working as expected
 
 /* --------start variables import ------------- */
-@import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables'; // deperecated Orion tokens
 @import '../node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables';
 /* --------end variables import ------------- */
 
@@ -13,9 +12,6 @@
 
 /* --------start normalize import ------------- */
 @import './src/normalize';
-
-/* --------start baseline import ------------- */
-@import './src/baseline'; // deprecated, discontinue use
 
 /* --------start essentials import ------------- */
 @import './src/essentials';
@@ -56,8 +52,5 @@
 /* --------start componentSupport/tablist import ------------- */
 @import './src/componentSupport/table';
 
-/* --------start formElements/inputTypeText import ------------- */
-@import './src/formElements/inputTypeText'; // deprecated
-
 /* --------start utilityClasses/layoutProperties import ------------- */
-@import '../src/utilityClasses/layoutProperties'; // deprecated
+@import '../src/utilityClasses/layoutProperties';

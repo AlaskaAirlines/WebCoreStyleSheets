@@ -21,12 +21,11 @@ chalk.hex('#f26135')(`
        Thanks for installing the latest version
                of `) + chalk.hex('#ffd200').bold(`WC Stylesheets v${pjson.version}.`) + chalk.hex('#f26135')(`
 
-       NOTE: Review deprecation alerts in the
-     README file. Next Major release coming soon.
-
+       Legacy Orion selectors have been deleted!
                 You have been warned!
 
-                `) +  chalk.hex('#00cff0').bold.underline(`https://git.io/JvqIV`) + chalk.hex('#f26135')(`
+            Be sure to update Design Tokens
+         npm i @alaskaairux/design-tokens@latest
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
 `)

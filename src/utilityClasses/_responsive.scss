@@ -10,24 +10,6 @@
 
 @import "../utilityVariables/important";
 
-/// Utility class to restrain visibility of UI element to __mobile__ users only.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-smOnly`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-mobileOnly {
-  @if variable-exists(breakpoint-width-narrow) {
-    @include breakpoint-narrow {
-      @include deprecated('selector .util_is-mobileOnly');
-
-      display: none $important;
-    }
-  }
-}
-
 /// Utility class to restrain visibility of UI element to __sm__ users only.
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
@@ -51,30 +33,6 @@
 #{$scope}.#{$prefix}util_is-smOnly {
   @if variable-exists(auro-breakpoint-sm) {
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
-      display: none $important;
-    }
-  }
-}
-
-/// Utility class to restrain `block` visibility of UI element between __narrow__ and __medium__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-mdOnly`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-narrowOnly {
-  @include deprecated('selector .util_is-narrowOnly');
-
-  @if variable-exists(breakpoint-width-narrow) {
-    display: none $important;
-
-    @include breakpoint-narrow {
-      display: block $important;
-    }
-
-    @include breakpoint-medium {
       display: none $important;
     }
   }
@@ -115,30 +73,6 @@
   }
 }
 
-/// Utility class to restrain `inline-block` visibility of UI element between __narrow__ and __medium__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-mdOnly--inline`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-narrowOnly--inline {
-  @include deprecated('selector .util_is-narrowOnly--inline');
-
-  @if variable-exists(breakpoint-width-narrow) {
-    display: none $important;
-
-    @include breakpoint-narrow {
-      display: inline-block $important;
-    }
-
-    @include breakpoint-medium {
-      display: none $important;
-    }
-  }
-}
-
 /// Utility class to restrain `inline-block` visibility of UI element between __sm__ and __md__ screens.
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
@@ -168,26 +102,6 @@
 
     @include auro_breakpoint($min: $auro-breakpoint-md) {
       display: none $important;
-    }
-  }
-}
-
-/// Utility class to restrain `block` visibility of UI element for __narrow__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-mdAppears`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-narrowAppears {
-  @include deprecated('selector .util_is-narrowAppears');
-
-  @if variable-exists(breakpoint-width-narrow) {
-    display: none $important;
-
-    @include breakpoint-narrow {
-      display: block $important;
     }
   }
 }
@@ -222,26 +136,6 @@
   }
 }
 
-/// Utility class to restrain `block` visibility of UI element for __narrow__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-mdAppears--inline`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-narrowAppears--inline {
-  @include deprecated('selector .util_is-narrowAppears--inline');
-
-  @if variable-exists(breakpoint-width-narrow)  {
-    display: none $important;
-
-    @include breakpoint-narrow {
-      display: inline-block $important;
-    }
-  }
-}
-
 /// Utility class to restrain `block` visibility of UI element for __md__ screens.
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
@@ -272,162 +166,6 @@
   }
 }
 
-/// Utility class to restrain `block` visibility of UI element between __medium__ and __wide__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
-/// @group †deprecated
-/// @deprecated no new selector
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-///
-/// @example scss - Default selector(s)
-///   .util_is-tabletOnly {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro .util_is-tabletOnly {}
-///
-/// @example scss - Selector(s) when $prefix: true;
-///   .auro_util_is-tabletOnly {}
-///
-.util_is-tabletOnly {
-  @include deprecated('selector .util_is-tabletOnly');
-
-  @if variable-exists(breakpoint-width-medium) {
-    display: none $important;
-
-    @include breakpoint-medium {
-      display: block $important;
-    }
-
-    @include breakpoint-wide {
-      display: none $important;
-    }
-  }
-}
-
-/// Utility class to restrain `inline-block` visibility of UI element between __medium__ and __wide__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
-/// @group †deprecated
-/// @deprecated no new selector
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-///
-/// @example scss - Default selector(s)
-///   .util_is-tabletOnly--inline {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro .util_is-tabletOnly--inline {}
-///
-/// @example scss - Selector(s) when $prefix: true;
-///   .auro_util_is-tabletOnly--inline {}
-///
-.util_is-tabletOnly--inline {
-  @include deprecated('selector .util_is-tabletOnly--inline');
-
-  @if variable-exists(breakpoint-width-medium) {
-    display: none $important;
-
-    @include breakpoint-medium {
-      display: inline-block $important;
-    }
-
-    @include breakpoint-wide {
-      display: none $important;
-    }
-  }
-}
-
-/// Utility class to restrain `block` visibility of UI element for __medium__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
-/// @group †deprecated
-/// @deprecated no new selector
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-///
-/// @example scss - Default selector(s)
-///   .util_is-tabletAppears {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro .util_is-tabletAppears {}
-///
-/// @example scss - Selector(s) when $prefix: true;
-///   .auro_util_is-tabletAppears {}
-///
-.util_is-tabletAppears {
-  @include deprecated('selector .util_is-tabletAppears');
-
-  @if variable-exists(breakpoint-width-medium) {
-    display: none $important;
-
-    @include breakpoint-medium {
-      display: block $important;
-    }
-  }
-}
-
-/// Utility class to restrain `inline-block` visibility of UI element for __medium__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
-/// @group †deprecated
-/// @deprecated no new selector
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-///
-/// @example scss - Default selector(s)
-///   .util_is-tabletAppears--inline {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro .util_is-tabletAppears--inline {}
-///
-/// @example scss - Selector(s) when $prefix: true;
-///   .auro_util_is-tabletAppears--inline {}
-///
-.util_is-tabletAppears--inline {
-  @include deprecated('selector .util_is-tabletAppears--inline');
-
-  @if variable-exists(breakpoint-width-medium) {
-    display: none $important;
-
-    @include breakpoint-medium {
-      display: inline-block $important;
-    }
-  }
-}
-
-/// Utility class to restrain `block` visibility of UI element for __max__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-lgOnly`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-desktopOnly {
-  @include deprecated('selector .util_is-desktopOnly');
-
-  @if variable-exists(breakpoint-width-max) {
-    display: none $important;
-
-    @include breakpoint-max {
-      display: block $important;
-    }
-  }
-}
-
 /// Utility class to restrain `block` visibility of UI element for __lg__ screens.
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
@@ -453,26 +191,6 @@
 
     @include auro_breakpoint($min: $auro-breakpoint-lg) {
       display: block $important;
-    }
-  }
-}
-
-/// Utility class to restrain `block` visibility of UI element for __max__ screens.
-///
-/// [Manage](/#utility-variable-important) `!important` flag.
-/// @group †deprecated
-/// @deprecated see `.util_is-lgOnly--inline`
-/// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/responsive";
-.util_is-desktopOnly--inline {
-  @include deprecated('selector .util_is-desktopOnly--inline');
-
-  @if variable-exists(breakpoint-width-max) {
-    display: none $important;
-
-    @include breakpoint-max {
-      display: inline-block $important;
     }
   }
 }

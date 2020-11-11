@@ -7,27 +7,6 @@
 @import "../libSupport/manageScope";
 @import "../utilityMixins/anchor-roleTab";
 
-// Wrapper class around anchor-roleTab utility mixin
-
-// This selector is NOT auto included with any other web code style sheet.
-// If the ods-roleTab selector is reuqired, it is to be individually included.
-
-/// `.ods-roleTab` is a helper class to support the UI of a hyperlink using `role="tab"`
-/// @group †deprecated
-/// @deprecated see `.auro_roleTab`
-/// @example scss - import selector file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleTab";
-
-.ods-roleTab {
-  @include deprecated('selctor .ods-roleTab');
-
-  @if variable-exists(color-type-theme-light-link) {
-    @include anchorTab(sass, noncomponent);
-    margin-right: calc(#{$size-scale-micro} * -1);
-  }
-}
-
-
 /// `auro_roleTab` is a helper class to support the UI of a hyperlink using `role="tab"`
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` options.

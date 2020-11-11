@@ -1,13 +1,13 @@
 {
-  "name": "@alaskaairux/orion-web-core-style-sheets",
-  "description": "Orion core foundation Sass UI Kit",
+  "name": "@alaskaairux/webcorestylesheets",
+  "description": "Auro core foundation Sass UI Kit",
   "version": "2.12.2",
   "author": "Product design and research",
   "main": "src/",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets"
+    "url": "https://github.com/AlaskaAirlines/WebCoreStyleSheets"
   },
   "peerDependencies": {
     "@alaskaairux/orion-design-tokens": "^2.10.0",
@@ -51,7 +51,6 @@
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
     "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss tests/styleTest.scss --output-style expanded results/css/testBuild.css",
-    "buildBaseline": "node-sass --include-path scss src/bundled/baseline.scss --output-style compressed -o dist/bundled/",
     "buildEssentials": "node-sass --include-path scss src/bundled/essentials.scss --output-style compressed -o dist/bundled/",
     "cssLint": "stylelint './results/css/*.css'",
     "jest": "jest",
@@ -59,7 +58,7 @@
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
     "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc jest",
-    "ciBuild": "npm-run-all test sassdoc copyFontsDist copyFiles buildBaseline buildEssentials postinstall",
+    "ciBuild": "npm-run-all test sassdoc copyFontsDist copyFiles buildEssentials postinstall",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run devBuild"
   },
   "husky": {
@@ -103,11 +102,8 @@
   },
   "keywords": [
     "alaska airlines",
-    "style dictionary",
-    "orion design system",
+    "auro design system",
     "css",
-    "properties",
-    "tokens",
     "sass"
   ],
   "contributors": [

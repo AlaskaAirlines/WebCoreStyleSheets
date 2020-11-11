@@ -23,35 +23,6 @@
 /// * .hyperlink
 /// * .ods-roleButton / .wcs_roleButton
 /// * .ods-roleTab / .wcs_roleButton
-/// @group †deprecated
-/// @deprecated
-/// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/focusVisible";
-.focus-visible {
-  &.hyperlink,
-  &.ods-roleButton,
-  &.ods-roleTab {
-    @include deprecated('selector .focus-visible');
-
-    @if variable-exists(color-base-white) {
-      @include focus-hyperlink(sass)
-    }
-  }
-}
-
-/// `.focus-visible` is a selector assigned to a DOM node as a user tabs through the UI.
-///
-/// See [npm focus-visible polyfill](https://www.npmjs.com/package/focus-visible)
-///
-/// See [CSSWG spec](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
-///
-/// The role of this selector is to apply the designed `:focus-visible`
-/// style to DOM nodes that __ARE NOT__ Auro Web Components
-///
-/// Supports the following selectors with `$scope` and/or `$prefix` defined:
-/// * .hyperlink
-/// * .ods-roleButton / .wcs_roleButton
-/// * .ods-roleTab / .wcs_roleButton
 /// @group Accessibility
 /// @example scss - import mixin file
 ///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/focusVisible";

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.12.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.12.1...v2.12.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* show focus outline for High-Contrast Mode ([3482525](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/commit/34825254f8547cc024ba470de957a3c8586a8122))
+
 ## [2.12.1](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.12.0...v2.12.1) (2020-09-23)
 
 

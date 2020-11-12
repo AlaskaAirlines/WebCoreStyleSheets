@@ -53,6 +53,7 @@
 ///
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
+  margin: 0;
   font-family: $auro-font-family-default;
   font-weight: $auro-text-body-default-weight; // need better token
   font-size: $auro-text-body-size-default;

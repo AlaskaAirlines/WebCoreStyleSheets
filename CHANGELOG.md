@@ -1,5 +1,24 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v2.12.2...v3.0.0) (2020-11-14)
+
+
+### Bug Fixes
+
+* add margin opinion on body selector ([19a1f42](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/19a1f4277dbe279f817a728c5c7098cbca786fa3))
+
+
+### Performance Improvements
+
+* remove additional deprecated selectors ([ed9c719](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/ed9c719a279fb1ff89c47d490274811dbfdf439b))
+* remove deprecated selectors ([440e86b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/440e86b91ba0c454372a3eb96a1f0d394bb724cd))
+
+
+### BREAKING CHANGES
+
+* This commit removes additional selectors that were marked as deprecated
+* This update will remove all legacy Orion selectors
+
 ## [2.12.2](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/compare/v2.12.1...v2.12.2) (2020-11-11)
 
 

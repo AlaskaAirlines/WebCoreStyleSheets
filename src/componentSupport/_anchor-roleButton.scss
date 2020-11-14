@@ -9,7 +9,7 @@
 // Wrapper class around anchor-roleButton utility mixin
 
 // This selector is NOT auto included with any other web code style sheet.
-// If the ods-roleButton selector is reuqired, it is to be individually included.
+// If the auro_roleButton selector is required, it is to be individually included.
 
 @import "../utilityMixins/anchor-roleButton";
 
@@ -26,7 +26,7 @@
 ///   .auro .auro_roleButton {}
 ///
 /// @example scss - import selector file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleButton";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/componentSupport/anchor-roleButton";
 
 #{$scope}.auro_roleButton {
   @include auro_anchorButton(sass, noncomponent);

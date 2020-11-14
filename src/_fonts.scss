@@ -9,7 +9,7 @@
 
 /// Baseline font-face setting for using web based custom fonts - font weight light
 /// @example scss - import src file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/fonts";
 
 // Auro rule
 @font-face {
@@ -24,7 +24,7 @@
 
 /// Baseline font-face setting for using web based custom fonts - font weight medium
 /// @example scss - import src file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/fonts";
 @font-face {
   font-family: $auro-asset-font-circular-family-name;
   font-weight: $auro-text-heading-medium-weight;
@@ -36,7 +36,7 @@
 
 /// Baseline font-face setting for using web based custom fonts - font weight book
 /// @example scss - import src file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/fonts";
 @font-face {
   font-family: $auro-asset-font-circular-family-name;
   src: url("https://resource.alaskaair.net/-/media/1DD02F55437F4346B7EF7D5A08326D71.woff2") format("woff2"),

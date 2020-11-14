@@ -23,7 +23,7 @@
 ///   .auro_html {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$sym}#{$prefix}html#{$scope} {
   -webkit-text-size-adjust: 100%;
@@ -32,7 +32,7 @@
   font-size: $auro-text-body-size-default;
 }
 
-/// Set baseline type settings for `body` elment or with the use of the `.baseType` selector.
+/// Set baseline type settings for `body` element or with the use of the `.baseType` selector.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group essentials
@@ -49,7 +49,7 @@
 ///   .auro_baseType {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
@@ -80,7 +80,7 @@
 ///   .auro_baseParagraph .auro_hyperlink {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem 0;
@@ -113,7 +113,7 @@
 ///   .auro_hyperlink--darktheme {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}hyperlink {
   color: $auro-color-ui-default-on-light;
@@ -179,7 +179,7 @@
 ///   .auro_img {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}img {
   max-width: 100%;
@@ -202,7 +202,7 @@
 ///   .auro_type--small {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
@@ -227,11 +227,11 @@ $paragraph: null !default;
 ///   .auro_p {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 /// @example scss - import file with `$paragraph` flag set to true
 ///   $paragraph: true;
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}p {
   @if $paragraph {

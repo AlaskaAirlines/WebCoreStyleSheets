@@ -10,7 +10,7 @@
 /// @example scss - pass string into function
 ///   capitalize('foo') => Foo
 /// @example scss - import dependency
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityFunctions/capitalize";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityFunctions/capitalize";
 
 @function auro_capitalize($string) {
   @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);

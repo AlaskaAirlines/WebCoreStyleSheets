@@ -23,7 +23,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 ///
 #{$scope}.#{$prefix}heading {
   margin: calc(#{$auro-size-md} + #{$auro-size-sm}) 0;
@@ -47,7 +47,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--display"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--display {
   font-weight: $auro-text-heading-display-weight;
   font-size: $auro-text-heading-display-size-breakpoint-sm;
@@ -81,7 +81,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--800"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--800 {
   font-weight: $auro-text-heading-800-weight;
   font-size: $auro-text-heading-800-size-breakpoint-sm;
@@ -114,7 +114,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--700"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--700 {
   font-weight: $auro-text-heading-700-weight;
   font-size: $auro-text-heading-700-size-breakpoint-sm;
@@ -147,7 +147,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--600"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--600 {
   font-size: $auro-text-heading-600-size-breakpoint-sm;
   line-height: $auro-text-heading-600-height-breakpoint-sm;
@@ -180,7 +180,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--500"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--500 {
   font-size: $auro-text-heading-500-size-breakpoint-sm;
   line-height: $auro-text-heading-500-height-breakpoint-sm;
@@ -213,7 +213,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--400"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--400 {
   font-size: $auro-text-heading-400-size;
   line-height: $auro-text-heading-400-height;
@@ -236,7 +236,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--300"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/headings";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--300 {
   font-size: $auro-text-heading-300-size;
   line-height: $auro-text-heading-300-height;

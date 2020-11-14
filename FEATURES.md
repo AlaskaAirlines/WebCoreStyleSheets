@@ -1,4 +1,4 @@
-# WCSS Features 
+# WCSS Features
 
 For the full API, please see the [WCSS docs site](https://alaskaairlines.github.io/WebCoreStyleSheets/).
 
@@ -10,7 +10,7 @@ When supporting legacy UIs there may be issues with importing a Sass file and it
 
 ```scss
 $scope: true;
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+@import "~@alaskaairux/webcorestylesheets/dist/ ... "
 ```
 
 This setting will result in the following CSS selectors
@@ -28,7 +28,7 @@ To enable prefixing simply set the `$prefix` variable to be `true` before import
 
 ```scss
 $prefix: true;
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+@import "~@alaskaairux/webcorestylesheets/dist/ ... "
 ```
 
 This setting will result in the following CSS selectors
@@ -47,7 +47,7 @@ If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set 
 ```scss
 $scope: true;
 $prefix: true;
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/ ... "
+@import "~@alaskaairux/webcorestylesheets/dist/ ... "
 ```
 
 This setting will result in the following CSS selectors
@@ -61,10 +61,10 @@ html.auro { ... }
 
 ## Importing utility classes and using the !important flag
 
-When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the global `$important` variable is `null` by default. To change, simply change the value of the variable before importing any utility partials. 
+When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the global `$important` variable is `null` by default. To change, simply change the value of the variable before importing any utility partials.
 
 ```scss
-$important: true; 
+$important: true;
 ```
 
 The output of default selector

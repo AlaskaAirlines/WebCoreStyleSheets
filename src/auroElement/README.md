@@ -26,7 +26,7 @@ Update to the following
 
 ```js
 import { html, css } from "lit-element";
-import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
+import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 ```
 
 ### Add supporting styles
@@ -34,7 +34,7 @@ import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroEleme
 To complete the install, be sure to add the following to the `./src/styles.scss` file
 
 ```scss
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 ```
 
 ### Update class
@@ -75,7 +75,7 @@ static get properties() {
 
 ### Update HTML template
 
-Within the auroElement will be the `hideAudible()` method. In order to make full use of auroElement's accessibility features, be sure to add the following to the HTML element(s) you wish to hide from screen readers. 
+Within the auroElement will be the `hideAudible()` method. In order to make full use of auroElement's accessibility features, be sure to add the following to the HTML element(s) you wish to hide from screen readers.
 
 ```html
 aria-hidden="${this.hideAudible(this.hiddenAudible)}"

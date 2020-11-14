@@ -18,7 +18,7 @@
 ///   );
 ///   $var: auro_map-deep-get($tokens, 'size', 'eighth'); => $size-eighth
 /// @example scss - import dependency
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityFunctions/map-deep-get";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityFunctions/map-deep-get";
 
 @function auro_map-deep-get($map, $keys...) {
   @each $key in $keys {

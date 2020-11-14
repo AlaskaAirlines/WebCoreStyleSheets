@@ -13,7 +13,7 @@
 ///   :host {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 :host {
   @extend .util_displayBlock;
 }
@@ -26,7 +26,7 @@
 ///   :host([hidden]:not(:focus):not(:active)) {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 :host([hidden]:not(:focus):not(:active)) {
   @extend .util_displayHidden;
 }
@@ -39,7 +39,7 @@
 ///   :host([hiddenVisually]:not(:focus):not(:active)) {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 :host([hiddenVisually]:not(:focus):not(:active)) {
   @extend .util_displayHiddenVisually;
 }

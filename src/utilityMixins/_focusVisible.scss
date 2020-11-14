@@ -11,9 +11,9 @@
 /// Creates Sass variable or custom property output for multi-use focus-visible shape
 /// @group †deprecated
 /// @deprecated see `auro_focus-hyperlink`
-/// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
+/// @param {string} $style [] - sets user's request for style of variable return (css, sass)
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/focusVisible";
 /// @example scss - Set properties for Sass output
 ///  .focus-visible {
 ///    &.hyperlink {
@@ -60,7 +60,7 @@
 /// @group utility-mixins
 /// @param {string} $syntax [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/focusVisible";
 /// @example scss - Set properties for Sass output
 ///  .focus-visible {
 ///    &.hyperlink {
@@ -108,7 +108,7 @@
 /// @deprecated see `auro_focus-button`
 /// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/focusVisible";
 /// @example css - Set properties for CSS output
 ///  :host(.focus-visible) {
 ///    .button {
@@ -157,7 +157,7 @@
 /// @deprecated please consult with Auro team designer to discontinue use
 /// @param {string} $style [] - sets user's requst for style of variable return (css, sass)
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/focusVisible";
 /// @example css - Set properties for CSS output
 ///  :host(.focus-visible) {
 ///    .button {

@@ -5,24 +5,6 @@
 
 @import "./libSupport/deprecated";
 
-/// Will be removed with upcoming MAJOR release
-///
-/// @group †deprecated
-/// @deprecated See `auro_transition`
-///
-/// @param {string} $property [$animation-default-property] - Specifies the name of the CSS property the transition effect is for
-/// @param {string} $duration [$animation-default-duration] - Specifies how many seconds or milliseconds a transition effect takes to complete
-/// @param {string} $timing [$animation-default-timing] - Specifies the speed curve of the transition effect (ease, linear, ease-in, ease-out, ease-in-out)
-/// @param {string} $delay [null] - Specifies a delay (in seconds) for the transition effect
-///
-/// @output Simple method of animating certain properties of an element, with ability to define property, duration, delay and timing function.
-
-@mixin transition($property: $animation-default-property, $duration: $animation-default-duration, $timing: $animation-default-timing, $delay: null) {
-  @include deprecated('mixin transition()');
-
-  transition: $property $duration $timing $delay;
-}
-
 /// Provides a way to control animation speed when changing CSS properties.
 ///
 /// Defaults are set by baseline Design Tokens

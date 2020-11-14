@@ -27,7 +27,7 @@
 ///   .auro_util_floatLeft {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/layoutProperties";
 #{$scope}.#{$prefix}util_floatLeft {
   float: left $important;
 }
@@ -48,7 +48,7 @@
 ///   .auro_util_floatRight {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/layoutProperties";
 #{$scope}.#{$prefix}util_floatRight {
   float: right $important;
 }
@@ -69,7 +69,7 @@
 ///   .auro_util_margin--auto {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/layoutProperties";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/layoutProperties";
 #{$scope}.#{$prefix}util_margin--auto {
   margin: 0 auto $important;
 }

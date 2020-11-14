@@ -50,7 +50,7 @@ $layout-modifiers: (
 ///   .auro_util_paddingLeft--none {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
 /// @example scss - import mixin file with altered output values prior to import
 ///   $layout-properties: margin;
 ///   $layout-extensions: Right;
@@ -60,7 +60,7 @@ $layout-modifiers: (
 ///     "xxl": $auro-size-xxl,
 ///     "xxxl": $auro-size-xxxl,
 ///   );
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
 @mixin auro_layoutPropertiesGenerator() {
   @each $property in $layout-properties {
     @each $extension in $layout-extensions {

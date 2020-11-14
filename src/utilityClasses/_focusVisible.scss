@@ -25,7 +25,7 @@
 /// * .ods-roleTab / .wcs_roleButton
 /// @group Accessibility
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/focusVisible";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/focusVisible";
 #{$scope}.focus-visible {
   &.#{$prefix}hyperlink,
   &.#{$prefix}auro_roleButton,

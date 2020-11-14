@@ -18,7 +18,7 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
 ///
 /// DO NOT execute mixin, this is already included with the import of the file dependency
 ///
-/// **Dependency:** `$npm i alaskaairux/orion-design-tokens`
+/// **Dependency:** `$npm i alaskaairux/design-tokens`
 /// @group utility-layout
 /// @param {string} $auro-spacing-types [inline, stack] inline - L/R, stack - top/bottom
 /// @param {string} $auro-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
@@ -36,13 +36,13 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
 ///    margin-bottom: 0.125rem;
 ///  }
 /// @example scss - import dependencies
-///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/spacingUtility";
+///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/spacingUtility";
 /// @example scss - import with custom over-rides
 ///   $auro-spacing-types: inline;
 ///   $auro-spacing-options: xxxs;
-///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/spacingUtility";
+///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/spacingUtility";
 
 @mixin auro_spacing($types: $auro-spacing-types, $options: $auro-spacing-options) {
   @each $type in $types {

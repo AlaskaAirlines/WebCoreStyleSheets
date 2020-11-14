@@ -17,7 +17,7 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
 ///
 /// DO NOT execute mixin, this is already included with the import of the file dependency
 ///
-/// **Dependency:** `$npm i alaskaairux/orion-design-tokens`
+/// **Dependency:** `$npm i alaskaairux/design-tokens`
 /// @group utility-layout
 /// @param {String} $auro-inset-directions ["", --stretch, --squish] defines value
 /// @param {String} $auro-inset-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
@@ -32,13 +32,13 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
 ///    padding: 0 0.125rem;
 ///  }
 /// @example scss - import dependencies
-///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
 /// @example scss - import with custom over-rides
 ///   $auro-inset-spacing-options: xxxs;
 ///   $auro-inset-directions:'';
-///   @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
 
 @mixin auro_inset($directions: $auro-inset-directions, $values: $auro-inset-spacing-options) {
   @each $value in $values {

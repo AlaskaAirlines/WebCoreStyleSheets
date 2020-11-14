@@ -18,7 +18,7 @@
 ///   .auro .auro_roleTab {}
 ///
 /// @example scss - import selector file
-///   @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/componentSupport/anchor-roleTab";
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/componentSupport/anchor-roleTab";
 
 #{$scope}.auro_roleTab {
   @include auro_anchorTab(sass, noncomponent);

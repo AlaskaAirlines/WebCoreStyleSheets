@@ -77,22 +77,6 @@ unpkg.com/:package@:version/:file
 | essentials.scss<br>fonts.scss|Auro WCs|https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/essentials.css|
 | baseline.scss<br>fonts.scss|ODS WCs|https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/baseline.css|
 
-## †Deprecated
-
-With each release of WC Style Sheets please be sure to pay attention to the †DEPRECATED section of the doc site. All styles that are designated as deprecated will be listed in this section and will be deleted with the next major release. Each deprecated item may list an alternative option. If there is not an alternative option, please consult with your team designer for an alternate solution.
-
-#### DELETED files
-
-| deprecated file | new file | description |
-|---|---|---|
-| baselineLTE.scss | core.scss | File deprecation to support new features |
-| baseline.scss | essentials.scss | `essentials.scss` does not import headings by default. For new Auro heading sselectors import `headings.scss`. These new selectors support scoping and prefixing.
-| inputTypeText.scss | n/a | n/a |
-| _layoutProperties.scss | see `_insetUtility.scss` `_layoutPropertiesGenerator.scss` and `_spacingUtility.scss` | The legacy layoutProperties file was broken up into separate concerns |
-| ./fonts | none | Remove all settings that expect the fonts to be loaded locally, all font references should be pointing to the [cloud](https://github.com/AlaskaAirlines/WebCoreStyleSheets/blob/master/src/_fonts.scss) |
-
-Please note that with the next major release, all legacy resources will be removed.
-
 ## Dependencies
 
 When using WCSS, there is a direct dependency on the `focus-visible` library. When using Web Components, the inclusion of the `focus-visible` library is accounted for within the scope fo the component(s). With components, `focus-visible` is defined as a peer dependency.

@@ -1,0 +1,16 @@
+@import 'true';
+@import './src/utilityFunctions/var';
+
+$auroTokens: (
+    token-1: red,
+    token-2: blue,
+);
+
+@include describe('auro_var()') {
+  @include it('should return custom property with fallback value') {
+    @include assert-equal(auro_var(token-1), var(--token-1, red));
+  }
+  @include it('should return custom property with custom fallback') {
+    @include assert-equal(auro_var(token-1, green), var(--token-1, green));
+  }
+}

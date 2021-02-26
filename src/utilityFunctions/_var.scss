@@ -1,0 +1,21 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Variables are defined by baseline Design Tokens
+
+/// The purpose of this function is to provide custom property references to
+/// Auro tokens which include a fallback value in case the variable is not set.
+/// @group utility
+/// @parameter {Variable} $name [] - name of Auro token
+/// @parameter {Variable} $fallback [] - optional fallback value, default is the Auro token value
+/// @example scss - pass string into function
+///   auro_var(auro-color-alert-notification-on-light)
+///   auro_var(auro-color-alert-notification-on-light, steelblue)
+/// @example scss - import dependency
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityFunctions/contains";
+
+@function auro_var($name, $fallback:map-get($auroTokens, $name)) {
+  @return var(--#{$name}, #{$fallback});
+}
+  

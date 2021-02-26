@@ -1,0 +1,31 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+@import "libSupport/manageScope";
+
+$focus: null !default;
+
+// sass-lint:disable no-important
+
+/// Baseline HTML setting for picture element.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group core
+/// @example scss - Default selector(s)
+///   picture img {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   picture.auro img {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_picture img {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/picture";
+///
+#{$sym}#{$prefix}picture#{$scope} {
+  img {
+    display: block;
+  }
+}

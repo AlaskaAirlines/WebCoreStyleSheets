@@ -46,6 +46,9 @@ While WCSS is an à la carte solution, there are things that should be considere
 // baseline design tokens as Sass variables
 @import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
+// $auroTokens Sass map variable for dynamic references, used to build custom properties with auro_var utility function
+@import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariablesMapFlat";
+
 // globally add the mixins so that any future reference will be addressed
 @import '~@alaskaairux/design-tokens/dist/tokens/breakpoints';
 

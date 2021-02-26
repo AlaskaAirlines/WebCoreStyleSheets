@@ -13,9 +13,10 @@
 ///   auro_var(auro-color-alert-notification-on-light)
 ///   auro_var(auro-color-alert-notification-on-light, steelblue)
 /// @example scss - import dependency
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityFunctions/contains";
+///   @import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariablesMapFlat";
+///   @import "~@alaskaairux/webcorestylesheets/dist/utilityFunctions/var";
 
 @function auro_var($name, $fallback:map-get($auroTokens, $name)) {
-  @return var(--#{$name}, #{$fallback});
+  @return var(--#{$name}, $fallback);
 }
   

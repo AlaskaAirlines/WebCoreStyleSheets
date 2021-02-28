@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.0.0...v3.1.0) (2021-02-26)
+
+
+### Features
+
+* add support for picture > img opinion ([90b04b7](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/90b04b7f390d1f9f8a288b034c5dbd399c12a666))
+
 # [3.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v2.12.2...v3.0.0) (2020-11-14)
 
 

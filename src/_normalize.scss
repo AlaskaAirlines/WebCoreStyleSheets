@@ -406,61 +406,6 @@ html#{$scope} {
 }
 
 ///
-/// Remove the inner border and padding in Firefox.
-///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
-/// @group Normalize
-/// @example scss - Default selector(s)
-///   button::-moz-focus-inner,
-///   [type="button"]::-moz-focus-inner,
-///   [type="reset"]::-moz-focus-inner,
-///   [type="submit"]::-moz-focus-inner {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro button::-moz-focus-inner,
-///   .auro [type="button"]::-moz-focus-inner,
-///   .auro [type="reset"]::-moz-focus-inner,
-///   .auro [type="submit"]::-moz-focus-inner {}
-///
-/// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
-///
-#{$scope}button::-moz-focus-inner,
-#{$scope}[type="button"]::-moz-focus-inner,
-#{$scope}[type="reset"]::-moz-focus-inner,
-#{$scope}[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-///
-/// Restore the focus styles unset by the previous rule.
-///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
-/// @group Normalize
-/// @example scss - Default selector(s)
-///   button:-moz-focusring,
-///   [type="button"]:-moz-focusring,
-///   [type="reset"]:-moz-focusring,
-///   [type="submit"]:-moz-focusring {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro button:-moz-focusring,
-///   .auro [type="button"]:-moz-focusring,
-///   .auro [type="reset"]:-moz-focusring,
-///   .auro [type="submit"]:-moz-focusring {}
-///
-/// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
-///
-#{$scope}button:-moz-focusring,
-#{$scope}[type="button"]:-moz-focusring,
-#{$scope}[type="reset"]:-moz-focusring,
-#{$scope}[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-///
 /// Correct the padding in Firefox.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.

@@ -39,25 +39,18 @@ $focus: null !default;
     }
   }
 
-  // if $focus is true, outline will appear on tabbed focus
-
-  // default is null, tabbed outline is set to transparent
-  // dependency on .focus-visible selector
+  // if $focus is true, override the default focus outline
   @if $focus {
     &:focus {
       outline: 2px solid var(--auro-color-ui-default-on-light);
     }
-  } @else {
-    &:focus {
-      // Only visible when Windows High-Contrast Mode is turned on
-      outline: 3px solid transparent;
-    }
   }
 }
 
-/// Selector set to enable use of [focus visible](https://www.npmjs.com/package/focus-visible) polyfill.
+/// Selector to remove default focus styles when the [focus visible](https://www.npmjs.com/package/focus-visible) polyfill is loaded and the 
+/// focus-visible class is not applied to the element. Usually this means the user is clicking the element instead of tabbing to it.
 ///
-/// Based on the proposed CSS `:focus-visible` pseudo-selector, this prototype adds a `focus-visible` class to the focused element, in situations in which the `:focus-visible` pseudo-selector should match.
+/// This can eventually be removed once all browsers support `:focus-visible`. 
 ///
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
@@ -65,5 +58,17 @@ $focus: null !default;
 /// @group Accessibility
 .js-focus-visible :focus:not(.focus-visible) {
   // Only visible when Windows High-Contrast Mode is turned on
+  outline: 3px solid transparent;
+}
+
+/// Selector to remove default focus styles when the :focus-visible pseudo-selector does not apply. Usually this means the user is clicking the element instead of tabbing to it.
+///
+/// Check current browser support for :focus-visible on [Can I Use](https://caniuse.com/css-focus-visible).
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+///
+/// @group Accessibility
+:focus:not(:focus-visible) {
   outline: 3px solid transparent;
 }

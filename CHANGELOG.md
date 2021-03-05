@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [3.2.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.1.0...v3.2.0) (2021-03-05)
+
+
+### Features
+
+* only remove focus styles when focus-visible ([0c56e56](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/0c56e560372559264ed26cd3f20c7519410608aa))
+* remove -moz pseudo-elements ([45e0755](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/45e07557034d88a6cd9b0cf5e97424a8157facc2))
+
 # [3.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.0.0...v3.1.0) (2021-02-26)
 
 

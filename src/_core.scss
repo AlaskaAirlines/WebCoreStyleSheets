@@ -41,16 +41,17 @@ $focus: null !default;
 
   // if $focus is true, override the default focus outline
   @if $focus {
+    &:focus-visible,
     &:focus {
       outline: 2px solid var(--auro-color-ui-default-on-light);
     }
   }
 }
 
-/// Selector to remove default focus styles when the [focus visible](https://www.npmjs.com/package/focus-visible) polyfill is loaded and the 
+/// Selector to remove default focus styles when the [focus visible](https://www.npmjs.com/package/focus-visible) polyfill is loaded and the
 /// focus-visible class is not applied to the element. Usually this means the user is clicking the element instead of tabbing to it.
 ///
-/// This can eventually be removed once all browsers support `:focus-visible`. 
+/// This can eventually be removed once all browsers support `:focus-visible`.
 ///
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";

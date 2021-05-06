@@ -265,6 +265,8 @@ Properties should be grouped by related properties (e.g. positioning and box mod
 <a name="additional"></a>
 ## 5. Additional Information
 
-Further reading about idiomatic CSS can be found at [https://github.com/rwldrn/idiomatic.js](https://github.com/rwldrn/idiomatic.js).
+Further reading about idiomatic JavaScript can be found at [https://github.com/rwldrn/idiomatic.js](https://github.com/rwldrn/idiomatic.js).
 
 [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css) by Nicolas Gallagher was used as a reference for this document.
+
+<auro-back-to-top focus-id="top" offset="0"></auro-back-to-top>

@@ -5,6 +5,7 @@
 @import "libSupport/manageScope";
 
 $focus: null !default;
+$focus-visible: null !default;
 
 // sass-lint:disable no-important
 
@@ -39,9 +40,19 @@ $focus: null !default;
     }
   }
 
+  // if $focus-visible is true, override the default focus-visible outline
+  @if $focus-visible {
+    &:focus-visible {
+      outline: 2px solid var(--auro-color-ui-default-on-light);
+    }
+  } @else {
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
   // if $focus is true, override the default focus outline
   @if $focus {
-    &:focus-visible,
     &:focus {
       outline: 2px solid var(--auro-color-ui-default-on-light);
     }

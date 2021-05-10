@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [3.3.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.2.0...v3.3.0) (2021-05-10)
+
+
+### Features
+
+* default support for :focus-visible [#74](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/74) ([7806525](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/7806525920c8dbc46c92e842417075b1c8613fab))
+* update to support pseudo-class focus-visible ([dcc9c1c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/dcc9c1c8c94893bef899feb63b296ddcfb150e40))
+
 # [3.2.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.1.0...v3.2.0) (2021-03-05)
 
 

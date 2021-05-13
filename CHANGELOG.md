@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.3.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.3.1...v3.3.2) (2021-05-13)
+
+
+### Bug Fixes
+
+* remove comment that was throwing code error ([ed41312](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/ed41312411100f521cb69a41a0533dd8e6de6e51))
+
 ## [3.3.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.3.0...v3.3.1) (2021-05-13)
 
 

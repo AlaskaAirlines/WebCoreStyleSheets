@@ -14,26 +14,29 @@
 
       @include expect {
         .auro_roleTab {
-          color: #0074cb;
-          border-color: rgba(0, 0, 0, 0.15);
           padding: 1rem;
-          border-width: 0 0 1px 0;
+
+          color: #0074cb;
+          border-width: 0 0 1px;
           border-style: solid;
+          border-color: rgba(0, 0, 0, .15);
         }
 
         .auro_roleTab:not(.is-touching):hover {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #054687;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
 
         .auro_roleTab.is-active {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #222222;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
       }
@@ -50,26 +53,29 @@
 
       @include expect($selector: false) {
         .hyperlink--tab {
-          color: #0074cb;
-          border-color: rgba(0, 0, 0, 0.15);
           padding: 1rem;
-          border-width: 0 0 1px 0;
+
+          color: #0074cb;
+          border-width: 0 0 1px;
           border-style: solid;
+          border-color: rgba(0, 0, 0, .15);
         }
 
         :host(:not(.is-touching)) .hyperlink--tab:hover {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #054687;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
 
         .hyperlink--tab.is-active {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #222222;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
       }
@@ -86,26 +92,29 @@
 
       @include expect {
         .auro_roleTab {
-          color: #0074cb;
-          border-color: rgba(0, 0, 0, 0.15);
           padding: 1rem;
-          border-width: 0 0 1px 0;
+
+          color: #0074cb;
+          border-width: 0 0 1px;
           border-style: solid;
+          border-color: rgba(0, 0, 0, .15);
         }
 
         .auro_roleTab:not(.is-touching):hover {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #054687;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
 
         .auro_roleTab.is-active {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #222222;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
       }
@@ -122,26 +131,29 @@
 
       @include expect($selector: false) {
         .hyperlink--tab {
-          color: #0074cb;
-          border-color: rgba(0, 0, 0, 0.15);
           padding: 1rem;
-          border-width: 0 0 1px 0;
+
+          color: #0074cb;
+          border-width: 0 0 1px;
           border-style: solid;
+          border-color: rgba(0, 0, 0, .15);
         }
 
         :host(:not(.is-touching)) .hyperlink--tab:hover {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #054687;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
 
         .hyperlink--tab.is-active {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: #222222;
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
       }
@@ -158,26 +170,29 @@
 
       @include expect {
         .auro_roleTab {
-          color: var(--auro-color-text-link-on-light);
-          border-color: var(--auro-color-border-primary-on-light);
           padding: 1rem;
-          border-width: 0 0 1px 0;
+
+          color: var(--auro-color-text-link-on-light);
+          border-width: 0 0 1px;
           border-style: solid;
+          border-color: var(--auro-color-border-primary-on-light);
         }
 
         .auro_roleTab:not(.is-touching):hover {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: var(--auro-color-text-link-on-light-hover);
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
 
         .auro_roleTab.is-active {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: var(--auro-color-text-primary-on-light);
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
       }
@@ -194,26 +209,29 @@
 
       @include expect($selector: false) {
         .hyperlink--tab {
-          color: var(--auro-color-text-link-on-light);
-          border-color: var(--auro-color-border-primary-on-light);
           padding: 1rem;
-          border-width: 0 0 1px 0;
+
+          color: var(--auro-color-text-link-on-light);
+          border-width: 0 0 1px;
           border-style: solid;
+          border-color: var(--auro-color-border-primary-on-light);
         }
 
         :host(:not(.is-touching)) .hyperlink--tab:hover {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: var(--auro-color-text-link-on-light-hover);
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
 
         .hyperlink--tab.is-active {
-          border-width: 0 0 2px 0;
-          text-decoration: none;
           cursor: pointer;
+          text-decoration: none;
+
           color: var(--auro-color-text-primary-on-light);
+          border-width: 0 0 2px;
           border-color: currentColor;
         }
       }

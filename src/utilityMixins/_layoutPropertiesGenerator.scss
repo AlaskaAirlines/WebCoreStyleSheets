@@ -4,9 +4,8 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import "../utilityVariables/important";
-@import "../libSupport/manageScope";
-
+@import '../utilityVariables/important';
+@import '../libSupport/manageScope';
 
 
 // Utility layout selector mixin
@@ -15,11 +14,11 @@
 $layout-properties: margin padding !default;
 $layout-extensions: Top Left Bottom Right !default;
 $layout-modifiers: (
-  "none": 0,
-  "xs": $auro-size-xs,
-  "md": $auro-size-md,
-  "lg": $auro-size-lg,
-  "xl": $auro-size-xl
+  'none': 0,
+  'xs': $auro-size-xs,
+  'md': $auro-size-md,
+  'lg': $auro-size-lg,
+  'xl': $auro-size-xl
 ) !default;
 
 /// Mixin auto-generates all available utility selectors. This mixin is NOT for general use and will produce selectors with the import of this Sass file. Output can be configured by redefining default values prior to import. See default value examples below.

@@ -3,8 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
-@import "../libSupport/manageScope";
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
 
 /// `.auro_tablist` is a helper class to support the UI of a hyperlink using `role="tab"`
 ///
@@ -18,15 +18,20 @@
 #{$scope}.auro_tablist {
   @include auro_breakpoint--sm {
     overflow-y: unset;
+
     white-space: unset;
   }
 
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: $auro-color-border-primary-on-light;
-  line-height: $auro-size-xxl;
+  overflow-y: scroll;
+
   height: calc(#{$auro-size-xxl} + 1px);
   margin-bottom: $auro-size-md;
-  overflow-y: scroll;
+
   white-space: nowrap;
+
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: $auro-color-border-primary-on-light;
+
+  line-height: $auro-size-xxl;
 }

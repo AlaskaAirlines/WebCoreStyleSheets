@@ -3,6 +3,21 @@
   "rules": {
     "no-duplicate-selectors": null,
     "font-family-no-duplicate-names": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "function",
+        "if",
+        "each",
+        "else",
+        "error",
+        "for",
+        "include",
+        "mixin",
+        "return",
+        "warn",
+        "extend"
+      ]
+    }]
   }
 }

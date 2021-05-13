@@ -12,14 +12,16 @@
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/componentSupport/table";
 
-
 #{$scope}.auro_table {
   display: block;
-  border-collapse: collapse;
   overflow: scroll;
+
   width: auto;
-  border-spacing: $auro-size-sm;
   margin-bottom: $auro-size-xl;
+
+  border-spacing: $auro-size-sm;
+  border-collapse: collapse;
+
   font-weight: $auro-text-heading-display-weight;
 
   tr {
@@ -30,20 +32,23 @@
 
   th {
     text-align: left;
+
     font-weight: $auro-text-heading-default-weight;
   }
 
   @include auro_breakpoint--sm {
-    width: 100%;
     display: table;
+
+    width: 100%;
   }
 
   thead {
-    border-bottom: 1px solid $auro-color-base-gray-200;
     border-collapse: collapse;
+    border-bottom: 1px solid $auro-color-base-gray-200;
   }
 
-  th, td {
+  th,
+  td {
     padding: $auro-size-md;
   }
 }

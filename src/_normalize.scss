@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-@import "libSupport/manageScope";
+@import 'libSupport/manageScope';
 
 // sass-lint:disable variable-for-property, no-vendor-prefixes, no-duplicate-properties
 
@@ -27,6 +27,7 @@
 ///
 html#{$scope} {
   line-height: 1.15; /* 1 */
+
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -49,6 +50,7 @@ html#{$scope} {
 ///
 #{$scope}body {
   margin: 0;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -75,8 +77,8 @@ html#{$scope} {
    ========================================================================== */
 
 ///
-/// 1. Add the correct box sizing in Firefox.
-/// 2. Show the overflow in Edge and IE.
+/// 1. Show the overflow in Edge and IE.
+/// 2. Add the correct box sizing in Firefox.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group Normalize
@@ -90,9 +92,10 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  overflow: visible; /* 1 */
+
+  box-sizing: content-box; /* 2 */
+  height: 0; /* 2 */
 }
 
 ///
@@ -111,7 +114,7 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
   @if variable-exists(auro-text-body-size-default) {
     font-size: $auro-text-body-size-default; /* 2 */
   } @else {
@@ -141,8 +144,8 @@ html#{$scope} {
 }
 
 ///
-/// 1. Remove the bottom border in Chrome 57-
-/// 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+/// 1. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+/// 2. Remove the bottom border in Chrome 57-
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group Normalize
@@ -155,10 +158,13 @@ html#{$scope} {
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
-#{$scope}abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+#{$scope}abbr {
+  &[title] {
+    text-decoration: underline; /* 1 */
+    text-decoration: underline dotted; /* 1 */ /* stylelint-disable-line declaration-block-no-duplicate-properties */
+
+    border-bottom: none; /* 2 */
+  }
 }
 
 ///
@@ -204,7 +210,7 @@ html#{$scope} {
 #{$scope}code,
 #{$scope}kbd,
 #{$scope}samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
   @if variable-exists(auro-text-body-size-default) {
     font-size: $auro-text-body-size-default; /* 2 */
   } @else {
@@ -230,10 +236,12 @@ html#{$scope} {
 ///
 #{$scope}sub,
 #{$scope}sup {
+  position: relative;
+
+  vertical-align: baseline;
+
   font-size: 75%;
   line-height: 0;
-  position: relative;
-  vertical-align: baseline;
 }
 
 ///
@@ -251,7 +259,7 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 ///
@@ -269,7 +277,7 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 /* Embedded content
@@ -297,8 +305,8 @@ html#{$scope} {
    ========================================================================== */
 
 ///
-/// 1. Change the font styles in all browsers.
-/// 2. Remove the margin in Firefox and Safari.
+/// 1. Remove the margin in Firefox and Safari.
+/// 2. Change the font styles in all browsers.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group Normalize
@@ -324,13 +332,14 @@ html#{$scope} {
 #{$scope}optgroup,
 #{$scope}select,
 #{$scope}textarea {
-  margin: 0; /* 2 */
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
+  margin: 0; /* 1 */
+
+  font-family: inherit; /* 2 */
+  font-size: 100%; /* 2 */
   @if variable-exists(auro-text-body-height-default) {
-    line-height: $auro-text-body-height-default; /* 1 */
+    line-height: $auro-text-body-height-default; /* 2 */
   } @else {
-    line-height: $size-margin-baseline; /* 1 */
+    line-height: $size-margin-baseline; /* 2 */
   }
 }
 
@@ -399,9 +408,9 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}button,
-#{$scope}[type="button"],
-#{$scope}[type="reset"],
-#{$scope}[type="submit"] {
+#{$scope}[type='button'],
+#{$scope}[type='reset'],
+#{$scope}[type='submit'] {
   -webkit-appearance: none;
 }
 
@@ -420,14 +429,14 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: .35em .75em .625em;
 }
 
 ///
 /// 1. Correct the text wrapping in Edge and IE.
-/// 2. Correct the color inheritance from `fieldset` elements in IE.
-/// 3. Remove the padding so developers are not caught out when they zero out
+/// 2. Remove the padding so developers are not caught out when they zero out
 ///    `fieldset` elements in all browsers.
+/// 3. Correct the color inheritance from `fieldset` elements in IE.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group Normalize
@@ -442,11 +451,14 @@ html#{$scope} {
 ///
 #{$scope}legend {
   display: table; /* 1 */
+
   box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
   max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
+  padding: 0; /* 2 */
+
   white-space: normal; /* 1 */
+
+  color: inherit; /* 3 */
 }
 
 ///
@@ -501,14 +513,16 @@ html#{$scope} {
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
-#{$scope}[type="number"]::-webkit-inner-spin-button,
-#{$scope}[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+#{$scope}[type='number'] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    height: auto;
+  }
 }
 
 ///
-/// 1. Correct the odd appearance in Chrome and Safari.
-/// 2. Correct the outline style in Safari.
+/// 1. Correct the outline style in Safari.
+/// 2. Correct the odd appearance in Chrome and Safari.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group Normalize
@@ -521,9 +535,10 @@ html#{$scope} {
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
-#{$scope}[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+#{$scope}[type='search'] {
+  outline-offset: -2px; /* 1 */
+
+  -webkit-appearance: textfield; /* 2 */
 }
 
 ///
@@ -540,13 +555,13 @@ html#{$scope} {
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
-#{$scope}[type="search"]::-webkit-search-decoration {
+#{$scope}::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 ///
-/// 1. Correct the inability to style clickable types in iOS and Safari.
-/// 2. Change font properties to `inherit` in Safari.
+/// !. Change font properties to `inherit` in Safari.
+/// 2. Correct the inability to style clickable types in iOS and Safari.
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group Normalize
@@ -560,8 +575,9 @@ html#{$scope} {
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
 ///
 #{$scope}::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  font: inherit; /* 1 */
+
+  -webkit-appearance: button; /* 2 */
 }
 
 /* Interactive

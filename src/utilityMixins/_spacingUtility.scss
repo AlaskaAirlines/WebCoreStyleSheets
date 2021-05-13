@@ -4,11 +4,13 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import "../utilityVariables/spacing-options";
-@import "../utilityFunctions/capitalize";
-@import "../utilityFunctions/map-deep-get";
-@import "../utilityVariables/important";
-@import "../libSupport/manageScope";
+/* stylelint-disable scss/no-global-function-names */
+
+@import '../utilityVariables/spacing-options';
+@import '../utilityFunctions/capitalize';
+@import '../utilityFunctions/map-deep-get';
+@import '../utilityVariables/important';
+@import '../libSupport/manageScope';
 
 $auro-spacing-types: inline, stack !default;
 $auro-spacing-options: $auro-spacing-options !default;
@@ -63,12 +65,12 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
       }
 
       @if not index($types, $type) {
-        @error "INVALID, '#{$type}' is not known, please choose from options, [#{$types}]";
+        @error 'INVALID, \'#{$type}\' is not known, please choose from options, [#{$types}]';
       }
 
       @if auro_contains($options, $value) {
         @if not index($options, $value) {
-          @error "INVALID, '#{$value}' is not known, please choose from options, [#{$auro-inset-options}]";
+          @error 'INVALID, \'#{$value}\' is not known, please choose from options, [#{$auro-inset-options}]';
         }
 
         @if $value == 'none' {
@@ -79,9 +81,7 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
               #{$property}-#{$direction}: 0 $important;
             }
           }
-        }
-
-        @else {
+        } @else {
           @for $i from 1 through length($properties) {
             $direction: nth($directions, $i);
             $property: nth($properties, $i);

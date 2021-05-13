@@ -8,15 +8,15 @@
     @include assert {
       @include output {
         .focus-visible {
-          @include auro_focus-hyperlink(sass)
+          @include auro_focus-hyperlink(sass);
         }
       }
 
       @include expect {
         .focus-visible {
           color: #ffffff;
-          background-color: #0074cb;
           outline: #0074cb solid 0.25rem;
+          background-color: #0074cb;
         }
 
         .focus-visible:hover {
@@ -30,15 +30,15 @@
     @include assert {
       @include output {
         .focus-visible {
-          @include auro_focus-hyperlink(scss)
+          @include auro_focus-hyperlink(scss);
         }
       }
 
       @include expect {
         .focus-visible {
           color: #ffffff;
-          background-color: #0074cb;
           outline: #0074cb solid 0.25rem;
+          background-color: #0074cb;
         }
 
         .focus-visible:hover {
@@ -52,15 +52,15 @@
     @include assert {
       @include output {
         .focus-visible {
-          @include auro_focus-hyperlink(css)
+          @include auro_focus-hyperlink(css);
         }
       }
 
       @include expect {
         .focus-visible {
           color: var(--auro-color-text-primary-on-dark);
-          background-color: var(--auro-color-ui-default-on-light);
           outline: var(--auro-color-ui-default-on-light) solid var(--auro-size-xxs);
+          background-color: var(--auro-color-ui-default-on-light);
         }
 
         .focus-visible:hover {

@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
+@import '../libSupport/deprecated';
 
 // sass-lint:disable no-important
 // sass-lint:disable indentation
@@ -37,7 +37,6 @@
       $background-color: var(--auro-color-ui-default-on-light);
       $outline: var(--auro-color-ui-default-on-light) solid var(--auro-size-xxs);
       $hover-color: var(--auro-color-text-primary-on-dark) !important;
-
     } @else if $syntax == sass or $syntax == scss {
       $color: $auro-color-text-primary-on-dark;
       $background-color: $auro-color-ui-default-on-light;
@@ -46,8 +45,8 @@
     }
 
     color: $color;
-    background-color: $background-color;
     outline: $outline;
+    background-color: $background-color;
 
     &:hover {
       color: $hover-color;

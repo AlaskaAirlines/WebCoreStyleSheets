@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
+@import '../libSupport/deprecated';
 
 /// Creates Sass variable or custom property output for multi-use tab shape
 /// @group utility-mixins
@@ -32,56 +32,55 @@
     $padding: var(--auro-size-md);
     $hover-color: var(--auro-color-text-link-on-light-hover);
     $isactive-color: var(--auro-color-text-primary-on-light);
-
   } @else if $style == sass or $style == scss {
     $color: $auro-color-text-link-on-light;
     $border-color: $auro-color-border-primary-on-light;
     $padding: $auro-size-md;
     $hover-color: $auro-color-ui-hover-on-light;
     $isactive-color: $auro-color-text-primary-on-light;
-
   } @else {
-    @error "Invalid $style option. Please use `css` or `sass`";
+    @error 'Invalid $style option. Please use `css` or `sass`';
   }
 
-  color: $color;
-  border-color: $border-color;
   padding: $auro-size-md;
-  border-width: 0 0 1px 0;
+
+  color: $color;
+  border-width: 0 0 1px;
   border-style: solid;
+  border-color: $border-color;
 
   @if $env == component {
     :host(:not(.is-touching)) & {
       &:hover {
-        border-width: 0 0 2px 0;
-        text-decoration: none;
         cursor: pointer;
+        text-decoration: none;
 
         color: $hover-color;
+        border-width: 0 0 2px;
         border-color: currentColor;
       }
     }
   } @else if $env == noncomponent {
     &:not(.is-touching) {
       &:hover {
-        border-width: 0 0 2px 0;
-        text-decoration: none;
         cursor: pointer;
+        text-decoration: none;
 
         color: $hover-color;
+        border-width: 0 0 2px;
         border-color: currentColor;
       }
     }
   } @else {
-    @error "Invalid $env option. Please use `component` or `noncomponent`";
+    @error 'Invalid $env option. Please use `component` or `noncomponent`';
   }
 
   &.is-active {
-    border-width: 0 0 2px 0;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 
     color: $isactive-color;
+    border-width: 0 0 2px;
     border-color: currentColor;
   }
 }

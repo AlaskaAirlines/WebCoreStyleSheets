@@ -3,12 +3,12 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
-@import "../libSupport/manageScope";
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
 
 // sass-lint:disable mixins-before-declarations variable-for-property
 
-@import "../utilityVariables/important";
+@import '../utilityVariables/important';
 
 /// Utility class to restrain visibility of UI element to __sm__ users only.
 ///
@@ -60,13 +60,11 @@
 
 #{$scope}.#{$prefix}util_is-mdOnly {
   @if variable-exists(auro-breakpoint-sm) {
-
     display: none $important;
 
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
       display: block $important;
     }
-
     @include auro_breakpoint($min: $auro-breakpoint-md) {
       display: none $important;
     }
@@ -99,7 +97,6 @@
     @include auro_breakpoint($min: $auro-breakpoint-sm) {
       display: inline-block $important;
     }
-
     @include auro_breakpoint($min: $auro-breakpoint-md) {
       display: none $important;
     }
@@ -248,5 +245,5 @@
 ///   <img class="util_img-is-responsive" src=" ... " alt="" />
 ///
 #{$scope}.#{$prefix}util_img-is-responsive {
-  width: 100% $important
+  width: 100% $important;
 }

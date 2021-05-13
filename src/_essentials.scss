@@ -5,9 +5,9 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import "utilityMixins/focusVisible";
-@import "libSupport/manageScope";
-@import "core";
+@import 'utilityMixins/focusVisible';
+@import 'libSupport/manageScope';
+@import 'core';
 
 /// Baseline HTML setting to establish box-model and default font size.
 ///
@@ -26,10 +26,12 @@
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$sym}#{$prefix}html#{$scope} {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   box-sizing: border-box;
+
   font-size: $auro-text-body-size-default;
+
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
 }
 
 /// Set baseline type settings for `body` element or with the use of the `.baseType` selector.
@@ -54,11 +56,13 @@
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
   margin: 0;
-  font-family: $auro-font-family-default;
-  font-weight: $auro-text-body-default-weight; // need better token
-  font-size: $auro-text-body-size-default;
-  line-height: $auro-text-body-height-default;
+
   color: $auro-color-text-primary-on-light;
+
+  font-family: $auro-font-family-default;
+  font-size: $auro-text-body-size-default;
+  font-weight: $auro-text-body-default-weight; // need better token
+  line-height: $auro-text-body-height-default;
 }
 
 /// Sets standard `margin` for all paragraph style content
@@ -83,7 +87,8 @@
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}baseParagraph {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
+
   line-height: $auro-text-body-height-default;
 
   .#{$prefix}hyperlink {
@@ -116,28 +121,30 @@
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}hyperlink {
-  color: $auro-color-ui-default-on-light;
   text-decoration: underline;
 
-  &.focus-visible {
+  color: $auro-color-ui-default-on-light;
+
+  &.focus-visible { /* stylelint-disable-line selector-max-class */
     @include auro_focus-hyperlink(sass);
   }
 
   &:visited {
     color: $auro-color-ui-default-on-light;
 
-    &.focus-visible {
+    &.focus-visible { /* stylelint-disable-line selector-max-class */
       @include auro_focus-hyperlink(sass);
     }
   }
 
   &--nav {
     display: block;
+
     text-decoration: none;
 
     &:not(.is-touching) {
       &:hover {
-        text-decoration: underline !important;  // sass-lint:disable-line no-important
+        text-decoration: underline !important;
       }
     }
   }
@@ -158,8 +165,9 @@
 
   &:not(.is-touching) {
     &:hover {
-      color: $auro-color-ui-hover-on-light;
       text-decoration: none;
+
+      color: $auro-color-ui-hover-on-light;
     }
   }
 }
@@ -206,11 +214,11 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size:  $auro-text-body-size-xs;
+  font-size: $auro-text-body-size-xs;
   line-height: $auro-text-body-height-xs;
 }
 
-$paragraph: null !default;
+$paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
 /// Set `<p>` element margin standard. This selector is not set by default, set the `$paragraph` flag to `true' prior to import.
 ///
 /// Other options are to use the `<small>` element or the `.baseParagraph` selector.
@@ -233,9 +241,11 @@ $paragraph: null !default;
 ///   $paragraph: true;
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
+
 #{$scope}#{$sym}#{$prefix}p {
   @if $paragraph {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
+
     line-height: $auro-text-body-height-default;
   }
 }

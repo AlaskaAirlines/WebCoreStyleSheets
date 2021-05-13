@@ -15,10 +15,12 @@
 
 @function auro_contains($list, $var) {
   $eval: false;
+
   @each $item in $list {
     @if $item == $var {
       $eval: true;
     }
   }
+
   @return $eval;
 }

@@ -3,9 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
-@import "../libSupport/manageScope";
-@import "../utilityMixins/anchor-roleTab";
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
+@import '../utilityMixins/anchor-roleTab';
 
 /// `auro_roleTab` is a helper class to support the UI of a hyperlink using `role="tab"`
 ///
@@ -19,8 +19,8 @@
 ///
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/componentSupport/anchor-roleTab";
-
 #{$scope}.auro_roleTab {
   @include auro_anchorTab(sass, noncomponent);
+
   margin-right: calc(#{$auro-size-xxs} * -1);
 }

@@ -111,6 +111,8 @@ If additional selectors or scenarios are needed, please update the `./scripts/te
 
 Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation.
 
+WCSS fully supports idiomatic CSS, be sure to review the [auro docs site](https://auro.alaskaair.com/webcorestylesheets/idiomatic-css) for more information.
+
 ### Linters
 
 Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. Sass-Lint is run as a pre-commit hook in this project. No commits will be allowed unless all linter tests are passed.

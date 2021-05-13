@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.3.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.3.0...v3.3.1) (2021-05-13)
+
+
+### Bug Fixes
+
+* update readme and triggers patch release per style updates ([c0608b2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/c0608b23a7dffa4e8652f7c5fa9bc1decc8ff7a9))
+
 # [3.3.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.2.0...v3.3.0) (2021-05-10)
 
 

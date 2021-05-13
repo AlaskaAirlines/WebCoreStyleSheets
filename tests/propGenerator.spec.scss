@@ -21,22 +21,18 @@ $layout-modifiers: (
 
       @include expect {
         .util_marginRight--xxxs {
-          /* Please reference .util_marginRight--xxxs at https://git.io/JvGOR */
           margin-right: 0.125rem;
         }
 
         .util_marginRight--xxs {
-          /* Please reference .util_marginRight--xxs at https://git.io/JvGOR */
           margin-right: 0.25rem;
         }
 
         .util_marginRight--xxl {
-          /* Please reference .util_marginRight--xxl at https://git.io/JvGOR */
           margin-right: 3rem;
         }
 
         .util_marginRight--xxxl {
-          /* Please reference .util_marginRight--xxxl at https://git.io/JvGOR */
           margin-right: 4rem;
         }
       }

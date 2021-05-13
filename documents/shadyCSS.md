@@ -9,46 +9,49 @@ When CSS custom properties are used in conjunction with other non-variable prope
 For example
 
 ```css
-.inputText {
+.inputText
+{
+  font-size: var(--size-breakpoint-all-med);
+  position: relative;
+  width: 100%;
+  padding: 2rem 2rem .5rem 0;
+  padding: var(--size-scale-xl) var(--size-scale-xl) var(--size-scale-sml) 0;
+  -webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+        -o-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+          transition: all .3s cubic-bezier(.215, .61, .355, 1);
   border: 0 solid #58606c;
   border: 0 solid var(--color-base-shark);
-  border-radius: 0;
   border-width: 0 0 1px;
   border-width: 0 0 var(--border-width-thin);
-  padding: 2rem 2rem 0.5rem 0;
-  padding: var(--size-scale-xl) var(--size-scale-xl) var(--size-scale-sml) 0;
-  position: relative;
-  -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  width: 100%;
-  font-size: var(--size-breakpoint-all-med);
+  border-radius: 0;
+  background-color: transparent;
   caret-color: #0074cb;
   caret-color: var(--color-brand-blue-atlas-base);
-  background-color: transparent;
 }
+
 ```
 
 ShadyCSS transforms it into this. Notice how the fallback selectors are there, but with the removal of the custom property, the style is valid and essentially over-writes the intended code.
 
 ```css
 .auro-inputtext-1 .inputText.auro-inputtext {
-  border: 0 solid #58606c;
-  border: 0 solid; /* affected */
-  border-radius: 0;
-  border-width: 0 0 1px;
-  border-width: 0 0; /* affected */
+  font-size: ; /* affected */
+  position: relative;
+  width: 100%;
   padding: 2rem 2rem 0.5rem 0;
   padding: 0; /* affected */
-  position: relative;
-  -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  width: 100%;
-  font-size: ; /* affected */
-  caret-color: #0074cb;
-  caret-color: ;
+  -webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+        -o-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+          transition: all .3s cubic-bezier(.215, .61, .355, 1);
+  border: 0 solid #58606c;
+  border: 0 solid; /* affected */
+  border-width: 0 0 1px;
+  border-width: 0 0; /* affected */
+  border-radius: 0;
   background-color: transparent;
+  caret-color: #0074cb;
+  caret-color: ; /* affected */
+
 }
 ```
 
@@ -57,20 +60,22 @@ ShadyCSS transforms it into this. Notice how the fallback selectors are there, b
 It has been adopted as a common best practice that a selector style will either contain all CSS custom properties or no custom properties at all. As example, the following code has been updated to comply with this standard.
 
 ```css
-.inputText {
-  border: 0 solid;
-  border-color: var(--color-base-shark);
-  border-radius: 0;
-  border-bottom-width: var(--border-width-thin);
+.inputText
+{
+  font-size: var(--size-breakpoint-all-med);
+  position: relative;
+  width: 100%;
   padding: var(--size-scale-xl) var(--size-scale-xl) var(--size-scale-sml);
   padding-left: 0;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  width: 100%;
-  font-size: var(--size-breakpoint-all-med);
-  caret-color: var(--color-brand-blue-atlas-base);
+  transition: all .3s cubic-bezier(.215, .61, .355, 1);
+  border: 0 solid;
+  border-color: var(--color-base-shark);
+  border-bottom-width: var(--border-width-thin);
+  border-radius: 0;
   background-color: transparent;
+  caret-color: var(--color-brand-blue-atlas-base);
 }
+
 ```
 
 ## Compliance

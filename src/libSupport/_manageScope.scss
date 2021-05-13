@@ -14,6 +14,7 @@
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/ ...
 /// @example scss - return example
 ///   .auro [selector] { ... }
+
 $scope: null !default;
 
 /// Variables to determine if $prefix is to be displayed
@@ -27,8 +28,8 @@ $scope: null !default;
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/ ...
 /// @example scss - return example
 ///   .auro_[selector] { ... }
-$prefix: null !default;
 
+$prefix: null !default;
 $sym: null !default;
 
 @if $scope {

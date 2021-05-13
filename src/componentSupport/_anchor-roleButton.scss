@@ -3,15 +3,15 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
-@import "../libSupport/manageScope";
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
 
 // Wrapper class around anchor-roleButton utility mixin
 
 // This selector is NOT auto included with any other web code style sheet.
 // If the auro_roleButton selector is required, it is to be individually included.
 
-@import "../utilityMixins/anchor-roleButton";
+@import '../utilityMixins/anchor-roleButton';
 
 /// `.auro_roleButton` is a utility class to support the UI of a standard html hyperlink using the attribute `role="button"`. This utility will present the UI to mimic the UI of the auro-hyperlink component supporting the same attribute.
 ///
@@ -27,7 +27,6 @@
 ///
 /// @example scss - import selector file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/componentSupport/anchor-roleButton";
-
 #{$scope}.auro_roleButton {
   @include auro_anchorButton(sass, noncomponent);
 }

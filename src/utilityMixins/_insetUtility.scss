@@ -4,13 +4,15 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import "../utilityVariables/spacing-options";
-@import "../utilityFunctions/capitalize";
-@import "../utilityFunctions/map-deep-get";
-@import "../utilityVariables/important";
-@import "../libSupport/manageScope";
+@import '../utilityVariables/spacing-options';
+@import '../utilityFunctions/capitalize';
+@import '../utilityFunctions/map-deep-get';
+@import '../utilityVariables/important';
+@import '../libSupport/manageScope';
 
-$auro-inset-directions: "", --stretch, --squish !default;
+/* stylelint-disable scss/no-global-function-names */
+
+$auro-inset-directions: '', --stretch, --squish !default;
 $auro-inset-spacing-options: $auro-spacing-options !default;
 
 /// This mixin is designed to return a series of pre-defined selectors based on the inset spacing design spec
@@ -52,28 +54,24 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
       $squish-string: 0 $important;
       $stretch-string: 0 $important;
       $mapValue: 0;
-    }
-    @else if $value == 'xxxs' {
+    } @else if $value == 'xxxs' {
       $squish-string: 0 $mapValue $important;
       $stretch-string: calc(#{$mapValue} * 2) $mapValue $important;
-    }
-    @else {
+    } @else {
       $squish-string: calc(#{$mapValue} / 2) $mapValue $important;
       $stretch-string: calc(#{$mapValue} * 1.5) $mapValue $important;
     }
 
     @if auro_contains($values, $value) {
       @if not index($values, $value) {
-        @error "INVALID, '#{$value}' is not known, please choose from options, [#{$values}]";
+        @error 'INVALID, `#{$value}` is not known, please choose from options, [#{$values}]';
       }
 
       @if $value == 'none' {
         #{$scope}.#{$prefix}util_inset#{auro_capitalize($value)} {
           padding: $mapValue $important;
         }
-      }
-
-      @else {
+      } @else {
         @for $i from 1 through length($directions) {
           $direction: nth($directions, $i);
 

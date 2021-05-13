@@ -3,9 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
-@import "../libSupport/manageScope";
-@import "../utilityMixins/focusVisible";
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
+@import '../utilityMixins/focusVisible';
 
 // focus-visible
 // ====================================================================
@@ -30,6 +30,6 @@
   &.#{$prefix}hyperlink,
   &.#{$prefix}auro_roleButton,
   &.#{$prefix}auro_roleTab {
-    @include auro_focus-hyperlink(sass)
+    @include auro_focus-hyperlink(sass);
   }
 }

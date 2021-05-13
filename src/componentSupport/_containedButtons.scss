@@ -3,8 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-@import "../libSupport/deprecated";
-@import "../libSupport/manageScope";
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
 
 // Wrapper class around the use of ods-hyperlink role=button and ods-button.
 
@@ -48,8 +48,8 @@
     flex-direction: row;
 
     > * {
-      margin-left: 1rem;
       margin-bottom: 0;
+      margin-left: 1rem;
 
       &:first-child {
         margin-left: 0;

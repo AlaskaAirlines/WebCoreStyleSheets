@@ -39,7 +39,7 @@
     "sass-lint": "^1.13.1",
     "sass-true": "^5.0.0",
     "sassdoc": "^2.7.3",
-    "semantic-release": "^17.4.2",
+    "semantic-release": "^17.4.3",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0"
@@ -49,15 +49,15 @@
     "postinstall": "node packageScripts/postinstall.js",
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
-    "sassLint": "sass-lint --verbose",
     "buildCss": "node-sass --include-path scss tests/styleTest.scss --output-style expanded results/css/testBuild.css",
     "buildEssentials": "node-sass --include-path scss src/bundled/essentials.scss --output-style compressed -o dist/bundled/",
     "cssLint": "stylelint './results/css/*.css'",
+    "scssLint": "stylelint './src/**/*.scss'",
     "jest": "jest",
-    "test": "npm-run-all sassLint buildCss cssLint jest",
+    "test": "npm-run-all scssLint buildCss cssLint jest",
     "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "serve": "node scripts/live-server.js",
-    "devBuild": "npm-run-all sassLint buildCss cssLint sassdoc jest",
+    "devBuild": "npm-run-all scssLint buildCss cssLint sassdoc jest",
     "ciBuild": "npm-run-all test sassdoc copyFontsDist copyFiles buildEssentials postinstall",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run devBuild"
   },
@@ -112,8 +112,12 @@
       "email": "dale.sande@alaskaair.com"
     },
     {
+      "name": "Jason Baker",
+      "email": "jason.baker@alaskaair.com"
+    },
+    {
       "name": "Camron Lockeby",
-      "email": "camron.lockeby@AlaskaAir.com"
+      "email": "camron.lockeby@alaskaair.com"
     },
     {
       "name": "Kevin Sonnichsen",

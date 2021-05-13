@@ -4,9 +4,9 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import "../libSupport/deprecated";
-@import "../utilityVariables/important";
-@import "../libSupport/manageScope";
+@import '../libSupport/deprecated';
+@import '../utilityVariables/important';
+@import '../libSupport/manageScope';
 
 /// Utility class for default font-weight
 ///
@@ -96,7 +96,7 @@
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_body--lg {
   @if variable-exists(auro-text-body-size-lg) {
-    font-size:  $auro-text-body-size-lg $important;
+    font-size: $auro-text-body-size-lg $important;
     line-height: $auro-text-body-height-lg $important;
   }
 }
@@ -120,7 +120,7 @@
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_body--sm {
   @if variable-exists(auro-text-body-size-lg) {
-    font-size:  $auro-text-body-size-sm $important;
+    font-size: $auro-text-body-size-sm $important;
     line-height: $auro-text-body-height-sm $important;
   }
 }
@@ -145,7 +145,7 @@
 
 #{$scope}.#{$prefix}util_body--xs {
   @if variable-exists(auro-text-body-size-xs) {
-    font-size:  $auro-text-body-size-xs $important;
+    font-size: $auro-text-body-size-xs $important;
     line-height: $auro-text-body-height-xs $important;
   }
 }

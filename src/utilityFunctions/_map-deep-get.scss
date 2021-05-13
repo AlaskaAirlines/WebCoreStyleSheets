@@ -4,6 +4,8 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
+/* stylelint-disable scss/no-global-function-names */
+
 /// This function is to be used to return nested key values within a nested map
 /// @group utility
 /// @parameter {Variable} $map [null] - pass in map to be evaluated
@@ -24,5 +26,6 @@
   @each $key in $keys {
     $map: map-get($map, $key);
   }
+
   @return $map;
 }

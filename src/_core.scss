@@ -2,7 +2,7 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-@import "libSupport/manageScope";
+@import 'libSupport/manageScope';
 
 $focus: null !default;
 $focus-visible: null !default;
@@ -35,8 +35,19 @@ $focus-visible: null !default;
     box-sizing: border-box;
 
     @media (prefers-reduced-motion: reduce) {
-      animation: none !important;
       transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  // if $focus-visible is true, override the default focus-visible outline
+  @if $focus-visible {
+    &:focus-visible {
+      outline: 2px solid var(--auro-color-ui-default-on-light);
+    }
+  } @else {
+    &:focus-visible {
+      outline: 0;
     }
   }
 
@@ -59,18 +70,18 @@ $focus-visible: null !default;
   }
 }
 
-/// Selector to remove default focus styles when the [focus visible](https://www.npmjs.com/package/focus-visible) polyfill is loaded and the
-/// focus-visible class is not applied to the element. Usually this means the user is clicking the element instead of tabbing to it.
+/// Selector to remove default focus styles when the :focus-visible pseudo-selector does not apply. Usually this means the user is clicking the element instead of tabbing to it.
 ///
-/// This can eventually be removed once all browsers support `:focus-visible`.
+/// Check current browser support for :focus-visible on [Can I Use](https://caniuse.com/css-focus-visible).
 ///
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 ///
 /// @group Accessibility
-.js-focus-visible :focus:not(.focus-visible) {
-  // Only visible when Windows High-Contrast Mode is turned on
-  outline: 3px solid transparent;
+:focus {
+  &:not(:focus-visible) {
+    outline: 3px solid transparent;
+  }
 }
 
 /// Selector to remove default focus styles when the :focus-visible pseudo-selector does not apply. Usually this means the user is clicking the element instead of tabbing to it.
@@ -81,6 +92,11 @@ $focus-visible: null !default;
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 ///
 /// @group Accessibility
-:focus:not(:focus-visible) {
-  outline: 3px solid transparent;
+.js-focus-visible {
+  :focus {
+    &:not(.focus-visible) {
+      // Only visible when Windows High-Contrast Mode is turned on
+      outline: 3px solid transparent;
+    }
+  }
 }

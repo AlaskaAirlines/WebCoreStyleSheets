@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-@import "./libSupport/deprecated";
+@import './libSupport/deprecated';
 
 // The following mixins provide pre-configured Orion approved
 // breakpoints when development mobile-first UIs.
@@ -109,13 +109,13 @@
   $breakpoints: null;
 
   @if $min {
-    $breakpoints: (min-width: #{$min})
+    $breakpoints: (min-width: #{$min});
   } @else if $max {
-    $breakpoints: (max-width: #{$max})
+    $breakpoints: (max-width: #{$max});
   } @else if $polar {
-    $breakpoints: '(min-width: #{nth($polar, 1)}) and (max-width: #{nth($polar, 2)})'
+    $breakpoints: '(min-width: #{nth($polar, 1)}) and (max-width: #{nth($polar, 2)})';
   } @else if $cust {
-    $breakpoints: #{$cust}
+    $breakpoints: #{$cust};
   }
 
   @media screen and #{$breakpoints} {

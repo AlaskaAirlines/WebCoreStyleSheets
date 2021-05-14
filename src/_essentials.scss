@@ -60,8 +60,9 @@
   color: $auro-color-text-primary-on-light;
 
   font-family: $auro-font-family-default;
+  font-variant-ligatures: no-common-ligatures;
   font-size: $auro-text-body-size-default;
-  font-weight: $auro-text-body-default-weight; // need better token
+  font-weight: $auro-text-body-default-weight;
   line-height: $auro-text-body-height-default;
 }
 

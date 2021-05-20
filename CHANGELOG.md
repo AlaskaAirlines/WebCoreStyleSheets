@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.4.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.3.2...v3.4.0) (2021-05-20)
+
+
+### Features
+
+* add support for font-variant-ligatures to essentials file [#80](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/80) ([916c3a7](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/916c3a746e637a2346d808365c40456b077e287c))
+
 ## [3.3.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.3.1...v3.3.2) (2021-05-13)
 
 

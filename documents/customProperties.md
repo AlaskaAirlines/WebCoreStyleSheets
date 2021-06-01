@@ -52,7 +52,7 @@ The solution for this is to provide fall back properties like so:
 }
 ```
 
-With this code, any browser will see `color: #ff000;`. Those that understand `color: var(--base-color);` this property will override the previous. For those that do not understand this property, it will simply ignore.
+With this code, any browser will see `color: #ff000;`. Those that understand `color: var(--base-color);` this property will override the previous. For those that do not understand this property, it will simply ignore it.
 
 ### Fallback properties at scale
 

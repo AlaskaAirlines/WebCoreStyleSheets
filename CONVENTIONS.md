@@ -102,7 +102,7 @@ Idiomatic CSS follows an order of positioning, display and _other_. You can thin
 }
 ```
 
-Be sure to review additional information about [idiomatic CSS](http://auro.alaskaair.com/webcorestylesheets/idiomatic-css) here in this site.
+Be sure to review additional information about [idiomatic CSS](http://auro.alaskaair.com/css/idiomatic-css) here in this site.
 
 ## Token
 

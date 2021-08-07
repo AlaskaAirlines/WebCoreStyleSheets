@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.5.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.5.0...v3.5.1) (2021-08-07)
+
+
+### Bug Fixes
+
+* **build:** add automated index file to semantic-release merge back process ([66d9a7c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/66d9a7c52c3d5a0371fda5b7ddde43807ad0e61e))
+
 # [3.5.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.4.0...v3.5.0) (2021-08-07)
 
 

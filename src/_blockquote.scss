@@ -1,0 +1,46 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+@import 'libSupport/manageScope';
+
+$focus: null !default;
+
+/// Baseline HTML setting for blockquote element.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// @group core
+/// @example scss - Default selector(s)
+///   blockquote {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro blockquote {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_blockquote {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/blockquote";
+///
+#{$sym}#{$prefix}#{$scope}blockquote {
+  margin-left: 0;
+  border-left: 1px solid var(--auro-color-border-active-on-light);
+  padding: var(--auro-size-xs);
+  padding-left: var(--auro-size-xl);
+  color: var(--auro-color-text-secondary-on-light);
+  font-weight: 200;
+  margin-top: var(--auro-size-lg);
+  margin-bottom: var(--auro-size-lg);
+
+  p {
+    line-height: 2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & + p {
+    margin-bottom: var(--auro-size-xl);
+  }
+}

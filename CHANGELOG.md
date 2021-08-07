@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.5.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.4.0...v3.5.0) (2021-08-07)
+
+
+### Features
+
+* add support for blockquote base UI ([9c9f66d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/9c9f66db9df6fa8459cd07197f68c9793953906e))
+
 # [3.4.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.3.2...v3.4.0) (2021-05-20)
 
 

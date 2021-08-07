@@ -27,6 +27,7 @@ jobs:
       - run: npm run copyFontsDist
       - run: npm run copyFiles
       - run: npm run buildEssentials
+      - run: npm run sassdoc
       - run: npm test
 
   release:
@@ -45,6 +46,7 @@ jobs:
       - run: npm run copyFontsDist
       - run: npm run copyFiles
       - run: npm run buildEssentials
+      - run: npm run sassdoc
       - uses: cycjimmy/semantic-release-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

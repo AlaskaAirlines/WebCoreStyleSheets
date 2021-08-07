@@ -64,7 +64,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "rm -rf ./docs && npm run sassdoc && npm test",
+      "pre-commit": "npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

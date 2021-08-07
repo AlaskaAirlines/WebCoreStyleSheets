@@ -1,0 +1,133 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// Styles in this document are standardized are NOT to be edited.
+// All styles for the custom element are located in the ./src directory.
+
+// ----------------------- DO NOT EDIT -----------------------------
+// @import '~@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+// @import '~@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
+
+@import './breakpoints';
+
+// Creates baseline output in CSS
+@import './fonts';
+@import './normalize';
+@import './headings';
+@import './blockquote';
+@import "./componentSupport/table";
+$paragraph: true;
+@import './essentials';
+
+// matches max-width of AS.com and Auro docsite width specs
+body {
+  padding: var(--auro-size-xl);
+}
+
+main {
+  margin: 0 auto;
+  max-width: 64rem;
+}
+
+/* stylelint-disable selector-type-no-unknown */
+
+// Custom styles per demo pages
+// 1:1 match to ./src/sass/demo.scss file in docsite
+.auro-markdown {
+  h1,
+  h2,
+  h3 {
+    @extend .heading;
+  }
+
+  h1 {
+    @extend .heading--display;
+  }
+
+  h2 {
+    @extend .heading--700;
+  }
+
+  h3 {
+    @extend .heading--600;
+  }
+
+  h4 {
+    @extend .heading--500;
+  }
+
+  a {
+    @extend .hyperlink;
+
+    &.focus-visible {
+      @include auro_focus-hyperlink(sass);
+    }
+  }
+
+  p {
+    @extend p;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    @extend .auro_table;
+  }
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: #f8f8f8;
+}
+
+// !important because that libraries that inline CSS SUCK!
+pre  {
+  background: var(--auro-color-base-gray-100) !important;
+  border: unset !important;
+  margin-bottom: var(--auro-size-xxl);
+  padding-left: var(--auro-size-sm) !important;
+  padding-top: var(--auro-size-md) !important;
+  padding-bottom: var(--auro-size-md) !important;
+
+  code {
+    font-size: .85rem !important;
+  }
+}
+
+auro-accordion {
+  pre {
+    background: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+  }
+}
+
+auro-accordion + .exampleWrapper,
+auro-accordion + p {
+  margin-top: 2rem !important;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  font-family: monospace;
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+.exampleWrapper {
+  $stripe: #f3f3f3;
+  $background: var(--auro-color-base-white);
+
+  background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+}
+
+.exampleWrapper--ondark {
+  $stripe: var(--auro-color-background-darkest);
+  $background: var(--auro-color-background-darker);
+
+  background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+}

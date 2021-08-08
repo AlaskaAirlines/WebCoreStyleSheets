@@ -50,7 +50,7 @@
     "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
     "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
     "buildCss": "node-sass --include-path scss tests/styleTest.scss --output-style expanded results/css/testBuild.css",
-    "buildDemoCss": "node-sass --include-path scss src/elementDemoStyles.scss --output-style expanded dist/elementDemoStyles.css",
+    "buildDemoCss": "node-sass --include-path scss src/elementDemoStyles/elementDemoStyles.scss --output-style expanded dist/elementDemoStyles.css",
     "buildEssentials": "node-sass --include-path scss src/bundled/essentials.scss --output-style compressed -o dist/bundled/",
     "cssLint": "stylelint './results/css/*.css'",
     "scssLint": "stylelint './src/**/*.scss'",

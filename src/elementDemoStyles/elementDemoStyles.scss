@@ -6,19 +6,19 @@
 
 // ----------------------- DO NOT EDIT -----------------------------
 // @import '~@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+@import './../../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
 // @import '~@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
 
-@import './breakpoints';
+@import './../breakpoints';
 
 // Creates baseline output in CSS
-@import './fonts';
-@import './normalize';
-@import './headings';
-@import './blockquote';
-@import "./componentSupport/table";
+@import './../fonts';
+@import './../normalize';
+@import './../headings';
+@import './../blockquote';
+@import "./../componentSupport/table";
 $paragraph: true;
-@import './essentials';
+@import './../essentials';
 
 // matches max-width of AS.com and Auro docsite width specs
 body {

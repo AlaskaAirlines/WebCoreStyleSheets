@@ -27,6 +27,7 @@ jobs:
       - run: npm run copyFontsDist
       - run: npm run copyFiles
       - run: npm run buildEssentials
+      - run: npm run buildDemoCss
       - run: npm run sassdoc
       - run: npm test
 
@@ -46,6 +47,7 @@ jobs:
       - run: npm run copyFontsDist
       - run: npm run copyFiles
       - run: npm run buildEssentials
+      - run: npm run buildDemoCss
       - run: npm run sassdoc
       - uses: cycjimmy/semantic-release-action@v2
         env:

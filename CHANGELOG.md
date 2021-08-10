@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.6.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.0...v3.6.1) (2021-08-10)
+
+
+### Bug Fixes
+
+* **build:** include build of buildDemoCss into pipeline ([c544d6c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/c544d6c82e77df972a7811f5ce19a4f875519d3d))
+
 # [3.6.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.5.1...v3.6.0) (2021-08-10)
 
 

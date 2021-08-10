@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [3.6.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.5.1...v3.6.0) (2021-08-10)
+
+
+### Bug Fixes
+
+* remove sassdoc from precommit [#83](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/83) ([a400560](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/a40056087405d0313c3a22a63316b2c21b565b1b))
+
+
+### Features
+
+* create standard demo page Sass file ([8783d0e](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/8783d0e4b860a7dcd83e93a31de000ee8d2ae7f4))
+
 ## [3.5.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.5.0...v3.5.1) (2021-08-07)
 
 

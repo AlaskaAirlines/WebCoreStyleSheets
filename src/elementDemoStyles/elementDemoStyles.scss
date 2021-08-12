@@ -5,9 +5,7 @@
 // All styles for the custom element are located in the ./src directory.
 
 // ----------------------- DO NOT EDIT -----------------------------
-// @import '~@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
 @import './../../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-// @import '~@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
 
 @import './../breakpoints';
 
@@ -19,16 +17,6 @@
 @import "./../componentSupport/table";
 $paragraph: true;
 @import './../essentials';
-
-// matches max-width of AS.com and Auro docsite width specs
-body {
-  padding: var(--auro-size-xl);
-}
-
-main {
-  margin: 0 auto;
-  max-width: 64rem;
-}
 
 /* stylelint-disable selector-type-no-unknown */
 

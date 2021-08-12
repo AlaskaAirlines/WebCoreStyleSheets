@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.6.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.1...v3.6.2) (2021-08-12)
+
+
+### Bug Fixes
+
+* **demo css:** remove page wrapper styles from demo styles ([5865731](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5865731b7c451a65584ee18ee31b4ae79dd7b221))
+
 ## [3.6.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.0...v3.6.1) (2021-08-10)
 
 

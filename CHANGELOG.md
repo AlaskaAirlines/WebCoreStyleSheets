@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.6.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.2...v3.6.3) (2021-08-27)
+
+
+### Bug Fixes
+
+* **demo css:** add missed code selector for ce demo pages ([2ba2149](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/2ba2149f09f85a31bb5399bfbe61d2ea33492042))
+
 ## [3.6.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.1...v3.6.2) (2021-08-12)
 
 

@@ -104,6 +104,10 @@ code[class*="language-"], pre[class*="language-"] {
   font-family: monospace;
 }
 
+code:not(.html):not(.css):not(.js) {
+  color: var(--auro-color-brand-flamingo-500);
+}
+
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 .exampleWrapper {

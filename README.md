@@ -61,6 +61,14 @@ While WCSS is an à la carte solution, there are things that should be considere
 
 For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
 
+### Web font dependency 
+
+WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@alaskaairux/design-tokens/dist/tokens/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights. 
+
+Any references to `ASCircularWeb-Book`, `ASCircularWeb-Medium`, or `ASCircularWeb-Light` would be considered redundant and you should remove those legacy references. 
+
+Any references to `ASCircularWeb-Bold` or any other `ASCircularWeb-` style font family is not supported and these references are considered fully deprecated. 
+
 
 ## Pre-processed bundled resources
 

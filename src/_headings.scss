@@ -152,6 +152,7 @@
   margin: $auro-size-md 0;
 
   font-size: $auro-text-heading-600-size-breakpoint-sm;
+  font-weight: $auro-text-heading-600-weight;
   line-height: $auro-text-heading-600-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
@@ -185,6 +186,7 @@
   margin: $auro-size-md 0;
 
   font-size: $auro-text-heading-500-size-breakpoint-sm;
+  font-weight: $auro-text-heading-500-weight;
   line-height: $auro-text-heading-500-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
@@ -218,6 +220,7 @@
   margin: $auro-size-sm 0;
 
   font-size: $auro-text-heading-400-size;
+  font-weight: $auro-text-heading-400-weight;
   line-height: $auro-text-heading-400-height;
 }
 
@@ -242,5 +245,6 @@
   margin: $auro-size-sm 0;
 
   font-size: $auro-text-heading-300-size;
+  font-weight: $auro-text-heading-300-weight;
   line-height: $auro-text-heading-300-height;
 }

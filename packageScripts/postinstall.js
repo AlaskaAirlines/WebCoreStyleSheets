@@ -21,12 +21,17 @@ chalk.hex('#f26135')(`
        Thanks for installing the latest version
                of `) + chalk.hex('#ffd200').bold(`WC Stylesheets v${pjson.version}.`) + chalk.hex('#f26135')(`
 
-       Legacy Orion selectors have been deleted!
-                You have been warned!
-
-            Be sure to update Design Tokens
+            Requires Design Tokens v3.4.0
          npm i @alaskaairux/design-tokens@latest
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
+`) + chalk.hex('#ffd200').bold(`
+Any references to ASCircularWeb-Book, ASCircularWeb-Medium,
+or ASCircularWeb-Light would be considered redundant and
+you should remove those legacy references.
+
+Any references to ASCircularWeb-Bold or any other
+ASCircularWeb- style font family is not supported
+and these references are considered fully deprecated.
 `)
 );

@@ -250,3 +250,20 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
     line-height: $auro-text-body-height-default;
   }
 }
+
+/// Defines the font size and color of fine print text
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group essentials
+/// @example scss - Default selector(s)
+///   .auro_fineprint {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///
+
+.auro_fineprint {
+  font-family: var(--auro-font-family-default);
+  font-size: var(--auro-text-body-size-xs);
+  line-height: var(--auro-text-body-height-xs);
+}

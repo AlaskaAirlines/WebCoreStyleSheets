@@ -46,22 +46,21 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
+    "copy:files": "copyfiles -u 1 -V './src/**/_*.scss' './src/**/*.js' ./dist",
+    "copy:fonts:dist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
+    "css:lint": "stylelint './results/css/*.css'",
+    "scss:lint": "stylelint './src/**/*.scss'",
+    "build": "npm-run-all test build:sass:demo copy:files build:sass:test build:sass:essentials postinstall",
+    "build:dev": "npm-run-all scss:lint build:sass:test css:lint jest",
+    "build:sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
     "build:sass:demo": "sass --no-source-map ./src/elementDemoStyles/:./dist/",
     "build:sass:test": "sass --no-source-map ./tests/styleTest.scss:./results/css/testBuild.css",
     "build:sass:essentials": "sass --no-source-map ./src/bundled/essentials.scss:./dist/bundled/essentials.css",
-    "copyFiles": "copyfiles -u 1 -V './src/**/_*.scss' './src/**/*.js' ./dist",
     "postinstall": "node packageScripts/postinstall.js",
-    "copyFontsTest": "copyfiles -f -V './src/fonts/*.*' ./test/fonts",
-    "copyFontsDist": "copyfiles -f -V './src/fonts/*.*' ./dist/fonts",
-    "cssLint": "stylelint './results/css/*.css'",
-    "scssLint": "stylelint './src/**/*.scss'",
     "jest": "jest",
-    "test": "npm-run-all scssLint build:sass:test cssLint jest",
-    "sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",
-    "serve": "npm run sassdoc && node scripts/live-server.js",
-    "devBuild": "npm-run-all scssLint buildCss cssLint jest",
-    "watch": "nodemon -e scss --watch tests --watch src --exec npm run devBuild",
-    "build": "npm-run-all test build:sass:demo copyFontsDist copyFiles build:sass:test build:sass:essentials postinstall"
+    "test": "npm-run-all scss:lint build:sass:test css:lint jest",
+    "serve": "npm run build:sassdoc && node scripts/live-server.js",
+    "watch": "nodemon -e scss --watch tests --watch src --exec npm run build:dev"
   },
   "husky": {
     "hooks": {

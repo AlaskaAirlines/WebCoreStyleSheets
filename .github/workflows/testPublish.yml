@@ -24,12 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run copyFontsDist
-      - run: npm run copyFiles
-      - run: npm run buildEssentials
-      - run: npm run buildDemoCss
-      - run: npm run sassdoc
-      - run: npm test
+      - run: npm run copy:fonts:dist
+      - run: npm run build
+      - run: npm run build:sassdoc
 
   release:
     # Only release on push to master
@@ -44,11 +41,9 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm run copyFontsDist
-      - run: npm run copyFiles
-      - run: npm run buildEssentials
-      - run: npm run buildDemoCss
-      - run: npm run sassdoc
+      - run: npm run copy:fonts:dist
+      - run: npm run build
+      - run: npm run build:sassdoc
       - uses: cycjimmy/semantic-release-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

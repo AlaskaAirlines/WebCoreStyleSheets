@@ -256,13 +256,19 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 /// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
+///   .fineprint {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .fineprint {}
+///
+/// @example scss - Selector(s) when $prefix: true;
 ///   .auro_fineprint {}
 ///
 /// @example scss - import file
 ///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
 ///
 
-.auro_fineprint {
+#{$scope}.#{$prefix}fineprint {
   font-family: var(--auro-font-family-default);
   font-size: var(--auro-text-body-size-xs);
   line-height: var(--auro-text-body-height-xs);

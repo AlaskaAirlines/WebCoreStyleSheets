@@ -81,7 +81,7 @@
       }
 
       @include expect {
-        @media only screen and (min-width: 660px) {
+        @media screen and (min-width: 660px) {
           .auro_breakpoint {
             color: orange;
           }
@@ -103,7 +103,7 @@
       }
 
       @include expect {
-        @media only screen and (min-width: 1232px) {
+        @media screen and (min-width: 1232px) {
           .auro_breakpoint {
             color: orange;
           }
@@ -125,7 +125,7 @@
       }
 
       @include expect {
-        @media only screen and (min-width: 660px) and (max-width: 1232px) {
+        @media screen and (min-width: 660px) and (max-width: 1232px) {
           .auro_breakpoint {
             color: orange;
           }
@@ -147,7 +147,7 @@
       }
 
       @include expect {
-        @media only screen and (min-width: 400px) and (max-width: 660px) {
+        @media screen and (min-width: 400px) and (max-width: 660px) {
           .auro_breakpoint {
             color: orange;
           }

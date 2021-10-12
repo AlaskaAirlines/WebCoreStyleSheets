@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+# [3.7.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.3...v3.7.0) (2021-10-12)
+
+
+### Bug Fixes
+
+* **sass:** update to dart sass [#47](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/47) ([72c97a8](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/72c97a8ca35e864dd3fdbfb52e43eae1568ce8fe))
+* **styles:** correct selector based on review ([786e583](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/786e583461eb253c641e9c26d02ab2c5dda8754d))
+
+
+### Features
+
+* **fineprint:** add new auro_fineprint class ([0b1c35e](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/0b1c35e4490fe7d695de18b9099dabfe78632a1b))
+* **web fonts:** include all 3 ASCircular font families [#99](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/99) ([7cbbe2b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/7cbbe2b6910d9adf58e38f8e0aa4e39c2881052d))
+
 ## [3.6.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.2...v3.6.3) (2021-08-27)
 
 

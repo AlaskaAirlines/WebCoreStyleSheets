@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.7.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.0...v3.7.1) (2021-10-15)
+
+
+### Bug Fixes
+
+* add \!important flag to address margin specificity [#107](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/107) ([7f7e023](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/7f7e023cbbf8e1eb9a3db45f63d64104b35d7b3b))
+
 # [3.7.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.6.3...v3.7.0) (2021-10-12)
 
 

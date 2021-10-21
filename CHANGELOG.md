@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.7.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.1...v3.7.2) (2021-10-21)
+
+
+### Bug Fixes
+
+* **fineprint:** add missed color spec [#109](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/109) ([5dce17e](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5dce17e3720064967743f8bdf4379e7ab58fd589))
+
 ## [3.7.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.0...v3.7.1) (2021-10-15)
 
 

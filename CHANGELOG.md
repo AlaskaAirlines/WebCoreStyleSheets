@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.7.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.2...v3.7.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* **core:** fire transition events for reduced motion [#42](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/42) ([4bcbc38](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4bcbc38d388e7cd4db581efb0523d747c79125d8))
+
 ## [3.7.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.1...v3.7.2) (2021-10-21)
 
 

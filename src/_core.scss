@@ -11,7 +11,7 @@ $focus-visible: null !default;
 
 /// Global selector to address box-model and default `:focus` pseudo elements.
 ///
-/// Global media setting for [a11y support of reduced-motion](https://twitter.com/nathansmith/status/1242606456677040128)
+/// Global media setting for [a11y support of reduced-motion](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code). By setting the durations to almost 0, we prevent animation from playing for those with motion sensitivities without affecting transition or animation events (e.g. transitionend).
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group core
@@ -35,8 +35,9 @@ $focus-visible: null !default;
     box-sizing: border-box;
 
     @media (prefers-reduced-motion: reduce) {
-      transition: none !important;
-      animation: none !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 

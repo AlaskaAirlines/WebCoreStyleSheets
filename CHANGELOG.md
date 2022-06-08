@@ -1,5 +1,24 @@
 # Semantic Release Automated Changelog
 
+# [4.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.3...v4.0.0) (2022-06-08)
+
+
+### Code Refactoring
+
+* **namespace:** change to aurodesignsystem namespace ([9a2d7a4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/9a2d7a411bed8443a94cd2ed601e53f689b6738a))
+* remove .focus-visible [#105](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/105) ([db8abb3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/db8abb347873b510fc8ca9e484deb7121f5f4cbb))
+
+
+### BREAKING CHANGES
+
+* **namespace:** This commit updates the npm namespace.
+* focus-visible polyfill dependency has been removed.
+
+If the end user of WCSS still requires the focus-visible polyfill
+for their project, please install this as a peer dependency.
+
+https://github.com/WICG/focus-visible
+
 ## [3.7.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v3.7.2...v3.7.3) (2021-12-06)
 
 

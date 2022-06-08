@@ -22,7 +22,7 @@
 ///   .auro_util_nowrap {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/typeProperties";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/typeProperties";
 #{$scope}.#{$prefix}util_nowrap {
   white-space: nowrap $important;
 }
@@ -43,7 +43,7 @@
 ///   .auro_util_capitalize {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/typeProperties";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/typeProperties";
 #{$scope}.#{$prefix}util_capitalize {
   text-transform: capitalize $important;
 }

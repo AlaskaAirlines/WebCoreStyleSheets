@@ -35,12 +35,12 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
 ///  }
 /// @example scss - import dependencies
 ///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/insetUtility";
 /// @example scss - import with custom over-rides
 ///   $auro-inset-spacing-options: xxxs;
 ///   $auro-inset-directions:'';
 ///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/insetUtility";
 
 @mixin auro_inset($directions: $auro-inset-directions, $values: $auro-inset-spacing-options) {
   @each $value in $values {

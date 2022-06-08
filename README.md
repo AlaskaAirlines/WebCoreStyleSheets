@@ -13,12 +13,12 @@ Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyl
 ## Install
 
 [![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/webcorestylesheets/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/webcorestylesheets/actions?query=workflow%3A%22test+and+publish%22)
-[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/webcorestylesheets.svg?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/WebCoreStyleSheets)
-[![License](https://img.shields.io/npm/l/@alaskaairux/webcorestylesheets.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/webcorestylesheets.svg?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/webcorestyleSheets)
+[![License](https://img.shields.io/npm/l/@aurodesignsystem/webcorestylesheets.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 [![issues](https://img.shields.io/github/issues-raw/AlaskaAirlines/WebCoreStyleSheets?style=for-the-badge)](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues)
 
 ```bash
-$ npm i @alaskaairux/webcorestylesheets
+$ npm i @aurodesignsystem/webcorestylesheets
 ```
 
 ### Using the files in Sass
@@ -26,7 +26,7 @@ $ npm i @alaskaairux/webcorestylesheets
 There are no core files to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss
-@import "~@alaskaairux/webcorestylesheets/dist/ ... "
+@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
 ```
 
 ### Tokens Dependency
@@ -34,8 +34,8 @@ There are no core files to import, rather WCSS is an à la carte solution allowi
 WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial.
 
 ```scss
-@import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
-@import "~@alaskaairux/webcorestylesheets/dist/ ... ";
+@import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "~@aurodesignsystem/webcorestylesheets/dist/ ... ";
 ```
 
 ### Install the essentials
@@ -82,8 +82,8 @@ unpkg.com/:package@:version/:file
 
 | resource | supports | CDN URL |
 |---|---|---|
-| essentials.scss<br>fonts.scss|Auro WCs|https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/essentials.css|
-| baseline.scss<br>fonts.scss|ODS WCs|https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/baseline.css|
+| essentials.scss<br>fonts.scss|Auro WCs|https://unpkg.com/@aurodesignsystem/webcorestylesheets@:version/dist/bundled/essentials.css|
+| baseline.scss<br>fonts.scss|ODS WCs|https://unpkg.com/@aurodesignsystem/webcorestylesheets@:version/dist/bundled/baseline.css|
 
 ## Development
 

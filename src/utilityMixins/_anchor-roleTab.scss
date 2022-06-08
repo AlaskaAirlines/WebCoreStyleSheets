@@ -10,7 +10,7 @@
 /// @param {string} $style [] - Specifies the style type (sass, css)
 /// @param {string} $env [] - Specifies the style environment (component, noncomponent)
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/anchor-roleTab";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleTab";
 /// @example scss - Set properties for Sass output that is NOT within a component
 ///   .auro_roleTab {
 ///      @include auro_anchorTab(sass, noncomponent);

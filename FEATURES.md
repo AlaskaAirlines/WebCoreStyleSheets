@@ -10,7 +10,7 @@ When supporting legacy UIs there may be issues with importing a Sass file and it
 
 ```scss
 $scope: true;
-@import "~@alaskaairux/webcorestylesheets/dist/ ... "
+@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
 ```
 
 This setting will result in the following CSS selectors
@@ -28,7 +28,7 @@ To enable prefixing simply set the `$prefix` variable to be `true` before import
 
 ```scss
 $prefix: true;
-@import "~@alaskaairux/webcorestylesheets/dist/ ... "
+@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
 ```
 
 This setting will result in the following CSS selectors
@@ -47,7 +47,7 @@ If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set 
 ```scss
 $scope: true;
 $prefix: true;
-@import "~@alaskaairux/webcorestylesheets/dist/ ... "
+@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
 ```
 
 This setting will result in the following CSS selectors

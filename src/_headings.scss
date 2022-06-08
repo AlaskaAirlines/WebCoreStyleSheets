@@ -23,7 +23,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 ///
 #{$scope}.#{$prefix}heading {
   margin: calc(#{$auro-size-md} + #{$auro-size-sm}) 0;
@@ -49,7 +49,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--display"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--display {
   margin-top: 0;
 
@@ -83,7 +83,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--800"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--800 {
   font-size: $auro-text-heading-800-size-breakpoint-sm;
   font-weight: $auro-text-heading-800-weight;
@@ -115,7 +115,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--700"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--700 {
   font-size: $auro-text-heading-700-size-breakpoint-sm;
   font-weight: $auro-text-heading-700-weight;
@@ -147,7 +147,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--600"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--600 {
   margin: $auro-size-md 0;
 
@@ -181,7 +181,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--500"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--500 {
   margin: $auro-size-md 0;
 
@@ -215,7 +215,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--400"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--400 {
   margin: $auro-size-sm 0;
 
@@ -240,7 +240,7 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--300"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/headings";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--300 {
   margin: $auro-size-sm 0;
 

@@ -22,11 +22,11 @@ $focus-visible: null !default;
 ///   .auro *, .auro *:before, .auro *:after {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
 ///
 /// @example scss - import file with `$focus` set to `true`
 ///   $focus: true;
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
 ///
 #{$scope} * {
   &,
@@ -76,7 +76,7 @@ $focus-visible: null !default;
 /// Check current browser support for :focus-visible on [Can I Use](https://caniuse.com/css-focus-visible).
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
 ///
 /// @group Accessibility
 :focus {

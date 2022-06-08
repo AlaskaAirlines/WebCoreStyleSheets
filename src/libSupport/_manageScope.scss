@@ -11,7 +11,7 @@
 /// @type boolean
 /// @example scss - import file
 ///   $scope: true;
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/ ...
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/ ...
 /// @example scss - return example
 ///   .auro [selector] { ... }
 
@@ -25,7 +25,7 @@ $scope: null !default;
 /// @type boolean
 /// @example scss - import file
 ///   $prefix: true;
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/ ...
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/ ...
 /// @example scss - return example
 ///   .auro_[selector] { ... }
 

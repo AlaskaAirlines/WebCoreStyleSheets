@@ -24,7 +24,7 @@
 ///   .auro_util_fontWeightDefault {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightDefault {
   @if variable-exists(auro-text-body-default-weight) {
     font-weight: $auro-text-body-default-weight $important;
@@ -47,7 +47,7 @@
 ///   .auro_util_fontWeightMedium {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightMedium {
   @if variable-exists(auro-text-body-default-weight) {
     font-weight: $auro-text-heading-medium-weight $important;
@@ -70,7 +70,7 @@
 ///   .auro_util_fontWeightDisplay {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightDisplay {
   @if variable-exists(auro-text-heading-display-weight) {
     font-weight: $auro-text-heading-display-weight $important;
@@ -93,7 +93,7 @@
 ///   .auro_util_body--lg {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_body--lg {
   @if variable-exists(auro-text-body-size-lg) {
     font-size: $auro-text-body-size-lg $important;
@@ -117,7 +117,7 @@
 ///   .auro_util_body--sm {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_body--sm {
   @if variable-exists(auro-text-body-size-lg) {
     font-size: $auro-text-body-size-sm $important;
@@ -141,7 +141,7 @@
 ///   .auro_util_body--xs {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 
 #{$scope}.#{$prefix}util_body--xs {
   @if variable-exists(auro-text-body-size-xs) {

@@ -11,7 +11,7 @@
 /// @prop {Boolean} $important [null] - manage use of `!important` flag
 /// @example scss - update value prior to importing utility support file if `!important` flag is needed
 ///   $important: true;
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/ ... ";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/ ... ";
 
 $important: null !default;
 

@@ -26,7 +26,7 @@ Update to the following
 
 ```js
 import { html, css } from "lit-element";
-import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
+import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
 ```
 
 ### Add supporting styles
@@ -34,7 +34,7 @@ import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroEl
 To complete the install, be sure to add the following to the `./src/styles.scss` file
 
 ```scss
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
+@import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 ```
 
 ### Update class

@@ -22,7 +22,7 @@
 ///   .auro_html {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 #{$sym}#{$prefix}html#{$scope} {
   box-sizing: border-box;
@@ -50,7 +50,7 @@
 ///   .auro_baseType {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
@@ -84,7 +84,7 @@
 ///   .auro_baseParagraph .auro_hyperlink {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem;
@@ -118,7 +118,7 @@
 ///   .auro_hyperlink--darktheme {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
@@ -179,7 +179,7 @@
 ///   .auro_img {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}img {
   max-width: 100%;
@@ -202,7 +202,7 @@
 ///   .auro_type--small {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
@@ -227,11 +227,11 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///   .auro_p {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 /// @example scss - import file with `$paragraph` flag set to true
 ///   $paragraph: true;
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 
 #{$scope}#{$sym}#{$prefix}p {
@@ -256,7 +256,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///   .auro_fineprint {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/essentials";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 ///
 
 #{$scope}.#{$prefix}fineprint {

@@ -23,7 +23,7 @@
 ///   html.auro {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 html#{$scope} {
   line-height: 1.15; /* 1 */
@@ -46,7 +46,7 @@ html#{$scope} {
 ///   .auro body {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}body {
   margin: 0;
@@ -67,7 +67,7 @@ html#{$scope} {
 ///   .auro main {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}main {
   display: block;
@@ -89,7 +89,7 @@ html#{$scope} {
 ///   .auro hr {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}hr {
   overflow: visible; /* 1 */
@@ -111,7 +111,7 @@ html#{$scope} {
 ///   .auro pre {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}pre {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
@@ -137,7 +137,7 @@ html#{$scope} {
 ///   .auro a {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}a {
   background-color: transparent;
@@ -156,7 +156,7 @@ html#{$scope} {
 ///   .auro abbr[title] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}abbr {
   &[title] {
@@ -181,7 +181,7 @@ html#{$scope} {
 ///   .auro strong {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}b,
 #{$scope}strong {
@@ -205,7 +205,7 @@ html#{$scope} {
 ///   .auro samp {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}code,
 #{$scope}kbd,
@@ -232,7 +232,7 @@ html#{$scope} {
 ///   .auro sup {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}sub,
 #{$scope}sup {
@@ -256,7 +256,7 @@ html#{$scope} {
 ///   .auro sub {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}sub {
   bottom: -.25em;
@@ -274,7 +274,7 @@ html#{$scope} {
 ///   .auro sup {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}sup {
   top: -.5em;
@@ -295,7 +295,7 @@ html#{$scope} {
 ///   .auro img {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}img {
   border-style: none;
@@ -325,7 +325,7 @@ html#{$scope} {
 ///   .auro textarea {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}button,
 #{$scope}input,
@@ -358,7 +358,7 @@ html#{$scope} {
 ///   .auro input {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}button,
 #{$scope}input { /* 1 */
@@ -380,7 +380,7 @@ html#{$scope} {
 ///   .auro select {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}button,
 #{$scope}select { /* 1 */
@@ -405,7 +405,7 @@ html#{$scope} {
 ///   .auro [type="submit"] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}button,
 #{$scope}[type='button'],
@@ -426,7 +426,7 @@ html#{$scope} {
 ///   .auro fieldset {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}fieldset {
   padding: .35em .75em .625em;
@@ -447,7 +447,7 @@ html#{$scope} {
 ///   .auro legend {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}legend {
   display: table; /* 1 */
@@ -473,7 +473,7 @@ html#{$scope} {
 ///   .auro progress {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}progress {
   vertical-align: baseline;
@@ -491,7 +491,7 @@ html#{$scope} {
 ///   .auro textarea {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}textarea {
   overflow: auto;
@@ -511,7 +511,7 @@ html#{$scope} {
 ///   .auro [type="number"]::-webkit-outer-spin-button {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}[type='number'] {
   &::-webkit-inner-spin-button,
@@ -533,7 +533,7 @@ html#{$scope} {
 ///   .auro [type="search"] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}[type='search'] {
   outline-offset: -2px; /* 1 */
@@ -553,7 +553,7 @@ html#{$scope} {
 ///   .auro [type="search"]::-webkit-search-decoration {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -572,7 +572,7 @@ html#{$scope} {
 ///   .auro ::-webkit-file-upload-button {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}::-webkit-file-upload-button {
   font: inherit; /* 1 */
@@ -595,7 +595,7 @@ html#{$scope} {
 ///   .auro details {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}details {
   display: block;
@@ -613,7 +613,7 @@ html#{$scope} {
 ///   .auro summary {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}summary {
   display: list-item;
@@ -634,7 +634,7 @@ html#{$scope} {
 ///   .auro template {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}template {
   display: none;
@@ -652,7 +652,7 @@ html#{$scope} {
 ///   .auro [hidden] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/normalize";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
 ///
 #{$scope}[hidden] {
   display: none;

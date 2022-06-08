@@ -26,7 +26,7 @@
 ///   .auro .auro_roleButton {}
 ///
 /// @example scss - import selector file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/componentSupport/anchor-roleButton";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/anchor-roleButton";
 #{$scope}.auro_roleButton {
   @include auro_anchorButton(sass, noncomponent);
 }

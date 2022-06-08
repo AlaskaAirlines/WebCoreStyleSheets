@@ -11,7 +11,7 @@
 /// @param {string} $env [] - Specifies the style environment (component, noncomponent)
 /// @param {string} $display [inline-block] - Specifies display type
 /// @example scss - import mixin file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/anchor-roleButton";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleButton";
 /// @example scss - Set properties for Sass output that is NOT within a component
 ///   .auro_roleButton {
 ///       @include auro_anchorButton(sass, noncomponent);

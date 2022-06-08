@@ -39,12 +39,12 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
 ///  }
 /// @example scss - import dependencies
 ///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/spacingUtility";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 /// @example scss - import with custom over-rides
 ///   $auro-spacing-types: inline;
 ///   $auro-spacing-options: xxxs;
 ///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/spacingUtility";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 
 @mixin auro_spacing($types: $auro-spacing-types, $options: $auro-spacing-options) {
   @each $type in $types {

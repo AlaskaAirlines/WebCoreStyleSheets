@@ -47,10 +47,6 @@ $paragraph: true;
 
   a {
     @extend .hyperlink;
-
-    &.focus-visible {
-      @include auro_focus-hyperlink(sass);
-    }
   }
 
   p {

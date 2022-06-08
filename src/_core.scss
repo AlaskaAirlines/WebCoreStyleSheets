@@ -84,20 +84,3 @@ $focus-visible: null !default;
     outline: 3px solid transparent;
   }
 }
-
-/// Selector to remove default focus styles when the :focus-visible pseudo-selector does not apply. Usually this means the user is clicking the element instead of tabbing to it.
-///
-/// Check current browser support for :focus-visible on [Can I Use](https://caniuse.com/css-focus-visible).
-///
-/// @example scss - import file
-///   @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
-///
-/// @group Accessibility
-.js-focus-visible {
-  :focus {
-    &:not(.focus-visible) {
-      // Only visible when Windows High-Contrast Mode is turned on
-      outline: 3px solid transparent;
-    }
-  }
-}

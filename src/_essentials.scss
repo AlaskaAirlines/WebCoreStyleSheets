@@ -5,7 +5,6 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import 'utilityMixins/focusVisible';
 @import 'libSupport/manageScope';
 @import 'core';
 
@@ -126,16 +125,8 @@
 
   color: $auro-color-ui-default-on-light;
 
-  &.focus-visible { /* stylelint-disable-line selector-max-class */
-    @include auro_focus-hyperlink(sass);
-  }
-
   &:visited {
     color: $auro-color-ui-default-on-light;
-
-    &.focus-visible { /* stylelint-disable-line selector-max-class */
-      @include auro_focus-hyperlink(sass);
-    }
   }
 
   &--nav {

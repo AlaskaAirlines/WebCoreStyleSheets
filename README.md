@@ -61,13 +61,13 @@ While WCSS is an à la carte solution, there are things that should be considere
 
 For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
 
-### Web font dependency 
+### Web font dependency
 
-WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@alaskaairux/design-tokens/dist/tokens/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights. 
+WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@alaskaairux/design-tokens/dist/tokens/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights.
 
-Any references to `ASCircularWeb-Book`, `ASCircularWeb-Medium`, or `ASCircularWeb-Light` would be considered redundant and you should remove those legacy references. 
+Any references to `ASCircularWeb-Book`, `ASCircularWeb-Medium`, or `ASCircularWeb-Light` would be considered redundant and you should remove those legacy references.
 
-Any references to `ASCircularWeb-Bold` or any other `ASCircularWeb-` style font family is not supported and these references are considered fully deprecated. 
+Any references to `ASCircularWeb-Bold` or any other `ASCircularWeb-` style font family is not supported and these references are considered fully deprecated.
 
 
 ## Pre-processed bundled resources
@@ -84,30 +84,6 @@ unpkg.com/:package@:version/:file
 |---|---|---|
 | essentials.scss<br>fonts.scss|Auro WCs|https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/essentials.css|
 | baseline.scss<br>fonts.scss|ODS WCs|https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/baseline.css|
-
-## Dependencies
-
-When using WCSS, there is a direct dependency on the `focus-visible` library. When using Web Components, the inclusion of the `focus-visible` library is accounted for within the scope fo the component(s). With components, `focus-visible` is defined as a peer dependency.
-
-If the use of WCSS is not specifically with a component, including the `focus-visible.min.js` file will be required within the scope of the project. For example, the JS may be added to the head of a project:
-
-```html
-<script src="/node_modules/focus-visible/dist/focus-visible.min.js"></script>
-```
-
-or to the scope of any Node.js component architecture:
-
-```javascript
-import 'focus-visible/dist/focus-visible.min.js';
-```
-
-The `focus-visible` library is required for use with experimental a11y UI features
-
-## Accessibility
-
-The use of the `focus-visible` library brings in the capability to be selective with the UI between clicking/tapping into a control versus tabbing to a control. In most cases, the a11y halo will only appear when a control is tabbed to. But in cases where there is a `<input />` element that supports text and/or triggers a virtual keyboard if a physical keyboard is not present, the `focus-visible` state will be triggered.
-
-For more information, please be sure to review the Selectors Level 4 draft 9.4, the Focus-Indicated Pseudo-class: [:focus-visible](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
 
 ## Development
 

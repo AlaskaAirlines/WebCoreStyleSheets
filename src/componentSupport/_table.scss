@@ -17,9 +17,9 @@
   overflow: scroll;
 
   width: auto;
-  margin-bottom: $auro-size-xl;
+  margin-bottom: $auro-size-400;
 
-  border-spacing: $auro-size-sm;
+  border-spacing: $auro-size-150;
   border-collapse: collapse;
 
   font-weight: $auro-text-heading-display-weight;
@@ -49,6 +49,6 @@
 
   th,
   td {
-    padding: $auro-size-md;
+    padding: $auro-size-200;
   }
 }

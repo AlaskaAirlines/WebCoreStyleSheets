@@ -26,7 +26,7 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 ///
 #{$scope}.#{$prefix}heading {
-  margin: calc(#{$auro-size-md} + #{$auro-size-sm}) 0;
+  margin: calc(#{$auro-size-200} + #{$auro-size-150}) 0;
 
   letter-spacing: $auro-text-heading-default-spacing;
 
@@ -149,7 +149,7 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--600 {
-  margin: $auro-size-md 0;
+  margin: $auro-size-200 0;
 
   font-size: $auro-text-heading-600-size-breakpoint-sm;
   font-weight: $auro-text-heading-600-weight;
@@ -183,7 +183,7 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--500 {
-  margin: $auro-size-md 0;
+  margin: $auro-size-200 0;
 
   font-size: $auro-text-heading-500-size-breakpoint-sm;
   font-weight: $auro-text-heading-500-weight;
@@ -217,7 +217,7 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--400 {
-  margin: $auro-size-sm 0;
+  margin: $auro-size-150 0;
 
   font-size: $auro-text-heading-400-size;
   font-weight: $auro-text-heading-400-weight;
@@ -242,7 +242,7 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--300 {
-  margin: $auro-size-sm 0;
+  margin: $auro-size-150 0;
 
   font-size: $auro-text-heading-300-size;
   font-weight: $auro-text-heading-300-weight;

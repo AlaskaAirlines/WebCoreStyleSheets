@@ -29,20 +29,20 @@
   @if $style == css {
     $color: var(--auro-color-text-link-on-light);
     $border-color: var(--auro-color-border-primary-on-light);
-    $padding: var(--auro-size-md);
+    $padding: var(--auro-size-200);
     $hover-color: var(--auro-color-text-link-on-light-hover);
     $isactive-color: var(--auro-color-text-primary-on-light);
   } @else if $style == sass or $style == scss {
     $color: $auro-color-text-link-on-light;
     $border-color: $auro-color-border-primary-on-light;
-    $padding: $auro-size-md;
+    $padding: $auro-size-200;
     $hover-color: $auro-color-ui-hover-on-light;
     $isactive-color: $auro-color-text-primary-on-light;
   } @else {
     @error 'Invalid $style option. Please use `css` or `sass`';
   }
 
-  padding: $auro-size-md;
+  padding: $auro-size-200;
 
   color: $color;
   border-width: 0 0 1px;

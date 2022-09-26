@@ -9,6 +9,10 @@ $layout-modifiers: (
   "xxs": $auro-size-xxs,
   "xxl": $auro-size-xxl,
   "xxxl": $auro-size-xxxl,
+  "25": $auro-size-25,
+  "50": $auro-size-50,
+  "600": $auro-size-600,
+  "800": $auro-size-800
 );
 @import '../src/utilityMixins/layoutPropertiesGenerator';
 
@@ -33,6 +37,22 @@ $layout-modifiers: (
         }
 
         .util_marginRight--xxxl {
+          margin-right: 4rem;
+        }
+
+        .util_marginRight--25 {
+          margin-right: 0.125rem;
+        }
+
+        .util_marginRight--50 {
+          margin-right: 0.25rem;
+        }
+
+        .util_marginRight--600 {
+          margin-right: 3rem;
+        }
+
+        .util_marginRight--800 {
           margin-right: 4rem;
         }
       }

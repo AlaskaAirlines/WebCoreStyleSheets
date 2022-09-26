@@ -6,10 +6,10 @@
 
 // matches max-width of AS.com and Auro docsite width specs
 body {
-  padding: var(--auro-size-xl);
+  padding: var(--auro-size-400);
 }
 
 main {
   margin: 0 auto;
-  max-width: 64rem;
+  max-width: var(--auro-size-800);
 }

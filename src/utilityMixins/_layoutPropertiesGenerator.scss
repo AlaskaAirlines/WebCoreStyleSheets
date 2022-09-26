@@ -13,11 +13,18 @@
 
 $layout-properties: margin padding !default;
 $layout-extensions: Top Left Bottom Right !default;
+
+// none, xs, md, lg and xl have been deprecated and should be removed with next major release
+// ---------------------------------------------------------------------
 $layout-modifiers: (
   'none': 0,
-  'xs': $auro-size-xs,
-  'md': $auro-size-md,
-  'lg': $auro-size-lg,
+  '100': $auro-size-100,
+  '200': $auro-size-200,
+  '300': $auro-size-300,
+  '400': $auro-size-400,
+  'xs': $auro-size-100,
+  'md': $auro-size-200,
+  'lg': $auro-size-300,
   'xl': $auro-size-xl
 ) !default;
 
@@ -34,10 +41,10 @@ $layout-modifiers: (
 ///   $layout-extensions: Top Left Bottom Right !default;
 ///   $layout-modifiers: (
 ///     "none": 0,
-///     "xs": $auro-size-xs,
-///     "md": $auro-size-md,
-///     "lg": $auro-size-lg,
-///     "xl": $auro-size-xl
+///     "100": $auro-size-100,
+///     "200": $auro-size-200,
+///     "300": $auro-size-300,
+///     "400": $auro-size-400
 ///   ) !default;
 /// @example scss - example default output selector
 ///   .util_paddingLeft--none {}
@@ -54,10 +61,10 @@ $layout-modifiers: (
 ///   $layout-properties: margin;
 ///   $layout-extensions: Right;
 ///   $layout-modifiers: (
-///     "xxxs": $auro-size-xxxs,
-///     "xxs": $auro-size-xxs,
-///     "xxl": $auro-size-xxl,
-///     "xxxl": $auro-size-xxxl,
+///     "25": $auro-size-25,
+///     "50": $auro-size-50,
+///     "600": $auro-size-600,
+///     "800": $auro-size-800,
 ///   );
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
 @mixin auro_layoutPropertiesGenerator() {

@@ -127,7 +127,7 @@
       @include expect {
         .auro_roleButton {
           display: inline-block;
-          padding: 0 var(--auro-size-md);
+          padding: 0 var(--auro-size-200);
           text-decoration: none;
           color: var(--auro-color-text-link-on-light);
           border: 1px solid transparent;
@@ -156,7 +156,7 @@
       @include expect($selector: false) {
         .auro_roleButton {
           display: inline-block;
-          padding: 0 var(--auro-size-md);
+          padding: 0 var(--auro-size-200);
           text-decoration: none;
           color: var(--auro-color-text-link-on-light);
           border: 1px solid transparent;

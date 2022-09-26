@@ -24,8 +24,8 @@
 
   overflow-y: scroll;
 
-  height: calc(#{$auro-size-xxl} + 1px);
-  margin-bottom: $auro-size-md;
+  height: calc(#{$auro-size-600} + 1px);
+  margin-bottom: $auro-size-200;
 
   white-space: nowrap;
 
@@ -33,5 +33,5 @@
   border-style: solid;
   border-color: $auro-color-border-primary-on-light;
 
-  line-height: $auro-size-xxl;
+  line-height: $auro-size-600;
 }

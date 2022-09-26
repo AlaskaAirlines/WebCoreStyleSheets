@@ -25,12 +25,12 @@ $focus: null !default;
 #{$sym}#{$prefix}#{$scope}blockquote {
   margin-left: 0;
   border-left: 1px solid var(--auro-color-border-active-on-light);
-  padding: var(--auro-size-xs);
-  padding-left: var(--auro-size-xl);
+  padding: var(--auro-size-100);
+  padding-left: var(--auro-size-400);
   color: var(--auro-color-text-secondary-on-light);
   font-weight: 200;
-  margin-top: var(--auro-size-lg);
-  margin-bottom: var(--auro-size-lg);
+  margin-top: var(--auro-size-300);
+  margin-bottom: var(--auro-size-300);
 
   p {
     line-height: 2;
@@ -41,6 +41,6 @@ $focus: null !default;
   }
 
   & + p {
-    margin-bottom: var(--auro-size-xl);
+    margin-bottom: var(--auro-size-400);
   }
 }

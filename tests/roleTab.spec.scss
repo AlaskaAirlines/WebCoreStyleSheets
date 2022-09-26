@@ -15,8 +15,7 @@
       @include expect {
         .auro_roleTab {
           padding: 1rem;
-
-          color: #0074cb;
+          color: #0074c8;
           border-width: 0 0 1px;
           border-style: solid;
           border-color: #626b79;
@@ -25,16 +24,13 @@
         .auro_roleTab:not(.is-touching):hover {
           cursor: pointer;
           text-decoration: none;
-
           color: #054687;
           border-width: 0 0 2px;
           border-color: currentColor;
         }
-
         .auro_roleTab.is-active {
           cursor: pointer;
           text-decoration: none;
-
           color: #222222;
           border-width: 0 0 2px;
           border-color: currentColor;
@@ -55,7 +51,7 @@
         .hyperlink--tab {
           padding: 1rem;
 
-          color: #0074cb;
+          color: #0074c8;
           border-width: 0 0 1px;
           border-style: solid;
           border-color: #626b79;;
@@ -94,7 +90,7 @@
         .auro_roleTab {
           padding: 1rem;
 
-          color: #0074cb;
+          color: #0074c8;
           border-width: 0 0 1px;
           border-style: solid;
           border-color: #626b79;;
@@ -132,8 +128,7 @@
       @include expect($selector: false) {
         .hyperlink--tab {
           padding: 1rem;
-
-          color: #0074cb;
+          color: #0074c8;
           border-width: 0 0 1px;
           border-style: solid;
           border-color: #626b79;;
@@ -142,7 +137,6 @@
         :host(:not(.is-touching)) .hyperlink--tab:hover {
           cursor: pointer;
           text-decoration: none;
-
           color: #054687;
           border-width: 0 0 2px;
           border-color: currentColor;
@@ -151,7 +145,6 @@
         .hyperlink--tab.is-active {
           cursor: pointer;
           text-decoration: none;
-
           color: #222222;
           border-width: 0 0 2px;
           border-color: currentColor;
@@ -171,7 +164,6 @@
       @include expect {
         .auro_roleTab {
           padding: 1rem;
-
           color: var(--auro-color-text-link-on-light);
           border-width: 0 0 1px;
           border-style: solid;
@@ -181,7 +173,6 @@
         .auro_roleTab:not(.is-touching):hover {
           cursor: pointer;
           text-decoration: none;
-
           color: var(--auro-color-text-link-on-light-hover);
           border-width: 0 0 2px;
           border-color: currentColor;
@@ -190,7 +181,6 @@
         .auro_roleTab.is-active {
           cursor: pointer;
           text-decoration: none;
-
           color: var(--auro-color-text-primary-on-light);
           border-width: 0 0 2px;
           border-color: currentColor;
@@ -210,7 +200,6 @@
       @include expect($selector: false) {
         .hyperlink--tab {
           padding: 1rem;
-
           color: var(--auro-color-text-link-on-light);
           border-width: 0 0 1px;
           border-style: solid;
@@ -220,7 +209,6 @@
         :host(:not(.is-touching)) .hyperlink--tab:hover {
           cursor: pointer;
           text-decoration: none;
-
           color: var(--auro-color-text-link-on-light-hover);
           border-width: 0 0 2px;
           border-color: currentColor;
@@ -229,7 +217,6 @@
         .hyperlink--tab.is-active {
           cursor: pointer;
           text-decoration: none;
-
           color: var(--auro-color-text-primary-on-light);
           border-width: 0 0 2px;
           border-color: currentColor;

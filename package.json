@@ -10,7 +10,7 @@
     "url": "https://github.com/AlaskaAirlines/WebCoreStyleSheets"
   },
   "peerDependencies": {
-    "@alaskaairux/design-tokens": "^3.0.0",
+    "@alaskaairux/design-tokens": "^3.10.0",
     "sass": "^1.42.1"
   },
   "dependencies": {

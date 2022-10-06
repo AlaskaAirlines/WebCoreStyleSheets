@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.1.0...v4.1.1) (2022-10-06)
+
+
+### Bug Fixes
+
+* **demo:** address incorrect value for max-width on the body ([fd0de6b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/fd0de6b9435ed505b366c0253779e2b2387467f1))
+
 # [4.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.0.0...v4.1.0) (2022-10-06)
 
 

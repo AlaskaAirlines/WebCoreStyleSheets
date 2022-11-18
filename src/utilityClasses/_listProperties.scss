@@ -1,0 +1,191 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import '../libSupport/manageScope';
+@import '../utilityVariables/important';
+
+
+/// Utility class to display unordered lists without bulleting
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-list
+/// @example scss - Default selector(s)
+///   .util_listUnstyled {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_listUnstyled {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_listUnstyled {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
+#{$scope}.#{$prefix}util_listUnstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+/// Utility class to display unordered lists with unindented bullets
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-list
+/// @example scss - Default selector(s)
+///   .util_listNoIndent {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_listNoIndent {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_listNoIndent {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
+#{$scope}.#{$prefix}util_listNoIndent {
+  padding-left: 2*$auro-size-200;
+  list-style: none;
+  margin-left: 1px;
+  li {
+    text-indent: -$auro-size-200;
+  }
+  li::before {
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><circle cx='3' cy='2' r='2'></circle></svg>");
+    display: inline-block;
+    width: $auro-size-200;
+  }
+}
+
+
+/// Utility class to display unordered lists with unindented bullets
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-list
+/// @example scss - Default selector(s)
+///   .util_listIndented {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_listIndented {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_listIndented {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
+#{$scope}.#{$prefix}util_listIndented {
+  padding-left: 2*$auro-size-200;
+  list-style: none;
+  margin-left: $auro-size-300;
+  li {
+    text-indent: -$auro-size-200;
+  }
+  li::before {
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><circle cx='3' cy='2' r='2'></circle></svg>");
+    display: inline-block;
+    width: $auro-size-200;
+  }
+}
+
+
+/// Utility class to display ordered lists with unindented numbering
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-list
+/// @example scss - Default selector(s)
+///   .util_listNoIndentOrdered {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_listNoIndentOrdered {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_listNoIndentOrdered {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
+#{$scope}.#{$prefix}util_listNoIndentOrdered {
+    padding-left: 2*$auro-size-200;
+    margin-left: 1px;
+    list-style: none;
+    counter-reset: li-counter;
+  li {
+    text-indent: -$auro-size-200;
+  }
+  li::before {
+    counter-increment: li-counter;
+    content: counter(li-counter) ".";
+    width: $auro-size-200;
+    display: inline-block;
+  }
+}
+
+
+/// Utility class to display ordered lists with unindented numbering
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-list
+/// @example scss - Default selector(s)
+///   .util_listIndentedOrdered {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_listIndentedOrdered {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_listIndentedOrdered {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
+#{$scope}.#{$prefix}util_listIndentedOrdered {
+  padding-left: 2*$auro-size-200;
+  margin-left: $auro-size-300;
+  list-style: none;
+  counter-reset: li-counter;
+li {
+  text-indent: -$auro-size-200;
+}
+li::before {
+  counter-increment: li-counter;
+  content: counter(li-counter) ".";
+  width: $auro-size-200;
+  display: inline-block;
+}
+}
+
+
+/// Utility class to display unordered lists with auro icons
+///
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group Utility-list
+/// @example scss - Default selector(s)
+///   .util_listAuroIcon {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_listAuroIcon {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_listAuroIcon {}
+///
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
+#{$scope}.#{$prefix}util_listAuroIcon {
+  padding-left: 2*$auro-size-200;
+  list-style: none;
+  li {
+    text-indent: -$auro-size-200;
+  }
+  auro-icon{
+    width: $auro-size-200;
+  }
+}

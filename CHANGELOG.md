@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.1.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.1.1...v4.1.2) (2022-11-30)
+
+
+### Bug Fixes
+
+* upgrade sass from 1.55.0 to 1.56.0 ([cf18f0c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/cf18f0cc4e8df9d9bfaf16da4523e13d5ad3f356))
+
 ## [4.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.1.0...v4.1.1) (2022-10-06)
 
 

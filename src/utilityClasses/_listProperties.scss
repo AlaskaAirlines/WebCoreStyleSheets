@@ -48,16 +48,12 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listNoIndent {
-  padding-left: 2*$auro-size-200;
+  padding-left: 0; // CHANGE: to 0
   list-style: none;
-  margin-left: 1px;
-  li {
-    text-indent: -$auro-size-200;
-  }
   li::before {
-    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><circle cx='3' cy='2' r='2'></circle></svg>");
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: $auro-size-200;
+    width: var(--auro-size-300);
   }
 }
 
@@ -80,16 +76,13 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listIndented {
-  padding-left: 2*$auro-size-200;
+  padding-left: 0;
   list-style: none;
-  margin-left: $auro-size-300;
-  li {
-    text-indent: -$auro-size-200;
-  }
+  margin-left: calc(var(--auro-size-300) + var(--auro-size-50));
   li::before {
-    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><circle cx='3' cy='2' r='2'></circle></svg>");
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: $auro-size-200;
+    width: var(--auro-size-300);
   }
 }
 
@@ -112,17 +105,13 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listNoIndentOrdered {
-    padding-left: 2*$auro-size-200;
-    margin-left: 1px;
-    list-style: none;
-    counter-reset: li-counter;
-  li {
-    text-indent: -$auro-size-200;
-  }
+  padding-left: 0;
+  list-style: none;
+  counter-reset: li-counter;
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: $auro-size-200;
+    width: var(--auro-size-300);
     display: inline-block;
   }
 }
@@ -146,19 +135,15 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listIndentedOrdered {
-  padding-left: 2*$auro-size-200;
-  margin-left: $auro-size-300;
+  padding-left: calc(var(--auro-size-300) + var(--auro-size-50));
   list-style: none;
   counter-reset: li-counter;
-li {
-  text-indent: -$auro-size-200;
-}
-li::before {
-  counter-increment: li-counter;
-  content: counter(li-counter) ".";
-  width: $auro-size-200;
-  display: inline-block;
-}
+  li::before {
+    counter-increment: li-counter;
+    content: counter(li-counter) ".";
+    width: var(--auro-size-300);
+    display: inline-block;
+  }
 }
 
 
@@ -180,7 +165,7 @@ li::before {
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listAuroIcon {
-  padding-left: 2*$auro-size-200;
+  padding-left: 2*$auro-size-200; //calc(x*x)
   list-style: none;
   li {
     text-indent: -$auro-size-200;

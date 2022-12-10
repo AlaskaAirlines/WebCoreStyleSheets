@@ -165,12 +165,12 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listAuroIcon {
-  padding-left: 2*$auro-size-200; //calc(x*x)
+  padding-left: calc(var(--auro-size-300) + var(--auro-size-50));
   list-style: none;
   li {
-    text-indent: -$auro-size-200;
+    text-indent: calc(var(--auro-size-200) * -1);
   }
-  auro-icon{
-    width: $auro-size-200;
+  auro-icon {
+    width: var(--auro-size-200);
   }
 }

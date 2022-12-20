@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [4.2.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.1.2...v4.2.0) (2022-12-20)
+
+
+### Bug Fixes
+
+* replace css variables ([3f670a3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/3f670a3b70f093360b88841c9d5ab16960f33b08))
+
+
+### Features
+
+* design features [#115](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/115) ([72d0ff0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/72d0ff0a60e4fe00ec73a80ff1170e7690dcde74))
+* new list styles ([b09fee3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/b09fee3a74552404c818a23b41c00ddaa9a83e03))
+
 ## [4.1.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.1.1...v4.1.2) (2022-11-30)
 
 

@@ -25,7 +25,7 @@ $layout-modifiers: (
   'xs': $auro-size-100,
   'md': $auro-size-200,
   'lg': $auro-size-300,
-  'xl': $auro-size-xl
+  'xl': $auro-size-400
 ) !default;
 
 /// Mixin auto-generates all available utility selectors. This mixin is NOT for general use and will produce selectors with the import of this Sass file. Output can be configured by redefining default values prior to import. See default value examples below.

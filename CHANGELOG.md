@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.3.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.2.0...v4.3.0) (2023-02-07)
+
+
+### Features
+
+* **size:** use new and deprecate legacy size tokens [#128](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/128) ([1eaede6](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/1eaede60be591d81d8f6d587b4c2f185f302a0ea))
+
 # [4.2.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.1.2...v4.2.0) (2022-12-20)
 
 

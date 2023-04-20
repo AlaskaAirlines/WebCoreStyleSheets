@@ -50,7 +50,7 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
   @each $type in $types {
     @each $value in $options {
       $map: map-keys($tokens);
-      $var: auro_map-deep-get($tokens, #{$map}, $value);
+      $var: auro_map-deep-get($tokens, #{$map}, #{$value});
       $directions: null;
       $properties: null;
 

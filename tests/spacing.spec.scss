@@ -4,7 +4,7 @@
 @import 'true';
 
 $auro-spacing-types: inline;
-$auro-spacing-options: sm, lg;
+$auro-spacing-options: sm, lg, 25, 1000;
 @import "./src/utilityMixins/spacingUtility";
 
 @include describe('auro_spacing()') {
@@ -45,6 +45,38 @@ $auro-spacing-options: sm, lg;
 
         .util_inlineMarginLg--right {
           margin-right: 1.5rem;
+        }
+
+        .util_inlinePadding25--left {
+          padding-left: 0.125rem;
+        }
+
+        .util_inlinePadding25--right {
+          padding-right: 0.125rem;
+        }
+
+        .util_inlineMargin25--left {
+          margin-left: 0.125rem;
+        }
+
+        .util_inlineMargin25--right {
+          margin-right: 0.125rem;
+        }
+
+        .util_inlinePadding1000--left {
+          padding-left: 5rem;
+        }
+
+        .util_inlinePadding1000--right {
+          padding-right: 5rem;
+        }
+
+        .util_inlineMargin1000--left {
+          margin-left: 5rem;
+        }
+
+        .util_inlineMargin1000--right {
+          margin-right: 5rem;
         }
       }
     }

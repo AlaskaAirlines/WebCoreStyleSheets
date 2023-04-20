@@ -13,5 +13,8 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityFunctions/capitalize";
 
 @function auro_capitalize($string) {
-  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+  @if type-of($string) == string {
+    @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+  }
+  @return #{$string};
 }

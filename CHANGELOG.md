@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.3.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.3.0...v4.3.1) (2023-04-25)
+
+
+### Bug Fixes
+
+* **styles:** fix the auro capitalize function [#148](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/148) ([7f75b30](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/7f75b3060be2b67328e1d48bb360f91a8c2b7569))
+
 # [4.3.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.2.0...v4.3.0) (2023-02-07)
 
 

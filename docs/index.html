@@ -596,7 +596,10 @@ $auro-breakpoint-lg: 1232px;</code></pre></div><div class="item__example example
 }</code>" data-collapsed="// Auro rule
 @font-face { ... }"><code>// Auro rule
 @font-face { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Baseline font-face setting for using web based custom fonts - font weight light</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import src file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="utility"><div class="container">utility</div></h1><section class="main__sub-section" id="utility-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="utility-function-auro_capitalize"><h3 class="item__heading"><a class="item__name" href="#function-auro_capitalize">auro_capitalize</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function auro_capitalize($string: null) { 
-  @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+  @if type-of($string) == string {
+    @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+  }
+  @return #{$string};
  }" data-collapsed="@function auro_capitalize($string: null) { ... }"><code>@function auro_capitalize($string: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The purpose of this function is to take a string and capitalize the first letter on output</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>pass in string to be capitolized</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>pass string into function</p></div><pre class="example__code language-scss"><code>capitalize(&#39;foo&#39;) =&gt; Foo</code></pre></div><div class="item__example example"><div class="example__description"><p>import dependency</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityFunctions/capitalize&quot;;</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#utility-layout-mixin-auro_inset"><code>auro_inset</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utility-layout-mixin-auro_inset"><code>auro_inset</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utility-layout-mixin-auro_spacing"><code>auro_spacing</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utility-layout-mixin-auro_spacing"><code>auro_spacing</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utility-layout-mixin-auro_spacing"><code>auro_spacing</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#utility-layout-mixin-auro_spacing"><code>auro_spacing</code></a></li></ul></section><section class="main__item container item" id="utility-function-auro_contains"><h3 class="item__heading"><a class="item__name" href="#function-auro_contains">auro_contains</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function auro_contains($list: null, $var) { 
   $eval: false;
 
@@ -850,7 +853,7 @@ $layout-modifiers: (
   @each $type in $types {
     @each $value in $options {
       $map: map-keys($tokens);
-      $var: auro_map-deep-get($tokens, #{$map}, $value);
+      $var: auro_map-deep-get($tokens, #{$map}, #{$value});
       $directions: null;
       $properties: null;
 
@@ -885,7 +888,6 @@ $layout-modifiers: (
           @for $i from 1 through length($properties) {
             $direction: nth($directions, $i);
             $property: nth($properties, $i);
-            @warn &quot;property = #{$property} | value = #{$value}&quot;;
             #{$scope}.#{$prefix}util_#{$type}#{auro_capitalize($property)}#{auro_capitalize($value)}--#{$direction} {
               #{$property}-#{$direction}: $var $important;
             }

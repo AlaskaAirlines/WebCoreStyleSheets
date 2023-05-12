@@ -1,0 +1,68 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
+
+@import 'libSupport/manageScope';
+
+/// @group grid
+/// @param {string} $maxWidth [1232px] - Specifies the max-width value of the grid.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   $maxWidth: $auro-grid-breakpoint-xl !default;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// 
+@mixin grid_width($maxWidth) {
+  max-width: $maxWidth;
+}
+
+/// @group grid
+/// @param {string} $margin [auto] - Specifies the margin value of the grid.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   $margin: $auro-grid-margin-xs !default;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+@mixin grid_margin($margin) {
+  margin: $margin;
+}
+
+/// @group grid
+/// @param {string} $gutter [16px] - Specifies the gutter/gap(horizontal & vertical spacing) value between each cell of the grid.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   $gutter: $auro-grid-gutter-xs !default;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+@mixin grid_gutter($gutter) {
+  gap: $gutter;
+}
+
+
+/// Grid class
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group grid
+/// @example scss - Default selector(s)
+///   .grid {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .grid {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_grid {}
+///
+/// @example html - Example HTML selector use
+///   <element class="grid"> ... </element>
+/// @example scss - import file;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///
+#{$scope}.#{$prefix}grid {
+  display: grid;
+  @include grid_width($auro-grid-breakpoint-xl);
+  @include grid_margin($auro-grid-margin-xs);
+  @include grid_gutter($auro-grid-gutter-xs);
+}

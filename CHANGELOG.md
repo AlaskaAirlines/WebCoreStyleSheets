@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.4.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.3.1...v4.4.0) (2023-05-18)
+
+
+### Features
+
+* **grid mixin:** add support for new grid mixin [#129](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/129) ([00ecfd2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/00ecfd2486dc96f3e9b050733331bf04ffb2c36c))
+
 ## [4.3.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.3.0...v4.3.1) (2023-04-25)
 
 

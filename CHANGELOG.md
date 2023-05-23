@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.5.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.4.0...v4.5.0) (2023-05-23)
+
+
+### Features
+
+* **breakpoint:** add new auro breakpoints [#146](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/146) ([3f15e34](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/3f15e34568400cf3e9a1a90936895a95d19e07e2))
+
 # [4.4.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.3.1...v4.4.0) (2023-05-18)
 
 

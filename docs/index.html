@@ -275,6 +275,35 @@
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_margin($auro-grid-margin-xs);
   @include grid_gutter($auro-grid-gutter-xs);
+
+  &amp;.grid-cols-2 {
+    
+    grid-template-columns: auto;
+
+    @include auro_grid-breakpoint--sm {
+      grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    }
+
+    &amp;.fixed-nav {
+
+      &gt; :first-child {
+        position: sticky;
+        top: 0;
+        --align-self: stretch;
+        align-self: var(--align-self); 
+      }
+
+      &gt; :nth-child(n+3) {
+        display: none;
+      }
+  
+      @include auro_grid-breakpoint--sm {
+        grid-template-columns: $auro-grid-breakpoint-xs auto;
+      }
+
+    }
+
+  }
 }</code>" data-collapsed="#{$scope}.#{$prefix}grid { ... }"><code>#{$scope}.#{$prefix}grid { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Grid class</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> and <code>$prefix</code> options.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.grid {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .grid {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_grid {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Example HTML selector use</p></div><pre class="example__code language-html"><code>&lt;element class=&quot;grid&quot;&gt; ... &lt;/element&gt;</code></pre></div><div class="item__example example"><div class="example__description"><p>import file;</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="headings"><div class="container">headings</div></h1><section class="main__sub-section" id="headings-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="headings-css-#{$scope}.#{$prefix}heading"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}heading">#{$scope}.#{$prefix}heading</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}heading {
   margin: calc(#{$auro-size-200} + #{$auro-size-150}) 0;
 

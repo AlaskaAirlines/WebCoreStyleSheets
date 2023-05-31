@@ -129,6 +129,20 @@
 }
 
 
+/// @group grid
+/// @param {string} $first - Specifies the percentage/ratio value for the first column of the 2 column grid.
+/// @param {string} $second - Specifies the percentage/ratio value for the first column of the 2 column grid.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   $first: 3fr !default;
+///   $second: 1fr !default;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+@mixin grid_ratio($first, $second) {
+  grid-template-columns: $first $second;
+}
+
+
 /// Grid class
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
@@ -161,24 +175,39 @@
       grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
     }
 
-    &.fixed-nav {
+    &.grid-sidenav {
+
+      grid-template-areas: 
+        "sidenavarea"
+        "breadcrumbarea"
+        "contentarea";
 
       > :first-child {
+        grid-area: sidenavarea;
         position: sticky;
         top: 0;
         --align-self: stretch;
         align-self: var(--align-self); 
       }
 
-      > :nth-child(n+3) {
+      > :nth-child(2) {
+        grid-area: breadcrumbarea;
+      }
+
+      > :nth-child(3) {
+        grid-area: contentarea;
+      }
+
+      > :nth-child(n+4) {
         display: none;
       }
-  
-      @include auro_grid-breakpoint--sm {
+
+      @include auro_grid-breakpoint--md {
+        grid-template-areas: 
+        "breadcrumbarea breadcrumbarea"
+        "sidenavarea contentarea";
         grid-template-columns: $auro-grid-breakpoint-xs auto;
       }
-
     }
-
   }
 }

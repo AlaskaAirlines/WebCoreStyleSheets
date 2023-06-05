@@ -7,6 +7,8 @@
 
 @import 'libSupport/manageScope';
 
+$fixed-nav-width: 268px;
+$fixed-anchor-width: 168px;
 
 /// Standard breakpoint to support resolutions greater than 1232px.
 /// This mixin is to be deprecated during the next major release.
@@ -167,47 +169,53 @@
   @include grid_margin($auro-grid-margin-xs);
   @include grid_gutter($auro-grid-gutter-xs);
 
-  &.grid-cols-2 {
-    
-    grid-template-columns: auto;
-
-    @include auro_grid-breakpoint--sm {
-      grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  &.two-column {
+          
+    > :nth-child(1) {
+        grid-area: col1;
     }
 
-    &.grid-sidenav {
-
-      grid-template-areas: 
-        "sidenavarea"
-        "breadcrumbarea"
-        "contentarea";
-
-      > :first-child {
-        grid-area: sidenavarea;
+    > :nth-child(2) {
+        grid-area: col2;
+    }
+    
+    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    grid-template-areas: 
+    "col1" 
+    "col2";
+    
+    @include auro_grid-breakpoint--md {
+        grid-template-areas: "col1 col2";
+    }
+  }
+  
+  &.fixed-nav {
+      
+    @extend .two-column;
+    
+    > :nth-child(1) {
         position: sticky;
         top: 0;
         --align-self: stretch;
         align-self: var(--align-self); 
-      }
-
-      > :nth-child(2) {
-        grid-area: breadcrumbarea;
-      }
-
-      > :nth-child(3) {
-        grid-area: contentarea;
-      }
-
-      > :nth-child(n+4) {
-        display: none;
-      }
-
-      @include auro_grid-breakpoint--md {
-        grid-template-areas: 
-        "breadcrumbarea breadcrumbarea"
-        "sidenavarea contentarea";
-        grid-template-columns: $auro-grid-breakpoint-xs auto;
-      }
     }
+    
+    @include auro_grid-breakpoint--md {
+        grid-template-columns: $fixed-nav-width auto;
+    }
+  }
+  
+  &.fixed-anchor {
+    
+    @extend .two-column;
+    grid-template-areas: 
+    "col2"
+    "col1";
+      
+    @include auro_grid-breakpoint--md {
+        grid-template-areas: "col1 col2";
+        grid-template-columns: auto $fixed-anchor-width;
+    }
+    
   }
 }

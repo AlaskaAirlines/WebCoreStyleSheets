@@ -1,5 +1,15 @@
 # Semantic Release Automated Changelog
 
+# [4.6.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.5.0...v4.6.0) (2023-06-12)
+
+
+### Features
+
+* add new classes and styling for 2 column layout [#130](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/130) ([cc2d255](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/cc2d2559649a8d1d7cd35181a4757aca3c634193))
+* add support for breadcrumb in 2 column layout [#130](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/130) ([1361712](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/136171241b68ce72c07496c26cceff684dc60a49))
+* **grid breakpoint:** add support for new grid breakpoint ([4a2cf13](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4a2cf139cf3a9483067fe03c417ffa87afeb755b))
+* use extend scss rule for 2 column layout [#130](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/130) ([ead5452](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/ead5452ef58f330e0e4ba9975503fe5b573ed9cf))
+
 # [4.5.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.4.0...v4.5.0) (2023-05-23)
 
 

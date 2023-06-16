@@ -11,7 +11,6 @@ $fixed-nav-width: 268px;
 $fixed-anchor-width: 168px;
 
 /// Standard breakpoint to support resolutions greater than 1232px.
-/// This mixin is to be deprecated during the next major release.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
 /// @group grid
@@ -28,7 +27,6 @@ $fixed-anchor-width: 168px;
 }
 
 /// Standard breakpoint to support resolutions greater than 1024px.
-/// This mixin is to be deprecated during the next major release.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
 /// @group grid
@@ -45,7 +43,6 @@ $fixed-anchor-width: 168px;
 }
 
 /// Standard breakpoint to support resolutions greater than 768px.
-/// This mixin is to be deprecated during the next major release.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
 /// @group grid
@@ -62,7 +59,6 @@ $fixed-anchor-width: 168px;
 }
 
 /// Standard breakpoint to support resolutions greater than 576px.
-/// This mixin is to be deprecated during the next major release.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
 /// @group grid
@@ -79,7 +75,6 @@ $fixed-anchor-width: 168px;
 }
 
 /// Standard breakpoint to support resolutions greater than 320px.
-/// This mixin is to be deprecated during the next major release.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
 /// @group grid
@@ -93,6 +88,42 @@ $fixed-anchor-width: 168px;
   @media screen and (min-width: $auro-grid-breakpoint-xs) {
     @content;
   }
+}
+
+
+
+/// This mixin will set the element to be sticky on tablet and larger devices.
+///
+/// @group grid
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// 
+@mixin grid-stickycolumn--md {
+  @media screen and (min-width: $auro-grid-breakpoint-md) {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    padding-top: $auro-grid-margin-xl;
+    @content;
+  }
+}
+
+/// This mixin will set the element to be sticky on mobile devices.
+///
+/// @group grid
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// 
+@mixin grid-stickycolumn--xs {
+  position: sticky;
+  top: 0;
+  --align-self: stretch;
+  align-self: var(--align-self);
+  background-color:red;
 }
 
 
@@ -113,10 +144,39 @@ $fixed-anchor-width: 168px;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 /// @example scss - import mixin file with altered output values prior to import
-///   $margin: $auro-grid-margin-xs !default;
+///   $margin: auto !default;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 @mixin grid_margin($margin) {
-  margin: $margin;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/// @group grid
+/// @param {string} $padding [auto] - Specifies the padding value of the grid.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+/// @example scss - import mixin file with altered output values prior to import
+///   $padding: $auro-grid-margin-xs !default;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+@mixin grid_padding($padding) {
+  padding-left: $auro-grid-margin-xs;
+  padding-right: $auro-grid-margin-xs;
+  @include auro_grid-breakpoint--sm {
+    padding-left: $auro-grid-margin-sm;
+    padding-right: $auro-grid-margin-sm;
+  }
+  @include auro_grid-breakpoint--md {
+    padding-left: $auro-grid-margin-md;
+    padding-right: $auro-grid-margin-md;
+  }
+  @include auro_grid-breakpoint--lg {
+    padding-left: $auro-grid-margin-lg;
+    padding-right: $auro-grid-margin-lg;
+  }
+  @include auro_grid-breakpoint--xl {
+    padding-left: $auro-grid-margin-xl;
+    padding-right: $auro-grid-margin-xl;
+  }
 }
 
 /// @group grid
@@ -128,8 +188,19 @@ $fixed-anchor-width: 168px;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 @mixin grid_gutter($gutter) {
   gap: $gutter;
+  @include auro_grid-breakpoint--sm {
+   gap: $auro-grid-gutter-sm;
+  }
+  @include auro_grid-breakpoint--md {
+    gap: $auro-grid-gutter-md;
+  }
+  @include auro_grid-breakpoint--lg {
+    gap: $auro-grid-gutter-lg;
+  }
+  @include auro_grid-breakpoint--xl {
+    gap: $auro-grid-gutter-xl;
+  }
 }
-
 
 /// @group grid
 /// @param {string} $first - Specifies the percentage/ratio value for the first column of the 2 column grid.
@@ -144,9 +215,8 @@ $fixed-anchor-width: 168px;
   grid-template-columns: $first $second;
 }
 
-
 /// Grid class
-///
+/// This class selector is to be deprecated during the next major release.
 /// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
 /// @group grid
 /// @example scss - Default selector(s)
@@ -217,5 +287,155 @@ $fixed-anchor-width: 168px;
         grid-template-columns: auto $fixed-anchor-width;
     }
     
+  }
+}
+
+/// Container class
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group container
+/// @example scss - Default selector(s)
+///   .container {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .container {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_container {}
+///
+/// @example html - Example HTML selector use
+///   <element class="container"> ... </element>
+/// @example scss - import file;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///
+#{$scope}.#{$prefix}container {
+  display: grid;
+  @include grid_margin($auro-grid-margin-xl);
+  @include grid_width($auro-grid-breakpoint-xl);
+}
+
+/// Container class
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group container
+/// @example scss - Default selector(s)
+///   .container {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .container {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_container {}
+///
+/// @example html - Example HTML selector use
+///   <element class="container"> ... </element>
+/// @example scss - import file;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///
+#{$scope}.#{$prefix}pagecontainer {
+  @include grid_padding($auro-grid-margin-xl);
+  @include grid_margin($auro-grid-margin-xl);
+  @include grid_width($auro-grid-breakpoint-xl);
+  &.breadcrumbs {
+    margin-block-end: 3.35rem;
+  }
+}
+
+/// pageLayout-2colAnchorNav class
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group page layouts
+/// @example scss - Default selector(s)
+///   .pageLayout-2colAnchorNav {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .pageLayout-2colAnchorNav {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_pageLayout-2colAnchorNav {}
+///
+/// @example html - Example HTML selector use
+///   <element class="pageLayout-2colAnchorNav"> ... </element>
+/// @example scss - import file;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///
+#{$scope}.#{$prefix}pageLayout-2colAnchorNav {
+  display: grid;
+  @include grid_margin($auro-grid-margin-xl);
+  @include grid_padding($auro-grid-margin-xl);
+  @include grid_width($auro-grid-breakpoint-xl);
+  @include grid_gutter($auro-grid-gutter-xl);
+  grid-template-areas:
+  "breadcrumbs"
+  "anchornav"
+  "main";
+
+  @include auro_grid-breakpoint--md {
+    grid-template-columns: auto $fixed-anchor-width;
+      grid-template-areas:
+      "breadcrumbs breadcrumbs"
+      "main anchornav";
+  }
+  .breadcrumbs {
+    grid-area: breadcrumbs;
+  }
+  .main {
+    grid-area: main;
+    * {
+      scroll-margin-top: $auro-grid-margin-md;
+    }
+  }
+  .anchornav {
+    grid-area: anchornav;
+      @include grid-stickycolumn--md
+    }
+}
+
+/// pageLayout-2colSideNav class
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group page layouts
+/// @example scss - Default selector(s)
+///   .pageLayout-2colSideNav {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .pageLayout-2colSideNav {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_pageLayout-2colSideNav {}
+///
+/// @example html - Example HTML selector use
+///   <element class="pageLayout-2colSideNav"> ... </element>
+/// @example scss - import file;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///
+#{$scope}.#{$prefix}pageLayout-2colSideNav {
+  display: grid;
+  @include grid_margin($auro-grid-margin-xl);
+  @include grid_padding($auro-grid-margin-xl);
+  @include grid_width($auro-grid-breakpoint-xl);
+  @include grid_gutter($auro-grid-gutter-xl);
+  grid-template-areas:
+  "breadcrumbs"
+  "sidenav"
+  "main";
+
+  @include auro_grid-breakpoint--md {
+    grid-template-columns: $fixed-nav-width auto;
+      grid-template-areas:
+      "breadcrumbs breadcrumbs"
+      "sidenav main";
+  }
+  .breadcrumbs {
+    grid-area: breadcrumbs;
+  }
+  .sidenav {
+    grid-area: sidenav;
+  }
+  .main {
+    grid-area: main;
+    * {
+      scroll-margin-top: $auro-grid-margin-md;
+    }
   }
 }

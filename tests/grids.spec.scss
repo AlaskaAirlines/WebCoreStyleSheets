@@ -73,32 +73,12 @@
   @include it('should return correct padding for each device size') {
     @include assert {
       @include output {
-        @include grid_padding();
+        @include grid_padding(0);
       }
 
       @include expect {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        
-        @media screen and (min-width: 576px) {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-        
-        @media screen and (min-width: 768px) {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-        }
-        
-        @media screen and (min-width: 1024px) {
-          padding-left: 2rem;
-          padding-right: 2rem;
-        }
-        
-        @media screen and (min-width: 1232px) {
-          padding-left: 2rem;
-          padding-right: 2rem;
-        }
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
@@ -205,7 +185,7 @@
     @include assert {
       @include output {
         .pagecontainer{
-          @include grid_padding();
+          @include grid_padding($auro-grid-margin-xs);
           @include grid_margin();
           @include grid_width($auro-grid-breakpoint-xl);
           &.breadcrumbs {
@@ -222,30 +202,6 @@
           margin-right: auto;
           max-width: 1232px;
         }
-        @media screen and (min-width: 576px) {
-          .pagecontainer {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-        }
-        @media screen and (min-width: 768px) {
-          .pagecontainer {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-          }
-        }
-        @media screen and (min-width: 1024px) {
-          .pagecontainer {
-            padding-left: 2rem;
-            padding-right: 2rem;
-          }
-        }
-        @media screen and (min-width: 1232px) {
-          .pagecontainer {
-            padding-left: 2rem;
-            padding-right: 2rem;
-          }
-        }
         .pagecontainer.breadcrumbs {
           margin-block-end: 3.35rem;
         }
@@ -261,7 +217,7 @@
         .pageLayout-2colAnchorNav{
           display: grid;
           @include grid_margin();
-          @include grid_padding();
+          @include grid_padding(0);
           @include grid_width($auro-grid-breakpoint-xl);
           @include grid_gutter($auro-grid-gutter-xl);
           grid-template-areas:
@@ -276,35 +232,11 @@
           display: grid;
           margin-left: auto;
           margin-right: auto;
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: 0;
+          padding-right: 0;
           max-width: 1232px;
           gap: 2rem;
           grid-template-areas: "breadcrumbs" "anchornav" "main";
-        }
-        @media screen and (min-width: 576px) {
-          .pageLayout-2colAnchorNav {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-        }
-        @media screen and (min-width: 768px) {
-          .pageLayout-2colAnchorNav {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-          }
-        }
-        @media screen and (min-width: 1024px) {
-          .pageLayout-2colAnchorNav {
-            padding-left: 2rem;
-            padding-right: 2rem;
-          }
-        }
-        @media screen and (min-width: 1232px) {
-          .pageLayout-2colAnchorNav {
-            padding-left: 2rem;
-            padding-right: 2rem;
-          }
         }
         @media screen and (min-width: 576px) {
           .pageLayout-2colAnchorNav {
@@ -338,7 +270,7 @@
         .pageLayout-2colSideNav{
           display: grid;
           @include grid_margin();
-          @include grid_padding();
+          @include grid_padding(0);
           @include grid_width($auro-grid-breakpoint-xl);
           @include grid_gutter($auro-grid-gutter-xl);
           grid-template-areas:
@@ -353,35 +285,11 @@
           display: grid;
           margin-left: auto;
           margin-right: auto;
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: 0;
+          padding-right: 0;
           max-width: 1232px;
           gap: 2rem;
           grid-template-areas: "breadcrumbs" "sidenav" "main";
-        }
-        @media screen and (min-width: 576px) {
-          .pageLayout-2colSideNav {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-        }
-        @media screen and (min-width: 768px) {
-          .pageLayout-2colSideNav {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-          }
-        }
-        @media screen and (min-width: 1024px) {
-          .pageLayout-2colSideNav {
-            padding-left: 2rem;
-            padding-right: 2rem;
-          }
-        }
-        @media screen and (min-width: 1232px) {
-          .pageLayout-2colSideNav {
-            padding-left: 2rem;
-            padding-right: 2rem;
-          }
         }
         @media screen and (min-width: 576px) {
           .pageLayout-2colSideNav {

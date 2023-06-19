@@ -50,9 +50,23 @@
   @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
 }</code>" data-collapsed="#{$scope}.#{$prefix}container { ... }"><code>#{$scope}.#{$prefix}container { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container class</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> and <code>$prefix</code> options.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.container {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .container {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_container {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Example HTML selector use</p></div><pre class="example__code language-html"><code>&lt;element class=&quot;container&quot;&gt; ... &lt;/element&gt;</code></pre></div><div class="item__example example"><div class="example__description"><p>import file;</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="container-css-#{$scope}.#{$prefix}pagecontainer"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}pagecontainer">#{$scope}.#{$prefix}pagecontainer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}pagecontainer {
-  @include grid_padding();
+  @include grid_padding($auro-grid-margin-xs);
   @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
+
+  @include auro_grid-breakpoint--sm {
+    @include grid_padding($auro-grid-margin-sm);
+  }
+  @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
+  }
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
   &amp;.breadcrumbs {
     margin-block-end: 3.35rem;
   }
@@ -233,7 +247,7 @@
   line-height: var(--auro-text-body-height-xs);
   color: var(--auro-color-text-secondary-on-light);
 }</code>" data-collapsed="#{$scope}.#{$prefix}fineprint { ... }"><code>#{$scope}.#{$prefix}fineprint { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Defines the font size and color of fine print text</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> and <code>$prefix</code> options.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.fineprint {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .fineprint {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_fineprint {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="grid"><div class="container">grid</div></h1><section class="main__sub-section" id="grid-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="grid-mixin-grid-stickycolumn--md"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-stickycolumn--md">grid-stickycolumn--md</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-stickycolumn--md() { 
-  @media screen and (min-width: $auro-grid-breakpoint-md) {
+  @media screen and (min-width: var(--auro-grid-breakpoint-md)) {
     position: sticky;
     top: 0;
     max-height: 100vh;
@@ -245,7 +259,6 @@
   top: 0;
   --align-self: stretch;
   align-self: var(--align-self);
-  background-color:red;
  }" data-collapsed="@mixin grid-stickycolumn--xs() { ... }"><code>@mixin grid-stickycolumn--xs() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This mixin will set the element to be sticky on mobile devices.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid_width"><h3 class="item__heading"><a class="item__name" href="#mixin-grid_width">grid_width</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid_width($maxWidth: 1232px) { 
   max-width: $maxWidth;
  }" data-collapsed="@mixin grid_width($maxWidth: 1232px) { ... }"><code>@mixin grid_width($maxWidth: 1232px) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$maxWidth</code></th><td data-label="desc"><p>Specifies the max-width value of the grid.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>1232px</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>$maxWidth: $auro-grid-breakpoint-xl !default;
@@ -253,25 +266,10 @@
   margin-left: auto;
   margin-right: auto;
  }" data-collapsed="@mixin grid_margin() { ... }"><code>@mixin grid_margin() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid_padding"><h3 class="item__heading"><a class="item__name" href="#mixin-grid_padding">grid_padding</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid_padding() { 
-  padding-left: $auro-grid-margin-xs;
-  padding-right: $auro-grid-margin-xs;
-  @include auro_grid-breakpoint--sm {
-    padding-left: $auro-grid-margin-sm;
-    padding-right: $auro-grid-margin-sm;
-  }
-  @include auro_grid-breakpoint--md {
-    padding-left: $auro-grid-margin-md;
-    padding-right: $auro-grid-margin-md;
-  }
-  @include auro_grid-breakpoint--lg {
-    padding-left: $auro-grid-margin-lg;
-    padding-right: $auro-grid-margin-lg;
-  }
-  @include auro_grid-breakpoint--xl {
-    padding-left: $auro-grid-margin-xl;
-    padding-right: $auro-grid-margin-xl;
-  }
- }" data-collapsed="@mixin grid_padding() { ... }"><code>@mixin grid_padding() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid_gutter"><h3 class="item__heading"><a class="item__name" href="#mixin-grid_gutter">grid_gutter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid_gutter($gutter: 16px) { 
+  padding-left: $padding;
+  padding-right: $padding;
+ }" data-collapsed="@mixin grid_padding() { ... }"><code>@mixin grid_padding() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>$padding: $auro-grid-margin-xs !default;
+  @import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid_gutter"><h3 class="item__heading"><a class="item__name" href="#mixin-grid_gutter">grid_gutter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid_gutter($gutter: 16px) { 
   gap: $gutter;
   @include auro_grid-breakpoint--sm {
    gap: $auro-grid-gutter-sm;
@@ -285,7 +283,7 @@
   @include auro_grid-breakpoint--xl {
     gap: $auro-grid-gutter-xl;
   }
- }" data-collapsed="@mixin grid_gutter($gutter: 16px) { ... }"><code>@mixin grid_gutter($gutter: 16px) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>Specifies the gutter/gap(horizontal &amp; vertical spacing) value between each cell of the grid.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>16px</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>$gutter: $auro-grid-gutter-xs !default;
+ }" data-collapsed="@mixin grid_gutter($gutter: 16px) { ... }"><code>@mixin grid_gutter($gutter: 16px) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>Specifies the gutter/gap(horizontal &amp; vertical spacing) value between each cell of the grid.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>16px</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>$gutter: $auro-grid-gutter-xs !default;
 @import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section></section><section class="main__sub-section" id="grid-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="grid-css-#{$scope}.#{$prefix}grid"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}grid">#{$scope}.#{$prefix}grid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}grid {
   display: grid;
   @include grid_width($auro-grid-breakpoint-xl);
@@ -637,7 +635,7 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
 }</code>" data-collapsed="#{$scope}[hidden] { ... }"><code>#{$scope}[hidden] { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Add the correct display in IE 10.</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> option.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>[hidden] {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro [hidden] {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="page layouts"><div class="container">page layouts</div></h1><section class="main__sub-section" id="page layouts-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="page layouts-css-#{$scope}.#{$prefix}pageLayout-2colAnchorNav"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}pageLayout-2colAnchorNav">#{$scope}.#{$prefix}pageLayout-2colAnchorNav</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}pageLayout-2colAnchorNav {
   display: grid;
   @include grid_margin();
-  @include grid_padding();
+  @include grid_padding($auro-grid-margin-xs);
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_gutter($auro-grid-gutter-xl);
   grid-template-areas:
@@ -645,12 +643,23 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
   &quot;anchornav&quot;
   &quot;main&quot;;
 
+  @include auro_grid-breakpoint--sm {
+    @include grid_padding($auro-grid-margin-sm);
+  }
   @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
     grid-template-columns: auto $fixed-anchor-width;
       grid-template-areas:
       &quot;breadcrumbs breadcrumbs&quot;
       &quot;main anchornav&quot;;
   }
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
   .breadcrumbs {
     grid-area: breadcrumbs;
   }
@@ -662,12 +671,12 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
   }
   .anchornav {
     grid-area: anchornav;
-      @include grid-stickycolumn--md
-    }
+    @include grid-stickycolumn--md;
+  }
 }</code>" data-collapsed="#{$scope}.#{$prefix}pageLayout-2colAnchorNav { ... }"><code>#{$scope}.#{$prefix}pageLayout-2colAnchorNav { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>pageLayout-2colAnchorNav class</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> and <code>$prefix</code> options.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.pageLayout-2colAnchorNav {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .pageLayout-2colAnchorNav {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_pageLayout-2colAnchorNav {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Example HTML selector use</p></div><pre class="example__code language-html"><code>&lt;element class=&quot;pageLayout-2colAnchorNav&quot;&gt; ... &lt;/element&gt;</code></pre></div><div class="item__example example"><div class="example__description"><p>import file;</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="page layouts-css-#{$scope}.#{$prefix}pageLayout-2colSideNav"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}pageLayout-2colSideNav">#{$scope}.#{$prefix}pageLayout-2colSideNav</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}pageLayout-2colSideNav {
   display: grid;
   @include grid_margin();
-  @include grid_padding();
+  @include grid_padding(0);
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_gutter($auro-grid-gutter-xl);
   grid-template-areas:
@@ -675,20 +684,43 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
   &quot;sidenav&quot;
   &quot;main&quot;;
 
+
   @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
     grid-template-columns: $fixed-nav-width auto;
       grid-template-areas:
       &quot;breadcrumbs breadcrumbs&quot;
       &quot;sidenav main&quot;;
   }
+
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
+
   .breadcrumbs {
     grid-area: breadcrumbs;
+    @include grid_padding($auro-grid-margin-xs);
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
   }
+
   .sidenav {
     grid-area: sidenav;
+    @include grid_padding(0);
+    @include grid-stickycolumn--xs();
   }
+
   .main {
     grid-area: main;
+    @include grid_padding($auro-grid-margin-xs);
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
     * {
       scroll-margin-top: $auro-grid-margin-md;
     }
@@ -800,7 +832,7 @@ $auro-breakpoint-lg: 1232px;</code></pre></div><div class="item__example example
     color: blue;
   }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-auro_grid-breakpoint--xl"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_grid-breakpoint--xl">auro_grid-breakpoint--xl</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_grid-breakpoint--xl() { 
-  @media screen and (min-width: $auro-grid-breakpoint-xl) {
+  @media screen and (min-width: var(--auro-grid-breakpoint-xl)) {
     @content;
   }
  }" data-collapsed="@mixin auro_grid-breakpoint--xl() { ... }"><code>@mixin auro_grid-breakpoint--xl() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 1232px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set grid-breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
@@ -808,7 +840,7 @@ $auro-breakpoint-lg: 1232px;</code></pre></div><div class="item__example example
       ...
     }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-auro_grid-breakpoint--lg"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_grid-breakpoint--lg">auro_grid-breakpoint--lg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_grid-breakpoint--lg() { 
-  @media screen and (min-width: $auro-grid-breakpoint-lg) {
+  @media screen and (min-width: var(--auro-grid-breakpoint-lg)) {
     @content;
   }
  }" data-collapsed="@mixin auro_grid-breakpoint--lg() { ... }"><code>@mixin auro_grid-breakpoint--lg() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 1024px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set grid-breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
@@ -816,7 +848,7 @@ $auro-breakpoint-lg: 1232px;</code></pre></div><div class="item__example example
       ...
     }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-auro_grid-breakpoint--md"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_grid-breakpoint--md">auro_grid-breakpoint--md</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_grid-breakpoint--md() { 
-  @media screen and (min-width: $auro-grid-breakpoint-md) {
+  @media screen and (min-width: var(--auro-grid-breakpoint-md)) {
     @content;
   }
  }" data-collapsed="@mixin auro_grid-breakpoint--md() { ... }"><code>@mixin auro_grid-breakpoint--md() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 768px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set grid-breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
@@ -824,7 +856,7 @@ $auro-breakpoint-lg: 1232px;</code></pre></div><div class="item__example example
       ...
     }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-auro_grid-breakpoint--sm"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_grid-breakpoint--sm">auro_grid-breakpoint--sm</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_grid-breakpoint--sm() { 
-  @media screen and (min-width: $auro-grid-breakpoint-sm) {
+  @media screen and (min-width: var(--auro-grid-breakpoint-sm)) {
     @content;
   }
  }" data-collapsed="@mixin auro_grid-breakpoint--sm() { ... }"><code>@mixin auro_grid-breakpoint--sm() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 576px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set grid-breakpoint</p></div><pre class="example__code language-scss"><code>.foo {
@@ -832,7 +864,7 @@ $auro-breakpoint-lg: 1232px;</code></pre></div><div class="item__example example
       ...
     }
 }</code></pre></div></section><section class="main__item container item" id="responsive-mixin-auro_grid-breakpoint--xs"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_grid-breakpoint--xs">auro_grid-breakpoint--xs</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_grid-breakpoint--xs() { 
-  @media screen and (min-width: $auro-grid-breakpoint-xs) {
+  @media screen and (min-width: var(--auro-grid-breakpoint-xs)) {
     @content;
   }
  }" data-collapsed="@mixin auro_grid-breakpoint--xs() { ... }"><code>@mixin auro_grid-breakpoint--xs() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Standard breakpoint to support resolutions greater than 320px.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints&quot;;</code></pre></div><div class="item__example example"><div class="example__description"><p>Set grid-breakpoint</p></div><pre class="example__code language-scss"><code>.foo {

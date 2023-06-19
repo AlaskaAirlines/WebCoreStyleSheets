@@ -3,93 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
-
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixess
 @import 'libSupport/manageScope';
 
 $fixed-nav-width: 268px;
 $fixed-anchor-width: 168px;
-
-/// Standard breakpoint to support resolutions greater than 1232px.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
-/// @group grid
-/// @example scss - Set grid-breakpoint
-///   .foo {
-///       @include auro_grid-breakpoint--xl {
-///         ...
-///       }
-///   }
-@mixin auro_grid-breakpoint--xl {
-  @media screen and (min-width: $auro-grid-breakpoint-xl) {
-    @content;
-  }
-}
-
-/// Standard breakpoint to support resolutions greater than 1024px.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
-/// @group grid
-/// @example scss - Set grid-breakpoint
-///   .foo {
-///       @include auro_grid-breakpoint--lg {
-///         ...
-///       }
-///   }
-@mixin auro_grid-breakpoint--lg {
-  @media screen and (min-width: $auro-grid-breakpoint-lg) {
-    @content;
-  }
-}
-
-/// Standard breakpoint to support resolutions greater than 768px.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
-/// @group grid
-/// @example scss - Set grid-breakpoint
-///   .foo {
-///       @include auro_grid-breakpoint--md {
-///         ...
-///       }
-///   }
-@mixin auro_grid-breakpoint--md {
-  @media screen and (min-width: $auro-grid-breakpoint-md) {
-    @content;
-  }
-}
-
-/// Standard breakpoint to support resolutions greater than 576px.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
-/// @group grid
-/// @example scss - Set grid-breakpoint
-///   .foo {
-///       @include auro_grid-breakpoint--sm {
-///         ...
-///       }
-///   }
-@mixin auro_grid-breakpoint--sm {
-  @media screen and (min-width: $auro-grid-breakpoint-sm) {
-    @content;
-  }
-}
-
-/// Standard breakpoint to support resolutions greater than 320px.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
-/// @group grid
-/// @example scss - Set grid-breakpoint
-///   .foo {
-///       @include auro_grid-breakpoint--xs {
-///         ...
-///       }
-///   }
-@mixin auro_grid-breakpoint--xs {
-  @media screen and (min-width: $auro-grid-breakpoint-xs) {
-    @content;
-  }
-}
-
 
 
 /// This mixin will set the element to be sticky on tablet and larger devices.
@@ -152,26 +70,11 @@ $fixed-anchor-width: 168px;
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 /// @example scss - import mixin file with altered output values prior to import
+/// $padding: $auro-grid-margin-xs !default;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
-@mixin grid_padding() {
-  padding-left: $auro-grid-margin-xs;
-  padding-right: $auro-grid-margin-xs;
-  @include auro_grid-breakpoint--sm {
-    padding-left: $auro-grid-margin-sm;
-    padding-right: $auro-grid-margin-sm;
-  }
-  @include auro_grid-breakpoint--md {
-    padding-left: $auro-grid-margin-md;
-    padding-right: $auro-grid-margin-md;
-  }
-  @include auro_grid-breakpoint--lg {
-    padding-left: $auro-grid-margin-lg;
-    padding-right: $auro-grid-margin-lg;
-  }
-  @include auro_grid-breakpoint--xl {
-    padding-left: $auro-grid-margin-xl;
-    padding-right: $auro-grid-margin-xl;
-  }
+@mixin grid_padding($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
 }
 
 /// @group grid
@@ -316,9 +219,23 @@ $fixed-anchor-width: 168px;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 ///
 #{$scope}.#{$prefix}pagecontainer {
-  @include grid_padding();
+  @include grid_padding($auro-grid-margin-xs);
   @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
+
+  @include auro_grid-breakpoint--sm {
+    @include grid_padding($auro-grid-margin-sm);
+  }
+  @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
+  }
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
   &.breadcrumbs {
     margin-block-end: 3.35rem;
   }
@@ -345,7 +262,7 @@ $fixed-anchor-width: 168px;
 #{$scope}.#{$prefix}pageLayout-2colAnchorNav {
   display: grid;
   @include grid_margin();
-  @include grid_padding();
+  @include grid_padding($auro-grid-margin-xs);
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_gutter($auro-grid-gutter-xl);
   grid-template-areas:
@@ -353,12 +270,23 @@ $fixed-anchor-width: 168px;
   "anchornav"
   "main";
 
+  @include auro_grid-breakpoint--sm {
+    @include grid_padding($auro-grid-margin-sm);
+  }
   @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
     grid-template-columns: auto $fixed-anchor-width;
       grid-template-areas:
       "breadcrumbs breadcrumbs"
       "main anchornav";
   }
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
   .breadcrumbs {
     grid-area: breadcrumbs;
   }
@@ -370,8 +298,8 @@ $fixed-anchor-width: 168px;
   }
   .anchornav {
     grid-area: anchornav;
-      @include grid-stickycolumn--md
-    }
+    @include grid-stickycolumn--md;
+  }
 }
 
 /// pageLayout-2colSideNav class
@@ -395,7 +323,7 @@ $fixed-anchor-width: 168px;
 #{$scope}.#{$prefix}pageLayout-2colSideNav {
   display: grid;
   @include grid_margin();
-  @include grid_padding();
+  @include grid_padding(0);
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_gutter($auro-grid-gutter-xl);
   grid-template-areas:
@@ -403,20 +331,43 @@ $fixed-anchor-width: 168px;
   "sidenav"
   "main";
 
+
   @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
     grid-template-columns: $fixed-nav-width auto;
       grid-template-areas:
       "breadcrumbs breadcrumbs"
       "sidenav main";
   }
+
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
+
   .breadcrumbs {
     grid-area: breadcrumbs;
+    @include grid_padding($auro-grid-margin-xs);
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
   }
+
   .sidenav {
     grid-area: sidenav;
+    @include grid_padding(0);
+    @include grid-stickycolumn--xs();
   }
+
   .main {
     grid-area: main;
+    @include grid_padding($auro-grid-margin-xs);
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
     * {
       scroll-margin-top: $auro-grid-margin-md;
     }

@@ -123,7 +123,6 @@ $fixed-anchor-width: 168px;
   top: 0;
   --align-self: stretch;
   align-self: var(--align-self);
-  background-color:red;
 }
 
 
@@ -140,25 +139,21 @@ $fixed-anchor-width: 168px;
 }
 
 /// @group grid
-/// @param {string} $margin [auto] - Specifies the margin value of the grid.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 /// @example scss - import mixin file with altered output values prior to import
-///   $margin: auto !default;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
-@mixin grid_margin($margin) {
+@mixin grid_margin() {
   margin-left: auto;
   margin-right: auto;
 }
 
 /// @group grid
-/// @param {string} $padding [auto] - Specifies the padding value of the grid.
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 /// @example scss - import mixin file with altered output values prior to import
-///   $padding: $auro-grid-margin-xs !default;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
-@mixin grid_padding($padding) {
+@mixin grid_padding() {
   padding-left: $auro-grid-margin-xs;
   padding-right: $auro-grid-margin-xs;
   @include auro_grid-breakpoint--sm {
@@ -182,7 +177,7 @@ $fixed-anchor-width: 168px;
 /// @group grid
 /// @param {string} $gutter [16px] - Specifies the gutter/gap(horizontal & vertical spacing) value between each cell of the grid.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
 /// @example scss - import mixin file with altered output values prior to import
 ///   $gutter: $auro-grid-gutter-xs !default;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
@@ -202,18 +197,6 @@ $fixed-anchor-width: 168px;
   }
 }
 
-/// @group grid
-/// @param {string} $first - Specifies the percentage/ratio value for the first column of the 2 column grid.
-/// @param {string} $second - Specifies the percentage/ratio value for the first column of the 2 column grid.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
-/// @example scss - import mixin file with altered output values prior to import
-///   $first: 3fr !default;
-///   $second: 1fr !default;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
-@mixin grid_ratio($first, $second) {
-  grid-template-columns: $first $second;
-}
 
 /// Grid class
 /// This class selector is to be deprecated during the next major release.
@@ -236,7 +219,7 @@ $fixed-anchor-width: 168px;
 #{$scope}.#{$prefix}grid {
   display: grid;
   @include grid_width($auro-grid-breakpoint-xl);
-  @include grid_margin($auro-grid-margin-xs);
+  @include grid_margin();
   @include grid_gutter($auro-grid-gutter-xs);
 
   &.two-column {
@@ -310,7 +293,7 @@ $fixed-anchor-width: 168px;
 ///
 #{$scope}.#{$prefix}container {
   display: grid;
-  @include grid_margin($auro-grid-margin-xl);
+  @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
 }
 
@@ -333,8 +316,8 @@ $fixed-anchor-width: 168px;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
 ///
 #{$scope}.#{$prefix}pagecontainer {
-  @include grid_padding($auro-grid-margin-xl);
-  @include grid_margin($auro-grid-margin-xl);
+  @include grid_padding();
+  @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
   &.breadcrumbs {
     margin-block-end: 3.35rem;
@@ -361,8 +344,8 @@ $fixed-anchor-width: 168px;
 ///
 #{$scope}.#{$prefix}pageLayout-2colAnchorNav {
   display: grid;
-  @include grid_margin($auro-grid-margin-xl);
-  @include grid_padding($auro-grid-margin-xl);
+  @include grid_margin();
+  @include grid_padding();
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_gutter($auro-grid-gutter-xl);
   grid-template-areas:
@@ -411,8 +394,8 @@ $fixed-anchor-width: 168px;
 ///
 #{$scope}.#{$prefix}pageLayout-2colSideNav {
   display: grid;
-  @include grid_margin($auro-grid-margin-xl);
-  @include grid_padding($auro-grid-margin-xl);
+  @include grid_margin();
+  @include grid_padding();
   @include grid_width($auro-grid-breakpoint-xl);
   @include grid_gutter($auro-grid-gutter-xl);
   grid-template-areas:

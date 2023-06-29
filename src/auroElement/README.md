@@ -19,13 +19,13 @@ The auroElement.js is already included with the base setup of a web component wi
 Find the following
 
 ```js
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css } from "lit";
 ```
 
 Update to the following
 
 ```js
-import { html, css } from "lit-element";
+import { html, css } from "lit";
 import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
 ```
 

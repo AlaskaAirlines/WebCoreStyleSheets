@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.6.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.6.0...v4.6.1) (2023-07-11)
+
+
+### Performance Improvements
+
+* **auroElement:** update to reference Lit [#161](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/161) ([d2bbc7c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d2bbc7c8e3ea1ce86518b6c8152a8255608b72a3))
+
 # [4.6.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.5.0...v4.6.0) (2023-06-12)
 
 

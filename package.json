@@ -1,7 +1,7 @@
 {
   "name": "@aurodesignsystem/webcorestylesheets",
   "description": "Auro core foundation Sass UI Kit",
-  "version": "4.6.1",
+  "version": "4.7.0",
   "author": "Product design and research",
   "main": "src/",
   "license": "Apache-2.0",

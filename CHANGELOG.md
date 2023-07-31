@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.7.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.6.1...v4.7.0) (2023-07-31)
+
+
+### Features
+
+* **2col:** add support for 2 column layout [#130](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/130) ([420365d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/420365dc9a08ac57e1fdf7823fda2dd5ce1e8e5f))
+
 ## [4.6.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.6.0...v4.6.1) (2023-07-11)
 
 

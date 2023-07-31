@@ -156,3 +156,113 @@
     }
   }
 }
+
+@include describe('auro_grid-breakpoint--xl()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .content {
+          @include auro_grid-breakpoint--xl {
+            content: "Grid media query for xl";
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 1232px) {
+          .content {
+            content: "Grid media query for xl";
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_grid-breakpoint--lg()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .content {
+          @include auro_grid-breakpoint--lg {
+            content: "Grid media query for lg";
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 1024px) {
+          .content {
+            content: "Grid media query for lg";
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_grid-breakpoint--md()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .content {
+          @include auro_grid-breakpoint--md {
+            content: "Grid media query for md";
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 768px) {
+          .content {
+            content: "Grid media query for md";
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_grid-breakpoint--sm()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .content {
+          @include auro_grid-breakpoint--sm {
+            content: "Grid media query for sm";
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 576px) {
+          .content {
+            content: "Grid media query for sm";
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('auro_grid-breakpoint--xs()') {
+  @include it('should return content within pre-defined media query') {
+    @include assert {
+      @include output {
+        .content {
+          @include auro_grid-breakpoint--xs {
+            content: "Grid media query for sm";
+          }
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 320px) {
+          .content {
+            content: "Grid media query for sm";
+          }
+        }
+      }
+    }
+  }
+}

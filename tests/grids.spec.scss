@@ -1,8 +1,44 @@
 @import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
 @import "../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
 @import 'true';
+@import "./src/breakpoints";
 @import "./src/grids";
 
+@include describe('grid-stickycolumn--md()') {
+  @include it('should return sticky styling for tablet and larger devices') {
+    @include assert {
+      @include output {
+        @include grid-stickycolumn--md();
+      }
+
+      @include expect {
+        @media screen and (min-width: 768px) {
+            position: sticky;
+            top: 0;
+            max-height: 100vh;
+            padding-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include describe('grid-stickycolumn--xs()') {
+  @include it('should return sticky styling for mobile and smaller devices') {
+    @include assert {
+      @include output {
+        @include grid-stickycolumn--xs();
+      }
+
+      @include expect {
+        position: sticky;
+        top: 0;
+        --align-self: stretch;
+        align-self: var(--align-self);
+      }
+    }
+  }
+}
 
 @include describe('grid_width()') {
   @include it('should return max-width given $auro-grid-breakpoint-xl') {
@@ -19,14 +55,30 @@
 }
 
 @include describe('grid_margin()') {
-  @include it('should return margin given $auro-grid-margin-xs') {
+  @include it('should return margin-left and margin-right auto') {
     @include assert {
       @include output {
-        @include grid_margin($auro-grid-margin-xs);
+        @include grid_margin();
       }
 
       @include expect {
-        margin: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@include describe('grid_padding()') {
+  @include it('should return correct padding for each device size') {
+    @include assert {
+      @include output {
+        @include grid_padding(0);
+      }
+
+      @include expect {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
@@ -41,19 +93,31 @@
 
       @include expect {
         gap: 0.5rem;
+        @media screen and (min-width: 576px) {
+         gap: 1rem;
+        }
+        @media screen and (min-width: 768px) {
+          gap: 1.5rem;
+        }
+        @media screen and (min-width: 1024px) {
+          gap: 1.5rem;
+        }
+        @media screen and (min-width: 1232px) {
+          gap: 2rem;
+        }
       }
     }
   }
 }
 
-@include describe('grid()') {
-  @include it('should return style for xs devices ') {
+@include describe('.grid') {
+  @include it('should return style for the `.grid` class') {
     @include assert {
       @include output {
         .grid{
           display: grid;
           @include grid_width($auro-grid-breakpoint-xl);
-          @include grid_margin($auro-grid-margin-xs);
+          @include grid_margin();
           @include grid_gutter($auro-grid-gutter-xs);
         }
         
@@ -63,8 +127,189 @@
         .grid {
           display: grid;
           max-width: 1232px;
-          margin: 1rem;
+          margin-left: auto;
+          margin-right: auto;
           gap: 0.5rem;
+        }
+        @media screen and (min-width: 576px) {
+          .grid {
+            gap: 1rem;
+          }
+        }
+        @media screen and (min-width: 768px) {
+          .grid {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1024px) {
+          .grid {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1232px) {
+          .grid {
+            gap: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include describe('.container') {
+  @include it('should return style for the `.container` class') {
+    @include assert {
+      @include output {
+        .container{
+          display: grid;
+          @include grid_margin();
+          @include grid_width($auro-grid-breakpoint-xl);
+        }
+      }
+
+      @include expect {
+        .container {
+          display: grid;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 1232px;
+        }
+      }
+    }
+  }
+}
+
+@include describe('.pagecontainer') {
+  @include it('should return style for the `.pagecontainer` class') {
+    @include assert {
+      @include output {
+        .pagecontainer{
+          @include grid_padding($auro-grid-margin-xs);
+          @include grid_margin();
+          @include grid_width($auro-grid-breakpoint-xl);
+          &.breadcrumbs {
+            margin-block-end: 3.35rem;
+          }
+        }
+      }
+
+      @include expect {
+        .pagecontainer {
+          padding-left: 1rem;
+          padding-right: 1rem;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 1232px;
+        }
+        .pagecontainer.breadcrumbs {
+          margin-block-end: 3.35rem;
+        }
+      }
+    }
+  }
+}
+
+@include describe('.pageLayout-2colAnchorNav') {
+  @include it('should return style for the `.pageLayout-2colAnchorNav` class') {
+    @include assert {
+      @include output {
+        .pageLayout-2colAnchorNav{
+          display: grid;
+          @include grid_margin();
+          @include grid_padding(0);
+          @include grid_width($auro-grid-breakpoint-xl);
+          @include grid_gutter($auro-grid-gutter-xl);
+          grid-template-areas:
+          "breadcrumbs"
+          "anchornav"
+          "main";
+        }
+      }
+
+      @include expect {
+        .pageLayout-2colAnchorNav {
+          display: grid;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 0;
+          padding-right: 0;
+          max-width: 1232px;
+          gap: 2rem;
+          grid-template-areas: "breadcrumbs" "anchornav" "main";
+        }
+        @media screen and (min-width: 576px) {
+          .pageLayout-2colAnchorNav {
+            gap: 1rem;
+          }
+        }
+        @media screen and (min-width: 768px) {
+          .pageLayout-2colAnchorNav {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1024px) {
+          .pageLayout-2colAnchorNav {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1232px) {
+          .pageLayout-2colAnchorNav {
+            gap: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('.pageLayout-2colSideNav') {
+  @include it('should return style for the `.pageLayout-2colSideNav` class') {
+    @include assert {
+      @include output {
+        .pageLayout-2colSideNav{
+          display: grid;
+          @include grid_margin();
+          @include grid_padding(0);
+          @include grid_width($auro-grid-breakpoint-xl);
+          @include grid_gutter($auro-grid-gutter-xl);
+          grid-template-areas:
+          "breadcrumbs"
+          "sidenav"
+          "main";
+        }
+      }
+
+      @include expect {
+        .pageLayout-2colSideNav {
+          display: grid;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 0;
+          padding-right: 0;
+          max-width: 1232px;
+          gap: 2rem;
+          grid-template-areas: "breadcrumbs" "sidenav" "main";
+        }
+        @media screen and (min-width: 576px) {
+          .pageLayout-2colSideNav {
+            gap: 1rem;
+          }
+        }
+        @media screen and (min-width: 768px) {
+          .pageLayout-2colSideNav {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1024px) {
+          .pageLayout-2colSideNav {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1232px) {
+          .pageLayout-2colSideNav {
+            gap: 2rem;
+          }
         }
       }
     }

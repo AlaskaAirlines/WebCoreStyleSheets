@@ -207,3 +207,83 @@
     @content;
   }
 }
+
+/// Standard breakpoint to support resolutions greater than 1232px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--xl {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--xl {
+  @media screen and (min-width: $auro-grid-breakpoint-xl) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 1024px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--lg {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--lg {
+  @media screen and (min-width: $auro-grid-breakpoint-lg) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 768px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--md {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--md {
+  @media screen and (min-width: $auro-grid-breakpoint-md) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 576px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--sm {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--sm {
+  @media screen and (min-width: $auro-grid-breakpoint-sm) {
+    @content;
+  }
+}
+
+/// Standard breakpoint to support resolutions greater than 320px.
+/// @example scss - import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+/// @group responsive
+/// @example scss - Set grid-breakpoint
+///   .foo {
+///       @include auro_grid-breakpoint--xs {
+///         ...
+///       }
+///   }
+@mixin auro_grid-breakpoint--xs {
+  @media screen and (min-width: $auro-grid-breakpoint-xs) {
+    @content;
+  }
+}

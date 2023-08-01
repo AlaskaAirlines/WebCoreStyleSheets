@@ -196,7 +196,7 @@ $fixed-anchor-width: 168px;
 ///
 #{$scope}.#{$prefix}container {
   display: grid;
-  container-type: inline-size;
+  //container-type: inline-size;
   @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
 }
@@ -270,6 +270,7 @@ $fixed-anchor-width: 168px;
   "breadcrumbs"
   "anchornav"
   "main";
+  
 
   @include auro_grid-breakpoint--sm {
     @include grid_padding($auro-grid-margin-sm);
@@ -293,7 +294,6 @@ $fixed-anchor-width: 168px;
   }
   .main {
     grid-area: main;
-    container-type: inline-size;
     * {
       scroll-margin-top: $auro-grid-margin-md;
     }
@@ -301,7 +301,6 @@ $fixed-anchor-width: 168px;
   .anchornav {
     grid-area: anchornav;
     @include grid-stickycolumn--md;
-    container-type: inline-size;
   }
 }
 
@@ -334,6 +333,7 @@ $fixed-anchor-width: 168px;
   "sidenav"
   "main";
 
+  
 
   @include auro_grid-breakpoint--md {
     @include grid_padding($auro-grid-margin-md);
@@ -361,17 +361,21 @@ $fixed-anchor-width: 168px;
 
   .sidenav {
     grid-area: sidenav;
-    @include grid_padding(0);
-    @include grid-stickycolumn--xs();
-    container-type: inline-size;
+    background-color: #fff;
+    @include grid_padding($auro-grid-margin-xs);
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+      background-color: transparent;
+    }
   }
+
 
   .main {
     grid-area: main;
     @include grid_padding($auro-grid-margin-xs);
     @include auro_grid-breakpoint--md {
     @include grid_padding(0);
-    container-type: inline-size;
     }
     * {
       scroll-margin-top: $auro-grid-margin-md;
@@ -436,9 +440,18 @@ $fixed-anchor-width: 168px;
 
   .sidenav {
     grid-area: sidenav;
-    @include grid_padding(0);
+    z-index: 1;
+    background-color: #fff;
+    @include grid_padding($auro-grid-margin-xs);
     @include grid-stickycolumn--xs();
-    container-type: inline-size;
+
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+      background-color: transparent;
+    }
+
+
   }
 
   .main {
@@ -446,7 +459,6 @@ $fixed-anchor-width: 168px;
     @include grid_padding($auro-grid-margin-xs);
     @include auro_grid-breakpoint--md {
     @include grid_padding(0);
-    container-type: inline-size;
     }
     * {
       scroll-margin-top: $auro-grid-margin-md;
@@ -455,6 +467,10 @@ $fixed-anchor-width: 168px;
   .anchornav {
     grid-area: anchornav;
     @include grid-stickycolumn--md;
-    container-type: inline-size;
+    @include grid_padding($auro-grid-margin-xs);
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
   } 
 }

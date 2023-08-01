@@ -47,6 +47,7 @@
   @extend .util_displayHiddenVisually;
 }</code>" data-collapsed=":host([hiddenVisually]:not(:focus):not(:active)) { ... }"><code>:host([hiddenVisually]:not(:focus):not(:active)) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Component a11y support for <code>:host</code> selector with <code>hiddenVisually</code> attribute<br>For use with auroElement.js base class and web component development</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector</p></div><pre class="example__code language-scss"><code>:host([hiddenVisually]:not(:focus):not(:active)) {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="container"><div class="container">container</div></h1><section class="main__sub-section" id="container-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="container-css-#{$scope}.#{$prefix}container"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}container">#{$scope}.#{$prefix}container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}container {
   display: grid;
+  //container-type: inline-size;
   @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
 }</code>" data-collapsed="#{$scope}.#{$prefix}container { ... }"><code>#{$scope}.#{$prefix}container { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container class</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> and <code>$prefix</code> options.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.container {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .container {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_container {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Example HTML selector use</p></div><pre class="example__code language-html"><code>&lt;element class=&quot;container&quot;&gt; ... &lt;/element&gt;</code></pre></div><div class="item__example example"><div class="example__description"><p>import file;</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section><section class="main__item container item" id="container-css-#{$scope}.#{$prefix}pagecontainer"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}pagecontainer">#{$scope}.#{$prefix}pagecontainer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}pagecontainer {
@@ -642,6 +643,7 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
   &quot;breadcrumbs&quot;
   &quot;anchornav&quot;
   &quot;main&quot;;
+  
 
   @include auro_grid-breakpoint--sm {
     @include grid_padding($auro-grid-margin-sm);
@@ -684,6 +686,7 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
   &quot;sidenav&quot;
   &quot;main&quot;;
 
+  
 
   @include auro_grid-breakpoint--md {
     @include grid_padding($auro-grid-margin-md);
@@ -711,15 +714,21 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
 
   .sidenav {
     grid-area: sidenav;
-    @include grid_padding(0);
-    @include grid-stickycolumn--xs();
+    background-color: #fff;
+    @include grid_padding($auro-grid-margin-xs);
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+      background-color: transparent;
+    }
   }
+
 
   .main {
     grid-area: main;
     @include grid_padding($auro-grid-margin-xs);
     @include auro_grid-breakpoint--md {
-      @include grid_padding(0);
+    @include grid_padding(0);
     }
     * {
       scroll-margin-top: $auro-grid-margin-md;
@@ -764,15 +773,25 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
 
   .sidenav {
     grid-area: sidenav;
-    @include grid_padding(0);
+    z-index: 1;
+    background-color: #fff;
+    @include grid_padding($auro-grid-margin-xs);
     @include grid-stickycolumn--xs();
+
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+      background-color: transparent;
+    }
+
+
   }
 
   .main {
     grid-area: main;
     @include grid_padding($auro-grid-margin-xs);
     @include auro_grid-breakpoint--md {
-      @include grid_padding(0);
+    @include grid_padding(0);
     }
     * {
       scroll-margin-top: $auro-grid-margin-md;
@@ -780,7 +799,12 @@ select {}</code></pre></div><div class="item__example example"><div class="examp
   }
   .anchornav {
     grid-area: anchornav;
-    @include grid-stickycolumn--md
+    @include grid-stickycolumn--md;
+    @include grid_padding($auro-grid-margin-xs);
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
   }
 }</code>" data-collapsed="#{$scope}.#{$prefix}pageLayout-3col { ... }"><code>#{$scope}.#{$prefix}pageLayout-3col { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>pageLayout-3col class</p><p><a href="/#scope-prefix-variable">Manage</a> <code>$scope</code> and <code>$prefix</code> options.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Default selector(s)</p></div><pre class="example__code language-scss"><code>.pageLayout-3col {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .pageLayout-3col {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Selector(s) when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_pageLayout-3col {}</code></pre></div><div class="item__example example"><div class="example__description"><p>Example HTML selector use</p></div><pre class="example__code language-html"><code>&lt;element class=&quot;pageLayout-3col&quot;&gt; ... &lt;/element&gt;</code></pre></div><div class="item__example example"><div class="example__description"><p>import file;</p></div><pre class="example__code language-scss"><code>@import &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids&quot;;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="responsive"><div class="container">responsive</div></h1><section class="main__sub-section" id="responsive-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="responsive-mixin-auro_breakpoint--lg"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_breakpoint--lg">auro_breakpoint--lg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_breakpoint--lg() { 
   @media screen and (min-width: $auro-breakpoint-lg) {

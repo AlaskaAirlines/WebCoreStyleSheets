@@ -7,6 +7,10 @@
   <title>WCSS Playground</title>
   <link rel="stylesheet" href="/results/css/testBuild.css">
   <link rel="stylesheet" href="/node_modules/@alaskaairux/design-tokens/dist/tokens/CSSCustomProperties.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-sidenav@latest/dist/auro-sidenav__bundled.js" type="module"></script>
 </head>
 <body>
   <header style="padding-top: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd; margin-bottom: 2rem;">
@@ -25,17 +29,33 @@
       </auro-nav>
     </div>
     <aside class="sidenav">
-      <h3>Sidenav Placeholder</h3>
-      <auro-select>
-        <auro-menu>
-          <auro-menuoption value="stops">Stops</auro-menuoption>
-          <auro-menuoption value="price">Price</auro-menuoption>
-          <auro-menuoption value="duration">Duration</auro-menuoption>
-          <auro-menuoption value="departure">Departure</auro-menuoption>
-          <auro-menuoption value="arrival">Arrival</auro-menuoption>
-          <auro-menuoption value="prefer alaska">Prefer Alaska</auro-menuoption>
-        </auro-menu>
-      </auro-select>
+        <auro-sidenav>
+          <span slot="heading">Side Nav Heading</span>
+          <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/history-by-decade" target="_blank">External Link</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+          <auro-sidenavsection>
+            <span slot="trigger">Section with with a child</span>
+            <auro-sidenavitem class="levelTwoLink" href="#">Level 2 First</auro-sidenavitem>
+          </auro-sidenavsection>
+          <auro-sidenavitem href="/content/about-us/history/star-air-service">Star Air Service</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/star-air-service">This is a really really really long navigation item</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/mac-mcgee">Mac McGee</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/shell-simmons">Shell Simmons</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/bob-ellis">Bob Ellis</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/mudhole-smith">Mudhole Smith</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/star-air-service">This is another really really really long navigation item that will wrap into three rows</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/magic-carpet">Operation Magic Carpet</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/carpet-pilots">Magic Carpet pilots</auro-sidenavitem>
+          <auro-sidenavsection>
+            <span slot="trigger">Section with two children</span>
+            <auro-sidenavitem class="levelTwoLink" href="#">Level 2 First</auro-sidenavitem>
+            <auro-sidenavitem class="levelTwoLink" href="#">Level 2 Second</auro-sidenavitem>
+          </auro-sidenavsection>
+          <auro-sidenavitem href="/content/about-us/history/wooten-magic-carpet">James Wooten</auro-sidenavitem>
+          <auro-sidenavitem href="/content/about-us/history/horizon-air-history">Horizon Air history</auro-sidenavitem>
+        </auro-sidenav>
     </aside>
     <main class="main">
       <h1 id="sectionOne">Main Content</h1>
@@ -135,7 +155,7 @@
     </main>
     <aside class="anchornav">
       <auro-nav anchorNavContent=".main">
-        <span slot="label">Anchor Navigation</span>
+        <span slot="label">On this page</span>
         <span slot="mobileToggleCollapsed">View More</span>
         <span slot="mobileToggleExpanded">View Less</span>
         <auro-anchorlink href="#sectionOne">Section 1</auro-anchorlink>

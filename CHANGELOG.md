@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.8.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.7.0...v4.8.0) (2023-08-04)
+
+
+### Features
+
+* **3col:** add support for new layout [#149](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/149) ([731f708](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/731f708c4ca0ca6827f233ca3f3d0f01e34f747d))
+
 # [4.7.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.6.1...v4.7.0) (2023-07-31)
 
 

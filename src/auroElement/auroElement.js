@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement } from "lit-element";
+import { LitElement } from "lit";
 
 /**
  * @attr {Boolean} hidden - If present, the component will be hidden both visually and from screen readers

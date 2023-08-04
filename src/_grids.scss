@@ -196,7 +196,6 @@ $fixed-anchor-width: 168px;
 ///
 #{$scope}.#{$prefix}container {
   display: grid;
-  //container-type: inline-size;
   @include grid_margin();
   @include grid_width($auro-grid-breakpoint-xl);
 }
@@ -270,7 +269,6 @@ $fixed-anchor-width: 168px;
   "breadcrumbs"
   "anchornav"
   "main";
-  
 
   @include auro_grid-breakpoint--sm {
     @include grid_padding($auro-grid-margin-sm);
@@ -332,8 +330,6 @@ $fixed-anchor-width: 168px;
   "breadcrumbs"
   "sidenav"
   "main";
-
-  
 
   @include auro_grid-breakpoint--md {
     @include grid_padding($auro-grid-margin-md);
@@ -450,8 +446,6 @@ $fixed-anchor-width: 168px;
       @include grid_padding(0);
       background-color: transparent;
     }
-
-
   }
 
   .main {
@@ -464,6 +458,7 @@ $fixed-anchor-width: 168px;
       scroll-margin-top: $auro-grid-margin-md;
     }
   }
+  
   .anchornav {
     grid-area: anchornav;
     @include grid-stickycolumn--md;

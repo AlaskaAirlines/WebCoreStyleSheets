@@ -358,18 +358,114 @@ $fixed-anchor-width: 168px;
 
   .sidenav {
     grid-area: sidenav;
-    @include grid_padding(0);
-    @include grid-stickycolumn--xs();
+    background-color: $auro-color-base-white;
+    @include grid_padding($auro-grid-margin-xs);
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+      background-color: transparent;
+    }
   }
 
   .main {
     grid-area: main;
     @include grid_padding($auro-grid-margin-xs);
     @include auro_grid-breakpoint--md {
-      @include grid_padding(0);
+    @include grid_padding(0);
     }
     * {
       scroll-margin-top: $auro-grid-margin-md;
     }
   }
+}
+
+/// pageLayout-3col class
+///
+/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// @group page layouts
+/// @example scss - Default selector(s)
+///   .pageLayout-3col {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .pageLayout-3col {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_pageLayout-3col {}
+///
+/// @example html - Example HTML selector use
+///   <element class="pageLayout-3col"> ... </element>
+/// @example scss - import file;
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///
+#{$scope}.#{$prefix}pageLayout-3col {
+  display: grid;
+  @include grid_margin();
+  @include grid_padding(0);
+  @include grid_width($auro-grid-breakpoint-xl);
+  @include grid_gutter($auro-grid-gutter-xl);
+  grid-template-areas:
+  "breadcrumbs"
+  "sidenav" 
+  "anchornav"
+  "main";
+
+
+  @include auro_grid-breakpoint--md {
+    @include grid_padding($auro-grid-margin-md);
+    grid-template-columns: $fixed-nav-width auto $fixed-anchor-width;
+      grid-template-areas:
+      "breadcrumbs breadcrumbs breadcrumbs"
+      "sidenav main anchornav";
+  }
+
+  @include auro_grid-breakpoint--lg {
+    @include grid_padding($auro-grid-margin-lg);
+  }
+  @include auro_grid-breakpoint--xl {
+    @include grid_padding($auro-grid-margin-xl);
+  }
+
+
+  .breadcrumbs {
+    grid-area: breadcrumbs;
+    @include grid_padding($auro-grid-margin-xs);
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
+  }
+
+  .sidenav {
+    grid-area: sidenav;
+    z-index: 1;
+    background-color: $auro-color-base-white;
+    @include grid_padding($auro-grid-margin-xs);
+    @include grid-stickycolumn--xs();
+
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+      background-color: transparent;
+    }
+  }
+
+  .main {
+    grid-area: main;
+    @include grid_padding($auro-grid-margin-xs);
+    @include auro_grid-breakpoint--md {
+    @include grid_padding(0);
+    }
+    * {
+      scroll-margin-top: $auro-grid-margin-md;
+    }
+  }
+
+  .anchornav {
+    grid-area: anchornav;
+    @include grid-stickycolumn--md;
+    @include grid_padding($auro-grid-margin-xs);
+
+    @include auro_grid-breakpoint--md {
+      @include grid_padding(0);
+    }
+  } 
 }

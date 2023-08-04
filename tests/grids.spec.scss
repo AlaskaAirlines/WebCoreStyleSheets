@@ -315,3 +315,57 @@
     }
   }
 }
+
+@include describe('.pageLayout-3col') {
+  @include it('should return style for the `.pageLayout-3col` class') {
+    @include assert {
+      @include output {
+        .pageLayout-3col{
+          display: grid;
+          @include grid_margin();
+          @include grid_padding(0);
+          @include grid_width($auro-grid-breakpoint-xl);
+          @include grid_gutter($auro-grid-gutter-xl);
+          grid-template-areas:
+          "breadcrumbs"
+          "sidenav"
+          "anchornav"
+          "main";
+        }
+      }
+
+      @include expect {
+        .pageLayout-3col {
+          display: grid;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 0;
+          padding-right: 0;
+          max-width: 1232px;
+          gap: 2rem;
+          grid-template-areas: "breadcrumbs" "sidenav" "anchornav" "main";
+        }
+        @media screen and (min-width: 576px) {
+          .pageLayout-3col {
+            gap: 1rem;
+          }
+        }
+        @media screen and (min-width: 768px) {
+          .pageLayout-3col {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1024px) {
+          .pageLayout-3col {
+            gap: 1.5rem;
+          }
+        }
+        @media screen and (min-width: 1232px) {
+          .pageLayout-3col {
+            gap: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

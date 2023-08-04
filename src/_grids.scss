@@ -357,7 +357,7 @@ $fixed-anchor-width: 168px;
 
   .sidenav {
     grid-area: sidenav;
-    background-color: #fff;
+    background-color: $auro-color-base-white;
     @include grid_padding($auro-grid-margin-xs);
 
     @include auro_grid-breakpoint--md {
@@ -437,7 +437,7 @@ $fixed-anchor-width: 168px;
   .sidenav {
     grid-area: sidenav;
     z-index: 1;
-    background-color: #fff;
+    background-color: $auro-color-base-white;
     @include grid_padding($auro-grid-margin-xs);
     @include grid-stickycolumn--xs();
 

@@ -17,7 +17,7 @@
     "chalk": "^4.1.2"
   },
   "devDependencies": {
-    "@aurodesignsystem/design-tokens": "^4.1.0",
+    "@aurodesignsystem/design-tokens": "^4.1.1",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@semantic-release/changelog": "^6.0.3",

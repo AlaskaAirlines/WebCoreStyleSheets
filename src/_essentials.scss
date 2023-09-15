@@ -260,8 +260,8 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///
 
 #{$scope}.#{$prefix}fineprint {
-  font-family: var(--ds-font-family-default);
-  font-size: var(--ds-text-body-size-xs);
-  line-height: var(--ds-text-body-height-xs);
-  color: var(--ds-color-text-secondary-default);
+  font-family: var(--ds-font-family-default, $ds-font-family-default);
+  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
+  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
 }

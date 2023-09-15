@@ -13,8 +13,8 @@
 
 // Auro rule
 @font-face {
-  font-family: $auro-asset-font-circular-family-name;
-  font-weight: $auro-text-heading-display-weight;
+  font-family: $ds-asset-font-circular-family-name;
+  font-weight: $ds-text-heading-display-weight;
   font-style: normal;
 
   font-display: fallback;
@@ -27,8 +27,8 @@
 /// @example scss - import src file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
 @font-face {
-  font-family: $auro-asset-font-circular-family-name;
-  font-weight: $auro-text-heading-medium-weight;
+  font-family: $ds-asset-font-circular-family-name;
+  font-weight: $ds-text-heading-medium-weight;
   font-style: normal;
 
   font-display: fallback;
@@ -40,8 +40,8 @@
 /// @example scss - import src file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
 @font-face {
-  font-family: $auro-asset-font-circular-family-name;
-  font-weight: $auro-text-body-default-weight;
+  font-family: $ds-asset-font-circular-family-name;
+  font-weight: $ds-text-body-default-weight;
   font-style: normal;
 
   font-display: fallback;

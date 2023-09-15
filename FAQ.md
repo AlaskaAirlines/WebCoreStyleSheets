@@ -7,7 +7,7 @@ The following are frequently asked questions.
 When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply import the new Auro Sass variables generated from the tokens.
 
 ```scss
-@import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 ```
 
 ## I updated my version, now some utility selectors are no longer there?
@@ -24,4 +24,4 @@ The easy fix is to import the new layout properties generator file that will fil
 @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
 ```
 
-For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).
+For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).

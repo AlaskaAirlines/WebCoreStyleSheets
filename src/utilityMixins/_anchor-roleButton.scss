@@ -28,15 +28,15 @@
   $hover-color: null;
 
   @if $style == css {
-    $color: var(--auro-color-text-link-on-light);
-    $hover-color: var(--auro-color-ui-hover-on-light);
-    $line-height: var(--auro-unitless-scale-300);
-    $padding: 0 var(--auro-size-200);
+    $color: var(--ds-color-text-link-default);
+    $hover-color: var(--ds-color-ui-hover-default);
+    $line-height: var(--ds-unitless-scale-300);
+    $padding: 0 var(--ds-size-200);
   } @else if $style == sass or $style == scss {
-    $color: $auro-color-text-link-on-light;
-    $hover-color: $auro-color-ui-hover-on-light;
-    $line-height: $auro-unitless-scale-300;
-    $padding: 0 $auro-size-200;
+    $color: $ds-color-text-link-default;
+    $hover-color: $ds-color-ui-hover-default;
+    $line-height: $ds-unitless-scale-300;
+    $padding: 0 $ds-size-200;
   } @else {
     @error 'Invalid $style option. Please use `css` or `sass`';
   }

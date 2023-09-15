@@ -30,7 +30,7 @@
 }
 
 
-/// Utility class to display unordered lists with unindented bullets
+/// Utility class to display unordered lists with non-indented bullets
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
 ///
@@ -53,7 +53,7 @@
   li::before {
     content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: var(--auro-size-300);
+    width: var(--ds-size-300);
   }
 }
 
@@ -78,11 +78,11 @@
 #{$scope}.#{$prefix}util_listIndented {
   padding-left: 0;
   list-style: none;
-  margin-left: calc(var(--auro-size-300) + var(--auro-size-50));
+  margin-left: calc(var(--ds-size-300) + var(--ds-size-50));
   li::before {
     content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: var(--auro-size-300);
+    width: var(--ds-size-300);
   }
 }
 
@@ -111,7 +111,7 @@
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: var(--auro-size-300);
+    width: var(--ds-size-300);
     display: inline-block;
   }
 }
@@ -135,13 +135,13 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listIndentedOrdered {
-  padding-left: calc(var(--auro-size-300) + var(--auro-size-50));
+  padding-left: calc(var(--ds-size-300) + var(--ds-size-50));
   list-style: none;
   counter-reset: li-counter;
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: var(--auro-size-300);
+    width: var(--ds-size-300);
     display: inline-block;
   }
 }
@@ -165,12 +165,12 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listAuroIcon {
-  padding-left: calc(var(--auro-size-300) + var(--auro-size-50));
+  padding-left: calc(var(--ds-size-300) + var(--ds-size-50));
   list-style: none;
   li {
-    text-indent: calc(var(--auro-size-200) * -1);
+    text-indent: calc(var(--ds-size-200) * -1);
   }
-  auro-icon {
-    width: var(--auro-size-200);
+  ds-icon {
+    width: var(--ds-size-200);
   }
 }

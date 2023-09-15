@@ -44,26 +44,26 @@ While WCSS is an à la carte solution, there are things that should be considere
 
 ```scss
 // baseline design tokens as Sass variables
-@import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
 // globally add the mixins so that any future reference will be addressed
-@import '~@alaskaairux/design-tokens/dist/tokens/breakpoints';
+@import '~@aurodesignsystem/design-tokens/dist/tokens/breakpoints';
 
 // it's typically best practice to load the @font-face rules prior to any reference of the custom web fonts
-@import '~@alaskaairux/design-tokens/dist/tokens/fonts';
+@import '~@aurodesignsystem/design-tokens/dist/tokens/fonts';
 
 // set a baseline browser normalize
-@import '~@alaskaairux/design-tokens/dist/tokens/normalize';
+@import '~@aurodesignsystem/design-tokens/dist/tokens/normalize';
 
 // essentials setup baseline primitive selectors for any UI development
-@import '~@alaskaairux/design-tokens/dist/tokens/essentials';
+@import '~@aurodesignsystem/design-tokens/dist/tokens/essentials';
 ```
 
 For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
 
 ### Web font dependency
 
-WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@alaskaairux/design-tokens/dist/tokens/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights.
+WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@aurodesignsystem/design-tokens/dist/tokens/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights.
 
 Any references to `ASCircularWeb-Book`, `ASCircularWeb-Medium`, or `ASCircularWeb-Light` would be considered redundant and you should remove those legacy references.
 

@@ -1,10 +1,10 @@
-@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap';
+@import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap';
 
 @import 'true';
 
-$auro-inset-spacing-options: sm, md, lg;
-$auro-inset-directions: --stretch;
+$ds-inset-spacing-options: sm, md, lg;
+$ds-inset-directions: --stretch;
 @import '../src/utilityMixins/insetUtility';
 
 @include describe('auro_inset()') {

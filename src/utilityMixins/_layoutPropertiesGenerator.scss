@@ -18,14 +18,14 @@ $layout-extensions: Top Left Bottom Right !default;
 // ---------------------------------------------------------------------
 $layout-modifiers: (
   'none': 0,
-  '100': $auro-size-100,
-  '200': $auro-size-200,
-  '300': $auro-size-300,
-  '400': $auro-size-400,
-  'xs': $auro-size-100,
-  'md': $auro-size-200,
-  'lg': $auro-size-300,
-  'xl': $auro-size-400
+  '100': $ds-size-100,
+  '200': $ds-size-200,
+  '300': $ds-size-300,
+  '400': $ds-size-400,
+  'xs': $ds-size-100,
+  'md': $ds-size-200,
+  'lg': $ds-size-300,
+  'xl': $ds-size-400
 ) !default;
 
 /// Mixin auto-generates all available utility selectors. This mixin is NOT for general use and will produce selectors with the import of this Sass file. Output can be configured by redefining default values prior to import. See default value examples below.
@@ -41,10 +41,10 @@ $layout-modifiers: (
 ///   $layout-extensions: Top Left Bottom Right !default;
 ///   $layout-modifiers: (
 ///     "none": 0,
-///     "100": $auro-size-100,
-///     "200": $auro-size-200,
-///     "300": $auro-size-300,
-///     "400": $auro-size-400
+///     "100": $ds-size-100,
+///     "200": $ds-size-200,
+///     "300": $ds-size-300,
+///     "400": $ds-size-400
 ///   ) !default;
 /// @example scss - example default output selector
 ///   .util_paddingLeft--none {}
@@ -61,10 +61,10 @@ $layout-modifiers: (
 ///   $layout-properties: margin;
 ///   $layout-extensions: Right;
 ///   $layout-modifiers: (
-///     "25": $auro-size-25,
-///     "50": $auro-size-50,
-///     "600": $auro-size-600,
-///     "800": $auro-size-800,
+///     "25": $ds-size-25,
+///     "50": $ds-size-50,
+///     "600": $ds-size-600,
+///     "800": $ds-size-800,
 ///   );
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
 @mixin auro_layoutPropertiesGenerator() {

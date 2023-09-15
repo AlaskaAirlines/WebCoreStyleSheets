@@ -24,14 +24,14 @@
 
   overflow-y: scroll;
 
-  height: calc(#{$auro-size-600} + 1px);
-  margin-bottom: $auro-size-200;
+  height: calc(#{$ds-size-600} + 1px);
+  margin-bottom: $ds-size-200;
 
   white-space: nowrap;
 
   border-width: 0 0 1px;
   border-style: solid;
-  border-color: $auro-color-border-primary-on-light;
+  border-color: $ds-color-border-primary-default;
 
-  line-height: $auro-size-600;
+  line-height: $ds-size-600;
 }

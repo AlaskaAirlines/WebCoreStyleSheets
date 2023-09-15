@@ -27,22 +27,22 @@
   $isactive-color: null;
 
   @if $style == css {
-    $color: var(--auro-color-text-link-on-light);
-    $border-color: var(--auro-color-border-primary-on-light);
-    $padding: var(--auro-size-200);
-    $hover-color: var(--auro-color-text-link-on-light-hover);
-    $isactive-color: var(--auro-color-text-primary-on-light);
+    $color: var(--ds-color-text-link-default);
+    $border-color: var(--ds-color-border-primary-default);
+    $padding: var(--ds-size-200);
+    $hover-color: var(--ds-color-text-link-default-hover);
+    $isactive-color: var(--ds-color-text-primary-default);
   } @else if $style == sass or $style == scss {
-    $color: $auro-color-text-link-on-light;
-    $border-color: $auro-color-border-primary-on-light;
-    $padding: $auro-size-200;
-    $hover-color: $auro-color-ui-hover-on-light;
-    $isactive-color: $auro-color-text-primary-on-light;
+    $color: $ds-color-text-link-default;
+    $border-color: $ds-color-border-primary-default;
+    $padding: $ds-size-200;
+    $hover-color: $ds-color-ui-hover-default;
+    $isactive-color: $ds-color-text-primary-default;
   } @else {
     @error 'Invalid $style option. Please use `css` or `sass`';
   }
 
-  padding: $auro-size-200;
+  padding: $ds-size-200;
 
   color: $color;
   border-width: 0 0 1px;

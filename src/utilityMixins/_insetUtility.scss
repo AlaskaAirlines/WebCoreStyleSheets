@@ -12,17 +12,17 @@
 
 /* stylelint-disable scss/no-global-function-names */
 
-$auro-inset-directions: '', --stretch, --squish !default;
-$auro-inset-spacing-options: $auro-spacing-options !default;
+$ds-inset-directions: '', --stretch, --squish !default;
+$ds-inset-spacing-options: $ds-spacing-options !default;
 
 /// This mixin is designed to return a series of pre-defined selectors based on the inset spacing design spec
 ///
 /// DO NOT execute mixin, this is already included with the import of the file dependency
 ///
-/// **Dependency:** `$npm i alaskaairux/design-tokens`
+/// **Dependency:** `$npm i @aurodesignsystem/design-tokens`
 /// @group utility-layout
-/// @param {String} $auro-inset-directions ["", --stretch, --squish] defines value
-/// @param {String} $auro-inset-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
+/// @param {String} $ds-inset-directions ["", --stretch, --squish] defines value
+/// @param {String} $ds-inset-spacing-options [none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl] defines value applied
 /// @example css - Example output css
 ///  .util_insetXxxs {
 ///    padding: 0.125rem;
@@ -34,15 +34,15 @@ $auro-inset-spacing-options: $auro-spacing-options !default;
 ///    padding: 0 0.125rem;
 ///  }
 /// @example scss - import dependencies
-///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/insetUtility";
 /// @example scss - import with custom over-rides
-///   $auro-inset-spacing-options: xxxs;
-///   $auro-inset-directions:'';
-///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   $ds-inset-spacing-options: xxxs;
+///   $ds-inset-directions:'';
+///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/insetUtility";
 
-@mixin auro_inset($directions: $auro-inset-directions, $values: $auro-inset-spacing-options) {
+@mixin auro_inset($directions: $ds-inset-directions, $values: $ds-inset-spacing-options) {
   @each $value in $values {
     $map: map-keys($tokens);
     $mapValue: auro_map-deep-get($tokens, #{$map}, $value);

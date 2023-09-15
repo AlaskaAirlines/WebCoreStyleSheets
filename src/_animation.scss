@@ -12,9 +12,9 @@
 /// Compatibility: [css-transitions](https://caniuse.com/#feat=css-transitions)
 ///
 /// @group Animation
-/// @param {string} $property [$auro-animation-default-property] - Specifies the name of the CSS property the transition effect is for
-/// @param {string} $duration [$auro-animation-default-duration] - Specifies how many seconds or milliseconds a transition effect takes to complete
-/// @param {string} $timing [$auro-animation-default-timing] - Specifies the speed curve of the transition effect (ease, linear, ease-in, ease-out, ease-in-out)
+/// @param {string} $property [$ds-animation-default-property] - Specifies the name of the CSS property the transition effect is for
+/// @param {string} $duration [$ds-animation-default-duration] - Specifies how many seconds or milliseconds a transition effect takes to complete
+/// @param {string} $timing [$ds-animation-default-timing] - Specifies the speed curve of the transition effect (ease, linear, ease-in, ease-out, ease-in-out)
 /// @param {string} $delay [null] - Specifies a delay (in seconds) for the transition effect
 ///
 /// @example scss - import file
@@ -25,6 +25,6 @@
 ///     @include auro_transition;
 ///   }
 
-@mixin auro_transition($property: $auro-animation-default-property, $duration: $auro-animation-default-duration, $timing: $auro-animation-default-timing, $delay: null) {
+@mixin auro_transition($property: $ds-animation-default-property, $duration: $ds-animation-default-duration, $timing: $ds-animation-default-timing, $delay: null) {
   transition: $property $duration $timing $delay;
 }

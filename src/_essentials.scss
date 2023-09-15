@@ -27,7 +27,7 @@
 #{$sym}#{$prefix}html#{$scope} {
   box-sizing: border-box;
 
-  font-size: $ds-text-body-size-default;
+  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -56,13 +56,13 @@
 #{$scope}.#{$prefix}baseType {
   margin: 0;
 
-  color: $ds-color-text-primary-default;
+  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
 
-  font-family: $ds-font-family-default;
+  font-family: var(--ds-font-family-default, $ds-font-family-default);
   font-variant-ligatures: no-common-ligatures;
-  font-size: $ds-text-body-size-default;
-  font-weight: $ds-text-body-default-weight;
-  line-height: $ds-text-body-height-default;
+  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
+  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
+  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 }
 
 /// Sets standard `margin` for all paragraph style content
@@ -89,7 +89,7 @@
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem;
 
-  line-height: $ds-text-body-height-default;
+  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -123,10 +123,10 @@
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
 
-  color: $ds-color-ui-default-default;
+  color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
 
   &:visited {
-    color: $ds-color-ui-default-default;
+    color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
   }
 
   &--nav {
@@ -142,16 +142,16 @@
   }
 
   &--ondark {
-    color: $ds-color-ui-default-inverse;
+    color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
 
     &:not(.is-touching) {
       &:hover {
-        color: $ds-color-ui-hover-inverse;
+        color: var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
       }
     }
 
     &:visited {
-      color: $ds-color-ui-default-inverse;
+      color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
     }
   }
 
@@ -159,7 +159,7 @@
     &:hover {
       text-decoration: none;
 
-      color: $ds-color-ui-hover-default;
+      color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
     }
   }
 }
@@ -206,8 +206,8 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size: $ds-text-body-size-xs;
-  line-height: $ds-text-body-height-xs;
+  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
 }
 
 $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
@@ -238,7 +238,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
   @if $paragraph {
     margin: 0 0 1rem;
 
-    line-height: $ds-text-body-height-default;
+    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
   }
 }
 

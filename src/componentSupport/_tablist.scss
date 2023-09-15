@@ -25,13 +25,13 @@
   overflow-y: scroll;
 
   height: calc(#{$ds-size-600} + 1px);
-  margin-bottom: $ds-size-200;
+  margin-bottom: var(--ds-size-200, $ds-size-200);
 
   white-space: nowrap;
 
   border-width: 0 0 1px;
   border-style: solid;
-  border-color: $ds-color-border-primary-default;
+  border-color: var(--ds-color-border-primary-default, $ds-color-border-primary-default);
 
-  line-height: $ds-size-600;
+  line-height: var(--ds-size-600, $ds-size-600);
 }

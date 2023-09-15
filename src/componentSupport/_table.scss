@@ -17,23 +17,23 @@
   overflow: scroll;
 
   width: auto;
-  margin-bottom: $ds-size-400;
+  margin-bottom: (var--ds-size-400, $ds-size-400);
 
-  border-spacing: $ds-size-150;
+  border-spacing: (var--ds-size-150, $ds-size-150);
   border-collapse: collapse;
 
-  font-weight: $ds-text-heading-display-weight;
+  font-weight: (var--ds-text-heading-display-weight, $ds-text-heading-display-weight);
 
   tr {
     &:nth-child(even) {
-      background-color: $ds-color-brand-gray-100;
+      background-color: (var--ds-color-brand-gray-100, $ds-color-brand-gray-100);
     }
   }
 
   th {
     text-align: left;
 
-    font-weight: $ds-text-heading-default-weight;
+    font-weight: (var--ds-text-heading-default-weight, $ds-text-heading-default-weight);
   }
 
   @include auro_breakpoint--sm {
@@ -44,11 +44,11 @@
 
   thead {
     border-collapse: collapse;
-    border-bottom: 1px solid $ds-color-brand-gray-200;
+    border-bottom: 1px solid var(--ds-color-brand-gray-200, $ds-color-brand-gray-200);
   }
 
   th,
   td {
-    padding: $ds-size-200;
+    padding: (var--ds-size-200, $ds-size-200);
   }
 }

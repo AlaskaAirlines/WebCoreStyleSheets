@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixess
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 @import 'libSupport/manageScope';
 
 $fixed-nav-width: 280px;
@@ -23,7 +23,7 @@ $fixed-anchor-width: 168px;
     position: sticky;
     top: 0;
     max-height: 100vh;
-    padding-top: $ds-grid-margin-xl;
+    padding-top: var(--ds-grid-margin-xl, $ds-grid-margin-xl);
     @content;
   }
 }
@@ -87,16 +87,16 @@ $fixed-anchor-width: 168px;
 @mixin grid_gutter($gutter) {
   gap: $gutter;
   @include auro_grid-breakpoint--sm {
-   gap: $ds-grid-gutter-sm;
+   gap: var(--ds-grid-gutter-sm, $ds-grid-gutter-sm);
   }
   @include auro_grid-breakpoint--md {
-    gap: $ds-grid-gutter-md;
+    gap: var(--ds-grid-gutter-md, $ds-grid-gutter-md);
   }
   @include auro_grid-breakpoint--lg {
-    gap: $ds-grid-gutter-lg;
+    gap: var(--ds-grid-gutter-lg, $ds-grid-gutter-lg);
   }
   @include auro_grid-breakpoint--xl {
-    gap: $ds-grid-gutter-xl;
+    gap: var(--ds-grid-gutter-xl, $ds-grid-gutter-xl);
   }
 }
 
@@ -157,7 +157,7 @@ $fixed-anchor-width: 168px;
     }
 
     @include auro_grid-breakpoint--md {
-        grid-template-columns: $fixed-nav-width auto;
+        grid-template-columns: var(--fixed-nav-width, $fixed-nav-width) auto;
     }
   }
 
@@ -170,7 +170,7 @@ $fixed-anchor-width: 168px;
 
     @include auro_grid-breakpoint--md {
         grid-template-areas: "col1 col2";
-        grid-template-columns: auto $fixed-anchor-width;
+        grid-template-columns: auto var(--fixed-nav-width, $fixed-nav-width);
     }
 
   }
@@ -275,7 +275,7 @@ $fixed-anchor-width: 168px;
   }
   @include auro_grid-breakpoint--md {
     @include grid_padding($ds-grid-margin-md);
-    grid-template-columns: auto $fixed-anchor-width;
+    grid-template-columns: auto var(--fixed-anchor-width, $fixed-anchor-width);
       grid-template-areas:
       "breadcrumbs breadcrumbs"
       "main anchornav";
@@ -293,7 +293,7 @@ $fixed-anchor-width: 168px;
   .main {
     grid-area: main;
     * {
-      scroll-margin-top: $ds-grid-margin-md;
+      scroll-margin-top: var(--ds-grid-margin-md, $ds-grid-margin-md);
     }
   }
   .anchornav {
@@ -334,7 +334,7 @@ $fixed-anchor-width: 168px;
 
   @include auro_grid-breakpoint--md {
     @include grid_padding($ds-grid-margin-md);
-    grid-template-columns: $fixed-nav-width auto;
+    grid-template-columns: var(--fixed-nav-width, $fixed-nav-width) auto;
       grid-template-areas:
       "breadcrumbs breadcrumbs"
       "sidenav main";
@@ -358,7 +358,7 @@ $fixed-anchor-width: 168px;
 
   .sidenav {
     grid-area: sidenav;
-    background-color: $ds-color-base-white;
+    background-color: var(--ds-color-base-white, $ds-color-base-white);
     @include grid_padding($ds-grid-margin-xs);
 
     @include auro_grid-breakpoint--md {
@@ -374,7 +374,7 @@ $fixed-anchor-width: 168px;
     @include grid_padding(0);
     }
     * {
-      scroll-margin-top: $ds-grid-margin-md;
+      scroll-margin-top: var(--ds-grid-margin-md, $ds-grid-margin-md);
     }
   }
 }
@@ -412,7 +412,7 @@ $fixed-anchor-width: 168px;
 
   @include auro_grid-breakpoint--md {
     @include grid_padding($ds-grid-margin-md);
-    grid-template-columns: $fixed-nav-width auto $fixed-anchor-width;
+    grid-template-columns: var(--fixed-nav-width, $fixed-nav-width) auto var(--fixed-anchor-width, $fixed-anchor-width);
       grid-template-areas:
       "breadcrumbs breadcrumbs breadcrumbs"
       "sidenav main anchornav";
@@ -437,7 +437,7 @@ $fixed-anchor-width: 168px;
   .sidenav {
     grid-area: sidenav;
     z-index: 1;
-    background-color: $ds-color-base-white;
+    background-color: var(--ds-color-base-white, $ds-color-base-white);
     @include grid_padding($ds-grid-margin-xs);
     @include grid-stickycolumn--xs();
 
@@ -455,7 +455,7 @@ $fixed-anchor-width: 168px;
     @include grid_padding(0);
     }
     * {
-      scroll-margin-top: $ds-grid-margin-md;
+      scroll-margin-top: var(--ds-grid-margin-md, $ds-grid-margin-md);
     }
   }
 

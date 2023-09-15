@@ -11,7 +11,7 @@ $focus-visible: null !default;
 
 /// Global selector to address box-model and default `:focus` pseudo elements.
 ///
-/// Global media setting for [a11y support of reduced-motion](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code). By setting the durations to almost 0, we prevent animation from playing for those with motion sensitivities without affecting transition or animation events (e.g. transitionend).
+/// Global media setting for [a11y support of reduced-motion](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code). By setting the durations to almost 0, we prevent animation from playing for those with motion sensitivities without affecting transition or animation events (e.g. transitioned).
 ///
 /// [Manage](/#scope-prefix-variable) `$scope` option.
 /// @group core
@@ -44,7 +44,7 @@ $focus-visible: null !default;
   // if $focus-visible is true, override the default focus-visible outline
   @if $focus-visible {
     &:focus-visible {
-      outline: 2px solid var(--ds-color-ui-default-default);
+      outline: 2px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
     }
   } @else {
     &:focus-visible {
@@ -55,7 +55,7 @@ $focus-visible: null !default;
   // if $focus-visible is true, override the default focus-visible outline
   @if $focus-visible {
     &:focus-visible {
-      outline: 2px solid var(--ds-color-ui-default-default);
+      outline: 2px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
     }
   } @else {
     &:focus-visible {
@@ -66,7 +66,7 @@ $focus-visible: null !default;
   // if $focus is true, override the default focus outline
   @if $focus {
     &:focus {
-      outline: 2px solid var(--ds-color-ui-default-default);
+      outline: 2px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
     }
   }
 }

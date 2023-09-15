@@ -28,9 +28,9 @@
 #{$scope}.#{$prefix}heading {
   margin: calc(#{$ds-size-200} + #{$ds-size-150}) 0;
 
-  letter-spacing: $ds-text-heading-default-spacing;
+  letter-spacing: var(--ds-text-heading-default-spacing, $ds-text-heading-default-spacing);
 
-  font-weight: $ds-text-heading-default-weight;
+  font-weight: var(--ds-text-heading-default-weight, $ds-text-heading-default-weight);
 }
 
 /// Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
@@ -53,17 +53,17 @@
 #{$scope}.#{$prefix}heading--display {
   margin-top: 0;
 
-  font-size: $ds-text-heading-display-size-breakpoint-sm;
-  font-weight: $ds-text-heading-display-weight;
-  line-height: $ds-text-heading-display-height-breakpoint-sm;
+  font-size: var(--ds-text-heading-display-size-breakpoint-sm, $ds-text-heading-display-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
+  line-height: var(--ds-text-heading-display-height-breakpoint-sm, $ds-text-heading-display-height-breakpoint-sm);
 
   @include auro_breakpoint--md {
-    font-size: $ds-text-heading-display-size-breakpoint-md;
-    line-height: $ds-text-heading-display-height-breakpoint-md;
+    font-size: var(--ds-text-heading-display-size-breakpoint-md, $ds-text-heading-display-size-breakpoint-md);
+    line-height: var(--ds-text-heading-display-height-breakpoint-md, $ds-text-heading-display-height-breakpoint-md);
   }
   @include auro_breakpoint--lg {
-    font-size: $ds-text-heading-display-size-breakpoint-lg;
-    line-height: $ds-text-heading-display-height-breakpoint-lg;
+    font-size: var(--ds-text-heading-display-size-breakpoint-lg, $ds-text-heading-display-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-display-height-breakpoint-lg, $ds-text-heading-display-height-breakpoint-lg);
   }
 }
 
@@ -85,17 +85,17 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--800 {
-  font-size: $ds-text-heading-800-size-breakpoint-sm;
-  font-weight: $ds-text-heading-800-weight;
-  line-height: $ds-text-heading-800-height-breakpoint-sm;
+  font-size: var(--ds-text-heading-800-size-breakpoint-sm, $ds-text-heading-800-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-800-weight, $ds-text-heading-800-weight);
+  line-height: var(--ds-text-heading-800-height-breakpoint-sm, $ds-text-heading-800-height-breakpoint-sm);
 
   @include auro_breakpoint--md {
-    font-size: $ds-text-heading-800-size-breakpoint-md;
-    line-height: $ds-text-heading-800-height-breakpoint-md;
+    font-size: var(--ds-text-heading-800-size-breakpoint-md, $ds-text-heading-800-size-breakpoint-md);
+    line-height: var(--ds-text-heading-800-height-breakpoint-md, $ds-text-heading-800-height-breakpoint-md);
   }
   @include auro_breakpoint--lg {
-    font-size: $ds-text-heading-800-size-breakpoint-lg;
-    line-height: $ds-text-heading-800-height-breakpoint-lg;
+    font-size: var(--ds-text-heading-800-size-breakpoint-lg, $ds-text-heading-800-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-800-height-breakpoint-lg, $ds-text-heading-800-height-breakpoint-lg);
   }
 }
 
@@ -117,17 +117,17 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--700 {
-  font-size: $ds-text-heading-700-size-breakpoint-sm;
-  font-weight: $ds-text-heading-700-weight;
-  line-height: $ds-text-heading-700-height-breakpoint-sm;
+  font-size: var(--ds-text-heading-700-size-breakpoint-sm, $ds-text-heading-700-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-700-weight, $ds-text-heading-700-weight);
+  line-height: var(--ds-text-heading-700-height-breakpoint-sm, $ds-text-heading-700-height-breakpoint-sm);
 
   @include auro_breakpoint--md {
-    font-size: $ds-text-heading-700-size-breakpoint-md;
-    line-height: $ds-text-heading-700-height-breakpoint-md;
+    font-size: var(--ds-text-heading-700-size-breakpoint-md, $ds-text-heading-700-size-breakpoint-md);
+    line-height: var(--ds-text-heading-700-height-breakpoint-md, $ds-text-heading-700-height-breakpoint-md);
   }
   @include auro_breakpoint--lg {
-    font-size: $ds-text-heading-700-size-breakpoint-lg;
-    line-height: $ds-text-heading-700-height-breakpoint-lg;
+    font-size: var(--ds-text-heading-700-size-breakpoint-lg, $ds-text-heading-700-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-700-height-breakpoint-lg, $ds-text-heading-700-height-breakpoint-lg);
   }
 }
 
@@ -151,17 +151,17 @@
 #{$scope}.#{$prefix}heading--600 {
   margin: $ds-size-200 0;
 
-  font-size: $ds-text-heading-600-size-breakpoint-sm;
-  font-weight: $ds-text-heading-600-weight;
-  line-height: $ds-text-heading-600-height-breakpoint-sm;
+  font-size: var(--ds-text-heading-600-size-breakpoint-sm, $ds-text-heading-600-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-600-weight, $ds-text-heading-600-weight);
+  line-height: var(--ds-text-heading-600-height-breakpoint-sm, $ds-text-heading-600-height-breakpoint-sm);
 
   @include auro_breakpoint--md {
-    font-size: $ds-text-heading-600-size-breakpoint-md;
-    line-height: $ds-text-heading-600-height-breakpoint-md;
+    font-size: var(--ds-text-heading-600-size-breakpoint-md, $ds-text-heading-600-size-breakpoint-md);
+    line-height: var(--ds-text-heading-600-height-breakpoint-md, $ds-text-heading-600-height-breakpoint-md);
   }
   @include auro_breakpoint--lg {
-    font-size: $ds-text-heading-600-size-breakpoint-lg;
-    line-height: $ds-text-heading-600-height-breakpoint-lg;
+    font-size: var(--ds-text-heading-600-size-breakpoint-lg, $ds-text-heading-600-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-600-height-breakpoint-lg, $ds-text-heading-600-height-breakpoint-lg);
   }
 }
 
@@ -185,17 +185,17 @@
 #{$scope}.#{$prefix}heading--500 {
   margin: $ds-size-200 0;
 
-  font-size: $ds-text-heading-500-size-breakpoint-sm;
-  font-weight: $ds-text-heading-500-weight;
-  line-height: $ds-text-heading-500-height-breakpoint-sm;
+  font-size: var(--ds-text-heading-500-size-breakpoint-sm, $ds-text-heading-500-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-500-weight, $ds-text-heading-500-weight);
+  line-height: var(--ds-text-heading-500-height-breakpoint-sm, $ds-text-heading-500-height-breakpoint-sm);
 
   @include auro_breakpoint--md {
-    font-size: $ds-text-heading-500-size-breakpoint-md;
-    line-height: $ds-text-heading-500-height-breakpoint-md;
+    font-size: var(--ds-text-heading-500-size-breakpoint-md, $ds-text-heading-500-size-breakpoint-md);
+    line-height: var(--ds-text-heading-500-height-breakpoint-md, $ds-text-heading-500-height-breakpoint-md);
   }
   @include auro_breakpoint--lg {
-    font-size: $ds-text-heading-500-size-breakpoint-lg;
-    line-height: $ds-text-heading-500-height-breakpoint-lg;
+    font-size: var(--ds-text-heading-500-size-breakpoint-lg, $ds-text-heading-500-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-500-height-breakpoint-lg, $ds-text-heading-500-height-breakpoint-lg);
   }
 }
 
@@ -219,9 +219,9 @@
 #{$scope}.#{$prefix}heading--400 {
   margin: $ds-size-150 0;
 
-  font-size: $ds-text-heading-400-size;
-  font-weight: $ds-text-heading-400-weight;
-  line-height: $ds-text-heading-400-height;
+  font-size: var(--ds-text-heading-400-size, $ds-text-heading-400-size);
+  font-weight: var(--ds-text-heading-400-weight, $ds-text-heading-400-weight);
+  line-height: var(--ds-text-heading-400-height, $ds-text-heading-400-height);
 }
 
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
@@ -244,7 +244,7 @@
 #{$scope}.#{$prefix}heading--300 {
   margin: $ds-size-150 0;
 
-  font-size: $ds-text-heading-300-size;
-  font-weight: $ds-text-heading-300-weight;
-  line-height: $ds-text-heading-300-height;
+  font-size: var(--ds-text-heading-300-size, $ds-text-heading-300-size);
+  font-weight: var(--ds-text-heading-300-weight, $ds-text-heading-300-weight);
+  line-height: var(--ds-text-heading-300-height, $ds-text-heading-300-height);
 }

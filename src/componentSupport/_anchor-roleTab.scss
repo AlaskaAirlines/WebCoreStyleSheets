@@ -22,5 +22,5 @@
 #{$scope}.auro_roleTab {
   @include auro_anchorTab(sass, noncomponent);
 
-  margin-right: calc(#{$auro-size-50} * -1);
+  margin-right: calc(#{$ds-size-50} * -1);
 }

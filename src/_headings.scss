@@ -26,11 +26,11 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 ///
 #{$scope}.#{$prefix}heading {
-  margin: calc(#{$auro-size-200} + #{$auro-size-150}) 0;
+  margin: calc(#{$ds-size-200} + #{$ds-size-150}) 0;
 
-  letter-spacing: $auro-text-heading-default-spacing;
+  letter-spacing: $ds-text-heading-default-spacing;
 
-  font-weight: $auro-text-heading-default-weight;
+  font-weight: $ds-text-heading-default-weight;
 }
 
 /// Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
@@ -53,17 +53,17 @@
 #{$scope}.#{$prefix}heading--display {
   margin-top: 0;
 
-  font-size: $auro-text-heading-display-size-breakpoint-sm;
-  font-weight: $auro-text-heading-display-weight;
-  line-height: $auro-text-heading-display-height-breakpoint-sm;
+  font-size: $ds-text-heading-display-size-breakpoint-sm;
+  font-weight: $ds-text-heading-display-weight;
+  line-height: $ds-text-heading-display-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
-    font-size: $auro-text-heading-display-size-breakpoint-md;
-    line-height: $auro-text-heading-display-height-breakpoint-md;
+    font-size: $ds-text-heading-display-size-breakpoint-md;
+    line-height: $ds-text-heading-display-height-breakpoint-md;
   }
   @include auro_breakpoint--lg {
-    font-size: $auro-text-heading-display-size-breakpoint-lg;
-    line-height: $auro-text-heading-display-height-breakpoint-lg;
+    font-size: $ds-text-heading-display-size-breakpoint-lg;
+    line-height: $ds-text-heading-display-height-breakpoint-lg;
   }
 }
 
@@ -85,17 +85,17 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--800 {
-  font-size: $auro-text-heading-800-size-breakpoint-sm;
-  font-weight: $auro-text-heading-800-weight;
-  line-height: $auro-text-heading-800-height-breakpoint-sm;
+  font-size: $ds-text-heading-800-size-breakpoint-sm;
+  font-weight: $ds-text-heading-800-weight;
+  line-height: $ds-text-heading-800-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
-    font-size: $auro-text-heading-800-size-breakpoint-md;
-    line-height: $auro-text-heading-800-height-breakpoint-md;
+    font-size: $ds-text-heading-800-size-breakpoint-md;
+    line-height: $ds-text-heading-800-height-breakpoint-md;
   }
   @include auro_breakpoint--lg {
-    font-size: $auro-text-heading-800-size-breakpoint-lg;
-    line-height: $auro-text-heading-800-height-breakpoint-lg;
+    font-size: $ds-text-heading-800-size-breakpoint-lg;
+    line-height: $ds-text-heading-800-height-breakpoint-lg;
   }
 }
 
@@ -117,17 +117,17 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--700 {
-  font-size: $auro-text-heading-700-size-breakpoint-sm;
-  font-weight: $auro-text-heading-700-weight;
-  line-height: $auro-text-heading-700-height-breakpoint-sm;
+  font-size: $ds-text-heading-700-size-breakpoint-sm;
+  font-weight: $ds-text-heading-700-weight;
+  line-height: $ds-text-heading-700-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
-    font-size: $auro-text-heading-700-size-breakpoint-md;
-    line-height: $auro-text-heading-700-height-breakpoint-md;
+    font-size: $ds-text-heading-700-size-breakpoint-md;
+    line-height: $ds-text-heading-700-height-breakpoint-md;
   }
   @include auro_breakpoint--lg {
-    font-size: $auro-text-heading-700-size-breakpoint-lg;
-    line-height: $auro-text-heading-700-height-breakpoint-lg;
+    font-size: $ds-text-heading-700-size-breakpoint-lg;
+    line-height: $ds-text-heading-700-height-breakpoint-lg;
   }
 }
 
@@ -149,19 +149,19 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--600 {
-  margin: $auro-size-200 0;
+  margin: $ds-size-200 0;
 
-  font-size: $auro-text-heading-600-size-breakpoint-sm;
-  font-weight: $auro-text-heading-600-weight;
-  line-height: $auro-text-heading-600-height-breakpoint-sm;
+  font-size: $ds-text-heading-600-size-breakpoint-sm;
+  font-weight: $ds-text-heading-600-weight;
+  line-height: $ds-text-heading-600-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
-    font-size: $auro-text-heading-600-size-breakpoint-md;
-    line-height: $auro-text-heading-600-height-breakpoint-md;
+    font-size: $ds-text-heading-600-size-breakpoint-md;
+    line-height: $ds-text-heading-600-height-breakpoint-md;
   }
   @include auro_breakpoint--lg {
-    font-size: $auro-text-heading-600-size-breakpoint-lg;
-    line-height: $auro-text-heading-600-height-breakpoint-lg;
+    font-size: $ds-text-heading-600-size-breakpoint-lg;
+    line-height: $ds-text-heading-600-height-breakpoint-lg;
   }
 }
 
@@ -183,19 +183,19 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--500 {
-  margin: $auro-size-200 0;
+  margin: $ds-size-200 0;
 
-  font-size: $auro-text-heading-500-size-breakpoint-sm;
-  font-weight: $auro-text-heading-500-weight;
-  line-height: $auro-text-heading-500-height-breakpoint-sm;
+  font-size: $ds-text-heading-500-size-breakpoint-sm;
+  font-weight: $ds-text-heading-500-weight;
+  line-height: $ds-text-heading-500-height-breakpoint-sm;
 
   @include auro_breakpoint--md {
-    font-size: $auro-text-heading-500-size-breakpoint-md;
-    line-height: $auro-text-heading-500-height-breakpoint-md;
+    font-size: $ds-text-heading-500-size-breakpoint-md;
+    line-height: $ds-text-heading-500-height-breakpoint-md;
   }
   @include auro_breakpoint--lg {
-    font-size: $auro-text-heading-500-size-breakpoint-lg;
-    line-height: $auro-text-heading-500-height-breakpoint-lg;
+    font-size: $ds-text-heading-500-size-breakpoint-lg;
+    line-height: $ds-text-heading-500-height-breakpoint-lg;
   }
 }
 
@@ -217,11 +217,11 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--400 {
-  margin: $auro-size-150 0;
+  margin: $ds-size-150 0;
 
-  font-size: $auro-text-heading-400-size;
-  font-weight: $auro-text-heading-400-weight;
-  line-height: $auro-text-heading-400-height;
+  font-size: $ds-text-heading-400-size;
+  font-weight: $ds-text-heading-400-weight;
+  line-height: $ds-text-heading-400-height;
 }
 
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
@@ -242,9 +242,9 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
 #{$scope}.#{$prefix}heading--300 {
-  margin: $auro-size-150 0;
+  margin: $ds-size-150 0;
 
-  font-size: $auro-text-heading-300-size;
-  font-weight: $auro-text-heading-300-weight;
-  line-height: $auro-text-heading-300-height;
+  font-size: $ds-text-heading-300-size;
+  font-weight: $ds-text-heading-300-weight;
+  line-height: $ds-text-heading-300-height;
 }

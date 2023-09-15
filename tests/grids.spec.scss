@@ -1,5 +1,5 @@
-@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import "../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+@import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import "../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 @import 'true';
 @import "./src/breakpoints";
 @import "./src/grids";
@@ -41,10 +41,10 @@
 }
 
 @include describe('grid_width()') {
-  @include it('should return max-width given $auro-grid-breakpoint-xl') {
+  @include it('should return max-width given $ds-grid-breakpoint-xl') {
     @include assert {
       @include output {
-        @include grid_width($auro-grid-breakpoint-xl);
+        @include grid_width($ds-grid-breakpoint-xl);
       }
 
       @include expect {
@@ -85,10 +85,10 @@
 }
 
 @include describe('grid_gutter()') {
-  @include it('should return gap given $auro-grid-gutter-xs') {
+  @include it('should return gap given $ds-grid-gutter-xs') {
     @include assert {
       @include output {
-        @include grid_gutter($auro-grid-gutter-xs);
+        @include grid_gutter($ds-grid-gutter-xs);
       }
 
       @include expect {
@@ -116,11 +116,11 @@
       @include output {
         .grid{
           display: grid;
-          @include grid_width($auro-grid-breakpoint-xl);
+          @include grid_width($ds-grid-breakpoint-xl);
           @include grid_margin();
-          @include grid_gutter($auro-grid-gutter-xs);
+          @include grid_gutter($ds-grid-gutter-xs);
         }
-        
+
       }
 
       @include expect {
@@ -164,7 +164,7 @@
         .container{
           display: grid;
           @include grid_margin();
-          @include grid_width($auro-grid-breakpoint-xl);
+          @include grid_width($ds-grid-breakpoint-xl);
         }
       }
 
@@ -185,9 +185,9 @@
     @include assert {
       @include output {
         .pagecontainer{
-          @include grid_padding($auro-grid-margin-xs);
+          @include grid_padding($ds-grid-margin-xs);
           @include grid_margin();
-          @include grid_width($auro-grid-breakpoint-xl);
+          @include grid_width($ds-grid-breakpoint-xl);
           &.breadcrumbs {
             margin-block-end: 3.35rem;
           }
@@ -218,8 +218,8 @@
           display: grid;
           @include grid_margin();
           @include grid_padding(0);
-          @include grid_width($auro-grid-breakpoint-xl);
-          @include grid_gutter($auro-grid-gutter-xl);
+          @include grid_width($ds-grid-breakpoint-xl);
+          @include grid_gutter($ds-grid-gutter-xl);
           grid-template-areas:
           "breadcrumbs"
           "anchornav"
@@ -271,8 +271,8 @@
           display: grid;
           @include grid_margin();
           @include grid_padding(0);
-          @include grid_width($auro-grid-breakpoint-xl);
-          @include grid_gutter($auro-grid-gutter-xl);
+          @include grid_width($ds-grid-breakpoint-xl);
+          @include grid_gutter($ds-grid-gutter-xl);
           grid-template-areas:
           "breadcrumbs"
           "sidenav"
@@ -324,8 +324,8 @@
           display: grid;
           @include grid_margin();
           @include grid_padding(0);
-          @include grid_width($auro-grid-breakpoint-xl);
-          @include grid_gutter($auro-grid-gutter-xl);
+          @include grid_width($ds-grid-breakpoint-xl);
+          @include grid_gutter($ds-grid-gutter-xl);
           grid-template-areas:
           "breadcrumbs"
           "sidenav"

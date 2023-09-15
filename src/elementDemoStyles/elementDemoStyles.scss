@@ -5,7 +5,7 @@
 // All styles for the custom element are located in the ./src directory.
 
 // ----------------------- DO NOT EDIT -----------------------------
-@import './../../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+@import './../../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 
 @import './../breakpoints';
 @import './../grids';
@@ -71,12 +71,12 @@ $paragraph: true;
 
 // !important because that libraries that inline CSS SUCK!
 pre  {
-  background: var(--auro-color-base-gray-100) !important;
+  background: var(--ds-color-base-gray-100) !important;
   border: unset !important;
-  margin-bottom: var(--auro-size-300) !important;
-  padding-left: var(--auro-size-150) !important;
-  padding-top: var(--auro-size-200) !important;
-  padding-bottom: var(--auro-size-200) !important;
+  margin-bottom: var(--ds-size-300) !important;
+  padding-left: var(--ds-size-150) !important;
+  padding-top: var(--ds-size-200) !important;
+  padding-bottom: var(--ds-size-200) !important;
 
   code {
     font-size: .85rem !important;
@@ -102,21 +102,21 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 code:not(.html):not(.css):not(.js) {
-  color: var(--auro-color-brand-flamingo-500);
+  color: var(--ds-color-brand-flamingo-500);
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 .exampleWrapper {
   $stripe: #f3f3f3;
-  $background: var(--auro-color-base-white);
+  $background: var(--ds-color-base-white);
 
   background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }
 
 .exampleWrapper--ondark {
-  $stripe: var(--auro-color-background-darkest);
-  $background: var(--auro-color-background-darker);
+  $stripe: var(--ds-color-background-darkest);
+  $background: var(--ds-color-background-darker);
 
   background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }

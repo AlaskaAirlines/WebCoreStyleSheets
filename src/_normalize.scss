@@ -115,8 +115,8 @@ html#{$scope} {
 ///
 #{$scope}pre {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
-  @if variable-exists(auro-text-body-size-default) {
-    font-size: $auro-text-body-size-default; /* 2 */
+  @if variable-exists(ds-text-body-size-default) {
+    font-size: $ds-text-body-size-default; /* 2 */
   } @else {
     font-size: $size-font-root;
   }
@@ -211,8 +211,8 @@ html#{$scope} {
 #{$scope}kbd,
 #{$scope}samp {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
-  @if variable-exists(auro-text-body-size-default) {
-    font-size: $auro-text-body-size-default; /* 2 */
+  @if variable-exists(ds-text-body-size-default) {
+    font-size: $ds-text-body-size-default; /* 2 */
   } @else {
     font-size: $size-font-root;
   }
@@ -336,8 +336,8 @@ html#{$scope} {
 
   font-family: inherit; /* 2 */
   font-size: 100%; /* 2 */
-  @if variable-exists(auro-text-body-height-default) {
-    line-height: $auro-text-body-height-default; /* 2 */
+  @if variable-exists(ds-text-body-height-default) {
+    line-height: $ds-text-body-height-default; /* 2 */
   } @else {
     line-height: $size-margin-baseline; /* 2 */
   }

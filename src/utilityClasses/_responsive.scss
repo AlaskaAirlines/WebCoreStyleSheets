@@ -31,8 +31,8 @@
 ///
 
 #{$scope}.#{$prefix}util_is-smOnly {
-  @if variable-exists(auro-breakpoint-sm) {
-    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+  @if variable-exists(ds-breakpoint-sm) {
+    @include auro_breakpoint($min: $ds-breakpoint-sm) {
       display: none $important;
     }
   }
@@ -59,13 +59,13 @@
 ///
 
 #{$scope}.#{$prefix}util_is-mdOnly {
-  @if variable-exists(auro-breakpoint-sm) {
+  @if variable-exists(ds-breakpoint-sm) {
     display: none $important;
 
-    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+    @include auro_breakpoint($min: $ds-breakpoint-sm) {
       display: block $important;
     }
-    @include auro_breakpoint($min: $auro-breakpoint-md) {
+    @include auro_breakpoint($min: $ds-breakpoint-md) {
       display: none $important;
     }
   }
@@ -91,13 +91,13 @@
 ///   .auro_util_is-mdOnly--inline {}
 ///
 #{$scope}.#{$prefix}util_is-mdOnly--inline {
-  @if variable-exists(auro-breakpoint-sm) {
+  @if variable-exists(ds-breakpoint-sm) {
     display: none $important;
 
-    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+    @include auro_breakpoint($min: $ds-breakpoint-sm) {
       display: inline-block $important;
     }
-    @include auro_breakpoint($min: $auro-breakpoint-md) {
+    @include auro_breakpoint($min: $ds-breakpoint-md) {
       display: none $important;
     }
   }
@@ -124,10 +124,10 @@
 ///
 
 #{$scope}.#{$prefix}util_is-mdAppears {
-  @if variable-exists(auro-breakpoint-sm) {
+  @if variable-exists(ds-breakpoint-sm) {
     display: none $important;
 
-    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+    @include auro_breakpoint($min: $ds-breakpoint-sm) {
       display: block $important;
     }
   }
@@ -154,10 +154,10 @@
 ///
 
 #{$scope}.#{$prefix}util_is-mdAppears--inline {
-  @if variable-exists(auro-breakpoint-sm) {
+  @if variable-exists(ds-breakpoint-sm) {
     display: none $important;
 
-    @include auro_breakpoint($min: $auro-breakpoint-sm) {
+    @include auro_breakpoint($min: $ds-breakpoint-sm) {
       display: inline-block $important;
     }
   }
@@ -183,10 +183,10 @@
 ///   .auro_util_is-lgOnly {}
 ///
 #{$scope}.#{$prefix}util_is-lgOnly {
-  @if variable-exists(auro-breakpoint-lg) {
+  @if variable-exists(ds-breakpoint-lg) {
     display: none $important;
 
-    @include auro_breakpoint($min: $auro-breakpoint-lg) {
+    @include auro_breakpoint($min: $ds-breakpoint-lg) {
       display: block $important;
     }
   }
@@ -213,10 +213,10 @@
 ///
 
 #{$scope}.#{$prefix}util_is-lgOnly--inline {
-  @if variable-exists(auro-breakpoint-lg) {
+  @if variable-exists(ds-breakpoint-lg) {
     display: none $important;
 
-    @include auro_breakpoint($min: $auro-breakpoint-lg) {
+    @include auro_breakpoint($min: $ds-breakpoint-lg) {
       display: inline-block $important;
     }
   }

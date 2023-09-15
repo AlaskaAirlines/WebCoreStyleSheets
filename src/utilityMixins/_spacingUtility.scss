@@ -12,18 +12,18 @@
 @import '../utilityVariables/important';
 @import '../libSupport/manageScope';
 
-$auro-spacing-types: inline, stack !default;
-$auro-spacing-options: $auro-spacing-options !default;
-$auro-spacing-properties: padding, padding, margin, margin !default;
+$ds-spacing-types: inline, stack !default;
+$ds-spacing-options: $ds-spacing-options !default;
+$ds-spacing-properties: padding, padding, margin, margin !default;
 
 /// This mixin is designed to return a series of pre-defined selectors based on the stack or inline spacing design specs
 ///
 /// DO NOT execute mixin, this is already included with the import of the file dependency
 ///
-/// **Dependency:** `$npm i alaskaairux/design-tokens`
+/// **Dependency:** `$npm i @aurodesignsystem/design-tokens`
 /// @group utility-layout
-/// @param {string} $auro-spacing-types [inline, stack] inline - L/R, stack - top/bottom
-/// @param {string} $auro-spacing-options [none, 25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000] defines value applied. The previous sizing scale of xxxs - xxxl has been deprecated.
+/// @param {string} $ds-spacing-types [inline, stack] inline - L/R, stack - top/bottom
+/// @param {string} $ds-spacing-options [none, 25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000] defines value applied. The previous sizing scale of xxxs - xxxl has been deprecated.
 /// @example css - Example output css
 ///  .util_stackPaddingXxxs--top {
 ///    padding-top: 0.125rem;
@@ -38,15 +38,15 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
 ///    margin-bottom: 0.125rem;
 ///  }
 /// @example scss - import dependencies
-///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 /// @example scss - import with custom over-rides
-///   $auro-spacing-types: inline;
-///   $auro-spacing-options: xxxs;
-///   @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+///   $ds-spacing-types: inline;
+///   $ds-spacing-options: xxxs;
+///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 
-@mixin auro_spacing($types: $auro-spacing-types, $options: $auro-spacing-options) {
+@mixin auro_spacing($types: $ds-spacing-types, $options: $ds-spacing-options) {
   @each $type in $types {
     @each $value in $options {
       $map: map-keys($tokens);
@@ -61,7 +61,7 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
       }
 
       @if $type == stack or $type == inline {
-        $properties: $auro-spacing-properties;
+        $properties: $ds-spacing-properties;
       }
 
       @if not index($types, $type) {
@@ -70,7 +70,7 @@ $auro-spacing-properties: padding, padding, margin, margin !default;
 
       @if auro_contains($options, $value) {
         @if not index($options, $value) {
-          @error 'INVALID, \'#{$value}\' is not known, please choose from options, [#{$auro-inset-options}]';
+          @error 'INVALID, \'#{$value}\' is not known, please choose from options, [#{$ds-inset-options}]';
         }
 
         @if $value == 'none' {

@@ -1,10 +1,10 @@
-@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import "../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+@import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import "../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 
 @import 'true';
 
-$auro-spacing-types: inline;
-$auro-spacing-options: sm, lg, 25, 1000;
+$ds-spacing-types: inline;
+$ds-spacing-options: sm, lg, 25, 1000;
 @import "./src/utilityMixins/spacingUtility";
 
 @include describe('auro_spacing()') {

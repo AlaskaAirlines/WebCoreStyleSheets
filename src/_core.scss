@@ -44,7 +44,7 @@ $focus-visible: null !default;
   // if $focus-visible is true, override the default focus-visible outline
   @if $focus-visible {
     &:focus-visible {
-      outline: 2px solid var(--auro-color-ui-default-on-light);
+      outline: 2px solid var(--ds-color-ui-default-default);
     }
   } @else {
     &:focus-visible {
@@ -55,7 +55,7 @@ $focus-visible: null !default;
   // if $focus-visible is true, override the default focus-visible outline
   @if $focus-visible {
     &:focus-visible {
-      outline: 2px solid var(--auro-color-ui-default-on-light);
+      outline: 2px solid var(--ds-color-ui-default-default);
     }
   } @else {
     &:focus-visible {
@@ -66,7 +66,7 @@ $focus-visible: null !default;
   // if $focus is true, override the default focus outline
   @if $focus {
     &:focus {
-      outline: 2px solid var(--auro-color-ui-default-on-light);
+      outline: 2px solid var(--ds-color-ui-default-default);
     }
   }
 }

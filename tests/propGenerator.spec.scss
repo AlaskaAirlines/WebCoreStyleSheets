@@ -1,18 +1,18 @@
-@import '../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+@import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 
 @import 'true';
 
 $layout-properties: margin;
 $layout-extensions: Right;
 $layout-modifiers: (
-  "xxxs": $auro-size-xxxs,
-  "xxs": $auro-size-xxs,
-  "xxl": $auro-size-xxl,
-  "xxxl": $auro-size-xxxl,
-  "25": $auro-size-25,
-  "50": $auro-size-50,
-  "600": $auro-size-600,
-  "800": $auro-size-800
+  "xxxs": $ds-size-xxxs,
+  "xxs": $ds-size-xxs,
+  "xxl": $ds-size-xxl,
+  "xxxl": $ds-size-xxxl,
+  "25": $ds-size-25,
+  "50": $ds-size-50,
+  "600": $ds-size-600,
+  "800": $ds-size-800
 );
 @import '../src/utilityMixins/layoutPropertiesGenerator';
 

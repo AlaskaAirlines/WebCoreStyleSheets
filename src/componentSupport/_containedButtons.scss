@@ -37,7 +37,7 @@
   flex-direction: column;
 
   > * {
-    margin-bottom: 1rem;
+    margin-bottom: var(--ds-text-body-size-default, $ds-text-body-size-default);
 
     &:last-child {
       margin-bottom: 0;
@@ -49,7 +49,7 @@
 
     > * {
       margin-bottom: 0;
-      margin-left: 1rem;
+      margin-left: var(--dstext-body-size-default, $ds-text-body-size-default);
 
       &:first-child {
         margin-left: 0;

@@ -27,7 +27,7 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightDefault {
   @if variable-exists(ds-text-body-default-weight) {
-    font-weight: $ds-text-body-default-weight $important;
+    font-weight: var(--$ds-text-body-default-weight) $important;
   }
 }
 
@@ -50,7 +50,7 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightMedium {
   @if variable-exists(ds-text-body-default-weight) {
-    font-weight: $ds-text-heading-medium-weight $important;
+    font-weight: var(--ds-text-heading-medium-weight, $ds-text-heading-medium-weight) $important;
   }
 }
 
@@ -73,7 +73,7 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_fontWeightDisplay {
   @if variable-exists(ds-text-heading-display-weight) {
-    font-weight: $ds-text-heading-display-weight $important;
+    font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight) $important;
   }
 }
 
@@ -96,8 +96,8 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_body--lg {
   @if variable-exists(ds-text-body-size-lg) {
-    font-size: $ds-text-body-size-lg $important;
-    line-height: $ds-text-body-height-lg $important;
+    font-size: var(--ds-text-body-size-lg, $ds-text-body-size-lg) $important;
+    line-height: var(--ds-text-body-height-lg, $ds-text-body-height-lg) $important;
   }
 }
 
@@ -120,8 +120,8 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
 #{$scope}.#{$prefix}util_body--sm {
   @if variable-exists(ds-text-body-size-lg) {
-    font-size: $ds-text-body-size-sm $important;
-    line-height: $ds-text-body-height-sm $important;
+    font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm) $important;
+    line-height: var(--ds-text-body-height-sm, $ds-text-body-height-sm) $important;
   }
 }
 
@@ -145,7 +145,7 @@
 
 #{$scope}.#{$prefix}util_body--xs {
   @if variable-exists(ds-text-body-size-xs) {
-    font-size: $ds-text-body-size-xs $important;
-    line-height: $ds-text-body-height-xs $important;
+    font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs) $important;
+    line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs) $important;
   }
 }

@@ -116,9 +116,9 @@ html#{$scope} {
 #{$scope}pre {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
   @if variable-exists(ds-text-body-size-default) {
-    font-size: $ds-text-body-size-default; /* 2 */
+    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default); /* 2 */
   } @else {
-    font-size: $size-font-root;
+    font-size: var(--size-font-root, $size-font-root);
   }
 }
 
@@ -212,9 +212,9 @@ html#{$scope} {
 #{$scope}samp {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
   @if variable-exists(ds-text-body-size-default) {
-    font-size: $ds-text-body-size-default; /* 2 */
+    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default); /* 2 */
   } @else {
-    font-size: $size-font-root;
+    font-size: var(--size-font-root, $size-font-root);
   }
 }
 
@@ -337,9 +337,9 @@ html#{$scope} {
   font-family: inherit; /* 2 */
   font-size: 100%; /* 2 */
   @if variable-exists(ds-text-body-height-default) {
-    line-height: $ds-text-body-height-default; /* 2 */
+    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default); /* 2 */
   } @else {
-    line-height: $size-margin-baseline; /* 2 */
+    line-height: var(--size-margin-baseline, $size-margin-baseline); /* 2 */
   }
 }
 
@@ -412,6 +412,7 @@ html#{$scope} {
 #{$scope}[type='reset'],
 #{$scope}[type='submit'] {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 ///
@@ -539,6 +540,7 @@ html#{$scope} {
   outline-offset: -2px; /* 1 */
 
   -webkit-appearance: textfield; /* 2 */
+  appearance: textfield; /* 2 */
 }
 
 ///
@@ -557,6 +559,7 @@ html#{$scope} {
 ///
 #{$scope}::-webkit-search-decoration {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 ///
@@ -578,6 +581,7 @@ html#{$scope} {
   font: inherit; /* 1 */
 
   -webkit-appearance: button; /* 2 */
+  appearance: button; /* 2 */
 }
 
 /* Interactive

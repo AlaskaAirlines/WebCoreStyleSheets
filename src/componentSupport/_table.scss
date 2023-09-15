@@ -26,7 +26,7 @@
 
   tr {
     &:nth-child(even) {
-      background-color: $ds-color-base-gray-100;
+      background-color: $ds-color-brand-gray-100;
     }
   }
 
@@ -44,7 +44,7 @@
 
   thead {
     border-collapse: collapse;
-    border-bottom: 1px solid $ds-color-base-gray-200;
+    border-bottom: 1px solid $ds-color-brand-gray-200;
   }
 
   th,

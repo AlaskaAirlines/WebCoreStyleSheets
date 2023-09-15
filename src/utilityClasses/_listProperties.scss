@@ -53,7 +53,7 @@
   li::before {
     content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: var(--ds-size-300);
+    width: var(--ds-size-300, $ds-size-300);
   }
 }
 
@@ -78,16 +78,16 @@
 #{$scope}.#{$prefix}util_listIndented {
   padding-left: 0;
   list-style: none;
-  margin-left: calc(var(--ds-size-300) + var(--ds-size-50));
+  margin-left: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
   li::before {
     content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: var(--ds-size-300);
+    width: var(--ds-size-300, $ds-size-300);
   }
 }
 
 
-/// Utility class to display ordered lists with unindented numbering
+/// Utility class to display ordered lists with non-indented numbering
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
 ///
@@ -111,13 +111,13 @@
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: var(--ds-size-300);
+    width: var(--ds-size-300, $ds-size-300);
     display: inline-block;
   }
 }
 
 
-/// Utility class to display ordered lists with unindented numbering
+/// Utility class to display ordered lists with non-indented numbering
 ///
 /// [Manage](/#utility-variable-important) `!important` flag.
 ///
@@ -135,13 +135,13 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listIndentedOrdered {
-  padding-left: calc(var(--ds-size-300) + var(--ds-size-50));
+  padding-left: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
   list-style: none;
   counter-reset: li-counter;
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: var(--ds-size-300);
+    width: var(--ds-size-300, $ds-size-300);
     display: inline-block;
   }
 }
@@ -165,12 +165,12 @@
 /// @example scss - import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
 #{$scope}.#{$prefix}util_listAuroIcon {
-  padding-left: calc(var(--ds-size-300) + var(--ds-size-50));
+  padding-left: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
   list-style: none;
   li {
-    text-indent: calc(var(--ds-size-200) * -1);
+    text-indent: calc(var(--ds-size-200, $ds-size-200) * -1);
   }
   ds-icon {
-    width: var(--ds-size-200);
+    width: var(--ds-size-200, $ds-size-200);
   }
 }

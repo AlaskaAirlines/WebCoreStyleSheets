@@ -20,7 +20,7 @@
 ///       }
 ///   }
 @mixin auro_breakpoint--lg {
-  @media screen and (min-width: $ds-breakpoint-lg) {
+  @media screen and (min-width: $ds-grid-breakpoint-lg) {
     @content;
   }
 }
@@ -38,7 +38,7 @@
 ///       }
 ///   }
 @mixin auro_breakpoint--md {
-  @media screen and (min-width: $ds-breakpoint-md) {
+  @media screen and (min-width: $ds-grid-breakpoint-md) {
     @content;
   }
 }
@@ -55,7 +55,7 @@
 ///       }
 ///   }
 @mixin auro_breakpoint--sm {
-  @media screen and (min-width: $ds-breakpoint-sm) {
+  @media screen and (min-width: $ds-grid-breakpoint-sm) {
     @content;
   }
 }
@@ -151,9 +151,9 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
 /// @group responsive
 /// @example scss - Auro breakpoint tokens
-///   $ds-breakpoint-sm: 660px;
-///   $ds-breakpoint-md: 1024px;
-///   $ds-breakpoint-lg: 1232px;
+///   $ds-grid-breakpoint-sm: 576px;
+///   $ds-grid-breakpoint-md: 768px;
+///   $ds-grid-breakpoint-lg: 1024px;
 /// @param {string} $min [null] - sets `min-width` value
 /// @param {string} $max [null] - sets `max-width` value
 /// @param {list} $polar [null] - sets `min-width` and `max-width` values
@@ -162,7 +162,7 @@
 ///   .foo {
 ///     color: orange;
 ///
-///     @include auro_breakpoint($min: $ds-breakpoint-sm) {
+///     @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
 ///       color: blue;
 ///     }
 ///   }
@@ -170,7 +170,7 @@
 ///   .foo {
 ///     color: orange;
 ///
-///     @include auro_breakpoint($max: $ds-breakpoint-lg) {
+///     @include auro_breakpoint($max: $ds-grid-breakpoint-lg) {
 ///       color: blue;
 ///     }
 ///   }
@@ -178,7 +178,7 @@
 ///   .foo {
 ///     color: orange;
 ///
-///     @include auro_breakpoint($polar: $ds-breakpoint-sm $ds-breakpoint-lg) {
+///     @include auro_breakpoint($polar: $ds-grid-breakpoint-sm $ds-grid-breakpoint-lg) {
 ///       color: blue;
 ///     }
 ///   }
@@ -186,7 +186,7 @@
 ///   .foo {
 ///     color: orange;
 ///
-///     @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$ds-breakpoint-sm})') {
+///     @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$ds-grid-breakpoint-sm})') {
 ///       color: blue;
 ///     }
 ///   }

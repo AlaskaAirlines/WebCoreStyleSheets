@@ -24,13 +24,13 @@ $focus: null !default;
 ///
 #{$sym}#{$prefix}#{$scope}blockquote {
   margin-left: 0;
-  border-left: 1px solid var(--ds-color-border-active-default);
-  padding: var(--ds-size-100);
-  padding-left: var(--ds-size-400);
-  color: var(--ds-color-text-secondary-default);
+  border-left: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
+  padding: var(--ds-size-100, $ds-size-100);
+  padding-left: var(--ds-size-400, $ds-size-400);
+  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
   font-weight: 200;
-  margin-top: var(--ds-size-300);
-  margin-bottom: var(--ds-size-300);
+  margin-top: var(--ds-size-300, $ds-size-300);
+  margin-bottom: var(--ds-size-300, $ds-size-300);
 
   p {
     line-height: 2;
@@ -41,6 +41,6 @@ $focus: null !default;
   }
 
   & + p {
-    margin-bottom: var(--ds-size-400);
+    margin-bottom: var(--ds-size-400, $ds-size-400);
   }
 }

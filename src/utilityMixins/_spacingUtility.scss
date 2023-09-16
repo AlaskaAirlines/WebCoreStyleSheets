@@ -23,26 +23,26 @@ $ds-spacing-properties: padding, padding, margin, margin !default;
 /// **Dependency:** `$npm i @aurodesignsystem/design-tokens`
 /// @group utility-layout
 /// @param {string} $ds-spacing-types [inline, stack] inline - L/R, stack - top/bottom
-/// @param {string} $ds-spacing-options [none, 25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000] defines value applied. The previous sizing scale of xxxs - xxxl has been deprecated.
+/// @param {string} $ds-spacing-options [none, 25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000] defines value applied.
 /// @example css - Example output css
-///  .util_stackPaddingXxxs--top {
-///    padding-top: 0.125rem;
-///  }
-///  .util_stackPaddingXxxs--bottom {
-///    padding-bottom: 0.125rem;
-///  }
-///  .util_stackMarginXxxs--top {
-///    margin-top: 0.125rem;
-///  }
-///  .util_stackMarginXxxs--bottom {
-///    margin-bottom: 0.125rem;
-///  }
+/// .util_inlinePadding25--left {
+///   padding-left: 0.125rem;
+/// }
+/// .util_inlinePadding25--right {
+///   padding-right: 0.125rem;
+/// }
+/// .util_inlineMargin25--left {
+///   margin-left: 0.125rem;
+/// }
+/// .util_inlineMargin25--right {
+///   margin-right: 0.125rem;
+/// }
 /// @example scss - import dependencies
 ///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 /// @example scss - import with custom over-rides
 ///   $ds-spacing-types: inline;
-///   $ds-spacing-options: xxxs;
+///   $ds-spacing-options: 200;
 ///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 

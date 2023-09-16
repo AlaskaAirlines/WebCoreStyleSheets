@@ -57,3 +57,10 @@
 
 /* --------start blockquote import ------------- */
 @import './../src/blockquote';
+
+/* --------start blockquote import ------------- */
+$ds-spacing-types: stack;
+$ds-spacing-options: none, 200, 500, 700;
+$ds-spacing-properties: padding, margin;
+@import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap.scss';
+@import './../src/utilityMixins/spacingUtility';

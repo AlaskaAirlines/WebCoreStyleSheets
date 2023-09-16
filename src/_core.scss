@@ -13,7 +13,7 @@ $focus-visible: null !default;
 ///
 /// Global media setting for [a11y support of reduced-motion](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code). By setting the durations to almost 0, we prevent animation from playing for those with motion sensitivities without affecting transition or animation events (e.g. transitioned).
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group core
 /// @example scss - Default selector(s)
 ///   *, *:before, *:after {}

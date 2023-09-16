@@ -5,6 +5,12 @@
 
 // sass-lint:disable no-warn
 
+// Internal support mixin, not designed for public use.
+
+// @example scss - Using mixin with default values;
+//  @import './libSupport/deprecated';
+//  @include deprecated('@mixin auro_transition. No replacement. Discontinue use.');
+
 @mixin deprecated($string) {
-  @warn 'Deprecated: #{$string}. Please see [ https://git.io/JfCe2 ] for more information.';
+  @warn 'Deprecated: #{$string} Please see https://alaskaairlines.github.io/WebCoreStyleSheets/ for more information.';
 }

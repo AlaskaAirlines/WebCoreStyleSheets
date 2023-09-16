@@ -39,6 +39,7 @@
     "no-empty-rulesets": 2,
     "no-mergeable-selectors": 2,
     "no-misspelled-properties": 2,
+    "no-global-function-names": 2,
     "indentation": [
       2,
       {

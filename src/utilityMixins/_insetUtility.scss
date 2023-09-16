@@ -10,8 +10,6 @@
 @import '../utilityVariables/important';
 @import '../libSupport/manageScope';
 
-/* stylelint-disable scss/no-global-function-names */
-
 $ds-inset-directions: '', --stretch, --squish !default;
 $ds-inset-spacing-options: $ds-spacing-options !default;
 

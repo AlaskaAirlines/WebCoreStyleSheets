@@ -14,7 +14,7 @@
 /// 1. Correct the line height in all browsers.
 /// 2. Prevent adjustments of font size after orientation changes in iOS.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   html {}
@@ -37,7 +37,7 @@ html#{$scope} {
 ///
 ////// Remove the margin in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   body {}
@@ -58,7 +58,7 @@ html#{$scope} {
 ///
 /// Render the `main` element consistently in IE.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   main {}
@@ -80,7 +80,7 @@ html#{$scope} {
 /// 1. Show the overflow in Edge and IE.
 /// 2. Add the correct box sizing in Firefox.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   hr {}
@@ -102,7 +102,7 @@ html#{$scope} {
 /// 1. Correct the inheritance and scaling of font size in all browsers.
 /// 2. Correct the odd `em` font sizing in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   pre {}
@@ -128,7 +128,7 @@ html#{$scope} {
 ///
 /// Remove the gray background on active links in IE 10.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   a {}
@@ -147,7 +147,7 @@ html#{$scope} {
 /// 1. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 /// 2. Remove the bottom border in Chrome 57-
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   abbr[title] {}
@@ -170,7 +170,7 @@ html#{$scope} {
 ///
 /// Add the correct font weight in Chrome, Edge, and Safari.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   b,
@@ -192,7 +192,7 @@ html#{$scope} {
 /// 1. Correct the inheritance and scaling of font size in all browsers.
 /// 2. Correct the odd `em` font sizing in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   code,
@@ -221,7 +221,7 @@ html#{$scope} {
 ///
 /// Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   sub,
@@ -247,7 +247,7 @@ html#{$scope} {
 ///
 /// Prevent `sub` element from affecting the line height in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   sub {}
@@ -265,7 +265,7 @@ html#{$scope} {
 ///
 /// Prevent `sup` element from affecting the line height in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   sup {}
@@ -286,7 +286,7 @@ html#{$scope} {
 ///
 /// Remove the border on images inside links in IE 10.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   img {}
@@ -308,7 +308,7 @@ html#{$scope} {
 /// 1. Remove the margin in Firefox and Safari.
 /// 2. Change the font styles in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   button,
@@ -347,7 +347,7 @@ html#{$scope} {
 /// Show the overflow in IE.
 /// 1. Show the overflow in Edge.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   button,
@@ -369,7 +369,7 @@ html#{$scope} {
 /// Remove the inheritance of text transform in Edge, Firefox, and IE.
 /// 1. Remove the inheritance of text transform in Firefox.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   button,
@@ -390,7 +390,7 @@ html#{$scope} {
 ///
 /// Correct the inability to style clickable types in iOS and Safari.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   button,
@@ -418,7 +418,7 @@ html#{$scope} {
 ///
 /// Correct the padding in Firefox.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   fieldset {}
@@ -439,7 +439,7 @@ html#{$scope} {
 ///    `fieldset` elements in all browsers.
 /// 3. Correct the color inheritance from `fieldset` elements in IE.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   legend {}
@@ -465,7 +465,7 @@ html#{$scope} {
 ///
 /// Add the correct vertical alignment in Chrome, Firefox, and Opera.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   progress {}
@@ -483,7 +483,7 @@ html#{$scope} {
 ///
 /// Remove the default vertical scrollbar in IE 10+.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   textarea {}
@@ -501,7 +501,7 @@ html#{$scope} {
 ///
 /// Correct the cursor style of increment and decrement buttons in Chrome.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   [type="number"]::-webkit-inner-spin-button,
@@ -525,7 +525,7 @@ html#{$scope} {
 /// 1. Correct the outline style in Safari.
 /// 2. Correct the odd appearance in Chrome and Safari.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   [type="search"] {}
@@ -546,7 +546,7 @@ html#{$scope} {
 ///
 /// Remove the inner padding in Chrome and Safari on macOS.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   [type="search"]::-webkit-search-decoration {}
@@ -566,7 +566,7 @@ html#{$scope} {
 /// !. Change font properties to `inherit` in Safari.
 /// 2. Correct the inability to style clickable types in iOS and Safari.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   ::-webkit-file-upload-button {}
@@ -590,7 +590,7 @@ html#{$scope} {
 ///
 /// Add the correct display in Edge, IE 10+, and Firefox.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   details {}
@@ -608,7 +608,7 @@ html#{$scope} {
 ///
 /// Add the correct display in all browsers.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   summary {}
@@ -629,7 +629,7 @@ html#{$scope} {
 ///
 /// Add the correct display in IE 10+.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   template {}
@@ -647,7 +647,7 @@ html#{$scope} {
 ///
 /// Add the correct display in IE 10.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` option.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group Normalize
 /// @example scss - Default selector(s)
 ///   [hidden] {}

@@ -10,7 +10,7 @@
 
 /// Baseline HTML setting to establish box-model and default font size.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   html {}
@@ -35,7 +35,7 @@
 
 /// Set baseline type settings for `body` element or with the use of the `.baseType` selector.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   body,
@@ -69,7 +69,7 @@
 ///
 /// Use of nested `.auro_hyperlink` defines underline text-decoration for anchor tags
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   .baseParagraph {}
@@ -100,7 +100,7 @@
 ///
 /// Support for: `.hyperlink--nav`, and `.hyperlink--ondark`
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   .hyperlink {}
@@ -167,7 +167,7 @@
 /// Default setting for all `<img />` tags so that images will automatically adjust to fit the size of the screen.
 /// If additional properties are needed to shape the img selector, please see the list of Utility classes including the [.util_img-is-responsive](/#utility-responsive-css-#{$scope}.#{$prefix}util_img-is-responsive) selector to scale images with responsive aspects.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   img {}
@@ -187,7 +187,7 @@
 
 /// Legal copy, disclaimers, and footnotes below applicable content section. Above input as floating label, below input as help or error text.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   small,
@@ -215,7 +215,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///
 /// Other options are to use the `<small>` element or the `.baseParagraph` selector.
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   p {}
@@ -244,7 +244,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 
 /// Defines the font size and color of fine print text
 ///
-/// [Manage](/#scope-prefix-variable) `$scope` and `$prefix` options.
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group essentials
 /// @example scss - Default selector(s)
 ///   .fineprint {}

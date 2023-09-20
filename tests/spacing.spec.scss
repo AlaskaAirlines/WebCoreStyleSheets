@@ -4,7 +4,7 @@
 @import 'true';
 
 $ds-spacing-types: inline;
-$ds-spacing-options: sm, lg, 25, 1000;
+$ds-spacing-options: 25, 1000;
 @import "./src/utilityMixins/spacingUtility";
 
 @include describe('auro_spacing()') {
@@ -15,38 +15,6 @@ $ds-spacing-options: sm, lg, 25, 1000;
       }
 
       @include expect {
-        .util_inlinePaddingSm--left {
-          padding-left: 0.75rem;
-        }
-
-        .util_inlinePaddingSm--right {
-          padding-right: 0.75rem;
-        }
-
-        .util_inlineMarginSm--left {
-          margin-left: 0.75rem;
-        }
-
-        .util_inlineMarginSm--right {
-          margin-right: 0.75rem;
-        }
-
-        .util_inlinePaddingLg--left {
-          padding-left: 1.5rem;
-        }
-
-        .util_inlinePaddingLg--right {
-          padding-right: 1.5rem;
-        }
-
-        .util_inlineMarginLg--left {
-          margin-left: 1.5rem;
-        }
-
-        .util_inlineMarginLg--right {
-          margin-right: 1.5rem;
-        }
-
         .util_inlinePadding25--left {
           padding-left: 0.125rem;
         }

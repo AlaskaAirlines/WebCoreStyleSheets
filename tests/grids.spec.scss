@@ -16,7 +16,7 @@
             position: sticky;
             top: 0;
             max-height: 100vh;
-            padding-top: 2rem;
+            padding-top: var(--ds-grid-margin-xl, 2rem);
         }
       }
     }
@@ -94,16 +94,16 @@
       @include expect {
         gap: 0.5rem;
         @media screen and (min-width: 576px) {
-         gap: 1rem;
+          gap: var(--ds-grid-gutter-sm, 1rem);
         }
         @media screen and (min-width: 768px) {
-          gap: 1.5rem;
+          gap: var(--ds-grid-gutter-md, 1.5rem);
         }
         @media screen and (min-width: 1024px) {
-          gap: 1.5rem;
+          gap: var(--ds-grid-gutter-lg, 1.5rem);
         }
         @media screen and (min-width: 1232px) {
-          gap: 2rem;
+          gap: var(--ds-grid-gutter-xl, 2rem);
         }
       }
     }
@@ -133,22 +133,22 @@
         }
         @media screen and (min-width: 576px) {
           .grid {
-            gap: 1rem;
+            gap: var(--ds-grid-gutter-sm, 1rem);
           }
         }
         @media screen and (min-width: 768px) {
           .grid {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-md, 1.5rem);
           }
         }
         @media screen and (min-width: 1024px) {
           .grid {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-lg, 1.5rem);
           }
         }
         @media screen and (min-width: 1232px) {
           .grid {
-            gap: 2rem;
+            gap: var(--ds-grid-gutter-xl, 2rem);
           }
         }
       }
@@ -240,22 +240,22 @@
         }
         @media screen and (min-width: 576px) {
           .pageLayout-2colAnchorNav {
-            gap: 1rem;
+            gap: var(--ds-grid-gutter-sm, 1rem);
           }
         }
         @media screen and (min-width: 768px) {
           .pageLayout-2colAnchorNav {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-md, 1.5rem);
           }
         }
         @media screen and (min-width: 1024px) {
           .pageLayout-2colAnchorNav {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-lg, 1.5rem);
           }
         }
         @media screen and (min-width: 1232px) {
           .pageLayout-2colAnchorNav {
-            gap: 2rem;
+            gap: var(--ds-grid-gutter-xl, 2rem);
           }
         }
       }
@@ -293,22 +293,22 @@
         }
         @media screen and (min-width: 576px) {
           .pageLayout-2colSideNav {
-            gap: 1rem;
+            gap: var(--ds-grid-gutter-sm, 1rem);
           }
         }
         @media screen and (min-width: 768px) {
           .pageLayout-2colSideNav {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-md, 1.5rem);
           }
         }
         @media screen and (min-width: 1024px) {
           .pageLayout-2colSideNav {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-lg, 1.5rem);
           }
         }
         @media screen and (min-width: 1232px) {
           .pageLayout-2colSideNav {
-            gap: 2rem;
+            gap: var(--ds-grid-gutter-xl, 2rem);
           }
         }
       }
@@ -347,22 +347,22 @@
         }
         @media screen and (min-width: 576px) {
           .pageLayout-3col {
-            gap: 1rem;
+            gap: var(--ds-grid-gutter-sm, 1rem);
           }
         }
         @media screen and (min-width: 768px) {
           .pageLayout-3col {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-md, 1.5rem);
           }
         }
         @media screen and (min-width: 1024px) {
           .pageLayout-3col {
-            gap: 1.5rem;
+            gap: var(--ds-grid-gutter-lg, 1.5rem);
           }
         }
         @media screen and (min-width: 1232px) {
           .pageLayout-3col {
-            gap: 2rem;
+            gap: var(--ds-grid-gutter-xl, 2rem);
           }
         }
       }

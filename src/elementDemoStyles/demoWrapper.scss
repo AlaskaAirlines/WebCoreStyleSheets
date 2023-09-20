@@ -5,6 +5,9 @@
 // All styles for the custom element are located in the ./src directory.
 
 // matches max-width of AS.com and Auro docsite width specs
+
+@import './../../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
+
 body {
   padding: var(--ds-size-400, $ds-size-400);
 }

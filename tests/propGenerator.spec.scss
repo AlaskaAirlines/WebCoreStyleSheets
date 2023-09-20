@@ -5,14 +5,11 @@
 $layout-properties: margin;
 $layout-extensions: Right;
 $layout-modifiers: (
-  "xxxs": $ds-size-xxxs,
-  "xxs": $ds-size-xxs,
-  "xxl": $ds-size-xxl,
-  "xxxl": $ds-size-xxxl,
-  "25": $ds-size-25,
-  "50": $ds-size-50,
-  "600": $ds-size-600,
-  "800": $ds-size-800
+  'none': 0,
+  '100': $ds-size-100,
+  '200': $ds-size-200,
+  '300': $ds-size-300,
+  '400': $ds-size-400,
 );
 @import '../src/utilityMixins/layoutPropertiesGenerator';
 
@@ -24,36 +21,24 @@ $layout-modifiers: (
       }
 
       @include expect {
-        .util_marginRight--xxxs {
-          margin-right: 0.125rem;
+        .util_marginRight--none {
+          margin-right: 0;
         }
 
-        .util_marginRight--xxs {
-          margin-right: 0.25rem;
+        .util_marginRight--100 {
+          margin-right: 0.5rem;
         }
 
-        .util_marginRight--xxl {
-          margin-right: 3rem;
+        .util_marginRight--200 {
+          margin-right: 1rem;
         }
 
-        .util_marginRight--xxxl {
-          margin-right: 4rem;
+        .util_marginRight--300 {
+          margin-right: 1.5rem;
         }
 
-        .util_marginRight--25 {
-          margin-right: 0.125rem;
-        }
-
-        .util_marginRight--50 {
-          margin-right: 0.25rem;
-        }
-
-        .util_marginRight--600 {
-          margin-right: 3rem;
-        }
-
-        .util_marginRight--800 {
-          margin-right: 4rem;
+        .util_marginRight--400 {
+          margin-right: 2rem;
         }
       }
     }

@@ -15,7 +15,7 @@
       }
 
       @include expect {
-        @media screen and (min-width: 1232px) {
+        @media screen and (min-width: 1024px) {
           .auro_breakpoint--lg {
             color: orange;
           }
@@ -37,7 +37,7 @@
       }
 
       @include expect {
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 768px) {
           .auro_breakpoint--md {
             color: orange;
           }
@@ -59,7 +59,7 @@
       }
 
       @include expect {
-        @media screen and (min-width: 660px) {
+        @media screen and (min-width: 576px) {
           .auro_breakpoint--sm {
             color: orange;
           }
@@ -74,14 +74,14 @@
     @include assert {
       @include output {
         .auro_breakpoint {
-          @include auro_breakpoint($min: $ds-breakpoint-sm) {
+          @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
             color: orange;
           }
         }
       }
 
       @include expect {
-        @media screen and (min-width: 660px) {
+        @media screen and (min-width: 576px) {
           .auro_breakpoint {
             color: orange;
           }
@@ -96,14 +96,14 @@
     @include assert {
       @include output {
         .auro_breakpoint {
-          @include auro_breakpoint($min: $ds-breakpoint-lg) {
+          @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
             color: orange;
           }
         }
       }
 
       @include expect {
-        @media screen and (min-width: 1232px) {
+        @media screen and (min-width: 1024px) {
           .auro_breakpoint {
             color: orange;
           }
@@ -118,14 +118,14 @@
     @include assert {
       @include output {
         .auro_breakpoint {
-          @include auro_breakpoint($polar: $ds-breakpoint-sm $ds-breakpoint-lg) {
+          @include auro_breakpoint($polar: $ds-grid-breakpoint-sm $ds-grid-breakpoint-lg) {
             color: orange;
           }
         }
       }
 
       @include expect {
-        @media screen and (min-width: 660px) and (max-width: 1232px) {
+        @media screen and (min-width: 576px) and (max-width: 1024px) {
           .auro_breakpoint {
             color: orange;
           }
@@ -140,14 +140,14 @@
     @include assert {
       @include output {
         .auro_breakpoint {
-          @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$ds-breakpoint-sm})') {
+          @include auro_breakpoint($cust: '(min-width: 400px) and (max-width: #{$ds-grid-breakpoint-sm})') {
             color: orange;
           }
         }
       }
 
       @include expect {
-        @media screen and (min-width: 400px) and (max-width: 660px) {
+        @media screen and (min-width: 400px) and (max-width: 576px) {
           .auro_breakpoint {
             color: orange;
           }

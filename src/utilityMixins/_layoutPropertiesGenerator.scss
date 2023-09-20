@@ -13,19 +13,12 @@
 
 $layout-properties: margin padding !default;
 $layout-extensions: Top Left Bottom Right !default;
-
-// none, xs, md, lg and xl have been deprecated and should be removed with next major release
-// ---------------------------------------------------------------------
 $layout-modifiers: (
   'none': 0,
   '100': $ds-size-100,
   '200': $ds-size-200,
   '300': $ds-size-300,
   '400': $ds-size-400,
-  'xs': $ds-size-100,
-  'md': $ds-size-200,
-  'lg': $ds-size-300,
-  'xl': $ds-size-400
 ) !default;
 
 /// Mixin auto-generates all available utility selectors. This mixin is NOT for general use and will produce selectors with the import of this Sass file. Output can be configured by redefining default values prior to import. See default value examples below.

@@ -1,0 +1,188 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import '../libSupport/deprecated';
+@import '../libSupport/manageScope';
+
+// sass-lint:disable mixins-before-declarations variable-for-property
+
+@import '../utilityVariables/important';
+
+@include deprecated('Inset utility selectors and mixin.');
+
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
+/// @group Utility-inset
+/// @example scss - Default selector(s)
+///   .util_insetNone {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_insetNone {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_insetNone {}
+///
+
+#{$scope}.#{$prefix}util_insetNone {
+  padding: 0 $important;
+}
+
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
+///
+/// Not all options are illustrated in documentation.
+/// Range of options xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
+/// @group Utility-inset
+/// @example scss - Default selector(s)
+///   .util_insetXxxs {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_insetXxxs {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_insetXxxs {}
+///
+
+#{$scope}.#{$prefix}util_insetXxxs {
+  padding: 0.125rem;
+}
+
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
+///
+/// Not all options are illustrated in documentation.
+/// Range of options xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
+/// @group Utility-inset
+/// @example scss - Default selector(s)
+///   .util_insetXxxs--stretch {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_insetXxxs--stretch {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_insetXxxs--stretch {}
+///
+
+#{$scope}.#{$prefix}util_insetXxxs--stretch {
+  padding: calc(0.125rem * 2) 0.125rem;
+}
+
+/// [Manage](/#utility-variable-important) `!important` flag.
+///
+/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
+///
+/// Not all options are illustrated in documentation.
+/// Range of options xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
+/// @group Utility-inset
+/// @example scss - Default selector(s)
+///   .util_insetXxxs--squish {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro .util_insetXxxs--squish {}
+///
+/// @example scss - Selector(s) when $prefix: true;
+///   .auro_util_insetXxxs--squish {}
+///
+
+#{$scope}.#{$prefix}util_insetXxxs--squish {
+  padding: 0 0.125rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxs {
+  padding: 0.25rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxs--stretch {
+  padding: calc(0.25rem * 1.5) 0.25rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxs--squish {
+  padding: calc(0.25rem / 2) 0.25rem;
+}
+
+#{$scope}.#{$prefix}util_insetXs {
+  padding: 0.5rem;
+}
+
+#{$scope}.#{$prefix}util_insetXs--stretch {
+  padding: calc(0.5rem * 1.5) 0.5rem;
+}
+
+#{$scope}.#{$prefix}util_insetXs--squish {
+  padding: calc(0.5rem / 2) 0.5rem;
+}
+
+#{$scope}.#{$prefix}util_insetSm {
+  padding: 0.75rem;
+}
+
+#{$scope}.#{$prefix}util_insetSm--stretch {
+  padding: calc(0.75rem * 1.5) 0.75rem;
+}
+
+#{$scope}.#{$prefix}util_insetSm--squish {
+  padding: calc(0.75rem / 2) 0.75rem;
+}
+
+#{$scope}.#{$prefix}util_insetMd {
+  padding: 1rem;
+}
+
+#{$scope}.#{$prefix}util_insetMd--stretch {
+  padding: calc(1rem * 1.5) 1rem;
+}
+
+#{$scope}.#{$prefix}util_insetMd--squish {
+  padding: calc(1rem / 2) 1rem;
+}
+
+#{$scope}.#{$prefix}util_insetLg {
+  padding: 1.5rem;
+}
+
+#{$scope}.#{$prefix}util_insetLg--stretch {
+  padding: calc(1.5rem * 1.5) 1.5rem;
+}
+
+#{$scope}.#{$prefix}util_insetLg--squish {
+  padding: calc(1.5rem / 2) 1.5rem;
+}
+
+#{$scope}.#{$prefix}util_insetXl {
+  padding: 2rem;
+}
+
+#{$scope}.#{$prefix}util_insetXl--stretch {
+  padding: calc(2rem * 1.5) 2rem;
+}
+
+#{$scope}.#{$prefix}util_insetXl--squish {
+  padding: calc(2rem / 2) 2rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxl {
+  padding: 3rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxl--stretch {
+  padding: calc(3rem * 1.5) 3rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxl--squish {
+  padding: calc(3rem / 2) 3rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxxl {
+  padding: 4rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxxl--stretch {
+  padding: calc(4rem * 1.5) 4rem;
+}
+
+#{$scope}.#{$prefix}util_insetXxxl--squish {
+  padding: calc(4rem / 2) 4rem;
+}

@@ -25,6 +25,9 @@
 /* --------start utility/Classes import ------------- */
 @import './../src/utilityClasses';
 
+/* --------start utilityClasses/inset import ------------- */
+@import "./../src/utilityClasses/inset";
+
 /* --------start utilityClasses/displayProps import ------------- */
 @import './../src/utilityClasses/displayProperties';
 
@@ -58,9 +61,21 @@
 /* --------start blockquote import ------------- */
 @import './../src/blockquote';
 
-/* --------start blockquote import ------------- */
-$ds-spacing-types: stack;
-$ds-spacing-options: none, 200, 500, 700;
+/* --------start spacingUtility mixin import ------------- */
+$ds-spacing-types: inline;
+$ds-spacing-options: 25, 1000;
 $ds-spacing-properties: padding, margin;
 @import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap.scss';
 @import './../src/utilityMixins/spacingUtility';
+
+/* --------start layoutPropertiesGenerator mixin import ------------- */
+$layout-properties: margin;
+$layout-extensions: Right;
+$layout-modifiers: (
+  'none': 0,
+  '100': $ds-size-100,
+  '200': $ds-size-200,
+  '300': $ds-size-300,
+  '400': $ds-size-400,
+);
+@import './../src/utilityMixins/layoutPropertiesGenerator';

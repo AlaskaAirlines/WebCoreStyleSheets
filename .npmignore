@@ -2,11 +2,23 @@
 .gitignore
 .sasslintrc
 .stylelintrc
-.travis.yml
+
+# Directories 
 scripts/
-test/
+demo/
+docs/
+tests/
+results/
+documents/
+
+# ignore docs
+*.md
 
 # ignore src
-src/**/*
+src/fonts/
+src/auroElement/
+src/scripts/
 
 # overrides
+!CHANGELOG.md
+!README.md

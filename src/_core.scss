@@ -11,7 +11,7 @@ $focus-visible: null !default;
 
 /// Global selector to address box-model and default `:focus` pseudo elements.
 ///
-/// Global media setting for [a11y support of reduced-motion](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code). By setting the durations to almost 0, we prevent animation from playing for those with motion sensitivities without affecting transition or animation events (e.g. transitioned).
+/// Global media setting for [a11y support of reduced-motion](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code). By setting the durations to almost 0, we prevent animation from playing for those with motion sensitivities without affecting transition or animation events (e.g. transitionend).
 ///
 /// [Manage](/#scope-prefix-variable-scope) `$scope` option.
 /// @group core

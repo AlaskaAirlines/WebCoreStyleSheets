@@ -26,7 +26,7 @@ $ npm i @aurodesignsystem/webcorestylesheets
 There are no core files to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss
-@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
+@import "~@aurodesignsystem/webcorestylesheets/src/ ... "
 ```
 
 ### Tokens Dependency
@@ -35,7 +35,7 @@ WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Desig
 
 ```scss
 @import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
-@import "~@aurodesignsystem/webcorestylesheets/dist/ ... ";
+@import "~@aurodesignsystem/webcorestylesheets/src/ ... ";
 ```
 
 ### Install the essentials
@@ -44,19 +44,19 @@ While WCSS is an à la carte solution, there are things that should be considere
 
 ```scss
 // baseline design tokens as Sass variables
-@import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "~@aurodesignsystem/design-tokens/src/tokens/SCSSVariables";
 
 // globally add the mixins so that any future reference will be addressed
-@import '~@aurodesignsystem/design-tokens/dist/tokens/breakpoints';
+@import '~@aurodesignsystem/design-tokens/src/tokens/breakpoints';
 
 // it's typically best practice to load the @font-face rules prior to any reference of the custom web fonts
-@import '~@aurodesignsystem/design-tokens/dist/tokens/fonts';
+@import '~@aurodesignsystem/design-tokens/src/tokens/fonts';
 
 // set a baseline browser normalize
-@import '~@aurodesignsystem/design-tokens/dist/tokens/normalize';
+@import '~@aurodesignsystem/design-tokens/src/tokens/normalize';
 
 // essentials setup baseline primitive selectors for any UI development
-@import '~@aurodesignsystem/design-tokens/dist/tokens/essentials';
+@import '~@aurodesignsystem/design-tokens/src/tokens/essentials';
 ```
 
 For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
@@ -76,14 +76,9 @@ At a limited scale, some files have been pre-processed to CSS so that it can be 
 
 **API Note**: First supporting version `v2.9.0`
 
-```
-unpkg.com/:package@:version/:file
-```
-
-| resource | supports | CDN URL |
-|---|---|---|
-| essentials.scss<br>fonts.scss|Auro WCs|https://unpkg.com/@aurodesignsystem/webcorestylesheets@:version/dist/bundled/essentials.css|
-| baseline.scss<br>fonts.scss|ODS WCs|https://unpkg.com/@aurodesignsystem/webcorestylesheets@:version/dist/bundled/baseline.css|
+| resource | CDN URL |
+|---|---
+| essentials.scss<br>fonts.scss|https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css|
 
 ## Development
 
@@ -96,17 +91,3 @@ If additional selectors or scenarios are needed, please update the `./scripts/te
 Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation.
 
 WCSS fully supports idiomatic CSS, be sure to review the [auro docs site](https://auro.alaskaair.com/webcorestylesheets/idiomatic-css) for more information.
-
-### Linters
-
-Sass-Lint tests to ensure that any new code is compliant with the set-forward standard. Sass-Lint is run as a pre-commit hook in this project. No commits will be allowed unless all linter tests are passed.
-
-If there is an error, this will generate a `.html` file at the root of the project. To view this generated file, run the following command:
-
-```
-$ open sass-lint.html
-```
-
-This should open the file in your default browser.
-
-This file is ignored and will not be added to version control.

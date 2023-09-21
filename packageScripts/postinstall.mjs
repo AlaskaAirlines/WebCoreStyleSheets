@@ -1,6 +1,8 @@
 'use strict';
 
-const chalk = require('chalk');
+import chalk from 'chalk';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
 const pjson = require('../package.json');
 
 console.log(chalk.hex('#f26135')(`
@@ -22,7 +24,7 @@ chalk.hex('#f26135')(`
                of `) + chalk.hex('#ffd200').bold(`WC Stylesheets v${pjson.version}.`) + chalk.hex('#f26135')(`
 
             Requires Design Tokens ${pjson.peerDependencies["@aurodesignsystem/design-tokens"]}
-         npm i @aurodesignsystem/design-tokens@latest
+      npm i @aurodesignsystem/design-tokens@latest
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
 `) + chalk.hex('#ffd200').bold(`

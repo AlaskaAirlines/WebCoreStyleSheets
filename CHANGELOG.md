@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.0...v5.0.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* update typo in variable CSS references ([34b174c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/34b174cf79bac0eccb5b53b96d1bbf5f905b4b66))
+
 # [5.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.8.0...v5.0.0) (2023-09-25)
 
 

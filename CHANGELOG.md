@@ -1,5 +1,71 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.8.0...v5.0.0) (2023-09-25)
+
+
+### Features
+
+* remove all deprecated references [#169](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/169) ([711d729](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/711d7298ff368a48f25b72dbe7694876881c54ff))
+* update to use CSS variables with fallback [#134](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/134) ([9546be4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/9546be475d241520cbd14c240ad7c04da342b8e0))
+
+
+### Performance Improvements
+
+* **deps:** update repo to support Node 18 [#155](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/155) ([c208bad](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/c208bad02a3885c2b35179055001c5c35509725f))
+* **tokens:** update to design tokens 4.x [#134](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/134) ([8f17359](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/8f173595b976b1dfae8a355e93e4187228d41f44))
+* update all references from auro- to ds- [#169](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/169) ([57831ef](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/57831eff71cf636eea6788c4a4730cb7afb691c0))
+* update insetUtility to maintain current support ([a136b9d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/a136b9d5b55356804d25166264dc3b04f7d07164))
+* update package config [#171](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/171) ([4ca4e7d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4ca4e7dc4f1ea2fe70cf9efdbd5ef1f83d4016f7))
+
+
+### BREAKING CHANGES
+
+* This commit updates the .npmignore package config to
+reduce the scope of the packaged files and directories
+
+This commit also removes the necessity of copying all the src files to a
+dist dir and instead allows the src dir to be added to the package.
+Consumers will have to update dir references from ./dist to ./src in
+most import cases.
+
+Processed files are still located in the ./dist dir.
+
+Changes to be committed:
+modified:   .github/workflows/testPublish.yml
+modified:   .npmignore
+modified:   README.md
+modified:   package.json
+* This commit removes the legacy insetUtility mixin and
+replaces it with a static output of the generated legacy values from the
+previous version of WCSS and design tokens.
+
+Users will not get a failure when importing the file reference
+src/utilityMixins/_insetUtility.scss but instead of the mixin generating
+a subset of selectors, all the static selectors will be added to the
+project's CSS output.
+
+This legacy feature has also been designated as DEPRECATED and should be
+deleted with the next MAJOR release.
+* This commit will require all consumers to update their
+app to use @aurodesignsystem/design-tokens v4.x
+
+All references in documentation and code has been updated from `auro-`
+to `ds-` per the new design token specification.
+
+Changes to be committed:
+modified:   FAQ.md
+modified:   README.md
+modified:   demo/3col.html
+modified:   packageScripts/postinstall.js
+modified:   src/*
+modified:   tests/*
+* **tokens:** This commit updates the repo's dependency on the newly
+released Auro Design Tokens 4.x.
+
+Changes to be committed:
+modified:   package-lock.json
+modified:   package.json
+
 # [4.8.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v4.7.0...v4.8.0) (2023-08-04)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.1...v5.0.2) (2023-09-26)
+
+
+### Bug Fixes
+
+* address typo in variable ref ([f20fb26](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/f20fb2642c3e5d0a2b750c4bc9ead9dfe0ae1a2b))
+
 ## [5.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.0...v5.0.1) (2023-09-25)
 
 

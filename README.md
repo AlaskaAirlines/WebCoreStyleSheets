@@ -10,6 +10,12 @@ This repository is a library of core level styles, functions, and mixins that ca
 
 Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyleSheets/) for all information related to WC Style Sheets.
 
+## Design tokens and legacy component support
+
+Upgrading to WCSS `v5.x` requires `@aurodesignsystem/design-tokens@4.x`.
+
+When upgrading your project it is required to also retain `@alaskaairux/design-tokens@v3.15.5` in order to support Auro custom elements have been updated to support the [new design token naming convention](https://github.com/AlaskaAirlines/AuroDesignTokens/issues/118).
+
 ## Install
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/webcorestylesheets/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/webcorestylesheets/actions/workflows/testPublish.yml)

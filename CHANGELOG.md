@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.2...v5.0.3) (2023-10-04)
+
+
+### Bug Fixes
+
+* remove CSS custom selector ref for font-family ([a7c1b55](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/a7c1b55cb836c85faf13bf5a61d75f6cd1ec0c1b))
+
 ## [5.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.1...v5.0.2) (2023-09-26)
 
 

@@ -13,7 +13,7 @@
 
 // Auro rule
 @font-face {
-  font-family: var(--ds-asset-font-circular-family-name, $ds-asset-font-circular-family-name);
+  font-family: $ds-asset-font-circular-family-name;
   font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
   font-style: normal;
 
@@ -27,7 +27,7 @@
 /// @example scss - import src file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
 @font-face {
-  font-family: var(--ds-asset-font-circular-family-name, $ds-asset-font-circular-family-name);
+  font-family: $ds-asset-font-circular-family-name;
   font-weight: var(--ds-text-heading-medium-weight, $ds-text-heading-medium-weight);
   font-style: normal;
 
@@ -40,7 +40,7 @@
 /// @example scss - import src file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
 @font-face {
-  font-family: var(--ds-asset-font-circular-family-name, $ds-asset-font-circular-family-name);
+  font-family: $ds-asset-font-circular-family-name;
   font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
   font-style: normal;
 

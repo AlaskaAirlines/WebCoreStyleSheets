@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.3...v5.0.4) (2023-10-11)
+
+
+### Bug Fixes
+
+* update utility import reference ([7ad32c2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/7ad32c2c46026c82c3b947243549d0e1e6f96db0))
+
 ## [5.0.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.2...v5.0.3) (2023-10-04)
 
 

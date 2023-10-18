@@ -14,7 +14,9 @@ Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyl
 
 Upgrading to WCSS `v5.x` requires `@aurodesignsystem/design-tokens@4.x`.
 
-When upgrading your project it is required to also retain `@alaskaairux/design-tokens@v3.15.5` in order to support Auro custom elements have been updated to support the [new design token naming convention](https://github.com/AlaskaAirlines/AuroDesignTokens/issues/118).
+When upgrading your project it may be required to also retain `@alaskaairux/design-tokens@v3.15.5` in order to support Auro custom elements have not been updated to support the [new design token naming convention](https://github.com/AlaskaAirlines/AuroDesignTokens/issues/118).
+
+Please also see Auro design tokens [migration from 3.x to 4.x](https://github.com/AlaskaAirlines/aurodesignTokens/#migration-from-3x-to-4x) for additional information. 
 
 ## Install
 

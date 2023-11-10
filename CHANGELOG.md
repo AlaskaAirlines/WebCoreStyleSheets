@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.5](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.4...v5.0.5) (2023-11-10)
+
+
+### Performance Improvements
+
+* update to support Node dependency policy ([333e35b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/333e35b2d1a2b0a782981b465580c207a357f363))
+
 ## [5.0.4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.3...v5.0.4) (2023-10-11)
 
 

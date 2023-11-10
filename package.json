@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/WebCoreStyleSheets"
   },
+  "engines": {
+    "node": "^18 || ^20"
+  },
   "peerDependencies": {
     "@aurodesignsystem/design-tokens": "^4.1.1",
     "sass": "^1.42.1"

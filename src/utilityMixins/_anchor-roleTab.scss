@@ -27,11 +27,11 @@
   $isactive-color: null;
 
   @if $style == css {
-    $color: var(--ds-color-text-link-default);
-    $border-color: var(--ds-color-border-primary-default);
-    $padding: var(--ds-size-200);
-    $hover-color: var(--ds-color-text-link-default-hover);
-    $isactive-color: var(--ds-color-text-primary-default);
+    $color: var(--ds-color-text-link-default, $ds-color-text-link-default);
+    $border-color: var(--ds-color-border-primary-default, $ds-color-border-primary-default);
+    $padding: var(--ds-size-200, $ds-size-200, $ds-size-200, $ds-size-200);
+    $hover-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+    $isactive-color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
   } @else if $style == sass or $style == scss {
     $color: $ds-color-text-link-default;
     $border-color: $ds-color-border-primary-default;

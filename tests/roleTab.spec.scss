@@ -164,16 +164,16 @@
       @include expect {
         .auro_roleTab {
           padding: 1rem;
-          color: var(--ds-color-text-link-default);
+          color: var(--ds-color-text-link-default, #0074c8);
           border-width: 0 0 1px;
           border-style: solid;
-          border-color: var(--ds-color-border-primary-default);
+          border-color: var(--ds-color-border-primary-default, #626b79);
         }
 
         .auro_roleTab:not(.is-touching):hover {
           cursor: pointer;
           text-decoration: none;
-          color: var(--ds-color-text-link-default-hover);
+          color: var(--ds-color-ui-hover-default, #054687);
           border-width: 0 0 2px;
           border-color: currentColor;
         }
@@ -181,7 +181,7 @@
         .auro_roleTab.is-active {
           cursor: pointer;
           text-decoration: none;
-          color: var(--ds-color-text-primary-default);
+          color: var(--ds-color-text-primary-default, #222222);
           border-width: 0 0 2px;
           border-color: currentColor;
         }
@@ -200,16 +200,16 @@
       @include expect($selector: false) {
         .hyperlink--tab {
           padding: 1rem;
-          color: var(--ds-color-text-link-default);
+          color: var(--ds-color-text-link-default, #0074c8);
           border-width: 0 0 1px;
           border-style: solid;
-          border-color: var(--ds-color-border-primary-default);
+          border-color: var(--ds-color-border-primary-default, #626b79);
         }
 
         :host(:not(.is-touching)) .hyperlink--tab:hover {
           cursor: pointer;
           text-decoration: none;
-          color: var(--ds-color-text-link-default-hover);
+          color: var(--ds-color-ui-hover-default, #054687);
           border-width: 0 0 2px;
           border-color: currentColor;
         }
@@ -217,7 +217,7 @@
         .hyperlink--tab.is-active {
           cursor: pointer;
           text-decoration: none;
-          color: var(--ds-color-text-primary-default);
+          color: var(--ds-color-text-primary-default, #222222);
           border-width: 0 0 2px;
           border-color: currentColor;
         }

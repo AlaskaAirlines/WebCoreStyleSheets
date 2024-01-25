@@ -127,18 +127,18 @@
       @include expect {
         .auro_roleButton {
           display: inline-block;
-          padding: 0 var(--ds-size-200);
+          padding: 0 var(--ds-size-200, 1rem);
           text-decoration: none;
-          color: var(--ds-color-text-link-default);
+          color: var(--ds-color-text-link-default, #0074c8);
           border: 1px solid transparent;
-          line-height: var(--ds-unitless-scale-300);
+          line-height: var(--ds-unitless-scale-300, 3);
         }
 
         @media (hover: hover) {
           .auro_roleButton:hover {
             cursor: pointer;
             text-decoration: underline;
-            color: var(--ds-color-ui-hover-default);
+            color: var(--ds-color-ui-hover-default, #054687);
           }
         }
       }
@@ -156,17 +156,17 @@
       @include expect($selector: false) {
         .auro_roleButton {
           display: inline-block;
-          padding: 0 var(--ds-size-200);
+          padding: 0 var(--ds-size-200, 1rem);
           text-decoration: none;
-          color: var(--ds-color-text-link-default);
+          color: var(--ds-color-text-link-default, #0074c8);
           border: 1px solid transparent;
-          line-height: var(--ds-unitless-scale-300);
+          line-height: var(--ds-unitless-scale-300, 3);
         }
 
         :host(:not(.is-touching)) .auro_roleButton:hover {
           cursor: pointer;
           text-decoration: underline;
-          color: var(--ds-color-ui-hover-default);
+          color: var(--ds-color-ui-hover-default, #054687);
         }
       }
     }

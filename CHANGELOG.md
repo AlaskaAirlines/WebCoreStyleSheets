@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.7](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.6...v5.0.7) (2024-02-09)
+
+
+### Performance Improvements
+
+* update CDN web font refs [#187](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/187) ([37047c4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/37047c42563ead378c26897583be990442922889))
+
 ## [5.0.6](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.5...v5.0.6) (2024-01-25)
 
 

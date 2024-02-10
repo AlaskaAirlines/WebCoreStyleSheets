@@ -26,8 +26,10 @@ Update to the following
 
 ```js
 import { html, css } from "lit";
-import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
+import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs';
 ```
+
+**Note:** The legacy `/auroElement.js` is deprecated and will no longer be supported. Any reference to this file should be updated to point to `/auroElement.mjs`.
 
 ### Add supporting styles
 

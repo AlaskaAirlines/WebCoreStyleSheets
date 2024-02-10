@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.8](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.7...v5.0.8) (2024-02-10)
+
+
+### Performance Improvements
+
+* add duplicate .mjs file for SSR support ([b3bbda9](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/b3bbda9a04c3110bce474e7e753191fb388c5f29))
+
 ## [5.0.7](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.6...v5.0.7) (2024-02-09)
 
 

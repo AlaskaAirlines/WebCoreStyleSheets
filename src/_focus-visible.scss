@@ -1,0 +1,36 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+@import 'libSupport/manageScope';
+
+$focus: false;
+$focus-visible: false;
+
+// sass-lint:disable no-important
+
+#{$scope} * {
+/// Global setting for the display of [focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) accessibility interaction. [Can I Use](https://caniuse.com/css-focus-visible).
+///
+/// This is a **OPT-IN** feature, support is **NOT** added by default. Users **MUST** subscribe to Sass import described below.
+///
+/// The `focus-visible` Sass file **MUST** be imported **BEFORE** the `essentials` Sass file. Sass load order is **IMPORTANT**. See example below.
+///
+/// [Manage](/#scope-prefix-variable-scope) `$scope` option.
+/// @group Accessibility
+/// @example scss - Default selector(s)
+///   *:focus-visible {}
+///
+/// @example scss - Selector(s) when $scope: true;
+///   .auro *:focus-visible {}
+///
+/// @example scss - import file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible";
+///
+/// @example scss - it's important to import focus-visible BEFORE essentials
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible";
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+  &:focus-visible {
+    outline: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
+  }
+}

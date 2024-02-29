@@ -66,6 +66,9 @@ While WCSS is an à la carte solution, there are things that should be considere
 
 // essentials setup baseline primitive selectors for any UI development
 @import '~@aurodesignsystem/design-tokens/src/tokens/essentials';
+
+// essentials+fv is the same as essentials + the pre-defined focus-visible accessibility feature
+@import '~@aurodesignsystem/design-tokens/src/tokens/essentials+fv';
 ```
 
 For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
@@ -85,9 +88,12 @@ At a limited scale, some files have been pre-processed to CSS so that it can be 
 
 **API Note**: First supporting version `v2.9.0`
 
+**NOTICE!** Use `@latest` at your own risk. This will not restrict updates and will allow instant access to MAJOR releases that will contain BREAKING CHANGES. You have been warned! 
+
 | resource | CDN URL |
 |---|---
-| essentials.scss<br>fonts.scss|https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css|
+| essentials.scss<br>fonts.scss|[https://cdn.jsdelivr.net/npm/@aurodesignsystem/<br>webcorestylesheets@latest/dist/bundled/essentials.css](https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css)|
+| focus-visible.scss<br>essentials.scss<br>fonts.scss|[https://cdn.jsdelivr.net/npm/@aurodesignsystem/<br>webcorestylesheets@latest/dist/bundled/essentials+fv.css](https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials+fv.css)|
 
 ## Development
 

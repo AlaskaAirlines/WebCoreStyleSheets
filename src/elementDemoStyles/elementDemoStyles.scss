@@ -17,6 +17,7 @@
 @import './../blockquote';
 @import "./../componentSupport/table";
 $paragraph: true;
+@import './../focus-visible';
 @import './../essentials';
 
 /* stylelint-disable selector-type-no-unknown */

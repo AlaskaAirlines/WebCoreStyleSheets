@@ -4,6 +4,18 @@
 @import '../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 /* --------end variables import ------------- */
 
+/* --------start core import ------------- */
+// @import './../src/core';
+/* --------end core import ------------- */
+
+/* --------start focus visible import ------------- */
+@import './../src/focus-visible';
+/* --------end focus visible import ------------- */
+
+/* --------start essentials import ------------- */
+@import './../src/essentials';
+/* --------end essentials import ------------- */
+
 /* --------start breakpoints import ------------- */
 @import './../src/breakpoints';
 

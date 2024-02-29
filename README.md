@@ -40,7 +40,7 @@ There are no core files to import, rather WCSS is an à la carte solution allowi
 
 ### Tokens Dependency
 
-WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/OrionDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial.
+WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/AuroDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial.
 
 ```scss
 @import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
@@ -49,33 +49,33 @@ WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Desig
 
 ### Install the essentials
 
-While WCSS is an à la carte solution, there are things that should be considered when adding WCSS to your project. For example, if the project has little or no legacy CSS, it is suggested to set the following foundation:
+While WCSS is an à la carte solution, there are things that should be considered when adding WCSS to your project. For example, if the project has little or no legacy CSS, it is suggested to set the following foundation, in this order:
 
 ```scss
 // baseline design tokens as Sass variables
 @import "~@aurodesignsystem/design-tokens/src/tokens/SCSSVariables";
 
 // globally add the mixins so that any future reference will be addressed
-@import '~@aurodesignsystem/design-tokens/src/tokens/breakpoints';
+@import '~@aurodesignsystem/webcorestylesheets/src/breakpoints';
 
 // it's typically best practice to load the @font-face rules prior to any reference of the custom web fonts
-@import '~@aurodesignsystem/design-tokens/src/tokens/fonts';
+@import '~@aurodesignsystem/webcorestylesheets/src/fonts';
 
 // set a baseline browser normalize
-@import '~@aurodesignsystem/design-tokens/src/tokens/normalize';
+@import '~@aurodesignsystem/webcorestylesheets/src/normalize';
+
+// opt-in support for `:focus-visible` accessibility feature
+@import '~@aurodesignsystem/webcorestylesheets/src/tokens/focus-visible';
 
 // essentials setup baseline primitive selectors for any UI development
-@import '~@aurodesignsystem/design-tokens/src/tokens/essentials';
-
-// essentials+fv is the same as essentials + the pre-defined focus-visible accessibility feature
-@import '~@aurodesignsystem/design-tokens/src/tokens/essentials+fv';
+@import '~@aurodesignsystem/webcorestylesheets/src/tokens/essentials';
 ```
 
-For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/tests/styleTest.scss) in the project.
+For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://raw.githubusercontent.com/AlaskaAirlines/WebCoreStyleSheets/master/tests/styleTest.scss) in the project.
 
 ### Web font dependency
 
-WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@aurodesignsystem/design-tokens/dist/tokens/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights.
+WC style sheets has full support for Auro's web fonts, ASCircular. When importing `~@aurodesignsystem/webcorestylesheets/src/fonts` this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights.
 
 Any references to `ASCircularWeb-Book`, `ASCircularWeb-Medium`, or `ASCircularWeb-Light` would be considered redundant and you should remove those legacy references.
 
@@ -88,7 +88,7 @@ At a limited scale, some files have been pre-processed to CSS so that it can be 
 
 **API Note**: First supporting version `v2.9.0`
 
-**NOTICE!** Use `@latest` at your own risk. This will not restrict updates and will allow instant access to MAJOR releases that will contain BREAKING CHANGES. You have been warned! 
+**NOTICE!** Use `@latest` at your own risk. This will not restrict updates and will allow instant access to MAJOR releases that will contain BREAKING CHANGES. You have been warned!
 
 | resource | CDN URL |
 |---|---
@@ -104,5 +104,3 @@ The `watch` command will run a Sass linter, process a test file from Sass to CSS
 If additional selectors or scenarios are needed, please update the `./scripts/testBuild.scss` file to test your code.
 
 Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation.
-
-WCSS fully supports idiomatic CSS, be sure to review the [auro docs site](https://auro.alaskaair.com/webcorestylesheets/idiomatic-css) for more information.

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [5.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.8...v5.1.0) (2024-03-05)
+
+
+### Features
+
+* a11y focus-visible default halo [#183](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/183) ([3952acd](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/3952acddba1cb4f9d03c12fbd5f32d59db62d400))
+
 ## [5.0.8](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.7...v5.0.8) (2024-02-10)
 
 

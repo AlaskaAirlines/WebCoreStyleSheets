@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.1.0...v5.1.1) (2024-05-08)
+
+
+### Performance Improvements
+
+* remove unused breakpoint mixins [#193](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/193) ([d349086](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d349086c7c8c0bdd627b242ab7ab1c6d90ac5b4d))
+
 # [5.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.0.8...v5.1.0) (2024-03-05)
 
 

@@ -38,7 +38,7 @@
   allow_rebase_merge: true
 
 branches:
-  - name: master
+  - &default_protection
     # https://developer.github.com/v3/repos/branches/#update-branch-protection
     # Branch Protection settings. Set to null to disable
     protection:
@@ -59,13 +59,19 @@ branches:
         # Required. Require branches to be up to date before merging.
         strict: true
         # Required. The list of status checks to require in order to merge into this branch
-        contexts: contexts: ["test (18.x)", "test (20.x)", "license/cla"]
+        contexts: ["test (18.x)", "test (20.x)", "license/cla"]
       # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
       enforce_admins: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions: null
       # Prevent merge commits from being pushed to matching branches
       required_linear_history: true
+
+  - name: master
+    <<: *default_protection
+
+  - name: beta
+    <<: *default_protection
 
 # Labels: define labels for Issues and Pull Requests
 labels:

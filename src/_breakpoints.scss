@@ -8,58 +8,6 @@
 // The following mixins provide pre-configured Orion approved
 // breakpoints when development mobile-first UIs.
 
-/// Standard breakpoint to support resolutions greater than 1232px.
-/// This mixin is to be deprecated during the next major release.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-/// @group responsive
-/// @example scss - Set breakpoint
-///   .foo {
-///       @include auro_breakpoint--lg {
-///         ...
-///       }
-///   }
-@mixin auro_breakpoint--lg {
-  @media screen and (min-width: $ds-grid-breakpoint-lg) {
-    @content;
-  }
-}
-
-
-/// Standard breakpoint to support resolutions greater than 1024px.
-/// This mixin is to be deprecated during the next major release.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-/// @group responsive
-/// @example scss - Set breakpoint
-///   .foo {
-///       @include auro_breakpoint--md {
-///         ...
-///       }
-///   }
-@mixin auro_breakpoint--md {
-  @media screen and (min-width: $ds-grid-breakpoint-md) {
-    @content;
-  }
-}
-
-/// Standard breakpoint to support resolutions greater than 660px.
-/// This mixin is to be deprecated during the next major release.
-/// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-/// @group responsive
-/// @example scss - Set breakpoint
-///   .foo {
-///       @include auro_breakpoint--sm {
-///         ...
-///       }
-///   }
-@mixin auro_breakpoint--sm {
-  @media screen and (min-width: $ds-grid-breakpoint-sm) {
-    @content;
-  }
-}
-
 /// Open format mixin to define any breakpoint.
 ///
 /// See also: [Media_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features)

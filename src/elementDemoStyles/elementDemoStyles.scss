@@ -67,12 +67,12 @@ $paragraph: true;
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #f8f8f8;
+  background: var(--ds-color-container-secondary-default, $ds-color-container-secondary-default);
 }
 
 // !important because that libraries that inline CSS SUCK!
 pre  {
-  background: var(--ds-color-brand-gray-100, $ds-color-brand-gray-100) !important;
+  background: var(--ds-color-container-secondary-default, $ds-color-container-secondary-default) !important;
   border: unset !important;
   margin-bottom: var(--ds-size-300, $ds-size-300) !important;
   padding-left: var(--ds-size-150, $ds-size-150) !important;
@@ -103,21 +103,21 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 code:not(.html):not(.css):not(.js) {
-  color: var(--ds-color-brand-flamingo-500, $ds-color-brand-flamingo-500);
+  color: var(--ds-color-utility-pink-default, $ds-color-utility-pink-default);
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 .exampleWrapper {
-  $stripe: #f3f3f3;
-  $background: var(--ds-color-base-white, $ds-color-base-white);
+  $stripe: var(--ds-color-container-subtle-default, $ds-color-container-subtle-default);
+  $background: var(--ds-color-container-primary-default, $ds-color-container-primary-default);
 
-  background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+  background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }
 
 .exampleWrapper--ondark {
-  $stripe: var(--ds-color-background-darkest, $ds-color-background-darkest);
-  $background: var(--ds-color-background-darker, $ds-color-background-darker);
+  $stripe: var(--ds-color-background-primary-100-inverse, $ds-color-background-primary-100-inverse);
+  $background: var(--ds-color-background-primary-200-inverse, $ds-color-background-primary-200-inverse);
 
-  background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+  background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }

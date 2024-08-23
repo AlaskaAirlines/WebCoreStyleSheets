@@ -17,7 +17,7 @@
           display: inline-block;
           padding: 0 1rem;
           text-decoration: none;
-          color: #0074c8;
+          color: #2c67b5;
           border: 1px solid transparent;
           line-height: 3;
         }
@@ -26,7 +26,7 @@
           .auro_roleButton:hover {
             cursor: pointer;
             text-decoration: underline;
-            color: #054687;
+            color: #193d73;
           }
         }
       }
@@ -46,7 +46,7 @@
           display: inline-block;
           padding: 0 1rem;
           text-decoration: none;
-          color: #0074c8;
+          color: #2c67b5;
           border: 1px solid transparent;
           line-height: 3;
         }
@@ -54,7 +54,7 @@
         :host(:not(.is-touching)) .auro_roleButton:hover {
           cursor: pointer;
           text-decoration: underline;
-          color: #054687;
+          color: #193d73;
         }
       }
     }
@@ -73,7 +73,7 @@
           display: inline-block;
           padding: 0 1rem;
           text-decoration: none;
-          color: #0074c8;
+          color: #2c67b5;
           border: 1px solid transparent;
           line-height: 3;
         }
@@ -82,7 +82,7 @@
           .auro_roleButton:hover {
             cursor: pointer;
             text-decoration: underline;
-            color: #054687;
+            color: #193d73;
           }
         }
       }
@@ -102,7 +102,7 @@
           display: inline-block;
           padding: 0 1rem;
           text-decoration: none;
-          color: #0074c8;
+          color: #2c67b5;
           border: 1px solid transparent;
           line-height: 3;
         }
@@ -110,7 +110,7 @@
         :host(:not(.is-touching)) .auro_roleButton:hover {
           cursor: pointer;
           text-decoration: underline;
-          color: #054687;
+          color: #193d73;
         }
       }
     }
@@ -129,7 +129,7 @@
           display: inline-block;
           padding: 0 var(--ds-size-200, 1rem);
           text-decoration: none;
-          color: var(--ds-color-text-link-default, #0074c8);
+          color: var(--ds-color-text-ui-default-default, #2c67b5);
           border: 1px solid transparent;
           line-height: var(--ds-unitless-scale-300, 3);
         }
@@ -138,7 +138,7 @@
           .auro_roleButton:hover {
             cursor: pointer;
             text-decoration: underline;
-            color: var(--ds-color-ui-hover-default, #054687);
+            color: var(--ds-color-container-ui-primary-hover-default, #193d73);
           }
         }
       }
@@ -158,7 +158,7 @@
           display: inline-block;
           padding: 0 var(--ds-size-200, 1rem);
           text-decoration: none;
-          color: var(--ds-color-text-link-default, #0074c8);
+          color: var(--ds-color-text-ui-default-default, #2c67b5);
           border: 1px solid transparent;
           line-height: var(--ds-unitless-scale-300, 3);
         }
@@ -166,7 +166,7 @@
         :host(:not(.is-touching)) .auro_roleButton:hover {
           cursor: pointer;
           text-decoration: underline;
-          color: var(--ds-color-ui-hover-default, #054687);
+          color: var(--ds-color-container-ui-primary-hover-default, #193d73);
         }
       }
     }

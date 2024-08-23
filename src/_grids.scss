@@ -100,82 +100,6 @@ $fixed-anchor-width: 168px;
   }
 }
 
-
-/// Grid class
-/// This class selector is to be deprecated during the next major release.
-/// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
-/// @group grid
-/// @example scss - Default selector(s)
-///   .grid {}
-///
-/// @example scss - Selector(s) when $scope: true;
-///   .auro .grid {}
-///
-/// @example scss - Selector(s) when $prefix: true;
-///   .auro_grid {}
-///
-/// @example html - Example HTML selector use
-///   <element class="grid"> ... </element>
-/// @example scss - import file;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
-///
-#{$scope}.#{$prefix}grid {
-  display: grid;
-  @include grid_width($ds-grid-breakpoint-xl);
-  @include grid_margin();
-  @include grid_gutter($ds-grid-gutter-xs);
-
-  &.two-column {
-
-    > :nth-child(1) {
-        grid-area: col1;
-    }
-
-    > :nth-child(2) {
-        grid-area: col2;
-    }
-
-    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    grid-template-areas:
-    "col1"
-    "col2";
-
-    @include auro_grid-breakpoint--md {
-        grid-template-areas: "col1 col2";
-    }
-  }
-
-  &.fixed-nav {
-
-    @extend .two-column;
-
-    > :nth-child(1) {
-        position: sticky;
-        top: 0;
-        --align-self: stretch;
-        align-self: var(--align-self);
-    }
-
-    @include auro_grid-breakpoint--md {
-        grid-template-columns: var(--fixed-nav-width, $fixed-nav-width) auto;
-    }
-  }
-
-  &.fixed-anchor {
-
-    @extend .two-column;
-    grid-template-areas:
-    "col2"
-    "col1";
-
-    @include auro_grid-breakpoint--md {
-        grid-template-areas: "col1 col2";
-        grid-template-columns: auto var(--fixed-nav-width, $fixed-nav-width);
-    }
-
-  }
-}
-
 /// Container class
 ///
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
@@ -358,7 +282,7 @@ $fixed-anchor-width: 168px;
 
   .sidenav {
     grid-area: sidenav;
-    background-color: var(--ds-color-base-white, $ds-color-base-white);
+    background-color: var(--ds-color-container-primary-default, $ds-color-container-primary-default);
     @include grid_padding($ds-grid-margin-xs);
 
     @include auro_grid-breakpoint--md {
@@ -437,7 +361,7 @@ $fixed-anchor-width: 168px;
   .sidenav {
     grid-area: sidenav;
     z-index: 1;
-    background-color: var(--ds-color-base-white, $ds-color-base-white);
+    background-color: var(--ds-color-container-primary-default, $ds-color-container-primary-default);
     @include grid_padding($ds-grid-margin-xs);
     @include grid-stickycolumn--xs();
 

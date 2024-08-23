@@ -57,11 +57,12 @@
   font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
   line-height: var(--ds-text-heading-display-height-breakpoint-sm, $ds-text-heading-display-height-breakpoint-sm);
 
-  @include auro_breakpoint--md {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
     font-size: var(--ds-text-heading-display-size-breakpoint-md, $ds-text-heading-display-size-breakpoint-md);
     line-height: var(--ds-text-heading-display-height-breakpoint-md, $ds-text-heading-display-height-breakpoint-md);
   }
-  @include auro_breakpoint--lg {
+
+  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
     font-size: var(--ds-text-heading-display-size-breakpoint-lg, $ds-text-heading-display-size-breakpoint-lg);
     line-height: var(--ds-text-heading-display-height-breakpoint-lg, $ds-text-heading-display-height-breakpoint-lg);
   }
@@ -89,11 +90,12 @@
   font-weight: var(--ds-text-heading-800-weight, $ds-text-heading-800-weight);
   line-height: var(--ds-text-heading-800-height-breakpoint-sm, $ds-text-heading-800-height-breakpoint-sm);
 
-  @include auro_breakpoint--md {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
     font-size: var(--ds-text-heading-800-size-breakpoint-md, $ds-text-heading-800-size-breakpoint-md);
     line-height: var(--ds-text-heading-800-height-breakpoint-md, $ds-text-heading-800-height-breakpoint-md);
   }
-  @include auro_breakpoint--lg {
+
+  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
     font-size: var(--ds-text-heading-800-size-breakpoint-lg, $ds-text-heading-800-size-breakpoint-lg);
     line-height: var(--ds-text-heading-800-height-breakpoint-lg, $ds-text-heading-800-height-breakpoint-lg);
   }
@@ -121,11 +123,12 @@
   font-weight: var(--ds-text-heading-700-weight, $ds-text-heading-700-weight);
   line-height: var(--ds-text-heading-700-height-breakpoint-sm, $ds-text-heading-700-height-breakpoint-sm);
 
-  @include auro_breakpoint--md {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
     font-size: var(--ds-text-heading-700-size-breakpoint-md, $ds-text-heading-700-size-breakpoint-md);
     line-height: var(--ds-text-heading-700-height-breakpoint-md, $ds-text-heading-700-height-breakpoint-md);
   }
-  @include auro_breakpoint--lg {
+
+  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
     font-size: var(--ds-text-heading-700-size-breakpoint-lg, $ds-text-heading-700-size-breakpoint-lg);
     line-height: var(--ds-text-heading-700-height-breakpoint-lg, $ds-text-heading-700-height-breakpoint-lg);
   }
@@ -155,11 +158,12 @@
   font-weight: var(--ds-text-heading-600-weight, $ds-text-heading-600-weight);
   line-height: var(--ds-text-heading-600-height-breakpoint-sm, $ds-text-heading-600-height-breakpoint-sm);
 
-  @include auro_breakpoint--md {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
     font-size: var(--ds-text-heading-600-size-breakpoint-md, $ds-text-heading-600-size-breakpoint-md);
     line-height: var(--ds-text-heading-600-height-breakpoint-md, $ds-text-heading-600-height-breakpoint-md);
   }
-  @include auro_breakpoint--lg {
+
+  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
     font-size: var(--ds-text-heading-600-size-breakpoint-lg, $ds-text-heading-600-size-breakpoint-lg);
     line-height: var(--ds-text-heading-600-height-breakpoint-lg, $ds-text-heading-600-height-breakpoint-lg);
   }
@@ -189,11 +193,12 @@
   font-weight: var(--ds-text-heading-500-weight, $ds-text-heading-500-weight);
   line-height: var(--ds-text-heading-500-height-breakpoint-sm, $ds-text-heading-500-height-breakpoint-sm);
 
-  @include auro_breakpoint--md {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
     font-size: var(--ds-text-heading-500-size-breakpoint-md, $ds-text-heading-500-size-breakpoint-md);
     line-height: var(--ds-text-heading-500-height-breakpoint-md, $ds-text-heading-500-height-breakpoint-md);
   }
-  @include auro_breakpoint--lg {
+
+  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
     font-size: var(--ds-text-heading-500-size-breakpoint-lg, $ds-text-heading-500-size-breakpoint-lg);
     line-height: var(--ds-text-heading-500-height-breakpoint-lg, $ds-text-heading-500-height-breakpoint-lg);
   }

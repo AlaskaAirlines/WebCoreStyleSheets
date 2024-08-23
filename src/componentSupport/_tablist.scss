@@ -16,7 +16,7 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/tablist";
 
 #{$scope}.auro_tablist {
-  @include auro_breakpoint--sm {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
     overflow-y: unset;
 
     white-space: unset;

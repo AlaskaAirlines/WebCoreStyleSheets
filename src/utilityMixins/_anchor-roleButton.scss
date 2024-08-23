@@ -28,13 +28,13 @@
   $hover-color: null;
 
   @if $style == css {
-    $color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-    $hover-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+    $color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+    $hover-color: var(--ds-color-container-ui-primary-hover-default, $ds-color-container-ui-primary-hover-default);
     $line-height: var(--ds-unitless-scale-300, $ds-unitless-scale-300);
     $padding: 0 var(--ds-size-200, $ds-size-200);
   } @else if $style == sass or $style == scss {
-    $color: $ds-color-text-link-default;
-    $hover-color: $ds-color-ui-hover-default;
+    $color: $ds-color-text-ui-default-default;
+    $hover-color: $ds-color-container-ui-primary-hover-default;
     $line-height: $ds-unitless-scale-300;
     $padding: 0 $ds-size-200;
   } @else {

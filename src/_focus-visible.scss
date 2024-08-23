@@ -31,6 +31,6 @@ $focus-visible: false;
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
   &:focus-visible {
-    outline: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
+    outline: 1px solid var(--ds-color-border-ui-focus-default, $ds-color-border-ui-focus-default);
   }
 }

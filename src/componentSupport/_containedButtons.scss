@@ -44,12 +44,12 @@
     }
   }
 
-  @include auro_breakpoint--md {
+  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
     flex-direction: row;
 
     > * {
       margin-bottom: 0;
-      margin-left: var(--dstext-body-size-default, $ds-text-body-size-default);
+      margin-left: var(--ds-text-body-size-default, $ds-text-body-size-default);
 
       &:first-child {
         margin-left: 0;

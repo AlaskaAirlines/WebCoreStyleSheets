@@ -8,7 +8,7 @@
     @include assert {
       @include output {
         .auro_breakpoint--lg {
-          @include auro_breakpoint--lg {
+          @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
             color: orange;
           }
         }
@@ -30,7 +30,7 @@
     @include assert {
       @include output {
         .auro_breakpoint--md {
-          @include auro_breakpoint--md {
+          @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
             color: orange;
           }
         }
@@ -52,7 +52,7 @@
     @include assert {
       @include output {
         .auro_breakpoint--sm {
-          @include auro_breakpoint--sm {
+          @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
             color: orange;
           }
         }

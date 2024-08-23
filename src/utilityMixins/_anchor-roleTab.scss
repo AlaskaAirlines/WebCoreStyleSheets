@@ -27,16 +27,16 @@
   $isactive-color: null;
 
   @if $style == css {
-    $color: var(--ds-color-text-link-default, $ds-color-text-link-default);
+    $color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
     $border-color: var(--ds-color-border-primary-default, $ds-color-border-primary-default);
     $padding: var(--ds-size-200, $ds-size-200, $ds-size-200, $ds-size-200);
-    $hover-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+    $hover-color: var(--ds-color-container-ui-primary-hover-default, $ds-color-container-ui-primary-hover-default);
     $isactive-color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
   } @else if $style == sass or $style == scss {
-    $color: $ds-color-text-link-default;
+    $color: $ds-color-text-ui-default-default;
     $border-color: $ds-color-border-primary-default;
     $padding: $ds-size-200;
-    $hover-color: $ds-color-ui-hover-default;
+    $hover-color: $ds-color-container-ui-primary-hover-default;
     $isactive-color: $ds-color-text-primary-default;
   } @else {
     @error 'Invalid $style option. Please use `css` or `sass`';

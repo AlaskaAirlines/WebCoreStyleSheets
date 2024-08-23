@@ -123,10 +123,10 @@
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
 
-  color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
 
   &:visited {
-    color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+    color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
   }
 
   &--nav {
@@ -142,16 +142,16 @@
   }
 
   &--ondark {
-    color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+    color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
 
     &:not(.is-touching) {
       &:hover {
-        color: var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
+        color: var(--ds-color-text-ui-hover-inverse, $ds-color-text-ui-hover-inverse);
       }
     }
 
     &:visited {
-      color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
+      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
     }
   }
 
@@ -159,7 +159,7 @@
     &:hover {
       text-decoration: none;
 
-      color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
+      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
     }
   }
 }

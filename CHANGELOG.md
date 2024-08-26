@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [6.0.0-beta.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.1.2...v6.0.0-beta.1) (2024-08-26)
+
+
+### Features
+
+* **color:** use new design tokens for color theme support [#197](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/197) ([704ecad](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/704ecad74b5a74f8b9a00f37f79b59c29f8a2bf7))
+
+
+### BREAKING CHANGES
+
+* **color:** all previously deprecated code has been removed and will no longer be supported
+
 ## [5.1.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.1.1...v5.1.2) (2024-07-25)
 
 

@@ -1,5 +1,23 @@
 # Semantic Release Automated Changelog
 
+# [6.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.1.2...v6.0.0) (2024-10-01)
+
+
+### Features
+
+* **color:** use new design tokens for color theme support [#197](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/197) ([aed72fa](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/aed72fab01685e572df47d369ecc0de6388a851d))
+
+
+### Performance Improvements
+
+* remove label colors from github settings ([4132d2a](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4132d2ac5b6ce27e7d6f074c3ba321bf75193e00))
+
+
+### BREAKING CHANGES
+
+* force major release for last beta merge
+* **color:** all previously deprecated code has been removed and will no longer be supported
+
 # [6.0.0-beta.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.1.2...v6.0.0-beta.1) (2024-08-26)
 
 

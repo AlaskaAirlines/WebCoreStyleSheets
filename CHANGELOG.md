@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.0.0...v6.0.1) (2025-01-31)
+
+
+### Performance Improvements
+
+* update to support node 22 [#203](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/203) ([3194fcf](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/3194fcf27b8dd792473b786de94af0d30b780451))
+
 # [6.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v5.1.2...v6.0.0) (2024-10-01)
 
 

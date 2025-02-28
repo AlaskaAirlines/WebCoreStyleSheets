@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.0.2...v6.1.0) (2025-02-28)
+
+
+### Features
+
+* update eslint config to latest version ([8ecc7b4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/8ecc7b4fb81563299a285b558208ce4e17e72fdb))
+
 ## [6.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.0.1...v6.0.2) (2025-02-08)
 
 

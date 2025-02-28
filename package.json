@@ -13,14 +13,13 @@
     "node": "^20 || ^22"
   },
   "peerDependencies": {
-    "@aurodesignsystem/design-tokens": "^4.13.0",
     "sass": "^1.42.1"
   },
   "dependencies": {
-    "chalk": "^5.4.1"
+    "chalk": "^5.4.1",
+    "@aurodesignsystem/design-tokens": "5.0.2"
   },
   "devDependencies": {
-    "@aurodesignsystem/design-tokens": "^4.13.0",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@semantic-release/changelog": "^6.0.3",

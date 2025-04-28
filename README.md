@@ -82,7 +82,7 @@ For an example of setting up a master file that imports all of WCSS's resources,
 WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/AuroDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial.
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/ ... ";
 ```
 

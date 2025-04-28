@@ -7,7 +7,7 @@ The following are frequently asked questions.
 When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply import the new Auro Sass variables generated from the tokens.
 
 ```scss
-@import "~@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "~@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 ```
 
 ## I updated my version, now some utility selectors are no longer there?

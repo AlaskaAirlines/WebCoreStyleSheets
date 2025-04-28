@@ -6,13 +6,14 @@
 /* --------------------------------------------------------------------- */
 
 /*
-  This file is reserved for CDN consumption of web components
+  This file is reserved for CDN consumption of web components using the Alaska Classic theme
   and not intended to be used with standard dynamic projects.
 */
 
 // Import Sass variables
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/alaska-classic/primitives--alaskaClassic';
 
 // Import minimum essential files
 @import '../essentials';
-@import '../fonts';
+@import '../fonts-asc';

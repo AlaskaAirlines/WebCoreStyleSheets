@@ -5,13 +5,13 @@
 // All styles for the custom element are located in the ./src directory.
 
 // ----------------------- DO NOT EDIT -----------------------------
-@import './../../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import './../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
 
 @import './../breakpoints';
 @import './../grids';
 
 // Creates baseline output in CSS
-@import './../fonts';
+@import './../fonts-ac';
 @import './../normalize';
 @import './../headings';
 @import './../blockquote';

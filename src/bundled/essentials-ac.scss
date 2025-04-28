@@ -7,7 +7,7 @@
 
 /*
   This file is reserved for CDN consumption of web components using the Auro Classic theme
-  with Focus Visible (fv) and not intended to be used with standard dynamic projects.
+  and not intended to be used with standard dynamic projects.
 
   This theme is DEPRECATED and will be removed in the future.
 
@@ -17,7 +17,6 @@
 // Import Sass variables
 @import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
 
-// Import minimum essential files - focus-visible MUST be loaded BEFORE essentials.
-@import '../focus-visible';
+// Import minimum essential files
 @import '../essentials';
 @import '../fonts-ac';

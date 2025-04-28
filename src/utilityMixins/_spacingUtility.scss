@@ -36,12 +36,12 @@ $ds-spacing-properties: padding, padding, margin, margin !default;
 ///   margin-right: 0.125rem;
 /// }
 /// @example scss - import dependencies
-///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 /// @example scss - import with custom over-rides
 ///   $ds-spacing-types: inline;
 ///   $ds-spacing-options: 200;
-///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
+///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariableMap";
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
 
 @mixin auro_spacing($types: $ds-spacing-types, $options: $ds-spacing-options) {

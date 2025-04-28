@@ -1,0 +1,37 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable no-duplicate-properties
+
+// @font-face is not supported in SassDocs
+
+// Alaska Classic (ASC) theme fonts
+
+@font-face {
+  font-family: $asc-font-family-as-circular;
+  font-weight: $asc-font-weight-light;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ASCircularWeb-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $asc-font-family-as-circular;
+  font-weight: $asc-font-weight-book;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ASCircularWeb-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $asc-font-family-as-circular;
+  font-weight: $asc-font-weight-medium;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ASCircularWeb-Medium.woff2") format("woff2");
+}

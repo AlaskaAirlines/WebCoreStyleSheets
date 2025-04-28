@@ -7,6 +7,8 @@
 $focus: null !default;
 $focus-visible: null !default;
 
+$web-font-host: 'https://www.alaskaair.com/assets/font/global' !default;
+
 // sass-lint:disable no-important
 
 /// Global selector to address box-model and default `:focus` pseudo elements.

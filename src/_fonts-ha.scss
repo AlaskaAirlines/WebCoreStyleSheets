@@ -1,0 +1,37 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable no-duplicate-properties
+
+// @font-face is not supported in SassDocs
+
+// Hawaiian (HA) theme fonts
+
+@font-face {
+  font-family: $ha-font-family-chronicle-display;
+  font-weight: $ha-font-weight-semibold;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ChronicleDisplay-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $ha-font-family-slate-pro;
+  font-weight: $ha-font-weight-regular;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/SlatePro-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $ha-font-family-slate-pro;
+  font-weight: $ha-font-weight-medium;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/SlatePro-Medium.woff2") format("woff2");
+}

@@ -7,25 +7,18 @@
 
 // @font-face is not supported in SassDocs
 
-/// Baseline font-face setting for using web based custom fonts - font weight light
-/// @example scss - import src file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
+// Auro Classic (AC) theme fonts
 
-// Auro rule
 @font-face {
   font-family: $ds-asset-font-circular-family-name;
   font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
   font-style: normal;
 
   font-display: fallback;
-  src: url('https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/bltd55b385b9432ca51/ASCircularWeb-Light?environment=production') format('woff2'),
-  url('https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt1566a6d54c0bf457/ASCircularWeb-Light?environment=production') format('woff');
+  src: url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/bltd55b385b9432ca51/ASCircularWeb-Light?environment=production") format("woff2"),
+  url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt1566a6d54c0bf457/ASCircularWeb-Light?environment=production") format("woff");
 }
 
-
-/// Baseline font-face setting for using web based custom fonts - font weight medium
-/// @example scss - import src file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
 @font-face {
   font-family: $ds-asset-font-circular-family-name;
   font-weight: var(--ds-text-heading-medium-weight, $ds-text-heading-medium-weight);
@@ -36,15 +29,12 @@
   url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/bltf30c93842722e935/ASCircularWeb-Medium?environment=production") format("woff");
 }
 
-/// Baseline font-face setting for using web based custom fonts - font weight book
-/// @example scss - import src file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/fonts";
 @font-face {
   font-family: $ds-asset-font-circular-family-name;
   font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
   font-style: normal;
 
   font-display: fallback;
-  src: url('https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt3b851fb0e0de3833/ASCircularWeb-Book?environment=production') format('woff2'),
-  url('https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt8b440e82e9793058/ASCircularWeb-Book?environment=production') format('woff');
+  src: url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt3b851fb0e0de3833/ASCircularWeb-Book?environment=production") format("woff2"),
+  url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt8b440e82e9793058/ASCircularWeb-Book?environment=production") format("woff");
 }

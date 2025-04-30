@@ -48,55 +48,40 @@ $ npm i @aurodesignsystem/webcorestylesheets
 There are no core files to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/ ... "
-```
-
-### Installing the essentials
-
-While WCSS is an à la carte solution, there are things that should be considered when adding WCSS to your project. For example, if the project has little or no legacy CSS, it is suggested to set the following foundation, in this order:
-
-```scss
-// baseline design tokens as Sass variables
-@import "./../node_modules/@aurodesignsystem/design-tokens/src/tokens/SCSSVariables";
-
-// globally add the mixins so that any future reference will be addressed
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
-
-// it's typically best practice to load the @font-face rules prior to any reference of the custom web fonts
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/fonts';
-
-// set a baseline browser normalize
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/normalize';
-
-// opt-in support for `:focus-visible` accessibility feature
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/focus-visible';
-
-// essentials setup baseline primitive selectors for any UI development
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/essentials';
-```
-
-For an example of setting up a master file that imports all of WCSS's resources, see the [styleTest.scss](https://raw.githubusercontent.com/AlaskaAirlines/WebCoreStyleSheets/master/tests/styleTest.scss) in the project.
-
-### Tokens Dependency
-
-WCSS uses Sass and has a dependency on the `SCSSVariables.scss` file from [Design Tokens](https://github.com/AlaskaAirlines/AuroDesignTokens) package. This reference needs to be imported before any reference of a WCSS partial.
-
-```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/ ... ";
 ```
 
-### Web font dependency
+### Multi-Theme Support
 
-WC style sheets has full support for Auro's web fonts, ASCircular. When importing the following code, this will import the (3) Auro web fonts that are loaded from our CDN for `light`, `medium`, and `book` weights.
+WebCoreStyleSheets provides multi-theme support for various brands in the Alaska Air Group. Each theme includes its own font definitions and styling.
+
+#### Available Themes
+
+For more information on the available themes and how to use them, please see the [Auro Design Tokens documentation](https://auro.alaskaair.com/getting-started/developers/design-tokens).
+
+#### Using a Theme
+
+To use a specific theme in your project, import the corresponding theme file.
+
+For example:
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/fonts"
+/* Alaska Airlines theme (Auro default) */
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/essentials-as";
 ```
 
-Any references to `ASCircularWeb-Book`, `ASCircularWeb-Medium`, or `ASCircularWeb-Light` would be considered redundant and you should remove those legacy references.
+Additional themes are available in the `src` directory.
 
-Any references to `ASCircularWeb-Bold` or any other `ASCircularWeb-` style font family is not supported and these references are considered fully deprecated.
+#### Bundled Theme Resources
+
+Each theme also has a bundled version in the `dist/bundles` directory that includes essentials for quick implementation:
+
+For example:
+
+```css
+/* Alaska Airlines theme (Auro default) */
+dist/bundles/essentials-as.css
+```
 
 ## Development
 

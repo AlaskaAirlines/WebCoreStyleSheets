@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.2.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.1.0...v6.2.0) (2025-05-01)
+
+
+### Features
+
+* add v5 theme fonts ([6583a9c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/6583a9cec1689ca019d4fa2f1cb7b11b04075de4))
+
 # [6.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.0.2...v6.1.0) (2025-02-28)
 
 

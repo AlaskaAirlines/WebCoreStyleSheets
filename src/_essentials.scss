@@ -55,7 +55,7 @@
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
   margin: 0;
-  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+  color: var(--ds-basic-color-texticon-default, $ds-basic-color-texticon-default);
   font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
   font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
   font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
@@ -122,10 +122,10 @@
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
 
-  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+  color: var(--ds-advanced-color-hyperlink-text, $ds-advanced-color-hyperlink-text);
 
   &:visited {
-    color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+    color: var(--ds-advanced-color-hyperlink-text, $ds-advanced-color-hyperlink-text);
   }
 
   &--nav {
@@ -141,16 +141,16 @@
   }
 
   &--ondark {
-    color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
+    color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-advanced-color-hyperlink-text-inverse);
 
     &:not(.is-touching) {
       &:hover {
-        color: var(--ds-color-text-ui-hover-inverse, $ds-color-text-ui-hover-inverse);
+        color: var(--ds-advanced-color-hyperlink-text-inverse-hover, $ds-advanced-color-hyperlink-text-inverse-hover);
       }
     }
 
     &:visited {
-      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
+      color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-advanced-color-hyperlink-text-inverse);
     }
   }
 
@@ -158,7 +158,7 @@
     &:hover {
       text-decoration: none;
 
-      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
+      color: var(--ds-advanced-color-hyperlink-text-hover, $ds-advanced-color-hyperlink-text-hover);
     }
   }
 }
@@ -265,5 +265,5 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
   font-size: var(--ds-basic-text-body-xs-font-size, $ds-basic-text-body-xs-font-size);
   line-height: var(--ds-basic-text-body-xs-line-height, $ds-basic-text-body-xs-line-height);
   letter-spacing: var(--ds-basic-text-body-xs-letter-spacing, $ds-basic-text-body-xs-letter-spacing);
-  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+  color: var(--ds-basic-color-texticon-muted, $ds-basic-color-texticon-muted);
 }

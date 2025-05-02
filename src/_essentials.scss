@@ -263,6 +263,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 #{$scope}.#{$prefix}fineprint {
   font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
   font-size: var(--ds-basic-text-body-xs-font-size, $ds-basic-text-body-xs-font-size);
+  font-weight: var(--ds-basic-text-body-xs-font-weight, $ds-basic-text-body-xs-font-weight);
   line-height: var(--ds-basic-text-body-xs-line-height, $ds-basic-text-body-xs-line-height);
   letter-spacing: var(--ds-basic-text-body-xs-letter-spacing, $ds-basic-text-body-xs-letter-spacing);
   color: var(--ds-basic-color-texticon-muted, $ds-basic-color-texticon-muted);

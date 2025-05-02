@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [6.3.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.2.0...v6.3.0) (2025-05-02)
+
+
+### Features
+
+* update font vars with new themeing tokens ([1736d87](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/1736d874ed61958c3e53fb55f46f1222690ecae5))
+
+
+### Performance Improvements
+
+* add font-weight ([dae21c4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/dae21c46ea480e4b977f42237747675d98e2e8e1))
+* update color values ([0b78f2e](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/0b78f2eb21a340ec38d7d975969c7e3b30a402f9))
+
 # [6.2.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.1.0...v6.2.0) (2025-05-01)
 
 

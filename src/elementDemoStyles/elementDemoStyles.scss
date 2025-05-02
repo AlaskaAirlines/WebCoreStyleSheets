@@ -110,14 +110,14 @@ code:not(.html):not(.css):not(.js) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 .exampleWrapper {
-  $stripe: var(--ds-basic-color-surface-neutral-medium, $ds-basic-color-surface-neutral-medium);
+  $stripe: darken($ds-basic-color-surface-default, 5%);
   $background: var(--ds-basic-color-surface-default, $ds-basic-color-surface-default);
 
   background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }
 
 .exampleWrapper--ondark {
-  $stripe: var(--ds-basic-color-surface-inverse-subtle, $ds-basic-color-surface-inverse-subtle);
+  $stripe: darken($ds-basic-color-surface-inverse, 5%);
   $background: var(--ds-basic-color-surface-inverse, $ds-basic-color-surface-inverse);
 
   background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);

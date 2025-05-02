@@ -6,6 +6,7 @@
 
 // ----------------------- DO NOT EDIT -----------------------------
 @import './../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import './../../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska';
 
 @import './../breakpoints';
 @import './../grids';
@@ -67,12 +68,12 @@ $paragraph: true;
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: var(--ds-color-container-secondary-default, $ds-color-container-secondary-default);
+  background: var(--ds-basic-color-surface-neutral-medium, $ds-basic-color-surface-neutral-medium);
 }
 
 // !important because that libraries that inline CSS SUCK!
 pre  {
-  background: var(--ds-color-container-secondary-default, $ds-color-container-secondary-default) !important;
+  background: var(--ds-basic-color-surface-neutral-medium, $ds-basic-color-surface-neutral-medium) !important;
   border: unset !important;
   margin-bottom: var(--ds-size-300, $ds-size-300) !important;
   padding-left: var(--ds-size-150, $ds-size-150) !important;
@@ -109,15 +110,15 @@ code:not(.html):not(.css):not(.js) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 .exampleWrapper {
-  $stripe: var(--ds-color-container-subtle-default, $ds-color-container-subtle-default);
-  $background: var(--ds-color-container-primary-default, $ds-color-container-primary-default);
+  $stripe: var(--ds-basic-color-surface-neutral-medium, $ds-basic-color-surface-neutral-medium);
+  $background: var(--ds-basic-color-surface-default, $ds-basic-color-surface-default);
 
   background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }
 
 .exampleWrapper--ondark {
-  $stripe: var(--ds-color-background-primary-100-inverse, $ds-color-background-primary-100-inverse);
-  $background: var(--ds-color-background-primary-200-inverse, $ds-color-background-primary-200-inverse);
+  $stripe: var(--ds-basic-color-surface-inverse-subtle, $ds-basic-color-surface-inverse-subtle);
+  $background: var(--ds-basic-color-surface-inverse, $ds-basic-color-surface-inverse);
 
   background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }

@@ -27,7 +27,7 @@
 #{$sym}#{$prefix}html#{$scope} {
   box-sizing: border-box;
 
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
+  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -55,13 +55,14 @@
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
   margin: 0;
+
   color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
-  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height);
-  letter-spacing: var(--ds-basic-text-body-default-letter-spacing, $ds-basic-text-body-default-letter-spacing);
+
+  font-family: var(--ds-font-family-default, $ds-font-family-default);
   font-variant-ligatures: no-common-ligatures;
+  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
+  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
+  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 }
 
 /// Sets standard `margin` for all paragraph style content
@@ -88,7 +89,7 @@
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem;
 
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height);
+  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -205,10 +206,8 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size: var(--ds-basic-text-body-xs-font-size, $ds-basic-text-body-xs-font-size);
-  font-weight: var(--ds-basic-text-body-xs-font-weight, $ds-basic-text-body-xs-font-weight);
-  line-height: var(--ds-basic-text-body-xs-line-height, $ds-basic-text-body-xs-line-height);
-  letter-spacing: var(--ds-basic-text-body-xs-letter-spacing, $ds-basic-text-body-xs-letter-spacing);
+  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
 }
 
 $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
@@ -239,7 +238,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
   @if $paragraph {
     margin: 0 0 1rem;
 
-    line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height);
+    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
   }
 }
 
@@ -261,9 +260,8 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///
 
 #{$scope}.#{$prefix}fineprint {
-  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
-  font-size: var(--ds-basic-text-body-xs-font-size, $ds-basic-text-body-xs-font-size);
-  line-height: var(--ds-basic-text-body-xs-line-height, $ds-basic-text-body-xs-line-height);
-  letter-spacing: var(--ds-basic-text-body-xs-letter-spacing, $ds-basic-text-body-xs-letter-spacing);
+  font-family: var(--ds-font-family-default, $ds-font-family-default);
+  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
   color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
 }

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.3.0...v6.3.1) (2025-05-02)
+
+
+### Bug Fixes
+
+* new example wrapper colors for themes ([7aef006](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/7aef0066154526b035683b20cf1708ebd039ed14))
+
 # [6.3.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.2.0...v6.3.0) (2025-05-02)
 
 

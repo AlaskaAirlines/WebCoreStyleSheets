@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.4.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.3.1...v6.4.0) (2025-05-06)
+
+
+### Features
+
+* add font mixin for design tokens ([d368a1a](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d368a1ad9a33f508179a5af3c17e21fec9d06cff))
+
 ## [6.3.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.3.0...v6.3.1) (2025-05-02)
 
 

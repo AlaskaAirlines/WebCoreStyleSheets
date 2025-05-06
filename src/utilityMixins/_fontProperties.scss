@@ -1,0 +1,48 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/// Mixin to apply consistent font styles with design tokens and fallbacks
+/// This mixin applies all font properties with CSS variables and SASS fallbacks based on token size and breakpoint
+/// 
+/// @param {String} $tokenSize - The size token variant (e.g., 'sm', 'md', 'lg')
+/// @param {String} $breakpointSize - The breakpoint size (e.g., 'sm', 'md', 'lg')
+/// @group utility-mixins
+/// 
+/// @example scss - Basic usage
+///   .heading-element {
+///     @include font('lg', 'md');
+///   }
+///
+/// @example scss - Import mixin file
+///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/fontProperties";
+///
+@mixin font($tokenSize, $breakpointSize) {
+  // Base construction for token paths
+  $baseToken: "--ds-basic-text-display-#{$tokenSize}-breakpoint-#{$breakpointSize}";
+  $baseSassVar: "$ds-basic-text-display-#{$tokenSize}-breakpoint-#{$breakpointSize}";
+  
+  // Property tokens and variables
+  $fontFamilyToken: "#{$baseToken}-font-family";
+  $fontFamilySassVar: #{$baseSassVar}-font-family;
+  
+  $fontSizeToken: "#{$baseToken}-font-size";
+  $fontSizeSassVar: #{$baseSassVar}-font-size;
+  
+  $fontWeightToken: "#{$baseToken}-font-weight";
+  $fontWeightSassVar: #{$baseSassVar}-font-weight;
+  
+  $lineHeightToken: "#{$baseToken}-line-height";
+  $lineHeightSassVar: #{$baseSassVar}-line-height;
+  
+  $letterSpacingToken: "#{$baseToken}-letter-spacing";
+  $letterSpacingSassVar: #{$baseSassVar}-letter-spacing;
+  
+  // Apply properties with CSS variables and SASS fallbacks
+  font-family: var(#{$fontFamilyToken}, #{$fontFamilySassVar});
+  font-size: var(#{$fontSizeToken}, #{$fontSizeSassVar});
+  font-weight: var(#{$fontWeightToken}, #{$fontWeightSassVar});
+  line-height: var(#{$lineHeightToken}, #{$lineHeightSassVar});
+  letter-spacing: var(#{$letterSpacingToken}, #{$letterSpacingSassVar});
+}

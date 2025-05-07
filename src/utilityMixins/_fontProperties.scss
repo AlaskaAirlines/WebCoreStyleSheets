@@ -6,22 +6,23 @@
 /// Mixin to apply consistent font styles with design tokens and fallbacks
 /// This mixin applies all font properties with CSS variables and SASS fallbacks based on token size and breakpoint
 /// 
-/// @param {String} $tokenSize - The size token variant (e.g., 'sm', 'md', 'lg')
-/// @param {String} $breakpointSize - The breakpoint size (e.g., 'sm', 'md', 'lg')
+/// @param {String} $variant - The variant of text (e.g., 'accent', 'body', 'display', 'heading')
+/// @param {String} $size - The size token variant (e.g., 'sm', 'md', 'lg')
+/// @param {String} $breakpoint - The breakpoint size (e.g., 'sm', 'md', 'lg')
 /// @group utility-mixins
 /// 
 /// @example scss - Basic usage
 ///   .heading-element {
-///     @include font('lg', 'md');
+///     @include font('body', 'lg', 'md');
 ///   }
 ///
 /// @example scss - Import mixin file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/fontProperties";
 ///
-@mixin font($tokenSize, $breakpointSize) {
+@mixin font($variant, $size, $breakpoint) {
   // Base construction for token paths
-  $baseToken: "--ds-basic-text-display-#{$tokenSize}-breakpoint-#{$breakpointSize}";
-  $baseSassVar: "$ds-basic-text-display-#{$tokenSize}-breakpoint-#{$breakpointSize}";
+  $baseToken: "--ds-basic-text-#{$variant}-#{$size}-breakpoint-#{$breakpoint}";
+  $baseSassVar: "$ds-basic-text-#{$variant}-#{$size}-breakpoint-#{$breakpoint}";
   
   // Property tokens and variables
   $fontFamilyToken: "#{$baseToken}-font-family";

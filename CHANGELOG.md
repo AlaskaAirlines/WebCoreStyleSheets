@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.5.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.4.0...v6.5.0) (2025-05-07)
+
+
+### Features
+
+* enable variant specification in font mixin ([4b7e71f](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4b7e71f4516d1654c143e4273341a43d8d2e1f71))
+
 # [6.4.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.3.1...v6.4.0) (2025-05-06)
 
 

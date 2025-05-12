@@ -1,0 +1,46 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable no-duplicate-properties
+
+// @font-face is not supported in SassDocs
+
+// Auro-1 (a1) theme fonts
+
+@font-face {
+  font-family: $a1-font-family-as-circular;
+  font-weight: $a1-font-weight-light;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ASCircularWeb-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $a1-font-family-as-circular;
+  font-weight: $a1-font-weight-medium;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ASCircularWeb-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $a1-font-family-as-circular;
+  font-weight: $a1-font-weight-regular;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/ASCircularWeb-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $a1-font-family-teodor;
+  font-weight: $a1-font-weight-light;
+  font-style: normal;
+
+  font-display: fallback;
+  src: url("#{$web-font-host}/Teodor-Light.woff2") format("woff2");
+}

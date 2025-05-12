@@ -1,0 +1,20 @@
+/*
+  Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+  See LICENSE in the project root for license information.
+*/
+
+/* --------------------------------------------------------------------- */
+
+/*
+  This file is reserved for CDN consumption of web components using the Auro-1 theme
+  and not intended to be used with standard dynamic projects.
+*/
+
+// Import Sass variables
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-1/SCSSVariables--auro1';
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-1/primitives--auro1';
+
+// Import minimum essential files
+@import '../essentials';
+@import '../fonts-a1';

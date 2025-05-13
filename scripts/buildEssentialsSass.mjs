@@ -4,6 +4,8 @@ import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import postcss from 'postcss';
+import cssnano from 'cssnano';
 import { standardThemes, legacyThemes } from './themeConfig.mjs';
 
 // Get dirname
@@ -17,7 +19,7 @@ const sassPath = path.join(__dirname, '../node_modules/.bin/sass');
 const srcDir = path.join(__dirname, '../src/bundled');
 const distDir = path.join(__dirname, '../dist/bundled');
 
-// Ensure the output directory exists
+// Check output directory exists
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
@@ -35,8 +37,38 @@ const buildTypes = {
 
 console.log('\nBuilding Essentials Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
 
+// Insert the standard license for minified files
+const standardLicense = `/*
+ * Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+ * See LICENSE in the project root for license information.
+ */`;
+
+// Minify CSS
+async function minifyCss(cssContent, outputPath) {
+  try {
+    // Process with cssnano
+    const result = await postcss([cssnano({
+      preset: 'default',
+    })])
+    .process(cssContent, { 
+      // Prevents source map generation
+      from: undefined, 
+    });
+    
+    // Add standard license to minified content
+    const minifiedWithLicense = `${standardLicense}\n${result.css}`;
+    
+    // Write to file
+    fs.writeFileSync(outputPath, minifiedWithLicense);
+    return true;
+  } catch (error) {
+    console.error(`Error minifying CSS: ${error.message}`);
+    return false;
+  }
+}
+
 // Process each theme
-themes.forEach(theme => {
+const buildPromises = themes.map(async (theme) => {
   const isLegacy = legacyThemes.some(lt => lt.src === theme.src);
   
   // Skip if theme doesn't match requested build criteria
@@ -48,15 +80,38 @@ themes.forEach(theme => {
 
   const srcPath = path.join(srcDir, theme.src);
   const destPath = path.join(distDir, theme.dest);
+  const minDestPath = destPath.replace(/\.css$/, '.min.css');
   
-  console.log(`- [${isLegacy ? 'LEGACY' : 'STANDARD'}] ${theme.src} → ${theme.dest}`);
+  console.log(`- [${isLegacy ? 'LEGACY' : 'STANDARD'}] ${theme.src} → ${theme.dest} (+ minified)`);
   
   try {
-    execSync(`${sassPath} --no-source-map ${srcPath}:${destPath}`, { stdio: 'inherit' });
+    // Compile SASS to CSS
+    execSync(`${sassPath} --no-source-map ${srcPath}:${destPath}`, { stdio: 'pipe' });
+    
+    // Read compiled CSS
+    const cssContent = fs.readFileSync(destPath, 'utf8');
+    
+    // Create minified version with standard license
+    await minifyCss(cssContent, minDestPath);
+    
+    return true;
   } catch (error) {
-    console.error(`Error: ${theme.src} - ${error.message}`);
-    process.exit(1);
+    console.error(`Error processing ${theme.src}: ${error.message}`);
+    return false;
   }
 });
 
-console.log('Sass build completed successfully!\n');
+// Wait for all processing to complete
+Promise.all(buildPromises)
+  .then(results => {
+    if (results.every(result => result !== false)) {
+      console.log('Sass build and minification completed successfully!');
+    } else {
+      console.error('Some files failed to build or minify.');
+      process.exit(1);
+    }
+  })
+  .catch(error => {
+    console.error(`Build process error: ${error.message}`);
+    process.exit(1);
+  });

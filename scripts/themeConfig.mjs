@@ -3,23 +3,20 @@
  * Contains theme definitions for WebCoreStyleSheets build process
  */
 
-// Theme codes for standard themes
-// Sourced from @aurodesignsystem/design-tokens
-export const themeCodes = ['as', 'a1', 'a2', 'asc', 'ha'];
+// Import theme codes from design tokens
+import { THEME_DIRECTORIES } from '@aurodesignsystem/design-tokens/src/config/themes.js';
+
+// Extract theme codes
+export const themeCodes = THEME_DIRECTORIES.map(theme => theme.code);
 
 // Standard themes
 // These will use the pattern: `essentials-${themeCode}.scss` -> `essentials-${themeCode}.css`
-export const standardThemePattern = {
-  srcPrefix: 'essentials-',
-  srcSuffix: '.scss',
-  destPrefix: 'essentials-',
-  destSuffix: '.css'
-};
+export const basePrefix = 'essentials-';
 
-// Standard themes
+// Standard themes - using the extracted themeCodes
 export const standardThemes = themeCodes.map(theme => ({
-  src: `${standardThemePattern.srcPrefix}${theme}${standardThemePattern.srcSuffix}`,
-  dest: `${standardThemePattern.destPrefix}${theme}${standardThemePattern.destSuffix}`
+  src: `${basePrefix}${theme}.scss`,
+  dest: `${basePrefix}${theme}.css`
 }));
 
 // Legacy themes

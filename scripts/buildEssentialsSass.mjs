@@ -39,7 +39,7 @@ console.log('\nBuilding Essentials Sass files...' + (buildSpecific ? ` (${args.j
 
 // Insert the standard license for minified files
 const standardLicense = `/*
- * Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+ * Copyright (c) Alaska Air. All rights reserved. Licensed under the Apache-2.0 license
  * See LICENSE in the project root for license information.
  */`;
 

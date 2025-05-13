@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.6.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.5.0...v6.6.0) (2025-05-13)
+
+
+### Features
+
+* add auro-1 & auro-2 themes ([5c6626d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5c6626dc08647691c5f5d1598c141013cbcb9a42))
+
 # [6.5.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.4.0...v6.5.0) (2025-05-07)
 
 

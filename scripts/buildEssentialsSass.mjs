@@ -40,43 +40,36 @@ const standardLicense = `/*
  * See LICENSE in the project root for license information.
  */`;
 
-// Minify CSS
-async function minifyCss(cssContent, outputPath) {
+// Process SASS to CSS
+async function processSass(srcPath, destPath, minDestPath) {
   try {
-    // Process with cssnano
-    const result = await postcss([cssnano({
-      preset: 'default',
-    })])
-    .process(cssContent, { 
-      // Prevents source map generation
-      from: undefined, 
-    });
-    
-    // Add standard license to minified content
-    const minifiedWithLicense = `${standardLicense}\n${result.css}`;
-    
-    // Write to file
-    fs.writeFileSync(outputPath, minifiedWithLicense);
-    return true;
-  } catch (error) {
-    console.error(`Error minifying CSS: ${error.message}`);
-    return false;
-  }
-}
-
-// Compile SASS to CSS
-function compileSass(srcPath, destPath) {
-  try {
-    const result = sass.compile(srcPath, {
+    // Compile SASS
+    const sassResult = sass.compile(srcPath, {
       style: "expanded",
       sourceMap: false
     });
     
-    // Write compiled CSS to destination
-    fs.writeFileSync(destPath, result.css);
+    // Write to destination
+    fs.writeFileSync(destPath, sassResult.css);
+    
+    // Process with cssnano
+    const minifiedResult = await postcss([cssnano({
+      preset: 'default',
+    })])
+    .process(sassResult.css, { 
+      // Prevents source map generation
+      from: undefined,
+    });
+    
+    // Add standard license to minified content
+    const minifiedWithLicense = `${standardLicense}\n${minifiedResult.css}`;
+    
+    // Write to minified file
+    fs.writeFileSync(minDestPath, minifiedWithLicense);
+    
     return true;
   } catch (error) {
-    console.error(`Error compiling Sass ${srcPath}: ${error.message}`);
+    console.error(`Error processing ${srcPath}: ${error.message}`);
     return false;
   }
 }
@@ -98,22 +91,8 @@ const buildPromises = themes.map(async (theme) => {
   
   console.log(`- [${isLegacy ? 'LEGACY' : 'STANDARD'}] ${theme.src} → ${theme.dest} (+ minified)`);
   
-  try {
-    // Compile SASS to CSS
-    const compiled = compileSass(srcPath, destPath);
-    if (!compiled) return false;
-    
-    // Read compiled CSS
-    const cssContent = fs.readFileSync(destPath, 'utf8');
-    
-    // Create minified version with standard license
-    await minifyCss(cssContent, minDestPath);
-    
-    return true;
-  } catch (error) {
-    console.error(`Error processing ${theme.src}: ${error.message}`);
-    return false;
-  }
+  // Process SASS to CSS and create minified version
+  return processSass(srcPath, destPath, minDestPath);
 });
 
 // Wait for all processing to complete

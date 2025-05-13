@@ -1,19 +1,16 @@
 #!/usr/bin/env node
 
-import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import postcss from 'postcss';
 import cssnano from 'cssnano';
+import * as sass from 'sass';
 import { standardThemes, legacyThemes } from './themeConfig.mjs';
 
 // Get dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Path to local node_modules sass
-const sassPath = path.join(__dirname, '../node_modules/.bin/sass');
 
 // Base directories
 const srcDir = path.join(__dirname, '../src/bundled');
@@ -67,6 +64,23 @@ async function minifyCss(cssContent, outputPath) {
   }
 }
 
+// Compile SASS to CSS
+function compileSass(srcPath, destPath) {
+  try {
+    const result = sass.compile(srcPath, {
+      style: "expanded",
+      sourceMap: false
+    });
+    
+    // Write compiled CSS to destination
+    fs.writeFileSync(destPath, result.css);
+    return true;
+  } catch (error) {
+    console.error(`Error compiling Sass ${srcPath}: ${error.message}`);
+    return false;
+  }
+}
+
 // Process each theme
 const buildPromises = themes.map(async (theme) => {
   const isLegacy = legacyThemes.some(lt => lt.src === theme.src);
@@ -86,7 +100,8 @@ const buildPromises = themes.map(async (theme) => {
   
   try {
     // Compile SASS to CSS
-    execSync(`${sassPath} --no-source-map ${srcPath}:${destPath}`, { stdio: 'pipe' });
+    const compiled = compileSass(srcPath, destPath);
+    if (!compiled) return false;
     
     // Read compiled CSS
     const cssContent = fs.readFileSync(destPath, 'utf8');

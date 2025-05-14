@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [6.6.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.6.1...v6.6.2) (2025-05-14)
+
+
+### Bug Fixes
+
+* preserve quotes in font-family names during minification ([d1a1fb8](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d1a1fb800dffbc3692ef08d63477bb311e1ff089))
+* remove redundant postinstall font warning ([1a621e2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/1a621e22fe622a5160037dc48cdcbf17fec5d212))
+
 ## [6.6.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.6.0...v6.6.1) (2025-05-14)
 
 

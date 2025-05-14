@@ -54,7 +54,12 @@ async function processSass(srcPath, destPath, minDestPath) {
     
     // Process with cssnano
     const minifiedResult = await postcss([cssnano({
-      preset: 'default',
+      preset: ['default', {
+        minifyFontValues: {
+          // Preserve font-family quotes
+          removeQuotes: false
+        }
+      }]
     })])
     .process(sassResult.css, { 
       // Prevents source map generation

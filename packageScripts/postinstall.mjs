@@ -27,13 +27,4 @@ chalk.hex('#f26135')(`
       npm i @aurodesignsystem/design-tokens@latest
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
-`) + chalk.hex('#ffd200').bold(`
-Any references to ASCircularWeb-Book, ASCircularWeb-Medium,
-or ASCircularWeb-Light would be considered redundant and
-you should remove those legacy references.
-
-Any references to ASCircularWeb-Bold or any other
-ASCircularWeb- style font family is not supported
-and these references are considered fully deprecated.
-`)
-);
+`));

@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [6.6.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.6.0...v6.6.1) (2025-05-14)
+
+
+### Bug Fixes
+
+* simplify theme pattern and import ([d3e9cdb](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d3e9cdbaf19f7de8d87cf88b4b216623f8cd79d0))
+
+
+### Performance Improvements
+
+* minify essentials files ([b5dccfa](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/b5dccfa2d3e9f4b2d8524f971d5e0b4444f8cf4f))
+
 # [6.6.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.5.0...v6.6.0) (2025-05-13)
 
 

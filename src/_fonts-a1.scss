@@ -10,8 +10,8 @@
 // Auro-1 (a1) theme fonts
 
 @font-face {
-  font-family: $a1-font-family-as-circular;
-  font-weight: $a1-font-weight-light;
+  font-family: $ds-basic-type-family-default;
+  font-weight: $ds-basic-type-weight-light;
   font-style: normal;
 
   font-display: fallback;
@@ -19,8 +19,8 @@
 }
 
 @font-face {
-  font-family: $a1-font-family-as-circular;
-  font-weight: $a1-font-weight-medium;
+  font-family: $ds-basic-type-family-default;
+  font-weight: $ds-basic-type-weight-medium;
   font-style: normal;
 
   font-display: fallback;
@@ -28,8 +28,8 @@
 }
 
 @font-face {
-  font-family: $a1-font-family-as-circular;
-  font-weight: $a1-font-weight-regular;
+  font-family: $ds-basic-type-family-default;
+  font-weight: $ds-basic-type-weight-regular;
   font-style: normal;
 
   font-display: fallback;
@@ -37,8 +37,8 @@
 }
 
 @font-face {
-  font-family: $a1-font-family-teodor;
-  font-weight: $a1-font-weight-light;
+  font-family: $ds-basic-type-family-accent;
+  font-weight: $ds-basic-type-weight-light;
   font-style: normal;
 
   font-display: fallback;

@@ -10,8 +10,8 @@
 // Alaska (AS) theme fonts
 
 @font-face {
-  font-family: $as-font-family-as-circular;
-  font-weight: $as-font-weight-light;
+  font-family: $ds-basic-type-family-default;
+  font-weight: $ds-basic-type-weight-light;
   font-style: normal;
 
   font-display: fallback;
@@ -19,8 +19,8 @@
 }
 
 @font-face {
-  font-family: $as-font-family-as-circular;
-  font-weight: $as-font-weight-book;
+  font-family: $ds-basic-type-family-default;
+  font-weight: $ds-basic-type-weight-book;
   font-style: normal;
 
   font-display: fallback;
@@ -28,8 +28,8 @@
 }
 
 @font-face {
-  font-family: $as-font-family-good-ot;
-  font-weight: $as-font-weight-cond-news;
+  font-family: $ds-basic-type-family-accent;
+  font-weight: $ds-basic-type-weight-cond-news;
   font-style: normal;
 
   font-display: fallback;
@@ -37,8 +37,8 @@
 }
 
 @font-face {
-  font-family: $as-font-family-good-ot;
-  font-weight: $as-font-weight-cond-medium;
+  font-family: $ds-basic-type-family-accent;
+  font-weight: $ds-basic-type-weight-cond-medium;
   font-style: normal;
 
   font-display: fallback;

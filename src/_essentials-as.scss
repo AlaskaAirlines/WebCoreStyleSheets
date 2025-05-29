@@ -3,8 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-/*
-  Essentials for Auro Classic theme
+/* 
+  Essential styles based on the Alaska theme, 
+  used in Alaska and its derivatives (Alaska Classic, Auro 1, Auro 2)
 */
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
@@ -31,7 +32,7 @@
 #{$sym}#{$prefix}html#{$scope} {
   box-sizing: border-box;
 
-  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
+  font-size: var(--ds-basic-type-size-16, $ds-basic-type-size-16);
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -59,14 +60,13 @@
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
   margin: 0;
-
-  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-
-  font-family: var(--ds-font-family-default, $ds-font-family-default);
+  color: var(--ds-basic-color-texticon-default, $ds-basic-color-texticon-default);
+  font-family: var(--ds-basic-type-family-default, $ds-basic-type-family-default);
+  font-size: var(--ds-basic-type-size-16, $ds-basic-type-size-16);
+  font-weight: var(--ds-basic-type-weight-book, $ds-basic-type-weight-book);
+  line-height: var(--ds-basic-type-line-height-150, $ds-basic-type-line-height-150);
+  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
   font-variant-ligatures: no-common-ligatures;
-  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
-  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
-  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 }
 
 /// Sets standard `margin` for all paragraph style content
@@ -93,7 +93,7 @@
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem;
 
-  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
+  line-height: var(--ds-basic-type-line-height-150, $ds-basic-type-line-height-150);
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -127,10 +127,10 @@
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
 
-  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+  color: var(--ds-advanced-color-hyperlink-text, $ds-advanced-color-hyperlink-text);
 
   &:visited {
-    color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+    color: var(--ds-advanced-color-hyperlink-text, $ds-advanced-color-hyperlink-text);
   }
 
   &--nav {
@@ -146,16 +146,16 @@
   }
 
   &--ondark {
-    color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
+    color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-advanced-color-hyperlink-text-inverse);
 
     &:not(.is-touching) {
       &:hover {
-        color: var(--ds-color-text-ui-hover-inverse, $ds-color-text-ui-hover-inverse);
+        color: var(--ds-advanced-color-hyperlink-text-inverse-hover, $ds-advanced-color-hyperlink-text-inverse-hover);
       }
     }
 
     &:visited {
-      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
+      color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-advanced-color-hyperlink-text-inverse);
     }
   }
 
@@ -163,7 +163,7 @@
     &:hover {
       text-decoration: none;
 
-      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
+      color: var(--ds-advanced-color-hyperlink-text-hover, $ds-advanced-color-hyperlink-text-hover);
     }
   }
 }
@@ -210,8 +210,10 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
-  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
+  font-size: var(--ds-basic-type-size-12, $ds-basic-type-size-12);
+  font-weight: var(--ds-basic-type-weight-book, $ds-basic-type-weight-book);
+  line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
+  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
 }
 
 $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
@@ -242,7 +244,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
   @if $paragraph {
     margin: 0 0 1rem;
 
-    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
+    line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
   }
 }
 
@@ -264,8 +266,10 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///
 
 #{$scope}.#{$prefix}fineprint {
-  font-family: var(--ds-font-family-default, $ds-font-family-default);
-  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
-  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
-  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+  font-family: var(--ds-basic-type-family-default, $ds-basic-type-family-default);
+  font-size: var(--ds-basic-type-size-12, $ds-basic-type-size-12);
+  font-weight: var(--ds-basic-type-weight-book, $ds-basic-type-weight-book);
+  line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
+  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
+  color: var(--ds-basic-color-texticon-muted, $ds-basic-color-texticon-muted);
 }

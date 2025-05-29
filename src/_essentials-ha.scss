@@ -3,6 +3,10 @@
 
 // ---------------------------------------------------------------------
 
+/*
+  Essentials for Hawaiian theme
+*/
+
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
 @import 'libSupport/manageScope';
@@ -27,7 +31,7 @@
 #{$sym}#{$prefix}html#{$scope} {
   box-sizing: border-box;
 
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
+  font-size: var(--ds-basic-type-size-16, $ds-basic-type-size-16);
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -56,11 +60,11 @@
 #{$scope}.#{$prefix}baseType {
   margin: 0;
   color: var(--ds-basic-color-texticon-default, $ds-basic-color-texticon-default);
-  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
-  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height);
-  letter-spacing: var(--ds-basic-text-body-default-letter-spacing, $ds-basic-text-body-default-letter-spacing);
+  font-family: var(--ds-basic-type-family-default, $ds-basic-type-family-default);
+  font-size: var(--ds-basic-type-size-16, $ds-basic-type-size-16);
+  font-weight: var(--ds-basic-type-weight-regular, $ds-basic-type-weight-regular);
+  line-height: var(--ds-basic-type-line-height-150, $ds-basic-type-line-height-150);
+  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
   font-variant-ligatures: no-common-ligatures;
 }
 
@@ -88,7 +92,7 @@
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem;
 
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height);
+  line-height: var(--ds-basic-type-line-height-150, $ds-basic-type-line-height-150);
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -205,10 +209,10 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size: var(--ds-basic-text-body-xs-font-size, $ds-basic-text-body-xs-font-size);
-  font-weight: var(--ds-basic-text-body-xs-font-weight, $ds-basic-text-body-xs-font-weight);
-  line-height: var(--ds-basic-text-body-xs-line-height, $ds-basic-text-body-xs-line-height);
-  letter-spacing: var(--ds-basic-text-body-xs-letter-spacing, $ds-basic-text-body-xs-letter-spacing);
+  font-size: var(--ds-basic-type-size-12, $ds-basic-type-size-12);
+  font-weight: var(--ds-basic-type-weight-regular, $ds-basic-type-weight-regular);
+  line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
+  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
 }
 
 $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
@@ -239,7 +243,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
   @if $paragraph {
     margin: 0 0 1rem;
 
-    line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height);
+    line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
   }
 }
 
@@ -261,10 +265,10 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///
 
 #{$scope}.#{$prefix}fineprint {
-  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
-  font-size: var(--ds-basic-text-body-xs-font-size, $ds-basic-text-body-xs-font-size);
-  font-weight: var(--ds-basic-text-body-xs-font-weight, $ds-basic-text-body-xs-font-weight);
-  line-height: var(--ds-basic-text-body-xs-line-height, $ds-basic-text-body-xs-line-height);
-  letter-spacing: var(--ds-basic-text-body-xs-letter-spacing, $ds-basic-text-body-xs-letter-spacing);
+  font-family: var(--ds-basic-type-family-default, $ds-basic-type-family-default);
+  font-size: var(--ds-basic-type-size-12, $ds-basic-type-size-12);
+  font-weight: var(--ds-basic-type-weight-regular, $ds-basic-type-weight-regular);
+  line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
+  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
   color: var(--ds-basic-color-texticon-muted, $ds-basic-color-texticon-muted);
 }

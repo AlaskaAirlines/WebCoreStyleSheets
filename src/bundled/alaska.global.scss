@@ -11,10 +11,12 @@
 */
 
 // Import Sass variables
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
 @import '../../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska';
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/alaska/primitives--alaska';
 
-// Import minimum essential files
-@import '../essentials-as';
-@import '../fonts-as';
+// Import base essentials and fonts
+@import '../essentials/base';
+@import '../fonts/alaska';
+
+
+// Generate Alaska theme bundled essentials
+@include essentials-base($alaska-props);

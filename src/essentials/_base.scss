@@ -1,0 +1,177 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/*
+  Base essentials mixin – shared styles across all themes, 
+  excluding legacy themes such as Auro Classic.
+  
+  Accepts a map of CSS custom properties for theme-specific values
+*/
+
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
+
+@import '../libSupport/manageScope';
+@import '../core';
+@import '../themes/index';
+
+// Define the $paragraph variable with default value
+$paragraph: null !default;
+
+/// Function to create CSS var with SCSS fallback from variable name string
+/// @param {String} $var-name - Design token name (without $ or --)
+/// @return {String} - CSS var() with SCSS fallback
+@function css-var($var-name) {
+  $css-var: '--' + $var-name;
+  
+  // Look up the SCSS variable value by name
+  $value: get-variable-value($var-name);
+  
+  @return var(#{$css-var}, #{$value});
+}
+
+/// Helper function to get SCSS variable value by name
+/// Since SCSS doesn't allow true dynamic variable access,
+/// the actual variable is passed as a second parameter
+/// @param {String} $var-name - Variable name without $
+/// @return {*} - Variable value
+@function get-variable-value($var-name) {
+  @if $var-name == 'ds-basic-type-size-16' { @return $ds-basic-type-size-16; }
+  @else if $var-name == 'ds-basic-type-size-12' { @return $ds-basic-type-size-12; }
+  @else if $var-name == 'ds-basic-color-texticon-default' { @return $ds-basic-color-texticon-default; }
+  @else if $var-name == 'ds-basic-color-texticon-muted' { @return $ds-basic-color-texticon-muted; }
+  @else if $var-name == 'ds-basic-type-family-default' { @return $ds-basic-type-family-default; }
+  @else if $var-name == 'ds-basic-type-weight-book' { @return $ds-basic-type-weight-book; }
+  @else if $var-name == 'ds-basic-type-weight-regular' { @return $ds-basic-type-weight-regular; }
+  @else if $var-name == 'ds-basic-type-line-height-150' { @return $ds-basic-type-line-height-150; }
+  @else if $var-name == 'ds-basic-type-line-height-100' { @return $ds-basic-type-line-height-100; }
+  @else if $var-name == 'ds-basic-type-letter-spacing-0' { @return $ds-basic-type-letter-spacing-0; }
+  @else if $var-name == 'ds-advanced-color-hyperlink-text' { @return $ds-advanced-color-hyperlink-text; }
+  @else if $var-name == 'ds-advanced-color-hyperlink-text-hover' { @return $ds-advanced-color-hyperlink-text-hover; }
+  @else if $var-name == 'ds-advanced-color-hyperlink-text-inverse' { @return $ds-advanced-color-hyperlink-text-inverse; }
+  @else if $var-name == 'ds-advanced-color-hyperlink-text-inverse-hover' { @return $ds-advanced-color-hyperlink-text-inverse-hover; }
+  @else {
+    @error "Variable '#{$var-name}' not found. Add it to get-variable-value() function.";
+  }
+}
+
+/// Mixin for base essentials
+/// @param {Map} $theme-props - Theme map containing property variable name mappings
+@mixin essentials-base($theme-props) {
+  
+  /// Baseline HTML setting to establish box-model and default font size.
+  #{$sym}#{$prefix}html#{$scope} {
+    box-sizing: border-box;
+    font-size: css-var(map-get($theme-props, 'font-size'));
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+  }
+
+  /// Set baseline type settings for `body` element or with the use of the `.baseType` selector.
+  #{$scope}#{$sym}#{$prefix}body,
+  #{$scope}.#{$prefix}baseType {
+    margin: 0;
+    color: css-var(map-get($theme-props, 'text-color'));
+    font-family: css-var(map-get($theme-props, 'font-family'));
+    font-size: css-var(map-get($theme-props, 'font-size'));
+    font-weight: css-var(map-get($theme-props, 'font-weight'));
+    line-height: css-var(map-get($theme-props, 'line-height'));
+    
+    @if map-has-key($theme-props, 'letter-spacing') {
+      letter-spacing: css-var(map-get($theme-props, 'letter-spacing'));
+    }
+    
+    font-variant-ligatures: no-common-ligatures;
+  }
+
+  /// Sets standard `margin` for all paragraph style content
+  #{$scope}.#{$prefix}baseParagraph {
+    margin: 0 0 1rem;
+    line-height: css-var(map-get($theme-props, 'line-height'));
+
+    .#{$prefix}hyperlink {
+      text-decoration: underline;
+    }
+  }
+
+  /// Baseline hyperlink styles as mirrored in auro-hyperlink web component
+  #{$scope}.#{$prefix}hyperlink {
+    text-decoration: underline;
+    color: css-var(map-get($theme-props, 'hyperlink-color'));
+
+    &:visited {
+      color: css-var(map-get($theme-props, 'hyperlink-color'));
+    }
+
+    &--nav {
+      display: block;
+      text-decoration: none;
+
+      &:not(.is-touching) {
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+    }
+
+    &--ondark {
+      color: css-var(map-get($theme-props, 'hyperlink-inverse-color'));
+
+      &:not(.is-touching) {
+        &:hover {
+          color: css-var(map-get($theme-props, 'hyperlink-inverse-hover-color'));
+        }
+      }
+
+      &:visited {
+        color: css-var(map-get($theme-props, 'hyperlink-inverse-color'));
+      }
+    }
+
+    &:not(.is-touching) {
+      &:hover {
+        text-decoration: none;
+        color: css-var(map-get($theme-props, 'hyperlink-hover-color'));
+      }
+    }
+  }
+
+  /// Default setting for all `<img />` tags
+  #{$scope}#{$sym}#{$prefix}img {
+    max-width: 100%;
+  }
+
+  /// Legal copy, disclaimers, and footnotes
+  #{$scope}#{$sym}#{$prefix}small,
+  #{$scope}.#{$prefix}type--small {
+    font-size: css-var(map-get($theme-props, 'small-font-size'));
+    font-weight: css-var(map-get($theme-props, 'small-font-weight'));
+    line-height: css-var(map-get($theme-props, 'small-line-height'));
+    
+    @if map-has-key($theme-props, 'small-letter-spacing') {
+      letter-spacing: css-var(map-get($theme-props, 'small-letter-spacing'));
+    }
+  }
+
+  /// Paragraph element margin (conditional)
+  #{$scope}#{$sym}#{$prefix}p {
+    @if $paragraph {
+      margin: 0 0 1rem;
+      line-height: css-var(map-get($theme-props, 'paragraph-line-height'));
+    }
+  }
+
+  /// Fine print text
+  #{$scope}.#{$prefix}fineprint {
+    font-family: css-var(map-get($theme-props, 'font-family'));
+    font-size: css-var(map-get($theme-props, 'small-font-size'));
+    font-weight: css-var(map-get($theme-props, 'small-font-weight'));
+    line-height: css-var(map-get($theme-props, 'small-line-height'));
+    color: css-var(map-get($theme-props, 'muted-text-color'));
+    
+    @if map-has-key($theme-props, 'small-letter-spacing') {
+      letter-spacing: css-var(map-get($theme-props, 'small-letter-spacing'));
+    }
+  }
+}

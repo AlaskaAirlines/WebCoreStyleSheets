@@ -1,5 +1,16 @@
 #!/usr/bin/env node
 
+/**
+ * Build Essentials Sass Files
+ * 
+ * Compiles the SCSS theme files (standard and legacy) from src/bundled to CSS in dist/bundled.
+ * 
+ * 1. Processes both standard themes (defined in design tokens) and legacy themes (Auro Classic)
+ * 2. Transforms SCSS to CSS
+ * 3. Creates both expanded and minified versions of each CSS file
+ * 4. Adds proper license headers
+ */
+
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -16,9 +27,15 @@ const __dirname = path.dirname(__filename);
 const srcDir = path.join(__dirname, '../src/bundled');
 const distDir = path.join(__dirname, '../dist/bundled');
 
-// Check output directory exists
+// Check output directories exist
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
+}
+
+// Make sure legacy directory exists too
+const legacyDistDir = path.join(distDir, 'legacy');
+if (!fs.existsSync(legacyDistDir)) {
+  fs.mkdirSync(legacyDistDir, { recursive: true });
 }
 
 // Combined themes array
@@ -49,8 +66,30 @@ async function processSass(srcPath, destPath, minDestPath) {
       sourceMap: false
     });
     
+    // Handle quotes in font-family
+    let cssText = sassResult.css;
+    
+    // Check if this is a legacy theme
+    const isLegacy = srcPath.includes('/legacy/');
+    
+    // Skip legacy themes to preserve their original format
+    if (!isLegacy) {
+      // For modern themes, add quotes to font-family values that don't already have them
+      cssText = cssText.replace(
+        /font-family:\s*var\(--([^,]+),\s*([^"'][^)]+[^"'])\)/g, 
+        (match, varName, fontValue) => {
+          // Only add quotes if the string doesn't already have them
+          if (fontValue.trim().startsWith('"') || fontValue.trim().startsWith("'")) {
+            // If it already has quotes, leave it as is
+            return match;
+          }
+          return `font-family: var(--${varName}, "${fontValue}")`;
+        }
+      );
+    }
+    
     // Write to destination
-    fs.writeFileSync(destPath, sassResult.css);
+    fs.writeFileSync(destPath, cssText);
     
     // Process with cssnano
     const minifiedResult = await postcss([cssnano({
@@ -61,7 +100,7 @@ async function processSass(srcPath, destPath, minDestPath) {
         }
       }]
     })])
-    .process(sassResult.css, { 
+    .process(cssText, { 
       // Prevents source map generation
       from: undefined,
     });

@@ -1,0 +1,20 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable no-duplicate-properties
+
+// @font-face is not supported in SassDocs
+
+// font-face across themes
+@mixin font-face($family, $weight, $filename) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: normal;
+
+    font-display: fallback;
+    src: url("#{$web-font-host}/#{$filename}.woff2") format("woff2");
+  }
+}

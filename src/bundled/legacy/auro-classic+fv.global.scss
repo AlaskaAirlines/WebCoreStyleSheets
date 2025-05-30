@@ -15,9 +15,10 @@
 */
 
 // Import Sass variables
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import '../../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
 
 // Import minimum essential files - focus-visible MUST be loaded BEFORE essentials.
-@import '../focus-visible';
-@import '../essentials-ac';
-@import '../fonts-ac';
+// Based on Auro Classic theme
+@import '../../focus-visible';
+@import '../../essentials/legacy/auro-classic';
+@import '../../fonts/legacy/auro-classic';

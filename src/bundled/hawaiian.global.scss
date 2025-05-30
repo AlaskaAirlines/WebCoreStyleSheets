@@ -11,10 +11,12 @@
 */
 
 // Import Sass variables
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
 @import '../../node_modules/@aurodesignsystem/design-tokens/dist/hawaiian/SCSSVariables--hawaiian';
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/hawaiian/primitives--hawaiian';
 
-// Import minimum essential files
-@import '../essentials-ha';
-@import '../fonts-ha';
+// Import base essentials and fonts
+@import '../essentials/base';
+@import '../fonts/hawaiian';
+
+
+// Generate Hawaiian theme bundled essentials
+@include essentials-base($hawaiian-props);

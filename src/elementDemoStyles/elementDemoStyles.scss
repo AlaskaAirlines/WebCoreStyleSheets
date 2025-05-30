@@ -12,14 +12,14 @@
 @import './../grids';
 
 // Creates baseline output in CSS
-@import './../fonts-ac';
+@import './../fonts/legacy/auro-classic';
 @import './../normalize';
 @import './../headings';
 @import './../blockquote';
 @import "./../componentSupport/table";
 $paragraph: true;
 @import './../focus-visible';
-@import './../essentials-ac';
+@import './../essentials/legacy/auro-classic';
 
 /* stylelint-disable selector-type-no-unknown */
 

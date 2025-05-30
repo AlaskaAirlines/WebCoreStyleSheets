@@ -4,13 +4,13 @@
 // ---------------------------------------------------------------------
 
 /*
-  Essentials for Hawaiian theme
+  Essentials for Auro Classic theme
 */
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import 'libSupport/manageScope';
-@import 'core';
+@import '../../libSupport/manageScope';
+@import '../../core';
 
 /// Baseline HTML setting to establish box-model and default font size.
 ///
@@ -31,7 +31,7 @@
 #{$sym}#{$prefix}html#{$scope} {
   box-sizing: border-box;
 
-  font-size: var(--ds-basic-type-size-16, $ds-basic-type-size-16);
+  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -59,13 +59,14 @@
 #{$scope}#{$sym}#{$prefix}body,
 #{$scope}.#{$prefix}baseType {
   margin: 0;
-  color: var(--ds-basic-color-texticon-default, $ds-basic-color-texticon-default);
-  font-family: var(--ds-basic-type-family-default, $ds-basic-type-family-default);
-  font-size: var(--ds-basic-type-size-16, $ds-basic-type-size-16);
-  font-weight: var(--ds-basic-type-weight-regular, $ds-basic-type-weight-regular);
-  line-height: var(--ds-basic-type-line-height-150, $ds-basic-type-line-height-150);
-  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
+
+  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+
+  font-family: var(--ds-font-family-default, $ds-font-family-default);
   font-variant-ligatures: no-common-ligatures;
+  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
+  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
+  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 }
 
 /// Sets standard `margin` for all paragraph style content
@@ -92,7 +93,7 @@
 #{$scope}.#{$prefix}baseParagraph {
   margin: 0 0 1rem;
 
-  line-height: var(--ds-basic-type-line-height-150, $ds-basic-type-line-height-150);
+  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
 
   .#{$prefix}hyperlink {
     text-decoration: underline;
@@ -126,10 +127,10 @@
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
 
-  color: var(--ds-advanced-color-hyperlink-text, $ds-advanced-color-hyperlink-text);
+  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
 
   &:visited {
-    color: var(--ds-advanced-color-hyperlink-text, $ds-advanced-color-hyperlink-text);
+    color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
   }
 
   &--nav {
@@ -145,16 +146,16 @@
   }
 
   &--ondark {
-    color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-advanced-color-hyperlink-text-inverse);
+    color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
 
     &:not(.is-touching) {
       &:hover {
-        color: var(--ds-advanced-color-hyperlink-text-inverse-hover, $ds-advanced-color-hyperlink-text-inverse-hover);
+        color: var(--ds-color-text-ui-hover-inverse, $ds-color-text-ui-hover-inverse);
       }
     }
 
     &:visited {
-      color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-advanced-color-hyperlink-text-inverse);
+      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
     }
   }
 
@@ -162,7 +163,7 @@
     &:hover {
       text-decoration: none;
 
-      color: var(--ds-advanced-color-hyperlink-text-hover, $ds-advanced-color-hyperlink-text-hover);
+      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
     }
   }
 }
@@ -209,10 +210,8 @@
 ///
 #{$scope}#{$sym}#{$prefix}small,
 #{$scope}.#{$prefix}type--small {
-  font-size: var(--ds-basic-type-size-12, $ds-basic-type-size-12);
-  font-weight: var(--ds-basic-type-weight-regular, $ds-basic-type-weight-regular);
-  line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
-  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
+  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
 }
 
 $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
@@ -243,7 +242,7 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
   @if $paragraph {
     margin: 0 0 1rem;
 
-    line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
+    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
   }
 }
 
@@ -265,10 +264,8 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///
 
 #{$scope}.#{$prefix}fineprint {
-  font-family: var(--ds-basic-type-family-default, $ds-basic-type-family-default);
-  font-size: var(--ds-basic-type-size-12, $ds-basic-type-size-12);
-  font-weight: var(--ds-basic-type-weight-regular, $ds-basic-type-weight-regular);
-  line-height: var(--ds-basic-type-line-height-100, $ds-basic-type-line-height-100);
-  letter-spacing: var(--ds-basic-type-letter-spacing-0, $ds-basic-type-letter-spacing-0);
-  color: var(--ds-basic-color-texticon-muted, $ds-basic-color-texticon-muted);
+  font-family: var(--ds-font-family-default, $ds-font-family-default);
+  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
+  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
 }

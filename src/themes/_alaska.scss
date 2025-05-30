@@ -1,0 +1,26 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
+
+/// Alaska theme properties
+$alaska-props: (
+  'font-size': 'ds-basic-type-size-16',
+  'text-color': 'ds-basic-color-texticon-default',
+  'font-family': 'ds-basic-type-family-default',
+  'font-weight': 'ds-basic-type-weight-book',
+  'line-height': 'ds-basic-type-line-height-150',
+  'letter-spacing': 'ds-basic-type-letter-spacing-0',
+  'hyperlink-color': 'ds-advanced-color-hyperlink-text',
+  'hyperlink-hover-color': 'ds-advanced-color-hyperlink-text-hover',
+  'hyperlink-inverse-color': 'ds-advanced-color-hyperlink-text-inverse',
+  'hyperlink-inverse-hover-color': 'ds-advanced-color-hyperlink-text-inverse-hover',
+  'small-font-size': 'ds-basic-type-size-12',
+  'small-font-weight': 'ds-basic-type-weight-book',
+  'small-line-height': 'ds-basic-type-line-height-100',
+  'small-letter-spacing': 'ds-basic-type-letter-spacing-0',
+  'paragraph-line-height': 'ds-basic-type-line-height-100',
+  'muted-text-color': 'ds-basic-color-texticon-muted'
+);

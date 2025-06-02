@@ -3,47 +3,4 @@
 
 // ---------------------------------------------------------------------
 
-/// Mixin to apply consistent font styles with design tokens and fallbacks
-/// This mixin applies all font properties with CSS variables and SASS fallbacks based on token size and breakpoint
-/// 
-/// @param {String} $variant - The variant of text (e.g., 'accent', 'body', 'display', 'heading')
-/// @param {String} $size - The size token variant (e.g., 'sm', 'md', 'lg')
-/// @param {String} $breakpoint - The breakpoint size (e.g., 'sm', 'md', 'lg')
-/// @group utility-mixins
-/// 
-/// @example scss - Basic usage
-///   .heading-element {
-///     @include font('body', 'lg', 'md');
-///   }
-///
-/// @example scss - Import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/fontProperties";
-///
-@mixin font($variant, $size, $breakpoint) {
-  // Base construction for token paths
-  $baseToken: "--ds-basic-text-#{$variant}-#{$size}-breakpoint-#{$breakpoint}";
-  $baseSassVar: "$ds-basic-text-#{$variant}-#{$size}-breakpoint-#{$breakpoint}";
-  
-  // Property tokens and variables
-  $fontFamilyToken: "#{$baseToken}-font-family";
-  $fontFamilySassVar: #{$baseSassVar}-font-family;
-  
-  $fontSizeToken: "#{$baseToken}-font-size";
-  $fontSizeSassVar: #{$baseSassVar}-font-size;
-  
-  $fontWeightToken: "#{$baseToken}-font-weight";
-  $fontWeightSassVar: #{$baseSassVar}-font-weight;
-  
-  $lineHeightToken: "#{$baseToken}-line-height";
-  $lineHeightSassVar: #{$baseSassVar}-line-height;
-  
-  $letterSpacingToken: "#{$baseToken}-letter-spacing";
-  $letterSpacingSassVar: #{$baseSassVar}-letter-spacing;
-  
-  // Apply properties with CSS variables and SASS fallbacks
-  font-family: var(#{$fontFamilyToken}, #{$fontFamilySassVar});
-  font-size: var(#{$fontSizeToken}, #{$fontSizeSassVar});
-  font-weight: var(#{$fontWeightToken}, #{$fontWeightSassVar});
-  line-height: var(#{$lineHeightToken}, #{$lineHeightSassVar});
-  letter-spacing: var(#{$letterSpacingToken}, #{$letterSpacingSassVar});
-}
+// @TODO: Add new v6 Design Token font classes

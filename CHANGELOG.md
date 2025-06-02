@@ -1,5 +1,23 @@
 # Semantic Release Automated Changelog
 
+# [7.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.6.2...v7.0.0) (2025-06-02)
+
+
+* refactor(tokens)!: update type design tokens ([945b883](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/945b883ce094442a41afb5d2f5faef16578f78eb))
+
+
+### Bug Fixes
+
+* remove font mixin ([30e58fd](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/30e58fdb6adbb51e47cafbd0b1df641ad2ad30e4))
+
+
+### BREAKING CHANGES
+
+* - Updates type to v6 of design tokens
+- Naming conventions have changed
+- Essentials updated to use new type tokens
+- Essentials naming conventions updated for Alaska theme
+
 ## [6.6.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.6.1...v6.6.2) (2025-05-14)
 
 

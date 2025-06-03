@@ -1,5 +1,28 @@
 # Semantic Release Automated Changelog
 
+# [8.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v7.0.0...v8.0.0) (2025-06-03)
+
+
+* refactor(styles)!: consolidate font and theme partials ([90e89ad](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/90e89ad33434716cd5385856e48d640c80de681e))
+
+
+### BREAKING CHANGES
+
+* Restructure SCSS by splitting fonts, themes, essentials, and legacy partials into dedicated directories.
+
+- Centralized token logic into a shared Sass map and utility function to reduce manual duplication
+- Extracted common parts of Essentials and font partials
+- Created a font-face mixin
+- Removed redundant theme font partials
+- Created a singular _base partial for themes
+- Created an essentials-base() mixin for themes
+- Moved legacy themes (e.g., Auro Classic) to /legacy/ folders
+- Created a /themes/ directory with prop maps
+- Simplified themeConfig
+- Moved font files to an /assets/fonts/ folder
+- Renamed files to accurately reflect theme names instead of abbreviations ("alaska-classic" rather than "asc")
+- Changed the dist output file names from “essentials” to “global” to reflect production usage
+
 # [7.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v6.6.2...v7.0.0) (2025-06-02)
 
 

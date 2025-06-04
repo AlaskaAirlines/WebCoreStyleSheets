@@ -17,6 +17,5 @@
 @import '../essentials/base';
 @import '../fonts/hawaiian';
 
-
 // Generate Hawaiian theme bundled essentials
-@include essentials-base($hawaiian-props);
+@include essentials-base($hawaiian-base-props);

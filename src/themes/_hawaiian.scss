@@ -6,21 +6,21 @@
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
 /// Hawaiian theme properties
-$hawaiian-props: (
-  'font-size': 'ds-basic-type-size-16',
-  'text-color': 'ds-basic-color-texticon-default',
-  'font-family': 'ds-basic-type-family-default',
-  'font-weight': 'ds-basic-type-weight-regular',
-  'line-height': 'ds-basic-type-line-height-150',
-  'letter-spacing': 'ds-basic-type-letter-spacing-0',
-  'hyperlink-color': 'ds-advanced-color-hyperlink-text',
-  'hyperlink-hover-color': 'ds-advanced-color-hyperlink-text-hover',
-  'hyperlink-inverse-color': 'ds-advanced-color-hyperlink-text-inverse',
-  'hyperlink-inverse-hover-color': 'ds-advanced-color-hyperlink-text-inverse-hover',
-  'small-font-size': 'ds-basic-type-size-12',
-  'small-font-weight': 'ds-basic-type-weight-regular',
-  'small-line-height': 'ds-basic-type-line-height-100',
-  'small-letter-spacing': 'ds-basic-type-letter-spacing-0',
-  'paragraph-line-height': 'ds-basic-type-line-height-100',
-  'muted-text-color': 'ds-basic-color-texticon-muted'
+$hawaiian-base-props: (
+  'font-size': ('ds-basic-type-size-16', $ds-basic-type-size-16),
+  'text-color': ('ds-basic-color-texticon-default', $ds-basic-color-texticon-default),
+  'font-family': ('ds-basic-type-family-default', $ds-basic-type-family-default),
+  'font-weight': ('ds-basic-type-weight-regular', $ds-basic-type-weight-regular),
+  'line-height': ('ds-basic-type-line-height-150', $ds-basic-type-line-height-150),
+  'letter-spacing': ('ds-basic-type-letter-spacing-0', $ds-basic-type-letter-spacing-0),
+  'hyperlink-color': ('ds-advanced-color-hyperlink-text', $ds-advanced-color-hyperlink-text),
+  'hyperlink-hover-color': ('ds-advanced-color-hyperlink-text-hover', $ds-advanced-color-hyperlink-text-hover),
+  'hyperlink-inverse-color': ('ds-advanced-color-hyperlink-text-inverse', $ds-advanced-color-hyperlink-text-inverse),
+  'hyperlink-inverse-hover-color': ('ds-advanced-color-hyperlink-text-inverse-hover', $ds-advanced-color-hyperlink-text-inverse-hover),
+  'small-font-size': ('ds-basic-type-size-12', $ds-basic-type-size-12),
+  'small-font-weight': ('ds-basic-type-weight-regular', $ds-basic-type-weight-regular),
+  'small-line-height': ('ds-basic-type-line-height-100', $ds-basic-type-line-height-100),
+  'small-letter-spacing': ('ds-basic-type-letter-spacing-0', $ds-basic-type-letter-spacing-0),
+  'paragraph-line-height': ('ds-basic-type-line-height-100', $ds-basic-type-line-height-100),
+  'muted-text-color': ('ds-basic-color-texticon-muted', $ds-basic-color-texticon-muted)
 );

@@ -17,6 +17,5 @@
 @import '../essentials/base';
 @import '../fonts/alaska';
 
-
 // Generate Alaska theme bundled essentials
-@include essentials-base($alaska-props);
+@include essentials-base($alaska-base-props);

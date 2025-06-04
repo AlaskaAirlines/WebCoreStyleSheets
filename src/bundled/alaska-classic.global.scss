@@ -17,7 +17,6 @@
 @import '../essentials/base';
 @import '../fonts/alaska-classic';
 
-
 // Generate Alaska Classic theme bundled essentials
 // Note: Alaska Classic is based on the Alaska theme, and uses the same properties
-@include essentials-base($alaska-props);
+@include essentials-base($alaska-base-props);

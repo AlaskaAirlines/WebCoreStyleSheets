@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.0.0...v8.0.1) (2025-06-04)
+
+
+### Performance Improvements
+
+* change styles of demo wrapper ([1afc6fc](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/1afc6fc48de51cc92b614eb20ae1d79acbf341d8))
+
 # [8.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v7.0.0...v8.0.0) (2025-06-03)
 
 

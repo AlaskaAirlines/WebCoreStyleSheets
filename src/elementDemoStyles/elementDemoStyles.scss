@@ -109,16 +109,22 @@ code:not(.html):not(.css):not(.js) {
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+.exampleWrapper,
+.exampleWrapper--ondark {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  margin-bottom: 1rem;
+  
+  box-shadow: var(--ds-elevation-100, 0px 2px 4px $ds-elevation-100);
+}
 .exampleWrapper {
-  $stripe: darken($ds-basic-color-surface-default, 5%);
-  $background: var(--ds-basic-color-surface-default, $ds-basic-color-surface-default);
-
-  background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+  margin-bottom: 1rem;
+  border-style: solid;
+  border-color: var(--ds-basic-color-border-subtle, $ds-basic-color-border-subtle);
+  background: var(--ds-basic-color-surface-default, $ds-basic-color-surface-default);
 }
 
 .exampleWrapper--ondark {
-  $stripe: darken($ds-basic-color-surface-inverse, 5%);
-  $background: var(--ds-basic-color-surface-inverse, $ds-basic-color-surface-inverse);
-
-  background: repeating-linear-gradient(45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+  background: var(--ds-basic-color-surface-inverse, $ds-basic-color-surface-inverse);
 }

@@ -1,0 +1,4 @@
+@import "../base";
+
+// Generate Hawaiian theme bundled essentials
+@include essentials-base($hawaiian-base-config);

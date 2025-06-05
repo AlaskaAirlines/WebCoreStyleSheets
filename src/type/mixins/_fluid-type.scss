@@ -1,0 +1,27 @@
+@import "../functions/calculate-fluid-clamp";
+@import '../functions/type-property-check';
+@import '../../utilityFunctions/map-deep-get';
+
+// Base mixin for typography styles
+@mixin fluid-type-base($size, $theme-config) {
+  font-family: type-property-check($theme-config, $size, 'family');
+  letter-spacing: type-property-check($theme-config, $size, 'letter-spacing');
+  font-weight: type-property-check($theme-config, $size, 'weight');
+  line-height: type-property-check($theme-config, $size, 'line-height');
+  
+  // Get min, preferred and max values from the config
+  $min-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'min');
+  $preferred-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'preferred');
+  $max-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'max');
+  
+  font-size: calculate-fluid-clamp($min-size, $preferred-size, $max-size);
+}
+
+// Generate classes for a given type and sizes
+@mixin generate-fluid-type-classes($type, $sizes, $theme-config) {
+  @each $size in $sizes {
+    .#{$type}-#{$size} {
+      @include fluid-type-base($size, $theme-config);
+    }
+  }
+}

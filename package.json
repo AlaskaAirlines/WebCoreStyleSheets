@@ -16,7 +16,7 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
-    "@aurodesignsystem/design-tokens": "8.2.0",
+    "@aurodesignsystem/design-tokens": "8.2.1",
     "chalk": "^5.4.1"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "scss:lint": "stylelint './src/**/*.scss'",
     "build": "npm-run-all test build:sassdoc build:sass:demo build:sass:test build:themes copy:files postinstall",
     "build:themes": "npm-run-all build:theme-css",
-    "build:theme-css": "node scripts/buildEssentialsSass.mjs",
+    "build:theme-css": "node scripts/theme.global.css.build.mjs",
     "build:ci": "npm-run-all sweep build",
     "build:dev": "npm-run-all scss:lint build:sass:test css:lint jest",
     "build:sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",

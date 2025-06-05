@@ -1,0 +1,10 @@
+// Check if type properties (font-family, font-weight, etc.) are shared across type sizes (2xl, xl, lg, etc.), 
+// if not it will use the size-specific value, otherwise falls back to global value in the theme config.
+@function type-property-check($theme-config, $size, $key) {
+  $size-value: auro_map-deep-get($theme-config, 'sizes', $size, $key);
+  @if $size-value {
+    @return $size-value;
+  } @else {
+    @return map-get($theme-config, $key);
+  }
+}

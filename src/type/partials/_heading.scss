@@ -1,0 +1,11 @@
+@import "../mixins/fluid-type";
+
+$heading-sizes: ('xl', 'lg', 'md', 'sm', 'xs', '2xs');
+
+@mixin heading-type($size, $theme-config) {
+  @include fluid-type-base($size, $theme-config);
+}
+
+@mixin generate-heading-classes($theme-config) {
+  @include generate-fluid-type-classes('heading', $heading-sizes, $theme-config);
+}

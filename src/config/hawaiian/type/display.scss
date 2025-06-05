@@ -1,0 +1,51 @@
+// Display - Type
+$hawaiian-type-display-config: (
+  'family': $ds-basic-type-family-display,
+  'weight': $ds-basic-type-weight-display,
+  'letter-spacing': $ds-basic-type-letter-spacing-display,
+  'line-height': $ds-basic-type-line-height-display,
+  'sizes': (
+    '2xl': (
+      'font-size': (
+        'min': $ds-type-size-56,
+        'max': $ds-type-size-86,
+        'preferred': $ds-type-size-72
+      )
+    ),
+    'xl': (
+      'font-size': (
+        'min': $ds-type-size-48,
+        'max': $ds-type-size-72,
+        'preferred': $ds-type-size-64
+      )
+    ),
+    'lg': (
+      'font-size': (
+        'min': $ds-type-size-44,
+        'max': $ds-type-size-64,
+        'preferred': $ds-type-size-56
+      )
+    ),
+    'md': (
+      'font-size': (
+        'min': $ds-type-size-40,
+        'max': $ds-type-size-56,
+        'preferred': $ds-type-size-48
+      )
+    ),
+    'sm': (
+      'font-size': (
+        'min': $ds-type-size-32,
+        'max': $ds-type-size-48,
+        'preferred': $ds-type-size-44
+      )
+    ),
+    'xs': (
+      'font-size': (
+        'min': $ds-type-size-28,
+        'max': $ds-type-size-38,
+        'preferred': $ds-type-size-36
+      )
+    )
+  )
+);

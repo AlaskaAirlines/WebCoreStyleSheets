@@ -1,0 +1,3 @@
+@import "../../partials/accent";
+
+@include generate-accent-classes($alaska-classic-type-accent-config);

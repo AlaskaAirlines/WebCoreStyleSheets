@@ -4,6 +4,7 @@
     "no-duplicate-selectors": null,
     "font-family-no-duplicate-names": null,
     "no-descending-specificity": null,
+    "no-invalid-position-at-import-rule": null,
     "at-rule-no-unknown": [true, {
       "ignoreAtRules": [
         "function",
@@ -17,7 +18,8 @@
         "return",
         "warn",
         "extend",
-        "use"
+        "use",
+        "layer"
       ]
     }]
   }

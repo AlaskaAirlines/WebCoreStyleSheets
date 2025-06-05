@@ -1,0 +1,19 @@
+// Base Essentials
+$alaska-base-config: (
+  'font-size': $ds-type-size-16,
+  'text-color': $ds-basic-color-texticon-default,
+  'font-family': $ds-basic-type-family-body,
+  'font-weight': $ds-type-weight-book,
+  'line-height': $ds-type-line-height-150,
+  'letter-spacing': $ds-type-letter-spacing-0,
+  'hyperlink-color': $ds-advanced-color-hyperlink-text,
+  'hyperlink-hover-color': $ds-advanced-color-hyperlink-text-hover,
+  'hyperlink-inverse-color': $ds-advanced-color-hyperlink-text-inverse,
+  'hyperlink-inverse-hover-color': $ds-advanced-color-hyperlink-text-inverse-hover,
+  'small-font-size': $ds-type-size-12,
+  'small-font-weight': $ds-type-weight-book,
+  'small-line-height': $ds-type-line-height-100,
+  'small-letter-spacing': $ds-type-letter-spacing-0,
+  'paragraph-line-height': $ds-type-line-height-100,
+  'muted-text-color': $ds-basic-color-texticon-muted
+);

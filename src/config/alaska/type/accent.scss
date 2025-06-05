@@ -1,0 +1,76 @@
+// Accent - Type
+$alaska-type-accent-config: (
+  'family': $ds-basic-type-family-accent,
+  'sizes': (
+    '2xl': (
+      'font-size': (
+        'min': $ds-type-size-32,
+        'max': $ds-type-size-38,
+        'preferred': $ds-type-size-38
+      ),
+      'weight': $ds-basic-type-weight-accent,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent,
+      'line-height': $ds-basic-type-line-height-accent2
+    ),
+    'xl': (
+      'font-size': (
+        'min': $ds-type-size-26,
+        'max': $ds-type-size-32,
+        'preferred': $ds-type-size-28
+      ),
+      'weight': $ds-basic-type-weight-accent,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent,
+      'line-height': $ds-basic-type-line-height-accent
+    ),
+    'lg': (
+      'font-size': (
+        'min': $ds-type-size-24,
+        'max': $ds-type-size-28,
+        'preferred': $ds-type-size-26
+      ),
+      'weight': $ds-basic-type-weight-accent,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent,
+      'line-height': $ds-basic-type-line-height-accent
+    ),
+    'md': (
+      'font-size': (
+        'min': $ds-type-size-22,
+        'max': $ds-type-size-24,
+        'preferred': $ds-type-size-22
+      ),
+      'weight': $ds-basic-type-weight-accent2,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent,
+      'line-height': $ds-basic-type-line-height-accent
+    ),
+    'sm': (
+      'font-size': (
+        'min': $ds-type-size-18,
+        'max': $ds-type-size-20,
+        'preferred': $ds-type-size-18
+      ),
+      'weight': $ds-basic-type-weight-accent2,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent,
+      'line-height': $ds-basic-type-line-height-accent
+    ),
+    'xs': (
+      'font-size': (
+        'min': $ds-type-size-16,
+        'max': $ds-type-size-16,
+        'preferred': $ds-type-size-16
+      ),
+      'weight': $ds-basic-type-weight-accent2,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent2,
+      'line-height': $ds-basic-type-line-height-accent
+    ),
+    '2xs': (
+      'font-size': (
+        'min': $ds-type-size-14,
+        'max': $ds-type-size-14,
+        'preferred': $ds-type-size-14
+      ),
+      'weight': $ds-basic-type-weight-accent,
+      'letter-spacing': $ds-basic-type-letter-spacing-accent2,
+      'line-height': $ds-basic-type-line-height-accent
+    )
+  )
+);

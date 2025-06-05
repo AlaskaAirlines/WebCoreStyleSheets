@@ -1,0 +1,3 @@
+@import "../../partials/display";
+
+@include generate-display-classes($alaska-type-display-config);

@@ -12,9 +12,8 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import '../libSupport/manageScope';
-@import '../core';
-@import '../themes/index';
+@import "../libSupport/manageScope";
+@import "../core";
 
 // Define the $paragraph variable with default value
 $paragraph: null !default;

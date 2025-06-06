@@ -11,12 +11,11 @@
 */
 
 // Import Sass variables
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-2/SCSSVariables--auro2';
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/themes/auro-2/SCSSVariables--auro2';
 
 // Import base essentials and fonts
 @import '../essentials/base';
 @import '../fonts/auro-2';
-
 
 // Generate Auro 2 theme bundled essentials
 // Note: Auro 2 is based on the Alaska theme, and uses the same properties

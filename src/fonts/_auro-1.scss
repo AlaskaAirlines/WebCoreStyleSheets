@@ -7,10 +7,10 @@
 
 // Auro-1 (a1) theme fonts
 
-@include font-face($ds-basic-type-family-default, $ds-basic-type-weight-light, 'ASCircularWeb-Light');
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-light, 'ASCircularWeb-Light');
 
-@include font-face($ds-basic-type-family-default, $ds-basic-type-weight-medium, 'ASCircularWeb-Medium');
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'ASCircularWeb-Medium');
 
-@include font-face($ds-basic-type-family-default, $ds-basic-type-weight-regular, 'ASCircularWeb-Regular');
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-regular, 'ASCircularWeb-Regular');
 
-@include font-face($ds-basic-type-family-accent, $ds-basic-type-weight-light, 'Teodor-Light');
+@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-light, 'Teodor-Light');

@@ -7,7 +7,7 @@
   Base essentials mixin – shared styles across all themes, 
   excluding legacy themes such as Auro Classic.
   
-  Accepts a map of CSS custom properties for theme-specific values
+  Accepts a map of SCSS variable name mappings for theme-specific values
 */
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
@@ -19,51 +19,14 @@
 // Define the $paragraph variable with default value
 $paragraph: null !default;
 
-/// Function to create CSS var with SCSS fallback from variable name string
-/// @param {String} $var-name - Design token name (without $ or --)
-/// @return {String} - CSS var() with SCSS fallback
-@function css-var($var-name) {
-  $css-var: '--' + $var-name;
-  
-  // Look up the SCSS variable value by name
-  $value: get-variable-value($var-name);
-  
-  @return var(#{$css-var}, #{$value});
-}
-
-/// Helper function to get SCSS variable value by name
-/// Since SCSS doesn't allow true dynamic variable access,
-/// the actual variable is passed as a second parameter
-/// @param {String} $var-name - Variable name without $
-/// @return {*} - Variable value
-@function get-variable-value($var-name) {
-  @if $var-name == 'ds-type-size-16' { @return $ds-type-size-16; }
-  @else if $var-name == 'ds-type-size-12' { @return $ds-type-size-12; }
-  @else if $var-name == 'ds-basic-color-texticon-default' { @return $ds-basic-color-texticon-default; }
-  @else if $var-name == 'ds-basic-color-texticon-muted' { @return $ds-basic-color-texticon-muted; }
-  @else if $var-name == 'ds-basic-type-brand-family-primary' { @return $ds-basic-type-brand-family-primary; }
-  @else if $var-name == 'ds-type-weight-book' { @return $ds-type-weight-book; }
-  @else if $var-name == 'ds-type-weight-regular' { @return $ds-type-weight-regular; }
-  @else if $var-name == 'ds-type-line-height-150' { @return $ds-type-line-height-150; }
-  @else if $var-name == 'ds-type-line-height-100' { @return $ds-type-line-height-100; }
-  @else if $var-name == 'ds-type-letter-spacing-0' { @return $ds-type-letter-spacing-0; }
-  @else if $var-name == 'ds-advanced-color-hyperlink-text' { @return $ds-advanced-color-hyperlink-text; }
-  @else if $var-name == 'ds-advanced-color-hyperlink-text-hover' { @return $ds-advanced-color-hyperlink-text-hover; }
-  @else if $var-name == 'ds-advanced-color-hyperlink-text-inverse' { @return $ds-advanced-color-hyperlink-text-inverse; }
-  @else if $var-name == 'ds-advanced-color-hyperlink-text-inverse-hover' { @return $ds-advanced-color-hyperlink-text-inverse-hover; }
-  @else {
-    @error "Variable '#{$var-name}' not found. Add it to get-variable-value() function.";
-  }
-}
-
 /// Mixin for base essentials
-/// @param {Map} $theme-props - Theme map containing property variable name mappings
+/// @param {Map} $theme-props - Theme map containing property values
 @mixin essentials-base($theme-props) {
   
   /// Baseline HTML setting to establish box-model and default font size.
   #{$sym}#{$prefix}html#{$scope} {
     box-sizing: border-box;
-    font-size: css-var(map-get($theme-props, 'font-size'));
+    font-size: map-get($theme-props, 'font-size');
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
   }
@@ -72,14 +35,14 @@ $paragraph: null !default;
   #{$scope}#{$sym}#{$prefix}body,
   #{$scope}.#{$prefix}baseType {
     margin: 0;
-    color: css-var(map-get($theme-props, 'text-color'));
-    font-family: css-var(map-get($theme-props, 'font-family'));
-    font-size: css-var(map-get($theme-props, 'font-size'));
-    font-weight: css-var(map-get($theme-props, 'font-weight'));
-    line-height: css-var(map-get($theme-props, 'line-height'));
+    color: map-get($theme-props, 'text-color');
+    font-family: map-get($theme-props, 'font-family');
+    font-size: map-get($theme-props, 'font-size');
+    font-weight: map-get($theme-props, 'font-weight');
+    line-height: map-get($theme-props, 'line-height');
     
     @if map-has-key($theme-props, 'letter-spacing') {
-      letter-spacing: css-var(map-get($theme-props, 'letter-spacing'));
+      letter-spacing: map-get($theme-props, 'letter-spacing');
     }
     
     font-variant-ligatures: no-common-ligatures;
@@ -88,7 +51,7 @@ $paragraph: null !default;
   /// Sets standard `margin` for all paragraph style content
   #{$scope}.#{$prefix}baseParagraph {
     margin: 0 0 1rem;
-    line-height: css-var(map-get($theme-props, 'line-height'));
+    line-height: map-get($theme-props, 'line-height');
 
     .#{$prefix}hyperlink {
       text-decoration: underline;
@@ -98,10 +61,10 @@ $paragraph: null !default;
   /// Baseline hyperlink styles as mirrored in auro-hyperlink web component
   #{$scope}.#{$prefix}hyperlink {
     text-decoration: underline;
-    color: css-var(map-get($theme-props, 'hyperlink-color'));
+    color: map-get($theme-props, 'hyperlink-color');
 
     &:visited {
-      color: css-var(map-get($theme-props, 'hyperlink-color'));
+      color: map-get($theme-props, 'hyperlink-color');
     }
 
     &--nav {
@@ -116,23 +79,23 @@ $paragraph: null !default;
     }
 
     &--ondark {
-      color: css-var(map-get($theme-props, 'hyperlink-inverse-color'));
+      color: map-get($theme-props, 'hyperlink-inverse-color');
 
       &:not(.is-touching) {
         &:hover {
-          color: css-var(map-get($theme-props, 'hyperlink-inverse-hover-color'));
+          color: map-get($theme-props, 'hyperlink-inverse-hover-color');
         }
       }
 
       &:visited {
-        color: css-var(map-get($theme-props, 'hyperlink-inverse-color'));
+        color: map-get($theme-props, 'hyperlink-inverse-color');
       }
     }
 
     &:not(.is-touching) {
       &:hover {
         text-decoration: none;
-        color: css-var(map-get($theme-props, 'hyperlink-hover-color'));
+        color: map-get($theme-props, 'hyperlink-hover-color');
       }
     }
   }
@@ -145,12 +108,12 @@ $paragraph: null !default;
   /// Legal copy, disclaimers, and footnotes
   #{$scope}#{$sym}#{$prefix}small,
   #{$scope}.#{$prefix}type--small {
-    font-size: css-var(map-get($theme-props, 'small-font-size'));
-    font-weight: css-var(map-get($theme-props, 'small-font-weight'));
-    line-height: css-var(map-get($theme-props, 'small-line-height'));
+    font-size: map-get($theme-props, 'small-font-size');
+    font-weight: map-get($theme-props, 'small-font-weight');
+    line-height: map-get($theme-props, 'small-line-height');
     
     @if map-has-key($theme-props, 'small-letter-spacing') {
-      letter-spacing: css-var(map-get($theme-props, 'small-letter-spacing'));
+      letter-spacing: map-get($theme-props, 'small-letter-spacing');
     }
   }
 
@@ -158,20 +121,20 @@ $paragraph: null !default;
   #{$scope}#{$sym}#{$prefix}p {
     @if $paragraph {
       margin: 0 0 1rem;
-      line-height: css-var(map-get($theme-props, 'paragraph-line-height'));
+      line-height: map-get($theme-props, 'paragraph-line-height');
     }
   }
 
   /// Fine print text
   #{$scope}.#{$prefix}fineprint {
-    font-family: css-var(map-get($theme-props, 'font-family'));
-    font-size: css-var(map-get($theme-props, 'small-font-size'));
-    font-weight: css-var(map-get($theme-props, 'small-font-weight'));
-    line-height: css-var(map-get($theme-props, 'small-line-height'));
-    color: css-var(map-get($theme-props, 'muted-text-color'));
+    font-family: map-get($theme-props, 'font-family');
+    font-size: map-get($theme-props, 'small-font-size');
+    font-weight: map-get($theme-props, 'small-font-weight');
+    line-height: map-get($theme-props, 'small-line-height');
+    color: map-get($theme-props, 'muted-text-color');
     
     @if map-has-key($theme-props, 'small-letter-spacing') {
-      letter-spacing: css-var(map-get($theme-props, 'small-letter-spacing'));
+      letter-spacing: map-get($theme-props, 'small-letter-spacing');
     }
   }
 }

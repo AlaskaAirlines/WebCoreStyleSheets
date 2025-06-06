@@ -11,12 +11,11 @@
 */
 
 // Import Sass variables for Auro-1 theme (which uses different design tokens but Alaska props)
-@import '../../node_modules/@aurodesignsystem/design-tokens/dist/auro-1/SCSSVariables--auro1';
+@import '../../node_modules/@aurodesignsystem/design-tokens/dist/themes/auro-1/SCSSVariables--auro1';
 
 // Import base essentials and fonts
 @import '../essentials/base';
 @import '../fonts/auro-1';
-
 
 // Generate Auro 1 theme bundled essentials
 // Note: Auro 1 is based on the Alaska theme, and uses the same properties

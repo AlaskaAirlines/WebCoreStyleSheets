@@ -37,16 +37,16 @@ $paragraph: null !default;
 /// @param {String} $var-name - Variable name without $
 /// @return {*} - Variable value
 @function get-variable-value($var-name) {
-  @if $var-name == 'ds-basic-type-size-16' { @return $ds-basic-type-size-16; }
-  @else if $var-name == 'ds-basic-type-size-12' { @return $ds-basic-type-size-12; }
+  @if $var-name == 'ds-type-size-16' { @return $ds-type-size-16; }
+  @else if $var-name == 'ds-type-size-12' { @return $ds-type-size-12; }
   @else if $var-name == 'ds-basic-color-texticon-default' { @return $ds-basic-color-texticon-default; }
   @else if $var-name == 'ds-basic-color-texticon-muted' { @return $ds-basic-color-texticon-muted; }
-  @else if $var-name == 'ds-basic-type-family-default' { @return $ds-basic-type-family-default; }
-  @else if $var-name == 'ds-basic-type-weight-book' { @return $ds-basic-type-weight-book; }
-  @else if $var-name == 'ds-basic-type-weight-regular' { @return $ds-basic-type-weight-regular; }
-  @else if $var-name == 'ds-basic-type-line-height-150' { @return $ds-basic-type-line-height-150; }
-  @else if $var-name == 'ds-basic-type-line-height-100' { @return $ds-basic-type-line-height-100; }
-  @else if $var-name == 'ds-basic-type-letter-spacing-0' { @return $ds-basic-type-letter-spacing-0; }
+  @else if $var-name == 'ds-basic-type-brand-family-primary' { @return $ds-basic-type-brand-family-primary; }
+  @else if $var-name == 'ds-type-weight-book' { @return $ds-type-weight-book; }
+  @else if $var-name == 'ds-type-weight-regular' { @return $ds-type-weight-regular; }
+  @else if $var-name == 'ds-type-line-height-150' { @return $ds-type-line-height-150; }
+  @else if $var-name == 'ds-type-line-height-100' { @return $ds-type-line-height-100; }
+  @else if $var-name == 'ds-type-letter-spacing-0' { @return $ds-type-letter-spacing-0; }
   @else if $var-name == 'ds-advanced-color-hyperlink-text' { @return $ds-advanced-color-hyperlink-text; }
   @else if $var-name == 'ds-advanced-color-hyperlink-text-hover' { @return $ds-advanced-color-hyperlink-text-hover; }
   @else if $var-name == 'ds-advanced-color-hyperlink-text-inverse' { @return $ds-advanced-color-hyperlink-text-inverse; }

@@ -3,6 +3,12 @@
 
 // ---------------------------------------------------------------------
 
+/* stylelint-disable no-invalid-position-at-import-rule */
+
+// @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+
+@use '../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+
 @import './libSupport/deprecated';
 
 // The following mixins provide pre-configured Orion approved
@@ -85,7 +91,7 @@
 ///       }
 ///   }
 @mixin auro_grid-breakpoint--xl {
-  @media screen and (min-width: $ds-grid-breakpoint-xl) {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-xl) {
     @content;
   }
 }
@@ -101,7 +107,7 @@
 ///       }
 ///   }
 @mixin auro_grid-breakpoint--lg {
-  @media screen and (min-width: $ds-grid-breakpoint-lg) {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-lg) {
     @content;
   }
 }
@@ -117,7 +123,7 @@
 ///       }
 ///   }
 @mixin auro_grid-breakpoint--md {
-  @media screen and (min-width: $ds-grid-breakpoint-md) {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-md) {
     @content;
   }
 }
@@ -133,7 +139,7 @@
 ///       }
 ///   }
 @mixin auro_grid-breakpoint--sm {
-  @media screen and (min-width: $ds-grid-breakpoint-sm) {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-sm) {
     @content;
   }
 }
@@ -149,7 +155,7 @@
 ///       }
 ///   }
 @mixin auro_grid-breakpoint--xs {
-  @media screen and (min-width: $ds-grid-breakpoint-xs) {
+  @media screen and (min-width: vac.$ds-grid-breakpoint-xs) {
     @content;
   }
 }

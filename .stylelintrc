@@ -16,7 +16,8 @@
         "mixin",
         "return",
         "warn",
-        "extend"
+        "extend",
+        "use"
       ]
     }]
   }

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [8.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.0.1...v8.1.0) (2025-06-09)
+
+
+### Features
+
+* update import paths to v8 tokens ([29371bf](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/29371bf5d624116f69991bf628fc07bced74488a))
+
 ## [8.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.0.0...v8.0.1) (2025-06-04)
 
 

@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.1.0...v8.1.1) (2025-06-09)
+
+
+### Performance Improvements
+
+* change import to use for breakpoints ([d74702b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d74702b76833dc0644ab4d054674acb807b617e4))
+
 # [8.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.0.1...v8.1.0) (2025-06-09)
 
 

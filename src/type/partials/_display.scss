@@ -1,0 +1,11 @@
+@import "../mixins/fluid-type";
+
+$display-sizes: ('2xl', 'xl', 'lg', 'md', 'sm', 'xs');
+
+@mixin display-type($size, $theme-config) {
+  @include fluid-type-base($size, $theme-config);
+}
+
+@mixin generate-display-classes($theme-config) {
+  @include generate-fluid-type-classes('display', $display-sizes, $theme-config);
+}

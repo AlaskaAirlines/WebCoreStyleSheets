@@ -1,0 +1,3 @@
+@import "../../partials/display";
+
+@include generate-display-classes($auro-1-type-display-config);

@@ -1,0 +1,35 @@
+@use 'sass:math';
+
+// Viewport width where preferred font sizes render at their exact design values, as defined by Design
+$preferred-viewport-width: 1200px;
+
+// Default browser rem size
+$base-font-size: 16px;
+
+// Convert the preferred viewport width to pixels-per-vw unit
+// 1vw equals 1% of the viewport width, so 100vw equals 100% of viewport width
+// By dividing $preferred-viewport-width by 100, we calculate how many pixels equal 1vw unit
+// This value will be used to calculate the conversion ratio for fluid typography scaling
+// Example: With preferred viewport of 1200px:
+//   1200px ÷ 100 = 12px/vw (meaning each 1vw unit equals 12px at this viewport width)
+$pixels-per-vw: math.div($preferred-viewport-width, 100);
+
+// Calculate rem-to-vw conversion ratio needed for fluid typography
+// This ratio determines how rem values should scale relative to viewport width
+// Formula: (base-font-size in px) ÷ (pixels per 1vw)
+// Example: With base font of 16px and preferred viewport of 1200px:
+//   16px ÷ (1200px ÷ 100) = 16px ÷ 12px/vw = 1.333rem/vw
+$rem-to-vw-ratio: math.div($base-font-size, $pixels-per-vw);
+
+// Unit divisor used to strip rem units during calculations
+$strip-unit: 1rem;
+
+// Generate fluid font-size value
+@function calculate-fluid-clamp($min-size, $preferred-size, $max-size) {
+ // Convert preferred font size from rem to vw units for fluid scaling
+ // 1. Strip the rem unit from $preferred-size by dividing by $strip-unit
+ // 2. Multiply by $rem-to-vw-ratio to get the equivalent vw value
+ // This ensures the font size equals $preferred-size exactly at the preferred viewport width
+ $vw-value: math.div($preferred-size, $strip-unit) * $rem-to-vw-ratio;
+ @return clamp(#{$min-size}, #{$vw-value}vw, #{$max-size});
+}

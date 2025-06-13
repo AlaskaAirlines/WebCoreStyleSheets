@@ -1,0 +1,28 @@
+// Body - Type
+$auro-1-type-body-config: (
+  'family': $ds-basic-type-family-body,
+  'weight': $ds-basic-type-weight-body,
+  'letter-spacing': $ds-basic-type-letter-spacing-body,
+  'sizes': (
+    'default': (
+      'font-size': $ds-type-size-16,
+      'line-height': $ds-basic-type-line-height-body2
+    ),
+    'lg': (
+      'font-size': $ds-type-size-18,
+      'line-height': $ds-basic-type-line-height-body
+    ),
+    'sm': (
+      'font-size': $ds-type-size-14,
+      'line-height': $ds-basic-type-line-height-body3
+    ),
+    'xs': (
+      'font-size': $ds-type-size-12,
+      'line-height': $ds-basic-type-line-height-body4
+    ),
+    '2xs': (
+      'font-size': $ds-type-size-10,
+      'line-height': $ds-basic-type-line-height-body5
+    )
+  )
+);

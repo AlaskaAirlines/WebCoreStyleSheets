@@ -1,0 +1,11 @@
+@import "../mixins/fluid-type";
+
+$accent-sizes: ('2xl', 'xl', 'lg', 'md', 'sm', 'xs', '2xs');
+
+@mixin accent-type($size, $theme-config) {
+  @include fluid-type-base($size, $theme-config);
+}
+
+@mixin generate-accent-classes($theme-config) {
+  @include generate-fluid-type-classes('accent', $accent-sizes, $theme-config);
+}

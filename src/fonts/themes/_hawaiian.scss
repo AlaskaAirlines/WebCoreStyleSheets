@@ -1,0 +1,14 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import '../../utilityMixins/fontFace';
+
+// Hawaiian (HA) theme fonts
+
+@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, 'ChronicleDisplay-Semibold');
+
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-regular, 'SlatePro-Regular');
+
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'SlatePro-Medium');

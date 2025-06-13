@@ -1,0 +1,3 @@
+@import "../../partials/display";
+
+@include generate-display-classes($hawaiian-type-display-config);

@@ -1,0 +1,3 @@
+@import "../../partials/accent";
+
+@include generate-accent-classes($auro-1-type-accent-config);

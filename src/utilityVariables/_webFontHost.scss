@@ -1,0 +1,16 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/// Web font host URL for font-face mixin
+/// 
+/// This variable defines the URL prefix for loading web fonts
+/// It can be overridden by projects if a custom URL is needed
+///
+/// @group Utility-variables
+/// @type String
+/// @example scss
+///   $web-font-host: 'path/to/fonts';
+
+$web-font-host: "https://www.alaskaair.com/assets/font/global" !default;

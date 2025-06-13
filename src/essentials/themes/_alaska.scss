@@ -1,0 +1,4 @@
+@import "../base";
+
+// Generate Alaska theme bundled essentials
+@include essentials-base($alaska-base-config);

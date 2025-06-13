@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+ * See LICENSE in the project root for license information.
+ */
+/* --------------------------------------------------------------------- */
+/*
+ * This file is reserved for CDN consumption of web components using the Alaska theme
+ * and not intended to be used with standard dynamic projects.
+ */
+
+// Template for theme compilation - THEME_NAME will be replaced by build script
+// Built with buildThemeGlobalCss.mjs
+
+// Tokens & config
+@import "../../config/THEME_NAME";
+
+// Build global CSS
+// CSS layers priority
+@import "../../type/layer";
+
+// Theme-specific styles
+@layer theme {
+  @import "../../essentials/themes/THEME_NAME";
+  @import "../../fonts/themes/THEME_NAME";
+  @import "../../type/themes/THEME_NAME/";
+}

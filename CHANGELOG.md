@@ -1,5 +1,31 @@
 # Semantic Release Automated Changelog
 
+# [9.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.1.1...v9.0.0) (2025-06-16)
+
+
+* feat(type)!: add typography classes to support themable design tokens ([36126cb](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/36126cb8203effd3e664036cede1e2f3e834493b))
+
+
+### BREAKING CHANGES
+
+* Adds fluid type classes to support themable design tokens.
+
+New Features
+
+- Introduce SCSS type configuration files and variable maps
+- Add fluid-type generator mixins/functions to produce responsive type classes per theme
+- Add a new theme.globals.css.build.mjs script to compile global theme CSS from a shared template
+- Add CSS @layer priority
+
+Updates
+
+- Reorganize SCSS configurations into a centralized config structure
+- Add robust typography-based theming support with fluid type generators
+- Replace the legacy build script with a template-driven tool
+- Restructure the theme and essentials directories under src/config and update import paths accordingly
+- Improve the font-face mixin to use a configurable webFontHost and ensure proper quoting of font-family
+- Remove obsolete imports and rename the core build script and its references in package.json
+
 ## [8.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.1.0...v8.1.1) (2025-06-09)
 
 

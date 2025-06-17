@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [9.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.0...v9.0.1) (2025-06-17)
+
+
+### Bug Fixes
+
+* scss type files in component import ([e528b2b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/e528b2b32f38cfeb420929b362ad11f7aabac471))
+
 # [9.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v8.1.1...v9.0.0) (2025-06-16)
 
 

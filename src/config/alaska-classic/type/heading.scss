@@ -1,56 +1,56 @@
 // Heading - Type
 $alaska-classic-type-heading-config: (
-  'family': $ds-basic-type-family-heading,
-  'letter-spacing': $ds-basic-type-letter-spacing-heading,
-  'line-height': $ds-basic-type-line-height-heading,
+  'family': v.$ds-basic-type-family-heading,
+  'letter-spacing': v.$ds-basic-type-letter-spacing-heading,
+  'line-height': v.$ds-basic-type-line-height-heading,
   'sizes': (
     'xl': (
       'font-size': (
-        'min': $ds-type-size-32,
-        'max': $ds-type-size-40,
-        'preferred': $ds-type-size-36
+        'min': v.$ds-type-size-32,
+        'max': v.$ds-type-size-40,
+        'preferred': v.$ds-type-size-36
       ),
-      'weight': $ds-basic-type-weight-heading
+      'weight': v.$ds-basic-type-weight-heading
     ),
     'lg': (
       'font-size': (
-        'min': $ds-type-size-28,
-        'max': $ds-type-size-36,
-        'preferred': $ds-type-size-32
+        'min': v.$ds-type-size-28,
+        'max': v.$ds-type-size-36,
+        'preferred': v.$ds-type-size-32
       ),
-      'weight': $ds-basic-type-weight-heading
+      'weight': v.$ds-basic-type-weight-heading
     ),
     'md': (
       'font-size': (
-        'min': $ds-type-size-26,
-        'max': $ds-type-size-28,
-        'preferred': $ds-type-size-28
+        'min': v.$ds-type-size-26,
+        'max': v.$ds-type-size-28,
+        'preferred': v.$ds-type-size-28
       ),
-      'weight': $ds-basic-type-weight-heading2
+      'weight': v.$ds-basic-type-weight-heading2
     ),
     'sm': (
       'font-size': (
-        'min': $ds-type-size-22,
-        'max': $ds-type-size-24,
-        'preferred': $ds-type-size-24
+        'min': v.$ds-type-size-22,
+        'max': v.$ds-type-size-24,
+        'preferred': v.$ds-type-size-24
       ),
-      'weight': $ds-basic-type-weight-heading2
+      'weight': v.$ds-basic-type-weight-heading2
     ),
     'xs': (
       'font-size': (
-        'min': $ds-type-size-20,
-        'max': $ds-type-size-20,
-        'preferred': $ds-type-size-20
+        'min': v.$ds-type-size-20,
+        'max': v.$ds-type-size-20,
+        'preferred': v.$ds-type-size-20
       ),
-      'weight': $ds-basic-type-weight-heading2
+      'weight': v.$ds-basic-type-weight-heading2
     ),
     '2xs': (
       'font-size': (
-        'min': $ds-type-size-18,
-        'max': $ds-type-size-18,
-        'preferred': $ds-type-size-18
+        'min': v.$ds-type-size-18,
+        'max': v.$ds-type-size-18,
+        'preferred': v.$ds-type-size-18
       ),
-      'weight': $ds-basic-type-weight-heading2
+      'weight': v.$ds-basic-type-weight-heading2
     )
   )
 );

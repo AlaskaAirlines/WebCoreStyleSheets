@@ -1,0 +1,8 @@
+// This file provides a convenient single import for Hawaiian theme Display styles
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
+
+// Import config
+@import "../../../../config/hawaiian/type/display";
+
+// Import Display theme
+@import "../../../../type/themes/hawaiian/display";

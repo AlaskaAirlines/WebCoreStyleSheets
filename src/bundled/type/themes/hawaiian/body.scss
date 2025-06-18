@@ -1,0 +1,8 @@
+// This file provides a convenient single import for Hawaiian theme Body styles
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
+
+// Import config
+@import "../../../../config/hawaiian/type/body";
+
+// Import Body theme
+@import "../../../../type/themes/hawaiian/body";

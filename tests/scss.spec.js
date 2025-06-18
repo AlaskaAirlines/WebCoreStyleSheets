@@ -9,6 +9,9 @@ describe('Sass', () => {
 
   // Requires describe and it methods provided
   sassTestFiles.forEach(file =>
-    sassTrue.runSass({ file }, { describe, it })
+    sassTrue.runSass({
+      file,
+      includePaths: [path.resolve(process.cwd(), 'node_modules')]
+    }, { describe, it })
   )
 })

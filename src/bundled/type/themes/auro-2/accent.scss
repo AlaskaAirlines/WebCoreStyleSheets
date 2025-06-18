@@ -1,0 +1,8 @@
+// This file provides a convenient single import for auro-2 theme Accent styles
+@use "@aurodesignsystem/design-tokens/dist/themes/auro-2/SCSSVariables--auro2" as v;
+
+// Import config
+@import "../../../../config/auro-2/type/accent";
+
+// Import Accent theme
+@import "../../../../type/themes/auro-2/accent";

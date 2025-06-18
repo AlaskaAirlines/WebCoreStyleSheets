@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 // stylelint-disable mixins-before-declarations, variable-for-property, no-vendor-prefixes, no-invalid-position-at-import-rule
-@use '../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 @import 'libSupport/manageScope';
 
 $fixed-nav-width: 280px;

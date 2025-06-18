@@ -1,0 +1,8 @@
+// This file provides a convenient single import for auro-1 theme Display styles
+@use "@aurodesignsystem/design-tokens/dist/themes/auro-1/SCSSVariables--auro1" as v;
+
+// Import config
+@import "../../../../config/auro-1/type/display";
+
+// Import Display theme
+@import "../../../../type/themes/auro-1/display";

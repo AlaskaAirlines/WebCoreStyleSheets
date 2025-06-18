@@ -1,4 +1,5 @@
 // This file provides a convenient single import for Alaska theme Heading styles
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 // Import config
 @import "../../../../config/alaska/type/heading";

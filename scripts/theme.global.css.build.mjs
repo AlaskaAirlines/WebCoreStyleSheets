@@ -77,13 +77,14 @@ async function processSass(srcPath, destPath, minDestPath, theme) {
       sassResult = sass.compileString(processedContent, {
         style: "expanded",
         sourceMap: false,
-        loadPaths: [path.dirname(srcPath)]
+        loadPaths: [path.dirname(srcPath), path.join(__dirname, '../node_modules')]
       });
     } else {
       // For regular SCSS files, compile directly
       sassResult = sass.compile(srcPath, {
         style: "expanded",
-        sourceMap: false
+        sourceMap: false,
+        loadPaths: [path.dirname(srcPath), path.join(__dirname, '../node_modules')]
       });
     }
     

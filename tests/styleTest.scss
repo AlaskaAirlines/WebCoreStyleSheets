@@ -1,8 +1,8 @@
 // Import build resources to ensure that src resources are working as expected
 
 /* --------start variables import ------------- */
-@use '../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@import '../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
 /* --------end variables import ------------- */
 
 /* --------start core import ------------- */
@@ -75,7 +75,7 @@
 $ds-spacing-types: inline;
 $ds-spacing-options: 25, 1000;
 $ds-spacing-properties: padding, margin;
-@import '../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap.scss';
+@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap.scss';
 @import './../src/utilityMixins/spacingUtility';
 
 /* --------start layoutPropertiesGenerator mixin import ------------- */

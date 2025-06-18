@@ -1,5 +1,21 @@
 # Semantic Release Automated Changelog
 
+## [9.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.1...v9.0.2) (2025-06-18)
+
+
+### Bug Fixes
+
+* remove design token import from theme typography import [#238](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/238) ([b33004f](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/b33004f6b25990000d63e563698147b7f6eb1836))
+* update SCSS import paths for design tokens in Auro type configs ([7781357](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/77813573719b271071ecd28bd02310b6a477bbd9))
+
+
+### Performance Improvements
+
+* add namespacing to design tokens for component use ([86fa73e](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/86fa73ebde5264890b027f0050751f0576b8ae67))
+* make import files for all typography styles ([d3997e3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/d3997e307c36d36f49ec4acd4a20ecb9039a0267))
+* refactor SCSS import paths and add type theme helper files ([5ec63a7](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5ec63a7ad5ea82ca3d8ba6a359dd5adafbbe73e0))
+* Update type theme configs to use namespace and fix end of file new line. ([8557baf](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/8557baf06f8558e39f009c2ae79eda89d0de4b8d))
+
 ## [9.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.0...v9.0.1) (2025-06-17)
 
 

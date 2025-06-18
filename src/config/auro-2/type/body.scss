@@ -1,28 +1,28 @@
 // Body - Type
 $auro-2-type-body-config: (
-  'family': $ds-basic-type-family-body,
-  'weight': $ds-basic-type-weight-body,
-  'letter-spacing': $ds-basic-type-letter-spacing-body,
+  'family': v.$ds-basic-type-family-body,
+  'weight': v.$ds-basic-type-weight-body,
+  'letter-spacing': v.$ds-basic-type-letter-spacing-body,
   'sizes': (
     'default': (
-      'font-size': $ds-type-size-16,
-      'line-height': $ds-basic-type-line-height-body2
+      'font-size': v.$ds-type-size-16,
+      'line-height': v.$ds-basic-type-line-height-body2
     ),
     'lg': (
-      'font-size': $ds-type-size-18,
-      'line-height': $ds-basic-type-line-height-body
+      'font-size': v.$ds-type-size-18,
+      'line-height': v.$ds-basic-type-line-height-body
     ),
     'sm': (
-      'font-size': $ds-type-size-14,
-      'line-height': $ds-basic-type-line-height-body3
+      'font-size': v.$ds-type-size-14,
+      'line-height': v.$ds-basic-type-line-height-body3
     ),
     'xs': (
-      'font-size': $ds-type-size-12,
-      'line-height': $ds-basic-type-line-height-body4
+      'font-size': v.$ds-type-size-12,
+      'line-height': v.$ds-basic-type-line-height-body4
     ),
     '2xs': (
-      'font-size': $ds-type-size-10,
-      'line-height': $ds-basic-type-line-height-body5
+      'font-size': v.$ds-type-size-10,
+      'line-height': v.$ds-basic-type-line-height-body5
     )
   )
 );

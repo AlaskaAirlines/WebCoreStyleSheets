@@ -1,4 +1,4 @@
-@import "../../../../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska-classic/SCSSVariables--alaskaClassic";
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska-classic/SCSSVariables--alaskaClassic" as v;
 
 // Alaska Classic Type Configs
 @import "accent";

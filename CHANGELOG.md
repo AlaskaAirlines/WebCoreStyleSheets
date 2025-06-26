@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [9.0.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.2...v9.0.3) (2025-06-26)
+
+
+### Bug Fixes
+
+* update font webhost to avoid cors errors ([05cab7e](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/05cab7ece299b528003da154257421ae110154ca))
+
 ## [9.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.1...v9.0.2) (2025-06-18)
 
 

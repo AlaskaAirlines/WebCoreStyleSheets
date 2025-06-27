@@ -1,0 +1,22 @@
+@import "../partials/body";
+@import "../partials/display";
+@import "../partials/heading";
+@import "../partials/accent";
+@import "../mixins/type-generator";
+
+// Theme generator
+@mixin generate-theme($theme-name, $body-config, $display-config, $heading-config, $accent-config) {
+  // Map of all type configs for the theme
+  $theme-configs: (
+    'body': $body-config,
+    'display': $display-config,
+    'heading': $heading-config,
+    'accent': $accent-config
+  );
+  
+  // Generate CSS variables for the theme
+  @include generate-theme-type-css-vars($theme-name, $theme-configs);
+  
+  // Generate theme type classes
+  @include generate-theme-type-classes();
+}

@@ -1,5 +1,10 @@
-// Type imports
-@import 'accent';
-@import 'body';
-@import 'display';
-@import 'heading';
+@import "../../mixins/theme-generator";
+
+// Generate Hawaiian theme
+@include generate-theme(
+  'hawaiian',
+  $hawaiian-type-body-config,
+  $hawaiian-type-display-config,
+  $hawaiian-type-heading-config,
+  $hawaiian-type-accent-config
+);

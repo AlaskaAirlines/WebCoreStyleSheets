@@ -1,23 +1,30 @@
+// Body type styling with CSS custom properties
 
 @import '../../utilityFunctions/map-deep-get';
 
 $body-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
 
-@mixin body-type($size, $theme-config) {
-  // common values across sizes
-  font-family: map-get($theme-config, 'family');
-  font-weight: map-get($theme-config, 'weight');
-  letter-spacing: map-get($theme-config, 'letter-spacing');
-  
-  // loop over the $body-sizes
-  font-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size');
-  line-height: auro_map-deep-get($theme-config, 'sizes', $size, 'line-height');
+// Generate CSS custom properties for Body
+@mixin generate-body-css-vars($theme-name, $theme-config) {
+  --body-family: #{map-get($theme-config, 'family')};
+  --body-weight: #{map-get($theme-config, 'weight')};
+  --body-letter-spacing: #{map-get($theme-config, 'letter-spacing')};
+
+  @each $size in $body-sizes {
+    --body-#{$size}-font-size: #{auro_map-deep-get($theme-config, 'sizes', $size, 'font-size')};
+    --body-#{$size}-line-height: #{auro_map-deep-get($theme-config, 'sizes', $size, 'line-height')};
+  }
 }
 
-@mixin generate-body-classes($theme-config) {
+// Generate Body classes
+@mixin generate-body-classes() {
   @each $size in $body-sizes {
     .body-#{$size} {
-      @include body-type($size, $theme-config);
+      font-family: var(--body-family);
+      font-weight: var(--body-weight);
+      letter-spacing: var(--body-letter-spacing);
+      font-size: var(--body-#{$size}-font-size);
+      line-height: var(--body-#{$size}-line-height);
     }
   }
 }

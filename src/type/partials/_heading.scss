@@ -2,10 +2,12 @@
 
 $heading-sizes: ('xl', 'lg', 'md', 'sm', 'xs', '2xs');
 
-@mixin heading-type($size, $theme-config) {
-  @include fluid-type-base($size, $theme-config);
+// Generate CSS custom properties for Heading
+@mixin generate-heading-css-vars($theme-name, $theme-config) {
+  @include generate-fluid-type-css-vars('heading', $heading-sizes, $theme-name, $theme-config);
 }
 
-@mixin generate-heading-classes($theme-config) {
-  @include generate-fluid-type-classes('heading', $heading-sizes, $theme-config);
+// Generate Heading classes
+@mixin generate-heading-classes($use-fallback: false, $fallback-config: null) {
+  @include generate-fluid-type-classes('heading', $heading-sizes, $use-fallback, $fallback-config);
 }

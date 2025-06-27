@@ -2,10 +2,12 @@
 
 $display-sizes: ('2xl', 'xl', 'lg', 'md', 'sm', 'xs');
 
-@mixin display-type($size, $theme-config) {
-  @include fluid-type-base($size, $theme-config);
+// Generate CSS custom properties for Display
+@mixin generate-display-css-vars($theme-name, $theme-config) {
+  @include generate-fluid-type-css-vars('display', $display-sizes, $theme-name, $theme-config);
 }
 
-@mixin generate-display-classes($theme-config) {
-  @include generate-fluid-type-classes('display', $display-sizes, $theme-config);
+// Generate Display classes
+@mixin generate-display-classes($use-fallback: false, $fallback-config: null) {
+  @include generate-fluid-type-classes('display', $display-sizes, $use-fallback, $fallback-config);
 }

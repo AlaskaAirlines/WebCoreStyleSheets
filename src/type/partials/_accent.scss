@@ -2,10 +2,12 @@
 
 $accent-sizes: ('2xl', 'xl', 'lg', 'md', 'sm', 'xs', '2xs');
 
-@mixin accent-type($size, $theme-config) {
-  @include fluid-type-base($size, $theme-config);
+// Generate CSS custom properties for Accent
+@mixin generate-accent-css-vars($theme-name, $theme-config) {
+  @include generate-fluid-type-css-vars('accent', $accent-sizes, $theme-name, $theme-config);
 }
 
-@mixin generate-accent-classes($theme-config) {
-  @include generate-fluid-type-classes('accent', $accent-sizes, $theme-config);
+// Generate Accent classes
+@mixin generate-accent-classes($use-fallback: false, $fallback-config: null) {
+  @include generate-fluid-type-classes('accent', $accent-sizes, $use-fallback, $fallback-config);
 }

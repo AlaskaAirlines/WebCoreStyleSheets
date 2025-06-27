@@ -18,6 +18,7 @@ import postcss from 'postcss';
 import cssnano from 'cssnano';
 import * as sass from 'sass';
 import { standardThemes, legacyThemes } from './theme.global.css.config.mjs';
+import { processFontFamilies, removeQuotesFromNumericValues } from './utils/css-processing.mjs';
 
 // Get dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -52,7 +53,7 @@ const buildTypes = {
   legacy: args.includes('legacy') || (!buildSpecific)
 };
 
-console.log('\nBuilding Essentials Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
+console.log('\nBuilding Global Theme Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
 
 // Insert the standard license for minified files
 const standardLicense = `/*
@@ -97,37 +98,10 @@ async function processSass(srcPath, destPath, minDestPath, theme) {
     // Skip legacy themes to preserve their original format
     if (!isLegacy) {
       // Remove quotes from numeric values
-      cssText = cssText.replace(
-        /:\s*"([0-9.]+(?:rem|em|px|vh|vw|%|s|ms|deg|turn|rad)?)"(?=\s*[;,}])/g, 
-        ': $1'
-      );
+      cssText = removeQuotesFromNumericValues(cssText);
       
-      // Only process font-family properties - add quotes to font-family values in CSS custom properties
-      cssText = cssText.replace(
-        /font-family:\s*var\(--([^,]+),\s*([^"'][^)]+[^"'])\)/g, 
-        (match, varName, fontValue) => {
-          // Only add quotes if the string doesn't already have them
-          if (fontValue.trim().startsWith('"') || fontValue.trim().startsWith("'")) {
-            // If it already has quotes, leave it as is
-            return match;
-          }
-          return `font-family: var(--${varName}, "${fontValue}")`;
-        }
-      );
-      
-      // Also handle direct font-family assignments (not in variables)
-      cssText = cssText.replace(
-        /font-family:\s*([^;"{][^;]*[^;"}])\s*;/g,
-        (match, fontValue) => {
-          // Skip if already quoted or contains var()
-          if (fontValue.trim().startsWith('"') || 
-              fontValue.trim().startsWith("'") || 
-              fontValue.includes('var(')) {
-            return match;
-          }
-          return `font-family: "${fontValue.trim()}";`;
-        }
-      );
+      // Process font-family values
+      cssText = processFontFamilies(cssText);
     }
     
     // Write to destination

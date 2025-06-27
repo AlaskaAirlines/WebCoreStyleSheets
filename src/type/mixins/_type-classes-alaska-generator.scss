@@ -1,0 +1,20 @@
+/* --------------------------------------------------------------------- */
+/*
+ * Generates common typography classes with Alaska theme fallbacks.
+ * These classes are identical across themes but reference the Alaska theme's fallback values.
+ */
+
+// Import needed mixins and partials
+@import "../partials/body";
+@import "../partials/display";
+@import "../partials/heading";
+@import "../partials/accent";
+
+// Import Alaska theme configs
+@import "../../../src/config/alaska/type/index.scss";
+
+// Generate typography classes with Alaska fallbacks
+@include generate-body-classes(true, $alaska-type-body-config);
+@include generate-display-classes(true, $alaska-type-display-config);
+@include generate-heading-classes(true, $alaska-type-heading-config);
+@include generate-accent-classes(true, $alaska-type-accent-config);

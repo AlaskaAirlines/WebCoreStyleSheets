@@ -1,0 +1,22 @@
+@import "../partials/body";
+@import "../partials/display";
+@import "../partials/heading";
+@import "../partials/accent";
+
+// Generate all type CSS variables for a theme
+@mixin generate-theme-type-css-vars($theme-name, $theme-configs) {
+  :root {
+    @include generate-body-css-vars($theme-name, map-get($theme-configs, 'body'));
+    @include generate-display-css-vars($theme-name, map-get($theme-configs, 'display'));
+    @include generate-heading-css-vars($theme-name, map-get($theme-configs, 'heading'));
+    @include generate-accent-css-vars($theme-name, map-get($theme-configs, 'accent'));
+  }
+}
+
+// Generate theme type classes
+@mixin generate-theme-type-classes($use-fallback: false, $fallback-configs: null) {
+  @include generate-body-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'body'), null));
+  @include generate-display-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'display'), null));
+  @include generate-heading-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'heading'), null));
+  @include generate-accent-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'accent'), null));
+}

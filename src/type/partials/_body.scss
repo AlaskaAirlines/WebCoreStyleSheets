@@ -1,23 +1,40 @@
+// Body type styling with CSS custom properties
 
 @import '../../utilityFunctions/map-deep-get';
+@import '../../utilityVariables/cssNamespace';
 
 $body-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
 
-@mixin body-type($size, $theme-config) {
-  // common values across sizes
-  font-family: map-get($theme-config, 'family');
-  font-weight: map-get($theme-config, 'weight');
-  letter-spacing: map-get($theme-config, 'letter-spacing');
-  
-  // loop over the $body-sizes
-  font-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size');
-  line-height: auro_map-deep-get($theme-config, 'sizes', $size, 'line-height');
+// Generate CSS custom properties for Body
+@mixin generate-body-css-vars($theme-name, $theme-config) {
+  --#{$css-ns}-body-family: #{map-get($theme-config, 'family')};
+  --#{$css-ns}-body-weight: #{map-get($theme-config, 'weight')};
+  --#{$css-ns}-body-letter-spacing: #{map-get($theme-config, 'letter-spacing')};
+
+  @each $size in $body-sizes {
+    --#{$css-ns}-body-#{$size}-font-size: #{auro_map-deep-get($theme-config, 'sizes', $size, 'font-size')};
+    --#{$css-ns}-body-#{$size}-line-height: #{auro_map-deep-get($theme-config, 'sizes', $size, 'line-height')};
+  }
 }
 
-@mixin generate-body-classes($theme-config) {
+// Generate Body classes
+@mixin generate-body-classes($use-fallback: false, $fallback-config: null) {
   @each $size in $body-sizes {
     .body-#{$size} {
-      @include body-type($size, $theme-config);
+      @if $use-fallback and $fallback-config != null {
+        // Use CSS fallback
+        font-family: var(--#{$css-ns}-body-family, auro_map-deep-get($fallback-config, 'family'));
+        font-weight: var(--#{$css-ns}-body-weight, auro_map-deep-get($fallback-config, 'weight'));
+        letter-spacing: var(--#{$css-ns}-body-letter-spacing, auro_map-deep-get($fallback-config, 'letter-spacing'));
+        font-size: var(--#{$css-ns}-body-#{$size}-font-size, auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size'));
+        line-height: var(--#{$css-ns}-body-#{$size}-line-height, auro_map-deep-get($fallback-config, 'sizes', $size, 'line-height'));
+      } @else {
+        font-family: var(--#{$css-ns}-body-family);
+        font-weight: var(--#{$css-ns}-body-weight);
+        letter-spacing: var(--#{$css-ns}-body-letter-spacing);
+        font-size: var(--#{$css-ns}-body-#{$size}-font-size);
+        line-height: var(--#{$css-ns}-body-#{$size}-line-height);
+      }
     }
   }
 }

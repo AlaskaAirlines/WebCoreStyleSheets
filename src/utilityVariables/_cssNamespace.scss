@@ -1,0 +1,15 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/// Global CSS theme custom property namespace
+/// 
+/// Defines the namespace used for all CSS theme custom properties
+///
+/// @group Utility-variables
+/// @type String
+/// @example scss
+///   $css-ns: 'auro'; // Would result in --auro-property-name
+
+$css-ns: "wcss" !default;

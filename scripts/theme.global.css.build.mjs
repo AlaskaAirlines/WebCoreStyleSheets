@@ -52,7 +52,7 @@ const buildTypes = {
   legacy: args.includes('legacy') || (!buildSpecific)
 };
 
-console.log('\nBuilding Essentials Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
+console.log('\nBuilding Global Theme Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
 
 // Insert the standard license for minified files
 const standardLicense = `/*

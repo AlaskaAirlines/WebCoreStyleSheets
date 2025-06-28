@@ -1,0 +1,11 @@
+/* --------------------------------------------------------------------- */
+/*
+ * Generates common typography classes for use across all themes.
+ * These classes are identical across themes and only reference the CSS custom properties.
+ */
+
+// Import type generator
+@import "type-generator";
+
+// Generate typography classes
+@include generate-theme-type-classes();

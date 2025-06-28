@@ -52,7 +52,7 @@ const buildTypes = {
   legacy: args.includes('legacy') || (!buildSpecific)
 };
 
-console.log('\nBuilding Essentials Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
+console.log('\nBuilding Global Theme Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
 
 // Insert the standard license for minified files
 const standardLicense = `/*
@@ -102,30 +102,28 @@ async function processSass(srcPath, destPath, minDestPath, theme) {
         ': $1'
       );
       
-      // Only process font-family properties - add quotes to font-family values in CSS custom properties
+      // Process font-family values
       cssText = cssText.replace(
-        /font-family:\s*var\(--([^,]+),\s*([^"'][^)]+[^"'])\)/g, 
-        (match, varName, fontValue) => {
-          // Only add quotes if the string doesn't already have them
-          if (fontValue.trim().startsWith('"') || fontValue.trim().startsWith("'")) {
-            // If it already has quotes, leave it as is
-            return match;
-          }
-          return `font-family: var(--${varName}, "${fontValue}")`;
-        }
-      );
-      
-      // Also handle direct font-family assignments (not in variables)
-      cssText = cssText.replace(
-        /font-family:\s*([^;"{][^;]*[^;"}])\s*;/g,
-        (match, fontValue) => {
-          // Skip if already quoted or contains var()
-          if (fontValue.trim().startsWith('"') || 
-              fontValue.trim().startsWith("'") || 
-              fontValue.includes('var(')) {
-            return match;
-          }
-          return `font-family: "${fontValue.trim()}";`;
+        /(--[\w-]+?-family:\s*)(.*?)(;)/g,
+        (match, propStart, fontList, end) => {
+          // Process each font in the comma-separated list
+          const processedFontList = fontList.split(',').map(font => {
+            const trimmed = font.trim();
+            // Skip if it's already quoted
+            if (trimmed.startsWith('"') || trimmed.startsWith("'")) {
+              return trimmed;
+            }
+            
+            // Only quote font names that contain spaces
+            if (trimmed.includes(' ')) {
+              return `"${trimmed}"`;
+            }
+            
+            // Return unquoted for single words and system fonts with hyphens like -apple-system
+            return trimmed;
+          }).join(', ');
+          
+          return `${propStart}${processedFontList}${end}`;
         }
       );
     }

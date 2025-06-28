@@ -1,5 +1,10 @@
-// Type imports
-@import 'accent';
-@import 'body';
-@import 'display';
-@import 'heading';
+@import "../../mixins/theme-generator";
+
+// Generate Alaska Classic theme
+@include generate-theme(
+  'alaska-classic',
+  $alaska-classic-type-body-config,
+  $alaska-classic-type-display-config,
+  $alaska-classic-type-heading-config,
+  $alaska-classic-type-accent-config
+);

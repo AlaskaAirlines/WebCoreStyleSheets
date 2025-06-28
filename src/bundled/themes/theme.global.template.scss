@@ -9,18 +9,14 @@
  */
 
 // Template for theme compilation - THEME_NAME will be replaced by build script
-// Built with buildThemeGlobalCss.mjs
+// Built with theme.global.css.build.mjs
 
 // Tokens & config
 @import "../../config/THEME_NAME";
 
-// Build global CSS
-// CSS layers priority
-@import "../../type/layer";
+// Essentials
+@import "../../essentials/themes/THEME_NAME";
+@import "../../fonts/themes/THEME_NAME";
 
-// Theme-specific styles
-@layer theme {
-  @import "../../essentials/themes/THEME_NAME";
-  @import "../../fonts/themes/THEME_NAME";
-  @import "../../type/themes/THEME_NAME/";
-}
+// Type styles
+@import "../../type/themes/THEME_NAME";

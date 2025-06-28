@@ -53,6 +53,7 @@
     "build": "npm-run-all test build:sassdoc build:sass:demo build:sass:test build:themes copy:files postinstall",
     "build:themes": "npm-run-all build:theme-css",
     "build:theme-css": "node scripts/theme.global.css.build.mjs",
+    "build:type-classes-css": "node scripts/type.classes.css.build.mjs",
     "build:ci": "npm-run-all sweep build",
     "build:dev": "npm-run-all scss:lint build:sass:test css:lint jest",
     "build:sassdoc": "sassdoc ./src -d ./docs && node scripts/sassdocTheme.js",

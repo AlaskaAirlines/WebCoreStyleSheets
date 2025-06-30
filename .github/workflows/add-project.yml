@@ -1,0 +1,17 @@
+name: Add Project to Issue
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.2
+        with:
+          # You can target a project in a different organization
+          # to the issue
+          project-url: https://github.com/orgs/AlaskaAirlines/projects/19
+          github-token: ${{ secrets.ACCESS_TOKEN }}

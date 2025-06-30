@@ -1,0 +1,31 @@
+name: 'Test'
+description: 'Runs tests for the project'
+inputs:
+  os:
+    description: 'Operating system to run on'
+    required: true
+  node-version:
+    description: 'Node.js version to use'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+      if: ${{ github.action_repository != github.repository }}
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+    - name: Restore dist/demo directories from cache
+      uses: actions/cache@v4
+      id: build_cache
+      with:
+        path: |
+          ./dist
+          ./docs
+          ./results
+          ./node_modules
+        key: build-${{ inputs.node-version }}-${{ github.run_id }}
+    - name: Test
+      run: npm run test
+      shell: bash

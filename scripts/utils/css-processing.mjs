@@ -10,33 +10,63 @@
  * single-word fonts and already-quoted fonts unchanged
  * 
  * @param {string} cssText - The CSS text to process
- * @param {RegExp} [pattern] - Optional regex pattern to match font-family properties (defaults to custom property pattern)
  * @returns {string} - The processed CSS text
  */
-export function processFontFamilies(cssText, pattern = /(--[\w-]+?-family:\s*)(.*?)(;)/g) {
-  return cssText.replace(
-    pattern,
+export function processFontFamilies(cssText) {
+  // Process custom properties first
+  let processedCSS = cssText.replace(
+    /(--[\w-]+?-family:\s*)(.*?)(;)/g,
     (match, propStart, fontList, end) => {
       // Process each font in the comma-separated list
-      const processedFontList = fontList.split(',').map(font => {
-        const trimmed = font.trim();
-        // Skip if it's already quoted
-        if (trimmed.startsWith('"') || trimmed.startsWith("'")) {
-          return trimmed;
-        }
-        
-        // Only quote font names that contain spaces
-        if (trimmed.includes(' ')) {
-          return `"${trimmed}"`;
-        }
-        
-        // Return unquoted for single words and system fonts with hyphens like -apple-system
-        return trimmed;
-      }).join(', ');
-      
+      const processedFontList = formatFontList(fontList);
       return `${propStart}${processedFontList}${end}`;
     }
   );
+  
+  // Process font-family declarations with var() fallbacks
+  processedCSS = processedCSS.replace(
+    /(font-family:\s*var\([^)]+?,\s*)(.*?)(\))/g,
+    (match, varStart, fallbackFonts, varEnd) => {
+      // Process the fallback fonts list
+      const processedFallbacks = formatFontList(fallbackFonts);
+      return `${varStart}${processedFallbacks}${varEnd}`;
+    }
+  );
+  
+  // Process regular font-family declarations (without var)
+  processedCSS = processedCSS.replace(
+    /(font-family:\s*(?!var\())(.*?)(;)/g,
+    (match, propStart, fontList, end) => {
+      // Process each font in the comma-separated list
+      const processedFontList = formatFontList(fontList);
+      return `${propStart}${processedFontList}${end}`;
+    }
+  );
+  
+  return processedCSS;
+}
+
+/**
+ * Helper function to format a comma-separated list of fonts
+ * @param {string} fontList - Comma-separated list of font names
+ * @returns {string} - Processed font list with proper quotes
+ */
+function formatFontList(fontList) {
+  return fontList.split(',').map(font => {
+    const trimmed = font.trim();
+    // Skip if it's already quoted
+    if (trimmed.startsWith('"') || trimmed.startsWith("'")) {
+      return trimmed;
+    }
+    
+    // Only quote font names that contain spaces
+    if (trimmed.includes(' ')) {
+      return `"${trimmed}"`;
+    }
+    
+    // Return unquoted for single words and system fonts with hyphens like -apple-system
+    return trimmed;
+  }).join(', ');
 }
 
 /**

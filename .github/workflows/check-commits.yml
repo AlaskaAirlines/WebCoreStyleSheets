@@ -1,0 +1,21 @@
+name: Check Commits
+
+on:
+  pull_request:
+    types: [opened, reopened, unlabeled, synchronize]
+permissions:
+  contents: read
+  deployments: write
+  issues: write
+  pull-requests: write
+jobs:
+  check-commits:
+    name: Check Commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/check-commits
+        with:
+          os: ubuntu-latest
+          node-version: 22
+          github-token: ${{ secrets.GH_TOKEN }}

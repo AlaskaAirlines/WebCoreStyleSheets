@@ -1,0 +1,32 @@
+name: 'Check Commits'
+description: 'Validates commit messages'
+inputs:
+  os:
+    description: 'Operating system to run on'
+    required: true
+  node-version:
+    description: 'Node.js version to use'
+    required: true
+  github-token:
+    description: "GitHub token"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Fetch all history for all branches and tags
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+    - name: Ensure Git is installed
+      run: |
+        which git || (apt-get update && apt-get install -y git)
+        git --version
+      shell: bash
+    - name: Auro Check Commits
+      run: npx --package=@aurodesignsystem/auro-cli -- auro cc -l -d
+      shell: bash
+      env:
+          GITHUB_TOKEN: ${{ inputs.github-token }}

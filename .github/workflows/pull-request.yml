@@ -1,0 +1,103 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+      
+permissions:
+  contents: read
+  deployments: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  build:
+    if: github.event.action != 'closed'
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build
+        with:
+          os: ubuntu-latest
+          node-version: ${{ matrix.node-version }}
+  test:
+    if: github.event.action != 'closed'
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/test
+        with:
+          os: ubuntu-latest
+          node-version: ${{ matrix.node-version }}
+  release:
+    name: PR Release
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    # Skip on PR close and on release branches
+    if: github.event.action != 'closed' && !startsWith(github.ref, 'refs/heads/rc/')
+    steps:
+        - uses: actions/checkout@v4
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+            registry-url: 'https://registry.npmjs.org'
+        - name: Restore dist/demo directories to cache
+          uses: actions/cache@v4
+          id: build-ubuntu-latest-node-v22
+          with:
+            path: |
+              ./dist
+              ./docs
+              ./results
+              ./node_modules
+            key: build-22-${{ github.run_id }}
+        - name: Generate PR release version
+          run: npx --package=@aurodesignsystem/auro-cli -- auro pr-release -p ${{ github.event.pull_request.number }}
+        - name: Read package.json
+          id: package
+          uses: actions/github-script@v6
+          with:
+            script: |
+              const fs = require('fs');
+              const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+              core.setOutput('name', packageJson.name);
+              core.setOutput('version', packageJson.version);
+              return packageJson;
+            result-encoding: string
+        - name: Publish to NPM
+          run: npm publish --registry=https://registry.npmjs.org
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        - name: Comment on PR
+          uses: marocchino/sticky-pull-request-comment@v2
+          with:
+            header: release
+            message: |
+              🚀 PR Release Published! `v${{ steps.package.outputs.version }}`
+
+              To install:
+              ```bash
+              npm install ${{ steps.package.outputs.name }}@${{ steps.package.outputs.version }}
+              ```
+
+              Install via alias:
+              ```bash
+              npm install @aurodesignsystem@npm:${{ steps.package.outputs.name }}@${{ steps.package.outputs.version }}
+              ```
+
+              [View on npmjs.com](https://www.npmjs.com/package/${{ steps.package.outputs.name }}/v/${{ steps.package.outputs.version }})

@@ -4,7 +4,7 @@
 @import '../../utilityVariables/cssNamespace';
 
 // Generate CSS custom properties for fluid type
-@mixin generate-fluid-type-css-vars($type, $sizes, $theme-name, $theme-config) {
+@mixin generate-fluid-type-css-vars($type, $sizes, $theme-config) {
   @each $size in $sizes {
     // Set base properties
     --#{$css-ns}-#{$type}-#{$size}-family: #{type-property-check($theme-config, $size, 'family')};

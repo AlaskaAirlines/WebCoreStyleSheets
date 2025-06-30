@@ -6,7 +6,7 @@
 $body-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
 
 // Generate CSS custom properties for Body
-@mixin generate-body-css-vars($theme-name, $theme-config) {
+@mixin generate-body-css-vars($theme-config) {
   --#{$css-ns}-body-family: #{map-get($theme-config, 'family')};
   --#{$css-ns}-body-weight: #{map-get($theme-config, 'weight')};
   --#{$css-ns}-body-letter-spacing: #{map-get($theme-config, 'letter-spacing')};

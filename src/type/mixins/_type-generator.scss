@@ -4,12 +4,12 @@
 @import "../partials/accent";
 
 // Generate all type CSS variables for a theme
-@mixin generate-theme-type-css-vars($theme-name, $theme-configs) {
+@mixin generate-theme-type-css-vars($theme-configs) {
   :root {
-    @include generate-body-css-vars($theme-name, map-get($theme-configs, 'body'));
-    @include generate-display-css-vars($theme-name, map-get($theme-configs, 'display'));
-    @include generate-heading-css-vars($theme-name, map-get($theme-configs, 'heading'));
-    @include generate-accent-css-vars($theme-name, map-get($theme-configs, 'accent'));
+    @include generate-body-css-vars(map-get($theme-configs, 'body'));
+    @include generate-display-css-vars(map-get($theme-configs, 'display'));
+    @include generate-heading-css-vars(map-get($theme-configs, 'heading'));
+    @include generate-accent-css-vars(map-get($theme-configs, 'accent'));
   }
 }
 

@@ -2,6 +2,9 @@
 .gitignore
 .sasslintrc
 .stylelintrc
+.github
+.husky
+.vscode
 
 # Directories 
 scripts/

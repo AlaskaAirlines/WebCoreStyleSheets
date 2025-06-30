@@ -12,13 +12,13 @@
  */
 
 import path from 'path';
-import fs from 'fs';
 import { fileURLToPath } from 'url';
-import postcss from 'postcss';
-import cssnano from 'cssnano';
-import * as sass from 'sass';
 import { standardThemes, legacyThemes } from './theme.global.css.config.mjs';
-import { processFontFamilies, removeQuotesFromNumericValues } from './utils/css-processing.mjs';
+import { 
+  ensureDirectoriesExist,
+  processSassFiles,
+  createBuildReporter
+} from './utils/build-utils.mjs';
 
 // Get dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -28,19 +28,12 @@ const __dirname = path.dirname(__filename);
 const srcDir = path.join(__dirname, '../src/bundled');
 const distDir = path.join(__dirname, '../dist/bundled');
 
-// Check output directories exist
-if (!fs.existsSync(distDir)) {
-  fs.mkdirSync(distDir, { recursive: true });
-}
-
-// Make sure subdirectories exist
-const subDirs = ['legacy', 'themes'];
-subDirs.forEach(dir => {
-  const subDir = path.join(distDir, dir);
-  if (!fs.existsSync(subDir)) {
-    fs.mkdirSync(subDir, { recursive: true });
-  }
-});
+// Ensure output directories exist
+ensureDirectoriesExist([
+  distDir,
+  path.join(distDir, 'legacy'),
+  path.join(distDir, 'themes')
+]);
 
 // Combined themes array
 const themes = [...standardThemes, ...legacyThemes];
@@ -53,119 +46,81 @@ const buildTypes = {
   legacy: args.includes('legacy') || (!buildSpecific)
 };
 
-console.log('\nBuilding Global Theme Sass files...' + (buildSpecific ? ` (${args.join(', ')})` : ''));
+// Create build reporter
+const buildTypeInfo = buildSpecific ? ` (${args.join(', ')})` : '';
+const reporter = createBuildReporter(`Global Theme Sass files${buildTypeInfo}`);
 
-// Insert the standard license for minified files
-const standardLicense = `/*
- * Copyright (c) Alaska Air. All rights reserved. Licensed under the Apache-2.0 license
- * See LICENSE in the project root for license information.
- */`;
-
-// Process SASS to CSS
-async function processSass(srcPath, destPath, minDestPath, theme) {
-  try {
-    // Check if this is a template file
-    const isTemplate = srcPath.includes('template');
-    
-    let sassResult;
-    
-    if (isTemplate) {
-      // For template files, replace THEME_NAME with actual theme name
-      const templateContent = fs.readFileSync(srcPath, 'utf8');
-      const themeName = theme.name || theme.src.split('/').pop().replace('.global.scss', '');
-      const processedContent = templateContent.replace(/THEME_NAME/g, themeName);
-
-      sassResult = sass.compileString(processedContent, {
-        style: "expanded",
-        sourceMap: false,
-        loadPaths: [path.dirname(srcPath), path.join(__dirname, '../node_modules')]
-      });
-    } else {
-      // For regular SCSS files, compile directly
-      sassResult = sass.compile(srcPath, {
-        style: "expanded",
-        sourceMap: false,
-        loadPaths: [path.dirname(srcPath), path.join(__dirname, '../node_modules')]
-      });
-    }
-    
-    // Handle quotes in CSS
-    let cssText = sassResult.css;
-    
-    // Check if this is a legacy theme
-    const isLegacy = srcPath.includes('/legacy/');
-    
-    // Skip legacy themes to preserve their original format
-    if (!isLegacy) {
-      // Remove quotes from numeric values
-      cssText = removeQuotesFromNumericValues(cssText);
-      
-      // Process font-family values
-      cssText = processFontFamilies(cssText);
-    }
-    
-    // Write to destination
-    fs.writeFileSync(destPath, cssText);
-    
-    // Process with cssnano
-    const minifiedResult = await postcss([cssnano({
-      preset: ['default', {
-        minifyFontValues: {
-          // Preserve font-family quotes
-          removeQuotes: false
-        }
-      }]
-    })])
-    .process(cssText, { 
-      // Prevents source map generation
-      from: undefined,
-    });
-    
-    // Add standard license to minified content
-    const minifiedWithLicense = `${standardLicense}\n${minifiedResult.css}`;
-    
-    // Write to minified file
-    fs.writeFileSync(minDestPath, minifiedWithLicense);
-    
-    return true;
-  } catch (error) {
-    console.error(`Error processing ${srcPath}: ${error.message}`);
-    return false;
-  }
-}
-
-// Process each theme
-const buildPromises = themes.map(async (theme) => {
-  const isLegacy = legacyThemes.some(lt => lt.src === theme.src);
-  
-  // Skip if theme doesn't match requested build criteria
-  if (buildSpecific && 
-      !args.some(arg => theme.src.includes(arg)) && 
-      !((isLegacy && buildTypes.legacy) || (!isLegacy && buildTypes.standard))) {
-    return;
-  }
-
+/**
+ * Creates build configuration for a theme
+ * @param {Object} theme - Theme configuration
+ * @param {boolean} isLegacy - Whether this is a legacy theme
+ * @returns {Object} Build configuration
+ */
+function createThemeConfig(theme, isLegacy) {
   const srcPath = path.join(srcDir, theme.src);
   const destPath = path.join(distDir, theme.dest);
   const minDestPath = destPath.replace(/\.css$/, '.min.css');
   
-  console.log(`- [${isLegacy ? 'LEGACY' : 'STANDARD'}] ${theme.src} → ${theme.dest} (+ minified)`);
+  // Check if this is a template file
+  const isTemplate = theme.src.includes('template');
   
-  // Process SASS to CSS and create minified version
-  return processSass(srcPath, destPath, minDestPath, theme);
-});
+  return {
+    srcPath,
+    destPath,
+    minDestPath,
+    sassOptions: {
+      loadPaths: [path.join(__dirname, '../node_modules')],
+      isTemplate,
+      templateData: isTemplate ? {
+        'THEME_NAME': theme.name || theme.src.split('/').pop().replace('.global.scss', '')
+      } : {},
+      skipProcessing: isLegacy // Skip processing for legacy themes
+    },
+    theme,
+    isLegacy
+  };
+}
 
-// Wait for all processing to complete
-Promise.all(buildPromises)
+// Filter themes based on build criteria and create configurations
+const buildConfigs = themes
+  .filter(theme => {
+    const isLegacy = legacyThemes.some(lt => lt.src === theme.src);
+    
+    // Skip if theme doesn't match requested build criteria
+    if (buildSpecific && 
+        !args.some(arg => theme.src.includes(arg)) && 
+        !((isLegacy && buildTypes.legacy) || (!isLegacy && buildTypes.standard))) {
+      return false;
+    }
+    
+    return true;
+  })
+  .map(theme => {
+    const isLegacy = legacyThemes.some(lt => lt.src === theme.src);
+    return createThemeConfig(theme, isLegacy);
+  });
+
+// Progress callback for reporting
+function progressCallback(config) {
+  const { theme, isLegacy } = config;
+  const typeLabel = isLegacy ? 'LEGACY' : 'STANDARD';
+  reporter.processing(`[${typeLabel}] ${theme.src}`, theme.dest, '(+ minified)');
+}
+
+// Start build process
+reporter.start();
+
+// Process all theme configurations
+processSassFiles(buildConfigs, progressCallback)
   .then(results => {
     if (results.every(result => result !== false)) {
-      console.log('Sass build and minification completed successfully!');
+      reporter.success();
     } else {
-      console.error('Some files failed to build or minify.');
+      reporter.error('Some files failed to build or minify.');
       process.exit(1);
     }
   })
   .catch(error => {
-    console.error(`Build process error: ${error.message}`);
+    reporter.processError(error);
     process.exit(1);
   });

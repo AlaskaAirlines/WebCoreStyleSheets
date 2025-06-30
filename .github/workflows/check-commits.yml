@@ -18,4 +18,4 @@ jobs:
         with:
           os: ubuntu-latest
           node-version: 22
-          github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ACCESS_TOKEN }}

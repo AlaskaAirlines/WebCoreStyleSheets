@@ -3,8 +3,8 @@
 $heading-sizes: ('xl', 'lg', 'md', 'sm', 'xs', '2xs');
 
 // Generate CSS custom properties for Heading
-@mixin generate-heading-css-vars($theme-name, $theme-config) {
-  @include generate-fluid-type-css-vars('heading', $heading-sizes, $theme-name, $theme-config);
+@mixin generate-heading-css-vars($theme-config) {
+  @include generate-fluid-type-css-vars('heading', $heading-sizes, $theme-config);
 }
 
 // Generate Heading classes

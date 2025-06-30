@@ -3,8 +3,8 @@
 $display-sizes: ('2xl', 'xl', 'lg', 'md', 'sm', 'xs');
 
 // Generate CSS custom properties for Display
-@mixin generate-display-css-vars($theme-name, $theme-config) {
-  @include generate-fluid-type-css-vars('display', $display-sizes, $theme-name, $theme-config);
+@mixin generate-display-css-vars($theme-config) {
+  @include generate-fluid-type-css-vars('display', $display-sizes, $theme-config);
 }
 
 // Generate Display classes

@@ -15,7 +15,7 @@
   );
   
   // Generate CSS variables for the theme
-  @include generate-theme-type-css-vars($theme-name, $theme-configs);
+  @include generate-theme-type-css-vars($theme-configs);
   
   // Generate theme type classes
   @include generate-theme-type-classes();

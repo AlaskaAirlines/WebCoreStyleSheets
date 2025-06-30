@@ -3,8 +3,8 @@
 $accent-sizes: ('2xl', 'xl', 'lg', 'md', 'sm', 'xs', '2xs');
 
 // Generate CSS custom properties for Accent
-@mixin generate-accent-css-vars($theme-name, $theme-config) {
-  @include generate-fluid-type-css-vars('accent', $accent-sizes, $theme-name, $theme-config);
+@mixin generate-accent-css-vars($theme-config) {
+  @include generate-fluid-type-css-vars('accent', $accent-sizes, $theme-config);
 }
 
 // Generate Accent classes

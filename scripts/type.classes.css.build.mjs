@@ -9,7 +9,7 @@
  * 2. Transforms SCSS to CSS
  * 3. Creates both expanded and minified versions
  * 4. Adds proper license headers
- * 5. Creates an Alaska fallback version with hardcoded values for browsers without CSS custom properties
+ * 5. Creates an Alaska theme version with hardcoded fallback values
  */
 
 import path from 'path';

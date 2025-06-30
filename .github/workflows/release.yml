@@ -68,6 +68,7 @@ jobs:
               ./results
               ./node_modules
           key: build-22-${{ github.run_id }}
+      - run: git config --unset core.hooksPath
       - name: Release
         uses: cycjimmy/semantic-release-action@v4
         env:

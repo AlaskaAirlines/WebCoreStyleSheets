@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [10.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.3...v10.0.0) (2025-07-01)
+
+
+* feat!: export type styles as css variables ([ee4eee3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/ee4eee398fc721013f4d0345ee44db44314afd25))
+
+
+### Features
+
+* consolidate build processing ([2cdae18](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/2cdae18696bdc117b1cb7e0331ac9834f8311810))
+
+
+### BREAKING CHANGES
+
+* - The type styles are now exported as CSS variables
+
 ## [9.0.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.2...v9.0.3) (2025-06-26)
 
 

@@ -45,6 +45,9 @@
         line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height);
         font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size);
       }
+      
+      // Include any additional content passed to the mixin
+      @content;
     }
   }
 }

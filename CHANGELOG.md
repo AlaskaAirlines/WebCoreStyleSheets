@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [10.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.0...v10.0.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* add text-transfrom to accent type classes ([4a4e2b3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4a4e2b3e18b3be63f3ce7c0cd19807512dc4e511))
+
 # [10.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v9.0.3...v10.0.0) (2025-07-01)
 
 

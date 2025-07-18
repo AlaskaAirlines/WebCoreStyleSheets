@@ -4,7 +4,7 @@ $alaska-base-config: (
   'text-color': $ds-basic-color-texticon-default,
   'font-family': $ds-basic-type-family-body,
   'font-weight': $ds-type-weight-book,
-  'line-height': $ds-type-line-height-150,
+  'line-height': $ds-type-line-height-px-24,
   'letter-spacing': $ds-type-letter-spacing-0,
   'hyperlink-color': $ds-advanced-color-hyperlink-text,
   'hyperlink-hover-color': $ds-advanced-color-hyperlink-text-hover,
@@ -12,8 +12,8 @@ $alaska-base-config: (
   'hyperlink-inverse-hover-color': $ds-advanced-color-hyperlink-text-inverse-hover,
   'small-font-size': $ds-type-size-12,
   'small-font-weight': $ds-type-weight-book,
-  'small-line-height': $ds-type-line-height-100,
+  'small-line-height': $ds-type-line-height-px-16,
   'small-letter-spacing': $ds-type-letter-spacing-0,
-  'paragraph-line-height': $ds-type-line-height-100,
+  'paragraph-line-height': $ds-type-line-height-px-16,
   'muted-text-color': $ds-basic-color-texticon-muted
 );

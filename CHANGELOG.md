@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [10.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.1...v10.0.2) (2025-07-19)
+
+
+### Bug Fixes
+
+* update design tokens with new line-height values ([e0b8b79](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/e0b8b791b9e182c0b50fb9b3daa171aad63f51c8))
+
 ## [10.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.0...v10.0.1) (2025-07-09)
 
 

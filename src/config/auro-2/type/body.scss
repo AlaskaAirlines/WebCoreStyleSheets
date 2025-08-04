@@ -1,6 +1,7 @@
 // Body - Type
 $auro-2-type-body-config: (
   'family': v.$ds-basic-type-family-body,
+  'familyFallback': v.$ds-basic-type-family-body-fallback,
   'weight': v.$ds-basic-type-weight-body,
   'letter-spacing': v.$ds-basic-type-letter-spacing-body,
   'sizes': (

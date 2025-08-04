@@ -35,7 +35,7 @@ $paragraph: null !default;
   #{$scope}.#{$prefix}baseType {
     margin: 0;
     color: map-get($theme-props, 'text-color');
-    font-family: map-get($theme-props, 'font-family');
+    font-family: map-get($theme-props, 'font-family'), map-get($theme-props, 'font-family-fallback');
     font-size: map-get($theme-props, 'font-size');
     font-weight: map-get($theme-props, 'font-weight');
     line-height: map-get($theme-props, 'line-height');
@@ -126,7 +126,7 @@ $paragraph: null !default;
 
   /// Fine print text
   #{$scope}.#{$prefix}fineprint {
-    font-family: map-get($theme-props, 'font-family');
+    font-family: map-get($theme-props, 'font-family'), map-get($theme-props, 'font-family-fallback');
     font-size: map-get($theme-props, 'small-font-size');
     font-weight: map-get($theme-props, 'small-font-weight');
     line-height: map-get($theme-props, 'small-line-height');

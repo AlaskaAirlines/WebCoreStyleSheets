@@ -817,7 +817,7 @@ $ds-grid-breakpoint-lg: 1024px;</code></pre></div><div class="item__example exam
   #{$scope}.#{$prefix}baseType {
     margin: 0;
     color: map-get($theme-props, &#39;text-color&#39;);
-    font-family: map-get($theme-props, &#39;font-family&#39;);
+    font-family: map-get($theme-props, &#39;font-family&#39;), map-get($theme-props, &#39;font-family-fallback&#39;);
     font-size: map-get($theme-props, &#39;font-size&#39;);
     font-weight: map-get($theme-props, &#39;font-weight&#39;);
     line-height: map-get($theme-props, &#39;line-height&#39;);
@@ -908,7 +908,7 @@ $ds-grid-breakpoint-lg: 1024px;</code></pre></div><div class="item__example exam
 
   /// Fine print text
   #{$scope}.#{$prefix}fineprint {
-    font-family: map-get($theme-props, &#39;font-family&#39;);
+    font-family: map-get($theme-props, &#39;font-family&#39;), map-get($theme-props, &#39;font-family-fallback&#39;);
     font-size: map-get($theme-props, &#39;small-font-size&#39;);
     font-weight: map-get($theme-props, &#39;small-font-weight&#39;);
     line-height: map-get($theme-props, &#39;small-line-height&#39;);
@@ -929,7 +929,7 @@ $ds-grid-breakpoint-lg: 1024px;</code></pre></div><div class="item__example exam
   #{$scope}.#{$prefix}baseType {
   margin: 0;
     color: map-get($theme-props, &#39;text-color&#39;);
-    font-family: map-get($theme-props, &#39;font-family&#39;);
+    font-family: map-get($theme-props, &#39;font-family&#39;), map-get($theme-props, &#39;font-family-fallback&#39;);
     font-size: map-get($theme-props, &#39;font-size&#39;);
     font-weight: map-get($theme-props, &#39;font-weight&#39;);
     line-height: map-get($theme-props, &#39;line-height&#39;);
@@ -1008,7 +1008,7 @@ $ds-grid-breakpoint-lg: 1024px;</code></pre></div><div class="item__example exam
       line-height: map-get($theme-props, &#39;paragraph-line-height&#39;);
     }
 }</code>" data-collapsed="#{$scope}#{$sym}#{$prefix}p { ... }"><code>#{$scope}#{$sym}#{$prefix}p { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Paragraph element margin (conditional)</p></div></section><section class="main__item container item" id="undefined-css-#{$scope}.#{$prefix}fineprint"><h3 class="item__heading"><a class="item__name" href="#css-#{$scope}.#{$prefix}fineprint">#{$scope}.#{$prefix}fineprint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>#{$scope}.#{$prefix}fineprint {
-  font-family: map-get($theme-props, &#39;font-family&#39;);
+  font-family: map-get($theme-props, &#39;font-family&#39;), map-get($theme-props, &#39;font-family-fallback&#39;);
     font-size: map-get($theme-props, &#39;small-font-size&#39;);
     font-weight: map-get($theme-props, &#39;small-font-weight&#39;);
     line-height: map-get($theme-props, &#39;small-line-height&#39;);

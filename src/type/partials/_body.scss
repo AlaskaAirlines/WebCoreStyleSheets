@@ -8,6 +8,7 @@ $body-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
 // Generate CSS custom properties for Body
 @mixin generate-body-css-vars($theme-config) {
   --#{$css-ns}-body-family: #{map-get($theme-config, 'family')};
+  --#{$css-ns}-body-family-fallback: #{map-get($theme-config, 'familyFallback')};
   --#{$css-ns}-body-weight: #{map-get($theme-config, 'weight')};
   --#{$css-ns}-body-letter-spacing: #{map-get($theme-config, 'letter-spacing')};
 
@@ -23,13 +24,13 @@ $body-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
     .body-#{$size} {
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
-        font-family: var(--#{$css-ns}-body-family, auro_map-deep-get($fallback-config, 'family'));
+        font-family: var(--#{$css-ns}-body-family, auro_map-deep-get($fallback-config, 'family')), auro_map-deep-get($fallback-config, 'familyFallback');
         font-weight: var(--#{$css-ns}-body-weight, auro_map-deep-get($fallback-config, 'weight'));
         letter-spacing: var(--#{$css-ns}-body-letter-spacing, auro_map-deep-get($fallback-config, 'letter-spacing'));
         font-size: var(--#{$css-ns}-body-#{$size}-font-size, auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size'));
         line-height: var(--#{$css-ns}-body-#{$size}-line-height, auro_map-deep-get($fallback-config, 'sizes', $size, 'line-height'));
       } @else {
-        font-family: var(--#{$css-ns}-body-family);
+        font-family: var(--#{$css-ns}-body-family), var(--#{$css-ns}-body-family-fallback);
         font-weight: var(--#{$css-ns}-body-weight);
         letter-spacing: var(--#{$css-ns}-body-letter-spacing);
         font-size: var(--#{$css-ns}-body-#{$size}-font-size);

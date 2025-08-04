@@ -8,6 +8,7 @@
   @each $size in $sizes {
     // Set base properties
     --#{$css-ns}-#{$type}-#{$size}-family: #{type-property-check($theme-config, $size, 'family')};
+    --#{$css-ns}-#{$type}-#{$size}-family-fallback: #{type-property-check($theme-config, $size, 'familyFallback')};
     --#{$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check($theme-config, $size, 'letter-spacing')};
     --#{$css-ns}-#{$type}-#{$size}-weight: #{type-property-check($theme-config, $size, 'weight')};
     --#{$css-ns}-#{$type}-#{$size}-line-height: #{type-property-check($theme-config, $size, 'line-height')};
@@ -27,7 +28,7 @@
     .#{$type}-#{$size} {
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
-        font-family: var(--#{$css-ns}-#{$type}-#{$size}-family, #{type-property-check($fallback-config, $size, 'family')});
+        font-family: var(--#{$css-ns}-#{$type}-#{$size}-family, #{type-property-check($fallback-config, $size, 'family')}), var(--#{$css-ns}-#{$type}-#{$size}-family-fallback, #{type-property-check($fallback-config, $size, 'familyFallback')});
         letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing, #{type-property-check($fallback-config, $size, 'letter-spacing')});
         font-weight: var(--#{$css-ns}-#{$type}-#{$size}-weight, #{type-property-check($fallback-config, $size, 'weight')});
         line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height, #{type-property-check($fallback-config, $size, 'line-height')});
@@ -39,7 +40,7 @@
         $clamp-value: calculate-fluid-clamp($min-size, $preferred-size, $max-size);
         font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size, #{$clamp-value});
       } @else {
-        font-family: var(--#{$css-ns}-#{$type}-#{$size}-family);
+        font-family: var(--#{$css-ns}-#{$type}-#{$size}-family), var(--#{$css-ns}-#{$type}-#{$size}-family-fallback);
         letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing);
         font-weight: var(--#{$css-ns}-#{$type}-#{$size}-weight);
         line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height);

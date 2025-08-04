@@ -1,6 +1,7 @@
 // Accent - Type
 $hawaiian-type-accent-config: (
   'family': v.$ds-basic-type-family-accent,
+  'familyFallback': v.$ds-basic-type-family-accent-fallback,
   'sizes': (
     '2xl': (
       'font-size': (

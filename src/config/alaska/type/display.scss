@@ -1,6 +1,7 @@
 // Display - Type
 $alaska-type-display-config: (
   'family': v.$ds-basic-type-family-display,
+  'familyFallback': v.$ds-basic-type-family-display-fallback,
   'weight': v.$ds-basic-type-weight-display,
   'letter-spacing': v.$ds-basic-type-letter-spacing-display,
   'line-height': v.$ds-basic-type-line-height-display,

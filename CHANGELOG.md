@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [10.0.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.2...v10.0.3) (2025-08-05)
+
+
+### Bug Fixes
+
+* auro-1 & auro-2 should reference their design tokens ([5aea89d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5aea89d3f3034e6ae582b8dd506156cfe67f1856))
+* type fallbacks ([e162492](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/e162492191151df43d02bd756bfa80232bcb0d03))
+
+
+### Performance Improvements
+
+* update design token repo ([f702cad](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/f702cad3db0e82744c2eb91121cac2a538abdf0b))
+* update design tokens ([43d96d8](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/43d96d847bf35fa6d004f5fb79b5503f565213f7))
+
 ## [10.0.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.1...v10.0.2) (2025-07-19)
 
 

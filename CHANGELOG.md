@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [10.0.4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.3...v10.0.4) (2025-08-15)
+
+
+### Bug Fixes
+
+* update auro-1 & 2 to use as circular book ([4ffba90](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4ffba901544ed13290629e3be5230bcbc979709c))
+
 ## [10.0.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.2...v10.0.3) (2025-08-05)
 
 

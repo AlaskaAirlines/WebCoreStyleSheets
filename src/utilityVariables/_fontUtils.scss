@@ -1,0 +1,55 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// Internationalization (i18n) font utilities
+
+// Enable switch (set to false to omit i18n font-face output)
+$enable-i18n-fonts: true !default;
+
+// Unicode ranges
+// NOTE: These must remain literal lists (not variables resolved later) so browsers
+// can evaluate them at parse time for font subsetting.
+
+// English / Latin + common symbols
+$unicode-range-en: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF !default;
+
+// Japanese
+$unicode-range-jp: U+3000-303F, U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+4E00-9FFF, U+FF00-FFEF !default;
+
+// Korean
+$unicode-range-kr: U+1100-11FF, U+3130-318F, U+AC00-D7AF !default;
+
+// Root host for i18n font assets
+$i18n-font-host: "https://resource.alaskaair.net" !default;
+
+// Per-locale base paths
+$i18n-font-base-path-en: "#{$i18n-font-host}/en-us/assets/font" !default;
+$i18n-font-base-path-jp: "#{$i18n-font-host}/ja-jp/assets/font" !default;
+$i18n-font-base-path-kr: "#{$i18n-font-host}/ko-kr/assets/font" !default;
+$i18n-font-base-path-sc: "#{$i18n-font-host}/zh-sc/assets/font" !default;
+$i18n-font-base-path-tc: "#{$i18n-font-host}/zh-tc/assets/font" !default;
+
+// Japanese
+$i18n-font-jp-300-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v54-japanese-300" !default;
+$i18n-font-jp-400-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v54-japanese-400" !default;
+$i18n-font-jp-500-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v54-japanese-500" !default;
+$i18n-font-jp-600-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v55-japanese-600" !default;
+
+// Korean
+$i18n-font-kr-300-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-300" !default;
+$i18n-font-kr-400-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-400" !default;
+$i18n-font-kr-500-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-500" !default;
+$i18n-font-kr-600-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-600" !default;
+
+// Chinese Simplified
+$i18n-font-sc-300-path: "#{$i18n-font-base-path-sc}/noto-sans-sc-v38-chinese-simplified-300" !default;
+$i18n-font-sc-400-path: "#{$i18n-font-base-path-sc}/noto-sans-sc-v38-chinese-simplified-400" !default;
+$i18n-font-sc-500-path: "#{$i18n-font-base-path-sc}/noto-sans-sc-v38-chinese-simplified-500" !default;
+$i18n-font-sc-600-path: "#{$i18n-font-base-path-sc}/noto-sans-sc-v39-chinese-simplified-600" !default;
+
+// Chinese Traditional
+$i18n-font-tc-300-path: "#{$i18n-font-base-path-tc}/noto-sans-tc-v38-chinese-traditional-300" !default;
+$i18n-font-tc-400-path: "#{$i18n-font-base-path-tc}/noto-sans-tc-v38-chinese-traditional-400" !default;
+$i18n-font-tc-500-path: "#{$i18n-font-base-path-tc}/noto-sans-tc-v38-chinese-traditional-500" !default;
+$i18n-font-tc-600-path: "#{$i18n-font-base-path-tc}/noto-sans-tc-v38-chinese-traditional-600" !default;

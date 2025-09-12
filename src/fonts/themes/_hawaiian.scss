@@ -4,11 +4,31 @@
 // ---------------------------------------------------------------------
 
 @import '../../utilityMixins/fontFace';
+@import '../../utilityMixins/fontFaceI18n';
+@import '../../utilityVariables/fontUtils';
 
-// Hawaiian (HA) theme fonts
+// Hawaiian (HA) theme EN fonts
+@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, 'ChronicleDisplay-Semibold', $unicode-range-en);
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-regular, 'SlatePro-Regular', $unicode-range-en);
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'SlatePro-Medium', $unicode-range-en);
 
-@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, 'ChronicleDisplay-Semibold');
+// ---------------------------------------------------------------------
+// i18n font remapping
+// Remaps existing English font-family + weight pairs to appropriate i18n weights.
+@if $enable-i18n-fonts == true {
+	// Japanese (JP)
+	// Chronicle Display 600 -> Noto Sans JP 600
+	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, $i18n-font-jp-600-path, $unicode-range-jp);
+	// Slate Pro 400 -> Noto Sans JP 400
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-regular, $i18n-font-jp-400-path, $unicode-range-jp);
+	// Slate Pro 500 -> Noto Sans JP 500
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-jp-500-path, $unicode-range-jp);
 
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-regular, 'SlatePro-Regular');
-
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'SlatePro-Medium');
+	// Korean (KR)
+	// Chronicle Display 600 -> Noto Sans KR 600
+	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, $i18n-font-kr-600-path, $unicode-range-kr);
+	// Slate Pro 400 -> Noto Sans KR 400
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-regular, $i18n-font-kr-400-path, $unicode-range-kr);
+	// Slate Pro 500 -> Noto Sans KR 500
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-kr-500-path, $unicode-range-kr);
+}

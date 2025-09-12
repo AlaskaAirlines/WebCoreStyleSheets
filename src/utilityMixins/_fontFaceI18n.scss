@@ -1,0 +1,28 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+// i18n font-face mixin
+// Similar to default/en font-face mixin with support for:
+//  - unicode-range
+//  - swap display for faster rendering of large i18n subsets
+//
+// Parameters:
+//  $family        - Font family name (string)
+//  $weight        - Numeric font-weight
+//  $path          - Path without file extension to .woff2 asset
+//  $unicode-range - Literal unicode-range list (do NOT quote)
+//
+// Example:
+//  @include font-face-i18n('AS Circular', 300, '../fonts/jp/noto-sans-jp-v54-japanese-300', $unicode-range-jp);
+
+@mixin font-face-i18n($family, $weight, $path, $unicode-range) {
+  @font-face {
+    font-family: "#{$family}";
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("#{$path}.woff2") format("woff2");
+    unicode-range: $unicode-range;
+  }
+}

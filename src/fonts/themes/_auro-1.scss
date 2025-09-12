@@ -4,13 +4,36 @@
 // ---------------------------------------------------------------------
 
 @import '../../utilityMixins/fontFace';
+@import '../../utilityMixins/fontFaceI18n';
+@import '../../utilityVariables/fontUtils';
 
-// Auro-1 (a1) theme fonts
+// Auro-1 (a1) theme EN fonts
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-light, 'ASCircularWeb-Light', $unicode-range-en);
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-book, 'ASCircularWeb-Book', $unicode-range-en);
+@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'ASCircularWeb-Medium', $unicode-range-en);
+@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-light, 'Teodor-Light', $unicode-range-en);
 
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-light, 'ASCircularWeb-Light');
+// ---------------------------------------------------------------------
+// i18n font remapping
+// Remaps existing English font-family + weight pairs to appropriate i18n weights.
+@if $enable-i18n-fonts == true {
+	// Japanese (JP)
+	// AS Circular 300 Light -> Noto Sans JP 300
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-light, $i18n-font-jp-300-path, $unicode-range-jp);
+	// AS Circular 450 Book -> Noto Sans JP 400
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-book, $i18n-font-jp-400-path, $unicode-range-jp);
+	// AS Circular 500 Medium -> Noto Sans JP 500
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-jp-500-path, $unicode-range-jp);
+	// Teodor 300 Light -> Noto Sans JP 300
+	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-light, $i18n-font-jp-300-path, $unicode-range-jp);
 
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'ASCircularWeb-Medium');
-
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-book, 'ASCircularWeb-Book');
-
-@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-light, 'Teodor-Light');
+	// Korean (KR)
+	// AS Circular 300 Light -> Noto Sans KR 300
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-light, $i18n-font-kr-300-path, $unicode-range-kr);
+	// AS Circular 450 Book -> Noto Sans KR 400
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-book, $i18n-font-kr-400-path, $unicode-range-kr);
+	// AS Circular 500 Medium -> Noto Sans KR 500
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-kr-500-path, $unicode-range-kr);
+	// Teodor 300 Light -> Noto Sans KR 300
+	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-light, $i18n-font-kr-300-path, $unicode-range-kr);
+}

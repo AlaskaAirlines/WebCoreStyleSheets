@@ -16,7 +16,7 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
-    "@aurodesignsystem/design-tokens": "8.4.1",
+    "@aurodesignsystem/design-tokens": "8.5.0",
     "chalk": "^5.4.1"
   },
   "devDependencies": {

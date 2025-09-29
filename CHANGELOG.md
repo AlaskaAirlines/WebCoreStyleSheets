@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [10.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.4...v10.1.0) (2025-09-29)
+
+
+### Features
+
+* adding i18n font support ([797ce73](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/797ce7387e8cfd0a402ede6cc64417e3a595d6f8))
+
 ## [10.0.4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.3...v10.0.4) (2025-08-15)
 
 

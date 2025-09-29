@@ -53,7 +53,9 @@ const DEFAULT_CSSNANO_OPTIONS = {
     minifyFontValues: {
       // Preserve font-family quotes
       removeQuotes: false
-    }
+    },
+    // Disable unicode-range minification
+    normalizeUnicode: false
   }]
 };
 

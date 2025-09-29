@@ -118,7 +118,8 @@ export async function compileSass(srcPath, options = {}) {
     
     return cssText;
   } catch (error) {
-    throw new Error(`SASS compilation failed for ${srcPath}: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    throw new Error(`SASS compilation failed for ${srcPath}: ${errorMessage}`);
   }
 }
 
@@ -136,7 +137,8 @@ export async function minifyCSS(cssText, options = DEFAULT_CSSNANO_OPTIONS) {
     
     return result.css;
   } catch (error) {
-    throw new Error(`CSS minification failed: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    throw new Error(`CSS minification failed: ${errorMessage}`);
   }
 }
 
@@ -201,14 +203,15 @@ export async function processSassToCSS(config) {
     
     return true;
   } catch (error) {
-    console.error(`Error processing ${srcPath}: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`Error processing ${srcPath}: ${errorMessage}`);
     return false;
   }
 }
 
 /**
  * Processes multiple SASS files concurrently
- * @param {Array} configs - Array of processing configurations
+ * @param {Array<{srcPath: string, destPath: string, minDestPath: string, sassOptions?: Object, minifyOptions?: Object, addCharset?: boolean}>} configs - Array of processing configurations
  * @param {Function} [progressCallback] - Optional callback for progress updates
  * @returns {Promise<boolean[]>} Array of success statuses
  */
@@ -235,7 +238,7 @@ export function createBuildReporter(buildName) {
       console.log(`\nBuilding ${buildName}...${message ? ` ${message}` : ''}`);
     },
     
-    processing: (src, dest, extra = '') => {
+    processing: (/** @type {string} */ src, /** @type {string} */ dest, /** @type {string} */ extra = '') => {
       console.log(`- Processing ${src} → ${dest}${extra ? ` ${extra}` : ''}`);
     },
     
@@ -243,12 +246,13 @@ export function createBuildReporter(buildName) {
       console.log(`${buildName} built successfully!${message ? ` ${message}` : ''}`);
     },
     
-    error: (message) => {
+    error: (/** @type {string} */ message) => {
       console.error(`Failed to build ${buildName}. ${message}`);
     },
     
-    processError: (error) => {
-      console.error(`Build process error: ${error.message}`);
+    processError: (/** @type {any} */ error) => {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.error(`Build process error: ${errorMessage}`);
     }
   };
 }

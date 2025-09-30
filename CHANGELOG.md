@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [10.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.1.0...v10.1.1) (2025-09-30)
+
+
+### Bug Fixes
+
+* disable font-face optimizations during minification ([889e577](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/889e577f6d5c416e9863ba968b423b3859a960aa))
+* don't attempt to optimize unicode-range in minified files ([e474ea8](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/e474ea8962e2f7d15a460a3d64ef795fbfbd3e06))
+* typescript errors ([294a933](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/294a93311764f4b2f5289598a2e2d631678b3a43))
+
 # [10.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.0.4...v10.1.0) (2025-09-29)
 
 

@@ -49,13 +49,20 @@ const DEFAULT_SASS_OPTIONS = {
  * Default PostCSS/cssnano options
  */
 const DEFAULT_CSSNANO_OPTIONS = {
+  /*
+    Disable all @font-face optimizations to preserve i18n & unicode remapping.
+    Minification can be too aggressive and break certain font ranges.
+    https://github.com/AlaskaAirlines/WebCoreStyleSheets/discussions/261
+  */
   preset: ['default', {
-    minifyFontValues: {
-      // Preserve font-family quotes
-      removeQuotes: false
-    },
-    // Disable unicode-range minification
-    normalizeUnicode: false
+    // Disable all font-face optimizations
+    minifyFontValues: false,
+    // Disable unicode-range minification to preserve Korean/Japanese font ranges
+    normalizeUnicode: false,
+    // Disable font-weight normalization (keeps font-weight values as-is)
+    normalizeString: {
+      preferredQuote: 'double'
+    }
   }]
 };
 

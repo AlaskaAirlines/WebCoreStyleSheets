@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [10.1.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.1.1...v10.1.2) (2025-10-16)
+
+
+### Bug Fixes
+
+* [#265](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/265) , AlaskaAirlines/auro-table[#132](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/132) - update table style selector to only target API tables ([4b997be](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/4b997be751055d73317ed12c730cc5c90a90ac90))
+
 ## [10.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.1.0...v10.1.1) (2025-09-30)
 
 

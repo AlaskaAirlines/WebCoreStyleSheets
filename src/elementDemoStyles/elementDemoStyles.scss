@@ -60,7 +60,7 @@ $paragraph: true;
     }
   }
 
-  table {
+  main > table {
     @extend .auro_table;
   }
 }

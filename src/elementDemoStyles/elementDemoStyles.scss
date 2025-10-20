@@ -60,7 +60,7 @@ $paragraph: true;
     }
   }
 
-  main > table {
+  *:not(auro-table):not([auro-table]) table {
     @extend .auro_table;
   }
 }

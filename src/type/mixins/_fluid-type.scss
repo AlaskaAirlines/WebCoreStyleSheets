@@ -4,15 +4,19 @@
 @import '../../utilityVariables/cssNamespace';
 
 // Generate CSS custom properties for fluid type
-@mixin generate-fluid-type-css-vars($type, $sizes, $theme-config) {
+@mixin generate-fluid-type-css-vars($type, $sizes, $theme-config, $theme-name: null) {
   @each $size in $sizes {
     // Set base properties
     --#{$css-ns}-#{$type}-#{$size}-family: #{type-property-check($theme-config, $size, 'family')};
     --#{$css-ns}-#{$type}-#{$size}-family-fallback: #{type-property-check($theme-config, $size, 'familyFallback')};
-    --#{$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check($theme-config, $size, 'letter-spacing')};
     --#{$css-ns}-#{$type}-#{$size}-weight: #{type-property-check($theme-config, $size, 'weight')};
     --#{$css-ns}-#{$type}-#{$size}-line-height: #{type-property-check($theme-config, $size, 'line-height')};
-    
+
+    // Conditionally exclude letter-spacing for Hawaiian theme
+    @if $theme-name != 'hawaiian' and type-property-check($theme-config, $size, 'letter-spacing') != null {
+      --#{$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check($theme-config, $size, 'letter-spacing')};
+    }
+
     // Get min, preferred and max values from the config
     $min-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'min');
     $preferred-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'preferred');
@@ -23,31 +27,35 @@
 }
 
 // Generate classes for fluid type
-@mixin generate-fluid-type-classes($type, $sizes, $use-fallback: false, $fallback-config: null) {
+@mixin generate-fluid-type-classes($type, $sizes, $use-fallback: false, $fallback-config: null, $theme-name: null) {
   @each $size in $sizes {
     .#{$type}-#{$size} {
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
         font-family: var(--#{$css-ns}-#{$type}-#{$size}-family, #{type-property-check($fallback-config, $size, 'family')}), var(--#{$css-ns}-#{$type}-#{$size}-family-fallback, #{type-property-check($fallback-config, $size, 'familyFallback')});
-        letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing, #{type-property-check($fallback-config, $size, 'letter-spacing')});
         font-weight: var(--#{$css-ns}-#{$type}-#{$size}-weight, #{type-property-check($fallback-config, $size, 'weight')});
         line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height, #{type-property-check($fallback-config, $size, 'line-height')});
-        
-        // For font-size, generate clamp function as fallback
-        $min-size: auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'min');
-        $preferred-size: auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'preferred');
-        $max-size: auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'max');
-        $clamp-value: calculate-fluid-clamp($min-size, $preferred-size, $max-size);
-        font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size, #{$clamp-value});
+        font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size, #{calculate-fluid-clamp(
+          auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'min'),
+          auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'preferred'),
+          auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'max')
+        )});
+
+        // Conditionally exclude letter-spacing for Hawaiian theme
+        @if $theme-name != 'hawaiian' {
+          letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing, #{type-property-check($fallback-config, $size, 'letter-spacing')});
+        }
       } @else {
         font-family: var(--#{$css-ns}-#{$type}-#{$size}-family), var(--#{$css-ns}-#{$type}-#{$size}-family-fallback);
-        letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing);
         font-weight: var(--#{$css-ns}-#{$type}-#{$size}-weight);
         line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height);
         font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size);
+
+        // Conditionally exclude letter-spacing for Hawaiian theme
+        @if $theme-name != 'hawaiian' {
+          letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing);
+        }
       }
-      
-      // Include any additional content passed to the mixin
       @content;
     }
   }

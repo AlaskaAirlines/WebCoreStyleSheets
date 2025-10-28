@@ -43,7 +43,7 @@ $alaska-type-heading-config: (
         'max': v.$ds-type-size-20,
         'preferred': v.$ds-type-size-20
       ),
-      'weight': v.$ds-basic-type-weight-heading2
+      'weight': v.$ds-basic-type-weight-heading
     ),
     '2xs': (
       'font-size': (
@@ -51,7 +51,7 @@ $alaska-type-heading-config: (
         'max': v.$ds-type-size-18,
         'preferred': v.$ds-type-size-18
       ),
-      'weight': v.$ds-basic-type-weight-heading2
+      'weight': v.$ds-basic-type-weight-heading
     )
   )
 );

@@ -2,28 +2,57 @@
 $alaska-type-body-config: (
   'family': v.$ds-basic-type-family-body,
   'familyFallback': v.$ds-basic-type-family-body-fallback,
-  'weight': v.$ds-basic-type-weight-body,
   'letter-spacing': v.$ds-basic-type-letter-spacing-body,
   'sizes': (
     'default': (
       'font-size': v.$ds-type-size-16,
-      'line-height': v.$ds-basic-type-line-height-body2
+      'line-height': v.$ds-basic-type-line-height-body2,
+      'weight': v.$ds-basic-type-weight-body
+    ),
+    'default-emphasized': (
+      'font-size': v.$ds-type-size-16,
+      'line-height': v.$ds-basic-type-line-height-body2,
+      'weight': v.$ds-basic-type-weight-body2
     ),
     'lg': (
       'font-size': v.$ds-type-size-18,
-      'line-height': v.$ds-basic-type-line-height-body
+      'line-height': v.$ds-basic-type-line-height-body,
+      'weight': v.$ds-basic-type-weight-body
+    ),
+    'lg-emphasized': (
+      'font-size': v.$ds-type-size-18,
+      'line-height': v.$ds-basic-type-line-height-body,
+      'weight': v.$ds-basic-type-weight-body2
     ),
     'sm': (
       'font-size': v.$ds-type-size-14,
-      'line-height': v.$ds-basic-type-line-height-body3
+      'line-height': v.$ds-basic-type-line-height-body3,
+      'weight': v.$ds-basic-type-weight-body
+    ),
+    'sm-emphasized': (
+      'font-size': v.$ds-type-size-14,
+      'line-height': v.$ds-basic-type-line-height-body3,
+      'weight': v.$ds-basic-type-weight-body2
     ),
     'xs': (
       'font-size': v.$ds-type-size-12,
-      'line-height': v.$ds-basic-type-line-height-body4
+      'line-height': v.$ds-basic-type-line-height-body4,
+      'weight': v.$ds-basic-type-weight-body
+    ),
+    'xs-emphasized': (
+      'font-size': v.$ds-type-size-12,
+      'line-height': v.$ds-basic-type-line-height-body4,
+      'weight': v.$ds-basic-type-weight-body2
     ),
     '2xs': (
       'font-size': v.$ds-type-size-10,
-      'line-height': v.$ds-basic-type-line-height-body5
+      'line-height': v.$ds-basic-type-line-height-body5,
+      'weight': v.$ds-basic-type-weight-body
+    ),
+    '2xs-emphasized': (
+      'font-size': v.$ds-type-size-10,
+      'line-height': v.$ds-basic-type-line-height-body5,
+      'weight': v.$ds-basic-type-weight-body2
     )
   )
 );

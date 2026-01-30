@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       ticket-number:
-        description: 'The GitHub ticket number to associate this change with'
+        description: 'The ADO ticket number to associate this change with'
         required: true
         type: number
       change-type:

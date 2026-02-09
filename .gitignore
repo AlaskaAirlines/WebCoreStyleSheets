@@ -5,7 +5,6 @@ build
 test
 results
 coverage/
-dist
 example/temp
 example/prodBuild/
 example/tokensBuild/

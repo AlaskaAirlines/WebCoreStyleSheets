@@ -39,7 +39,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: '${{ inputs.change-type }}: update tokens from auro ADO#${{ inputs.ticket-number }}'
+          commit-message: '${{ inputs.change-type }}: update tokens from auro AB#${{ inputs.ticket-number }}'
           title: Update latest from auro design-tokens
           body: 'Update latest from auro design-tokens from file: https://www.figma.com/file/${{ secrets.FIGMA_FILE_KEY }}'
           branch: update-tokens

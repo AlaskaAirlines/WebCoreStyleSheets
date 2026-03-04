@@ -43,14 +43,13 @@
     "semantic-release": "^24.2.1",
     "stylelint": ">=13.13.1",
     "stylelint-config-recommended": ">=5.0.0",
-    "stylelint-config-standard": ">=22.0.0",
-    "chalk": "^5.4.1"
+    "stylelint-config-standard": ">=22.0.0"
   },
   "scripts": {
     "copy:files": "copyfiles -u 1 -V './src/auroElement/**/*' ./dist",
     "css:lint": "stylelint './results/css/*.css'",
     "scss:lint": "stylelint './src/**/*.scss'",
-    "build": "npm-run-all build:sassdoc build:sass:demo build:dist-bundle copy:files postinstall",
+    "build": "npm-run-all build:sassdoc build:sass:demo build:dist-bundle copy:files",
     "build:dist-bundle": "npm-run-all build:type-classes-css build:theme-css",
     "build:theme-css": "node scripts/theme.global.css.build.mjs",
     "build:type-classes-css": "node scripts/type.classes.css.build.mjs",
@@ -60,7 +59,6 @@
     "build:sass:demo": "sass --load-path=node_modules --no-source-map ./src/elementDemoStyles/:./dist/",
     "build:sass:test": "sass --load-path=node_modules --no-source-map ./tests/styleTest.scss:./results/css/testBuild.css",
     "sweep": "rm -rf ./dist ./results ./sassdoc",
-    "postinstall": "node packageScripts/postinstall.mjs",
     "jest": "jest",
     "test": "npm-run-all scss:lint build:sass:test css:lint jest",
     "serve": "npm run build:sassdoc && node scripts/live-server.js",

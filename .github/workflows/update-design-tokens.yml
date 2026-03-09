@@ -1,0 +1,46 @@
+name: Update design-tokens version
+on:
+  workflow_dispatch:
+    inputs:
+      ticket-number:
+        description: 'The ADO ticket number to associate this change with'
+        required: true
+        type: number
+      change-type:
+        description: |
+          The type of change being made:
+          
+          • feat: new tokens
+          • fix: corrections to existing tokens
+        required: true
+        type: choice
+        options:
+          - feat
+          - fix
+
+jobs:
+  update-design-tokens:
+    runs-on: ubuntu-latest
+    permissions:
+      # Need to be able to create new branches and commits
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+      - name: Clone repo
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Update design-tokens to latest version
+        run: npx npm-check-updates -f "@aurodesignsystem/design-tokens" -u --install always 
+      - name: Build project
+        run: npm run build
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: '${{ inputs.change-type }}: update tokens from auro AB#${{ inputs.ticket-number }}'
+          title: Update latest from auro design-tokens
+          body: 'Update latest from auro design-tokens from file: https://www.figma.com/file/${{ secrets.FIGMA_FILE_KEY }}'
+          branch: update-tokens
+          branch-suffix: timestamp

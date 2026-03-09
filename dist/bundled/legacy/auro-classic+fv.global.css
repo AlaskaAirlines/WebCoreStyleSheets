@@ -1,0 +1,117 @@
+/*
+  Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+  See LICENSE in the project root for license information.
+*/
+/* --------------------------------------------------------------------- */
+/*
+  This file is reserved for CDN consumption of web components using the Auro Classic theme
+  with Focus Visible (fv) and not intended to be used with standard dynamic projects.
+
+  This theme is DEPRECATED and will be removed in the future.
+
+  Provided for backwards compatibility.
+*/
+*:focus-visible {
+  outline: 1px solid var(--ds-color-border-ui-focus-default, #2c67b5);
+}
+
+/*
+  Essentials for Auro Classic theme
+*/
+:focus:not(:focus-visible) {
+  outline: 3px solid transparent;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--ds-text-body-size-default, 1rem);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body,
+.baseType {
+  margin: 0;
+  color: var(--ds-color-text-primary-default, #2a2a2a);
+  font-family: var(--ds-font-family-default, "AS Circular", "Helvetica Neue", Arial, sans-serif);
+  font-variant-ligatures: no-common-ligatures;
+  font-size: var(--ds-text-body-size-default, 1rem);
+  font-weight: var(--ds-text-body-default-weight, 500);
+  line-height: var(--ds-text-body-height-default, 1.5rem);
+}
+
+.baseParagraph {
+  margin: 0 0 1rem;
+  line-height: var(--ds-text-body-height-default, 1.5rem);
+}
+.baseParagraph .hyperlink {
+  text-decoration: underline;
+}
+
+.hyperlink {
+  text-decoration: underline;
+  color: var(--ds-color-text-ui-default-default, #2c67b5);
+}
+.hyperlink:visited {
+  color: var(--ds-color-text-ui-default-default, #2c67b5);
+}
+.hyperlink--nav {
+  display: block;
+  text-decoration: none;
+}
+.hyperlink--nav:not(.is-touching):hover {
+  text-decoration: underline !important;
+}
+.hyperlink--ondark {
+  color: var(--ds-color-text-ui-default-inverse, #56bbde);
+}
+.hyperlink--ondark:not(.is-touching):hover {
+  color: var(--ds-color-text-ui-hover-inverse, #a8e9f7);
+}
+.hyperlink--ondark:visited {
+  color: var(--ds-color-text-ui-default-inverse, #56bbde);
+}
+.hyperlink:not(.is-touching):hover {
+  text-decoration: none;
+  color: var(--ds-color-text-ui-hover-default, #193d73);
+}
+
+img {
+  max-width: 100%;
+}
+
+small,
+.type--small {
+  font-size: var(--ds-text-body-size-xs, 0.75rem);
+  line-height: var(--ds-text-body-height-xs, 1rem);
+}
+
+/* stylelint-disable-line scss/dollar-variable-first-in-block */
+.fineprint {
+  font-family: var(--ds-font-family-default, "AS Circular", "Helvetica Neue", Arial, sans-serif);
+  font-size: var(--ds-text-body-size-xs, 0.75rem);
+  line-height: var(--ds-text-body-height-xs, 1rem);
+  color: var(--ds-color-text-secondary-default, #525252);
+}
+
+@font-face {
+  font-family: "AS Circular";
+  font-weight: var(--ds-text-heading-display-weight, 100);
+  font-style: normal;
+  font-display: fallback;
+  src: url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/bltd55b385b9432ca51/ASCircularWeb-Light?environment=production") format("woff2"), url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt1566a6d54c0bf457/ASCircularWeb-Light?environment=production") format("woff");
+}
+@font-face {
+  font-family: "AS Circular";
+  font-weight: var(--ds-text-heading-medium-weight, 300);
+  font-style: normal;
+  font-display: fallback;
+  src: url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/bltc48385a5d7dd0f20/ASCircularWeb-Medium?environment=production") format("woff2"), url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/bltf30c93842722e935/ASCircularWeb-Medium?environment=production") format("woff");
+}
+@font-face {
+  font-family: "AS Circular";
+  font-weight: var(--ds-text-body-default-weight, 500);
+  font-style: normal;
+  font-display: fallback;
+  src: url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt3b851fb0e0de3833/ASCircularWeb-Book?environment=production") format("woff2"), url("https://www.alaskaair.com/v3/assets/blt2cefe12c88e9dd91/blt8b440e82e9793058/ASCircularWeb-Book?environment=production") format("woff");
+}

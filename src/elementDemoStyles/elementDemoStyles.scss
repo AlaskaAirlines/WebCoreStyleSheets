@@ -15,8 +15,7 @@
 @import './../normalize';
 @import './../headings';
 @import './../blockquote';
-@import "./../componentSupport/table";
-$paragraph: true;
+@import './../componentSupport/table';
 @import './../essentials';
 
 /* stylelint-disable selector-type-no-unknown */
@@ -64,59 +63,166 @@ $paragraph: true;
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Code / syntax highlighting
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #f8f8f8;
-}
-
-// !important because that libraries that inline CSS SUCK!
-pre  {
+pre {
   background: var(--ds-color-brand-gray-100, $ds-color-brand-gray-100) !important;
   border: unset !important;
+  padding: var(--ds-size-200) !important;
   margin-bottom: var(--ds-size-300, $ds-size-300) !important;
-  padding-left: var(--ds-size-150, $ds-size-150) !important;
-  padding-top: var(--ds-size-200, $ds-size-200) !important;
-  padding-bottom: var(--ds-size-200, $ds-size-200) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: var(--ds-color-border-secondary-default) !important;
+  border-radius: .5rem;
+  margin-top: var(--ds-size-200) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  overflow-x: scroll !important;
 
   code {
     font-size: .85rem !important;
+    font-family: monospace;
+    text-shadow: none;
   }
 }
 
-auro-accordion {
-  pre {
-    background: none !important;
-    margin-top: 0 !important;
-    margin-bottom: 1rem !important;
-    padding: 0 !important;
-  }
-}
-
-auro-accordion + .exampleWrapper,
-auro-accordion + p {
-  margin-top: 2rem !important;
-}
-
-code[class*="language-"], pre[class*="language-"] {
-  font-family: monospace;
-}
-
-code:not(.html):not(.css):not(.js) {
+code:not(.html):not(.css):not(.js):not([class*='language-']) {
   color: var(--ds-color-brand-flamingo-500, $ds-color-brand-flamingo-500);
 }
 
+.token.operator {
+  background-color: unset !important;
+}
+
+auro-accordion {
+  margin-top: 1rem !important;
+  display: block;
+}
+
+.pre-wrapper {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background: var(--ds-color-container-primary-default, #fff);
+  border: 1px solid var(--ds-color-border-secondary-default, #ccc);
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--ds-color-text-secondary-default, #333);
+  z-index: 1;
+
+  &:hover {
+    background: var(--ds-color-container-secondary-default, #f0f0f0);
+  }
+}
+
+.pre-wrapper:hover .copy-btn {
+  opacity: 1;
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Example wrappers
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 .exampleWrapper {
-  $stripe: #f3f3f3;
-  $background: var(--ds-color-base-white, $ds-color-base-white);
-
-  background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+  background-color: var(--ds-basic-color-surface-default);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .exampleWrapper--ondark {
-  $stripe: var(--ds-color-background-darkest, $ds-color-background-darkest);
-  $background: var(--ds-color-background-darker, $ds-color-background-darker);
+  background-color: var(--ds-basic-color-surface-inverse);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
 
-  background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Tables
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+table {
+  --ds-color-container-secondary-default: transparent;
+}
+
+table.compressed {
+  width: unset !important;
+  margin: var(--ds-size-50) 0 var(--ds-size-100) !important;
+
+  th,
+  td {
+    padding: var(--ds-size-50) !important;
+  }
+}
+
+tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--ds-color-border-tertiary-default);
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Layout
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 25px;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.scrollWrapper {
+  flex: 1;
+  flex-basis: 0;
+  min-height: 0;
+}
+
+nav {
+  max-width: 200px;
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Misc elements
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+auro-anchorlink.level2 {
+  padding-left: var(--ds-size-200);
+}
+
+.note {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-style: italic;
+  color: var(--ds-basic-color-texticon-muted);
+  background-color: var(--ds-basic-color-surface-neutral-subtle);
 }

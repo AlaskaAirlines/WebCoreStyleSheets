@@ -12,7 +12,7 @@ $alaska-type-body-config: (
     'default-emphasized': (
       'font-size': v.$ds-type-size-16,
       'line-height': v.$ds-basic-type-line-height-body2,
-      'weight': v.$ds-basic-type-weight-body2
+      'weight': v.$ds-type-weight-medium
     ),
     'lg': (
       'font-size': v.$ds-type-size-18,
@@ -22,7 +22,7 @@ $alaska-type-body-config: (
     'lg-emphasized': (
       'font-size': v.$ds-type-size-18,
       'line-height': v.$ds-basic-type-line-height-body,
-      'weight': v.$ds-basic-type-weight-body2
+      'weight': v.$ds-type-weight-medium
     ),
     'sm': (
       'font-size': v.$ds-type-size-14,
@@ -32,7 +32,7 @@ $alaska-type-body-config: (
     'sm-emphasized': (
       'font-size': v.$ds-type-size-14,
       'line-height': v.$ds-basic-type-line-height-body3,
-      'weight': v.$ds-basic-type-weight-body2
+      'weight': v.$ds-type-weight-medium
     ),
     'xs': (
       'font-size': v.$ds-type-size-12,
@@ -42,7 +42,7 @@ $alaska-type-body-config: (
     'xs-emphasized': (
       'font-size': v.$ds-type-size-12,
       'line-height': v.$ds-basic-type-line-height-body4,
-      'weight': v.$ds-basic-type-weight-body2
+      'weight': v.$ds-type-weight-medium
     ),
     '2xs': (
       'font-size': v.$ds-type-size-10,
@@ -52,7 +52,7 @@ $alaska-type-body-config: (
     '2xs-emphasized': (
       'font-size': v.$ds-type-size-10,
       'line-height': v.$ds-basic-type-line-height-body5,
-      'weight': v.$ds-basic-type-weight-body2
+      'weight': v.$ds-type-weight-medium
     )
   )
 );

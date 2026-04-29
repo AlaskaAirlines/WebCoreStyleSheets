@@ -23,7 +23,7 @@ chalk.hex('#f26135')(`
        Thanks for installing the latest version
                of `) + chalk.hex('#ffd200').bold(`WC Stylesheets v${pjson.version}.`) + chalk.hex('#f26135')(`
 
-            Requires Design Tokens ${pjson.peerDependencies["@aurodesignsystem/design-tokens"]}
+            Requires Design Tokens ${pjson.dependencies["@aurodesignsystem/design-tokens"]}
       npm i @aurodesignsystem/design-tokens@latest
 
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯

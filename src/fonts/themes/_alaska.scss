@@ -22,6 +22,8 @@
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-light, $i18n-font-jp-300-path, $unicode-range-jp);
 	// AS Circular 450 Book -> Noto Sans JP 400
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-book, $i18n-font-jp-400-path, $unicode-range-jp);
+	// AS Circular 500 Medium -> Noto Sans JP 500
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-jp-500-path, $unicode-range-jp);
 	// Good OT 450 Cond News -> Noto Sans JP 400
 	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-cond-news, $i18n-font-jp-400-path, $unicode-range-jp);
 	// Good OT 500 Cond Medium -> Noto Sans JP 500
@@ -32,6 +34,8 @@
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-light, $i18n-font-kr-300-path, $unicode-range-kr);
 	// AS Circular 450 Book -> Noto Sans KR 400
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-book, $i18n-font-kr-400-path, $unicode-range-kr);
+	// AS Circular 500 Medium -> Noto Sans KR 500
+	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-kr-500-path, $unicode-range-kr);
 	// Good OT 450 Cond News -> Noto Sans KR 400
 	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-cond-news, $i18n-font-kr-400-path, $unicode-range-kr);
 	// Good OT 500 Cond Medium -> Noto Sans KR 500

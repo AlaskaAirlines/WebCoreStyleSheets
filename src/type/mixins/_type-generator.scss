@@ -14,9 +14,9 @@
 }
 
 // Generate theme type classes
-@mixin generate-theme-type-classes($use-fallback: false, $fallback-configs: null, $use-letter-spacing: true) {
+@mixin generate-theme-type-classes($use-fallback: false, $fallback-configs: null, $accent-use-letter-spacing: true) {
   @include generate-body-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'body'), null));
   @include generate-display-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'display'), null));
   @include generate-heading-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'heading'), null));
-  @include generate-accent-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'accent'), null), $use-letter-spacing);
+  @include generate-accent-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'accent'), null), $accent-use-letter-spacing);
 }

@@ -5,7 +5,14 @@
 @import "../mixins/type-generator";
 
 // Theme generator
-@mixin generate-theme($theme-name, $body-config, $display-config, $heading-config, $accent-config) {
+@mixin generate-theme(
+  $theme-name,
+  $body-config,
+  $display-config,
+  $heading-config,
+  $accent-config,
+  $accent-uses-letter-spacing: true
+) {
   // Map of all type configs for the theme
   $theme-configs: (
     'body': $body-config,
@@ -13,9 +20,6 @@
     'heading': $heading-config,
     'accent': $accent-config
   );
-  
-  // Derive letter-spacing behavior from accent config data rather than theme name
-  $accent-uses-letter-spacing: type-property-check($accent-config, '2xl', 'letter-spacing') != null;
 
   // Generate CSS variables for the theme
   @include generate-theme-type-css-vars($theme-configs);

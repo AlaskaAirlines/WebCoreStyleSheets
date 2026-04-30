@@ -25,5 +25,5 @@
   @include generate-theme-type-css-vars($theme-configs);
 
   // Generate theme type classes
-  @include generate-theme-type-classes($use-letter-spacing: $accent-uses-letter-spacing);
+  @include generate-theme-type-classes($accent-use-letter-spacing: $accent-uses-letter-spacing);
 }

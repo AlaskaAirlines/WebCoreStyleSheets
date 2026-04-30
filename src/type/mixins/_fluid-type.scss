@@ -9,12 +9,9 @@
     // Set base properties
     --#{$css-ns}-#{$type}-#{$size}-family: #{type-property-check($theme-config, $size, 'family')};
     --#{$css-ns}-#{$type}-#{$size}-family-fallback: #{type-property-check($theme-config, $size, 'familyFallback')};
+    --#{$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check($theme-config, $size, 'letter-spacing')};
     --#{$css-ns}-#{$type}-#{$size}-weight: #{type-property-check($theme-config, $size, 'weight')};
     --#{$css-ns}-#{$type}-#{$size}-line-height: #{type-property-check($theme-config, $size, 'line-height')};
-
-    @if type-property-check($theme-config, $size, 'letter-spacing') != null {
-      --#{$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check($theme-config, $size, 'letter-spacing')};
-    }
 
     // Get min, preferred and max values from the config
     $min-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'min');

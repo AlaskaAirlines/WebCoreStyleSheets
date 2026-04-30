@@ -14,9 +14,12 @@
     'accent': $accent-config
   );
   
+  // Derive letter-spacing behavior from accent config data rather than theme name
+  $accent-uses-letter-spacing: type-property-check($accent-config, '2xl', 'letter-spacing') != null;
+
   // Generate CSS variables for the theme
-  @include generate-theme-type-css-vars($theme-name, $theme-configs);
-  
+  @include generate-theme-type-css-vars($theme-configs);
+
   // Generate theme type classes
-  @include generate-theme-type-classes($theme-name);
+  @include generate-theme-type-classes($use-letter-spacing: $accent-uses-letter-spacing);
 }

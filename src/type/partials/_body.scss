@@ -3,7 +3,13 @@
 @import '../../utilityFunctions/map-deep-get';
 @import '../../utilityVariables/cssNamespace';
 
-$body-sizes: ('default', 'default-emphasized', 'lg', 'lg-emphasized', 'sm', 'sm-emphasized', 'xs', 'xs-emphasized', '2xs', '2xs-emphasized');
+$body-base-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
+
+$body-sizes: ();
+@each $size in $body-base-sizes {
+  $body-sizes: append($body-sizes, $size);
+  $body-sizes: append($body-sizes, '#{$size}-emphasized');
+}
 
 // Generate CSS custom properties for Body
 @mixin generate-body-css-vars($theme-config) {

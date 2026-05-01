@@ -16,8 +16,7 @@
 @import './../normalize';
 @import './../headings';
 @import './../blockquote';
-@import "./../componentSupport/table";
-$paragraph: true;
+@import './../componentSupport/table';
 @import './../focus-visible';
 @import './../essentials/legacy/auro-classic';
 
@@ -60,71 +59,252 @@ $paragraph: true;
     }
   }
 
-  *:not(auro-table):not([auro-table]) > table {
+  table {
     @extend .auro_table;
   }
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Code / syntax highlighting
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: var(--ds-basic-color-surface-neutral-medium, $ds-basic-color-surface-neutral-medium);
+.hljs {
+  background-color: unset !important;
+  padding: unset !important;
 }
 
-// !important because that libraries that inline CSS SUCK!
-pre  {
-  background: var(--ds-basic-color-surface-neutral-medium, $ds-basic-color-surface-neutral-medium) !important;
+pre {
+  background: var(--ds-color-brand-gray-100, $ds-color-brand-gray-100) !important;
   border: unset !important;
+  padding: var(--ds-size-200) !important;
   margin-bottom: var(--ds-size-300, $ds-size-300) !important;
-  padding-left: var(--ds-size-150, $ds-size-150) !important;
-  padding-top: var(--ds-size-200, $ds-size-200) !important;
-  padding-bottom: var(--ds-size-200, $ds-size-200) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: var(--ds-color-border-secondary-default) !important;
+  border-radius: .5rem;
+  margin-top: var(--ds-size-200) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  overflow-x: scroll !important;
 
   code {
     font-size: .85rem !important;
+    font-family: monospace;
+    text-shadow: none;
   }
 }
 
-auro-accordion {
-  pre {
-    background: none !important;
-    margin-top: 0 !important;
-    margin-bottom: 1rem !important;
-    padding: 0 !important;
+.pre-wrapper:last-of-type pre {
+  margin-bottom: 0 !important;
+}
+
+code:not(.html):not(.css):not(.js):not([class*='language-']) {
+  color: var(--ds-color-brand-flamingo-500, $ds-color-brand-flamingo-500);
+  margin-bottom: 0 !important;
+}
+
+.token.operator {
+  background-color: unset !important;
+}
+
+auro-accordion:not(.section) {
+  margin-top: 1rem !important;
+  display: block;
+}
+
+auro-accordion:not(.section):nth-child(2) {
+  margin-block-start: 0;
+}
+
+auro-accordion[class~="section"]::part(accordion) {
+  padding-right: 2px;
+  display: block;
+}
+
+.accordion-content {
+  padding-top: 1rem;
+}
+
+.token.operator {
+  background-color: unset !important;
+}
+
+auro-accordion:not(auro-accordion-group *) {
+  margin-top: 1rem !important;
+  display: block;
+}
+
+.pre-wrapper {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background: var(--ds-color-container-primary-default, #fff);
+  border: 1px solid var(--ds-color-border-secondary-default, #ccc);
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--ds-color-text-secondary-default, #333);
+  z-index: 1;
+
+  &:hover {
+    background: var(--ds-color-container-secondary-default, #f0f0f0);
   }
 }
 
-auro-accordion + .exampleWrapper,
-auro-accordion + p {
-  margin-top: 2rem !important;
-}
-
-code[class*="language-"], pre[class*="language-"] {
-  font-family: monospace;
-}
-
-code:not(.html):not(.css):not(.js) {
-  color: var(--ds-color-utility-pink-default, $ds-color-utility-pink-default);
+.pre-wrapper:hover .copy-btn {
+  opacity: 1;
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Example wrappers
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-.exampleWrapper,
-.exampleWrapper--ondark {
-  padding: 2rem;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  margin-bottom: 1rem;
-  
-  box-shadow: var(--ds-elevation-100, 0px 2px 4px $ds-elevation-100);
-}
 .exampleWrapper {
-  margin-bottom: 1rem;
-  border-style: solid;
-  border-color: var(--ds-basic-color-border-subtle, $ds-basic-color-border-subtle);
-  background: var(--ds-basic-color-surface-default, $ds-basic-color-surface-default);
+  background-color: var(--ds-basic-color-surface-default);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
 .exampleWrapper--ondark {
-  background: var(--ds-basic-color-surface-inverse, $ds-basic-color-surface-inverse);
+  background-color: var(--ds-basic-color-surface-inverse);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Tables
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+table {
+  --ds-color-container-secondary-default: transparent;
+
+  &.compressed {
+    width: unset !important;
+    margin: var(--ds-size-50) 0 var(--ds-size-100) !important;
+
+    th,
+    td {
+      padding: var(--ds-size-50) !important;
+    }
+  }
+}
+
+tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--ds-color-border-tertiary-default);
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Layout
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 25px;
+  align-items: flex-start;
+
+   > nav {
+    width: 200px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+
+    auro-nav {
+      display: block;
+    }
+  }
+}
+
+// .contentWrapper > nav {
+//   width: 200px;
+//   flex-shrink: 0;
+//   position: sticky;
+//   top: 0;
+//   height: 100vh;
+//   overflow-y: auto;
+// }
+
+// .contentWrapper > nav auro-nav {
+//   display: block;
+// }
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.scrollWrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+auro-nav {
+  max-width: 200px;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Misc elements
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+auro-anchorlink[class~="level2"] {
+  padding-left: var(--ds-size-200);
+}
+
+p:first-of-type {
+  margin-top: 0;
+}
+
+.note,
+.warning {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-style: italic;
+}
+
+.note{
+  background-color: var(--ds-basic-color-surface-neutral-subtle);
+  color: var(--ds-basic-color-texticon-muted);
+}
+
+.warning {
+  background-color: var(--ds-basic-color-status-error-subtle);
+  color: var(--ds-basic-color-status-error)
+}
+
+auro-header {
+  margin-top: 1rem;
 }

@@ -1,5 +1,25 @@
 # Semantic Release Automated Changelog
 
+# [11.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.1.4...v11.0.0) (2026-05-01)
+
+
+### Features
+
+* add 500 med font-face for CJK fonts [#272](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/272) ([0ba19ac](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/0ba19ac8b1c2c7ad2754ff60e01fae36bbfb5649))
+* add new body-emphasized classes [#269](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/269) ([5506a19](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5506a1940933396a04edfe65830d6e48f6e76b5e))
+
+
+### Performance Improvements
+
+* ensure figma and type structure align after 8.18 ADT release [#269](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/269) ([92417ab](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/92417ab209f6ae92f7f618dfe5e5e357e55e80a8))
+* remove letter-spacing from hawaiian accents [#269](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/269) ([9290d08](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/9290d08d06948318a392d9f81bc30e622c6f8034))
+* update values in header classes [#269](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/269) ([ad9d17a](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/ad9d17a340bf8b5c72924b78036d7ccc89cc7995))
+
+
+### BREAKING CHANGES
+
+* The letter-spacing rule is now omitted from the Hawaiian theme `accent` classes.
+
 ## [10.1.4](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.1.3...v10.1.4) (2025-10-23)
 
 

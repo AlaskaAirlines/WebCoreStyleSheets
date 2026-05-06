@@ -236,7 +236,6 @@
           padding-right: 0;
           max-width: 1232px;
           gap: 2rem;
-          grid-template-areas: "breadcrumbs" "anchornav" "main";
         }
         @media screen and (min-width: 576px) {
           .pageLayout-2colAnchorNav {
@@ -257,6 +256,9 @@
           .pageLayout-2colAnchorNav {
             gap: var(--ds-grid-gutter-xl, 2rem);
           }
+        }
+        .pageLayout-2colAnchorNav {
+          grid-template-areas: "breadcrumbs" "anchornav" "main";
         }
       }
     }
@@ -289,7 +291,6 @@
           padding-right: 0;
           max-width: 1232px;
           gap: 2rem;
-          grid-template-areas: "breadcrumbs" "sidenav" "main";
         }
         @media screen and (min-width: 576px) {
           .pageLayout-2colSideNav {
@@ -310,6 +311,9 @@
           .pageLayout-2colSideNav {
             gap: var(--ds-grid-gutter-xl, 2rem);
           }
+        }
+        .pageLayout-2colSideNav {
+          grid-template-areas: "breadcrumbs" "sidenav" "main";
         }
       }
     }
@@ -343,7 +347,6 @@
           padding-right: 0;
           max-width: 1232px;
           gap: 2rem;
-          grid-template-areas: "breadcrumbs" "sidenav" "anchornav" "main";
         }
         @media screen and (min-width: 576px) {
           .pageLayout-3col {
@@ -364,6 +367,9 @@
           .pageLayout-3col {
             gap: var(--ds-grid-gutter-xl, 2rem);
           }
+        }
+        .pageLayout-3col {
+          grid-template-areas: "breadcrumbs" "sidenav" "anchornav" "main";
         }
       }
     }

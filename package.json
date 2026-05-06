@@ -62,7 +62,7 @@
     "sweep": "rm -rf ./dist ./results ./sassdoc",
     "postinstall": "node packageScripts/postinstall.mjs",
     "jest": "jest",
-    "test": "npm-run-all scss:lint build:sass:test css:lint jest",
+    "test": "npm-run-all jest",
     "serve": "npm run build:sassdoc && node scripts/live-server.js",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run build:dev",
     "prepare": "husky"

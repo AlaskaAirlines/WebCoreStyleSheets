@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [11.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.0.0...v11.1.0) (2026-05-06)
+
+
+### Features
+
+* refactor all demo styles ([15b9113](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/15b91134b6d68d430cc5752316dd3decb7a2bc45))
+
 # [11.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v10.1.4...v11.0.0) (2026-05-01)
 
 

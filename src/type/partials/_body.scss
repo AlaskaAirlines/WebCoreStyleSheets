@@ -22,6 +22,10 @@ $body-sizes: ();
     --#{$css-ns}-body-#{$size}-font-size: #{auro_map-deep-get($theme-config, 'sizes', $size, 'font-size')};
     --#{$css-ns}-body-#{$size}-line-height: #{auro_map-deep-get($theme-config, 'sizes', $size, 'line-height')};
   }
+
+  // Backward-compatibility alias for pre-v11 consumers (e.g. bundled Auro component CSS).
+  // Remove in next major once consumers migrate to --wcss-body-default-weight.
+  --#{$css-ns}-body-weight: var(--#{$css-ns}-body-default-weight);
 }
 
 // Generate Body classes

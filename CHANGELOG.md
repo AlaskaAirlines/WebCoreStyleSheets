@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [11.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.0...v11.1.1) (2026-05-13)
+
+
+### Bug Fixes
+
+* **type:** re-emit --wcss-body-weight as alias for backward compatibility AB[#1556732](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1556732) ([e30201a](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/e30201aa101b6324424cd728c438e80bbfa21c53))
+
 # [11.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.0.0...v11.1.0) (2026-05-06)
 
 

@@ -189,11 +189,11 @@ $fixed-anchor-width: 168px;
   @include grid_margin();
   @include grid_padding(vac.$ds-grid-margin-xs);
   @include grid_width(vac.$ds-grid-breakpoint-xl);
-  @include grid_gutter(vac.$ds-grid-gutter-xl);
   grid-template-areas:
   "breadcrumbs"
   "anchornav"
   "main";
+  @include grid_gutter(vac.$ds-grid-gutter-xl);
 
   @include auro_grid-breakpoint--sm {
     @include grid_padding(vac.$ds-grid-margin-sm);
@@ -250,11 +250,11 @@ $fixed-anchor-width: 168px;
   @include grid_margin();
   @include grid_padding(0);
   @include grid_width(vac.$ds-grid-breakpoint-xl);
-  @include grid_gutter(vac.$ds-grid-gutter-xl);
   grid-template-areas:
   "breadcrumbs"
   "sidenav"
   "main";
+  @include grid_gutter(vac.$ds-grid-gutter-xl);
 
 
   @include auro_grid-breakpoint--md {
@@ -327,12 +327,12 @@ $fixed-anchor-width: 168px;
   @include grid_margin();
   @include grid_padding(0);
   @include grid_width(vac.$ds-grid-breakpoint-xl);
-  @include grid_gutter(vac.$ds-grid-gutter-xl);
   grid-template-areas:
   "breadcrumbs"
   "sidenav"
   "anchornav"
   "main";
+  @include grid_gutter(vac.$ds-grid-gutter-xl);
 
 
   @include auro_grid-breakpoint--md {
@@ -386,8 +386,8 @@ $fixed-anchor-width: 168px;
 
   .anchornav {
     grid-area: anchornav;
-    @include grid-stickycolumn--md;
     @include grid_padding(vac.$ds-grid-margin-xs);
+    @include grid-stickycolumn--md;
 
     @include auro_grid-breakpoint--md {
       @include grid_padding(0);

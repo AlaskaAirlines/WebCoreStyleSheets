@@ -16,7 +16,7 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
-    "@aurodesignsystem/design-tokens": "^8.18.0",
+    "@aurodesignsystem/design-tokens": "^8.19.0",
     "chalk": "^5.4.1"
   },
   "devDependencies": {
@@ -63,7 +63,7 @@
     "sweep": "rm -rf ./dist ./results ./sassdoc",
     "postinstall": "node packageScripts/postinstall.mjs",
     "jest": "jest",
-    "test": "npm-run-all jest",
+    "test": "npm-run-all scss:lint build:sass:test css:lint jest",
     "serve": "npm run build:sassdoc && node scripts/live-server.js",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run build:dev",
     "prepare": "husky"

@@ -77,6 +77,13 @@ $paragraph: null !default;
       outline-offset: map-get($theme-props, 'focus-offset');
     }
 
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+        color: map-get($theme-props, 'hyperlink-hover-color');
+      }
+    }
+
     &--nav {
       display: block;
       text-decoration: none;
@@ -104,13 +111,6 @@ $paragraph: null !default;
 
       &:visited {
         color: map-get($theme-props, 'hyperlink-inverse-color');
-      }
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        text-decoration: none;
-        color: map-get($theme-props, 'hyperlink-hover-color');
       }
     }
   }

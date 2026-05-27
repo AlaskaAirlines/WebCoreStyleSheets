@@ -123,14 +123,29 @@
 ///
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
-///
 #{$scope}.#{$prefix}hyperlink {
   text-decoration: underline;
-
-  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+  color: var(--ds-advanced-color-hyperlink-text, $ds-color-text-ui-default-default);
+  border-radius: 3px;
+  outline-offset: unset;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: transparent;
 
   &:visited {
-    color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+    color: var(--ds-advanced-color-hyperlink-text, $ds-color-text-ui-default-default);
+  }
+
+  &:focus-visible {
+    outline-color: var(--ds-advanced-color-state-focused, $ds-color-border-ui-focus-default);
+    outline-offset: var(--ds-size-25, $ds-size-25);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+      color: var(--ds-advanced-color-hyperlink-text-hover, $ds-color-text-ui-hover-default);
+    }
   }
 
   &--nav {
@@ -146,24 +161,16 @@
   }
 
   &--ondark {
-    color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
+    color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-color-text-ui-default-inverse);
 
     &:not(.is-touching) {
       &:hover {
-        color: var(--ds-color-text-ui-hover-inverse, $ds-color-text-ui-hover-inverse);
+        color: var(--ds-advanced-color-hyperlink-text-inverse-hover, $ds-color-text-ui-hover-inverse);
       }
     }
 
     &:visited {
-      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
-    }
-  }
-
-  &:not(.is-touching) {
-    &:hover {
-      text-decoration: none;
-
-      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
+      color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-color-text-ui-default-inverse);
     }
   }
 }

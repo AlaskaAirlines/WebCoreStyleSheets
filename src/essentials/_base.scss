@@ -66,6 +66,18 @@ $paragraph: null !default;
       color: map-get($theme-props, 'hyperlink-color');
     }
 
+    &:focus-visible {
+      outline-color: map-get($theme-props, 'focus-color');
+      outline-offset: map-get($theme-props, 'focus-offset');
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+        color: map-get($theme-props, 'hyperlink-hover-color');
+      }
+    }
+
     &--nav {
       display: block;
       text-decoration: none;
@@ -88,13 +100,6 @@ $paragraph: null !default;
 
       &:visited {
         color: map-get($theme-props, 'hyperlink-inverse-color');
-      }
-    }
-
-    &:not(.is-touching) {
-      &:hover {
-        text-decoration: none;
-        color: map-get($theme-props, 'hyperlink-hover-color');
       }
     }
   }

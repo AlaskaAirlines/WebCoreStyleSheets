@@ -124,8 +124,9 @@
 /// @example scss - import file
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
 #{$scope}.#{$prefix}hyperlink {
+  transition: all .15s ease;
   text-decoration: underline;
-  color: var(--ds-advanced-color-hyperlink-text, $ds-color-text-ui-default-default);
+  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
   border-radius: 3px;
   outline-offset: unset;
   outline-style: solid;
@@ -148,29 +149,45 @@
     }
   }
 
+  &:focus-visible {
+    outline-color: var(--ds-color-border-ui-focus-default, $ds-color-border-ui-focus-default);
+    outline-offset: var(--ds-size-25, $ds-size-25);
+  }
+
   &--nav {
     display: block;
-
     text-decoration: none;
 
-    &:not(.is-touching) {
+    @media (hover: hover) {
       &:hover {
-        text-decoration: underline !important;
+        text-decoration: underline;
       }
+    }
+
+    &:focus-visible {
+      outline-width: var(--ds-size-50, $ds-size-50);
+      outline-offset: unset;
     }
   }
 
   &--ondark {
     color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-color-text-ui-default-inverse);
 
-    &:not(.is-touching) {
+    @media (hover: hover) {
       &:hover {
         color: var(--ds-advanced-color-hyperlink-text-inverse-hover, $ds-color-text-ui-hover-inverse);
       }
     }
 
     &:visited {
-      color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-color-text-ui-default-inverse);
+      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
     }
   }
 }

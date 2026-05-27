@@ -59,8 +59,14 @@ $paragraph: null !default;
 
   /// Baseline hyperlink styles as mirrored in auro-hyperlink web component
   #{$scope}.#{$prefix}hyperlink {
+    transition: all .15s ease;
     text-decoration: underline;
     color: map-get($theme-props, 'hyperlink-color');
+    border-radius: 3px;
+    outline-offset: unset;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: transparent;
 
     &:visited {
       color: map-get($theme-props, 'hyperlink-color');
@@ -71,28 +77,26 @@ $paragraph: null !default;
       outline-offset: map-get($theme-props, 'focus-offset');
     }
 
-    @media (hover: hover) {
-      &:hover {
-        text-decoration: none;
-        color: map-get($theme-props, 'hyperlink-hover-color');
-      }
-    }
-
     &--nav {
       display: block;
       text-decoration: none;
 
-      &:not(.is-touching) {
+      @media (hover: hover) {
         &:hover {
-          text-decoration: underline !important;
+          text-decoration: underline;
         }
+      }
+
+      &:focus-visible {
+        outline-width: map-get($theme-props, 'focus-width');
+        outline-offset: unset;
       }
     }
 
     &--ondark {
       color: map-get($theme-props, 'hyperlink-inverse-color');
 
-      &:not(.is-touching) {
+      @media (hover: hover) {
         &:hover {
           color: map-get($theme-props, 'hyperlink-inverse-hover-color');
         }
@@ -100,6 +104,13 @@ $paragraph: null !default;
 
       &:visited {
         color: map-get($theme-props, 'hyperlink-inverse-color');
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+        color: map-get($theme-props, 'hyperlink-hover-color');
       }
     }
   }

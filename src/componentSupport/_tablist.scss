@@ -16,12 +16,6 @@
 ///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/tablist";
 
 #{$scope}.auro_tablist {
-  @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-    overflow-y: unset;
-
-    white-space: unset;
-  }
-
   overflow-y: scroll;
 
   height: calc(#{$ds-size-600} + 1px);
@@ -34,4 +28,10 @@
   border-color: var(--ds-color-border-primary-default, $ds-color-border-primary-default);
 
   line-height: var(--ds-size-600, $ds-size-600);
+
+  @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+    overflow-y: unset;
+
+    white-space: unset;
+  }
 }

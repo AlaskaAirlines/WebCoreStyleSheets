@@ -126,7 +126,7 @@
 #{$scope}.#{$prefix}hyperlink {
   transition: all .15s ease;
   text-decoration: underline;
-  color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
+  color: var(--ds-advanced-color-hyperlink-text-hover);
   border-radius: 3px;
   outline-offset: unset;
   outline-style: solid;
@@ -145,7 +145,7 @@
   @media (hover: hover) {
     &:hover {
       text-decoration: none;
-      color: var(--ds-advanced-color-hyperlink-text-hover, $ds-color-text-ui-hover-default);
+      color: var(--ds-advanced-color-hyperlink-text-hover);
     }
   }
 
@@ -171,23 +171,16 @@
   }
 
   &--ondark {
-    color: var(--ds-advanced-color-hyperlink-text-inverse, $ds-color-text-ui-default-inverse);
+    color: var(--ds-advanced-color-hyperlink-text-inverse);
 
     @media (hover: hover) {
       &:hover {
-        color: var(--ds-advanced-color-hyperlink-text-inverse-hover, $ds-color-text-ui-hover-inverse);
+        color: var(--ds-advanced-color-hyperlink-text-inverse-hover);
       }
     }
 
     &:visited {
-      color: var(--ds-color-text-ui-default-inverse, $ds-color-text-ui-default-inverse);
-    }
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: none;
-      color: var(--ds-color-text-ui-hover-default, $ds-color-text-ui-hover-default);
+      color: var(--ds-color-text-ui-default-inverse);
     }
   }
 }

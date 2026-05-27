@@ -219,11 +219,11 @@
           @include grid_margin();
           @include grid_padding(0);
           @include grid_width($ds-grid-breakpoint-xl);
-          @include grid_gutter($ds-grid-gutter-xl);
           grid-template-areas:
           "breadcrumbs"
           "anchornav"
           "main";
+          @include grid_gutter($ds-grid-gutter-xl);
         }
       }
 
@@ -235,6 +235,7 @@
           padding-left: 0;
           padding-right: 0;
           max-width: 1232px;
+          grid-template-areas: "breadcrumbs" "anchornav" "main";
           gap: 2rem;
         }
         @media screen and (min-width: 576px) {
@@ -256,9 +257,6 @@
           .pageLayout-2colAnchorNav {
             gap: var(--ds-grid-gutter-xl, 2rem);
           }
-        }
-        .pageLayout-2colAnchorNav {
-          grid-template-areas: "breadcrumbs" "anchornav" "main";
         }
       }
     }
@@ -274,11 +272,11 @@
           @include grid_margin();
           @include grid_padding(0);
           @include grid_width($ds-grid-breakpoint-xl);
-          @include grid_gutter($ds-grid-gutter-xl);
           grid-template-areas:
           "breadcrumbs"
           "sidenav"
           "main";
+          @include grid_gutter($ds-grid-gutter-xl);
         }
       }
 
@@ -290,6 +288,7 @@
           padding-left: 0;
           padding-right: 0;
           max-width: 1232px;
+          grid-template-areas: "breadcrumbs" "sidenav" "main";
           gap: 2rem;
         }
         @media screen and (min-width: 576px) {
@@ -311,9 +310,6 @@
           .pageLayout-2colSideNav {
             gap: var(--ds-grid-gutter-xl, 2rem);
           }
-        }
-        .pageLayout-2colSideNav {
-          grid-template-areas: "breadcrumbs" "sidenav" "main";
         }
       }
     }
@@ -329,12 +325,12 @@
           @include grid_margin();
           @include grid_padding(0);
           @include grid_width($ds-grid-breakpoint-xl);
-          @include grid_gutter($ds-grid-gutter-xl);
           grid-template-areas:
           "breadcrumbs"
           "sidenav"
           "anchornav"
           "main";
+          @include grid_gutter($ds-grid-gutter-xl);
         }
       }
 
@@ -346,6 +342,7 @@
           padding-left: 0;
           padding-right: 0;
           max-width: 1232px;
+          grid-template-areas: "breadcrumbs" "sidenav" "anchornav" "main";
           gap: 2rem;
         }
         @media screen and (min-width: 576px) {
@@ -367,9 +364,6 @@
           .pageLayout-3col {
             gap: var(--ds-grid-gutter-xl, 2rem);
           }
-        }
-        .pageLayout-3col {
-          grid-template-areas: "breadcrumbs" "sidenav" "anchornav" "main";
         }
       }
     }

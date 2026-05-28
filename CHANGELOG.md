@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [11.1.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.2...v11.1.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* restore correct hyperlink class color ([cfff437](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/cfff43758845eac3383b5a1843065c6f0fd54b0c))
+
 ## [11.1.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.1...v11.1.2) (2026-05-28)
 
 

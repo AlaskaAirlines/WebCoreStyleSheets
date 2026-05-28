@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [11.1.2](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.1...v11.1.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* resolve deprecation errors and build issues ([5647770](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/564777071a743e0be6e91f565ef8065a6024a56e))
+* update link classes to match current auro-hyperkink ([11e383d](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/11e383d238a6b132678952d6cb91da3509adecd0))
+
 ## [11.1.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.0...v11.1.1) (2026-05-13)
 
 

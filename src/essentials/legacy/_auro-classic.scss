@@ -126,7 +126,7 @@
 #{$scope}.#{$prefix}hyperlink {
   transition: all .15s ease;
   text-decoration: underline;
-  color: var(--ds-advanced-color-hyperlink-text-hover);
+  color: var(--ds-advanced-color-hyperlink-text);
   border-radius: 3px;
   outline-offset: unset;
   outline-style: solid;
@@ -180,7 +180,7 @@
     }
 
     &:visited {
-      color: var(--ds-color-text-ui-default-inverse);
+      color: var(--ds-advanced-color-hyperlink-text-inverse);
     }
   }
 }

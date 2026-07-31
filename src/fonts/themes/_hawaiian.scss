@@ -11,6 +11,8 @@
 @include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, 'ChronicleDisplay-Semibold', $unicode-range-en);
 @include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-regular, 'SlatePro-Regular', $unicode-range-en);
 @include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'SlatePro-Medium', $unicode-range-en);
+// bold, strong, and 700 weight will pick this up, b and strong tags will also pick this up
+@include font-face($ds-basic-type-brand-family-primary, bold, 'SlatePro-Bold', $unicode-range-en);
 
 // ---------------------------------------------------------------------
 // i18n font remapping
@@ -23,6 +25,8 @@
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-regular, $i18n-font-jp-400-path, $unicode-range-jp);
 	// Slate Pro 500 -> Noto Sans JP 500
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-jp-500-path, $unicode-range-jp);
+	// bold, strong, and 700 weight will pick this up, b and strong tags will also pick this up
+		@include font-face-i18n($ds-basic-type-brand-family-primary, bold, $i18n-font-jp-bold-path, $unicode-range-jp);
 
 	// Korean (KR)
 	// Chronicle Display 600 -> Noto Sans KR 600
@@ -31,4 +35,6 @@
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-regular, $i18n-font-kr-400-path, $unicode-range-kr);
 	// Slate Pro 500 -> Noto Sans KR 500
 	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-kr-500-path, $unicode-range-kr);
+	// bold, strong, and 700 weight will pick this up, b and strong tags will also pick this up
+		@include font-face-i18n($ds-basic-type-brand-family-primary, bold, $i18n-font-kr-bold-path, $unicode-range-kr);
 }

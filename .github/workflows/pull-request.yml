@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20, 22]
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20, 22]
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/test
@@ -48,6 +48,10 @@ jobs:
     runs-on: ubuntu-latest
     # Skip on PR close and on release branches
     if: github.event.action != 'closed' && !startsWith(github.ref, 'refs/heads/rc/')
+    permissions:
+      contents: read
+      pull-requests: write # to comment the release info on the PR
+      id-token: write # required for npm Trusted Publishing (OIDC) + provenance
     steps:
         - uses: actions/checkout@v4
         - name: Setup Node.js
@@ -55,6 +59,8 @@ jobs:
           with:
             node-version: 22
             registry-url: 'https://registry.npmjs.org'
+        - name: Update npm CLI
+          run: npm install -g npm@12 # Trusted Publishing requires npm >= 11.5.1
         - name: Restore dist/demo directories to cache
           uses: actions/cache@v4
           id: build-ubuntu-latest-node-v22
@@ -81,8 +87,8 @@ jobs:
         - name: Publish to NPM
           run: npm publish --registry=https://registry.npmjs.org
           env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only
         - name: Comment on PR
           uses: marocchino/sticky-pull-request-comment@v2
           with:

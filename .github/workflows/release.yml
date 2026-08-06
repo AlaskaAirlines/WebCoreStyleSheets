@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20, 22]
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20, 22]
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/test
@@ -54,10 +54,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: 'https://registry.npmjs.org'
       - name: Restore dist/demo directories to cache
         uses: actions/cache@v4
         id: build_cache
@@ -68,8 +70,10 @@ jobs:
               ./results
               ./node_modules
           key: build-22-${{ github.run_id }}
+      - name: Update npm CLI
+        run: npm install -g npm@12 # Trusted Publishing requires npm >= 11.5.1
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only
         run: npx semantic-release

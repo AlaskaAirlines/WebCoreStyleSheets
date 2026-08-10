@@ -24,7 +24,9 @@ $unicode-range-kr: U+1100-11FF, U+3130-318F, U+AC00-D7AF !default;
 $i18n-font-host: "https://resource.alaskaair.net" !default;
 
 // Per-locale base paths
-$i18n-font-base-path-en: "#{$i18n-font-host}/en-us/assets/font" !default;
+// default font path is from global (routing using flastly's Global_Asset_Mappings.vcl)
+$i18n-font-base-path-en: "#{$i18n-font-host}/assets/font/global" !default;
+// other locale font paths are from the locale-specific subdirectories (routing using flastly's CMS_Content.vcl.vcl, en-US path will be deprecated in the future)
 $i18n-font-base-path-jp: "#{$i18n-font-host}/ja-jp/assets/font" !default;
 $i18n-font-base-path-kr: "#{$i18n-font-host}/ko-kr/assets/font" !default;
 $i18n-font-base-path-sc: "#{$i18n-font-host}/zh-sc/assets/font" !default;
@@ -35,12 +37,14 @@ $i18n-font-jp-300-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v54-japanese-30
 $i18n-font-jp-400-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v54-japanese-400" !default;
 $i18n-font-jp-500-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v54-japanese-500" !default;
 $i18n-font-jp-600-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v55-japanese-600" !default;
+$i18n-font-jp-bold-path: "#{$i18n-font-base-path-jp}/noto-sans-jp-v55-japanese-700" !default;
 
 // Korean
 $i18n-font-kr-300-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-300" !default;
 $i18n-font-kr-400-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-400" !default;
 $i18n-font-kr-500-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-500" !default;
 $i18n-font-kr-600-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-600" !default;
+$i18n-font-kr-bold-path: "#{$i18n-font-base-path-kr}/noto-sans-kr-v38-korean-700" !default;
 
 // Chinese Simplified
 $i18n-font-sc-300-path: "#{$i18n-font-base-path-sc}/noto-sans-sc-v38-chinese-simplified-300" !default;

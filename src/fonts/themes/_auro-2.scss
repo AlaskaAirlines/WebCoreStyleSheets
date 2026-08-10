@@ -14,4 +14,6 @@
 
 @include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-book, 'ASCircularWeb-Book', $unicode-range-en);
 
+// bold, strong, and 700 weight will pick this up, b and strong tags will also pick this up
+@include font-face($ds-basic-type-brand-family-primary, bold, 'ASCircularWeb-Bold', $unicode-range-en);
 @include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-light, 'Teodor-Light', $unicode-range-en);

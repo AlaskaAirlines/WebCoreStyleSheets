@@ -1,10 +1,10 @@
 @import "../../mixins/theme-generator";
 
-// Generate Auro-1 theme
+// Generate Atmos theme
 @include generate-theme(
-  'auro-1',
-  $auro-1-type-body-config,
-  $auro-1-type-display-config,
-  $auro-1-type-heading-config,
-  $auro-1-type-accent-config
+  'atmos',
+  $atmos-type-body-config,
+  $atmos-type-display-config,
+  $atmos-type-heading-config,
+  $atmos-type-accent-config
 );

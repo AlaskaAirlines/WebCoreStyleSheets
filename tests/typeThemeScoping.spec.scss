@@ -1,0 +1,37 @@
+@import 'true';
+@import './src/type/mixins/type-generator';
+
+// Verifies the data-attribute theme scoping selectors for type custom properties
+// (AB#1612078). The selector is built from the design-tokens theme code, so these
+// assertions also guard against drift in the generated $wcss-theme-codes map.
+@include describe('wcss-type-scope-selector()') {
+  @include it('scopes a default theme to :root plus its base and -type attributes') {
+    @include assert-equal(
+      wcss-type-scope-selector('alaska', true),
+      ':root, [data-aag-theme="aag-theme-as"], [data-aag-theme="aag-theme-as-type"]'
+    );
+  }
+
+  @include it('scopes a non-default theme to its base and -type attributes only') {
+    @include assert-equal(
+      wcss-type-scope-selector('hawaiian'),
+      '[data-aag-theme="aag-theme-ha"], [data-aag-theme="aag-theme-ha-type"]'
+    );
+  }
+
+  @include it('applies the WCSS code override (atm) for atmos') {
+    @include assert-equal(
+      wcss-type-scope-selector('atmos'),
+      '[data-aag-theme="aag-theme-atm"], [data-aag-theme="aag-theme-atm-type"]'
+    );
+  }
+
+  @include it('falls back to :root for an unknown theme even when root is excluded') {
+    // The null-code branch returns `:root` before `$include-root` is consulted,
+    // so an unknown theme yields `:root` regardless of the flag.
+    @include assert-equal(
+      wcss-type-scope-selector('not-a-theme', false),
+      ':root'
+    );
+  }
+}

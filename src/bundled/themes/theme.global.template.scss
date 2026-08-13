@@ -19,4 +19,11 @@
 @import "../../fonts/themes/THEME_NAME";
 
 // Type styles
-@import "../../type/themes/THEME_NAME";
+// Every theme's type custom properties are emitted so this single global
+// stylesheet can switch themes at runtime via the data-aag-theme attribute.
+// THEME_NAME is the default (also under :root); the other themes are scoped to
+// their attribute selectors only (AB#1612078).
+@import "../type/themes/THEME_NAME";
+
+// Typography classes (theme-agnostic; reference the type custom properties above).
+@import "../../type/mixins/type-classes-generator";

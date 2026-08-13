@@ -2,14 +2,60 @@
 @import "../partials/display";
 @import "../partials/heading";
 @import "../partials/accent";
+@import "theme-codes";
 
-// Generate all type CSS variables for a theme
-@mixin generate-theme-type-css-vars($theme-configs) {
-  :root {
+// Build the data-attribute scoping selector for a theme's type custom properties.
+// Emits both the base `[data-aag-theme="aag-theme-<code>"]` selector and the
+// `-type` suffixed variant (mirroring the AuroDesignTokens attribute convention),
+// so the base attribute activates typography just like the type-specific one.
+// When `$include-root` is true the theme is also emitted under `:root`, marking it
+// as the stylesheet's default theme (additive and non-breaking). Falls back to
+// `:root` only if the theme has no known code.
+@function wcss-type-scope-selector($theme-name, $include-root: false) {
+  $code: map-get($wcss-theme-codes, $theme-name);
+
+  @if $code == null {
+    @warn "No theme code found for '#{$theme-name}'; emitting :root only for type custom properties.";
+    @return ":root";
+  }
+
+  $attributes: "[data-aag-theme=\"aag-theme-#{$code}\"], [data-aag-theme=\"aag-theme-#{$code}-type\"]";
+
+  @return if($include-root, ":root, #{$attributes}", $attributes);
+}
+
+// Emit a single theme's type custom properties under the provided selector list.
+@mixin generate-type-css-vars($theme-configs, $selectors) {
+  #{$selectors} {
     @include generate-body-css-vars(map-get($theme-configs, 'body'));
     @include generate-display-css-vars(map-get($theme-configs, 'display'));
     @include generate-heading-css-vars(map-get($theme-configs, 'heading'));
     @include generate-accent-css-vars(map-get($theme-configs, 'accent'));
+  }
+}
+
+// Generate a single theme's type CSS variables scoped to `:root` and its own
+// data-attribute selectors. Used by the per-theme global theme bundle.
+@mixin generate-theme-type-css-vars($theme-configs, $theme-name) {
+  @include generate-type-css-vars($theme-configs, wcss-type-scope-selector($theme-name, true));
+}
+
+// Generate every theme's type CSS variables into a single stylesheet so consumers
+// can switch themes at runtime via the data-aag-theme attribute. `$default-theme`
+// (the file's namesake) is emitted first under `:root` plus its attribute
+// selectors; every other theme follows under its attribute selectors only.
+// `$themes` is a map of theme name → its type config map
+// (keys: body, display, heading, accent).
+@mixin generate-multi-theme-type-css-vars($themes, $default-theme) {
+  @include generate-type-css-vars(
+    map-get($themes, $default-theme),
+    wcss-type-scope-selector($default-theme, true)
+  );
+
+  @each $theme-name, $theme-configs in $themes {
+    @if $theme-name != $default-theme {
+      @include generate-type-css-vars($theme-configs, wcss-type-scope-selector($theme-name, false));
+    }
   }
 }
 

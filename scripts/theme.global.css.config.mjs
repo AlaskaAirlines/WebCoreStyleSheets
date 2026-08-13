@@ -5,6 +5,7 @@
 
 // Import theme codes from design tokens
 import { THEME_DEFINITIONS } from '@aurodesignsystem/design-tokens/src/config/themes.js';
+import { withoutExcludedThemes } from './excluded-themes.mjs';
 
 // File extensions
 export const SOURCE_EXT = 'global.scss';
@@ -15,7 +16,7 @@ export const OUTPUT_EXT = 'global.css';
 export const basePrefix = '';
 
 // Standard themes
-export const standardThemes = THEME_DEFINITIONS.map(theme => ({
+export const standardThemes = withoutExcludedThemes(THEME_DEFINITIONS).map(theme => ({
   src: `themes/theme.global.template.scss`,
   dest: `themes/${theme.dir}.${OUTPUT_EXT}`,
   name: theme.dir

@@ -22,7 +22,7 @@
   );
 
   // Generate CSS variables for the theme
-  @include generate-theme-type-css-vars($theme-configs);
+  @include generate-theme-type-css-vars($theme-configs, $theme-name);
 
   // Generate theme type classes
   @include generate-theme-type-classes($accent-use-letter-spacing: $accent-uses-letter-spacing);

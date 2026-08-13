@@ -1,8 +1,0 @@
-// This file provides a convenient single import for Alaska theme Accent styles
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-
-// Import config
-@import "../../../../config/alaska/type/accent";
-
-// Import Accent theme
-@import "../../../../type/themes/alaska/accent";

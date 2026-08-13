@@ -1,0 +1,48 @@
+// Copyright (c) Alaska Air. All rights reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Aggregates every theme's type config into a single map keyed by theme name, so
+// the per-theme type bundles can emit all themes' custom properties in one file
+// (each theme scoped by its data-aag-theme attribute). Each theme's config vars
+// are uniquely named, so they coexist without collision.
+//
+// MAINTENANCE: this is a STATIC manifest. Theme discovery elsewhere (the build
+// scripts theme-codes.build.mjs and type.classes.css.build.mjs) is dynamic,
+// driven by design-tokens' THEME_DEFINITIONS. When a theme is added there, this
+// file must be updated by hand (import its config + add a $wcss-all-theme-configs
+// entry) or the multi-theme bundles will silently omit the new theme's vars with
+// no build-time error.
+
+@import "../../../config/alaska/type";
+@import "../../../config/alaska-classic/type";
+@import "../../../config/atmos/type";
+@import "../../../config/hawaiian/type";
+
+$wcss-all-theme-configs: (
+  'alaska': (
+    'body': $alaska-type-body-config,
+    'display': $alaska-type-display-config,
+    'heading': $alaska-type-heading-config,
+    'accent': $alaska-type-accent-config
+  ),
+  'alaska-classic': (
+    'body': $alaska-classic-type-body-config,
+    'display': $alaska-classic-type-display-config,
+    'heading': $alaska-classic-type-heading-config,
+    'accent': $alaska-classic-type-accent-config
+  ),
+  'atmos': (
+    'body': $atmos-type-body-config,
+    'display': $atmos-type-display-config,
+    'heading': $atmos-type-heading-config,
+    'accent': $atmos-type-accent-config
+  ),
+  'hawaiian': (
+    'body': $hawaiian-type-body-config,
+    'display': $hawaiian-type-display-config,
+    'heading': $hawaiian-type-heading-config,
+    'accent': $hawaiian-type-accent-config
+  )
+);

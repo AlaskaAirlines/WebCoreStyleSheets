@@ -16,8 +16,7 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
-    "@aurodesignsystem/design-tokens": "^9.3.3",
-    "chalk": "^5.4.1"
+    "@aurodesignsystem/design-tokens": "^9.3.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",

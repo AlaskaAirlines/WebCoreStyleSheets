@@ -133,6 +133,58 @@ For partials that take configuration, use `@use ... as * with (...)`:
 );
 ```
 
+### 6. Paragraph margin opt-in (`$paragraph`)
+
+The `<p>` element margin is still **opt-in and off by default** (unchanged behavior),
+but the flag is configured through the module rather than a shared global. The
+`essentials` entry point forwards the `$paragraph` flag from its Auro Classic
+essentials copy, so configure it there:
+
+```scss
+// Before (v11)
+$paragraph: true;
+@import "~@aurodesignsystem/webcorestylesheets/dist/essentials";
+
+// After (v12)
+@use "~@aurodesignsystem/webcorestylesheets/dist/essentials" with (
+  $paragraph: true
+);
+```
+
+### 7. Type theme bundles moved to a per-theme file
+
+The old per-theme bundled sub-directories (e.g.
+`src/bundled/type/themes/auro-1/body.scss`,
+`.../auro-2/accent.scss`, and the individual per-part files under each theme dir)
+have been removed. Each theme is now a single bundle file:
+
+```scss
+// Before (v11)
+@import ".../bundled/type/themes/auro-1/body";
+
+// After (v12) — one file emits the whole theme's type custom properties
+@use ".../bundled/type/themes/atmos";
+```
+
+Note the `auro-1` / `auro-2` theme names are gone: design-tokens now ships
+`atmos` (code `atm`) in place of the former `auro-1`, and `auro-2` is no longer
+built.
+
+The same rename applies to the **theme-level global** stylesheets under
+`dist/bundled/themes/`. The bundle is now named for the theme's directory, so
+the former `auro-1` global file has been replaced by `atmos`:
+
+```scss
+// Before (v11)
+@import ".../bundled/themes/auro-1.global.css";
+
+// After (v12)
+@use ".../bundled/themes/atmos.global.css";
+```
+
+Consumers loading a global stylesheet by the old `auro-1` name must repoint to
+`atmos.global.css` (there is no `auro-1.global.css` in the v12 dist).
+
 ---
 
 ### Quick reference

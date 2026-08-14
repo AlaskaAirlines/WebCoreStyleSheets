@@ -15,10 +15,6 @@
 // entry) or the multi-theme bundles will silently omit the new theme's vars with
 // no build-time error.
 
-@use "../../../config/alaska/type";
-@use "../../../config/alaska-classic/type" as type2;
-@use "../../../config/atmos/type" as type3;
-@use "../../../config/hawaiian/type" as type4;
 @use "../../../config/alaska-classic/type/accent" as accent2;
 @use "../../../config/alaska-classic/type/body" as body2;
 @use "../../../config/alaska-classic/type/display" as display2;

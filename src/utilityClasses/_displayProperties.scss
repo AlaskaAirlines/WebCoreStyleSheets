@@ -3,8 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/manageScope';
-@import '../utilityVariables/important';
+@use '../libSupport/manageScope';
+@use '../utilityVariables/important';
 
 /// Utility class to display elements `inline`
 ///
@@ -22,9 +22,9 @@
 ///   .auro_util_displayInline {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-#{$scope}.#{$prefix}util_displayInline {
-  display: inline $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_displayInline {
+  display: inline important.$important;
 }
 
 /// Utility class to display elements `inline-block`
@@ -43,9 +43,9 @@
 ///   .auro_util_displayInline {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-#{$scope}.#{$prefix}util_displayInlineBlock {
-  display: inline-block $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_displayInlineBlock {
+  display: inline-block important.$important;
 }
 
 /// Utility class to display elements `block`
@@ -64,9 +64,9 @@
 ///   .auro_util_displayBlock {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-#{$scope}.#{$prefix}util_displayBlock {
-  display: block $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_displayBlock {
+  display: block important.$important;
 }
 
 /// Utility class to display elements `flex`
@@ -85,9 +85,9 @@
 ///   .auro_util_displayFlex {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-#{$scope}.#{$prefix}util_displayFlex {
-  display: flex $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_displayFlex {
+  display: flex important.$important;
 }
 
 /// Utility class to display elements `none`
@@ -106,9 +106,9 @@
 ///   .auro_util_displayHidden {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-#{$scope}.#{$prefix}util_displayHidden {
-  display: none $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_displayHidden {
+  display: none important.$important;
 }
 
 /// Utility class to visually hide elements within the UI, but still be picked up by screen readers.
@@ -127,16 +127,16 @@
 ///   .auro_util_displayHiddenVisually {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-#{$scope}.#{$prefix}util_displayHiddenVisually {
-  position: absolute $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_displayHiddenVisually {
+  position: absolute important.$important;
 
-  overflow: hidden $important;
-  clip: rect(1px, 1px, 1px, 1px) $important;
+  overflow: hidden important.$important;
+  clip: rect(1px, 1px, 1px, 1px) important.$important;
 
-  width: 1px $important;
-  height: 1px $important;
-  padding: 0 $important;
+  width: 1px important.$important;
+  height: 1px important.$important;
+  padding: 0 important.$important;
 
-  border: 0 $important;
+  border: 0 important.$important;
 }

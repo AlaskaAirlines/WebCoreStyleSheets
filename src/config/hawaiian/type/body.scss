@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
+
 // Body - Type
 $hawaiian-type-body-config: (
   'family': v.$ds-basic-type-family-body,

@@ -4,10 +4,10 @@ The following are frequently asked questions.
 
 ## I updated my version and am now getting a missing variable error?
 
-When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply import the new Auro Sass variables generated from the tokens.
+When you update to v2.8, if you get an error that there are missing Sass variables with the Auro namespace, e.g. `$auro- ...` simply load the new Auro Sass variables generated from the tokens.
 
 ```scss
-@import "~@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@use "~@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables" as *;
 ```
 
 ## I updated my version, now some utility selectors are no longer there?
@@ -18,10 +18,10 @@ If you have been using selectors from the now deprecated `_layoutProperties.scss
 .util_[margin/padding][Top/Right/Bottom/Left]--[none/xs/md/lg/xl]
 ```
 
-The easy fix is to import the new layout properties generator file that will fill this gap.
+The easy fix is to load the new layout properties generator file that will fill this gap.
 
 ```scss
-@import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
+@use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator" as *;
 ```
 
 For full details on this generator, please see the [generator documentation](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator).

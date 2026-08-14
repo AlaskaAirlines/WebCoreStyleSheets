@@ -2,5 +2,5 @@
 // See LICENSE in the project root for license information.
 
 // Alaska Classic theme configs
-@import "base";
-@import "type";
+@forward "base";
+@forward "type";

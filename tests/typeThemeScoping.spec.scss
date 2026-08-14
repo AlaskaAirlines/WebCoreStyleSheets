@@ -1,5 +1,5 @@
-@import 'true';
-@import './src/type/mixins/type-generator';
+@use 'true' as *;
+@use './../src/type/mixins/type-generator' as *;
 
 // Verifies the data-attribute theme scoping selectors for type custom properties
 // (AB#1612078). The selector is built from the design-tokens theme code, so these

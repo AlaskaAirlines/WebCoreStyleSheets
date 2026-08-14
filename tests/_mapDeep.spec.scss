@@ -1,5 +1,5 @@
-@import 'true';
-@import './src/utilityFunctions/map-deep-get';
+@use 'true' as *;
+@use './../src/utilityFunctions/map-deep-get' as *;
 
 @include describe('auro_map-deep-get()') {
   @include it('should return the value from a deep-map request') {

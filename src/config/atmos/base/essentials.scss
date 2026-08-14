@@ -1,7 +1,7 @@
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as tokens;
+@use "@aurodesignsystem/design-tokens/dist/themes/atmos/SCSSVariables--atmos" as tokens;
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as classic;
 
-// Base Essentials
+// Atmos Base Essentials (Alaska base structure resolved against Atmos design tokens)
 $alaska-base-config: (
   'font-size': tokens.$ds-type-size-16,
   'text-color': tokens.$ds-basic-color-texticon-default,

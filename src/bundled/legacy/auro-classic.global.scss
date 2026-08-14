@@ -15,8 +15,8 @@
 */
 
 // Import Sass variables
-@import '../../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
+@use '../../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
 
 // Import minimum essential files
-@import '../../essentials/legacy/auro-classic';
-@import '../../fonts/legacy/auro-classic';
+@use '../../essentials/legacy/auro-classic';
+@use '../../fonts/legacy/auro-classic' as auro-classic2;

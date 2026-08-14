@@ -1,8 +1,8 @@
-@import "../partials/body";
-@import "../partials/display";
-@import "../partials/heading";
-@import "../partials/accent";
-@import "../mixins/type-generator";
+@use "../partials/body";
+@use "../partials/display";
+@use "../partials/heading";
+@use "../partials/accent";
+@use "../mixins/type-generator";
 
 // Theme generator
 @mixin generate-theme(
@@ -22,8 +22,8 @@
   );
 
   // Generate CSS variables for the theme
-  @include generate-theme-type-css-vars($theme-configs, $theme-name);
+  @include type-generator.generate-theme-type-css-vars($theme-configs, $theme-name);
 
   // Generate theme type classes
-  @include generate-theme-type-classes($accent-use-letter-spacing: $accent-uses-letter-spacing);
+  @include type-generator.generate-theme-type-classes($accent-use-letter-spacing: $accent-uses-letter-spacing);
 }

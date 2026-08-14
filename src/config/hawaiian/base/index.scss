@@ -1,5 +1,2 @@
-@import "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian";
-@import "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
-
 // Hawaiian Base Configs
-@import "essentials";
+@forward "essentials";

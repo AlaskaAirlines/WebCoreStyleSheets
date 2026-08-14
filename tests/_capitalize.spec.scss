@@ -1,5 +1,5 @@
-@import 'true';
-@import './src/utilityFunctions/capitalize';
+@use 'true' as *;
+@use './src/utilityFunctions/capitalize' as *;
 
 @include describe('auro_capitalize()') {
   @include it('should return a string with a capitol letter') {

@@ -12,8 +12,10 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import "../libSupport/manageScope";
-@import "../core";
+@use "sass:map";
+
+@use "../libSupport/manageScope";
+@use "../core";
 
 // Define the $paragraph variable with default value
 $paragraph: null !default;
@@ -23,45 +25,45 @@ $paragraph: null !default;
 @mixin essentials-base($theme-props) {
   
   /// Baseline HTML setting to establish box-model and default font size.
-  #{$sym}#{$prefix}html#{$scope} {
+  #{manageScope.$sym}#{manageScope.$prefix}html#{manageScope.$scope} {
     box-sizing: border-box;
-    font-size: map-get($theme-props, 'font-size');
+    font-size: map.get($theme-props, 'font-size');
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
   }
 
   /// Set baseline type settings for `body` element or with the use of the `.baseType` selector.
-  #{$scope}#{$sym}#{$prefix}body,
-  #{$scope}.#{$prefix}baseType {
+  #{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}body,
+  #{manageScope.$scope}.#{manageScope.$prefix}baseType {
     margin: 0;
-    color: map-get($theme-props, 'text-color');
-    font-family: map-get($theme-props, 'font-family'), map-get($theme-props, 'font-family-fallback');
-    font-size: map-get($theme-props, 'font-size');
-    font-weight: map-get($theme-props, 'font-weight');
-    line-height: map-get($theme-props, 'line-height');
+    color: map.get($theme-props, 'text-color');
+    font-family: map.get($theme-props, 'font-family'), map.get($theme-props, 'font-family-fallback');
+    font-size: map.get($theme-props, 'font-size');
+    font-weight: map.get($theme-props, 'font-weight');
+    line-height: map.get($theme-props, 'line-height');
     
-    @if map-has-key($theme-props, 'letter-spacing') {
-      letter-spacing: map-get($theme-props, 'letter-spacing');
+    @if map.has-key($theme-props, 'letter-spacing') {
+      letter-spacing: map.get($theme-props, 'letter-spacing');
     }
     
     font-variant-ligatures: no-common-ligatures;
   }
 
   /// Sets standard `margin` for all paragraph style content
-  #{$scope}.#{$prefix}baseParagraph {
+  #{manageScope.$scope}.#{manageScope.$prefix}baseParagraph {
     margin: 0 0 1rem;
-    line-height: map-get($theme-props, 'line-height');
+    line-height: map.get($theme-props, 'line-height');
 
-    .#{$prefix}hyperlink {
+    .#{manageScope.$prefix}hyperlink {
       text-decoration: underline;
     }
   }
 
   /// Baseline hyperlink styles as mirrored in auro-hyperlink web component
-  #{$scope}.#{$prefix}hyperlink {
+  #{manageScope.$scope}.#{manageScope.$prefix}hyperlink {
     transition: all .15s ease;
     text-decoration: underline;
-    color: map-get($theme-props, 'hyperlink-color');
+    color: map.get($theme-props, 'hyperlink-color');
     border-radius: 3px;
     outline-offset: unset;
     outline-style: solid;
@@ -69,18 +71,18 @@ $paragraph: null !default;
     outline-color: transparent;
 
     &:visited {
-      color: map-get($theme-props, 'hyperlink-color');
+      color: map.get($theme-props, 'hyperlink-color');
     }
 
     &:focus-visible {
-      outline-color: map-get($theme-props, 'focus-color');
-      outline-offset: map-get($theme-props, 'focus-offset');
+      outline-color: map.get($theme-props, 'focus-color');
+      outline-offset: map.get($theme-props, 'focus-offset');
     }
 
     @media (hover: hover) {
       &:hover {
         text-decoration: none;
-        color: map-get($theme-props, 'hyperlink-hover-color');
+        color: map.get($theme-props, 'hyperlink-hover-color');
       }
     }
 
@@ -95,61 +97,61 @@ $paragraph: null !default;
       }
 
       &:focus-visible {
-        outline-width: map-get($theme-props, 'focus-width');
+        outline-width: map.get($theme-props, 'focus-width');
         outline-offset: unset;
       }
     }
 
     &--ondark {
-      color: map-get($theme-props, 'hyperlink-inverse-color');
+      color: map.get($theme-props, 'hyperlink-inverse-color');
 
       @media (hover: hover) {
         &:hover {
-          color: map-get($theme-props, 'hyperlink-inverse-hover-color');
+          color: map.get($theme-props, 'hyperlink-inverse-hover-color');
         }
       }
 
       &:visited {
-        color: map-get($theme-props, 'hyperlink-inverse-color');
+        color: map.get($theme-props, 'hyperlink-inverse-color');
       }
     }
   }
 
   /// Default setting for all `<img />` tags
-  #{$scope}#{$sym}#{$prefix}img {
+  #{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}img {
     max-width: 100%;
   }
 
   /// Legal copy, disclaimers, and footnotes
-  #{$scope}#{$sym}#{$prefix}small,
-  #{$scope}.#{$prefix}type--small {
-    font-size: map-get($theme-props, 'small-font-size');
-    font-weight: map-get($theme-props, 'small-font-weight');
-    line-height: map-get($theme-props, 'small-line-height');
+  #{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}small,
+  #{manageScope.$scope}.#{manageScope.$prefix}type--small {
+    font-size: map.get($theme-props, 'small-font-size');
+    font-weight: map.get($theme-props, 'small-font-weight');
+    line-height: map.get($theme-props, 'small-line-height');
     
-    @if map-has-key($theme-props, 'small-letter-spacing') {
-      letter-spacing: map-get($theme-props, 'small-letter-spacing');
+    @if map.has-key($theme-props, 'small-letter-spacing') {
+      letter-spacing: map.get($theme-props, 'small-letter-spacing');
     }
   }
 
   /// Paragraph element margin (conditional)
-  #{$scope}#{$sym}#{$prefix}p {
+  #{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}p {
     @if $paragraph {
       margin: 0 0 1rem;
-      line-height: map-get($theme-props, 'paragraph-line-height');
+      line-height: map.get($theme-props, 'paragraph-line-height');
     }
   }
 
   /// Fine print text
-  #{$scope}.#{$prefix}fineprint {
-    font-family: map-get($theme-props, 'font-family'), map-get($theme-props, 'font-family-fallback');
-    font-size: map-get($theme-props, 'small-font-size');
-    font-weight: map-get($theme-props, 'small-font-weight');
-    line-height: map-get($theme-props, 'small-line-height');
-    color: map-get($theme-props, 'muted-text-color');
+  #{manageScope.$scope}.#{manageScope.$prefix}fineprint {
+    font-family: map.get($theme-props, 'font-family'), map.get($theme-props, 'font-family-fallback');
+    font-size: map.get($theme-props, 'small-font-size');
+    font-weight: map.get($theme-props, 'small-font-weight');
+    line-height: map.get($theme-props, 'small-line-height');
+    color: map.get($theme-props, 'muted-text-color');
     
-    @if map-has-key($theme-props, 'small-letter-spacing') {
-      letter-spacing: map-get($theme-props, 'small-letter-spacing');
+    @if map.has-key($theme-props, 'small-letter-spacing') {
+      letter-spacing: map.get($theme-props, 'small-letter-spacing');
     }
   }
 }

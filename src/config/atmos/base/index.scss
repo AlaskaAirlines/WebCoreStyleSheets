@@ -1,5 +1,2 @@
-@import "@aurodesignsystem/design-tokens/dist/themes/atmos/SCSSVariables--atmos";
-@import "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
-
-// Atmos Base Configs - uses Alaska base essentials with Atmos design tokens
-@import "../../alaska/base/essentials";
+// Atmos Base Configs - Alaska base essentials structure resolved against Atmos design tokens
+@forward "essentials";

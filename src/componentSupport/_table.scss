@@ -1,3 +1,7 @@
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
+@use "../breakpoints";
+@use "../libSupport/manageScope";
+
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -10,33 +14,33 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` options.
 /// @group utility-auro
 /// @example scss - import selector file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/table";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/table" as *;
 
-#{$scope}.auro_table {
+#{manageScope.$scope}.auro_table {
   display: block;
   overflow: scroll;
 
   width: auto;
-  margin-bottom: var(--ds-size-400, $ds-size-400);
+  margin-bottom: var(--ds-size-400, SCSSVariables.$ds-size-400);
 
-  border-spacing: var(--ds-size-150, $ds-size-150);
+  border-spacing: var(--ds-size-150, SCSSVariables.$ds-size-150);
   border-collapse: collapse;
 
-  font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
+  font-weight: var(--ds-text-heading-display-weight, SCSSVariables.$ds-text-heading-display-weight);
 
   tr {
     &:nth-child(even) {
-      background-color: var(--ds-color-container-secondary-default, $ds-color-container-secondary-default);
+      background-color: var(--ds-color-container-secondary-default, SCSSVariables.$ds-color-container-secondary-default);
     }
   }
 
   th {
     text-align: left;
 
-    font-weight: var(--ds-text-heading-default-weight, $ds-text-heading-default-weight);
+    font-weight: var(--ds-text-heading-default-weight, SCSSVariables.$ds-text-heading-default-weight);
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-sm) {
     display: table;
 
     width: 100%;
@@ -44,11 +48,11 @@
 
   thead {
     border-collapse: collapse;
-    border-bottom: 1px solid var(--ds-color-border-tertiary-default, $ds-color-border-tertiary-default);
+    border-bottom: 1px solid var(--ds-color-border-tertiary-default, SCSSVariables.$ds-color-border-tertiary-default);
   }
 
   th,
   td {
-    padding: var(--ds-size-200, $ds-size-200);
+    padding: var(--ds-size-200, SCSSVariables.$ds-size-200);
   }
 }

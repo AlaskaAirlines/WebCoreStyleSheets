@@ -1,31 +1,34 @@
 // Body type styling with CSS custom properties
 
-@import '../../utilityFunctions/map-deep-get';
-@import '../../utilityVariables/cssNamespace';
+@use "sass:list";
+@use "sass:map";
+
+@use '../../utilityFunctions/map-deep-get';
+@use '../../utilityVariables/cssNamespace';
 
 $body-base-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
 
 $body-sizes: ();
 @each $size in $body-base-sizes {
-  $body-sizes: append($body-sizes, $size);
-  $body-sizes: append($body-sizes, '#{$size}-emphasized');
+  $body-sizes: list.append($body-sizes, $size);
+  $body-sizes: list.append($body-sizes, '#{$size}-emphasized');
 }
 
 // Generate CSS custom properties for Body
 @mixin generate-body-css-vars($theme-config) {
-  --#{$css-ns}-body-family: #{map-get($theme-config, 'family')};
-  --#{$css-ns}-body-family-fallback: #{map-get($theme-config, 'familyFallback')};
-  --#{$css-ns}-body-letter-spacing: #{map-get($theme-config, 'letter-spacing')};
+  --#{cssNamespace.$css-ns}-body-family: #{map.get($theme-config, 'family')};
+  --#{cssNamespace.$css-ns}-body-family-fallback: #{map.get($theme-config, 'familyFallback')};
+  --#{cssNamespace.$css-ns}-body-letter-spacing: #{map.get($theme-config, 'letter-spacing')};
 
   @each $size in $body-sizes {
-    --#{$css-ns}-body-#{$size}-weight: #{auro_map-deep-get($theme-config, 'sizes', $size, 'weight')};
-    --#{$css-ns}-body-#{$size}-font-size: #{auro_map-deep-get($theme-config, 'sizes', $size, 'font-size')};
-    --#{$css-ns}-body-#{$size}-line-height: #{auro_map-deep-get($theme-config, 'sizes', $size, 'line-height')};
+    --#{cssNamespace.$css-ns}-body-#{$size}-weight: #{map-deep-get.auro_map-deep-get($theme-config, 'sizes', $size, 'weight')};
+    --#{cssNamespace.$css-ns}-body-#{$size}-font-size: #{map-deep-get.auro_map-deep-get($theme-config, 'sizes', $size, 'font-size')};
+    --#{cssNamespace.$css-ns}-body-#{$size}-line-height: #{map-deep-get.auro_map-deep-get($theme-config, 'sizes', $size, 'line-height')};
   }
 
   // Backward-compatibility alias for pre-v11 consumers (e.g. bundled Auro component CSS).
   // Remove in next major once consumers migrate to --wcss-body-default-weight.
-  --#{$css-ns}-body-weight: var(--#{$css-ns}-body-default-weight);
+  --#{cssNamespace.$css-ns}-body-weight: var(--#{cssNamespace.$css-ns}-body-default-weight);
 }
 
 // Generate Body classes
@@ -34,17 +37,17 @@ $body-sizes: ();
     .body-#{$size} {
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
-        font-family: var(--#{$css-ns}-body-family, auro_map-deep-get($fallback-config, 'family')), auro_map-deep-get($fallback-config, 'familyFallback');
-        font-weight: var(--#{$css-ns}-body-#{$size}-weight, auro_map-deep-get($fallback-config, 'weight'));
-        letter-spacing: var(--#{$css-ns}-body-letter-spacing, auro_map-deep-get($fallback-config, 'letter-spacing'));
-        font-size: var(--#{$css-ns}-body-#{$size}-font-size, auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size'));
-        line-height: var(--#{$css-ns}-body-#{$size}-line-height, auro_map-deep-get($fallback-config, 'sizes', $size, 'line-height'));
+        font-family: var(--#{cssNamespace.$css-ns}-body-family, map-deep-get.auro_map-deep-get($fallback-config, 'family')), map-deep-get.auro_map-deep-get($fallback-config, 'familyFallback');
+        font-weight: var(--#{cssNamespace.$css-ns}-body-#{$size}-weight, map-deep-get.auro_map-deep-get($fallback-config, 'weight'));
+        letter-spacing: var(--#{cssNamespace.$css-ns}-body-letter-spacing, map-deep-get.auro_map-deep-get($fallback-config, 'letter-spacing'));
+        font-size: var(--#{cssNamespace.$css-ns}-body-#{$size}-font-size, map-deep-get.auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size'));
+        line-height: var(--#{cssNamespace.$css-ns}-body-#{$size}-line-height, map-deep-get.auro_map-deep-get($fallback-config, 'sizes', $size, 'line-height'));
       } @else {
-        font-family: var(--#{$css-ns}-body-family), var(--#{$css-ns}-body-family-fallback);
-        font-weight: var(--#{$css-ns}-body-#{$size}-weight);
-        letter-spacing: var(--#{$css-ns}-body-letter-spacing);
-        font-size: var(--#{$css-ns}-body-#{$size}-font-size);
-        line-height: var(--#{$css-ns}-body-#{$size}-line-height);
+        font-family: var(--#{cssNamespace.$css-ns}-body-family), var(--#{cssNamespace.$css-ns}-body-family-fallback);
+        font-weight: var(--#{cssNamespace.$css-ns}-body-#{$size}-weight);
+        letter-spacing: var(--#{cssNamespace.$css-ns}-body-letter-spacing);
+        font-size: var(--#{cssNamespace.$css-ns}-body-#{$size}-font-size);
+        line-height: var(--#{cssNamespace.$css-ns}-body-#{$size}-line-height);
       }
     }
   }

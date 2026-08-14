@@ -8,7 +8,7 @@
 // the default (`:root`) theme. Consumers switch themes at runtime via the
 // `data-aag-theme` attribute.
 
-@import "all-theme-configs";
-@import "../../../type/mixins/type-generator";
+@use "all-theme-configs";
+@use "../../../type/mixins/type-generator";
 
-@include generate-multi-theme-type-css-vars($wcss-all-theme-configs, 'alaska-classic');
+@include type-generator.generate-multi-theme-type-css-vars(all-theme-configs.$wcss-all-theme-configs, 'alaska-classic');

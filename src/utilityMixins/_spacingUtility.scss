@@ -4,14 +4,21 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import '../utilityVariables/spacing-options';
-@import '../utilityFunctions/capitalize';
-@import '../utilityFunctions/map-deep-get';
-@import '../utilityVariables/important';
-@import '../libSupport/manageScope';
+@use "sass:list";
+@use "sass:map";
+@use '../utilityVariables/spacing-options';
+@use '../utilityFunctions/capitalize';
+@use '../utilityFunctions/map-deep-get';
+@use '../utilityFunctions/contains';
+@use '../utilityVariables/important';
+@use '../libSupport/manageScope';
+// The spacing scale map (`$tokens`) is provided by the design-tokens package.
+// Under the module system it must be loaded explicitly rather than relying on a
+// consumer-injected global.
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap" as tokens;
 
 $ds-spacing-types: inline, stack !default;
-$ds-spacing-options: $ds-spacing-options !default;
+$ds-spacing-options: spacing-options.$ds-spacing-options !default;
 $ds-spacing-properties: padding, padding, margin, margin !default;
 
 /// This mixin is designed to return a series of pre-defined selectors based on the stack or inline spacing design specs
@@ -35,20 +42,19 @@ $ds-spacing-properties: padding, padding, margin, margin !default;
 /// .util_inlineMargin25--right {
 ///   margin-right: 0.125rem;
 /// }
-/// @example scss - import dependencies
-///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariableMap";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
-/// @example scss - import with custom over-rides
-///   $ds-spacing-types: inline;
-///   $ds-spacing-options: 200;
-///   @import "./node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariableMap";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
+/// @example scss - use dependencies
+///   @use "@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility";
+/// @example scss - use with custom over-rides
+///   @use "@aurodesignsystem/webcorestylesheets/dist/utilityMixins/spacingUtility" with (
+///     $ds-spacing-types: inline,
+///     $ds-spacing-options: 200
+///   );
 
 @mixin auro_spacing($types: $ds-spacing-types, $options: $ds-spacing-options) {
   @each $type in $types {
     @each $value in $options {
-      $map: map-keys($tokens);
-      $var: auro_map-deep-get($tokens, #{$map}, #{$value});
+      $map: map.keys(tokens.$tokens);
+      $var: map-deep-get.auro_map-deep-get(tokens.$tokens, #{$map}, #{$value});
       $directions: null;
       $properties: null;
 
@@ -62,29 +68,29 @@ $ds-spacing-properties: padding, padding, margin, margin !default;
         $properties: $ds-spacing-properties;
       }
 
-      @if not index($types, $type) {
+      @if not list.index($types, $type) {
         @error 'INVALID, \'#{$type}\' is not known, please choose from options, [#{$types}]';
       }
 
-      @if auro_contains($options, $value) {
-        @if not index($options, $value) {
-          @error 'INVALID, \'#{$value}\' is not known, please choose from options, [#{$ds-inset-options}]';
+      @if contains.auro_contains($options, $value) {
+        @if not list.index($options, $value) {
+          @error 'INVALID, \'#{$value}\' is not known, please choose from options, [#{$ds-spacing-options}]';
         }
 
         @if $value == 'none' {
-          @for $i from 1 through length($properties) {
-            $direction: nth($directions, $i);
-            $property: nth($properties, $i);
-            #{$scope}.#{$prefix}util_#{$type}#{auro_capitalize($property)}#{auro_capitalize($value)}--#{$direction} {
-              #{$property}-#{$direction}: 0 $important;
+          @for $i from 1 through list.length($properties) {
+            $direction: list.nth($directions, $i);
+            $property: list.nth($properties, $i);
+            #{manageScope.$scope}.#{manageScope.$prefix}util_#{$type}#{capitalize.auro_capitalize($property)}#{capitalize.auro_capitalize($value)}--#{$direction} {
+              #{$property}-#{$direction}: 0 important.$important;
             }
           }
         } @else {
-          @for $i from 1 through length($properties) {
-            $direction: nth($directions, $i);
-            $property: nth($properties, $i);
-            #{$scope}.#{$prefix}util_#{$type}#{auro_capitalize($property)}#{auro_capitalize($value)}--#{$direction} {
-              #{$property}-#{$direction}: $var $important;
+          @for $i from 1 through list.length($properties) {
+            $direction: list.nth($directions, $i);
+            $property: list.nth($properties, $i);
+            #{manageScope.$scope}.#{manageScope.$prefix}util_#{$type}#{capitalize.auro_capitalize($property)}#{capitalize.auro_capitalize($value)}--#{$direction} {
+              #{$property}-#{$direction}: $var important.$important;
             }
           }
         }

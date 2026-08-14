@@ -13,8 +13,8 @@ The basic construct of a function unit test is to include the test-module and th
 The assertion has [multiple methods](https://www.oddbird.net/true/docs/api-assert-values.html) to choose from. This example is using the `@include assert-equal()` method.
 
 ```scss
-@import 'true';
-@import '[path to function]';
+@use 'true' as *;
+@use '[path to function]' as *;
 
 @include describe('[name of function]') {
   @include it('should return [description of function]') {
@@ -30,8 +30,8 @@ The basic construct of a mixin unit test is to include the test-module and the t
 The [assertion model](https://www.oddbird.net/true/docs/api-assert-output.html) for comparing outputs uses the `@include assert()` method that requires the `@include output` and `@include expect` methods.
 
 ```scss
-@import 'true';
-@import '[path to mixin]';
+@use 'true' as *;
+@use '[path to mixin]' as *;
 
 @include describe('[name of mixin]') {
   @include it('should return [description of mixin]') {

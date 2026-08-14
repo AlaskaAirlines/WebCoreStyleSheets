@@ -5,7 +5,8 @@
 
 // stylelint-disable mixins-before-declarations, variable-for-property, no-vendor-prefixes, no-invalid-position-at-import-rule
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@import 'libSupport/manageScope';
+@use 'libSupport/manageScope';
+@use "breakpoints";
 
 $fixed-nav-width: 280px;
 $fixed-anchor-width: 168px;
@@ -15,9 +16,9 @@ $fixed-anchor-width: 168px;
 ///
 /// @group grid
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 /// @example scss - import mixin file with altered output values prior to import
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
 @mixin grid-stickycolumn--md {
   @media screen and (min-width: vac.$ds-grid-breakpoint-md) {
@@ -33,9 +34,9 @@ $fixed-anchor-width: 168px;
 ///
 /// @group grid
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 /// @example scss - import mixin file with altered output values prior to import
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
 @mixin grid-stickycolumn--xs {
   position: sticky;
@@ -48,10 +49,10 @@ $fixed-anchor-width: 168px;
 /// @group grid
 /// @param {string} $maxWidth [1232px] - Specifies the max-width value of the grid.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 /// @example scss - import mixin file with altered output values prior to import
 ///   $maxWidth: vac.$ds-grid-breakpoint-xl !default;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
 @mixin grid_width($maxWidth) {
   max-width: $maxWidth;
@@ -59,9 +60,9 @@ $fixed-anchor-width: 168px;
 
 /// @group grid
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 /// @example scss - import mixin file with altered output values prior to import
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 @mixin grid_margin() {
   margin-left: auto;
   margin-right: auto;
@@ -69,10 +70,10 @@ $fixed-anchor-width: 168px;
 
 /// @group grid
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 /// @example scss - import mixin file with altered output values prior to import
 /// $padding: vac.$ds-grid-margin-xs !default;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 @mixin grid_padding($padding) {
   padding-left: $padding;
   padding-right: $padding;
@@ -81,22 +82,22 @@ $fixed-anchor-width: 168px;
 /// @group grid
 /// @param {string} $gutter [16px] - Specifies the gutter/gap(horizontal & vertical spacing) value between each cell of the grid.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
 /// @example scss - import mixin file with altered output values prior to import
 ///   $gutter: vac.$ds-grid-gutter-xs !default;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 @mixin grid_gutter($gutter) {
   gap: $gutter;
-  @include auro_grid-breakpoint--sm {
+  @include breakpoints.auro_grid-breakpoint--sm {
    gap: var(--ds-grid-gutter-sm, vac.$ds-grid-gutter-sm);
   }
-  @include auro_grid-breakpoint--md {
+  @include breakpoints.auro_grid-breakpoint--md {
     gap: var(--ds-grid-gutter-md, vac.$ds-grid-gutter-md);
   }
-  @include auro_grid-breakpoint--lg {
+  @include breakpoints.auro_grid-breakpoint--lg {
     gap: var(--ds-grid-gutter-lg, vac.$ds-grid-gutter-lg);
   }
-  @include auro_grid-breakpoint--xl {
+  @include breakpoints.auro_grid-breakpoint--xl {
     gap: var(--ds-grid-gutter-xl, vac.$ds-grid-gutter-xl);
   }
 }
@@ -117,9 +118,9 @@ $fixed-anchor-width: 168px;
 /// @example html - Example HTML selector use
 ///   <element class="container"> ... </element>
 /// @example scss - import file;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
-#{$scope}.#{$prefix}container {
+#{manageScope.$scope}.#{manageScope.$prefix}container {
   display: grid;
   @include grid_margin();
   @include grid_width(vac.$ds-grid-breakpoint-xl);
@@ -141,23 +142,23 @@ $fixed-anchor-width: 168px;
 /// @example html - Example HTML selector use
 ///   <element class="container"> ... </element>
 /// @example scss - import file;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
-#{$scope}.#{$prefix}pagecontainer {
+#{manageScope.$scope}.#{manageScope.$prefix}pagecontainer {
   @include grid_padding(vac.$ds-grid-margin-xs);
   @include grid_margin();
   @include grid_width(vac.$ds-grid-breakpoint-xl);
 
-  @include auro_grid-breakpoint--sm {
+  @include breakpoints.auro_grid-breakpoint--sm {
     @include grid_padding(vac.$ds-grid-margin-sm);
   }
-  @include auro_grid-breakpoint--md {
+  @include breakpoints.auro_grid-breakpoint--md {
     @include grid_padding(vac.$ds-grid-margin-md);
   }
-  @include auro_grid-breakpoint--lg {
+  @include breakpoints.auro_grid-breakpoint--lg {
     @include grid_padding(vac.$ds-grid-margin-lg);
   }
-  @include auro_grid-breakpoint--xl {
+  @include breakpoints.auro_grid-breakpoint--xl {
     @include grid_padding(vac.$ds-grid-margin-xl);
   }
 
@@ -182,9 +183,9 @@ $fixed-anchor-width: 168px;
 /// @example html - Example HTML selector use
 ///   <element class="pageLayout-2colAnchorNav"> ... </element>
 /// @example scss - import file;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
-#{$scope}.#{$prefix}pageLayout-2colAnchorNav {
+#{manageScope.$scope}.#{manageScope.$prefix}pageLayout-2colAnchorNav {
   display: grid;
   @include grid_margin();
   @include grid_padding(vac.$ds-grid-margin-xs);
@@ -195,20 +196,20 @@ $fixed-anchor-width: 168px;
   "main";
   @include grid_gutter(vac.$ds-grid-gutter-xl);
 
-  @include auro_grid-breakpoint--sm {
+  @include breakpoints.auro_grid-breakpoint--sm {
     @include grid_padding(vac.$ds-grid-margin-sm);
   }
-  @include auro_grid-breakpoint--md {
+  @include breakpoints.auro_grid-breakpoint--md {
     @include grid_padding(vac.$ds-grid-margin-md);
     grid-template-columns: auto var(--fixed-anchor-width, $fixed-anchor-width);
       grid-template-areas:
       "breadcrumbs breadcrumbs"
       "main anchornav";
   }
-  @include auro_grid-breakpoint--lg {
+  @include breakpoints.auro_grid-breakpoint--lg {
     @include grid_padding(vac.$ds-grid-margin-lg);
   }
-  @include auro_grid-breakpoint--xl {
+  @include breakpoints.auro_grid-breakpoint--xl {
     @include grid_padding(vac.$ds-grid-margin-xl);
   }
 
@@ -243,9 +244,9 @@ $fixed-anchor-width: 168px;
 /// @example html - Example HTML selector use
 ///   <element class="pageLayout-2colSideNav"> ... </element>
 /// @example scss - import file;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
-#{$scope}.#{$prefix}pageLayout-2colSideNav {
+#{manageScope.$scope}.#{manageScope.$prefix}pageLayout-2colSideNav {
   display: grid;
   @include grid_margin();
   @include grid_padding(0);
@@ -257,7 +258,7 @@ $fixed-anchor-width: 168px;
   @include grid_gutter(vac.$ds-grid-gutter-xl);
 
 
-  @include auro_grid-breakpoint--md {
+  @include breakpoints.auro_grid-breakpoint--md {
     @include grid_padding(vac.$ds-grid-margin-md);
     grid-template-columns: var(--fixed-nav-width, $fixed-nav-width) auto;
       grid-template-areas:
@@ -265,10 +266,10 @@ $fixed-anchor-width: 168px;
       "sidenav main";
   }
 
-  @include auro_grid-breakpoint--lg {
+  @include breakpoints.auro_grid-breakpoint--lg {
     @include grid_padding(vac.$ds-grid-margin-lg);
   }
-  @include auro_grid-breakpoint--xl {
+  @include breakpoints.auro_grid-breakpoint--xl {
     @include grid_padding(vac.$ds-grid-margin-xl);
   }
 
@@ -276,17 +277,17 @@ $fixed-anchor-width: 168px;
   .breadcrumbs {
     grid-area: breadcrumbs;
     @include grid_padding(vac.$ds-grid-margin-xs);
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
       @include grid_padding(0);
     }
   }
 
   .sidenav {
     grid-area: sidenav;
-    background-color: var(--ds-color-container-primary-default, $ds-color-container-primary-default);
+    background-color: var(--ds-color-container-primary-default, vac.$ds-color-container-primary-default);
     @include grid_padding(vac.$ds-grid-margin-xs);
 
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
       @include grid_padding(0);
       background-color: transparent;
     }
@@ -295,7 +296,7 @@ $fixed-anchor-width: 168px;
   .main {
     grid-area: main;
     @include grid_padding(vac.$ds-grid-margin-xs);
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
     @include grid_padding(0);
     }
     * {
@@ -320,9 +321,9 @@ $fixed-anchor-width: 168px;
 /// @example html - Example HTML selector use
 ///   <element class="pageLayout-3col"> ... </element>
 /// @example scss - import file;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grids" as *;
 ///
-#{$scope}.#{$prefix}pageLayout-3col {
+#{manageScope.$scope}.#{manageScope.$prefix}pageLayout-3col {
   display: grid;
   @include grid_margin();
   @include grid_padding(0);
@@ -335,7 +336,7 @@ $fixed-anchor-width: 168px;
   @include grid_gutter(vac.$ds-grid-gutter-xl);
 
 
-  @include auro_grid-breakpoint--md {
+  @include breakpoints.auro_grid-breakpoint--md {
     @include grid_padding(vac.$ds-grid-margin-md);
     grid-template-columns: var(--fixed-nav-width, $fixed-nav-width) auto var(--fixed-anchor-width, $fixed-anchor-width);
       grid-template-areas:
@@ -343,10 +344,10 @@ $fixed-anchor-width: 168px;
       "sidenav main anchornav";
   }
 
-  @include auro_grid-breakpoint--lg {
+  @include breakpoints.auro_grid-breakpoint--lg {
     @include grid_padding(vac.$ds-grid-margin-lg);
   }
-  @include auro_grid-breakpoint--xl {
+  @include breakpoints.auro_grid-breakpoint--xl {
     @include grid_padding(vac.$ds-grid-margin-xl);
   }
 
@@ -354,7 +355,7 @@ $fixed-anchor-width: 168px;
   .breadcrumbs {
     grid-area: breadcrumbs;
     @include grid_padding(vac.$ds-grid-margin-xs);
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
       @include grid_padding(0);
     }
   }
@@ -362,12 +363,12 @@ $fixed-anchor-width: 168px;
   .sidenav {
     grid-area: sidenav;
     z-index: 1;
-    background-color: var(--ds-color-container-primary-default, $ds-color-container-primary-default);
+    background-color: var(--ds-color-container-primary-default, vac.$ds-color-container-primary-default);
     @include grid_padding(vac.$ds-grid-margin-xs);
     @include grid-stickycolumn--xs();
 
 
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
       @include grid_padding(0);
       background-color: transparent;
     }
@@ -376,7 +377,7 @@ $fixed-anchor-width: 168px;
   .main {
     grid-area: main;
     @include grid_padding(vac.$ds-grid-margin-xs);
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
     @include grid_padding(0);
     }
     * {
@@ -389,7 +390,7 @@ $fixed-anchor-width: 168px;
     @include grid_padding(vac.$ds-grid-margin-xs);
     @include grid-stickycolumn--md;
 
-    @include auro_grid-breakpoint--md {
+    @include breakpoints.auro_grid-breakpoint--md {
       @include grid_padding(0);
     }
   }

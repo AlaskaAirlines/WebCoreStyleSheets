@@ -1,7 +1,5 @@
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-
 // Alaska Type Configs
-@use "accent";
-@use "body";
-@use "display";
-@use "heading";
+@forward "accent";
+@forward "body";
+@forward "display";
+@forward "heading";

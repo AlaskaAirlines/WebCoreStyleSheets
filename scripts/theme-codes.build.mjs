@@ -27,11 +27,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // WCSS-specific overrides of the design-tokens theme code. Use this when the
-// data-attribute scoping code must differ from THEME_DEFINITIONS' `code` value.
+// data-attribute scoping code must differ from THEME_DEFINITIONS' `code` value,
 // keyed by theme directory name → the code WCSS should emit in its selectors.
-const THEME_CODE_OVERRIDES = {
-  'auro-1': 'atm'
-};
+// NOTE: overrides must not collide with another theme's native `code` (e.g. do
+// not map any theme to `atm`, which `atmos` already emits natively).
+const THEME_CODE_OVERRIDES = {};
 
 // Output partial
 const outPath = path.join(__dirname, '../src/type/mixins/_theme-codes.scss');

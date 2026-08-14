@@ -1,5 +1,9 @@
 @use 'true' as *;
+@use 'sass:list';
+@use 'sass:map';
 @use './../src/type/mixins/type-generator' as *;
+@use './../src/type/mixins/theme-codes';
+@use './../src/bundled/type/themes/all-theme-configs';
 
 // Verifies the data-attribute theme scoping selectors for type custom properties
 // (AB#1612078). The selector is built from the design-tokens theme code, so these
@@ -19,7 +23,7 @@
     );
   }
 
-  @include it('applies the WCSS code override (atm) for atmos') {
+  @include it('scopes atmos to its native design-tokens code (atm)') {
     @include assert-equal(
       wcss-type-scope-selector('atmos'),
       '[data-aag-theme="aag-theme-atm"], [data-aag-theme="aag-theme-atm-type"]'
@@ -33,5 +37,39 @@
       wcss-type-scope-selector('not-a-theme', false),
       ':root'
     );
+  }
+}
+
+// The multi-theme bundle mixin (generate-multi-theme-type-css-vars) hard-`@error`s
+// when a NON-default manifest theme has no theme code, because it would otherwise
+// fall back to `:root` and silently clobber the default theme's typography. The
+// `@error` itself aborts compilation and can't be asserted directly, so this guards
+// the invariant the error protects: every theme in the static manifest resolves to
+// a real code. Adding a theme to $wcss-all-theme-configs without a corresponding
+// code (theme-codes.build.mjs) fails here instead of at global-bundle build time.
+@include describe('multi-theme type manifest (guards the :root-fallback @error)') {
+  @include it('every theme in $wcss-all-theme-configs has a theme code') {
+    $missing: ();
+    @each $theme-name, $theme-configs in all-theme-configs.$wcss-all-theme-configs {
+      @if map.get(theme-codes.$wcss-theme-codes, $theme-name) == null {
+        $missing: list.append($missing, $theme-name);
+      }
+    }
+
+    // Empty list => no manifest theme would fall back to :root.
+    @include assert-equal($missing, ());
+  }
+
+  @include it('every theme with a code is in $wcss-all-theme-configs') {
+    $missing: ();
+    @each $theme-name, $code in theme-codes.$wcss-theme-codes {
+      @if map.get(all-theme-configs.$wcss-all-theme-configs, $theme-name) == null {
+        $missing: list.append($missing, $theme-name);
+      }
+    }
+
+    // Empty list => every coded theme has manifest configs, so no theme is
+    // silently omitted from the multi-theme bundles.
+    @include assert-equal($missing, ());
   }
 }

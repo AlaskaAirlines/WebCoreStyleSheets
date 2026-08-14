@@ -23,7 +23,7 @@
 
   $attributes: "[data-aag-theme=\"aag-theme-#{$code}\"], [data-aag-theme=\"aag-theme-#{$code}-type\"]";
 
-  @return if(sass($include-root): ":root, #{$attributes}"; else: $attributes);
+  @return if($include-root, ":root, #{$attributes}", $attributes);
 }
 
 // Emit a single theme's type custom properties under the provided selector list.
@@ -56,6 +56,14 @@
 
   @each $theme-name, $theme-configs in $themes {
     @if $theme-name != $default-theme {
+      // A non-default theme MUST resolve to an attribute selector. If it has no
+      // known code, wcss-type-scope-selector() falls back to `:root`, which would
+      // silently override the default theme's typography — hard-fail instead so
+      // manifest/theme-code drift is caught at build time.
+      @if map.get(theme-codes.$wcss-theme-codes, $theme-name) == null {
+        @error "Non-default theme '#{$theme-name}' has no theme code in $wcss-theme-codes; it would fall back to :root and override the default theme '#{$default-theme}'. Add its code (scripts/theme-codes.build.mjs) or remove it from the multi-theme manifest.";
+      }
+
       @include generate-type-css-vars($theme-configs, wcss-type-scope-selector($theme-name, false));
     }
   }
@@ -63,8 +71,8 @@
 
 // Generate theme type classes
 @mixin generate-theme-type-classes($use-fallback: false, $fallback-configs: null, $accent-use-letter-spacing: true) {
-  @include body.generate-body-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'body'); else: null));
-  @include display.generate-display-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'display'); else: null));
-  @include heading.generate-heading-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'heading'); else: null));
-  @include accent.generate-accent-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'accent'); else: null), $accent-use-letter-spacing);
+  @include body.generate-body-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'body'), null));
+  @include display.generate-display-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'display'), null));
+  @include heading.generate-heading-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'heading'), null));
+  @include accent.generate-accent-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'accent'), null), $accent-use-letter-spacing);
 }

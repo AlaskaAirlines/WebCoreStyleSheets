@@ -36,7 +36,7 @@ import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/a
 To complete the install, be sure to add the following to the `./src/styles.scss` file
 
 ```scss
-@import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
+@use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement" as *;
 ```
 
 ### Update class

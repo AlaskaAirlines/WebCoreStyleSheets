@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
+
 // Accent - Type
 $hawaiian-type-accent-config: (
   'family': v.$ds-basic-type-family-accent,

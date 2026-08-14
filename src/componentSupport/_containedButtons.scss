@@ -3,8 +3,10 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/deprecated';
-@import '../libSupport/manageScope';
+@use '../libSupport/deprecated';
+@use '../libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
+@use "../breakpoints" as breakpoints;
 
 // Wrapper class around the use of ods-hyperlink role=button and ods-button.
 
@@ -28,28 +30,28 @@
 ///   .auro .auro_containedButtons {}
 ///
 /// @example scss - import selector file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/containedButtons";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/componentSupport/containedButtons" as *;
 /// @example scss - import dependency file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
 
-#{$scope}.auro_containedButtons {
+#{manageScope.$scope}.auro_containedButtons {
   display: flex;
   flex-direction: column;
 
   > * {
-    margin-bottom: var(--ds-text-body-size-default, $ds-text-body-size-default);
+    margin-bottom: var(--ds-text-body-size-default, tokens.$ds-text-body-size-default);
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
+  @include breakpoints.auro_breakpoint($min: tokens.$ds-grid-breakpoint-md) {
     flex-direction: row;
 
     > * {
       margin-bottom: 0;
-      margin-left: var(--ds-text-body-size-default, $ds-text-body-size-default);
+      margin-left: var(--ds-text-body-size-default, tokens.$ds-text-body-size-default);
 
       &:first-child {
         margin-left: 0;

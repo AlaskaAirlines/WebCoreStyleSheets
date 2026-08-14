@@ -8,7 +8,7 @@
 // Internal support mixin, not designed for public use.
 
 // @example scss - Using mixin with default values;
-//  @import './libSupport/deprecated';
+//  @use './libSupport/deprecated' as *;
 //  @include deprecated('@mixin auro_transition. No replacement. Discontinue use.');
 
 @mixin deprecated($string) {

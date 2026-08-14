@@ -4,8 +4,11 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import '../utilityVariables/important';
-@import '../libSupport/manageScope';
+@use "sass:string";
+
+@use '../utilityVariables/important';
+@use '../libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
 
 
 // Utility layout selector mixin
@@ -15,10 +18,10 @@ $layout-properties: margin padding !default;
 $layout-extensions: Top Left Bottom Right !default;
 $layout-modifiers: (
   'none': 0,
-  '100': $ds-size-100,
-  '200': $ds-size-200,
-  '300': $ds-size-300,
-  '400': $ds-size-400,
+  '100': tokens.$ds-size-100,
+  '200': tokens.$ds-size-200,
+  '300': tokens.$ds-size-300,
+  '400': tokens.$ds-size-400,
 ) !default;
 
 /// Mixin auto-generates all available utility selectors. This mixin is NOT for general use and will produce selectors with the import of this Sass file. Output can be configured by redefining default values prior to import. See default value examples below.
@@ -34,10 +37,10 @@ $layout-modifiers: (
 ///   $layout-extensions: Top Left Bottom Right !default;
 ///   $layout-modifiers: (
 ///     "none": 0,
-///     "100": $ds-size-100,
-///     "200": $ds-size-200,
-///     "300": $ds-size-300,
-///     "400": $ds-size-400
+///     "100": tokens.$ds-size-100,
+///     "200": tokens.$ds-size-200,
+///     "300": tokens.$ds-size-300,
+///     "400": tokens.$ds-size-400
 ///   ) !default;
 /// @example scss - example default output selector
 ///   .util_paddingLeft--none {}
@@ -49,23 +52,23 @@ $layout-modifiers: (
 ///   .auro_util_paddingLeft--none {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator" as *;
 /// @example scss - import mixin file with altered output values prior to import
 ///   $layout-properties: margin;
 ///   $layout-extensions: Right;
 ///   $layout-modifiers: (
-///     "25": $ds-size-25,
-///     "50": $ds-size-50,
-///     "600": $ds-size-600,
-///     "800": $ds-size-800,
+///     "25": tokens.$ds-size-25,
+///     "50": tokens.$ds-size-50,
+///     "600": tokens.$ds-size-600,
+///     "800": tokens.$ds-size-800,
 ///   );
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator" as *;
 @mixin auro_layoutPropertiesGenerator() {
   @each $property in $layout-properties {
     @each $extension in $layout-extensions {
       @each $type, $value in $layout-modifiers {
-        #{$scope}.#{$prefix}util_#{$property}#{$extension}--#{$type} {
-          #{$property}-#{to-lower-case($extension)}: $value $important;
+        #{manageScope.$scope}.#{manageScope.$prefix}util_#{$property}#{$extension}--#{$type} {
+          #{$property}-#{string.to-lower-case($extension)}: $value important.$important;
         }
       }
     }

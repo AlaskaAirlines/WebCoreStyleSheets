@@ -1,7 +1,5 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-
-@import 'true';
-@import '../src/animation';
+@use 'true' as *;
+@use './../src/animation' as *;
 
 @include describe('auro_transition()') {
   @include it('should return standard default properties') {

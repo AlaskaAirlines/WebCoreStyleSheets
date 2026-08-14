@@ -2,14 +2,12 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-@import 'libSupport/manageScope';
-
-$focus: false;
-$focus-visible: false;
+@use 'libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
 
 // sass-lint:disable no-important
 
-#{$scope} * {
+#{manageScope.$scope} * {
 /// Global setting for the display of [focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) accessibility interaction. [Can I Use](https://caniuse.com/css-focus-visible).
 ///
 /// This is a **OPT-IN** feature, support is **NOT** added by default. Users **MUST** subscribe to Sass import described below.
@@ -25,12 +23,12 @@ $focus-visible: false;
 ///   .auro *:focus-visible {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible" as *;
 ///
 /// @example scss - it's important to import focus-visible BEFORE essentials
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/focus-visible" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
   &:focus-visible {
-    outline: 1px solid var(--ds-color-border-ui-focus-default, $ds-color-border-ui-focus-default);
+    outline: 1px solid var(--ds-color-border-ui-focus-default, SCSSVariables.$ds-color-border-ui-focus-default);
   }
 }

@@ -69,7 +69,7 @@ function createThemeConfig(theme, isLegacy) {
     destPath,
     minDestPath,
     sassOptions: {
-      loadPaths: [path.join(__dirname, '../node_modules')],
+      loadPaths: [path.join(__dirname, '../src'), path.join(__dirname, '../node_modules')],
       isTemplate,
       templateData: isTemplate ? {
         'THEME_NAME': theme.name || theme.src.split('/').pop().replace('.global.scss', '')

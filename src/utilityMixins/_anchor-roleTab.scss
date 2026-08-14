@@ -3,14 +3,15 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/deprecated';
+@use '../libSupport/deprecated';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
 
 /// Creates Sass variable or custom property output for multi-use tab shape
 /// @group utility-mixins
 /// @param {string} $style [] - Specifies the style type (sass, css)
 /// @param {string} $env [] - Specifies the style environment (component, noncomponent)
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleTab";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleTab" as *;
 /// @example scss - Set properties for Sass output that is NOT within a component
 ///   .auro_roleTab {
 ///      @include auro_anchorTab(sass, noncomponent);
@@ -27,22 +28,22 @@
   $isactive-color: null;
 
   @if $style == css {
-    $color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
-    $border-color: var(--ds-color-border-primary-default, $ds-color-border-primary-default);
-    $padding: var(--ds-size-200, $ds-size-200, $ds-size-200, $ds-size-200);
-    $hover-color: var(--ds-color-container-ui-primary-hover-default, $ds-color-container-ui-primary-hover-default);
-    $isactive-color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+    $color: var(--ds-color-text-ui-default-default, tokens.$ds-color-text-ui-default-default);
+    $border-color: var(--ds-color-border-primary-default, tokens.$ds-color-border-primary-default);
+    $padding: var(--ds-size-200, tokens.$ds-size-200, tokens.$ds-size-200, tokens.$ds-size-200);
+    $hover-color: var(--ds-color-container-ui-primary-hover-default, tokens.$ds-color-container-ui-primary-hover-default);
+    $isactive-color: var(--ds-color-text-primary-default, tokens.$ds-color-text-primary-default);
   } @else if $style == sass or $style == scss {
-    $color: $ds-color-text-ui-default-default;
-    $border-color: $ds-color-border-primary-default;
-    $padding: $ds-size-200;
-    $hover-color: $ds-color-container-ui-primary-hover-default;
-    $isactive-color: $ds-color-text-primary-default;
+    $color: tokens.$ds-color-text-ui-default-default;
+    $border-color: tokens.$ds-color-border-primary-default;
+    $padding: tokens.$ds-size-200;
+    $hover-color: tokens.$ds-color-container-ui-primary-hover-default;
+    $isactive-color: tokens.$ds-color-text-primary-default;
   } @else {
     @error 'Invalid $style option. Please use `css` or `sass`';
   }
 
-  padding: $ds-size-200;
+  padding: tokens.$ds-size-200;
 
   color: $color;
   border-width: 0 0 1px;

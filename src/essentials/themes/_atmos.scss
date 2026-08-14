@@ -1,0 +1,5 @@
+@use "../base";
+@use "../../config/atmos/base" as config;
+
+// Generate Atmos theme bundled essentials
+@include base.essentials-base(config.$alaska-base-config);

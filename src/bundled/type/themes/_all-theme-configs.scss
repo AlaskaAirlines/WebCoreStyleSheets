@@ -15,34 +15,50 @@
 // entry) or the multi-theme bundles will silently omit the new theme's vars with
 // no build-time error.
 
-@import "../../../config/alaska/type";
-@import "../../../config/alaska-classic/type";
-@import "../../../config/atmos/type";
-@import "../../../config/hawaiian/type";
+@use "../../../config/alaska/type";
+@use "../../../config/alaska-classic/type" as type2;
+@use "../../../config/atmos/type" as type3;
+@use "../../../config/hawaiian/type" as type4;
+@use "../../../config/alaska-classic/type/accent" as accent2;
+@use "../../../config/alaska-classic/type/body" as body2;
+@use "../../../config/alaska-classic/type/display" as display2;
+@use "../../../config/alaska-classic/type/heading" as heading2;
+@use "../../../config/alaska/type/accent";
+@use "../../../config/alaska/type/body";
+@use "../../../config/alaska/type/display";
+@use "../../../config/alaska/type/heading";
+@use "../../../config/atmos/type/accent" as accent3;
+@use "../../../config/atmos/type/body" as body3;
+@use "../../../config/atmos/type/display" as display3;
+@use "../../../config/atmos/type/heading" as heading3;
+@use "../../../config/hawaiian/type/accent" as accent4;
+@use "../../../config/hawaiian/type/body" as body4;
+@use "../../../config/hawaiian/type/display" as display4;
+@use "../../../config/hawaiian/type/heading" as heading4;
 
 $wcss-all-theme-configs: (
   'alaska': (
-    'body': $alaska-type-body-config,
-    'display': $alaska-type-display-config,
-    'heading': $alaska-type-heading-config,
-    'accent': $alaska-type-accent-config
+    'body': body.$alaska-type-body-config,
+    'display': display.$alaska-type-display-config,
+    'heading': heading.$alaska-type-heading-config,
+    'accent': accent.$alaska-type-accent-config
   ),
   'alaska-classic': (
-    'body': $alaska-classic-type-body-config,
-    'display': $alaska-classic-type-display-config,
-    'heading': $alaska-classic-type-heading-config,
-    'accent': $alaska-classic-type-accent-config
+    'body': body2.$alaska-classic-type-body-config,
+    'display': display2.$alaska-classic-type-display-config,
+    'heading': heading2.$alaska-classic-type-heading-config,
+    'accent': accent2.$alaska-classic-type-accent-config
   ),
   'atmos': (
-    'body': $atmos-type-body-config,
-    'display': $atmos-type-display-config,
-    'heading': $atmos-type-heading-config,
-    'accent': $atmos-type-accent-config
+    'body': body3.$atmos-type-body-config,
+    'display': display3.$atmos-type-display-config,
+    'heading': heading3.$atmos-type-heading-config,
+    'accent': accent3.$atmos-type-accent-config
   ),
   'hawaiian': (
-    'body': $hawaiian-type-body-config,
-    'display': $hawaiian-type-display-config,
-    'heading': $hawaiian-type-heading-config,
-    'accent': $hawaiian-type-accent-config
+    'body': body4.$hawaiian-type-body-config,
+    'display': display4.$hawaiian-type-display-config,
+    'heading': heading4.$hawaiian-type-heading-config,
+    'accent': accent4.$hawaiian-type-accent-config
   )
 );

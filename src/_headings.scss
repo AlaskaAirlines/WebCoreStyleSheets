@@ -5,7 +5,9 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import 'libSupport/manageScope';
+@use 'libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
+@use "breakpoints";
 
 /// Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
 ///
@@ -23,14 +25,14 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
 ///
-#{$scope}.#{$prefix}heading {
-  margin: calc(#{$ds-size-200} + #{$ds-size-150}) 0;
+#{manageScope.$scope}.#{manageScope.$prefix}heading {
+  margin: calc(#{SCSSVariables.$ds-size-200} + #{SCSSVariables.$ds-size-150}) 0;
 
-  letter-spacing: var(--ds-text-heading-default-spacing, $ds-text-heading-default-spacing);
+  letter-spacing: var(--ds-text-heading-default-spacing, SCSSVariables.$ds-text-heading-default-spacing);
 
-  font-weight: var(--ds-text-heading-default-weight, $ds-text-heading-default-weight);
+  font-weight: var(--ds-text-heading-default-weight, SCSSVariables.$ds-text-heading-default-weight);
 }
 
 /// Heading selector. Required for use with all uses of heading styles. Heading styles are not exclusive to heading tags, e.g. `<h1>`, `<h2>`, etc, but are expected to be used freely to enhance visual appearance of content structure and support any use cases needed for SEO purposes.
@@ -49,22 +51,22 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--display"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--display {
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--display {
   margin-top: 0;
 
-  font-size: var(--ds-text-heading-display-size-breakpoint-sm, $ds-text-heading-display-size-breakpoint-sm);
-  font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
-  line-height: var(--ds-text-heading-display-height-breakpoint-sm, $ds-text-heading-display-height-breakpoint-sm);
+  font-size: var(--ds-text-heading-display-size-breakpoint-sm, SCSSVariables.$ds-text-heading-display-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-display-weight, SCSSVariables.$ds-text-heading-display-weight);
+  line-height: var(--ds-text-heading-display-height-breakpoint-sm, SCSSVariables.$ds-text-heading-display-height-breakpoint-sm);
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-    font-size: var(--ds-text-heading-display-size-breakpoint-md, $ds-text-heading-display-size-breakpoint-md);
-    line-height: var(--ds-text-heading-display-height-breakpoint-md, $ds-text-heading-display-height-breakpoint-md);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-md) {
+    font-size: var(--ds-text-heading-display-size-breakpoint-md, SCSSVariables.$ds-text-heading-display-size-breakpoint-md);
+    line-height: var(--ds-text-heading-display-height-breakpoint-md, SCSSVariables.$ds-text-heading-display-height-breakpoint-md);
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
-    font-size: var(--ds-text-heading-display-size-breakpoint-lg, $ds-text-heading-display-size-breakpoint-lg);
-    line-height: var(--ds-text-heading-display-height-breakpoint-lg, $ds-text-heading-display-height-breakpoint-lg);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-lg) {
+    font-size: var(--ds-text-heading-display-size-breakpoint-lg, SCSSVariables.$ds-text-heading-display-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-display-height-breakpoint-lg, SCSSVariables.$ds-text-heading-display-height-breakpoint-lg);
   }
 }
 
@@ -84,20 +86,20 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--800"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--800 {
-  font-size: var(--ds-text-heading-800-size-breakpoint-sm, $ds-text-heading-800-size-breakpoint-sm);
-  font-weight: var(--ds-text-heading-800-weight, $ds-text-heading-800-weight);
-  line-height: var(--ds-text-heading-800-height-breakpoint-sm, $ds-text-heading-800-height-breakpoint-sm);
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--800 {
+  font-size: var(--ds-text-heading-800-size-breakpoint-sm, SCSSVariables.$ds-text-heading-800-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-800-weight, SCSSVariables.$ds-text-heading-800-weight);
+  line-height: var(--ds-text-heading-800-height-breakpoint-sm, SCSSVariables.$ds-text-heading-800-height-breakpoint-sm);
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-    font-size: var(--ds-text-heading-800-size-breakpoint-md, $ds-text-heading-800-size-breakpoint-md);
-    line-height: var(--ds-text-heading-800-height-breakpoint-md, $ds-text-heading-800-height-breakpoint-md);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-md) {
+    font-size: var(--ds-text-heading-800-size-breakpoint-md, SCSSVariables.$ds-text-heading-800-size-breakpoint-md);
+    line-height: var(--ds-text-heading-800-height-breakpoint-md, SCSSVariables.$ds-text-heading-800-height-breakpoint-md);
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
-    font-size: var(--ds-text-heading-800-size-breakpoint-lg, $ds-text-heading-800-size-breakpoint-lg);
-    line-height: var(--ds-text-heading-800-height-breakpoint-lg, $ds-text-heading-800-height-breakpoint-lg);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-lg) {
+    font-size: var(--ds-text-heading-800-size-breakpoint-lg, SCSSVariables.$ds-text-heading-800-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-800-height-breakpoint-lg, SCSSVariables.$ds-text-heading-800-height-breakpoint-lg);
   }
 }
 
@@ -117,20 +119,20 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--700"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--700 {
-  font-size: var(--ds-text-heading-700-size-breakpoint-sm, $ds-text-heading-700-size-breakpoint-sm);
-  font-weight: var(--ds-text-heading-700-weight, $ds-text-heading-700-weight);
-  line-height: var(--ds-text-heading-700-height-breakpoint-sm, $ds-text-heading-700-height-breakpoint-sm);
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--700 {
+  font-size: var(--ds-text-heading-700-size-breakpoint-sm, SCSSVariables.$ds-text-heading-700-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-700-weight, SCSSVariables.$ds-text-heading-700-weight);
+  line-height: var(--ds-text-heading-700-height-breakpoint-sm, SCSSVariables.$ds-text-heading-700-height-breakpoint-sm);
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-    font-size: var(--ds-text-heading-700-size-breakpoint-md, $ds-text-heading-700-size-breakpoint-md);
-    line-height: var(--ds-text-heading-700-height-breakpoint-md, $ds-text-heading-700-height-breakpoint-md);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-md) {
+    font-size: var(--ds-text-heading-700-size-breakpoint-md, SCSSVariables.$ds-text-heading-700-size-breakpoint-md);
+    line-height: var(--ds-text-heading-700-height-breakpoint-md, SCSSVariables.$ds-text-heading-700-height-breakpoint-md);
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
-    font-size: var(--ds-text-heading-700-size-breakpoint-lg, $ds-text-heading-700-size-breakpoint-lg);
-    line-height: var(--ds-text-heading-700-height-breakpoint-lg, $ds-text-heading-700-height-breakpoint-lg);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-lg) {
+    font-size: var(--ds-text-heading-700-size-breakpoint-lg, SCSSVariables.$ds-text-heading-700-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-700-height-breakpoint-lg, SCSSVariables.$ds-text-heading-700-height-breakpoint-lg);
   }
 }
 
@@ -150,22 +152,22 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--600"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--600 {
-  margin: $ds-size-200 0;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--600 {
+  margin: SCSSVariables.$ds-size-200 0;
 
-  font-size: var(--ds-text-heading-600-size-breakpoint-sm, $ds-text-heading-600-size-breakpoint-sm);
-  font-weight: var(--ds-text-heading-600-weight, $ds-text-heading-600-weight);
-  line-height: var(--ds-text-heading-600-height-breakpoint-sm, $ds-text-heading-600-height-breakpoint-sm);
+  font-size: var(--ds-text-heading-600-size-breakpoint-sm, SCSSVariables.$ds-text-heading-600-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-600-weight, SCSSVariables.$ds-text-heading-600-weight);
+  line-height: var(--ds-text-heading-600-height-breakpoint-sm, SCSSVariables.$ds-text-heading-600-height-breakpoint-sm);
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-    font-size: var(--ds-text-heading-600-size-breakpoint-md, $ds-text-heading-600-size-breakpoint-md);
-    line-height: var(--ds-text-heading-600-height-breakpoint-md, $ds-text-heading-600-height-breakpoint-md);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-md) {
+    font-size: var(--ds-text-heading-600-size-breakpoint-md, SCSSVariables.$ds-text-heading-600-size-breakpoint-md);
+    line-height: var(--ds-text-heading-600-height-breakpoint-md, SCSSVariables.$ds-text-heading-600-height-breakpoint-md);
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
-    font-size: var(--ds-text-heading-600-size-breakpoint-lg, $ds-text-heading-600-size-breakpoint-lg);
-    line-height: var(--ds-text-heading-600-height-breakpoint-lg, $ds-text-heading-600-height-breakpoint-lg);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-lg) {
+    font-size: var(--ds-text-heading-600-size-breakpoint-lg, SCSSVariables.$ds-text-heading-600-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-600-height-breakpoint-lg, SCSSVariables.$ds-text-heading-600-height-breakpoint-lg);
   }
 }
 
@@ -185,22 +187,22 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--500"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--500 {
-  margin: $ds-size-200 0;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--500 {
+  margin: SCSSVariables.$ds-size-200 0;
 
-  font-size: var(--ds-text-heading-500-size-breakpoint-sm, $ds-text-heading-500-size-breakpoint-sm);
-  font-weight: var(--ds-text-heading-500-weight, $ds-text-heading-500-weight);
-  line-height: var(--ds-text-heading-500-height-breakpoint-sm, $ds-text-heading-500-height-breakpoint-sm);
+  font-size: var(--ds-text-heading-500-size-breakpoint-sm, SCSSVariables.$ds-text-heading-500-size-breakpoint-sm);
+  font-weight: var(--ds-text-heading-500-weight, SCSSVariables.$ds-text-heading-500-weight);
+  line-height: var(--ds-text-heading-500-height-breakpoint-sm, SCSSVariables.$ds-text-heading-500-height-breakpoint-sm);
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-    font-size: var(--ds-text-heading-500-size-breakpoint-md, $ds-text-heading-500-size-breakpoint-md);
-    line-height: var(--ds-text-heading-500-height-breakpoint-md, $ds-text-heading-500-height-breakpoint-md);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-md) {
+    font-size: var(--ds-text-heading-500-size-breakpoint-md, SCSSVariables.$ds-text-heading-500-size-breakpoint-md);
+    line-height: var(--ds-text-heading-500-height-breakpoint-md, SCSSVariables.$ds-text-heading-500-height-breakpoint-md);
   }
 
-  @include auro_breakpoint($min: $ds-grid-breakpoint-lg) {
-    font-size: var(--ds-text-heading-500-size-breakpoint-lg, $ds-text-heading-500-size-breakpoint-lg);
-    line-height: var(--ds-text-heading-500-height-breakpoint-lg, $ds-text-heading-500-height-breakpoint-lg);
+  @include breakpoints.auro_breakpoint($min: SCSSVariables.$ds-grid-breakpoint-lg) {
+    font-size: var(--ds-text-heading-500-size-breakpoint-lg, SCSSVariables.$ds-text-heading-500-size-breakpoint-lg);
+    line-height: var(--ds-text-heading-500-height-breakpoint-lg, SCSSVariables.$ds-text-heading-500-height-breakpoint-lg);
   }
 }
 
@@ -220,13 +222,13 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--400"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--400 {
-  margin: $ds-size-150 0;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--400 {
+  margin: SCSSVariables.$ds-size-150 0;
 
-  font-size: var(--ds-text-heading-400-size, $ds-text-heading-400-size);
-  font-weight: var(--ds-text-heading-400-weight, $ds-text-heading-400-weight);
-  line-height: var(--ds-text-heading-400-height, $ds-text-heading-400-height);
+  font-size: var(--ds-text-heading-400-size, SCSSVariables.$ds-text-heading-400-size);
+  font-weight: var(--ds-text-heading-400-weight, SCSSVariables.$ds-text-heading-400-weight);
+  line-height: var(--ds-text-heading-400-height, SCSSVariables.$ds-text-heading-400-height);
 }
 
 /// Main title, hero copy, interactive copy. To summarize screen content as a Primary Heading or direct attention. Used in conjunction with `.heading` selector
@@ -245,11 +247,11 @@
 /// @example html - Example HTML selector use
 ///   <element class="heading heading--300"> ... </element>
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings";
-#{$scope}.#{$prefix}heading--300 {
-  margin: $ds-size-150 0;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/headings" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}heading--300 {
+  margin: SCSSVariables.$ds-size-150 0;
 
-  font-size: var(--ds-text-heading-300-size, $ds-text-heading-300-size);
-  font-weight: var(--ds-text-heading-300-weight, $ds-text-heading-300-weight);
-  line-height: var(--ds-text-heading-300-height, $ds-text-heading-300-height);
+  font-size: var(--ds-text-heading-300-size, SCSSVariables.$ds-text-heading-300-size);
+  font-weight: var(--ds-text-heading-300-weight, SCSSVariables.$ds-text-heading-300-weight);
+  line-height: var(--ds-text-heading-300-height, SCSSVariables.$ds-text-heading-300-height);
 }

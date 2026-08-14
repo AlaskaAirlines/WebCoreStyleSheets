@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/atmos/SCSSVariables--atmos" as v;
+
 // Body - Type
 $atmos-type-body-config: (
   'family': v.$ds-basic-type-family-body,

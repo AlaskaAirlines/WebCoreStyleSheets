@@ -1,5 +1,5 @@
-@import 'true';
-@import './src/utilityFunctions/contains';
+@use 'true' as *;
+@use './../src/utilityFunctions/contains' as *;
 
 @include describe('auro_contains()') {
   @include it('returns true if the asked var is in the list') {

@@ -1,24 +1,24 @@
-@import "../functions/calculate-fluid-clamp";
-@import '../functions/type-property-check';
-@import '../../utilityFunctions/map-deep-get';
-@import '../../utilityVariables/cssNamespace';
+@use "../functions/calculate-fluid-clamp";
+@use '../functions/type-property-check';
+@use '../../utilityFunctions/map-deep-get';
+@use '../../utilityVariables/cssNamespace';
 
 // Generate CSS custom properties for fluid type
 @mixin generate-fluid-type-css-vars($type, $sizes, $theme-config) {
   @each $size in $sizes {
     // Set base properties
-    --#{$css-ns}-#{$type}-#{$size}-family: #{type-property-check($theme-config, $size, 'family')};
-    --#{$css-ns}-#{$type}-#{$size}-family-fallback: #{type-property-check($theme-config, $size, 'familyFallback')};
-    --#{$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check($theme-config, $size, 'letter-spacing')};
-    --#{$css-ns}-#{$type}-#{$size}-weight: #{type-property-check($theme-config, $size, 'weight')};
-    --#{$css-ns}-#{$type}-#{$size}-line-height: #{type-property-check($theme-config, $size, 'line-height')};
+    --#{cssNamespace.$css-ns}-#{$type}-#{$size}-family: #{type-property-check.type-property-check($theme-config, $size, 'family')};
+    --#{cssNamespace.$css-ns}-#{$type}-#{$size}-family-fallback: #{type-property-check.type-property-check($theme-config, $size, 'familyFallback')};
+    --#{cssNamespace.$css-ns}-#{$type}-#{$size}-letter-spacing: #{type-property-check.type-property-check($theme-config, $size, 'letter-spacing')};
+    --#{cssNamespace.$css-ns}-#{$type}-#{$size}-weight: #{type-property-check.type-property-check($theme-config, $size, 'weight')};
+    --#{cssNamespace.$css-ns}-#{$type}-#{$size}-line-height: #{type-property-check.type-property-check($theme-config, $size, 'line-height')};
 
     // Get min, preferred and max values from the config
-    $min-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'min');
-    $preferred-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'preferred');
-    $max-size: auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'max');
+    $min-size: map-deep-get.auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'min');
+    $preferred-size: map-deep-get.auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'preferred');
+    $max-size: map-deep-get.auro_map-deep-get($theme-config, 'sizes', $size, 'font-size', 'max');
     
-    --#{$css-ns}-#{$type}-#{$size}-font-size: #{calculate-fluid-clamp($min-size, $preferred-size, $max-size)};
+    --#{cssNamespace.$css-ns}-#{$type}-#{$size}-font-size: #{calculate-fluid-clamp.calculate-fluid-clamp($min-size, $preferred-size, $max-size)};
   }
 }
 
@@ -28,26 +28,26 @@
     .#{$type}-#{$size} {
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
-        font-family: var(--#{$css-ns}-#{$type}-#{$size}-family, #{type-property-check($fallback-config, $size, 'family')}), var(--#{$css-ns}-#{$type}-#{$size}-family-fallback, #{type-property-check($fallback-config, $size, 'familyFallback')});
-        font-weight: var(--#{$css-ns}-#{$type}-#{$size}-weight, #{type-property-check($fallback-config, $size, 'weight')});
-        line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height, #{type-property-check($fallback-config, $size, 'line-height')});
-        font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size, #{calculate-fluid-clamp(
-          auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'min'),
-          auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'preferred'),
-          auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'max')
+        font-family: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-family, #{type-property-check.type-property-check($fallback-config, $size, 'family')}), var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-family-fallback, #{type-property-check.type-property-check($fallback-config, $size, 'familyFallback')});
+        font-weight: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-weight, #{type-property-check.type-property-check($fallback-config, $size, 'weight')});
+        line-height: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-line-height, #{type-property-check.type-property-check($fallback-config, $size, 'line-height')});
+        font-size: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-font-size, #{calculate-fluid-clamp.calculate-fluid-clamp(
+          map-deep-get.auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'min'),
+          map-deep-get.auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'preferred'),
+          map-deep-get.auro_map-deep-get($fallback-config, 'sizes', $size, 'font-size', 'max')
         )});
 
         @if $use-letter-spacing {
-          letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing, #{type-property-check($fallback-config, $size, 'letter-spacing')});
+          letter-spacing: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-letter-spacing, #{type-property-check.type-property-check($fallback-config, $size, 'letter-spacing')});
         }
       } @else {
-        font-family: var(--#{$css-ns}-#{$type}-#{$size}-family), var(--#{$css-ns}-#{$type}-#{$size}-family-fallback);
-        font-weight: var(--#{$css-ns}-#{$type}-#{$size}-weight);
-        line-height: var(--#{$css-ns}-#{$type}-#{$size}-line-height);
-        font-size: var(--#{$css-ns}-#{$type}-#{$size}-font-size);
+        font-family: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-family), var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-family-fallback);
+        font-weight: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-weight);
+        line-height: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-line-height);
+        font-size: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-font-size);
 
         @if $use-letter-spacing {
-          letter-spacing: var(--#{$css-ns}-#{$type}-#{$size}-letter-spacing);
+          letter-spacing: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-letter-spacing);
         }
       }
       @content;

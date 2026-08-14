@@ -1,7 +1,7 @@
 @use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
 
 // Hawaiian Type Configs
-@import "accent";
-@import "body";
-@import "display";
-@import "heading";
+@use "accent";
+@use "body";
+@use "display";
+@use "heading";

@@ -1,17 +1,16 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-
-@import 'true';
-
-$layout-properties: margin;
-$layout-extensions: Right;
-$layout-modifiers: (
-  'none': 0,
-  '100': $ds-size-100,
-  '200': $ds-size-200,
-  '300': $ds-size-300,
-  '400': $ds-size-400,
+@use 'true' as *;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@use './../src/utilityMixins/layoutPropertiesGenerator' as * with (
+  $layout-properties: margin,
+  $layout-extensions: Right,
+  $layout-modifiers: (
+    'none': 0,
+    '100': vac.$ds-size-100,
+    '200': vac.$ds-size-200,
+    '300': vac.$ds-size-300,
+    '400': vac.$ds-size-400,
+  )
 );
-@import '../src/utilityMixins/layoutPropertiesGenerator';
 
 @include describe('auro_layoutPropertiesGenerator()') {
   @include it('should return a series of selectors matching the config spec ') {

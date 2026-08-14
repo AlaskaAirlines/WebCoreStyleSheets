@@ -11,7 +11,7 @@
 /// @example scss - pass string into function
 ///   ods-contains($options, $value)
 /// @example scss - import dependency
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityFunctions/contains";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityFunctions/contains" as *;
 
 @function auro_contains($list, $var) {
   $eval: false;

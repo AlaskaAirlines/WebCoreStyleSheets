@@ -1,11 +1,8 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-@import "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
-
-@import 'true';
-
-$ds-spacing-types: inline;
-$ds-spacing-options: 25, 1000;
-@import "./src/utilityMixins/spacingUtility";
+@use 'true' as *;
+@use './../src/utilityMixins/spacingUtility' as * with (
+  $ds-spacing-types: inline,
+  $ds-spacing-options: (25, 1000)
+);
 
 @include describe('auro_spacing()') {
   @include it('should return a series of selectors matching the config spec ') {

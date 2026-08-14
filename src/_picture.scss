@@ -2,7 +2,7 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-@import 'libSupport/manageScope';
+@use 'libSupport/manageScope';
 
 $focus: null !default;
 
@@ -22,9 +22,9 @@ $focus: null !default;
 ///   .auro_picture img {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/picture";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/picture" as *;
 ///
-#{$sym}#{$prefix}picture#{$scope} {
+#{manageScope.$sym}#{manageScope.$prefix}picture#{manageScope.$scope} {
   img {
     display: block;
   }

@@ -1,34 +1,35 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as tokens;
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
-@import '../../utilityMixins/fontFace';
-@import '../../utilityMixins/fontFaceI18n';
-@import '../../utilityVariables/fontUtils';
+@use '../../utilityMixins/fontFace';
+@use '../../utilityMixins/fontFaceI18n';
+@use '../../utilityVariables/fontUtils';
 
 // Hawaiian (HA) theme EN fonts
-@include font-face($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, 'ChronicleDisplay-Semibold', $unicode-range-en);
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-regular, 'SlatePro-Regular', $unicode-range-en);
-@include font-face($ds-basic-type-brand-family-primary, $ds-type-weight-medium, 'SlatePro-Medium', $unicode-range-en);
+@include fontFace.font-face(tokens.$ds-basic-type-brand-family-secondary, tokens.$ds-type-weight-semibold, 'ChronicleDisplay-Semibold', fontUtils.$unicode-range-en);
+@include fontFace.font-face(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-regular, 'SlatePro-Regular', fontUtils.$unicode-range-en);
+@include fontFace.font-face(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-medium, 'SlatePro-Medium', fontUtils.$unicode-range-en);
 
 // ---------------------------------------------------------------------
 // i18n font remapping
 // Remaps existing English font-family + weight pairs to appropriate i18n weights.
-@if $enable-i18n-fonts == true {
+@if fontUtils.$enable-i18n-fonts == true {
 	// Japanese (JP)
 	// Chronicle Display 600 -> Noto Sans JP 600
-	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, $i18n-font-jp-600-path, $unicode-range-jp);
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-secondary, tokens.$ds-type-weight-semibold, fontUtils.$i18n-font-jp-600-path, fontUtils.$unicode-range-jp);
 	// Slate Pro 400 -> Noto Sans JP 400
-	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-regular, $i18n-font-jp-400-path, $unicode-range-jp);
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-regular, fontUtils.$i18n-font-jp-400-path, fontUtils.$unicode-range-jp);
 	// Slate Pro 500 -> Noto Sans JP 500
-	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-jp-500-path, $unicode-range-jp);
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-medium, fontUtils.$i18n-font-jp-500-path, fontUtils.$unicode-range-jp);
 
 	// Korean (KR)
 	// Chronicle Display 600 -> Noto Sans KR 600
-	@include font-face-i18n($ds-basic-type-brand-family-secondary, $ds-type-weight-semibold, $i18n-font-kr-600-path, $unicode-range-kr);
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-secondary, tokens.$ds-type-weight-semibold, fontUtils.$i18n-font-kr-600-path, fontUtils.$unicode-range-kr);
 	// Slate Pro 400 -> Noto Sans KR 400
-	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-regular, $i18n-font-kr-400-path, $unicode-range-kr);
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-regular, fontUtils.$i18n-font-kr-400-path, fontUtils.$unicode-range-kr);
 	// Slate Pro 500 -> Noto Sans KR 500
-	@include font-face-i18n($ds-basic-type-brand-family-primary, $ds-type-weight-medium, $i18n-font-kr-500-path, $unicode-range-kr);
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-medium, fontUtils.$i18n-font-kr-500-path, fontUtils.$unicode-range-kr);
 }

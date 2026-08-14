@@ -5,13 +5,12 @@
 
 /// Variables to determine if `$scope` is to be displayed.
 ///
-/// Set `true` value prior to importing file if scope selector output file is wanted
+/// Configure `$scope: true` via `@use ... with (...)` when a scoped selector output is wanted.
 ///
 /// @group scope-prefix
 /// @type boolean
-/// @example scss - import file
-///   $scope: true;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/ ...
+/// @example scss - configure and load
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/libSupport/manageScope" with ($scope: true);
 /// @example scss - return example
 ///   .auro [selector] { ... }
 
@@ -19,13 +18,12 @@ $scope: null !default;
 
 /// Variables to determine if $prefix is to be displayed
 ///
-/// Set `true` value prior to importing file if prefix selector output file is wanted
+/// Configure `$prefix: true` via `@use ... with (...)` when a prefixed selector output is wanted.
 ///
 /// @group scope-prefix
 /// @type boolean
-/// @example scss - import file
-///   $prefix: true;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/ ...
+/// @example scss - configure and load
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/libSupport/manageScope" with ($prefix: true);
 /// @example scss - return example
 ///   .auro_[selector] { ... }
 

@@ -5,6 +5,8 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-// Import all essentials
-@import 'base';
-@import './legacy/auro-classic';
+// Forward all essentials (re-exports members and emits the Auro Classic essentials CSS).
+// `base` also declares `$paragraph`; hide it so the configurable `$paragraph` flag
+// resolves to the Auro Classic essentials copy that actually guards the `p` selector.
+@forward 'base' hide $paragraph;
+@forward 'legacy/auro-classic';

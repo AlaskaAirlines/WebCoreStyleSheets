@@ -9,8 +9,9 @@
 
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
-@import '../../libSupport/manageScope';
-@import '../../core';
+@use '../../libSupport/manageScope';
+@use '../../core';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
 
 /// Baseline HTML setting to establish box-model and default font size.
 ///
@@ -26,12 +27,12 @@
 ///   .auro_html {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
-#{$sym}#{$prefix}html#{$scope} {
+#{manageScope.$sym}#{manageScope.$prefix}html#{manageScope.$scope} {
   box-sizing: border-box;
 
-  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
+  font-size: var(--ds-text-body-size-default, SCSSVariables.$ds-text-body-size-default);
 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -54,19 +55,19 @@
 ///   .auro_baseType {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
-#{$scope}#{$sym}#{$prefix}body,
-#{$scope}.#{$prefix}baseType {
+#{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}body,
+#{manageScope.$scope}.#{manageScope.$prefix}baseType {
   margin: 0;
 
-  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+  color: var(--ds-color-text-primary-default, SCSSVariables.$ds-color-text-primary-default);
 
-  font-family: var(--ds-font-family-default, $ds-font-family-default);
+  font-family: var(--ds-font-family-default, SCSSVariables.$ds-font-family-default);
   font-variant-ligatures: no-common-ligatures;
-  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
-  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
-  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
+  font-size: var(--ds-text-body-size-default, SCSSVariables.$ds-text-body-size-default);
+  font-weight: var(--ds-text-body-default-weight, SCSSVariables.$ds-text-body-default-weight);
+  line-height: var(--ds-text-body-height-default, SCSSVariables.$ds-text-body-height-default);
 }
 
 /// Sets standard `margin` for all paragraph style content
@@ -88,14 +89,14 @@
 ///   .auro_baseParagraph .auro_hyperlink {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
-#{$scope}.#{$prefix}baseParagraph {
+#{manageScope.$scope}.#{manageScope.$prefix}baseParagraph {
   margin: 0 0 1rem;
 
-  line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
+  line-height: var(--ds-text-body-height-default, SCSSVariables.$ds-text-body-height-default);
 
-  .#{$prefix}hyperlink {
+  .#{manageScope.$prefix}hyperlink {
     text-decoration: underline;
   }
 }
@@ -122,8 +123,8 @@
 ///   .auro_hyperlink--darktheme {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
-#{$scope}.#{$prefix}hyperlink {
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}hyperlink {
   transition: all .15s ease;
   text-decoration: underline;
   color: var(--ds-advanced-color-hyperlink-text);
@@ -134,12 +135,12 @@
   outline-color: transparent;
 
   &:visited {
-    color: var(--ds-advanced-color-hyperlink-text, $ds-color-text-ui-default-default);
+    color: var(--ds-advanced-color-hyperlink-text, SCSSVariables.$ds-color-text-ui-default-default);
   }
 
   &:focus-visible {
-    outline-color: var(--ds-advanced-color-state-focused, $ds-color-border-ui-focus-default);
-    outline-offset: var(--ds-size-25, $ds-size-25);
+    outline-color: var(--ds-advanced-color-state-focused, SCSSVariables.$ds-color-border-ui-focus-default);
+    outline-offset: var(--ds-size-25, SCSSVariables.$ds-size-25);
   }
 
   @media (hover: hover) {
@@ -150,8 +151,8 @@
   }
 
   &:focus-visible {
-    outline-color: var(--ds-color-border-ui-focus-default, $ds-color-border-ui-focus-default);
-    outline-offset: var(--ds-size-25, $ds-size-25);
+    outline-color: var(--ds-color-border-ui-focus-default, SCSSVariables.$ds-color-border-ui-focus-default);
+    outline-offset: var(--ds-size-25, SCSSVariables.$ds-size-25);
   }
 
   &--nav {
@@ -165,7 +166,7 @@
     }
 
     &:focus-visible {
-      outline-width: var(--ds-size-50, $ds-size-50);
+      outline-width: var(--ds-size-50, SCSSVariables.$ds-size-50);
       outline-offset: unset;
     }
   }
@@ -200,9 +201,9 @@
 ///   .auro_img {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
-#{$scope}#{$sym}#{$prefix}img {
+#{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}img {
   max-width: 100%;
 }
 
@@ -223,12 +224,12 @@
 ///   .auro_type--small {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
-#{$scope}#{$sym}#{$prefix}small,
-#{$scope}.#{$prefix}type--small {
-  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
-  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
+#{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}small,
+#{manageScope.$scope}.#{manageScope.$prefix}type--small {
+  font-size: var(--ds-text-body-size-xs, SCSSVariables.$ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, SCSSVariables.$ds-text-body-height-xs);
 }
 
 $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-in-block */
@@ -248,18 +249,18 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///   .auro_p {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
 /// @example scss - import file with `$paragraph` flag set to true
 ///   $paragraph: true;
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
 
-#{$scope}#{$sym}#{$prefix}p {
+#{manageScope.$scope}#{manageScope.$sym}#{manageScope.$prefix}p {
   @if $paragraph {
     margin: 0 0 1rem;
 
-    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default);
+    line-height: var(--ds-text-body-height-default, SCSSVariables.$ds-text-body-height-default);
   }
 }
 
@@ -277,12 +278,12 @@ $paragraph: null !default; /* stylelint-disable-line scss/dollar-variable-first-
 ///   .auro_fineprint {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/essentials" as *;
 ///
 
-#{$scope}.#{$prefix}fineprint {
-  font-family: var(--ds-font-family-default, $ds-font-family-default);
-  font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
-  line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs);
-  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+#{manageScope.$scope}.#{manageScope.$prefix}fineprint {
+  font-family: var(--ds-font-family-default, SCSSVariables.$ds-font-family-default);
+  font-size: var(--ds-text-body-size-xs, SCSSVariables.$ds-text-body-size-xs);
+  line-height: var(--ds-text-body-height-xs, SCSSVariables.$ds-text-body-height-xs);
+  color: var(--ds-color-text-secondary-default, SCSSVariables.$ds-color-text-secondary-default);
 }

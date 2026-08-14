@@ -2,7 +2,8 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-@import 'libSupport/manageScope';
+@use 'libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
 
 $focus: null !default;
 
@@ -20,17 +21,17 @@ $focus: null !default;
 ///   .auro_blockquote {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/blockquote";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/blockquote" as *;
 ///
-#{$sym}#{$prefix}#{$scope}blockquote {
+#{manageScope.$sym}#{manageScope.$prefix}#{manageScope.$scope}blockquote {
   margin-left: 0;
-  border-left: 1px solid var(--ds-color-border-ui-active-default, $ds-color-border-ui-active-default);
-  padding: var(--ds-size-100, $ds-size-100);
-  padding-left: var(--ds-size-400, $ds-size-400);
-  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+  border-left: 1px solid var(--ds-color-border-ui-active-default, SCSSVariables.$ds-color-border-ui-active-default);
+  padding: var(--ds-size-100, SCSSVariables.$ds-size-100);
+  padding-left: var(--ds-size-400, SCSSVariables.$ds-size-400);
+  color: var(--ds-color-text-secondary-default, SCSSVariables.$ds-color-text-secondary-default);
   font-weight: 200;
-  margin-top: var(--ds-size-300, $ds-size-300);
-  margin-bottom: var(--ds-size-300, $ds-size-300);
+  margin-top: var(--ds-size-300, SCSSVariables.$ds-size-300);
+  margin-bottom: var(--ds-size-300, SCSSVariables.$ds-size-300);
 
   p {
     line-height: 2;
@@ -41,6 +42,6 @@ $focus: null !default;
   }
 
   & + p {
-    margin-bottom: var(--ds-size-400, $ds-size-400);
+    margin-bottom: var(--ds-size-400, SCSSVariables.$ds-size-400);
   }
 }

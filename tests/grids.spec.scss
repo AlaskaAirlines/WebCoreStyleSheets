@@ -1,8 +1,6 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-@import "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
-@import 'true';
-@import "./src/breakpoints";
-@import "./src/grids";
+@use 'true' as *;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as *;
+@use './../src/grids' as *;
 
 @include describe('grid-stickycolumn--md()') {
   @include it('should return sticky styling for tablet and larger devices') {

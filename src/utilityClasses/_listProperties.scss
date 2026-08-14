@@ -3,8 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/manageScope';
-@import '../utilityVariables/important';
+@use '../libSupport/manageScope';
+@use '../utilityVariables/important';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
 
 
 /// Utility class to display unordered lists without bulleting
@@ -23,8 +24,8 @@
 ///   .auro_util_listUnstyled {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
-#{$scope}.#{$prefix}util_listUnstyled {
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_listUnstyled {
   padding-left: 0;
   list-style: none;
 }
@@ -46,14 +47,14 @@
 ///   .auro_util_listNoIndent {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
-#{$scope}.#{$prefix}util_listNoIndent {
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_listNoIndent {
   padding-left: 0; // CHANGE: to 0
   list-style: none;
   li::before {
     content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: var(--ds-size-300, $ds-size-300);
+    width: var(--ds-size-300, tokens.$ds-size-300);
   }
 }
 
@@ -74,15 +75,15 @@
 ///   .auro_util_listIndented {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
-#{$scope}.#{$prefix}util_listIndented {
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_listIndented {
   padding-left: 0;
   list-style: none;
-  margin-left: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
+  margin-left: calc(var(--ds-size-300, tokens.$ds-size-300) + var(--ds-size-50, tokens.$ds-size-50));
   li::before {
     content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='3' cy='5' r='2.75'></circle></svg>");
     display: inline-block;
-    width: var(--ds-size-300, $ds-size-300);
+    width: var(--ds-size-300, tokens.$ds-size-300);
   }
 }
 
@@ -103,15 +104,15 @@
 ///   .auro_util_listNoIndentOrdered {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
-#{$scope}.#{$prefix}util_listNoIndentOrdered {
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_listNoIndentOrdered {
   padding-left: 0;
   list-style: none;
   counter-reset: li-counter;
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: var(--ds-size-300, $ds-size-300);
+    width: var(--ds-size-300, tokens.$ds-size-300);
     display: inline-block;
   }
 }
@@ -133,15 +134,15 @@
 ///   .auro_util_listIndentedOrdered {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
-#{$scope}.#{$prefix}util_listIndentedOrdered {
-  padding-left: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_listIndentedOrdered {
+  padding-left: calc(var(--ds-size-300, tokens.$ds-size-300) + var(--ds-size-50, tokens.$ds-size-50));
   list-style: none;
   counter-reset: li-counter;
   li::before {
     counter-increment: li-counter;
     content: counter(li-counter) ".";
-    width: var(--ds-size-300, $ds-size-300);
+    width: var(--ds-size-300, tokens.$ds-size-300);
     display: inline-block;
   }
 }
@@ -163,14 +164,14 @@
 ///   .auro_util_listAuroIcon {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties";
-#{$scope}.#{$prefix}util_listAuroIcon {
-  padding-left: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/listProperties" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_listAuroIcon {
+  padding-left: calc(var(--ds-size-300, tokens.$ds-size-300) + var(--ds-size-50, tokens.$ds-size-50));
   list-style: none;
   li {
-    text-indent: calc(var(--ds-size-200, $ds-size-200) * -1);
+    text-indent: calc(var(--ds-size-200, tokens.$ds-size-200) * -1);
   }
   ds-icon {
-    width: var(--ds-size-200, $ds-size-200);
+    width: var(--ds-size-200, tokens.$ds-size-200);
   }
 }

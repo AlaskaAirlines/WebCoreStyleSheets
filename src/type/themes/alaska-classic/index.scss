@@ -1,10 +1,14 @@
-@import "../../mixins/theme-generator";
+@use "../../mixins/theme-generator";
+@use "../../../config/alaska-classic/type/body" as body;
+@use "../../../config/alaska-classic/type/display" as display;
+@use "../../../config/alaska-classic/type/heading" as heading;
+@use "../../../config/alaska-classic/type/accent" as accent;
 
 // Generate Alaska Classic theme
-@include generate-theme(
+@include theme-generator.generate-theme(
   'alaska-classic',
-  $alaska-classic-type-body-config,
-  $alaska-classic-type-display-config,
-  $alaska-classic-type-heading-config,
-  $alaska-classic-type-accent-config
+  body.$alaska-classic-type-body-config,
+  display.$alaska-classic-type-display-config,
+  heading.$alaska-classic-type-heading-config,
+  accent.$alaska-classic-type-accent-config
 );

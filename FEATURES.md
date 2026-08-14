@@ -4,7 +4,7 @@ For the full API, please see the [WCSS docs site](https://alaskaairlines.github.
 
 ## Scoping
 
-Be sure to see the [prefixing and scoping API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#scope-prefix) in the documentation site.
+Be sure to see the [prefixing and scoping API](https://alaskaairlines.github.io/WebCoreStyleSheets/#scope-prefix) in the documentation site.
 
 When supporting legacy UIs there may be issues with importing a Sass file and its selectors. Under the Sass module system, configure the `$scope` value via `@use ... with (...)` on the `manageScope` module. This must be done **before** loading any selectors that support this setting (the first `@use` of `manageScope` is the one that carries configuration).
 
@@ -83,7 +83,7 @@ The output with `$important: true`
 }
 ```
 
-See !important [spec](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-variable-important)
+See !important [spec](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-variable-important)
 
 
 ## layoutPropertiesGenerator
@@ -94,7 +94,7 @@ Importing this file will auto-generates all available utility selectors. Output 
 none, xs, md, lg, xl
 ```
 
-See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator)
+See [API](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-layout-mixin-auro_layoutPropertiesGenerator)
 
 ## insetUtility selector generator
 
@@ -104,7 +104,7 @@ Importing this file will return a series of pre-defined inset (_the padding arou
 none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
 ```
 
-See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_inset)
+See [API](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-inset)
 
 ## spacingUtility selector generator
 
@@ -116,4 +116,4 @@ Importing this file will return a series of pre-defined selectors based on the s
 none, xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl
 ```
 
-See [API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#utility-layout-mixin-auro_spacing)
+See [API](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-layout-mixin-auro_spacing)

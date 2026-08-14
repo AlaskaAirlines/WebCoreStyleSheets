@@ -85,7 +85,9 @@ jobs:
               return packageJson;
             result-encoding: string
         - name: Publish to NPM
-          run: npm publish --registry=https://registry.npmjs.org
+          # Prerelease versions require an explicit dist-tag. Use a PR-scoped tag
+          # so PR releases never move the shared `latest` tag.
+          run: npm publish --registry=https://registry.npmjs.org --tag pr${{ github.event.pull_request.number }}
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only

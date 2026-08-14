@@ -10,7 +10,7 @@
     "url": "https://github.com/AlaskaAirlines/WebCoreStyleSheets"
   },
   "engines": {
-    "node": "^20 || ^22"
+    "node": ">=20"
   },
   "peerDependencies": {
     "sass": "^1.42.1"

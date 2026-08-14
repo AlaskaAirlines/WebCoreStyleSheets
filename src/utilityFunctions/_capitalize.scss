@@ -4,17 +4,20 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
+@use "sass:meta";
+@use "sass:string";
+
 /// The purpose of this function is to take a string and capitalize the first letter on output
 /// @group utility
 /// @parameter {String} $string [null] - pass in string to be capitolized
 /// @example scss - pass string into function
 ///   capitalize('foo') => Foo
 /// @example scss - import dependency
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityFunctions/capitalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityFunctions/capitalize" as *;
 
 @function auro_capitalize($string) {
-  @if type-of($string) == string {
-    @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+  @if meta.type-of($string) == string {
+    @return string.to-upper-case(string.slice($string, 1, 1)) + string.slice($string, 2);
   }
   @return #{$string};
 }

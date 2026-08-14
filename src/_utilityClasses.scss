@@ -4,19 +4,19 @@
 // ---------------------------------------------------------------------
 
 // Set element display: none on mobile devices and tablets
-@import 'utilityClasses/responsive';
+@use 'utilityClasses/responsive';
 
 // Functional selectors for the use of defining different display properties
-@import 'utilityClasses/displayProperties';
+@use 'utilityClasses/displayProperties';
 
 // Functional selectors for the use of defining different font style properties
-@import 'utilityClasses/fontStyles';
+@use 'utilityClasses/fontStyles';
 
 // Functional selectors for the use of defining different layout properties
-@import 'utilityClasses/layoutProperties';
+@use 'utilityClasses/layoutProperties';
 
 // Functional selectors for the use of defining different list properties
-@import 'utilityClasses/listProperties';
+@use 'utilityClasses/listProperties';
 
 // Functional selectors for the use of defining different inset properties
-@import 'utilityClasses/inset';
+@use 'utilityClasses/inset';

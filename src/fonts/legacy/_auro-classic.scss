@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
+
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -10,8 +12,8 @@
 // Auro Classic (AC) theme fonts
 
 @font-face {
-  font-family: $ds-asset-font-circular-family-name;
-  font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight);
+  font-family: SCSSVariables.$ds-asset-font-circular-family-name;
+  font-weight: var(--ds-text-heading-display-weight, SCSSVariables.$ds-text-heading-display-weight);
   font-style: normal;
 
   font-display: fallback;
@@ -20,8 +22,8 @@
 }
 
 @font-face {
-  font-family: $ds-asset-font-circular-family-name;
-  font-weight: var(--ds-text-heading-medium-weight, $ds-text-heading-medium-weight);
+  font-family: SCSSVariables.$ds-asset-font-circular-family-name;
+  font-weight: var(--ds-text-heading-medium-weight, SCSSVariables.$ds-text-heading-medium-weight);
   font-style: normal;
 
   font-display: fallback;
@@ -30,8 +32,8 @@
 }
 
 @font-face {
-  font-family: $ds-asset-font-circular-family-name;
-  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
+  font-family: SCSSVariables.$ds-asset-font-circular-family-name;
+  font-weight: var(--ds-text-body-default-weight, SCSSVariables.$ds-text-body-default-weight);
   font-style: normal;
 
   font-display: fallback;

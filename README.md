@@ -10,6 +10,14 @@ This repository is a library of core level styles, functions, and mixins that ca
 
 Please see the [documentation site](https://alaskaairlines.github.io/WebCoreStyleSheets/) for all information related to WC Style Sheets.
 
+## Upgrading to v12 (Sass modules)
+
+WCSS `v12.0.0` migrates from the deprecated Sass `@import` system to the
+[Sass module system](https://sass-lang.com/documentation/at-rules/use/)
+(`@use` / `@forward`). This is a breaking change for consumers. See the
+[Migration Guide](./MIGRATION.md) for the required `@use` syntax and the new
+`@use ... with (...)` form for scope, prefix, and `!important` configuration.
+
 ## Design tokens and legacy component support
 
 Upgrading to WCSS `v5.x` requires `@aurodesignsystem/design-tokens@4.x`.
@@ -45,10 +53,10 @@ At a limited scale, some files have been pre-processed to CSS so that it can be 
 $ npm i @aurodesignsystem/webcorestylesheets
 ```
 
-There are no core files to import, rather WCSS is an à la carte solution allowing for users to import what they want and when they want it. In most cases you can simply import the Sass file as illustrated below:
+There are no core files to import, rather WCSS is an à la carte solution allowing for users to load what they want and when they want it. WCSS ships as Sass modules — load a file with `@use` as illustrated below:
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/ ... ";
+@use "./../node_modules/@aurodesignsystem/webcorestylesheets/src/ ... " as *;
 ```
 
 ### Multi-Theme Support
@@ -61,13 +69,13 @@ For more information on the available themes and how to use them, please see the
 
 #### Using a Theme
 
-To use a specific theme in your project, import the corresponding theme file.
+To use a specific theme in your project, load the corresponding theme file.
 
 For example:
 
 ```scss
 /* Alaska Airlines theme (Auro default) */
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/essentials-as";
+@use "./../node_modules/@aurodesignsystem/webcorestylesheets/src/essentials-as" as *;
 ```
 
 Additional themes are available in the `src` directory.

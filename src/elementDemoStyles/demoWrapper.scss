@@ -6,10 +6,10 @@
 
 // matches max-width of AS.com and Auro docsite width specs
 
-@import './../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
+@use '../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
 
 body {
-  padding: var(--ds-size-400, $ds-size-400);
+  padding: var(--ds-size-400, SCSSVariables.$ds-size-400);
 }
 
 main {

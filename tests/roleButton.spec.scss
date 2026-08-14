@@ -1,7 +1,5 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-
-@import 'true';
-@import '../src/utilityMixins/anchor-roleButton';
+@use 'true' as *;
+@use './../src/utilityMixins/anchor-roleButton' as *;
 
 @include describe('auro_anchorButton()') {
   @include it('should return a populated selector based on (sass, noncomponent)') {

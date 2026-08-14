@@ -1,23 +1,26 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as tokens;
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as classic;
+
 // Base Essentials
 $hawaiian-base-config: (
-  'font-size': $ds-type-size-16,
-  'text-color': $ds-basic-color-texticon-default,
-  'font-family': $ds-basic-type-family-body,
-  'font-family-fallback': $ds-basic-type-family-body-fallback,
-  'font-weight': $ds-type-weight-regular,
-  'line-height': $ds-type-line-height-px-24,
-  'letter-spacing': $ds-type-letter-spacing-0,
-  'hyperlink-color': $ds-advanced-color-hyperlink-text,
-  'hyperlink-hover-color': $ds-advanced-color-hyperlink-text-hover,
-  'hyperlink-inverse-color': $ds-advanced-color-hyperlink-text-inverse,
-  'hyperlink-inverse-hover-color': $ds-advanced-color-hyperlink-text-inverse-hover,
-  'focus-color': $ds-advanced-color-state-focused,
-  'focus-offset': $ds-size-25,
-  'focus-width': $ds-size-50,
-  'small-font-size': $ds-type-size-12,
-  'small-font-weight': $ds-type-weight-regular,
-  'small-line-height': $ds-type-line-height-px-16,
-  'small-letter-spacing': $ds-type-letter-spacing-0,
-  'paragraph-line-height': $ds-type-line-height-px-16,
-  'muted-text-color': $ds-basic-color-texticon-muted
+  'font-size': tokens.$ds-type-size-16,
+  'text-color': tokens.$ds-basic-color-texticon-default,
+  'font-family': tokens.$ds-basic-type-family-body,
+  'font-family-fallback': tokens.$ds-basic-type-family-body-fallback,
+  'font-weight': tokens.$ds-type-weight-regular,
+  'line-height': tokens.$ds-type-line-height-px-24,
+  'letter-spacing': tokens.$ds-type-letter-spacing-0,
+  'hyperlink-color': tokens.$ds-advanced-color-hyperlink-text,
+  'hyperlink-hover-color': tokens.$ds-advanced-color-hyperlink-text-hover,
+  'hyperlink-inverse-color': tokens.$ds-advanced-color-hyperlink-text-inverse,
+  'hyperlink-inverse-hover-color': tokens.$ds-advanced-color-hyperlink-text-inverse-hover,
+  'focus-color': tokens.$ds-advanced-color-state-focused,
+  'focus-offset': classic.$ds-size-25,
+  'focus-width': classic.$ds-size-50,
+  'small-font-size': tokens.$ds-type-size-12,
+  'small-font-weight': tokens.$ds-type-weight-regular,
+  'small-line-height': tokens.$ds-type-line-height-px-16,
+  'small-letter-spacing': tokens.$ds-type-letter-spacing-0,
+  'paragraph-line-height': tokens.$ds-type-line-height-px-16,
+  'muted-text-color': tokens.$ds-basic-color-texticon-muted
 );

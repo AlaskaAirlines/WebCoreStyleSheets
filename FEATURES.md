@@ -6,11 +6,11 @@ For the full API, please see the [WCSS docs site](https://alaskaairlines.github.
 
 Be sure to see the [prefixing and scoping API](http://alaskaairlines.github.io/OrionWebCoreStyleSheets/#scope-prefix) in the documentation site.
 
-When supporting legacy UIs there may be issues with importing a Sass file and its selectors. To enable scoping simply set the `$scope` variable to be `true` before importing any selectors that support this setting.
+When supporting legacy UIs there may be issues with importing a Sass file and its selectors. Under the Sass module system, configure the `$scope` value via `@use ... with (...)` on the `manageScope` module. This must be done **before** loading any selectors that support this setting (the first `@use` of `manageScope` is the one that carries configuration).
 
 ```scss
-$scope: true;
-@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
+@use "~@aurodesignsystem/webcorestylesheets/dist/libSupport/manageScope" with ($scope: true);
+@use "~@aurodesignsystem/webcorestylesheets/dist/ ... ";
 ```
 
 This setting will result in the following CSS selectors
@@ -24,11 +24,11 @@ html.auro { ... }
 
 ## Prefixing
 
-To enable prefixing simply set the `$prefix` variable to be `true` before importing any selectors that support this setting.
+To enable prefixing, configure the `$prefix` value via `@use ... with (...)` on the `manageScope` module, **before** loading any selectors that support this setting.
 
 ```scss
-$prefix: true;
-@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
+@use "~@aurodesignsystem/webcorestylesheets/dist/libSupport/manageScope" with ($prefix: true);
+@use "~@aurodesignsystem/webcorestylesheets/dist/ ... ";
 ```
 
 This setting will result in the following CSS selectors
@@ -42,12 +42,11 @@ body,
 
 ## Scoping and prefixing
 
-If needed, both `$scope` and `prefix` can work in tandem. To enable, simply set both the `scope` and `prefix` variables as `true` before importing any selectors that support these settings.
+If needed, both `$scope` and `$prefix` can work in tandem. Configure both on the `manageScope` module in a single `@use ... with (...)`, **before** loading any selectors that support these settings.
 
 ```scss
-$scope: true;
-$prefix: true;
-@import "~@aurodesignsystem/webcorestylesheets/dist/ ... "
+@use "~@aurodesignsystem/webcorestylesheets/dist/libSupport/manageScope" with ($scope: true, $prefix: true);
+@use "~@aurodesignsystem/webcorestylesheets/dist/ ... ";
 ```
 
 This setting will result in the following CSS selectors
@@ -61,10 +60,11 @@ html.auro { ... }
 
 ## Importing utility classes and using the !important flag
 
-When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the global `$important` variable is `null` by default. To change, simply change the value of the variable before importing any utility partials.
+When importing utility selectors developers have the option to invoke the `!important` CSS flag. Within WCSS the `$important` variable is `null` by default. To change it, configure the `important` module via `@use ... with (...)` **before** loading any utility partials.
 
 ```scss
-$important: true;
+@use "~@aurodesignsystem/webcorestylesheets/dist/utilityVariables/important" with ($important: true);
+@use "~@aurodesignsystem/webcorestylesheets/dist/utilityClasses/ ... ";
 ```
 
 The output of default selector

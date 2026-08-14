@@ -1,11 +1,15 @@
-@import "../../mixins/theme-generator";
+@use "../../mixins/theme-generator";
+@use "../../../config/hawaiian/type/body" as body;
+@use "../../../config/hawaiian/type/display" as display;
+@use "../../../config/hawaiian/type/heading" as heading;
+@use "../../../config/hawaiian/type/accent" as accent;
 
 // Generate Hawaiian theme
-@include generate-theme(
+@include theme-generator.generate-theme(
   'hawaiian',
-  $hawaiian-type-body-config,
-  $hawaiian-type-display-config,
-  $hawaiian-type-heading-config,
-  $hawaiian-type-accent-config,
+  body.$hawaiian-type-body-config,
+  display.$hawaiian-type-display-config,
+  heading.$hawaiian-type-heading-config,
+  accent.$hawaiian-type-accent-config,
   $accent-uses-letter-spacing: false
 );

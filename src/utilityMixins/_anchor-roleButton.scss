@@ -3,7 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/deprecated';
+@use '../libSupport/deprecated';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
 
 /// Creates Sass variable or custom property output for multi-use button shape
 /// @group utility-mixins
@@ -11,7 +12,7 @@
 /// @param {string} $env [] - Specifies the style environment (component, noncomponent)
 /// @param {string} $display [inline-block] - Specifies display type
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleButton";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/anchor-roleButton" as *;
 /// @example scss - Set properties for Sass output that is NOT within a component
 ///   .auro_roleButton {
 ///       @include auro_anchorButton(sass, noncomponent);
@@ -28,15 +29,15 @@
   $hover-color: null;
 
   @if $style == css {
-    $color: var(--ds-color-text-ui-default-default, $ds-color-text-ui-default-default);
-    $hover-color: var(--ds-color-container-ui-primary-hover-default, $ds-color-container-ui-primary-hover-default);
-    $line-height: var(--ds-unitless-scale-300, $ds-unitless-scale-300);
-    $padding: 0 var(--ds-size-200, $ds-size-200);
+    $color: var(--ds-color-text-ui-default-default, tokens.$ds-color-text-ui-default-default);
+    $hover-color: var(--ds-color-container-ui-primary-hover-default, tokens.$ds-color-container-ui-primary-hover-default);
+    $line-height: var(--ds-unitless-scale-300, tokens.$ds-unitless-scale-300);
+    $padding: 0 var(--ds-size-200, tokens.$ds-size-200);
   } @else if $style == sass or $style == scss {
-    $color: $ds-color-text-ui-default-default;
-    $hover-color: $ds-color-container-ui-primary-hover-default;
-    $line-height: $ds-unitless-scale-300;
-    $padding: 0 $ds-size-200;
+    $color: tokens.$ds-color-text-ui-default-default;
+    $hover-color: tokens.$ds-color-container-ui-primary-hover-default;
+    $line-height: tokens.$ds-unitless-scale-300;
+    $padding: 0 tokens.$ds-size-200;
   } @else {
     @error 'Invalid $style option. Please use `css` or `sass`';
   }

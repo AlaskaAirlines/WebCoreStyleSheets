@@ -3,14 +3,14 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/deprecated';
-@import '../libSupport/manageScope';
+@use '../libSupport/deprecated';
+@use '../libSupport/manageScope';
 
 // sass-lint:disable mixins-before-declarations variable-for-property
 
-@import '../utilityVariables/important';
+@use '../utilityVariables/important';
 
-@include deprecated('Inset utility selectors and mixin.');
+@include deprecated.deprecated('Inset utility selectors and mixin.');
 
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-inset
@@ -24,8 +24,8 @@
 ///   .auro_util_insetNone {}
 ///
 
-#{$scope}.#{$prefix}util_insetNone {
-  padding: 0 $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetNone {
+  padding: 0 important.$important;
 }
 
 /// [Manage](/#utility-variable-important) `!important` flag.
@@ -45,7 +45,7 @@
 ///   .auro_util_insetXxxs {}
 ///
 
-#{$scope}.#{$prefix}util_insetXxxs {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxxs {
   padding: 0.125rem;
 }
 
@@ -66,7 +66,7 @@
 ///   .auro_util_insetXxxs--stretch {}
 ///
 
-#{$scope}.#{$prefix}util_insetXxxs--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxxs--stretch {
   padding: calc(0.125rem * 2) 0.125rem;
 }
 
@@ -87,102 +87,102 @@
 ///   .auro_util_insetXxxs--squish {}
 ///
 
-#{$scope}.#{$prefix}util_insetXxxs--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxxs--squish {
   padding: 0 0.125rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxs {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxs {
   padding: 0.25rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxs--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxs--stretch {
   padding: calc(0.25rem * 1.5) 0.25rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxs--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxs--squish {
   padding: calc(0.25rem / 2) 0.25rem;
 }
 
-#{$scope}.#{$prefix}util_insetXs {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXs {
   padding: 0.5rem;
 }
 
-#{$scope}.#{$prefix}util_insetXs--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXs--stretch {
   padding: calc(0.5rem * 1.5) 0.5rem;
 }
 
-#{$scope}.#{$prefix}util_insetXs--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXs--squish {
   padding: calc(0.5rem / 2) 0.5rem;
 }
 
-#{$scope}.#{$prefix}util_insetSm {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetSm {
   padding: 0.75rem;
 }
 
-#{$scope}.#{$prefix}util_insetSm--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetSm--stretch {
   padding: calc(0.75rem * 1.5) 0.75rem;
 }
 
-#{$scope}.#{$prefix}util_insetSm--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetSm--squish {
   padding: calc(0.75rem / 2) 0.75rem;
 }
 
-#{$scope}.#{$prefix}util_insetMd {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetMd {
   padding: 1rem;
 }
 
-#{$scope}.#{$prefix}util_insetMd--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetMd--stretch {
   padding: calc(1rem * 1.5) 1rem;
 }
 
-#{$scope}.#{$prefix}util_insetMd--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetMd--squish {
   padding: calc(1rem / 2) 1rem;
 }
 
-#{$scope}.#{$prefix}util_insetLg {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetLg {
   padding: 1.5rem;
 }
 
-#{$scope}.#{$prefix}util_insetLg--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetLg--stretch {
   padding: calc(1.5rem * 1.5) 1.5rem;
 }
 
-#{$scope}.#{$prefix}util_insetLg--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetLg--squish {
   padding: calc(1.5rem / 2) 1.5rem;
 }
 
-#{$scope}.#{$prefix}util_insetXl {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXl {
   padding: 2rem;
 }
 
-#{$scope}.#{$prefix}util_insetXl--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXl--stretch {
   padding: calc(2rem * 1.5) 2rem;
 }
 
-#{$scope}.#{$prefix}util_insetXl--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXl--squish {
   padding: calc(2rem / 2) 2rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxl {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxl {
   padding: 3rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxl--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxl--stretch {
   padding: calc(3rem * 1.5) 3rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxl--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxl--squish {
   padding: calc(3rem / 2) 3rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxxl {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxxl {
   padding: 4rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxxl--stretch {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxxl--stretch {
   padding: calc(4rem * 1.5) 4rem;
 }
 
-#{$scope}.#{$prefix}util_insetXxxl--squish {
+#{manageScope.$scope}.#{manageScope.$prefix}util_insetXxxl--squish {
   padding: calc(4rem / 2) 4rem;
 }

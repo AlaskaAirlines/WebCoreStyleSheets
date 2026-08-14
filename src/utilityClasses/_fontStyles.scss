@@ -4,9 +4,12 @@
 // ---------------------------------------------------------------------
 // Variables are defined by baseline Design Tokens
 
-@import '../libSupport/deprecated';
-@import '../utilityVariables/important';
-@import '../libSupport/manageScope';
+@use "sass:meta";
+
+@use '../libSupport/deprecated';
+@use '../utilityVariables/important';
+@use '../libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as *;
 
 /// Utility class for default font-weight
 ///
@@ -24,10 +27,10 @@
 ///   .auro_util_fontWeightDefault {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
-#{$scope}.#{$prefix}util_fontWeightDefault {
-  @if variable-exists(ds-text-body-default-weight) {
-    font-weight: var(--$ds-text-body-default-weight) $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_fontWeightDefault {
+  @if meta.variable-exists(ds-text-body-default-weight) {
+    font-weight: var(--$ds-text-body-default-weight) important.$important;
   }
 }
 
@@ -47,10 +50,10 @@
 ///   .auro_util_fontWeightMedium {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
-#{$scope}.#{$prefix}util_fontWeightMedium {
-  @if variable-exists(ds-text-body-default-weight) {
-    font-weight: var(--ds-text-heading-medium-weight, $ds-text-heading-medium-weight) $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_fontWeightMedium {
+  @if meta.variable-exists(ds-text-body-default-weight) {
+    font-weight: var(--ds-text-heading-medium-weight, $ds-text-heading-medium-weight) important.$important;
   }
 }
 
@@ -70,10 +73,10 @@
 ///   .auro_util_fontWeightDisplay {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
-#{$scope}.#{$prefix}util_fontWeightDisplay {
-  @if variable-exists(ds-text-heading-display-weight) {
-    font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight) $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_fontWeightDisplay {
+  @if meta.variable-exists(ds-text-heading-display-weight) {
+    font-weight: var(--ds-text-heading-display-weight, $ds-text-heading-display-weight) important.$important;
   }
 }
 
@@ -93,11 +96,11 @@
 ///   .auro_util_body--lg {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
-#{$scope}.#{$prefix}util_body--lg {
-  @if variable-exists(ds-text-body-size-lg) {
-    font-size: var(--ds-text-body-size-lg, $ds-text-body-size-lg) $important;
-    line-height: var(--ds-text-body-height-lg, $ds-text-body-height-lg) $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_body--lg {
+  @if meta.variable-exists(ds-text-body-size-lg) {
+    font-size: var(--ds-text-body-size-lg, $ds-text-body-size-lg) important.$important;
+    line-height: var(--ds-text-body-height-lg, $ds-text-body-height-lg) important.$important;
   }
 }
 
@@ -117,11 +120,11 @@
 ///   .auro_util_body--sm {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
-#{$scope}.#{$prefix}util_body--sm {
-  @if variable-exists(ds-text-body-size-lg) {
-    font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm) $important;
-    line-height: var(--ds-text-body-height-sm, $ds-text-body-height-sm) $important;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles" as *;
+#{manageScope.$scope}.#{manageScope.$prefix}util_body--sm {
+  @if meta.variable-exists(ds-text-body-size-lg) {
+    font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm) important.$important;
+    line-height: var(--ds-text-body-height-sm, $ds-text-body-height-sm) important.$important;
   }
 }
 
@@ -141,11 +144,11 @@
 ///   .auro_util_body--xs {}
 ///
 /// @example scss - import Sass file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/fontStyles" as *;
 
-#{$scope}.#{$prefix}util_body--xs {
-  @if variable-exists(ds-text-body-size-xs) {
-    font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs) $important;
-    line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs) $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_body--xs {
+  @if meta.variable-exists(ds-text-body-size-xs) {
+    font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs) important.$important;
+    line-height: var(--ds-text-body-height-xs, $ds-text-body-height-xs) important.$important;
   }
 }

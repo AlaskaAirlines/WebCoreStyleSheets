@@ -1,4 +1,4 @@
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as tokens;
+@use "@aurodesignsystem/design-tokens/dist/themes/atmos/SCSSVariables--atmos" as tokens;
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -8,10 +8,11 @@
 @use '../../utilityMixins/fontFaceI18n';
 @use '../../utilityVariables/fontUtils';
 
-// Alaska Classic (ASC) theme EN fonts
+// Atmos (atm) theme EN fonts
 @include fontFace.font-face(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-light, 'ASCircularWeb-Light', fontUtils.$unicode-range-en);
 @include fontFace.font-face(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-book, 'ASCircularWeb-Book', fontUtils.$unicode-range-en);
 @include fontFace.font-face(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-medium, 'ASCircularWeb-Medium', fontUtils.$unicode-range-en);
+@include fontFace.font-face(tokens.$ds-basic-type-brand-family-secondary, tokens.$ds-type-weight-light, 'Teodor-Light', fontUtils.$unicode-range-en);
 
 // ---------------------------------------------------------------------
 // i18n font remapping
@@ -24,6 +25,8 @@
 	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-book, fontUtils.$i18n-font-jp-400-path, fontUtils.$unicode-range-jp);
 	// AS Circular 500 Medium -> Noto Sans JP 500
 	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-medium, fontUtils.$i18n-font-jp-500-path, fontUtils.$unicode-range-jp);
+	// Teodor 300 Light -> Noto Sans JP 300
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-secondary, tokens.$ds-type-weight-light, fontUtils.$i18n-font-jp-300-path, fontUtils.$unicode-range-jp);
 
 	// Korean (KR)
 	// AS Circular 300 Light -> Noto Sans KR 300
@@ -32,4 +35,6 @@
 	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-book, fontUtils.$i18n-font-kr-400-path, fontUtils.$unicode-range-kr);
 	// AS Circular 500 Medium -> Noto Sans KR 500
 	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-primary, tokens.$ds-type-weight-medium, fontUtils.$i18n-font-kr-500-path, fontUtils.$unicode-range-kr);
+	// Teodor 300 Light -> Noto Sans KR 300
+	@include fontFaceI18n.font-face-i18n(tokens.$ds-basic-type-brand-family-secondary, tokens.$ds-type-weight-light, fontUtils.$i18n-font-kr-300-path, fontUtils.$unicode-range-kr);
 }

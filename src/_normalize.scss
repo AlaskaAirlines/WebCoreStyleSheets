@@ -3,7 +3,10 @@
 
 // ---------------------------------------------------------------------
 
-@import 'libSupport/manageScope';
+@use "sass:meta";
+
+@use 'libSupport/manageScope';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
 
 // sass-lint:disable variable-for-property, no-vendor-prefixes, no-duplicate-properties
 
@@ -23,9 +26,9 @@
 ///   html.auro {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-html#{$scope} {
+html#{manageScope.$scope} {
   line-height: 1.15; /* 1 */
 
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -46,9 +49,9 @@ html#{$scope} {
 ///   .auro body {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}body {
+#{manageScope.$scope}body {
   margin: 0;
 
   -webkit-font-smoothing: antialiased;
@@ -67,9 +70,9 @@ html#{$scope} {
 ///   .auro main {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}main {
+#{manageScope.$scope}main {
   display: block;
 }
 
@@ -89,9 +92,9 @@ html#{$scope} {
 ///   .auro hr {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}hr {
+#{manageScope.$scope}hr {
   overflow: visible; /* 1 */
 
   box-sizing: content-box; /* 2 */
@@ -111,15 +114,11 @@ html#{$scope} {
 ///   .auro pre {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}pre {
+#{manageScope.$scope}pre {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
-  @if variable-exists(ds-text-body-size-default) {
-    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default); /* 2 */
-  } @else {
-    font-size: var(--size-font-root, $size-font-root);
-  }
+  font-size: var(--ds-text-body-size-default, SCSSVariables.$ds-text-body-size-default); /* 2 */
 }
 
 /* Text-level semantics
@@ -137,9 +136,9 @@ html#{$scope} {
 ///   .auro a {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}a {
+#{manageScope.$scope}a {
   background-color: transparent;
 }
 
@@ -156,9 +155,9 @@ html#{$scope} {
 ///   .auro abbr[title] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}abbr {
+#{manageScope.$scope}abbr {
   &[title] {
     text-decoration: underline; /* 1 */
     text-decoration: underline dotted; /* 1 */ /* stylelint-disable-line declaration-block-no-duplicate-properties */
@@ -181,10 +180,10 @@ html#{$scope} {
 ///   .auro strong {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}b,
-#{$scope}strong {
+#{manageScope.$scope}b,
+#{manageScope.$scope}strong {
   font-weight: bolder;
 }
 
@@ -205,17 +204,13 @@ html#{$scope} {
 ///   .auro samp {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}code,
-#{$scope}kbd,
-#{$scope}samp {
+#{manageScope.$scope}code,
+#{manageScope.$scope}kbd,
+#{manageScope.$scope}samp {
   font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names */
-  @if variable-exists(ds-text-body-size-default) {
-    font-size: var(--ds-text-body-size-default, $ds-text-body-size-default); /* 2 */
-  } @else {
-    font-size: var(--size-font-root, $size-font-root);
-  }
+  font-size: var(--ds-text-body-size-default, SCSSVariables.$ds-text-body-size-default); /* 2 */
 }
 
 ///
@@ -232,10 +227,10 @@ html#{$scope} {
 ///   .auro sup {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}sub,
-#{$scope}sup {
+#{manageScope.$scope}sub,
+#{manageScope.$scope}sup {
   position: relative;
 
   vertical-align: baseline;
@@ -256,9 +251,9 @@ html#{$scope} {
 ///   .auro sub {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}sub {
+#{manageScope.$scope}sub {
   bottom: -.25em;
 }
 
@@ -274,9 +269,9 @@ html#{$scope} {
 ///   .auro sup {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}sup {
+#{manageScope.$scope}sup {
   top: -.5em;
 }
 
@@ -295,9 +290,9 @@ html#{$scope} {
 ///   .auro img {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}img {
+#{manageScope.$scope}img {
   border-style: none;
 }
 
@@ -325,22 +320,18 @@ html#{$scope} {
 ///   .auro textarea {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}button,
-#{$scope}input,
-#{$scope}optgroup,
-#{$scope}select,
-#{$scope}textarea {
+#{manageScope.$scope}button,
+#{manageScope.$scope}input,
+#{manageScope.$scope}optgroup,
+#{manageScope.$scope}select,
+#{manageScope.$scope}textarea {
   margin: 0; /* 1 */
 
   font-family: inherit; /* 2 */
   font-size: 100%; /* 2 */
-  @if variable-exists(ds-text-body-height-default) {
-    line-height: var(--ds-text-body-height-default, $ds-text-body-height-default); /* 2 */
-  } @else {
-    line-height: var(--size-margin-baseline, $size-margin-baseline); /* 2 */
-  }
+  line-height: var(--ds-text-body-height-default, SCSSVariables.$ds-text-body-height-default); /* 2 */
 }
 
 ///
@@ -358,10 +349,10 @@ html#{$scope} {
 ///   .auro input {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}button,
-#{$scope}input { /* 1 */
+#{manageScope.$scope}button,
+#{manageScope.$scope}input { /* 1 */
   overflow: visible;
 }
 
@@ -380,10 +371,10 @@ html#{$scope} {
 ///   .auro select {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}button,
-#{$scope}select { /* 1 */
+#{manageScope.$scope}button,
+#{manageScope.$scope}select { /* 1 */
   text-transform: none;
 }
 
@@ -405,12 +396,12 @@ html#{$scope} {
 ///   .auro [type="submit"] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}button,
-#{$scope}[type='button'],
-#{$scope}[type='reset'],
-#{$scope}[type='submit'] {
+#{manageScope.$scope}button,
+#{manageScope.$scope}[type='button'],
+#{manageScope.$scope}[type='reset'],
+#{manageScope.$scope}[type='submit'] {
   -webkit-appearance: none;
   appearance: none;
 }
@@ -427,9 +418,9 @@ html#{$scope} {
 ///   .auro fieldset {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}fieldset {
+#{manageScope.$scope}fieldset {
   padding: .35em .75em .625em;
 }
 
@@ -448,9 +439,9 @@ html#{$scope} {
 ///   .auro legend {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}legend {
+#{manageScope.$scope}legend {
   display: table; /* 1 */
 
   box-sizing: border-box; /* 1 */
@@ -474,9 +465,9 @@ html#{$scope} {
 ///   .auro progress {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}progress {
+#{manageScope.$scope}progress {
   vertical-align: baseline;
 }
 
@@ -492,9 +483,9 @@ html#{$scope} {
 ///   .auro textarea {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}textarea {
+#{manageScope.$scope}textarea {
   overflow: auto;
 }
 
@@ -512,9 +503,9 @@ html#{$scope} {
 ///   .auro [type="number"]::-webkit-outer-spin-button {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}[type='number'] {
+#{manageScope.$scope}[type='number'] {
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     height: auto;
@@ -534,9 +525,9 @@ html#{$scope} {
 ///   .auro [type="search"] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}[type='search'] {
+#{manageScope.$scope}[type='search'] {
   outline-offset: -2px; /* 1 */
 
   -webkit-appearance: textfield; /* 2 */
@@ -555,9 +546,9 @@ html#{$scope} {
 ///   .auro [type="search"]::-webkit-search-decoration {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}::-webkit-search-decoration {
+#{manageScope.$scope}::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
@@ -575,9 +566,9 @@ html#{$scope} {
 ///   .auro ::-webkit-file-upload-button {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}::-webkit-file-upload-button {
+#{manageScope.$scope}::-webkit-file-upload-button {
   font: inherit; /* 1 */
 
   -webkit-appearance: button; /* 2 */
@@ -599,9 +590,9 @@ html#{$scope} {
 ///   .auro details {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}details {
+#{manageScope.$scope}details {
   display: block;
 }
 
@@ -617,9 +608,9 @@ html#{$scope} {
 ///   .auro summary {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}summary {
+#{manageScope.$scope}summary {
   display: list-item;
 }
 
@@ -638,9 +629,9 @@ html#{$scope} {
 ///   .auro template {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}template {
+#{manageScope.$scope}template {
   display: none;
 }
 
@@ -656,8 +647,8 @@ html#{$scope} {
 ///   .auro [hidden] {}
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/normalize" as *;
 ///
-#{$scope}[hidden] {
+#{manageScope.$scope}[hidden] {
   display: none;
 }

@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska-classic/SCSSVariables--alaskaClassic" as v;
+
 // Body - Type
 $alaska-classic-type-body-config: (
   'family': v.$ds-basic-type-family-body,

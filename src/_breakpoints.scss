@@ -3,13 +3,14 @@
 
 // ---------------------------------------------------------------------
 
-/* stylelint-disable no-invalid-position-at-import-rule */
+// stylelint-disable no-invalid-position-at-import-rule (obsolete under the module system; rule also disabled globally in .stylelintrc)
 
 // @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
 
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 
-@import './libSupport/deprecated';
+@use "sass:list";
+@use 'libSupport/deprecated';
 
 // The following mixins provide pre-configured Orion approved
 // breakpoints when development mobile-first UIs.
@@ -20,7 +21,7 @@
 ///
 /// Compatibility: [css-mediaqueries](https://caniuse.com/#feat=css-mediaqueries\)
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
 /// @group responsive
 /// @example scss - Auro breakpoint tokens
 ///   $ds-grid-breakpoint-sm: 576px;
@@ -70,7 +71,7 @@
   } @else if $max {
     $breakpoints: '(max-width: #{$max})';
   } @else if $polar {
-    $breakpoints: '(min-width: #{nth($polar, 1)}) and (max-width: #{nth($polar, 2)})';
+    $breakpoints: '(min-width: #{list.nth($polar, 1)}) and (max-width: #{list.nth($polar, 2)})';
   } @else if $cust {
     $breakpoints: #{$cust};
   }
@@ -82,7 +83,7 @@
 
 /// Standard breakpoint to support resolutions greater than 1232px.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints" as *;
 /// @group responsive
 /// @example scss - Set grid-breakpoint
 ///   .foo {
@@ -98,7 +99,7 @@
 
 /// Standard breakpoint to support resolutions greater than 1024px.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints" as *;
 /// @group responsive
 /// @example scss - Set grid-breakpoint
 ///   .foo {
@@ -114,7 +115,7 @@
 
 /// Standard breakpoint to support resolutions greater than 768px.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints" as *;
 /// @group responsive
 /// @example scss - Set grid-breakpoint
 ///   .foo {
@@ -130,7 +131,7 @@
 
 /// Standard breakpoint to support resolutions greater than 576px.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints" as *;
 /// @group responsive
 /// @example scss - Set grid-breakpoint
 ///   .foo {
@@ -146,7 +147,7 @@
 
 /// Standard breakpoint to support resolutions greater than 320px.
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/grid-breakpoints" as *;
 /// @group responsive
 /// @example scss - Set grid-breakpoint
 ///   .foo {

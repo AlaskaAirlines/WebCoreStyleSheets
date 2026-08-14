@@ -1,2 +1,6 @@
 // Alaska Classic uses the Alaska Essentials, as it is a derivative theme.
-@import "alaska";
+@use "../base";
+@use "../../config/alaska-classic/base" as config;
+
+// Generate Alaska Classic theme bundled essentials
+@include base.essentials-base(config.$alaska-base-config);

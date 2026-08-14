@@ -5,7 +5,7 @@
  */
 
 // Import type generator
-@import "type-generator";
+@use "type-generator";
 
 // Generate typography classes
-@include generate-theme-type-classes();
+@include type-generator.generate-theme-type-classes();

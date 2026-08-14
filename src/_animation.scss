@@ -3,7 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-@import './libSupport/deprecated';
+@use 'libSupport/deprecated';
+// Animation defaults are provided by the design-tokens package. Under the module
+// system they must be loaded explicitly rather than relying on a consumer-injected
+// global `@import` of the token stylesheet.
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as tokens;
 
 /// Provides a way to control animation speed when changing CSS properties.
 ///
@@ -18,13 +22,13 @@
 /// @param {string} $delay [null] - Specifies a delay (in seconds) for the transition effect
 ///
 /// @example scss - import file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/animation";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/animation" as *;
 ///
 /// @example scss - Using mixin with default values;
 ///   .foo {
 ///     @include auro_transition;
 ///   }
 
-@mixin auro_transition($property: $ds-animation-default-property, $duration: $ds-animation-default-duration, $timing: $ds-animation-default-timing, $delay: null) {
+@mixin auro_transition($property: tokens.$ds-animation-default-property, $duration: tokens.$ds-animation-default-duration, $timing: tokens.$ds-animation-default-timing, $delay: null) {
   transition: $property $duration $timing $delay;
 }

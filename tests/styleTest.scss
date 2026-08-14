@@ -1,91 +1,90 @@
-// Import build resources to ensure that src resources are working as expected
+// Load build resources to ensure that src resources are working as expected.
+// This smoke test exercises the module (`@use`) consumer API. Modules whose CSS is
+// pulled in more than once (e.g. via the `utilityClasses` aggregate and individually)
+// are emitted only once under `@use`, unlike the legacy `@import` build.
 
 /* --------start variables import ------------- */
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
 /* --------end variables import ------------- */
 
-/* --------start core import ------------- */
-// @import './../src/core';
-/* --------end core import ------------- */
-
 /* --------start focus visible import ------------- */
-@import './../src/focus-visible';
+@use './../src/focus-visible';
 /* --------end focus visible import ------------- */
 
 /* --------start essentials import ------------- */
-@import './../src/essentials/legacy/auro-classic';
+@use './../src/essentials/legacy/auro-classic' as essentials-legacy;
 /* --------end essentials import ------------- */
 
 /* --------start breakpoints import ------------- */
-@import './../src/breakpoints';
+@use './../src/breakpoints';
 
 /* --------start grids import ------------- */
-@import './../src/grids';
+@use './../src/grids';
 
 /* --------start fonts import ------------- */
-@import './../src/fonts/legacy/auro-classic';
+@use './../src/fonts/legacy/auro-classic' as fonts-legacy;
 
 /* --------start normalize import ------------- */
-@import './../src/normalize';
+@use './../src/normalize';
 
 /* --------start headings import ------------- */
-@import './../src/headings';
+@use './../src/headings';
 
 /* --------start utility/Classes import ------------- */
-@import './../src/utilityClasses';
+@use './../src/utilityClasses';
 
 /* --------start utilityClasses/inset import ------------- */
-@import "./../src/utilityClasses/inset";
+@use "./../src/utilityClasses/inset";
 
 /* --------start utilityClasses/displayProps import ------------- */
-@import './../src/utilityClasses/displayProperties';
+@use './../src/utilityClasses/displayProperties';
 
 /* --------start utilityClasses/fontStyles import ------------- */
-@import './../src/utilityClasses/fontStyles';
+@use './../src/utilityClasses/fontStyles';
 
 /* --------start utilityClasses/responsive import ------------- */
-@import './../src/utilityClasses/responsive';
+@use './../src/utilityClasses/responsive';
 
 /* --------start componentSupport/anchor-roleButton import ------------- */
-@import './../src/componentSupport/anchor-roleButton';
+@use './../src/componentSupport/anchor-roleButton';
 
 /* --------start componentSupport/anchor-roleTab import ------------- */
-@import './../src/componentSupport/anchor-roleTab';
+@use './../src/componentSupport/anchor-roleTab';
 
 /* --------start componentSupport/containedButtons import ------------- */
-@import './../src/componentSupport/containedButtons';
+@use './../src/componentSupport/containedButtons';
 
 /* --------start componentSupport/tablist import ------------- */
-@import './../src/componentSupport/tablist';
+@use './../src/componentSupport/tablist';
 
-/* --------start componentSupport/tablist import ------------- */
-@import './../src/componentSupport/table';
+/* --------start componentSupport/table import ------------- */
+@use './../src/componentSupport/table';
 
 /* --------start utilityClasses/layoutProperties import ------------- */
-@import '../src/utilityClasses/layoutProperties';
+@use '../src/utilityClasses/layoutProperties';
 
 /* --------start picture import ------------- */
-@import './../src/picture';
+@use './../src/picture';
 
 /* --------start blockquote import ------------- */
-@import './../src/blockquote';
+@use './../src/blockquote';
 
 /* --------start spacingUtility mixin import ------------- */
-$ds-spacing-types: inline;
-$ds-spacing-options: 25, 1000;
-$ds-spacing-properties: padding, margin;
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap.scss';
-@import './../src/utilityMixins/spacingUtility';
+@use './../src/utilityMixins/spacingUtility' with (
+  $ds-spacing-types: inline,
+  $ds-spacing-options: (25, 1000),
+  $ds-spacing-properties: (padding, margin)
+);
 
 /* --------start layoutPropertiesGenerator mixin import ------------- */
-$layout-properties: margin;
-$layout-extensions: Right;
-$layout-modifiers: (
-  'none': 0,
-  '100': $ds-size-100,
-  '200': $ds-size-200,
-  '300': $ds-size-300,
-  '400': $ds-size-400,
+@use './../src/utilityMixins/layoutPropertiesGenerator' with (
+  $layout-properties: margin,
+  $layout-extensions: Right,
+  $layout-modifiers: (
+    'none': 0,
+    '100': vac.$ds-size-100,
+    '200': vac.$ds-size-200,
+    '300': vac.$ds-size-300,
+    '400': vac.$ds-size-400,
+  )
 );
-@import './../src/utilityMixins/layoutPropertiesGenerator';

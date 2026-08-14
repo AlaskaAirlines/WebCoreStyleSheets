@@ -1,7 +1,6 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables.scss';
-
-@import 'true';
-@import '../src/breakpoints';
+@use 'true' as *;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as *;
+@use './../src/breakpoints' as *;
 
 @include describe('auro_breakpoint--lg()') {
   @include it('should return content within pre-defined media query') {

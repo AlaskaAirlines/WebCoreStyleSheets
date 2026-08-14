@@ -3,12 +3,16 @@
 
 // ---------------------------------------------------------------------
 
-@import '../libSupport/deprecated';
-@import '../libSupport/manageScope';
+@use "sass:meta";
+
+@use '../libSupport/deprecated';
+@use '../libSupport/manageScope';
 
 // sass-lint:disable mixins-before-declarations variable-for-property
 
-@import '../utilityVariables/important';
+@use '../utilityVariables/important';
+@use "../breakpoints" as breakpoints;
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as *;
 
 /// Utility class to restrain visibility of UI element to __sm__ users only.
 ///
@@ -17,8 +21,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-smOnly {}
@@ -30,10 +34,10 @@
 ///   .auro_util_is-smOnly {}
 ///
 
-#{$scope}.#{$prefix}util_is-smOnly {
-  @if variable-exists(ds-grid-breakpoint-sm) {
-    @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-smOnly {
+  @if meta.variable-exists(ds-grid-breakpoint-sm) {
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+      display: none important.$important;
     }
   }
 }
@@ -45,8 +49,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-mdOnly {}
@@ -58,15 +62,15 @@
 ///   .auro_util_is-mdOnly {}
 ///
 
-#{$scope}.#{$prefix}util_is-mdOnly {
-  @if variable-exists(ds-grid-breakpoint-sm) {
-    display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-mdOnly {
+  @if meta.variable-exists(ds-grid-breakpoint-sm) {
+    display: none important.$important;
 
-    @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: block $important;
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+      display: block important.$important;
     }
-    @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-      display: none $important;
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-md) {
+      display: none important.$important;
     }
   }
 }
@@ -78,8 +82,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-mdOnly--inline {}
@@ -90,15 +94,15 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-mdOnly--inline {}
 ///
-#{$scope}.#{$prefix}util_is-mdOnly--inline {
-  @if variable-exists(ds-grid-breakpoint-sm) {
-    display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-mdOnly--inline {
+  @if meta.variable-exists(ds-grid-breakpoint-sm) {
+    display: none important.$important;
 
-    @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: inline-block $important;
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+      display: inline-block important.$important;
     }
-    @include auro_breakpoint($min: $ds-grid-breakpoint-md) {
-      display: none $important;
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-md) {
+      display: none important.$important;
     }
   }
 }
@@ -110,8 +114,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-mdAppears {}
@@ -123,12 +127,12 @@
 ///   .auro_util_is-mdAppears {}
 ///
 
-#{$scope}.#{$prefix}util_is-mdAppears {
-  @if variable-exists(ds-grid-breakpoint-sm) {
-    display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-mdAppears {
+  @if meta.variable-exists(ds-grid-breakpoint-sm) {
+    display: none important.$important;
 
-    @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: block $important;
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+      display: block important.$important;
     }
   }
 }
@@ -140,8 +144,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-mdAppears--inline {}
@@ -153,12 +157,12 @@
 ///   .auro_util_is-mdAppears--inline {}
 ///
 
-#{$scope}.#{$prefix}util_is-mdAppears--inline {
-  @if variable-exists(ds-grid-breakpoint-sm) {
-    display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-mdAppears--inline {
+  @if meta.variable-exists(ds-grid-breakpoint-sm) {
+    display: none important.$important;
 
-    @include auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: inline-block $important;
+    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+      display: inline-block important.$important;
     }
   }
 }
@@ -170,8 +174,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-lgOnly {}
@@ -182,12 +186,12 @@
 /// @example scss - Selector(s) when $prefix: true;
 ///   .auro_util_is-lgOnly {}
 ///
-#{$scope}.#{$prefix}util_is-lgOnly {
-  @if variable-exists(ds-breakpoint-lg) {
-    display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-lgOnly {
+  @if meta.variable-exists(ds-breakpoint-lg) {
+    display: none important.$important;
 
-    @include auro_breakpoint($min: $ds-breakpoint-lg) {
-      display: block $important;
+    @include breakpoints.auro_breakpoint($min: $ds-breakpoint-lg) {
+      display: block important.$important;
     }
   }
 }
@@ -199,8 +203,8 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import mixin file and selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints" as *;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_is-lgOnly--inline {}
@@ -212,12 +216,12 @@
 ///   .auro_util_is-lgOnly--inline {}
 ///
 
-#{$scope}.#{$prefix}util_is-lgOnly--inline {
-  @if variable-exists(ds-breakpoint-lg) {
-    display: none $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_is-lgOnly--inline {
+  @if meta.variable-exists(ds-breakpoint-lg) {
+    display: none important.$important;
 
-    @include auro_breakpoint($min: $ds-breakpoint-lg) {
-      display: inline-block $important;
+    @include breakpoints.auro_breakpoint($min: $ds-breakpoint-lg) {
+      display: inline-block important.$important;
     }
   }
 }
@@ -230,7 +234,7 @@
 /// [Manage](/#scope-prefix-variable-scope) `$scope` and `$prefix` options.
 /// @group Utility-responsive
 /// @example scss - import selector partial file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/responsive" as *;
 ///
 /// @example scss - Default selector(s)
 ///   .util_img-is-responsive {}
@@ -244,6 +248,6 @@
 /// @example html - Example HTML selector use
 ///   <img class="util_img-is-responsive" src=" ... " alt="" />
 ///
-#{$scope}.#{$prefix}util_img-is-responsive {
-  width: 100% $important;
+#{manageScope.$scope}.#{manageScope.$prefix}util_img-is-responsive {
+  width: 100% important.$important;
 }

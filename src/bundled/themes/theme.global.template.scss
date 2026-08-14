@@ -11,19 +11,18 @@
 // Template for theme compilation - THEME_NAME will be replaced by build script
 // Built with theme.global.css.build.mjs
 
-// Tokens & config
-@import "../../config/THEME_NAME";
-
 // Essentials
-@import "../../essentials/themes/THEME_NAME";
-@import "../../fonts/themes/THEME_NAME";
+// Each theme's essentials module @uses its own config (tokens + base config map),
+// so no global token threading is required.
+@use "../../essentials/themes/THEME_NAME" as essentials;
+@use "../../fonts/themes/THEME_NAME" as fonts;
 
 // Type styles
 // Every theme's type custom properties are emitted so this single global
 // stylesheet can switch themes at runtime via the data-aag-theme attribute.
 // THEME_NAME is the default (also under :root); the other themes are scoped to
 // their attribute selectors only (AB#1612078).
-@import "../type/themes/THEME_NAME";
+@use "../type/themes/THEME_NAME";
 
 // Typography classes (theme-agnostic; reference the type custom properties above).
-@import "../../type/mixins/type-classes-generator";
+@use "../../type/mixins/type-classes-generator";

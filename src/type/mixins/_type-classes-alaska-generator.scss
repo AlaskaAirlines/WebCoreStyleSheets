@@ -5,16 +5,20 @@
  */
 
 // Import needed mixins and partials
-@import "../partials/body";
-@import "../partials/display";
-@import "../partials/heading";
-@import "../partials/accent";
+@use "../partials/body" as partials-body;
+@use "../partials/display" as partials-display;
+@use "../partials/heading" as partials-heading;
+@use "../partials/accent" as partials-accent;
 
 // Import Alaska theme configs
-@import "../../../src/config/alaska/type/index.scss";
+@use "../../../src/config/alaska/type/index.scss";
+@use "../../config/alaska/type/accent";
+@use "../../config/alaska/type/body";
+@use "../../config/alaska/type/display";
+@use "../../config/alaska/type/heading";
 
 // Generate typography classes with Alaska fallbacks
-@include generate-body-classes(true, $alaska-type-body-config);
-@include generate-display-classes(true, $alaska-type-display-config);
-@include generate-heading-classes(true, $alaska-type-heading-config);
-@include generate-accent-classes(true, $alaska-type-accent-config);
+@include partials-body.generate-body-classes(true, body.$alaska-type-body-config);
+@include partials-display.generate-display-classes(true, display.$alaska-type-display-config);
+@include partials-heading.generate-heading-classes(true, heading.$alaska-type-heading-config);
+@include partials-accent.generate-accent-classes(true, accent.$alaska-type-accent-config);

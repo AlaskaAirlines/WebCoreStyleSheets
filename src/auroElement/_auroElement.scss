@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-@import '../../src/utilityClasses/displayProperties';
+@use '../../src/utilityClasses/displayProperties';
 
 /// Component a11y support for `:host` </br>
 /// For use with auroElement.js base class and web component development
@@ -13,7 +13,7 @@
 ///   :host {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement" as *;
 :host {
   @extend .util_displayBlock;
 }
@@ -26,7 +26,7 @@
 ///   :host([hidden]:not(:focus):not(:active)) {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement" as *;
 :host([hidden]:not(:focus):not(:active)) {
   @extend .util_displayHidden;
 }
@@ -39,7 +39,7 @@
 ///   :host([hiddenVisually]:not(:focus):not(:active)) {}
 ///
 /// @example scss - import mixin file
-///   @import "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement" as *;
 :host([hiddenVisually]:not(:focus):not(:active)) {
   @extend .util_displayHiddenVisually;
 }

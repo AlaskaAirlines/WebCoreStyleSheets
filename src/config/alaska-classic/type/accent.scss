@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska-classic/SCSSVariables--alaskaClassic" as v;
+
 // Accent - Type
 $alaska-classic-type-accent-config: (
   'family': v.$ds-basic-type-family-accent,

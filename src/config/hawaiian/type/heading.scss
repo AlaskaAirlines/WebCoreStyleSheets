@@ -1,3 +1,5 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
+
 // Heading - Type
 $hawaiian-type-heading-config: (
   'family': v.$ds-basic-type-family-heading,

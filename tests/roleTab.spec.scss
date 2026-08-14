@@ -1,7 +1,5 @@
-@import '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-
-@import 'true';
-@import '../src/utilityMixins/anchor-roleTab';
+@use 'true' as *;
+@use './../src/utilityMixins/anchor-roleTab' as *;
 
 @include describe('auro_anchorTab()') {
   @include it('should return a populated selector based on (sass, noncomponent)') {

@@ -5,7 +5,7 @@
 
 // sass-lint:disable no-duplicate-properties
 
-@import '../utilityVariables/fontUtils';
+@use '../utilityVariables/fontUtils';
 
 // @font-face is not supported in SassDocs
 
@@ -16,7 +16,7 @@
     font-weight: $weight;
     font-style: normal;
     font-display: fallback;
-    src: url("#{$i18n-font-base-path-en}/#{$filename}.woff2") format("woff2");
+    src: url("#{fontUtils.$i18n-font-base-path-en}/#{$filename}.woff2") format("woff2");
     @if $unicode-range != null {
       unicode-range: $unicode-range;
     }

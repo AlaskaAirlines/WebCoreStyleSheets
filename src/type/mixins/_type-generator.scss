@@ -1,8 +1,10 @@
-@import "../partials/body";
-@import "../partials/display";
-@import "../partials/heading";
-@import "../partials/accent";
-@import "theme-codes";
+@use "sass:map";
+
+@use "../partials/body";
+@use "../partials/display";
+@use "../partials/heading";
+@use "../partials/accent";
+@use "theme-codes";
 
 // Build the data-attribute scoping selector for a theme's type custom properties.
 // Emits both the base `[data-aag-theme="aag-theme-<code>"]` selector and the
@@ -12,7 +14,7 @@
 // as the stylesheet's default theme (additive and non-breaking). Falls back to
 // `:root` only if the theme has no known code.
 @function wcss-type-scope-selector($theme-name, $include-root: false) {
-  $code: map-get($wcss-theme-codes, $theme-name);
+  $code: map.get(theme-codes.$wcss-theme-codes, $theme-name);
 
   @if $code == null {
     @warn "No theme code found for '#{$theme-name}'; emitting :root only for type custom properties.";
@@ -21,16 +23,16 @@
 
   $attributes: "[data-aag-theme=\"aag-theme-#{$code}\"], [data-aag-theme=\"aag-theme-#{$code}-type\"]";
 
-  @return if($include-root, ":root, #{$attributes}", $attributes);
+  @return if(sass($include-root): ":root, #{$attributes}"; else: $attributes);
 }
 
 // Emit a single theme's type custom properties under the provided selector list.
 @mixin generate-type-css-vars($theme-configs, $selectors) {
   #{$selectors} {
-    @include generate-body-css-vars(map-get($theme-configs, 'body'));
-    @include generate-display-css-vars(map-get($theme-configs, 'display'));
-    @include generate-heading-css-vars(map-get($theme-configs, 'heading'));
-    @include generate-accent-css-vars(map-get($theme-configs, 'accent'));
+    @include body.generate-body-css-vars(map.get($theme-configs, 'body'));
+    @include display.generate-display-css-vars(map.get($theme-configs, 'display'));
+    @include heading.generate-heading-css-vars(map.get($theme-configs, 'heading'));
+    @include accent.generate-accent-css-vars(map.get($theme-configs, 'accent'));
   }
 }
 
@@ -48,7 +50,7 @@
 // (keys: body, display, heading, accent).
 @mixin generate-multi-theme-type-css-vars($themes, $default-theme) {
   @include generate-type-css-vars(
-    map-get($themes, $default-theme),
+    map.get($themes, $default-theme),
     wcss-type-scope-selector($default-theme, true)
   );
 
@@ -61,8 +63,8 @@
 
 // Generate theme type classes
 @mixin generate-theme-type-classes($use-fallback: false, $fallback-configs: null, $accent-use-letter-spacing: true) {
-  @include generate-body-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'body'), null));
-  @include generate-display-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'display'), null));
-  @include generate-heading-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'heading'), null));
-  @include generate-accent-classes($use-fallback, if($fallback-configs != null, map-get($fallback-configs, 'accent'), null), $accent-use-letter-spacing);
+  @include body.generate-body-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'body'); else: null));
+  @include display.generate-display-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'display'); else: null));
+  @include heading.generate-heading-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'heading'); else: null));
+  @include accent.generate-accent-classes($use-fallback, if(sass($fallback-configs != null): map.get($fallback-configs, 'accent'); else: null), $accent-use-letter-spacing);
 }

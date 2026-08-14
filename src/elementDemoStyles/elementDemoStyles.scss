@@ -5,20 +5,20 @@
 // All styles for the custom element are located in the ./src directory.
 
 // ----------------------- DO NOT EDIT -----------------------------
-@import './../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-@import './../../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska';
+@use '../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
+@use '../../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska';
 
-@import './../breakpoints';
-@import './../grids';
+@use '../breakpoints';
+@use '../grids';
 
 // Creates baseline output in CSS
-@import './../fonts/legacy/auro-classic';
-@import './../normalize';
-@import './../headings';
-@import './../blockquote';
-@import './../componentSupport/table';
-@import './../focus-visible';
-@import './../essentials/legacy/auro-classic';
+@use '../fonts/legacy/auro-classic';
+@use '../normalize';
+@use '../headings';
+@use '../blockquote';
+@use '../componentSupport/table';
+@use '../focus-visible';
+@use '../essentials/legacy/auro-classic' as auro-classic2;
 
 /* stylelint-disable selector-type-no-unknown */
 
@@ -70,10 +70,10 @@
 }
 
 pre {
-  background: var(--ds-color-brand-gray-100, $ds-color-brand-gray-100) !important;
+  background: var(--ds-color-brand-gray-100, SCSSVariables.$ds-color-brand-gray-100) !important;
   border: unset !important;
   padding: var(--ds-size-200) !important;
-  margin-bottom: var(--ds-size-300, $ds-size-300) !important;
+  margin-bottom: var(--ds-size-300, SCSSVariables.$ds-size-300) !important;
   border-style: solid !important;
   border-width: 1px !important;
   border-color: var(--ds-color-border-secondary-default) !important;
@@ -94,7 +94,7 @@ pre {
 }
 
 code:not(.html):not(.css):not(.js):not([class*='language-']) {
-  color: var(--ds-color-brand-flamingo-500, $ds-color-brand-flamingo-500);
+  color: var(--ds-color-brand-flamingo-500, SCSSVariables.$ds-color-brand-flamingo-500);
   margin-bottom: 0 !important;
 }
 

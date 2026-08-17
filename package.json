@@ -67,7 +67,7 @@
     "test": "npm-run-all build:theme-codes scss:lint build:sass:test css:lint jest",
     "serve": "npm run build:sassdoc && node scripts/live-server.js",
     "watch": "nodemon -e scss --watch tests --watch src --exec npm run build:dev",
-    "prepare": "husky"
+    "prepare": "husky && npm run build:theme-codes"
   },
   "commitlint": {
     "extends": [

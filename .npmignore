@@ -25,3 +25,4 @@ src/scripts/
 # overrides
 !CHANGELOG.md
 !README.md
+!MIGRATION.md

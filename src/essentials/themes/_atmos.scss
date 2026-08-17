@@ -2,4 +2,4 @@
 @use "../../config/atmos/base" as config;
 
 // Generate Atmos theme bundled essentials
-@include base.essentials-base(config.$alaska-base-config);
+@include base.essentials-base(config.$atmos-base-config);

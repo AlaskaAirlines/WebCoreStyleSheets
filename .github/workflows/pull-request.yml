@@ -85,7 +85,7 @@ jobs:
               return packageJson;
             result-encoding: string
         - name: Publish to NPM
-          run: npm publish --registry=https://registry.npmjs.org
+          run: npm publish --registry=https://registry.npmjs.org --tag pr
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Fallback only

@@ -7,10 +7,19 @@
 
 // Internal support mixin, not designed for public use.
 
+// Internal builds that intentionally compile deprecated modules (e.g. the
+// `styleTest.scss` smoke test) configure this to `true` at first load to keep
+// their output clean. Consumers leave it at the `false` default and continue to
+// receive deprecation warnings.
+//   @use './libSupport/deprecated' with ($silence: true);
+$silence: false !default;
+
 // @example scss - Using mixin with default values;
 //  @use './libSupport/deprecated' as *;
 //  @include deprecated('@mixin auro_transition. No replacement. Discontinue use.');
 
 @mixin deprecated($string) {
-  @warn 'Deprecated: #{$string} Please see https://alaskaairlines.github.io/WebCoreStyleSheets/ for more information.';
+  @if not $silence {
+    @warn 'Deprecated: #{$string} Please see https://alaskaairlines.github.io/WebCoreStyleSheets/ for more information.';
+  }
 }

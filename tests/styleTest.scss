@@ -3,6 +3,15 @@
 // pulled in more than once (e.g. via the `utilityClasses` aggregate and individually)
 // are emitted only once under `@use`, unlike the legacy `@import` build.
 
+/* --------start deprecated silence (internal smoke test only) ------------- */
+// This smoke test intentionally compiles deprecated modules (e.g. `inset`) to
+// verify they still build. Configure the shared `deprecated` module to silence
+// its load-time `@warn` here — this MUST be the first `@use` so the module is
+// configured before any other stylesheet loads it. Real consumers are unaffected:
+// `deprecated.$silence` defaults to `false`, so they still get warned.
+@use './../src/libSupport/deprecated' with ($silence: true);
+/* --------end deprecated silence ------------- */
+
 /* --------start variables import ------------- */
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 /* --------end variables import ------------- */

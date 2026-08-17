@@ -1237,15 +1237,20 @@ $layout-modifiers: (
   &quot;200&quot;: tokens.$ds-size-200,
   &quot;300&quot;: tokens.$ds-size-300,
   &quot;400&quot;: tokens.$ds-size-400
-) !default;</code></pre></div><div class="item__example example"><div class="example__description"><p>example default output selector</p></div><pre class="example__code language-scss"><code>.util_paddingLeft--none {}</code></pre></div><div class="item__example example"><div class="example__description"><p>example output selector when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .util_paddingLeft--none {}</code></pre></div><div class="item__example example"><div class="example__description"><p>example output selector when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_util_paddingLeft--none {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@use &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator&quot; as *;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values prior to import</p></div><pre class="example__code language-scss"><code>$layout-properties: margin;
-$layout-extensions: Right;
-$layout-modifiers: (
-  &quot;25&quot;: tokens.$ds-size-25,
-  &quot;50&quot;: tokens.$ds-size-50,
-  &quot;600&quot;: tokens.$ds-size-600,
-  &quot;800&quot;: tokens.$ds-size-800,
-);
-@use &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator&quot; as *;</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#scope-prefix-variable-scope"><code>scope</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#scope-prefix-variable-prefix"><code>prefix</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utility-variable-important"><code>important</code></a></li></ul></section><section class="main__item container item" id="utility-layout-mixin-auro_spacing"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_spacing">auro_spacing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_spacing($ds-spacing-types: inline, stack, $ds-spacing-options: none, 25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000) { 
+) !default;</code></pre></div><div class="item__example example"><div class="example__description"><p>example default output selector</p></div><pre class="example__code language-scss"><code>.util_paddingLeft--none {}</code></pre></div><div class="item__example example"><div class="example__description"><p>example output selector when $scope: true;</p></div><pre class="example__code language-scss"><code>.auro .util_paddingLeft--none {}</code></pre></div><div class="item__example example"><div class="example__description"><p>example output selector when $prefix: true;</p></div><pre class="example__code language-scss"><code>.auro_util_paddingLeft--none {}</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file</p></div><pre class="example__code language-scss"><code>@use &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator&quot; as *;</code></pre></div><div class="item__example example"><div class="example__description"><p>import mixin file with altered output values</p></div><pre class="example__code language-scss"><code>// Load any modules referenced by your overrides (e.g. design tokens) first,
+// then pass the overrides through `@use ... with (...)`. Under the Sass module
+// system, redefining `$layout-*` before the `@use` no longer configures it.
+@use &quot;@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables&quot; as tokens;
+@use &quot;./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator&quot; with (
+  $layout-properties: margin,
+  $layout-extensions: Right,
+  $layout-modifiers: (
+    &quot;25&quot;: tokens.$ds-size-25,
+    &quot;50&quot;: tokens.$ds-size-50,
+    &quot;600&quot;: tokens.$ds-size-600,
+    &quot;800&quot;: tokens.$ds-size-800
+  )
+);</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#scope-prefix-variable-scope"><code>scope</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#scope-prefix-variable-prefix"><code>prefix</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#utility-variable-important"><code>important</code></a></li></ul></section><section class="main__item container item" id="utility-layout-mixin-auro_spacing"><h3 class="item__heading"><a class="item__name" href="#mixin-auro_spacing">auro_spacing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin auro_spacing($ds-spacing-types: inline, stack, $ds-spacing-options: none, 25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000) { 
   @each $type in $types {
     @each $value in $options {
       $map: map.keys(tokens.$tokens);

@@ -32,6 +32,13 @@
     );
   }
 
+  @include it('scopes alaska-classic to its design-tokens code (asc)') {
+    @include assert-equal(
+      wcss-type-scope-selector('alaska-classic'),
+      '[data-aag-theme="aag-theme-asc"], [data-aag-theme="aag-theme-asc-type"]'
+    );
+  }
+
   @include it('falls back to :root for an unknown theme even when root is excluded') {
     // The null-code branch returns `:root` before `$include-root` is consulted,
     // so an unknown theme yields `:root` regardless of the flag.

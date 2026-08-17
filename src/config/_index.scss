@@ -6,10 +6,10 @@
 // sass-lint:disable mixins-before-declarations variable-for-property no-vendor-prefixes
 
 // Theme configs.
-// Alaska, Alaska Classic and Atmos all expose a `$alaska-base-config` map, so the
-// module system cannot forward them into one flat namespace. Each theme is forwarded
-// under a theme prefix (e.g. `atmos.$atmos-alaska-base-config`) to keep every config
-// reachable without collisions.
+// Alaska and Alaska Classic both expose a `$alaska-base-config` map (Alaska Classic
+// forwards Alaska's), so the module system cannot forward every theme into one flat
+// namespace without collisions. Each theme is forwarded under a theme prefix
+// (e.g. `atmos.$atmos-base-config`) to keep every config reachable.
 @forward "alaska" as alaska-*;
 @forward "alaska-classic" as alaska-classic-*;
 @forward "atmos" as atmos-*;

@@ -3,8 +3,6 @@
 
 // ---------------------------------------------------------------------
 
-@use "sass:meta";
-
 @use '../libSupport/deprecated';
 @use '../libSupport/manageScope';
 
@@ -35,10 +33,8 @@
 ///
 
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-smOnly {
-  @if meta.variable-exists(ds-grid-breakpoint-sm) {
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: none important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+    display: none important.$important;
   }
 }
 
@@ -63,15 +59,13 @@
 ///
 
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-mdOnly {
-  @if meta.variable-exists(ds-grid-breakpoint-sm) {
-    display: none important.$important;
+  display: none important.$important;
 
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: block important.$important;
-    }
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-md) {
-      display: none important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+    display: block important.$important;
+  }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-md) {
+    display: none important.$important;
   }
 }
 
@@ -95,15 +89,13 @@
 ///   .auro_util_is-mdOnly--inline {}
 ///
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-mdOnly--inline {
-  @if meta.variable-exists(ds-grid-breakpoint-sm) {
-    display: none important.$important;
+  display: none important.$important;
 
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: inline-block important.$important;
-    }
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-md) {
-      display: none important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+    display: inline-block important.$important;
+  }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-md) {
+    display: none important.$important;
   }
 }
 
@@ -128,12 +120,10 @@
 ///
 
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-mdAppears {
-  @if meta.variable-exists(ds-grid-breakpoint-sm) {
-    display: none important.$important;
+  display: none important.$important;
 
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: block important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+    display: block important.$important;
   }
 }
 
@@ -158,12 +148,10 @@
 ///
 
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-mdAppears--inline {
-  @if meta.variable-exists(ds-grid-breakpoint-sm) {
-    display: none important.$important;
+  display: none important.$important;
 
-    @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
-      display: inline-block important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-sm) {
+    display: inline-block important.$important;
   }
 }
 
@@ -187,12 +175,10 @@
 ///   .auro_util_is-lgOnly {}
 ///
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-lgOnly {
-  @if meta.variable-exists(ds-breakpoint-lg) {
-    display: none important.$important;
+  display: none important.$important;
 
-    @include breakpoints.auro_breakpoint($min: $ds-breakpoint-lg) {
-      display: block important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-lg) {
+    display: block important.$important;
   }
 }
 
@@ -217,12 +203,10 @@
 ///
 
 #{manageScope.$scope}.#{manageScope.$prefix}util_is-lgOnly--inline {
-  @if meta.variable-exists(ds-breakpoint-lg) {
-    display: none important.$important;
+  display: none important.$important;
 
-    @include breakpoints.auro_breakpoint($min: $ds-breakpoint-lg) {
-      display: inline-block important.$important;
-    }
+  @include breakpoints.auro_breakpoint($min: $ds-grid-breakpoint-lg) {
+    display: inline-block important.$important;
   }
 }
 

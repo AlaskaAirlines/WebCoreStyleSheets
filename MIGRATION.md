@@ -185,6 +185,25 @@ the former `auro-1` global file has been replaced by `atmos`:
 Consumers loading a global stylesheet by the old `auro-1` name must repoint to
 `atmos.global.css` (there is no `auro-1.global.css` in the v12 dist).
 
+The `src/type/themes/auro-1/index.scss` partial is preserved only as a compat
+shim: it now emits **Atmos** (`atm`) type custom properties, not Auro 1. Anyone
+`@use`-ing that path directly (rather than a bundled global) should migrate to
+`src/type/themes/atmos/` — the `auro-1` path may be removed in a future release.
+
+#### Type mixin signature change (`generate-theme-type-css-vars`)
+
+If you call the type generator mixins directly, note that
+`generate-theme-type-css-vars` now takes a second positional argument, the theme
+name, used to build its data-attribute scope selector:
+
+```scss
+// Before (v11)
+@include type-generator.generate-theme-type-css-vars($theme-configs);
+
+// After (v12)
+@include type-generator.generate-theme-type-css-vars($theme-configs, $theme-name);
+```
+
 ---
 
 ### Quick reference

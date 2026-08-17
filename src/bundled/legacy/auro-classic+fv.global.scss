@@ -21,4 +21,5 @@
 // Based on Auro Classic theme
 @use '../../focus-visible';
 @use '../../essentials/legacy/auro-classic';
-@use '../../fonts/legacy/auro-classic' as auro-classic2;
+// Alias avoids a namespace collision with essentials/legacy/auro-classic above.
+@use '../../fonts/legacy/auro-classic' as fonts-auro-classic;

@@ -53,16 +53,21 @@ $layout-modifiers: (
 ///
 /// @example scss - import mixin file
 ///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator" as *;
-/// @example scss - import mixin file with altered output values prior to import
-///   $layout-properties: margin;
-///   $layout-extensions: Right;
-///   $layout-modifiers: (
-///     "25": tokens.$ds-size-25,
-///     "50": tokens.$ds-size-50,
-///     "600": tokens.$ds-size-600,
-///     "800": tokens.$ds-size-800,
+/// @example scss - import mixin file with altered output values
+///   // Load any modules referenced by your overrides (e.g. design tokens) first,
+///   // then pass the overrides through `@use ... with (...)`. Under the Sass module
+///   // system, redefining `$layout-*` before the `@use` no longer configures it.
+///   @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
+///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator" with (
+///     $layout-properties: margin,
+///     $layout-extensions: Right,
+///     $layout-modifiers: (
+///       "25": tokens.$ds-size-25,
+///       "50": tokens.$ds-size-50,
+///       "600": tokens.$ds-size-600,
+///       "800": tokens.$ds-size-800
+///     )
 ///   );
-///   @use "./node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/layoutPropertiesGenerator" as *;
 @mixin auro_layoutPropertiesGenerator() {
   @each $property in $layout-properties {
     @each $extension in $layout-extensions {

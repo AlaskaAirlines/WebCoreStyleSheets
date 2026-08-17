@@ -83,6 +83,39 @@
   }
 }
 
+// Directly guards the invariant the @error above protects: generate-multi-theme-type-css-vars
+// must emit the DEFAULT theme under `:root` (plus its attribute selectors) and every
+// NON-default theme under its attribute selectors ONLY — never `:root`, which would clobber
+// the default theme's typography. A two-theme stub drawn from the real manifest feeds the
+// partial generators valid configs; the `expect` block reproduces the SAME generator output
+// under hardcoded selectors, so the type-var internals cancel out and only the selector
+// composition is under test. Regressing the mixin to pass `$include-root: true` for a
+// non-default theme would emit its block under `:root` and fail this assertion.
+@include describe('generate-multi-theme-type-css-vars() scoping') {
+  @include it('emits the default theme under :root but scopes non-default themes to attribute selectors only') {
+    $stub-themes: (
+      'alaska': map.get(all-theme-configs.$wcss-all-theme-configs, 'alaska'),
+      'hawaiian': map.get(all-theme-configs.$wcss-all-theme-configs, 'hawaiian')
+    );
+
+    @include assert {
+      @include output {
+        @include generate-multi-theme-type-css-vars($stub-themes, 'alaska');
+      }
+      @include expect {
+        @include generate-type-css-vars(
+          map.get($stub-themes, 'alaska'),
+          ':root, [data-aag-theme="aag-theme-as"], [data-aag-theme="aag-theme-as-type"]'
+        );
+        @include generate-type-css-vars(
+          map.get($stub-themes, 'hawaiian'),
+          '[data-aag-theme="aag-theme-ha"], [data-aag-theme="aag-theme-ha-type"]'
+        );
+      }
+    }
+  }
+}
+
 // The multi-theme global stylesheet (AB#1612078) emits ONE theme-agnostic set of
 // `.accent-*` classes that always reference `var(--wcss-accent-*-letter-spacing)`.
 // Hawaiian historically opted out of accent tracking via the now-defunct

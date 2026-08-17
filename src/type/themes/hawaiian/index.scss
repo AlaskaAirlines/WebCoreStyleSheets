@@ -11,5 +11,11 @@
   display.$hawaiian-type-display-config,
   heading.$hawaiian-type-heading-config,
   accent.$hawaiian-type-accent-config,
+  // Keep false. This single-theme bundle preserves the pre-v12 behavior of omitting
+  // the letter-spacing declaration from the generated `.accent-*` classes (Hawaiian
+  // has no accent tracking). Do NOT remove as "redundant" just because the accent
+  // config now supplies 'letter-spacing': normal — that key only neutralizes the
+  // SHARED declaration in the multi-theme bundle, which always emits letter-spacing.
+  // See src/config/hawaiian/type/accent.scss for the full rationale.
   $accent-uses-letter-spacing: false
 );

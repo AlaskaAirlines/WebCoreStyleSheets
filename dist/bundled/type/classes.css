@@ -1,0 +1,249 @@
+@charset "UTF-8";
+/*
+ * Copyright (c) Alaska Air. All rights reserved. Licensed under the Apache-2.0 license
+ * See LICENSE in the project root for license information.
+ */
+
+/* --------------------------------------------------------------------- */
+/*
+ * Generates common typography classes for use across all themes.
+ * These classes are identical across themes and only reference the CSS custom properties.
+ */
+.body-default {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-default-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-default-font-size);
+  line-height: var(--wcss-body-default-line-height);
+}
+
+.body-default-emphasized {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-default-emphasized-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-default-emphasized-font-size);
+  line-height: var(--wcss-body-default-emphasized-line-height);
+}
+
+.body-lg {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-lg-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-lg-font-size);
+  line-height: var(--wcss-body-lg-line-height);
+}
+
+.body-lg-emphasized {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-lg-emphasized-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-lg-emphasized-font-size);
+  line-height: var(--wcss-body-lg-emphasized-line-height);
+}
+
+.body-sm {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-sm-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-sm-font-size);
+  line-height: var(--wcss-body-sm-line-height);
+}
+
+.body-sm-emphasized {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-sm-emphasized-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-sm-emphasized-font-size);
+  line-height: var(--wcss-body-sm-emphasized-line-height);
+}
+
+.body-xs {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-xs-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-xs-font-size);
+  line-height: var(--wcss-body-xs-line-height);
+}
+
+.body-xs-emphasized {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-xs-emphasized-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-xs-emphasized-font-size);
+  line-height: var(--wcss-body-xs-emphasized-line-height);
+}
+
+.body-2xs {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-2xs-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-2xs-font-size);
+  line-height: var(--wcss-body-2xs-line-height);
+}
+
+.body-2xs-emphasized {
+  font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
+  font-weight: var(--wcss-body-2xs-emphasized-weight);
+  letter-spacing: var(--wcss-body-letter-spacing);
+  font-size: var(--wcss-body-2xs-emphasized-font-size);
+  line-height: var(--wcss-body-2xs-emphasized-line-height);
+}
+
+.display-2xl {
+  font-family:var(--wcss-display-2xl-family), var(--wcss-display-2xl-family-fallback);
+  font-weight: var(--wcss-display-2xl-weight);
+  line-height: var(--wcss-display-2xl-line-height);
+  font-size: var(--wcss-display-2xl-font-size);
+  letter-spacing: var(--wcss-display-2xl-letter-spacing);
+}
+
+.display-xl {
+  font-family:var(--wcss-display-xl-family), var(--wcss-display-xl-family-fallback);
+  font-weight: var(--wcss-display-xl-weight);
+  line-height: var(--wcss-display-xl-line-height);
+  font-size: var(--wcss-display-xl-font-size);
+  letter-spacing: var(--wcss-display-xl-letter-spacing);
+}
+
+.display-lg {
+  font-family:var(--wcss-display-lg-family), var(--wcss-display-lg-family-fallback);
+  font-weight: var(--wcss-display-lg-weight);
+  line-height: var(--wcss-display-lg-line-height);
+  font-size: var(--wcss-display-lg-font-size);
+  letter-spacing: var(--wcss-display-lg-letter-spacing);
+}
+
+.display-md {
+  font-family:var(--wcss-display-md-family), var(--wcss-display-md-family-fallback);
+  font-weight: var(--wcss-display-md-weight);
+  line-height: var(--wcss-display-md-line-height);
+  font-size: var(--wcss-display-md-font-size);
+  letter-spacing: var(--wcss-display-md-letter-spacing);
+}
+
+.display-sm {
+  font-family:var(--wcss-display-sm-family), var(--wcss-display-sm-family-fallback);
+  font-weight: var(--wcss-display-sm-weight);
+  line-height: var(--wcss-display-sm-line-height);
+  font-size: var(--wcss-display-sm-font-size);
+  letter-spacing: var(--wcss-display-sm-letter-spacing);
+}
+
+.display-xs {
+  font-family:var(--wcss-display-xs-family), var(--wcss-display-xs-family-fallback);
+  font-weight: var(--wcss-display-xs-weight);
+  line-height: var(--wcss-display-xs-line-height);
+  font-size: var(--wcss-display-xs-font-size);
+  letter-spacing: var(--wcss-display-xs-letter-spacing);
+}
+
+.heading-xl {
+  font-family:var(--wcss-heading-xl-family), var(--wcss-heading-xl-family-fallback);
+  font-weight: var(--wcss-heading-xl-weight);
+  line-height: var(--wcss-heading-xl-line-height);
+  font-size: var(--wcss-heading-xl-font-size);
+  letter-spacing: var(--wcss-heading-xl-letter-spacing);
+}
+
+.heading-lg {
+  font-family:var(--wcss-heading-lg-family), var(--wcss-heading-lg-family-fallback);
+  font-weight: var(--wcss-heading-lg-weight);
+  line-height: var(--wcss-heading-lg-line-height);
+  font-size: var(--wcss-heading-lg-font-size);
+  letter-spacing: var(--wcss-heading-lg-letter-spacing);
+}
+
+.heading-md {
+  font-family:var(--wcss-heading-md-family), var(--wcss-heading-md-family-fallback);
+  font-weight: var(--wcss-heading-md-weight);
+  line-height: var(--wcss-heading-md-line-height);
+  font-size: var(--wcss-heading-md-font-size);
+  letter-spacing: var(--wcss-heading-md-letter-spacing);
+}
+
+.heading-sm {
+  font-family:var(--wcss-heading-sm-family), var(--wcss-heading-sm-family-fallback);
+  font-weight: var(--wcss-heading-sm-weight);
+  line-height: var(--wcss-heading-sm-line-height);
+  font-size: var(--wcss-heading-sm-font-size);
+  letter-spacing: var(--wcss-heading-sm-letter-spacing);
+}
+
+.heading-xs {
+  font-family:var(--wcss-heading-xs-family), var(--wcss-heading-xs-family-fallback);
+  font-weight: var(--wcss-heading-xs-weight);
+  line-height: var(--wcss-heading-xs-line-height);
+  font-size: var(--wcss-heading-xs-font-size);
+  letter-spacing: var(--wcss-heading-xs-letter-spacing);
+}
+
+.heading-2xs {
+  font-family:var(--wcss-heading-2xs-family), var(--wcss-heading-2xs-family-fallback);
+  font-weight: var(--wcss-heading-2xs-weight);
+  line-height: var(--wcss-heading-2xs-line-height);
+  font-size: var(--wcss-heading-2xs-font-size);
+  letter-spacing: var(--wcss-heading-2xs-letter-spacing);
+}
+
+.accent-2xl {
+  font-family:var(--wcss-accent-2xl-family), var(--wcss-accent-2xl-family-fallback);
+  font-weight: var(--wcss-accent-2xl-weight);
+  line-height: var(--wcss-accent-2xl-line-height);
+  font-size: var(--wcss-accent-2xl-font-size);
+  letter-spacing: var(--wcss-accent-2xl-letter-spacing);
+  text-transform: uppercase;
+}
+
+.accent-xl {
+  font-family:var(--wcss-accent-xl-family), var(--wcss-accent-xl-family-fallback);
+  font-weight: var(--wcss-accent-xl-weight);
+  line-height: var(--wcss-accent-xl-line-height);
+  font-size: var(--wcss-accent-xl-font-size);
+  letter-spacing: var(--wcss-accent-xl-letter-spacing);
+  text-transform: uppercase;
+}
+
+.accent-lg {
+  font-family:var(--wcss-accent-lg-family), var(--wcss-accent-lg-family-fallback);
+  font-weight: var(--wcss-accent-lg-weight);
+  line-height: var(--wcss-accent-lg-line-height);
+  font-size: var(--wcss-accent-lg-font-size);
+  letter-spacing: var(--wcss-accent-lg-letter-spacing);
+  text-transform: uppercase;
+}
+
+.accent-md {
+  font-family:var(--wcss-accent-md-family), var(--wcss-accent-md-family-fallback);
+  font-weight: var(--wcss-accent-md-weight);
+  line-height: var(--wcss-accent-md-line-height);
+  font-size: var(--wcss-accent-md-font-size);
+  letter-spacing: var(--wcss-accent-md-letter-spacing);
+  text-transform: uppercase;
+}
+
+.accent-sm {
+  font-family:var(--wcss-accent-sm-family), var(--wcss-accent-sm-family-fallback);
+  font-weight: var(--wcss-accent-sm-weight);
+  line-height: var(--wcss-accent-sm-line-height);
+  font-size: var(--wcss-accent-sm-font-size);
+  letter-spacing: var(--wcss-accent-sm-letter-spacing);
+  text-transform: uppercase;
+}
+
+.accent-xs {
+  font-family:var(--wcss-accent-xs-family), var(--wcss-accent-xs-family-fallback);
+  font-weight: var(--wcss-accent-xs-weight);
+  line-height: var(--wcss-accent-xs-line-height);
+  font-size: var(--wcss-accent-xs-font-size);
+  letter-spacing: var(--wcss-accent-xs-letter-spacing);
+  text-transform: uppercase;
+}
+
+.accent-2xs {
+  font-family:var(--wcss-accent-2xs-family), var(--wcss-accent-2xs-family-fallback);
+  font-weight: var(--wcss-accent-2xs-weight);
+  line-height: var(--wcss-accent-2xs-line-height);
+  font-size: var(--wcss-accent-2xs-font-size);
+  letter-spacing: var(--wcss-accent-2xs-letter-spacing);
+  text-transform: uppercase;
+}

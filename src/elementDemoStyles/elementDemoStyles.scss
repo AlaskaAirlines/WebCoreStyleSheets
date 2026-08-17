@@ -18,7 +18,8 @@
 @use '../blockquote';
 @use '../componentSupport/table';
 @use '../focus-visible';
-@use '../essentials/legacy/auro-classic' as auro-classic2;
+// Alias avoids a namespace collision with fonts/legacy/auro-classic above.
+@use '../essentials/legacy/auro-classic' as essentials-auro-classic;
 
 /* stylelint-disable selector-type-no-unknown */
 

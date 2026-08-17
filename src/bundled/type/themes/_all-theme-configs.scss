@@ -10,10 +10,12 @@
 //
 // MAINTENANCE: this is a STATIC manifest. Theme discovery elsewhere (the build
 // scripts theme-codes.build.mjs and type.classes.css.build.mjs) is dynamic,
-// driven by design-tokens' THEME_DEFINITIONS. When a theme is added there, this
-// file must be updated by hand (import its config + add a $wcss-all-theme-configs
-// entry) or the multi-theme bundles will silently omit the new theme's vars with
-// no build-time error.
+// driven by design-tokens' THEME_DEFINITIONS. When a theme is added there, two
+// files must be updated by hand: this manifest (import its config + add a
+// $wcss-all-theme-configs entry) and a new src/bundled/type/themes/<dir>.scss.
+// If you forget the bundled Sass file, the build script errors with a Sass
+// "Can't find stylesheet"; if you forget the manifest entry, the spec test
+// (typeThemeScoping.spec.scss) catches the drift.
 
 @use "../../../config/alaska-classic/type/accent" as accent2;
 @use "../../../config/alaska-classic/type/body" as body2;

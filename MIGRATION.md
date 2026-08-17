@@ -188,7 +188,16 @@ Consumers loading a global stylesheet by the old `auro-1` name must repoint to
 The `src/type/themes/auro-1/index.scss` partial is preserved only as a compat
 shim: it now emits **Atmos** (`atm`) type custom properties, not Auro 1. Anyone
 `@use`-ing that path directly (rather than a bundled global) should migrate to
-`src/type/themes/atmos/` — the `auro-1` path may be removed in a future release.
+the bundled multi-theme file, which emits Atmos as the `:root` default:
+
+```scss
+@use ".../src/bundled/type/themes/atmos";
+```
+
+There is no `src/type/themes/atmos/` single-theme partial; if you require a
+single-theme direct path and accept the shim's side-effects, the `auro-1` compat
+path is the only option for now. The `auro-1` path may be removed in a future
+release.
 
 #### Type mixin signature change (`generate-theme-type-css-vars`)
 

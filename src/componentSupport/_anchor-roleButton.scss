@@ -12,7 +12,6 @@
 // If the auro_roleButton selector is required, it is to be individually included.
 
 @use '../utilityMixins/anchor-roleButton';
-@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as tokens;
 
 /// `.auro_roleButton` is a utility class to support the UI of a standard html hyperlink using the attribute `role="button"`. This utility will present the UI to mimic the UI of the auro-hyperlink component supporting the same attribute.
 ///

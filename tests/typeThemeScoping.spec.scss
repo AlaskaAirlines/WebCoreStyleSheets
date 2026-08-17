@@ -3,7 +3,9 @@
 @use 'sass:map';
 @use './../src/type/mixins/type-generator' as *;
 @use './../src/type/mixins/theme-codes';
+@use './../src/type/functions/type-property-check' as type-property-check;
 @use './../src/bundled/type/themes/all-theme-configs';
+@use './../src/config/hawaiian/type/accent' as hawaiian-accent;
 
 // Verifies the data-attribute theme scoping selectors for type custom properties
 // (AB#1612078). The selector is built from the design-tokens theme code, so these
@@ -71,5 +73,23 @@
     // Empty list => every coded theme has manifest configs, so no theme is
     // silently omitted from the multi-theme bundles.
     @include assert-equal($missing, ());
+  }
+}
+
+// The multi-theme global stylesheet (AB#1612078) emits ONE theme-agnostic set of
+// `.accent-*` classes that always reference `var(--wcss-accent-*-letter-spacing)`.
+// Hawaiian historically opted out of accent tracking via the now-defunct
+// `$accent-uses-letter-spacing: false` class flag; in the shared-class model it must
+// instead neutralize the declaration by resolving that custom property to `normal`.
+// Without the config key the property emits empty and the shared class silently
+// applies an invalid/inherited letter-spacing to Hawaiian accents.
+@include describe('Hawaiian accent letter-spacing (guards AB#1612078 regression)') {
+  @include it('resolves letter-spacing to normal for every accent size') {
+    @each $size in ('2xl', 'xl', 'lg', 'md', 'sm', 'xs', '2xs') {
+      @include assert-equal(
+        type-property-check.type-property-check(hawaiian-accent.$hawaiian-type-accent-config, $size, 'letter-spacing'),
+        normal
+      );
+    }
   }
 }

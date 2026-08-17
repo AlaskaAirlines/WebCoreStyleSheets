@@ -1,9 +1,18 @@
 @use "@aurodesignsystem/design-tokens/dist/themes/hawaiian/SCSSVariables--hawaiian" as v;
 
 // Accent - Type
+//
+// letter-spacing: normal — Hawaiian intentionally has NO accent tracking. The
+// multi-theme global stylesheet (AB#1612078) emits a single, theme-agnostic set
+// of `.accent-*` classes that always reference `var(--wcss-accent-*-letter-spacing)`,
+// so a theme can no longer opt out by omitting the class declaration (the old
+// `$accent-uses-letter-spacing: false` path). Resolving the custom property to an
+// explicit `normal` neutralizes the shared declaration for Hawaiian; without this
+// key the property emits empty and the class applies an invalid/inherited value.
 $hawaiian-type-accent-config: (
   'family': v.$ds-basic-type-family-accent,
   'familyFallback': v.$ds-basic-type-family-accent-fallback,
+  'letter-spacing': normal,
   'sizes': (
     '2xl': (
       'font-size': (

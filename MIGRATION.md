@@ -102,7 +102,8 @@ the global scope (via a bare `@import` of the token SCSS) and detected them with
 module, so WCSS now `@use`s the tokens directly from
 `@aurodesignsystem/design-tokens`.
 
-- Make sure `@aurodesignsystem/design-tokens` is installed (it is a peer of WCSS).
+- `@aurodesignsystem/design-tokens` is a direct dependency of WCSS, so it is
+  installed automatically alongside the package — you do not need to add it yourself.
 - You no longer need to pre-import the token SCSS before WCSS partials for token
   defaults to resolve — WCSS loads them itself.
 - If you were relying on overriding token values by injecting your own globals ahead
@@ -149,6 +150,25 @@ $paragraph: true;
 @use "~@aurodesignsystem/webcorestylesheets/dist/essentials" with (
   $paragraph: true
 );
+```
+
+If you load a **per-theme** essentials bundle (e.g. `essentials/themes/alaska`)
+rather than the top-level `essentials` entry point, the flag no longer flows in
+through a global. The per-theme bundles emit their `p` rule from the shared
+`essentials/base` module, so configure that module **first** — before the
+per-theme `@use` loads it — so the base singleton is configured when it is
+generated:
+
+```scss
+// Before (v11)
+$paragraph: true;
+@import "~@aurodesignsystem/webcorestylesheets/dist/essentials/themes/alaska";
+
+// After (v12)
+@use "~@aurodesignsystem/webcorestylesheets/dist/essentials/base" with (
+  $paragraph: true
+);
+@use "~@aurodesignsystem/webcorestylesheets/dist/essentials/themes/alaska";
 ```
 
 ### 7. Type theme bundles moved to a per-theme file
@@ -206,10 +226,10 @@ If you call the type generator mixins directly, note that
 name, used to build its data-attribute scope selector:
 
 ```scss
-// Before (v11)
-@include type-generator.generate-theme-type-css-vars($theme-configs);
+// Before (v11) — loaded via `@import`, so the mixin was called unnamespaced
+@include generate-theme-type-css-vars($theme-configs);
 
-// After (v12)
+// After (v12) — loaded via `@use`, so the mixin is called through its namespace
 @include type-generator.generate-theme-type-css-vars($theme-configs, $theme-name);
 ```
 

@@ -14,9 +14,6 @@
   Provided for backwards compatibility.
 */
 
-// Import Sass variables
-@use '../../../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
-
 // Import minimum essential files
 @use '../../essentials/legacy/auro-classic';
 // Alias avoids a namespace collision with essentials/legacy/auro-classic above.

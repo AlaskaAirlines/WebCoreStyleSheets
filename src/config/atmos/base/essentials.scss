@@ -2,7 +2,7 @@
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as classic;
 
 // Atmos Base Essentials (Alaska base structure resolved against Atmos design tokens)
-$alaska-base-config: (
+$atmos-base-config: (
   'font-size': tokens.$ds-type-size-16,
   'text-color': tokens.$ds-basic-color-texticon-default,
   'font-family': tokens.$ds-basic-type-family-body,

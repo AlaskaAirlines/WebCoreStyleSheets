@@ -8,6 +8,9 @@
  */
 
 // Theme directory names to skip when building.
+// NOTE: `auro-2` is absent from design-tokens 9.x THEME_DEFINITIONS, so this
+// filter is currently a no-op. It is kept as forward-proofing in case the theme
+// returns in a future design-tokens release; remove it only if that's ruled out.
 export const EXCLUDED_THEMES = ['auro-2'];
 
 /**

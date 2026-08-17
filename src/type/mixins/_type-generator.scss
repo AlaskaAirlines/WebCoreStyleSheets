@@ -23,7 +23,11 @@
 
   $attributes: "[data-aag-theme=\"aag-theme-#{$code}\"], [data-aag-theme=\"aag-theme-#{$code}-type\"]";
 
-  @return if($include-root, ":root, #{$attributes}", $attributes);
+  @if $include-root {
+    @return ":root, #{$attributes}";
+  }
+
+  @return $attributes;
 }
 
 // Emit a single theme's type custom properties under the provided selector list.
@@ -71,8 +75,23 @@
 
 // Generate theme type classes
 @mixin generate-theme-type-classes($use-fallback: false, $fallback-configs: null, $accent-use-letter-spacing: true) {
-  @include body.generate-body-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'body'), null));
-  @include display.generate-display-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'display'), null));
-  @include heading.generate-heading-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'heading'), null));
-  @include accent.generate-accent-classes($use-fallback, if($fallback-configs != null, map.get($fallback-configs, 'accent'), null), $accent-use-letter-spacing);
+  // Resolve per-partial fallback configs. Assign via @if/@else rather than the
+  // classic `if()` ternary: the peerDep floor (sass ^1.42.1) predates first-class
+  // `if()`, while classic `if()` is on the Sass deprecation-removal path.
+  $body-fallback: null;
+  $display-fallback: null;
+  $heading-fallback: null;
+  $accent-fallback: null;
+
+  @if $fallback-configs != null {
+    $body-fallback: map.get($fallback-configs, 'body');
+    $display-fallback: map.get($fallback-configs, 'display');
+    $heading-fallback: map.get($fallback-configs, 'heading');
+    $accent-fallback: map.get($fallback-configs, 'accent');
+  }
+
+  @include body.generate-body-classes($use-fallback, $body-fallback);
+  @include display.generate-display-classes($use-fallback, $display-fallback);
+  @include heading.generate-heading-classes($use-fallback, $heading-fallback);
+  @include accent.generate-accent-classes($use-fallback, $accent-fallback, $accent-use-letter-spacing);
 }

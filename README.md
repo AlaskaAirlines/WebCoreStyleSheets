@@ -100,3 +100,18 @@ The `watch` command will run a Sass linter, process a test file from Sass to CSS
 If additional selectors or scenarios are needed, please update the `./scripts/testBuild.scss` file to test your code.
 
 Running the `serve` command will open the Sassdoc view. Please review all changes as Sassdoc produces all documentation.
+
+### Committed build output
+
+Two sets of files are **generated and committed** to the repo:
+
+- **`dist/`** — the pre-processed bundles consumed by downstream users.
+- **`src/type/mixins/_theme-codes.scss`** — a generated Sass partial (`@use "theme-codes"`) written by `scripts/theme-codes.build.mjs` from the AuroDesignTokens theme definitions. Because it is committed, a direct `sass` invocation compiles without any prebuild step.
+
+Both are produced by `npm run build` (which runs `build:theme-codes` first). Do **not** hand-edit them — `_theme-codes.scss` is regenerated from design-tokens, and `dist/` from `src/`. CI enforces that the committed output matches a fresh build, so **whenever you change `src/` or bump `@aurodesignsystem/design-tokens`, run `npm run build` and commit the resulting changes** or the PR build will fail.
+
+To regenerate just the theme-codes partial:
+
+```shell
+$ npm run build:theme-codes
+```

@@ -22,6 +22,21 @@ runs:
     - name: Build
       run: npm run build
       shell: bash
+    - name: Verify committed build output is up to date
+      # Guardrail: the committed generated files must match what `npm run build`
+      # produces. This covers both the publishable dist/ bundles and the
+      # generated Sass partial src/type/mixins/_theme-codes.scss (derived from
+      # @aurodesignsystem/design-tokens). If this fails, someone changed src/ or
+      # bumped design-tokens without rebuilding — run `npm run build` locally and
+      # commit the resulting changes.
+      run: |
+        if [ -n "$(git status --porcelain -- dist/ src/type/mixins/_theme-codes.scss)" ]; then
+          echo "::error::Committed build output is out of date. Run 'npm run build' and commit the changes."
+          git status --porcelain -- dist/ src/type/mixins/_theme-codes.scss
+          git diff -- dist/ src/type/mixins/_theme-codes.scss
+          exit 1
+        fi
+      shell: bash
     - name: Build SassDoc
       run: npm run build:sassdoc
       shell: bash

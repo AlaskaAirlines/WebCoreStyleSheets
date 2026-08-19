@@ -114,6 +114,37 @@
       }
     }
   }
+
+  // Guards SOURCE ORDER specifically: the default theme's `:root` block must be
+  // emitted BEFORE any non-default attribute block. `:root` and `[data-aag-theme]`
+  // have equal specificity, so if a consumer sets a non-default theme attribute on
+  // the root element, the cascade resolves by source order — the non-default block
+  // only wins if it follows the default's `:root` block. This stub deliberately
+  // lists the default theme SECOND in the map; a mixin that emitted in map order
+  // (instead of hoisting the default first) would put the non-default block ahead
+  // of `:root` and fail this assertion.
+  @include it('emits the default theme first even when it is not first in the manifest map') {
+    $stub-themes: (
+      'hawaiian': map.get(all-theme-configs.$wcss-all-theme-configs, 'hawaiian'),
+      'alaska': map.get(all-theme-configs.$wcss-all-theme-configs, 'alaska')
+    );
+
+    @include assert {
+      @include output {
+        @include generate-multi-theme-type-css-vars($stub-themes, 'alaska');
+      }
+      @include expect {
+        @include generate-type-css-vars(
+          map.get($stub-themes, 'alaska'),
+          ':root, [data-aag-theme="aag-theme-as"], [data-aag-theme="aag-theme-as-type"]'
+        );
+        @include generate-type-css-vars(
+          map.get($stub-themes, 'hawaiian'),
+          '[data-aag-theme="aag-theme-ha"], [data-aag-theme="aag-theme-ha-type"]'
+        );
+      }
+    }
+  }
 }
 
 // The multi-theme global stylesheet (AB#1612078) emits ONE theme-agnostic set of

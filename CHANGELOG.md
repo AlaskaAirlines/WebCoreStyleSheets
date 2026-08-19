@@ -1,5 +1,35 @@
 # Semantic Release Automated Changelog
 
+# [12.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.3...v12.0.0) (2026-08-19)
+
+
+* feat!: migrate Sass [@import](https://github.com/import) to the module system (@use/[@forward](https://github.com/forward)) [#294](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/294) ([f6d2989](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/f6d29898502a8ac3877fe9673cddef141f031580))
+
+
+### Bug Fixes
+
+* correct lg breakpoint token and font-weight custom property in utility classes [#294](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/294) ([be1d204](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/be1d2043e564d2838622ac855c00b9525ef7c3cd))
+* **deps:** drop chalk runtime dependency by de-chalking postinstall banner AB[#1502836](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1502836) ([ab5a8e6](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/ab5a8e6ed70907f7c87a8505144dfac17fabb51a)), closes [#f26135](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/f26135) [#ffd200](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/ffd200)
+* **engines:** loosen node engine to >=20 to match other Auro repos AB[#1559488](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1559488) ([5c7793c](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/5c7793c4e5ce60ea2dcc2278934c82fddab463d9))
+* **type:** restore Dart Sass <1.90 compatibility in type-generator if() calls [#294](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/294) ([8b2c3d0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/8b2c3d0b71def5eaa22284907cec6cc36c9166ec))
+* **type:** restore Hawaiian accent letter-spacing opt-out and drop deprecated if() [#294](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/294) ([0851b16](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/0851b16c462f90fb12d391e7cb43cfe73b719af1)), closes [AB#1612078](https://github.com/AB/issues/1612078)
+
+
+### Features
+
+* **type:** add data-attribute theme scoping for type custom properties AB[#1612078](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1612078) ([852891b](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/852891bdf281bee9d8f72c07d3360f0a4e26c3b8))
+
+
+### BREAKING CHANGES
+
+* WCSS partials must now be loaded with the Sass module system
+(@use/@forward) instead of @import. Scope/prefix and !important are configured
+via `@use ... with (...)` on manageScope / important rather than global
+variables, and design-token defaults are resolved from
+@aurodesignsystem/design-tokens directly. See MIGRATION.md for the full guide.
+
+Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+
 ## [11.1.3](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.2...v11.1.3) (2026-05-28)
 
 

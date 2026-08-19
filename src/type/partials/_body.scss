@@ -35,6 +35,9 @@ $body-sizes: ();
 @mixin generate-body-classes($use-fallback: false, $fallback-config: null) {
   @each $size in $body-sizes {
     .body-#{$size} {
+      // Brand guidelines prohibit ligatures across all typefaces and themes.
+      font-variant-ligatures: none;
+
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
         font-family: var(--#{cssNamespace.$css-ns}-body-family, map-deep-get.auro_map-deep-get($fallback-config, 'family')), map-deep-get.auro_map-deep-get($fallback-config, 'familyFallback');

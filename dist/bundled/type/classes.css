@@ -15,6 +15,7 @@
  */
 /* --------------------------------------------------------------------- */
 .body-default {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-default-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -23,6 +24,7 @@
 }
 
 .body-default-emphasized {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-default-emphasized-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -31,6 +33,7 @@
 }
 
 .body-lg {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-lg-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -39,6 +42,7 @@
 }
 
 .body-lg-emphasized {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-lg-emphasized-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -47,6 +51,7 @@
 }
 
 .body-sm {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-sm-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -55,6 +60,7 @@
 }
 
 .body-sm-emphasized {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-sm-emphasized-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -63,6 +69,7 @@
 }
 
 .body-xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-xs-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -71,6 +78,7 @@
 }
 
 .body-xs-emphasized {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-xs-emphasized-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -79,6 +87,7 @@
 }
 
 .body-2xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-2xs-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -87,6 +96,7 @@
 }
 
 .body-2xs-emphasized {
+  font-variant-ligatures: none;
   font-family:var(--wcss-body-family), var(--wcss-body-family-fallback);
   font-weight: var(--wcss-body-2xs-emphasized-weight);
   letter-spacing: var(--wcss-body-letter-spacing);
@@ -95,6 +105,7 @@
 }
 
 .display-2xl {
+  font-variant-ligatures: none;
   font-family:var(--wcss-display-2xl-family), var(--wcss-display-2xl-family-fallback);
   font-weight: var(--wcss-display-2xl-weight);
   line-height: var(--wcss-display-2xl-line-height);
@@ -103,6 +114,7 @@
 }
 
 .display-xl {
+  font-variant-ligatures: none;
   font-family:var(--wcss-display-xl-family), var(--wcss-display-xl-family-fallback);
   font-weight: var(--wcss-display-xl-weight);
   line-height: var(--wcss-display-xl-line-height);
@@ -111,6 +123,7 @@
 }
 
 .display-lg {
+  font-variant-ligatures: none;
   font-family:var(--wcss-display-lg-family), var(--wcss-display-lg-family-fallback);
   font-weight: var(--wcss-display-lg-weight);
   line-height: var(--wcss-display-lg-line-height);
@@ -119,6 +132,7 @@
 }
 
 .display-md {
+  font-variant-ligatures: none;
   font-family:var(--wcss-display-md-family), var(--wcss-display-md-family-fallback);
   font-weight: var(--wcss-display-md-weight);
   line-height: var(--wcss-display-md-line-height);
@@ -127,6 +141,7 @@
 }
 
 .display-sm {
+  font-variant-ligatures: none;
   font-family:var(--wcss-display-sm-family), var(--wcss-display-sm-family-fallback);
   font-weight: var(--wcss-display-sm-weight);
   line-height: var(--wcss-display-sm-line-height);
@@ -135,6 +150,7 @@
 }
 
 .display-xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-display-xs-family), var(--wcss-display-xs-family-fallback);
   font-weight: var(--wcss-display-xs-weight);
   line-height: var(--wcss-display-xs-line-height);
@@ -143,6 +159,7 @@
 }
 
 .heading-xl {
+  font-variant-ligatures: none;
   font-family:var(--wcss-heading-xl-family), var(--wcss-heading-xl-family-fallback);
   font-weight: var(--wcss-heading-xl-weight);
   line-height: var(--wcss-heading-xl-line-height);
@@ -151,6 +168,7 @@
 }
 
 .heading-lg {
+  font-variant-ligatures: none;
   font-family:var(--wcss-heading-lg-family), var(--wcss-heading-lg-family-fallback);
   font-weight: var(--wcss-heading-lg-weight);
   line-height: var(--wcss-heading-lg-line-height);
@@ -159,6 +177,7 @@
 }
 
 .heading-md {
+  font-variant-ligatures: none;
   font-family:var(--wcss-heading-md-family), var(--wcss-heading-md-family-fallback);
   font-weight: var(--wcss-heading-md-weight);
   line-height: var(--wcss-heading-md-line-height);
@@ -167,6 +186,7 @@
 }
 
 .heading-sm {
+  font-variant-ligatures: none;
   font-family:var(--wcss-heading-sm-family), var(--wcss-heading-sm-family-fallback);
   font-weight: var(--wcss-heading-sm-weight);
   line-height: var(--wcss-heading-sm-line-height);
@@ -175,6 +195,7 @@
 }
 
 .heading-xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-heading-xs-family), var(--wcss-heading-xs-family-fallback);
   font-weight: var(--wcss-heading-xs-weight);
   line-height: var(--wcss-heading-xs-line-height);
@@ -183,6 +204,7 @@
 }
 
 .heading-2xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-heading-2xs-family), var(--wcss-heading-2xs-family-fallback);
   font-weight: var(--wcss-heading-2xs-weight);
   line-height: var(--wcss-heading-2xs-line-height);
@@ -191,6 +213,7 @@
 }
 
 .accent-2xl {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-2xl-family), var(--wcss-accent-2xl-family-fallback);
   font-weight: var(--wcss-accent-2xl-weight);
   line-height: var(--wcss-accent-2xl-line-height);
@@ -200,6 +223,7 @@
 }
 
 .accent-xl {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-xl-family), var(--wcss-accent-xl-family-fallback);
   font-weight: var(--wcss-accent-xl-weight);
   line-height: var(--wcss-accent-xl-line-height);
@@ -209,6 +233,7 @@
 }
 
 .accent-lg {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-lg-family), var(--wcss-accent-lg-family-fallback);
   font-weight: var(--wcss-accent-lg-weight);
   line-height: var(--wcss-accent-lg-line-height);
@@ -218,6 +243,7 @@
 }
 
 .accent-md {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-md-family), var(--wcss-accent-md-family-fallback);
   font-weight: var(--wcss-accent-md-weight);
   line-height: var(--wcss-accent-md-line-height);
@@ -227,6 +253,7 @@
 }
 
 .accent-sm {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-sm-family), var(--wcss-accent-sm-family-fallback);
   font-weight: var(--wcss-accent-sm-weight);
   line-height: var(--wcss-accent-sm-line-height);
@@ -236,6 +263,7 @@
 }
 
 .accent-xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-xs-family), var(--wcss-accent-xs-family-fallback);
   font-weight: var(--wcss-accent-xs-weight);
   line-height: var(--wcss-accent-xs-line-height);
@@ -245,6 +273,7 @@
 }
 
 .accent-2xs {
+  font-variant-ligatures: none;
   font-family:var(--wcss-accent-2xs-family), var(--wcss-accent-2xs-family-fallback);
   font-weight: var(--wcss-accent-2xs-weight);
   line-height: var(--wcss-accent-2xs-line-height);

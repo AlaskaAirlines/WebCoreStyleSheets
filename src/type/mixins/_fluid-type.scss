@@ -26,6 +26,9 @@
 @mixin generate-fluid-type-classes($type, $sizes, $use-fallback: false, $fallback-config: null, $use-letter-spacing: true) {
   @each $size in $sizes {
     .#{$type}-#{$size} {
+      // Brand guidelines prohibit ligatures across all typefaces and themes.
+      font-variant-ligatures: none;
+
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback
         font-family: var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-family, #{type-property-check.type-property-check($fallback-config, $size, 'family')}), var(--#{cssNamespace.$css-ns}-#{$type}-#{$size}-family-fallback, #{type-property-check.type-property-check($fallback-config, $size, 'familyFallback')});

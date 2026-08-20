@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [12.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v12.0.0...v12.0.1) (2026-08-20)
+
+
+### Bug Fixes
+
+* **type:** disable all ligatures via shared auro_noLigatures mixin [#299](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/299) ([37d3182](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/37d31820f89ed17d22a99fdc9acd6a7a4ecdb60d))
+* **type:** disable font ligatures across all typography classes and themes AB[#1608258](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1608258) ([0fd7013](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/0fd70132edbb3543d40659e8e0f1f05b24664f11))
+
 # [12.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v11.1.3...v12.0.0) (2026-08-19)
 
 

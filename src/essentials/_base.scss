@@ -15,6 +15,7 @@
 @use "sass:map";
 
 @use "../libSupport/manageScope";
+@use "../utilityMixins/noLigatures";
 @use "../core";
 
 // Define the $paragraph variable with default value
@@ -46,7 +47,7 @@ $paragraph: null !default;
       letter-spacing: map.get($theme-props, 'letter-spacing');
     }
     
-    font-variant-ligatures: no-common-ligatures;
+    @include noLigatures.auro_noLigatures;
   }
 
   /// Sets standard `margin` for all paragraph style content

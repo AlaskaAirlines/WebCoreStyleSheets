@@ -11,6 +11,7 @@
 
 @use '../../libSupport/manageScope';
 @use '../../core';
+@use '../../utilityMixins/ligatures';
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
 
 /// Baseline HTML setting to establish box-model and default font size.
@@ -64,7 +65,7 @@
   color: var(--ds-color-text-primary-default, SCSSVariables.$ds-color-text-primary-default);
 
   font-family: var(--ds-font-family-default, SCSSVariables.$ds-font-family-default);
-  font-variant-ligatures: no-common-ligatures;
+  @include ligatures.auro_noLigatures;
   font-size: var(--ds-text-body-size-default, SCSSVariables.$ds-text-body-size-default);
   font-weight: var(--ds-text-body-default-weight, SCSSVariables.$ds-text-body-default-weight);
   line-height: var(--ds-text-body-height-default, SCSSVariables.$ds-text-body-height-default);

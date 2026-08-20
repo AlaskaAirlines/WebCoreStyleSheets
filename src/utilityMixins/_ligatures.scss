@@ -1,0 +1,20 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/// Single source of truth for the brand's ligature policy.
+///
+/// Alaska Air Group brand guidelines prohibit ligatures across every brand
+/// typeface and theme, so `none` (which disables the full ligature set —
+/// common, discretionary, historical, and contextual) is required rather than
+/// the weaker `no-common-ligatures`. Every generated typography class and base
+/// type selector includes this mixin so the policy lives in exactly one place.
+///
+/// @group utilities
+/// @example scss
+///   @use "../../utilityMixins/ligatures";
+///   .body-default { @include ligatures.auro_noLigatures; }
+@mixin auro_noLigatures {
+  font-variant-ligatures: none;
+}

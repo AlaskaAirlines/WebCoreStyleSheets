@@ -4,6 +4,7 @@
 @use "sass:map";
 
 @use '../../utilityFunctions/map-deep-get';
+@use '../../utilityMixins/ligatures';
 @use '../../utilityVariables/cssNamespace';
 
 $body-base-sizes: ('default', 'lg', 'sm', 'xs', '2xs');
@@ -35,8 +36,7 @@ $body-sizes: ();
 @mixin generate-body-classes($use-fallback: false, $fallback-config: null) {
   @each $size in $body-sizes {
     .body-#{$size} {
-      // Brand guidelines prohibit ligatures across all typefaces and themes.
-      font-variant-ligatures: none;
+      @include ligatures.auro_noLigatures;
 
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback

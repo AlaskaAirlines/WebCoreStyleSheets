@@ -1,6 +1,7 @@
 @use "../functions/calculate-fluid-clamp";
 @use '../functions/type-property-check';
 @use '../../utilityFunctions/map-deep-get';
+@use '../../utilityMixins/noLigatures';
 @use '../../utilityVariables/cssNamespace';
 
 // Generate CSS custom properties for fluid type
@@ -26,8 +27,7 @@
 @mixin generate-fluid-type-classes($type, $sizes, $use-fallback: false, $fallback-config: null, $use-letter-spacing: true) {
   @each $size in $sizes {
     .#{$type}-#{$size} {
-      // Brand guidelines prohibit ligatures across all typefaces and themes.
-      font-variant-ligatures: none;
+      @include noLigatures.auro_noLigatures;
 
       @if $use-fallback and $fallback-config != null {
         // Use CSS fallback

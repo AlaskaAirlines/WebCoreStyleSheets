@@ -701,7 +701,7 @@ body,
   margin: 0;
   color: var(--ds-color-text-primary-default, #2a2a2a);
   font-family: var(--ds-font-family-default, "AS Circular", "Helvetica Neue", Arial, sans-serif);
-  font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: none;
   font-size: var(--ds-text-body-size-default, 1rem);
   font-weight: var(--ds-text-body-default-weight, 500);
   line-height: var(--ds-text-body-height-default, 1.5rem);

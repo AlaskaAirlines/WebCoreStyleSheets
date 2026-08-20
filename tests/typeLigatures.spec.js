@@ -40,11 +40,17 @@ describe.each(Object.entries(GENERATORS))(
     })
 
     it.each(FAMILIES)('emits font-variant-ligatures: none on every .%s-* class', (family) => {
-      // Match each generated class selector for the family and confirm it opens
-      // with the ligature-suppression declaration.
-      const selector = new RegExp(`\\.${family}-[a-z0-9-]+ \\{ font-variant-ligatures: none;`, 'g')
-      const matches = css.match(selector) || []
-      expect(matches.length).toBeGreaterThan(0)
+      // Assert every generated class for the family carries the ligature-
+      // suppression declaration somewhere in its block. Matching anywhere before
+      // the closing brace (rather than immediately after the selector) keeps this
+      // a behavioral guard, so an unrelated reorder of declarations won't break it.
+      const classBlock = new RegExp(`\\.${family}-[a-z0-9-]+ \\{[^}]*\\}`, 'g')
+      const blocks = css.match(classBlock) || []
+
+      expect(blocks.length).toBeGreaterThan(0)
+      blocks.forEach((block) => {
+        expect(block).toContain('font-variant-ligatures: none;')
+      })
     })
 
     it('never emits a ligature-enabling value', () => {

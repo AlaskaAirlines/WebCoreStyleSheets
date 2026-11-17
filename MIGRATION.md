@@ -1,5 +1,27 @@
 # Migration Guide
 
+## v12.x — Test and QA font environment builds (non-breaking)
+
+This release changes nothing for existing consumers. Production stylesheets and the default `font-face` output keep today's unsuffixed font URLs. These are new additions you can opt into:
+
+- **Bundled test and QA theme stylesheets.** Each global theme is now also built as `dist/bundled/themes/<theme>-test.global(.min).css` and `dist/bundled/themes/<theme>-qa.global(.min).css`, e.g. `alaska-test.global.css`. These load `-test` and `-qa` copies of every font file, for example `ASCircularWeb-Light-test.woff2` and `noto-sans-jp-v54-japanese-300-test.woff2`. To switch environments, add `-test` or `-qa` after the theme name in the stylesheet file name.
+- **`$font-env` setting.** Configure `fontUtils` with `$font-env: "test"` or `"qa"` before loading any WCSS font module. All `font-face` and `font-face-i18n` output then uses that environment's font files.
+- **`$env` argument on `font-face` and `font-face-i18n`.** Pass `$env: test` or `$env: qa` to suffix a single `@font-face`. Any other value besides `null` is a compile error.
+
+```scss
+// Whole build: every font (English, Japanese, Korean) loads its -test copy
+@use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($font-env: "test");
+```
+
+Before you switch:
+
+- The `-test` and `-qa` font files must be on the font host (`resource.alaskaair.net`) first. That covers the Japanese (`ja-jp`) and Korean (`ko-kr`) Noto Sans files as well as the English ones. Otherwise fonts fail to load and pages fall back to system fonts.
+- If you override `$i18n-font-base-path-en` (or the Japanese and Korean path settings) to serve fonts from your own host, add matching `-test` and `-qa` file names there.
+
+A Jest test runs in `npm test` and on every pull request, and confirms the test and QA stylesheets match production apart from the font file name.
+
+---
+
 ## v11.x → v12.0.0 — Sass module system (`@use`/`@forward`)
 
 WebCoreStyleSheets v12 replaces the legacy Sass `@import` system with the

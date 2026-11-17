@@ -11,6 +11,13 @@
 // Template for theme compilation - THEME_NAME will be replaced by build script
 // Built with theme.global.css.build.mjs
 
+// Font environment (AB#1683083)
+// The build script replaces the $font-env placeholder below with `null`
+// (production, unsuffixed font URLs) or a quoted environment name ("test"/"qa")
+// to emit environment-suffixed font URLs. Must be the first module loaded so
+// the configuration applies before any font module @uses fontUtils.
+@use "../../utilityVariables/fontUtils" with ($font-env: FONT_ENV);
+
 // Essentials
 // Each theme's essentials module @uses its own config (tokens + base config map),
 // so no global token threading is required.

@@ -4,6 +4,8 @@
 // ---------------------------------------------------------------------
 // Internationalization (i18n) font utilities
 
+@use 'sass:list';
+
 // Enable switch (set to false to omit i18n font-face output)
 $enable-i18n-fonts: true !default;
 
@@ -22,6 +24,35 @@ $unicode-range-kr: U+1100-11FF, U+3130-318F, U+AC00-D7AF !default;
 
 // Root host for i18n font assets
 $i18n-font-host: "https://resource.alaskaair.net" !default;
+
+// Font environment (AB#1683083)
+// Selects which environment's copy of the font files `font-face` (EN brand fonts)
+// and `font-face-i18n` (Japanese/Korean Noto Sans fonts) load.
+// `null` (default) loads the production files at today's unsuffixed URLs, e.g.
+// `ASCircularWeb-Light.woff2`. `test` or `qa` appends `-<env>` to the file name,
+// e.g. `ASCircularWeb-Light-test.woff2` or
+// `noto-sans-jp-v54-japanese-300-test.woff2`, so each environment can trial a font
+// version from a permanent URL without changing what production loads.
+// Configure it before any WCSS font module is loaded:
+//   @use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($font-env: "test");
+$font-env: null !default;
+
+// Supported non-production font environments
+$font-envs: ("test", "qa");
+
+// Returns the font file name suffix for a font environment: `''` for `null`
+// (production) or `-<env>` for one of `$font-envs`. Errors on any other value.
+@function font-env-suffix($env) {
+  @if $env == null {
+    @return '';
+  }
+
+  @if not list.index($font-envs, $env) {
+    @error 'Unsupported font environment `#{$env}`. Expected null or one of: #{$font-envs}.';
+  }
+
+  @return '-#{$env}';
+}
 
 // Per-locale base paths
 $i18n-font-base-path-en: "#{$i18n-font-host}/en-us/assets/font" !default;

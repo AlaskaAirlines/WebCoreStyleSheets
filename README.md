@@ -91,6 +91,44 @@ For example:
 dist/bundles/essentials-as.css
 ```
 
+#### Test and QA font environments
+
+Each global theme stylesheet in `dist/bundled/themes` also has a test and a QA version. They load environment-specific copies of the font files (the English brand fonts and the Japanese and Korean Noto Sans fonts) so you can try a new font version in test or QA without changing what production loads.
+
+| Environment | Stylesheet | Example font file URL |
+| --- | --- | --- |
+| Production | `dist/bundled/themes/alaska.global.css` | `…/en-us/assets/font/ASCircularWeb-Light.woff2` |
+| Test | `dist/bundled/themes/alaska-test.global.css` | `…/en-us/assets/font/ASCircularWeb-Light-test.woff2` |
+| QA | `dist/bundled/themes/alaska-qa.global.css` | `…/en-us/assets/font/ASCircularWeb-Light-qa.woff2` |
+
+The Japanese and Korean fonts follow the same pattern, for example `…/ja-jp/assets/font/noto-sans-jp-v54-japanese-300-test.woff2`.
+
+Every theme (`alaska`, `alaska-classic`, `atmos`, `hawaiian`) and its `.min.css` file follow the same pattern, such as `alaska-test.global.min.css`. To switch environments, add `-test` or `-qa` after the theme name in the stylesheet file name:
+
+```html
+<!-- Test environment -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/themes/alaska-test.global.min.css">
+```
+
+The environment versions differ from production only in the font file name: `-test` or `-qa` comes right before `.woff2`. A test that runs on every pull request fails if any other difference appears. Every font URL is suffixed: English, Japanese, and Korean.
+
+> **Note:** The `-test` and `-qa` font files must be on the font host before you switch to these stylesheets. If they're missing, the fonts fail to load and the page falls back to system fonts. If you serve fonts from your own host by overriding `$i18n-font-base-path-en` or the Japanese and Korean path settings, your host needs matching `-test` and `-qa` file names too.
+
+When you build from Sass source, set the environment with the `$font-env` setting. Load it before any WCSS font module:
+
+```scss
+@use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($font-env: "test"); // or "qa"; null (default) = production
+```
+
+To set the environment for a single font, pass `$env` to the `font-face` mixin (English fonts) or the `font-face-i18n` mixin (Japanese and Korean fonts). `$env` takes `null`, `test`, or `qa`, and any other value is a compile error:
+
+```scss
+@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/fontFace";
+
+@include fontFace.font-face("AS Circular", 300, "ASCircularWeb-Light", $env: qa);
+// src: url(".../ASCircularWeb-Light-qa.woff2")
+```
+
 ## Development
 
 To develop against WCSS run both `npm run watch` and `npm run serve` in separate terminals.

@@ -10,13 +10,19 @@
 // @font-face is not supported in SassDocs
 
 // default/en font-face across themes
-@mixin font-face($family, $weight, $filename, $unicode-range: null) {
+// $env selects the font file environment: `null` (production, unsuffixed file
+// name) or one of `fontUtils.$font-envs` (`test`, `qa`), which appends `-<env>`
+// to the file name, e.g. `ASCircularWeb-Light-test.woff2` (AB#1683083).
+// Defaults to the `fontUtils.$font-env` setting.
+@mixin font-face($family, $weight, $filename, $unicode-range: null, $env: fontUtils.$font-env) {
+  $suffix: fontUtils.font-env-suffix($env);
+
   @font-face {
     font-family: "#{$family}";
     font-weight: $weight;
     font-style: normal;
     font-display: fallback;
-    src: url("#{fontUtils.$i18n-font-base-path-en}/#{$filename}.woff2") format("woff2");
+    src: url("#{fontUtils.$i18n-font-base-path-en}/#{$filename}#{$suffix}.woff2") format("woff2");
     @if $unicode-range != null {
       unicode-range: $unicode-range;
     }

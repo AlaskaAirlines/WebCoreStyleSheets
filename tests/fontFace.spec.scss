@@ -1,0 +1,141 @@
+@use 'true' as *;
+@use './../src/utilityMixins/fontFace' as *;
+@use './../src/utilityMixins/fontFaceI18n' as *;
+
+// Font environment suffixes for the EN brand font-face mixin (AB#1683083).
+// Production (no $env) must keep today's unsuffixed URL; `test` / `qa` append
+// `-<env>` to the file name so each environment loads its own font copy.
+@include describe('font-face()') {
+  @include it('emits the unsuffixed production URL by default') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face('AS Circular', 300, 'ASCircularWeb-Light');
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "AS Circular";
+          font-weight: 300;
+          font-style: normal;
+          font-display: fallback;
+          src: url("https://resource.alaskaair.net/en-us/assets/font/ASCircularWeb-Light.woff2") format("woff2");
+        }
+      }
+    }
+  }
+
+  @include it('emits the -test suffixed URL for $env: test') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face('AS Circular', 300, 'ASCircularWeb-Light', $env: test);
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "AS Circular";
+          font-weight: 300;
+          font-style: normal;
+          font-display: fallback;
+          src: url("https://resource.alaskaair.net/en-us/assets/font/ASCircularWeb-Light-test.woff2") format("woff2");
+        }
+      }
+    }
+  }
+
+  @include it('emits the -qa suffixed URL for $env: qa') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face('AS Circular', 300, 'ASCircularWeb-Light', $env: 'qa');
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "AS Circular";
+          font-weight: 300;
+          font-style: normal;
+          font-display: fallback;
+          src: url("https://resource.alaskaair.net/en-us/assets/font/ASCircularWeb-Light-qa.woff2") format("woff2");
+        }
+      }
+    }
+  }
+
+  @include it('keeps unicode-range output alongside an environment suffix') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face('Teodor', 300, 'Teodor-Light', U+0000-00FF, $env: test);
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "Teodor";
+          font-weight: 300;
+          font-style: normal;
+          font-display: fallback;
+          src: url("https://resource.alaskaair.net/en-us/assets/font/Teodor-Light-test.woff2") format("woff2");
+          unicode-range: U+0000-00FF;
+        }
+      }
+    }
+  }
+}
+
+// Japanese/Korean Noto Sans fonts follow the same environment suffixing.
+@include describe('font-face-i18n()') {
+  @include it('emits the unsuffixed production URL by default') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face-i18n('AS Circular', 300, 'https://resource.alaskaair.net/ja-jp/assets/font/noto-sans-jp-v54-japanese-300', U+3000-303F);
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "AS Circular";
+          font-style: normal;
+          font-weight: 300;
+          font-display: swap;
+          src: url("https://resource.alaskaair.net/ja-jp/assets/font/noto-sans-jp-v54-japanese-300.woff2") format("woff2");
+          unicode-range: U+3000-303F;
+        }
+      }
+    }
+  }
+
+  @include it('emits the -test suffixed URL for $env: test') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face-i18n('AS Circular', 300, 'https://resource.alaskaair.net/ja-jp/assets/font/noto-sans-jp-v54-japanese-300', U+3000-303F, $env: test);
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "AS Circular";
+          font-style: normal;
+          font-weight: 300;
+          font-display: swap;
+          src: url("https://resource.alaskaair.net/ja-jp/assets/font/noto-sans-jp-v54-japanese-300-test.woff2") format("woff2");
+          unicode-range: U+3000-303F;
+        }
+      }
+    }
+  }
+
+  @include it('emits the -qa suffixed URL for $env: qa') {
+    @include assert {
+      @include output($selector: false) {
+        @include font-face-i18n('AS Circular', 400, 'https://resource.alaskaair.net/ko-kr/assets/font/noto-sans-kr-v38-korean-400', U+AC00-D7AF, $env: 'qa');
+      }
+
+      @include expect($selector: false) {
+        @font-face {
+          font-family: "AS Circular";
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("https://resource.alaskaair.net/ko-kr/assets/font/noto-sans-kr-v38-korean-400-qa.woff2") format("woff2");
+          unicode-range: U+AC00-D7AF;
+        }
+      }
+    }
+  }
+}

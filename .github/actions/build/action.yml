@@ -19,6 +19,13 @@ runs:
     - name: NPM install
       run: npm ci
       shell: bash
+    - name: Verify production dependency tree
+      # Guardrail: fail if any runtime dependency (the `dependencies` consumers
+      # install, e.g. @aurodesignsystem/design-tokens) is missing, extraneous, or
+      # resolves to a version outside its declared range. Dev dependencies are
+      # excluded because they never ship with the package.
+      run: npm ls --omit=dev --all
+      shell: bash
     - name: Build
       run: npm run build
       shell: bash

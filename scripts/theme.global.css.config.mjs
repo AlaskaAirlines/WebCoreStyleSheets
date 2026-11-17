@@ -15,12 +15,35 @@ export const OUTPUT_EXT = 'global.css';
 // These will use the template file and generate individual theme CSS files
 export const basePrefix = '';
 
+// Font environments (AB#1683083)
+// Every standard theme is built once per environment. `null` is production and
+// writes to `themes/<theme>.global.css` with unsuffixed font URLs (unchanged).
+// Each named environment writes to `themes/<theme>-<env>.global.css` with font
+// URLs suffixed `-<env>` (e.g. `ASCircularWeb-Light-test.woff2`). Keep the names
+// in sync with `$font-envs` in src/utilityVariables/_fontUtils.scss.
+export const PRODUCTION_FONT_ENV = null;
+export const FONT_ENVIRONMENTS = ['test', 'qa'];
+
+/**
+ * Output path (relative to dist/bundled) for a standard theme in a font environment.
+ * @param {string} themeDir - Theme directory name (e.g. `alaska`)
+ * @param {string|null} fontEnv - Font environment, or null for production
+ * @returns {string}
+ */
+export function standardThemeDest(themeDir, fontEnv = PRODUCTION_FONT_ENV) {
+  const suffix = fontEnv ? `-${fontEnv}` : '';
+  return `themes/${themeDir}${suffix}.${OUTPUT_EXT}`;
+}
+
 // Standard themes
-export const standardThemes = withoutExcludedThemes(THEME_DEFINITIONS).map(theme => ({
-  src: `themes/theme.global.template.scss`,
-  dest: `themes/${theme.dir}.${OUTPUT_EXT}`,
-  name: theme.dir
-}));
+export const standardThemes = withoutExcludedThemes(THEME_DEFINITIONS).flatMap(theme =>
+  [PRODUCTION_FONT_ENV, ...FONT_ENVIRONMENTS].map(fontEnv => ({
+    src: `themes/theme.global.template.scss`,
+    dest: standardThemeDest(theme.dir, fontEnv),
+    name: theme.dir,
+    fontEnv
+  }))
+);
 
 // Legacy themes
 export const legacyThemes = [

@@ -8,6 +8,9 @@
  * 1. Processes both standard themes (defined in design tokens) and legacy themes (Auro Classic)
  * 2. Transforms SCSS to CSS
  * 3. Creates both expanded and minified versions of each CSS file
+ *    - Standard themes are also built per font environment (test, qa) into
+ *      dist/bundled/themes/<theme>-<env>.global.css with environment-suffixed
+ *      font URLs
  * 4. Adds proper license headers
  */
 
@@ -72,7 +75,9 @@ function createThemeConfig(theme, isLegacy) {
       loadPaths: [path.join(__dirname, '../src'), path.join(__dirname, '../node_modules')],
       isTemplate,
       templateData: isTemplate ? {
-        'THEME_NAME': theme.name || theme.src.split('/').pop().replace('.global.scss', '')
+        'THEME_NAME': theme.name || theme.src.split('/').pop().replace('.global.scss', ''),
+        // Sass value for fontUtils.$font-env: `null` (production) or a quoted env name
+        'FONT_ENV': theme.fontEnv ? `"${theme.fontEnv}"` : 'null'
       } : {},
       skipProcessing: isLegacy // Skip processing for legacy themes
     },

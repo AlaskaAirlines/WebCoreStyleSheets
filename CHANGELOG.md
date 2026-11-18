@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [12.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v12.0.1...v12.1.0) (2026-11-18)
+
+
+### Features
+
+* **fonts:** add test and QA font environment builds with suffixed font URLs AB[#1683083](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1683083) ([cd87cc9](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/cd87cc926cb043ced585afb7c308a3fe6ec13d00))
+
 ## [12.0.1](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v12.0.0...v12.0.1) (2026-08-20)
 
 

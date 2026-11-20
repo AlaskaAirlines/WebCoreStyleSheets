@@ -55,6 +55,7 @@
     "prepack": "node scripts/theme-codes.build.mjs",
     "build:theme-codes": "node scripts/theme-codes.build.mjs",
     "build:theme-css": "node scripts/theme.global.css.build.mjs",
+    "verify:fonts": "node scripts/verify-fonts.mjs",
     "build:type-classes-css": "node scripts/type.classes.css.build.mjs",
     "build:ci": "npm-run-all sweep build",
     "build:dev": "npm-run-all build:theme-codes scss:lint build:sass:test css:lint jest",

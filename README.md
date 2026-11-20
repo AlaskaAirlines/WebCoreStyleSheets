@@ -91,42 +91,39 @@ For example:
 dist/bundles/essentials-as.css
 ```
 
-#### Test and QA font environments
+#### Staging font bundles
 
-Each global theme stylesheet in `dist/bundled/themes` also has a test and a QA version. They load environment-specific copies of the font files (the English brand fonts and the Japanese and Korean Noto Sans fonts) so you can try a new font version in test or QA without changing what production loads.
+Each global theme stylesheet in `dist/bundled/themes` also has a staging version, `<theme>-stg.global.css` (and `.min.css`), for `alaska`, `alaska-classic`, `atmos` and `hawaiian`. It is identical to the production stylesheet except that fonts load from the staging host, so a new font version can be tried before it goes live.
 
 | Environment | Stylesheet | Example font file URL |
 | --- | --- | --- |
-| Production | `dist/bundled/themes/alaska.global.css` | `…/en-us/assets/font/ASCircularWeb-Light.woff2` |
-| Test | `dist/bundled/themes/alaska-test.global.css` | `…/en-us/assets/font/ASCircularWeb-Light-test.woff2` |
-| QA | `dist/bundled/themes/alaska-qa.global.css` | `…/en-us/assets/font/ASCircularWeb-Light-qa.woff2` |
+| Production | `dist/bundled/themes/alaska.global.css` | `https://resource.alaskaair.net/en-us/assets/font/ASCircularWeb-Light.woff2` |
+| Staging | `dist/bundled/themes/alaska-stg.global.css` | `https://test.alaskaair.com/en-us/assets/font/ASCircularWeb-Light.woff2` |
 
-The Japanese and Korean fonts follow the same pattern, for example `…/ja-jp/assets/font/noto-sans-jp-v54-japanese-300-test.woff2`.
-
-Every theme (`alaska`, `alaska-classic`, `atmos`, `hawaiian`) and its `.min.css` file follow the same pattern, such as `alaska-test.global.min.css`. To switch environments, add `-test` or `-qa` after the theme name in the stylesheet file name:
+Font file names and paths are the same on both hosts, including the Japanese and Korean fonts (for example `…/ja-jp/assets/font/noto-sans-jp-v54-japanese-300.woff2`). Staging and production resolve to different files because the Fastly staging and production maps point at different origins.
 
 ```html
-<!-- Test environment -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/themes/alaska-test.global.min.css">
+<!-- Staging -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/themes/alaska-stg.global.min.css">
 ```
 
-The environment versions differ from production only in the font file name: `-test` or `-qa` comes right before `.woff2`. A test that runs on every pull request fails if any other difference appears. Every font URL is suffixed: English, Japanese, and Korean.
+A test that runs on every pull request fails if a staging bundle differs from its production bundle in anything other than the host.
 
-> **Note:** The `-test` and `-qa` font files must be on the font host before you switch to these stylesheets. If they're missing, the fonts fail to load and the page falls back to system fonts. If you serve fonts from your own host by overriding `$i18n-font-base-path-en` or the Japanese and Korean path settings, your host needs matching `-test` and `-qa` file names too.
+> **Note:** Before you use the staging stylesheet, upload the new font files to the test/QA folder and make sure the staging map routes to them. If they're missing, the fonts fail to load and the page falls back to system fonts.
 
-When you build from Sass source, set the environment with the `$font-env` setting. Load it before any WCSS font module:
+To check that the fonts exist, run `npm run build:theme-css`, then:
 
-```scss
-@use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($font-env: "test"); // or "qa"; null (default) = production
+```bash
+npm run verify:fonts            # staging bundles
+npm run verify:fonts -- --prod  # production bundles
 ```
 
-To set the environment for a single font, pass `$env` to the `font-face` mixin (English fonts) or the `font-face-i18n` mixin (Japanese and Korean fonts). `$env` takes `null`, `test`, or `qa`, and any other value is a compile error:
+The script requests every font URL in the bundles. It fails if any URL doesn't return 200, doesn't have a font content type, or has no `access-control-allow-origin` header. It makes network requests, so it isn't part of `npm test` or CI. It doesn't confirm that a file is the new font version, so also check the fonts visually in `docs/theme.html?theme=<theme>&env=staging`.
+
+When you build from Sass source, set the host with `$i18n-font-host`. Load it before any WCSS font module:
 
 ```scss
-@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/fontFace";
-
-@include fontFace.font-face("AS Circular", 300, "ASCircularWeb-Light", $env: qa);
-// src: url(".../ASCircularWeb-Light-qa.woff2")
+@use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($i18n-font-host: "https://test.alaskaair.com");
 ```
 
 ## Development

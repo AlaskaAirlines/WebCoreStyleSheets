@@ -11,37 +11,30 @@ import { withoutExcludedThemes } from './excluded-themes.mjs';
 export const SOURCE_EXT = 'global.scss';
 export const OUTPUT_EXT = 'global.css';
 
-// Standard themes
 // These will use the template file and generate individual theme CSS files
 export const basePrefix = '';
 
-// Font environments (AB#1683083)
-// Every standard theme is built once per environment. `null` is production and
-// writes to `themes/<theme>.global.css` with unsuffixed font URLs (unchanged).
-// Each named environment writes to `themes/<theme>-<env>.global.css` with font
-// URLs suffixed `-<env>` (e.g. `ASCircularWeb-Light-test.woff2`). Keep the names
-// in sync with `$font-envs` in src/utilityVariables/_fontUtils.scss.
-export const PRODUCTION_FONT_ENV = null;
-export const FONT_ENVIRONMENTS = ['test', 'qa'];
+// Font hosts (AB#1683083)
+// Every standard theme is built twice: once for production and once for staging.
+// Both load identically named font files from the same paths; only the host
+// differs. Production writes to `themes/<theme>.global.css`, staging to
+// `themes/<theme>-stg.global.css`.
+export const PRODUCTION_FONT_HOST = 'https://resource.alaskaair.net';
+export const STAGING_FONT_HOST = 'https://test.alaskaair.com';
+export const STAGING_SUFFIX = '-stg';
 
-/**
- * Output path (relative to dist/bundled) for a standard theme in a font environment.
- * @param {string} themeDir - Theme directory name (e.g. `alaska`)
- * @param {string|null} fontEnv - Font environment, or null for production
- * @returns {string}
- */
-export function standardThemeDest(themeDir, fontEnv = PRODUCTION_FONT_ENV) {
-  const suffix = fontEnv ? `-${fontEnv}` : '';
-  return `themes/${themeDir}${suffix}.${OUTPUT_EXT}`;
-}
+export const fontBuilds = [
+  { suffix: '', fontHost: PRODUCTION_FONT_HOST },
+  { suffix: STAGING_SUFFIX, fontHost: STAGING_FONT_HOST }
+];
 
 // Standard themes
 export const standardThemes = withoutExcludedThemes(THEME_DEFINITIONS).flatMap(theme =>
-  [PRODUCTION_FONT_ENV, ...FONT_ENVIRONMENTS].map(fontEnv => ({
+  fontBuilds.map(({ suffix, fontHost }) => ({
     src: `themes/theme.global.template.scss`,
-    dest: standardThemeDest(theme.dir, fontEnv),
+    dest: `themes/${theme.dir}${suffix}.${OUTPUT_EXT}`,
     name: theme.dir,
-    fontEnv
+    fontHost
   }))
 );
 

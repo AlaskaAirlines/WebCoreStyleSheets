@@ -1,24 +1,19 @@
 # Migration Guide
 
-## v12.x — Test and QA font environment builds (non-breaking)
+## v12.x — Staging font bundles (non-breaking)
 
-This release changes nothing for existing consumers. Production stylesheets and the default `font-face` output keep today's unsuffixed font URLs. These are new additions you can opt into:
+This release changes nothing for existing consumers. Production stylesheets and the default `font-face` output keep today's font URLs. These are new additions you can opt into:
 
-- **Bundled test and QA theme stylesheets.** Each global theme is now also built as `dist/bundled/themes/<theme>-test.global(.min).css` and `dist/bundled/themes/<theme>-qa.global(.min).css`, e.g. `alaska-test.global.css`. These load `-test` and `-qa` copies of every font file, for example `ASCircularWeb-Light-test.woff2` and `noto-sans-jp-v54-japanese-300-test.woff2`. To switch environments, add `-test` or `-qa` after the theme name in the stylesheet file name.
-- **`$font-env` setting.** Configure `fontUtils` with `$font-env: "test"` or `"qa"` before loading any WCSS font module. All `font-face` and `font-face-i18n` output then uses that environment's font files.
-- **`$env` argument on `font-face` and `font-face-i18n`.** Pass `$env: test` or `$env: qa` to suffix a single `@font-face`. Any other value besides `null` is a compile error.
+- **Staging theme stylesheets.** Each global theme is also built as `dist/bundled/themes/<theme>-stg.global(.min).css` (`alaska`, `alaska-classic`, `atmos`, `hawaiian`), e.g. `alaska-stg.global.css`. They load fonts from `https://test.alaskaair.com` instead of `https://resource.alaskaair.net`. File names and paths are identical. To switch, add `-stg` after the theme name in the stylesheet file name.
+- **Sass builds** can point fonts at staging by configuring `$i18n-font-host`:
 
 ```scss
-// Whole build: every font (English, Japanese, Korean) loads its -test copy
-@use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($font-env: "test");
+@use "@aurodesignsystem/webcorestylesheets/src/utilityVariables/fontUtils" with ($i18n-font-host: "https://test.alaskaair.com");
 ```
 
-Before you switch:
+Before you switch, the new font files must be uploaded to the test/QA folder and covered by the Fastly staging map (English, Japanese and Korean paths). Otherwise fonts fail to load and pages fall back to system fonts.
 
-- The `-test` and `-qa` font files must be on the font host (`resource.alaskaair.net`) first. That covers the Japanese (`ja-jp`) and Korean (`ko-kr`) Noto Sans files as well as the English ones. Otherwise fonts fail to load and pages fall back to system fonts.
-- If you override `$i18n-font-base-path-en` (or the Japanese and Korean path settings) to serve fonts from your own host, add matching `-test` and `-qa` file names there.
-
-A Jest test runs in `npm test` and on every pull request, and confirms the test and QA stylesheets match production apart from the font file name.
+A Jest test runs in `npm test` and on every pull request, and confirms each staging stylesheet matches production apart from the host.
 
 ---
 

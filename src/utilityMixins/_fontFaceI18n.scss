@@ -2,9 +2,6 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-
-@use '../utilityVariables/fontUtils';
-
 // i18n font-face mixin
 // Similar to default/en font-face mixin with support for:
 //  - unicode-range
@@ -15,23 +12,17 @@
 //  $weight        - Numeric font-weight
 //  $path          - Path without file extension to .woff2 asset
 //  $unicode-range - Literal unicode-range list (do NOT quote)
-//  $env           - Font file environment: `null` (production, unsuffixed) or
-//                   `test` / `qa`, which appends `-<env>` to the file name,
-//                   e.g. `noto-sans-jp-v54-japanese-300-test.woff2` (AB#1683083).
-//                   Defaults to the `fontUtils.$font-env` setting.
 //
 // Example:
 //  @include font-face-i18n('AS Circular', 300, '../fonts/jp/noto-sans-jp-v54-japanese-300', $unicode-range-jp);
 
-@mixin font-face-i18n($family, $weight, $path, $unicode-range, $env: fontUtils.$font-env) {
-  $suffix: fontUtils.font-env-suffix($env);
-
+@mixin font-face-i18n($family, $weight, $path, $unicode-range) {
   @font-face {
     font-family: "#{$family}";
     font-style: normal;
     font-weight: $weight;
     font-display: swap;
-    src: url("#{$path}#{$suffix}.woff2") format("woff2");
+    src: url("#{$path}.woff2") format("woff2");
     unicode-range: $unicode-range;
   }
 }

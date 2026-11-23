@@ -1,5 +1,29 @@
 # Semantic Release Automated Changelog
 
+# [13.0.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v12.1.0...v13.0.0) (2026-11-23)
+
+
+### Features
+
+* **fonts:** replace font suffixes with staging theme bundles AB[#1683083](https://github.com/AlaskaAirlines/WebCoreStyleSheets/issues/1683083) ([c1bf0c0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/commit/c1bf0c0930026e3e2c90bac4578f76c90ddf289c))
+
+
+### BREAKING CHANGES
+
+* **fonts:** the 12.1.0 font environment API is removed — `$font-env`, `$font-envs`, `font-env-suffix()`, the `$env` argument on `font-face` and `font-face-i18n`, and the `<theme>-test|-qa.global(.min).css` bundles no longer exist. Use the `<theme>-stg.global(.min).css` bundles, or configure `fontUtils` with `$i18n-font-host`, instead.
+
+New fonts are now tried in staging by routing a staging host to the Contentstack test/QA folder, instead of renaming font files. Font file names and paths are identical on both hosts, so default output is unchanged.
+
+- Add `<theme>-stg.global(.min).css` for alaska, alaska-classic, atmos and hawaiian. They differ from production only in the font host (`https://test.alaskaair.com`), set through a `FONT_HOST` placeholder in the theme template.
+- Remove the suffix mechanism and the 16 `-test`/`-qa` bundles.
+- Replace the suffix specs with `themeStagingBundles.spec.js`, which checks each staging bundle equals its production bundle after the host swap, that no font file has a suffix, and that the themes directory holds only the expected files.
+- Add `npm run verify:fonts` (`-- --prod` for production) to check every bundled font URL returns 200, a font content type and a CORS header. It makes network requests, so it is not part of `npm test` or CI.
+- Update README, MIGRATION, the post-mortem (including ticket completeness and outcome) and the SassDoc output.
+
+See post-mortem docs/post-mortem/1683083.md (lines 17–31) for the root cause, the fix and why it works, and lines 39–53 for how the change maps to the ticket's acceptance criteria.
+
+Co-authored-by AI: Claude Sonnet 5.5
+
 # [12.1.0](https://github.com/AlaskaAirlines/WebCoreStyleSheets/compare/v12.0.1...v12.1.0) (2026-11-18)
 
 
